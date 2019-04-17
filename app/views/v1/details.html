@@ -1,0 +1,31 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Case list
+{% endblock %}
+
+{% block content %}
+  <div class="hmcts-page-heading">
+
+    <div class="hmcts-page-heading__title">
+      <h1 class="govuk-heading-xl">Case details (h1)</h1>
+    </div>
+      <div class="hmcts-page-heading__actions">
+          <a href="/v1/">
+            <div class="black-box black-box--small">
+              <h1 class="govuk-heading-m">Case actions</h1>
+            </div>
+          </a>
+      </div>
+    </div>
+
+
+  <a href="/v1/">
+    <div class="black-box">
+      <h1 class="govuk-heading-xl">Case details</h1>
+    </div>
+  </a>
+</div>
+
+{% endblock %}

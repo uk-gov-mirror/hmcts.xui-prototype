@@ -13,3 +13,21 @@ $govuk-global-styles: true;
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.black-box {
+  color: govuk-colour('white');
+  background: govuk-colour('black');
+  min-height: 600px;
+  padding: govuk-spacing(6);
+}
+
+.black-box .govuk-heading-xl,
+.black-box .govuk-heading-l,
+.black-box .govuk-heading-m {
+  color: govuk-colour('white');
+  margin-bottom: 0;
+}
+
+.black-box--small {
+  min-height: 0;
+}
