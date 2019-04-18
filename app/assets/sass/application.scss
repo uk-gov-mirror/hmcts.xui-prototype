@@ -2,6 +2,7 @@
 $govuk-global-styles: true;
 
 $govuk-page-width: 1220px;
+$hmcts-page-width: 1220px;
 
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
 @import "lib/extensions/extensions";
@@ -32,4 +33,9 @@ $govuk-page-width: 1220px;
 
 .black-box--small {
   min-height: 0;
+}
+
+// hack
+a.hmcts-search-toggle__button {
+  color: govuk-colour('white');
 }
