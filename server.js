@@ -112,7 +112,7 @@ app.set('view engine', 'html')
 app.use('/public', express.static(path.join(__dirname, '/public')))
 
 // hack until fixed with prototype kit extensions
-app.use('/assets', express.static(path.join(__dirname, 'node_modules', '@hmcts', 'frontend', 'assets')))
+app.use('/hmcts-assets', express.static(path.join(__dirname, 'node_modules', '@hmcts', 'frontend', 'assets')))
 
 // Serve govuk-frontend in from node_modules (so not to break pre-extenstions prototype kits)
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
