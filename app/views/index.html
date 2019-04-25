@@ -17,11 +17,17 @@
 
       <h2 class="govuk-heading-l">Iterations</h2>
 
-      <h3 class="govuk-heading-m"><a href="/v1">Iteration 1</a> {{ hmctsBadge({
-        text: 'In progress'
-      }) }}</h3>
+      {% set iterationOneHtml %}
+        <p class="govuk-body">Illustrate the components and journey as black boxes including the way the components load and render indepently.</p>
+        <ul class="govuk-list">
+          <li><a href="/v1">View prototype</a></li>
+        </ul>
+      {% endset %}
 
-      <p class="govuk-body">This iteration illustrates the components as black boxes.</p>
+      {{ govukDetails({
+        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Iteration 1</div>',
+        html: iterationOneHtml
+      }) }}
 
     </div>
 </div>
