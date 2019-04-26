@@ -28,8 +28,8 @@
 
 {% from "hmcts-badge/macro.njk"     import hmctsBadge %}
 {% from "hmcts-page-header-with-actions/macro.njk" import hmctsPageHeaderWithActions %}
-{% from "hmcts-header/macro.njk" import hmctsGlobalHeader %}
-{% from "hmcts-footer/macro.njk" import hmctsGlobalFooter %}
+{% from "hmcts-header/macro.njk" import hmctsHeader %}
+{% from "hmcts-footer/macro.njk" import hmctsFooter %}
 {% from "hmcts-primary-navigation/macro.njk" import hmctsPrimaryNavigation %}
 
 {% block head %}
@@ -38,7 +38,7 @@
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-  {{ hmctsGlobalHeader({
+  {{ hmctsHeader({
 
     service: {
       name: serviceName,
