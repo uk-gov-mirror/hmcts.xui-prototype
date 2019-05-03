@@ -1,0 +1,30 @@
+
+{% extends "./layout.html" %}
+
+{% set pageId = 'your-cases' %}
+
+{% block pageTitle %}
+  Case list
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Search results (h1)</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <div class="black-box">
+        <h1 class="govuk-heading-l">Filter</h1>
+      </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <a href="#">
+        <div class="black-box">
+          <h1 class="govuk-heading-l">Case list</h1>
+        </div>
+      </a>
+    </div>
+  </div>
+
+{% endblock %}

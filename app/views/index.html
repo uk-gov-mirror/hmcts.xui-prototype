@@ -29,6 +29,20 @@
         html: iterationOneHtml
       }) }}
 
+      <h2 class="govuk-heading-l">For developers</h2>
+
+      {% set sprintOneSearchHtml %}
+        <p class="govuk-body">Illustrate signing in, landing on search page, then seeing search results.</p>
+        <ul class="govuk-list">
+          <li><a href="/s1">View</a></li>
+        </ul>
+      {% endset %}
+
+      {{ govukDetails({
+        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Sprint 2 — login and search</div>',
+        html: sprintOneSearchHtml
+      }) }}
+
     </div>
 </div>
 
