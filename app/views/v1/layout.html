@@ -55,7 +55,7 @@
   }) }}
 
   {% set searchHtml %}
-    <a class="hmcts-search-toggle__button" href="/v1/search">Find case</a>
+    <a class="hmcts-search-toggle__button" href="{{config.path}}/search">Find case</a>
   {% endset %}
 
 
@@ -64,7 +64,7 @@
     label: 'Primary navigation',
     items: [{
     text: 'Your cases',
-    href: '/v1/',
+    href: config.path+'/',
     active: pageId == 'your-cases'
     }],
     searchHtml: searchHtml
