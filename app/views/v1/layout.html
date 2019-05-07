@@ -55,16 +55,14 @@
   }) }}
 
   {% set searchHtml %}
-    <a class="hmcts-search-toggle__button" href="{{config.path}}/search">Find case</a>
+    <a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
   {% endset %}
-
-
 
   {{ hmctsPrimaryNavigation({
     label: 'Primary navigation',
     items: [{
     text: 'Your cases',
-    href: config.path+'/',
+    href: getUrl('/'),
     active: pageId == 'your-cases'
     }],
     searchHtml: searchHtml
