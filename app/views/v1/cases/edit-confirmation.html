@@ -1,5 +1,5 @@
 
-{% extends "./layout.html" %}
+{% extends "../layout.html" %}
 
 {% block pageTitle %}
   Create case
@@ -10,12 +10,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
           {{ govukPanel({
-            titleText: "Case created successfully",
-            html: "Your reference number<br><strong>HDJ2123F</strong>"
+            titleText: "Case edited successfully",
+            html: "<strong>HDJ2123F</strong>"
           }) }}
 
           <p class="govuk-body">
-            <a href="{{getUrl('/details')}}" class="govuk-link">Go to case</a>
+            <a href="{{getUrl('/cases/show')}}" class="govuk-link">Go to case</a>
           </p>
     </div>
   </div>

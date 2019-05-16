@@ -1,5 +1,5 @@
 
-{% extends "./layout.html" %}
+{% extends "../layout.html" %}
 
 {% set pageId = 'your-cases' %}
 
@@ -14,7 +14,7 @@
     },
     items: [{
       text: 'Create case',
-      href: getUrl('/new')
+      href: getUrl('/cases/new')
     }]
   }) }}
 
@@ -26,7 +26,7 @@
     </div>
     <div class="govuk-grid-column-two-thirds">
 
-      <a href="{{getUrl('/details')}}">
+      <a href="{{getUrl('/cases/show')}}">
         <div class="black-box">
           <h1 class="govuk-heading-l">Case list</h1>
         </div>

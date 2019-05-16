@@ -1,0 +1,23 @@
+
+{% extends "../layout.html" %}
+
+{% block pageTitle %}
+  Create case
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+          {{ govukPanel({
+            titleText: "Case created successfully",
+            html: "HDJ2123F"
+          }) }}
+
+          <p class="govuk-body">
+            <a href="{{getUrl('/cases/show')}}" class="govuk-link">Go to case</a>
+          </p>
+    </div>
+  </div>
+
+{% endblock %}
