@@ -1,0 +1,30 @@
+
+{% extends "../layout.html" %}
+
+{% block pageTitle %}
+  Case details
+{% endblock %}
+
+{% block content %}
+  <div class="hmcts-page-heading">
+
+    <div class="hmcts-page-heading__title">
+      <h1 class="govuk-heading-xl">Case details (h1)</h1>
+    </div>
+    <div class="hmcts-page-heading__actions">
+        <a href="{{getUrl('/cases/edit')}}">
+          <div class="black-box black-box--small">
+            <h1 class="govuk-heading-m">Case actions</h1>
+          </div>
+        </a>
+    </div>
+  </div>
+
+
+  <a href="#">
+    <div class="black-box">
+      <h1 class="govuk-heading-l">Case details</h1>
+    </div>
+  </a>
+
+{% endblock %}
