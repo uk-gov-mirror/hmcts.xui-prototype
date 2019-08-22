@@ -6,10 +6,10 @@
 {% block content %}
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-xl">Confirmation for noticing of acting</h1>
-          <p>You have instructed the following solicitor to act on your behalf ....</p>
+          <h1 class="govuk-heading-xl">Confirm notice to act</h1>
+          <p>Supporting text to be added.</p>
 
-    <h2 class="govuk-heading-m">Their details</h2>
+    <h2 class="govuk-heading-m">Details</h2>
       <form action="/v3/cases/notice-confirmation">
          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -36,8 +36,6 @@
        <h2 class="govuk-heading-m">Legal bit</h2>
 
         <p class="govuk-body">By submitting this request you are confirming that you are instructing the solicitor to act on your behalf.</p>
-
-
          {{ govukButton({
           "text": "Confirm and send",
           href: 'confirmation-portal-success'
