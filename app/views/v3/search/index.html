@@ -1,0 +1,17 @@
+
+{% extends "../layout.html" %}
+
+{% block pageTitle %}
+  Search
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">Find case (h1)</h1>
+
+  <a href="{{getUrl('/search/results')}}">
+    <div class="black-box">
+      <h1 class="govuk-heading-l">Case search</h1>
+    </div>
+  </a>
+
+{% endblock %}
