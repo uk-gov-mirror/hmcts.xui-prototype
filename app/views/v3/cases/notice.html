@@ -1,0 +1,61 @@
+
+{% extends "../layout.html" %}
+
+{% set pageId = 'notice-of-acting' %}
+
+{% block pageTitle %}
+  Notice of acting
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  {{ super() }}
+
+{% endblock %}
+
+
+{% block content %}
+ <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl">Notice of Acting</h1>
+
+          <p>[NEW TEXT REQUIRED - Context for action]</p>
+
+          <form action="/v3/cases/notice-confirmation">
+
+           {{ govukInput({
+              label: {
+                text: "Court reference number",
+                classes: 'govuk-label--m'
+                },
+                hint: {
+                text: "Example: 4458-8429-2491-3791"
+              },
+              id: "firstname",
+              name: "firstname"
+            }) }}
+         
+            {{ govukInput({
+              label: {
+                text: "Email address",
+                classes: 'govuk-label--m'
+              },
+                hint: {
+                text: ""
+              },
+              id: "emailaddress",
+              name: "emailaddress"
+            }) }}
+         
+
+            {{govukButton({
+              text: 'Submit'
+            })}}
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}
