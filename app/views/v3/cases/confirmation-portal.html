@@ -5,38 +5,49 @@
 
 {% block content %}
  <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Confirmation for noticing of acting</h1>
+          <p>You have instructed the following solicitor to act on your behalf ....</p>
 
-          <h1 class="govuk-heading-xl">Confirm request to act on your behalf</h1>
+    <h2 class="govuk-heading-m">Their details</h2>
+      <form action="/v3/cases/notice-confirmation">
+         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Hamlin and Tinklin Solicitors
+            </dd>
+         
+          </div>
 
-          <p>Please check all details.</p>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Case reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1197-2489-3471-2344
+            </dd>
+           
+          </div>
+        </dl> 
 
-          <p>Some text here about passing control of a case ... what you need to do and what happens... next</p>
+       <h2 class="govuk-heading-m">Legal bit</h2>
 
- <h2 class="govuk-heading-l">Solicitor details</h2>
-
-
-           <h3 class="govuk-heading-m">Hamlin and Tinklin Solicitors</h3>
-  <h3 class="govuk-heading-m">Case reference:
-BV18D00150</h3>
+        <p class="govuk-body">By submitting this request you are confirming that you are instructing the solicitor to act on your behalf.</p>
 
 
-
-
-
-
-
-          <form action="/v3/cases/notice-confirmation">
-  {{ govukButton({
-          "text": "Confirm",
+         {{ govukButton({
+          "text": "Confirm and send",
           href: 'confirmation-portal-success'
         }) }}
-
-          </form>
-        </div>
-      </div>
-    </main>
+      </form>
+    </div>
   </div>
+
+
+
 {% endblock %}
 
 
