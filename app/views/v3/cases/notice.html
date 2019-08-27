@@ -21,7 +21,14 @@
 
           <h1 class="govuk-heading-xl">Notice of acting</h1>
 
-          <p>[NEW TEXT REQUIRED - Context for action]</p>
+          <p>If your client has asked you to act on their behalf, you’ll need their:</p>
+
+                           <ul class="govuk-list govuk-list--bullet">
+                   
+<li>court reference number</li>
+<li>email address</li></ul>
+
+          
 
           <form action="/v3/cases/notice-confirmation">
 
@@ -31,7 +38,7 @@
                 classes: 'govuk-label--m'
                 },
                 hint: {
-                text: "Example: 4458-8429-2491-3791"
+                text: "This is a 16-digit number. For example: 1111-2222-3333-4444"
               },
               id: "firstname",
               name: "firstname"
