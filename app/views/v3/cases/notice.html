@@ -24,16 +24,20 @@
 
           <h1 class="govuk-heading-xl">Notice of acting</h1>
 
+          <p></p>
+
           <p>If your client has asked you to act on their behalf, you’ll need their:</p>
 
                            <ul class="govuk-list govuk-list--bullet">
                    
 <li>case reference</li>
-<li>email address</li></ul>
+<li>email address</li>
+<li>designation whether they are the claimant or respondent</li>
+<li>method of confirmation</li>
+</ul>
 
-          
-
-          <form action="/v3/cases/notice-confirmation">
+<p>You'll also need to confirm your corrispondant details</p>
+          <form action="/v3/cases/designation">
 
            {{ govukInput({
               label: {
@@ -43,8 +47,8 @@
                 hint: {
                 text: "This is a 16-digit number. For example: 1111-2222-3333-4444"
               },
-              id: "firstname",
-              name: "firstname"
+              id: "reference",
+              name: "reference"
             }) }}
          
             {{ govukInput({
@@ -53,15 +57,16 @@
                 classes: 'govuk-label--m'
               },
                 hint: {
-                text: ""
+                text: "This is the email address they used when creating their case"
               },
               id: "emailaddress",
               name: "emailaddress"
             }) }}
-         
+
+
 
             {{govukButton({
-              text: 'Submit'
+              text: 'Continue'
             })}}
           </form>
         </div>

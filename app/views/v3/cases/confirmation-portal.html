@@ -17,32 +17,51 @@
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-xl">Confirm details of your legal representative</h1>
-          <p>You’ve asked for the following organisation to act on your behalf.</p>
+          <p>You’ve asked for the following person and organisation to act on your behalf.</p>
 
-    <h2 class="govuk-heading-m">Organisation details</h2>
-      <form action="/v3/cases/notice-confirmation">
-         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Hamlin and Tinklin Solicitors
-            </dd>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Janet Tempest"
+            },
+            actions: {
+             
+            }
+          },
+
+           {
+            key: {
+              text: "Organisation"
+            },
+            value: {
+              html: " Hamlin and Tinklin Solicitors"
+            },
+            actions: {
+            
+            }
+          },
          
-          </div>
+          {
+               key: {
+              text: "Case reference"
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Case reference
-            </dt>
-            <dd class="govuk-summary-list__value">
-              1197-2489-3471-2344
-            </dd>
-          </div>
-        </dl> 
+            },
+            value: {
+              text: "1234-5678-9876-4321",
+              html: data['reference'] 
+            },
+            actions: {
+             
+            }
+          }
+        ]
+      }) }}
 
-       
          {{ govukButton({
           "text": "Confirm",
           href: 'confirmation-portal-success'

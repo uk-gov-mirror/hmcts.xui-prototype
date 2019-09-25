@@ -14,17 +14,21 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
          {{ govukPanel({
-              titleText: "Confirmation email sent",
-              html: data['emailaddress']
+              titleText: "Request for confirmation sent successfully"
             }) }}
       <h2 class="govuk-heading-m">What happens next</h2>
 
      
        <p class="govuk-body"> 
-       Your client will receive an email from HM Courts & Tribunals service to confirm they want you to act on their behalf.
+       Your client will receive an [email] [letter] from HM Courts & Tribunals service to confirm they want you to act on their behalf.
       </p>
+
+      <p>The link will expire 14 days.
     <p><a href="index.html">Back to your cases</a></p>
-     <p><a style="color:green" href="confirmation-email">[Click here to continue journey from recepient point of view (Email - they will see)]</a></p>
+    <h3 class="govuk-heading-m"><a style="color:blue" href="confirmation-email">Email - continue journey from recepient point of view</a></h3>
+  
+     <h3 class="govuk-heading-m"><a style="color:blue" href="confirmation-letter">Post - continue journey from recepient point of view</a></h3>
+     <p></p>
     </div>
 
   </div>

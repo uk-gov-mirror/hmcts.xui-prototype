@@ -1,0 +1,169 @@
+
+{% extends "../layout.html" %}
+
+{% set pageId = 'notice-of-acting' %}
+
+{% block pageTitle %}
+  Prefered method of confirmation - Notice of acting
+{% endblock %}
+
+
+ {% block beforeContent %}
+  {{ super() }}
+  {{govukBackLink({
+    href: 'method'
+  })}}
+{% endblock %}
+
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+<form action="/v3/cases/notice-confirmation">
+      <h1 class="govuk-heading-xl">Check corrispondance details</h1>
+
+
+      <h2 class="govuk-heading-m">Your details</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Janet Tempest"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+
+           {
+            key: {
+              text: "Organisation"
+            },
+            value: {
+              html: " Hamlin and Tinklin Solicitors"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "organisation"
+                }
+              ]
+            }
+          },
+         
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "72 Guild Street<br>London<br>SE23 6FH"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+       <h2 class="govuk-heading-m">Clients details</h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Case reference"
+
+            },
+            value: {
+              text: "1234-5678-9876-4321",
+              html: data['reference'] 
+            },
+            actions: {
+             
+            }
+          },
+
+           {
+            key: {
+              text: "Email address"
+            },
+            value: {
+              text: "Email address of client",
+              html: data['emailaddress']
+            },
+            actions: {
+             
+            }
+          },
+ {
+            key: {
+              text: "Designation"
+            },
+            value: {
+              text: "Client's role",
+              html: data ['Claimant']
+
+            },
+            actions: {
+              items: [
+                {
+                  href: "designation",
+                  text: "Change",
+                  visuallyHiddenText: "designation"
+                }
+              ]
+            }
+          },
+
+ {
+            key: {
+              text: "Method of confirmation"
+            },
+            value: {
+              text: "",
+              html: data ['response']
+            },
+            actions: {
+              items: [
+                {
+                  href: "method",
+                  text: "Change",
+                  visuallyHiddenText: "method"
+                }
+              ]
+            }
+          }
+
+        ]
+      }) }}
+
+
+            {{govukButton({
+              text: 'Submit'
+            })}}
+          </form>
+        </div>
+      </div>
+
+{% endblock %}
