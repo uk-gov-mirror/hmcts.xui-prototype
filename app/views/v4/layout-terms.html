@@ -28,28 +28,38 @@
 
 {% from "hmcts-badge/macro.njk"     import hmctsBadge %}
 {% from "hmcts-page-header-with-actions/macro.njk" import hmctsPageHeaderWithActions %}
+{% from "hmcts-header/macro.njk" import hmctsHeader %}
+{% from "hmcts-footer/macro.njk" import hmctsFooter %}
+{% from "hmcts-primary-navigation/macro.njk" import hmctsPrimaryNavigation %}
 
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}
 
-{% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
-
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
+ 
   {{ govukHeader({
     homepageUrl: "/",
-    serviceName: serviceName,
+    
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}   
 {% endblock %}
 
 
-{% if useAutoStoreData %}
+
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
   {% block footer %}
     {{ govukFooter({
       meta: {
@@ -66,12 +76,11 @@
       }
     }) }}
   {% endblock %}
-{% endif %}
+
 
 {% block bodyEnd %}
   {% block scripts %}
-    {% include "includes/scripts.html" %}
+    {% include "./scripts.html" %}
     {% block pageScripts %}{% endblock %}
   {% endblock %}
-  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}
