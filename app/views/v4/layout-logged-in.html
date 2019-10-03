@@ -38,11 +38,20 @@
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}   
+  {{ hmctsHeader({
+    service: {
+      name: serviceName,
+      url: '/'
+    },
+    navigation: {
+      label: 'Account navigation',
+      items: [{
+        text: 'Sign out',
+        href: '#1'
+      }]
+    }
+  }) }}
+
 {% endblock %}
 
 {% block beforeContent %}
