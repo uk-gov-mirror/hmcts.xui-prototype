@@ -1,75 +1,48 @@
-
 {% extends "../layout.html" %}
-
 {% set pageId = 'case-access' %}
-
 {% block pageTitle %}
-  Case access
+Case access
 {% endblock %}
-
-
 {% block beforeContent %}
-
-  {{ super() }}
-
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{{govukBackLink({
+href: 'case-access'
+})}}
 {% endblock %}
-
-
 {% block content %}
-
-
-
- <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-
-          <h1 class="govuk-heading-xl">Case access</h1>
-
-          <p></p>
-
-          <p>If your client has asked you to act on their behalf, you’ll need their:</p>
-
-                           <ul class="govuk-list govuk-list--bullet">
-                   
-<li>case reference</li>
-<li>email address</li>
-<li>designation whether they are the claimant or respondent</li>
-<li>method of confirmation</li>
-</ul>
-
-<p>You'll also need to confirm your corrispondant details</p>
-          <form action="/v3/cases/designation">
-
-           {{ govukInput({
-              label: {
-                text: "Case reference",
-                classes: 'govuk-label--m'
-                },
-                hint: {
-                text: "This is a 16-digit number. For example: 1111-2222-3333-4444"
-              },
-              id: "reference",
-              name: "reference"
-            }) }}
-         
-            {{ govukInput({
-              label: {
-                text: "Email address",
-                classes: 'govuk-label--m'
-              },
-                hint: {
-                text: "This is the email address they used when creating their case"
-              },
-              id: "emailaddress",
-              name: "emailaddress"
-            }) }}
-
-
-
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Notice of acting</h1>
+        <p>Use this service to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>professionals asked to act on a client’s behalf for the first time</li>
+            <li>citizens changing their legal representative part-way through their case</li>
+        </ul>
+        <h2 class="govuk-heading-m">Before you start</h2>
+        <h3 class="govuk-heading-s">You can only do this if:</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>a case exists online</li>
+            <li>you have the email address of the individual you are representing</li>
+        </ul>
+        <h3 class="govuk-heading-s">If your client has asked you to act on their behalf, you’ll need their:</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>case reference</li>
+            <li>email address</li>
+            <!--<li>designation whether they are the claimant or respondent</li>-->
+            <li>method of confirmation</li>
+        </ul>
+        <p>You'll also need to confirm your details.</p>
+        <form action="/v3/cases/start">
+        
             {{govukButton({
-              text: 'Continue'
+            text: 'Continue'
             })}}
-          </form>
-        </div>
-      </div>
-
+        </form>
+    </div>
+</div>
 {% endblock %}
