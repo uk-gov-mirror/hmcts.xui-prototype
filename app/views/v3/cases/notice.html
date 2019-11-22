@@ -17,18 +17,51 @@ href: 'case-access'
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Notice of acting</h1>
-        <p>Use this service to:</p>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>professionals asked to act on a client’s behalf for the first time</li>
-            <li>citizens changing their legal representative part-way through their case</li>
-        </ul>
+   
+
+           {{ govukRadios({
+  idPrefix: "sign-in",
+  name: "sign-in",
+  fieldset: {
+    legend: {
+      text: "Notice of acting",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: "Use this service to:"
+  },
+  items: [
+    {
+      value: "notice-of-acting",
+      text: "Act on a client’s behalf",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "Service for professionals to take on acting on a client’s behalf for the first time"
+      }
+    },
+    {
+      value: "inbound-coms",
+      text: "Citizen changing their legal representative",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "Service allowing citizens changing their legal representative part-way through their case"
+      }
+    }
+  ]
+}) }}
+
         <h2 class="govuk-heading-m">Before you start</h2>
-        <h3 class="govuk-heading-s">You can only do this if:</h3>
+      <!--  <h3 class="govuk-heading-s">You can only do this if:</h3>
         <ul class="govuk-list govuk-list--bullet">
             <li>a case exists online</li>
             <li>you have the email address of the individual you are representing</li>
-        </ul>
+        </ul> -->
         <h3 class="govuk-heading-s">If your client has asked you to act on their behalf, you’ll need their:</h3>
         <ul class="govuk-list govuk-list--bullet">
             <li>case reference</li>
