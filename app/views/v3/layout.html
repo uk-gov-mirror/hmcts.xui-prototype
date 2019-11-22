@@ -32,6 +32,7 @@
 {% from "hmcts-footer/macro.njk" import hmctsFooter %}
 {% from "hmcts-primary-navigation/macro.njk" import hmctsPrimaryNavigation %}
 {% from "hmcts-banner/macro.njk" import hmctsBanner %}
+{% from "hmcts-identity-bar/macro.njk" import hmctsIdentityBar %}
 
 {% block head %}
   {% include "includes/head.html" %}
@@ -43,7 +44,7 @@
 
     service: {
       name: serviceName,
-      url: '#'
+      url: '/'
     },
 
     navigation: {

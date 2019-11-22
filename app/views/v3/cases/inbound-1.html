@@ -1,0 +1,150 @@
+{% extends "../layout.html" %}
+{% set pageId = 'notice-of-acting' %}
+{% block pageTitle %}
+Contact HMCTS
+{% endblock %}
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{{ hmctsHeader({
+service: {
+name: serviceName,
+url: '/'
+},
+navigation: {
+label: 'Account navigation',
+items: [{
+text: 'Sign out',
+href: '#1'
+}]
+}
+}) }}
+{% set searchHtml %}
+<a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
+{% endset %}
+{{ hmctsPrimaryNavigation({
+label: 'Primary navigation',
+items: [{
+text: 'Your cases',
+href: getUrl('/cases'),
+active: pageId == 'your-cases'
+},
+{
+text: 'Case access',
+href: getUrl('/cases/case-access'),
+active: pageId == 'case-access'
+}
+],
+searchHtml: searchHtml
+}) }}
+
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{{ super() }}
+{{govukBackLink({
+href: 'inbound'
+})}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="inbound-confirm">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold"><span class="govuk-caption-xl">Solicitor’s letters</span>
+                            Contact HMCTS
+                        </h1>
+                    </legend>
+                    <p class="govuk-body">We will aim to reply within {X} working days</p>
+                    <!-- <h2 class="govuk-heading-m">Solicitor’s letters</h2> -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-line-1">Case reference
+                            <span class="govuk-visually-hidden"></span>
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="address-line-1" type="text" value="1111-0000-8888-9999" readonly="readonly" disabled>
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-line-1">Your name
+                            <span class="govuk-visually-hidden"></span>
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="address-line-1" type="text" value="Lexi Maplethorpe-Collins">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-town">
+                            Your email address
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" value="lexi.maplethorpe-collins@huxleyandbridgesolicitors.com"></div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-town">
+                            Your telephone number (optional)
+                        </label>
+                        <span id="more-detail-hint" class="govuk-hint">
+                            We will use this number if we need to contact you.
+                        </span>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail">
+                            Comments
+                        </label>
+                        <span id="more-detail-hint" class="govuk-hint">
+                            Information specific to this case only.
+                        </span>
+                        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="documents">
+                            Upload a file
+                        </label>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="file-upload-1">
+                                <span id="more-detail-hint" class="govuk-hint">The combined size of any files you upload must not exceed 20mb.</span>
+                            </label>
+                            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                        </div>
+                        <p type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Upload file
+                        </p>
+                        <div class="moj-multi-file-upload">
+                            <div class="moj-multi-file__uploaded-files ">
+                                <h2 class="govuk-heading-m">Files added</h2>
+                            </div>
+                            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                <div class="govuk-summary-list__row">
+                                    <dd class="govuk-summary-list__value">
+                                        Name of added file goes here
+                                    </dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="#">
+                                            Remove<span class="govuk-visually-hidden"> remove</span>
+                                        </a>
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dd class="govuk-summary-list__value">
+                                        Name of added file goes here
+                                    </dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="#">
+                                            Remove<span class="govuk-visually-hidden"> remove</span>
+                                        </a>
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+   {{govukButton({
+            text: 'Submit'
+            })}}
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

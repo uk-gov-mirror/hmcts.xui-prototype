@@ -1,0 +1,73 @@
+{% extends "../layout.html" %}
+{% set pageId = 'notice-of-acting' %}
+{% block pageTitle %}
+Contact HMCTS
+{% endblock %}
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{{ hmctsHeader({
+service: {
+name: serviceName,
+url: '/'
+},
+navigation: {
+label: 'Account navigation',
+items: [{
+text: 'Sign out',
+href: '#1'
+}]
+}
+}) }}
+{% set searchHtml %}
+<a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
+{% endset %}
+{{ hmctsPrimaryNavigation({
+label: 'Primary navigation',
+items: [{
+text: 'Your cases',
+href: getUrl('/cases'),
+active: pageId == 'your-cases'
+},
+{
+text: 'Case access',
+href: getUrl('/cases/case-access'),
+active: pageId == 'case-access'
+}
+],
+searchHtml: searchHtml
+}) }}
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+                Message sent
+            </h1>
+            <div class="govuk-panel__body">
+                Your reference number<br><strong>HDJ2123F</strong>
+            </div>
+        </div>
+        <p class="govuk-body">We have sent you a confirmation email.</p>
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">
+            We'll aim to reply within {X} working days.
+        </p>
+        <p class="govuk-body">
+            Please use the reference number shown above should you need to contact us again about this particular query.
+        </p>
+        <p class="govuk-body">
+       <p><a href="index.html">Back to your case</a></p>
+    <h3 class="govuk-heading-m"><a style="color:blue" href="confirmation-email-message">Email - continue journey from recepient point of view</a></h3>
+    </div>
+</div>
+</div>
+{% endblock %}
