@@ -107,43 +107,19 @@ href: 'inbound'
                             </label>
                             <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
                         </div>
-                        <p type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Upload file
-                        </p>
-                        <div class="moj-multi-file-upload">
-                            <div class="moj-multi-file__uploaded-files ">
-                                <h2 class="govuk-heading-m">Files added</h2>
-                            </div>
-                            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                                <div class="govuk-summary-list__row">
-                                    <dd class="govuk-summary-list__value">
-                                        Name of added file goes here
-                                    </dd>
-                                    <dd class="govuk-summary-list__actions">
-                                        <a class="govuk-link" href="#">
-                                            Remove<span class="govuk-visually-hidden"> remove</span>
-                                        </a>
-                                    </dd>
-                                </div>
-                              <!--  <div class="govuk-summary-list__row">
-                                    <dd class="govuk-summary-list__value">
-                                        Name of added file goes here
-                                    </dd>
-                                    <dd class="govuk-summary-list__actions">
-                                        <a class="govuk-link" href="#">
-                                            Remove<span class="govuk-visually-hidden"> remove</span>
-                                        </a>
-                                    </dd>
-                                </div> -->
-                            </dl>
-                        </div>
+                        <p><a href="inbound-1" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+                                Upload file
+                            </a></p>
                        
+                        <div class="moj-multi-file-upload">
+                        </div>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                     </div>
                     {{govukButton({
                     text: 'Submit'
                     })}}
                 </fieldset>
-                
+                <h3 class="govuk-heading-m"><a style="color:blue" href="inbound-1-error">Show Error - exceed file size</a></h3>
             </div>
         </form>
     </div>

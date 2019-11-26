@@ -52,6 +52,18 @@ href: 'inbound'
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#passport-issued-error">The selected file must be smaller than 20MB</a>
+      </li>
+    </ul>
+  </div>
+</div>
         <form action="inbound-confirm">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
@@ -98,52 +110,34 @@ href: 'inbound'
                         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--m" for="documents">
+                  
+                      <div class="govuk-form-group govuk-form-group--error">
+
+
+  <label class="govuk-label govuk-label--m" for="documents">
                             Upload a file
                         </label>
-                        <div class="govuk-form-group">
-                            <label class="govuk-label" for="file-upload-1">
-                                <span id="more-detail-hint" class="govuk-hint">The combined size of any files you upload must not exceed 20mb.</span>
-                            </label>
-                            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-                        </div>
+
+  <span id="file-upload-1-error" class="govuk-error-message">
+     <span id="more-detail-hint" class="govuk-hint">The combined size of any files you upload must not exceed 20mb.</span>
+    <span class="govuk-visually-hidden">Error:</span> The selected file must be smaller than 20MB
+  </span>
+  <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-error">
+</div>
                         <p type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                             Upload file
                         </p>
                         <div class="moj-multi-file-upload">
                             <div class="moj-multi-file__uploaded-files ">
-                                <h2 class="govuk-heading-m">Files added</h2>
-                            </div>
-                            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                                <div class="govuk-summary-list__row">
-                                    <dd class="govuk-summary-list__value">
-                                        Name of added file goes here
-                                    </dd>
-                                    <dd class="govuk-summary-list__actions">
-                                        <a class="govuk-link" href="#">
-                                            Remove<span class="govuk-visually-hidden"> remove</span>
-                                        </a>
-                                    </dd>
-                                </div>
-                              <!--  <div class="govuk-summary-list__row">
-                                    <dd class="govuk-summary-list__value">
-                                        Name of added file goes here
-                                    </dd>
-                                    <dd class="govuk-summary-list__actions">
-                                        <a class="govuk-link" href="#">
-                                            Remove<span class="govuk-visually-hidden"> remove</span>
-                                        </a>
-                                    </dd>
-                                </div> -->
-                            </dl>
+                                
                         </div>
-                       
+                         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                     </div>
                     {{govukButton({
                     text: 'Submit'
                     })}}
                 </fieldset>
-                
+           
             </div>
         </form>
     </div>
