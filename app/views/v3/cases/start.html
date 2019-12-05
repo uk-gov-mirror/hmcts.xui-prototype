@@ -25,7 +25,7 @@ href: 'notice'
         <form action="/v3/cases/method">
             {{ govukInput({
             label: {
-            text: "Clients case reference",
+            text: "Your client’s case reference",
             classes: 'govuk-label--s'
             },
             hint: {
@@ -36,11 +36,11 @@ href: 'notice'
             }) }}
             {{ govukInput({
             label: {
-            text: "Clients email address",
+            text: "Your client’s email address",
             classes: 'govuk-label--s'
             },
             hint: {
-            text: "This is the email address they used when creating the case"
+            text: "This is the email address they used to create their case"
             },
             id: "emailaddress",
             name: "emailaddress"

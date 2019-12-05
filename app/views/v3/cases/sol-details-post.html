@@ -1,0 +1,75 @@
+{% extends "../layout.html" %}
+{% set pageId = 'notice-of-acting' %}
+{% block pageTitle %}
+Prefered method of confirmation - Notice of acting
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{{govukBackLink({
+href: 'details-post'
+})}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+        <form action="/v3/cases/details-post">
+            <h1 class="govuk-heading-xl">
+                <span class="govuk-caption-xl">Notice of acting</span>
+                Change your details
+            </h1>
+            <!-- <p class="govuk-body-l">Text</p> -->
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="full-name">
+                    Full name
+                </label>
+                <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false" value="Janet Tempest">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="full-name">
+                    Organisation name
+                </label>
+                <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false" value="Hamlin and Tinklin Solicitors">
+            </div>
+            <h3 class="govuk-heading-m">Your address</h3>
+            <span id="changed-name-hint" class="govuk-hint">
+                This is the address of your organisation. It will be shown at the top of the letter sent to the client.
+            </span>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="width-20">
+                    Building and street
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text" value="  72 Guild Street">
+            </div>
+            <div class="govuk-form-group">
+                <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="width-20">
+                    Town or city
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text" value="London">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="width-20">
+                    County
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="width-20">
+                    Postcode
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="width-20" name="width-10" type="text" value="SE23 6FH">
+            </div>
+            {{govukButton({
+            text: 'Save'
+            })}}
+        </form>
+    </div>
+</div>
+{% endblock %}

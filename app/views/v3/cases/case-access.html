@@ -25,46 +25,21 @@
  <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
  <form action="/v3/cases/notice">
-   {{ govukRadios({
-  idPrefix: "sign-in",
-  name: "sign-in",
-  fieldset: {
-    legend: {
-      text: "Case access",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
-    }
-  },
-  hint: {
-    text: "Some helpful text can be placed here"
-  },
-  items: [
-    {
-      value: "notice-of-acting",
-      text: "Notice of acting",
-      label: {
-        classes: "govuk-label--s"
-      },
-      hint: {
-        text: "This is sometimes known as ‘notice of change’. 
-        You can only do this if; a case exists online and you have the email address of the individual you are representing"
-      }
-    },
-    {
-      value: "inbound-coms",
-      text: "Another action",
-      label: {
-        classes: "govuk-label--s"
-      },
-      hint: {
-        text: "Text to go here."
-      }
-    }
-  ]
-}) }}
+
+   <h1 class="govuk-heading-xl">
+        Case access
+      </h1>
+
+<h2 class="govuk-heading-m">Notice of acting</h2>
+  <p>This is sometimes called a ‘notice of change'. Use this 'notice of acting' to tell a court that the legal representative in a case has changed.</p>
+
+   <p class="govuk-body">You can only do this if:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>the case already exists online</li>
+  <li>you know the case reference number, for example 1111-2222-3333-4444</li>
+  <li>you know the email address your client used to create the case</li>
+</ul>
         
-
-
             {{govukButton({
               text: 'Continue'
             })}}

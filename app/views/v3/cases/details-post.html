@@ -18,7 +18,7 @@ href: 'method'
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-        <form action="/v3/cases/notice-confirmation">
+        <form action="/v3/cases/notice-confirmation-post">
             <h1 class="govuk-heading-xl">
             <span class="govuk-caption-xl">Notice of acting</span>
             Check details
@@ -37,13 +37,14 @@ href: 'method'
             actions: {
             items: [
             {
-            href: "sol-details",
+            href: "sol-details-post",
             text: "Change",
             visuallyHiddenText: "name"
             }
             ]
             }
             },
+
             {
             key: {
             text: "Organisation"
@@ -54,14 +55,34 @@ href: 'method'
             actions: {
             items: [
             {
-            href: "sol-details",
+            href: "sol-details-post",
             text: "Change",
             visuallyHiddenText: "organisation"
             }
             ]
             }
-            
+            },
+
+                {
+            key: {
+            text: "Address"
+            },
+            value: {
+            html: "72 Guild Street<br>
+London<br>
+SE23 6FH"
+            },
+            actions: {
+            items: [
+            {
+            href: "sol-details-post",
+            text: "Change",
+            visuallyHiddenText: "organisation"
             }
+            ]
+            }
+            }
+
             ]
             }) }}
             <h2 class="govuk-heading-m">Your client’s details</h2>

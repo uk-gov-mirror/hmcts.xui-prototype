@@ -20,11 +20,17 @@
 
  {% set iterationTwoHtml %}
           <ul class="govuk-list">
+ <p class="govuk-body govuk-!-font-weight-bold">Get help telephone numbers</p>
+  <li><a href="/v3/cases">Case access - Get help link shown in footer</a></li>
+ <li><a href="/v3/cases/get-help">Get help - details page</a></li>
+ <br>
+
+  <p class="govuk-body govuk-!-font-weight-bold">Private beta</p>
+
             <p class="govuk-body govuk-!-font-weight-bold">Notice of acting</p>
         <li><a href="/v3/cases">Case access</a></li>
         <li><a href="/v3/cases/case-access">Case access - Notice of acting</a></li>
-         <li><a href="/v3/cases/notice-of-acting">Notice of acting - Options</a></li>
-          <li><a href="/v3/cases/notice-of-acting">Notice of acting - Act on a client’s behalf</a></li>
+         <li><a href="/v3/cases/notice">Notice of acting - Options</a></li>
           <li><a href="/v3/cases/start">Notice of acting - Act on a client’s behalf - step 1</a></li>
           <li><a href="/v3/cases/method">Notice of acting - Act on a client’s behalf - step 2</a></li>
 <li><a href="/v3/cases/prof-details-1">Notice of acting - Act on a client’s behalf - step 3</a></li>
@@ -61,7 +67,7 @@
       {% endset %}
 
       {{ govukDetails({
-        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Iteration 3</div>',
+        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Iteration 3 (Latest Dec 2019)</div>',
         html: iterationTwoHtml
       }) }}
 
@@ -113,5 +119,7 @@
 
     </div>
 </div>
+
+
 
 {% endblock %}
