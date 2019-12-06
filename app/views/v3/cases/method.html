@@ -25,6 +25,8 @@ href: 'start'
                             How does your client want to be contacted?
                         </h1>
                     </legend>
+          <p class="govuk-body-l">This will allow your client to confirm they want you to act on their behalf.</p>
+
                        {% set emailHtml %}
                    {{ govukInput({
   id: "contact-by-email",
@@ -110,9 +112,6 @@ href: 'start'
   name: "how-contacted",
   fieldset: {
 
-  },
-  hint: {
-    text: "This will allow your client to confirm they want you to act on their behalf."
   },
   items: [
     {
