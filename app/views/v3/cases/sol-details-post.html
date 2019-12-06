@@ -11,7 +11,7 @@ text: "beta"
 html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 {{govukBackLink({
-href: 'details-post'
+href: 'method'
 })}}
 {% endblock %}
 {% block content %}
@@ -20,9 +20,9 @@ href: 'details-post'
         <form action="/v3/cases/details-post">
             <h1 class="govuk-heading-xl">
                 <span class="govuk-caption-xl">Notice of acting</span>
-                Change your details
+                Your correspondence details
             </h1>
-            <!-- <p class="govuk-body-l">Text</p> -->
+            <p class="govuk-body-l">These details will be used in the letter sent to the client to confirm they want you to act on their behalf.</p> 
             <div class="govuk-form-group">
                 <label class="govuk-label" for="full-name">
                     Full name
@@ -36,9 +36,9 @@ href: 'details-post'
                 <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false" value="Hamlin and Tinklin Solicitors">
             </div>
             <h3 class="govuk-heading-m">Your address</h3>
-            <span id="changed-name-hint" class="govuk-hint">
+            <p>
                 This is the address of your organisation. It will be shown at the top of the letter sent to the client.
-            </span>
+            </p>
             <div class="govuk-form-group">
                 <label class="govuk-label" for="width-20">
                     Building and street
@@ -67,7 +67,7 @@ href: 'details-post'
                 <input class="govuk-input govuk-input--width-20" id="width-20" name="width-10" type="text" value="SE23 6FH">
             </div>
             {{govukButton({
-            text: 'Save'
+            text: 'Continue'
             })}}
         </form>
     </div>

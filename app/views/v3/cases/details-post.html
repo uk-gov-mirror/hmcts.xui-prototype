@@ -12,7 +12,7 @@ Prefered method of confirmation - Notice of acting
 }) }}
 
 {{govukBackLink({
-href: 'method'
+href: 'sol-details-post'
 })}}
 {% endblock %}
 {% block content %}
@@ -117,7 +117,7 @@ SE23 6FH"
             },
             value: {
             text: "",
-            html: data ['response']
+            html: "Post"
             },
             actions: {
             items: [
@@ -128,7 +128,32 @@ SE23 6FH"
             }
             ]
             }
+            },
+
+   {
+            key: {
+            text: "Address"
+            },
+            value: {
+            html: "10 The drive<br>
+Shirley park road<br>
+Shirley<br>
+CR0 8VX"
+            },
+            actions: {
+            items: [
+            {
+            href: "method",
+            text: "Change",
+            visuallyHiddenText: "organisation"
             }
+            ]
+            }
+            }
+
+
+
+
             ]
             }) }}
             {{govukButton({

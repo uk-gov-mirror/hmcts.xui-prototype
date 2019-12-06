@@ -17,7 +17,7 @@ href: 'start'
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="/v3/cases/details">
+        <form action="/v3/cases/sol-details">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -122,7 +122,7 @@ href: 'start'
     },
     {
       value: "Post",
-                    text: "By post ",
+                    text: "Enter client's postal address ",
                     conditional: {
                     html: postHtml
       }
@@ -137,7 +137,7 @@ href: 'start'
             text: 'Continue'
             })}}
         </form>
-        <p><a href="details-post">Post example</a></p>
+        <p><a href="sol-details-post">Post example</a></p>
     </div>
 
 </div>
