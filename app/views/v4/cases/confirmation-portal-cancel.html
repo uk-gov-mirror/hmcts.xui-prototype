@@ -1,0 +1,45 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Confirm details of your legal representative
+{% endset%}
+
+{% block pageTitle %}
+  There has been no change to your current legal representation
+{% endblock %}
+
+ {% block beforeContent %}
+  {{ super() }}
+  {{govukBackLink({
+    href: 'confirmation-portal'
+  })}}
+{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+   <h1 class="govuk-heading-xl">There has been no change to your legal representative</h1>
+
+   <p>You’ve chosen not to change your legal representative at this time.</p>
+       
+     <h2 class="govuk-heading-m">What happens next</h2>
+
+<p>You can use the link in the confirmation email to tell us who you want to represent your case.</p>
+
+<p>The link will expire 14 days from the date you received the email.</p>
+
+
+        <P>You can now close this window.</P>
+ 
+    </div>
+  </div>
+
+
+{% endblock %}
+

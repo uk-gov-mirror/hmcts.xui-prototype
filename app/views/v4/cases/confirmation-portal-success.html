@@ -1,0 +1,44 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Confirm details of your legal representative
+{% endset%}
+
+{% block pageTitle %}
+  Confirmation successful
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+           Confirmation sent
+          </h1>
+        <!--  <div class="govuk-panel__body">
+            Your reference number<br><strong>HDJ2123F</strong>
+          </div> -->
+        </div>
+     
+       <p class="govuk-body"> 
+
+       <p class="govuk-body">We have a sent an email to [SOLICITOR NAME] at [ORGANISATION] confirming you want them to act on your behalf.</p>
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+
+        <p>
+          Your case will now be shared with [SOLICITOR NAME]. Contact them directly if you have any questions about your case.
+        </p>
+
+        <P>You can now close this window.</P>
+ 
+    </div>
+  </div>
+
+   <h3 class="govuk-heading-m"><a style="color:blue" href="confirmation-email-portal">Click here to continue journey from solicitors point of view (Email - they will see)</a></h3>
+
+
+{% endblock %}
+

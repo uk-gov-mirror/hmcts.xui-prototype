@@ -1,0 +1,89 @@
+
+{% extends "layout.html" %}
+
+{% set serviceName %}
+  Confirm details of your legal representative
+{% endset%}
+
+{% block pageTitle %}
+  Confirm details of your legal representative
+{% endblock %}
+
+{% block content %}
+
+
+  
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Confirm details of your legal representative</h1>
+          <p>You’ve asked for the following person and organisation to act on your behalf.</p>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Janet Tempest"
+            },
+            actions: {
+             
+            }
+          },
+
+           {
+            key: {
+              text: "Organisation"
+            },
+            value: {
+              html: " Hamlin and Tinklin Solicitors"
+            },
+            actions: {
+            
+            }
+          },
+         
+          {
+               key: {
+              text: "Case reference"
+
+            },
+            value: {
+              text: "1234-5678-9876-4321",
+              html: data['reference'] 
+            },
+            actions: {
+             
+            }
+          }
+        ]
+      }) }}
+
+         {{ govukButton({
+          "text": "Confirm",
+          href: 'confirmation-portal-success'
+        }) }}
+
+<p><a href="/v3/cases/confirmation-portal-cancel">I can't do this right now</a></p>
+
+      </form>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

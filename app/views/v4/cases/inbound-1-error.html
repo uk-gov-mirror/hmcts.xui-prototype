@@ -1,0 +1,139 @@
+{% extends "../layout.html" %}
+{% set pageId = 'notice-of-acting' %}
+{% block pageTitle %}
+Contact HMCTS
+{% endblock %}
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{{ hmctsHeader({
+service: {
+name: serviceName,
+url: '/'
+},
+navigation: {
+label: 'Account navigation',
+items: [{
+text: 'Sign out',
+href: '#1'
+}]
+}
+}) }}
+{% set searchHtml %}
+<a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
+{% endset %}
+{{ hmctsPrimaryNavigation({
+label: 'Primary navigation',
+items: [{
+text: 'Your cases',
+href: getUrl('/cases'),
+active: pageId == 'your-cases'
+},
+{
+text: 'Case access',
+href: getUrl('/cases/case-access'),
+active: pageId == 'case-access'
+}
+],
+searchHtml: searchHtml
+}) }}
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{{ super() }}
+{{govukBackLink({
+href: 'inbound'
+})}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                        <a href="#passport-issued-error">The selected file must be smaller than 20MB</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <form action="inbound-confirm">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold"><span class="govuk-caption-xl">Solicitor’s letters</span>
+                            Contact HMCTS
+                        </h1>
+                    </legend>
+                    <p class="govuk-body">We will aim to reply within {X} working days</p>
+                    <!-- <h2 class="govuk-heading-m">Solicitor’s letters</h2> -->
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-line-1">Case reference
+                            <span class="govuk-visually-hidden"></span>
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="address-line-1" type="text" value="1111-0000-8888-9999" readonly="readonly" disabled>
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-line-1">Your name
+                            <span class="govuk-visually-hidden"></span>
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="address-line-1" type="text" value="Lexi Maplethorpe-Collins">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-town">
+                            Your email address
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" value="lexi.maplethorpe-collins@huxleyandbridgesolicitors.com"></div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-town">
+                            Your telephone number (optional)
+                        </label>
+                        <span id="more-detail-hint" class="govuk-hint">
+                            We will use this number if we need to contact you.
+                        </span>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail">
+                            Comments
+                        </label>
+                        <span id="more-detail-hint" class="govuk-hint">
+                            Information specific to this case only.
+                        </span>
+                        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                    <div class="govuk-form-group">
+                        <div class="govuk-form-group govuk-form-group--error">
+                            <label class="govuk-label govuk-label--m" for="documents">
+                                Upload a file
+                            </label>
+                            <span id="file-upload-1-error" class="govuk-error-message">
+                                <span id="more-detail-hint" class="govuk-hint">The combined size of any files you upload must not exceed 20mb.</span>
+                                <span class="govuk-visually-hidden">Error:</span> The selected file must be smaller than 20MB
+                            </span>
+                            <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-error">
+                        </div>
+                        <p><a href="inbound-1" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+                                Upload file
+                            </a></p>
+                        <div class="moj-multi-file-upload">
+                            <div class="moj-multi-file__uploaded-files ">
+                            </div>
+                            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                        </div>
+                        {{govukButton({
+                        text: 'Submit'
+                        })}}
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
