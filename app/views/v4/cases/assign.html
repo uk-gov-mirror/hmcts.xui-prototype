@@ -1,0 +1,81 @@
+{% extends "../layout.html" %}
+{% set pageId = 'notice-of-acting' %}
+{% block pageTitle %}
+Contact HMCTS
+{% endblock %}
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{{ hmctsHeader({
+
+    service: {
+      name: serviceName,
+      url: '/'
+    },
+    navigation: {
+      label: 'Account navigation',
+      items: [{
+        text: 'Sign out',
+        href: '#1'
+      }]
+    }
+  }) }}
+
+{% set searchHtml %}
+<a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
+{% endset %}
+
+{{ hmctsPrimaryNavigation({
+    label: 'Primary navigation',
+    items: [{
+    text: 'Your cases',
+    href: getUrl('/cases'),
+    active: pageId == 'your-cases'
+    },
+    {
+    text: 'Case access',
+    href: getUrl('/cases/case-access'),
+    active: pageId == 'case-access'
+  }
+    ],
+    searchHtml: searchHtml
+  }) }}
+
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ super() }}
+{{govukBackLink({
+href: 'show'
+})}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <h1 class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold"> <span class="govuk-caption-xl">Assign to another solicitor</span>
+        Search for solicitors
+      </h1>
+    </div>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-7">
+    <span id="" class="govuk-hint hmcts-search__hint ">
+      Solicitors must be registered with MyHMCTS. Search by name, location or postcode</span>
+    <input class="govuk-input hmcts-search__input" id="new" name="" type="search" aria-describedby="" onchange="location = this.value;">
+
+  </div>
+</div>
+<h2 class="govuk-heading-l">Result</h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--visible">
+  </div>
+</div>
+{% endblock %}

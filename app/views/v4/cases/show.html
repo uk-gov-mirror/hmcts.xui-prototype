@@ -62,15 +62,21 @@ href: 'index'
 <div class="hmcts-page-heading__title">
 <h1 class="govuk-heading-xl">Case details (h1)</h1>
 </div>
-
 <div class="hmcts-page-heading__actions">
-
 <div class="hmcts-menu">
   <div class="hmcts-menu__wrapper">
+    <div class="govuk-form-group">
+      <select class="govuk-select" id="sort" name="sort" onchange="location = this.value;">
+        <option value="#" selected>Select action</option>
+        <option value="assign">Assign to another solicitor</option>
+        <option value="inbound">Contact HMCTS about this case</option>
+      </select>
+    </div>
+<!--
 <p><a href="inbound" role="button" draggable="false" class="govuk-button hmcts-menu__item hmcts-button--secondary hmcts-page-heading__action">
   Contact HMCTS about this case
 </a></p>
-   
+-->
   </div>
 </div>
 
