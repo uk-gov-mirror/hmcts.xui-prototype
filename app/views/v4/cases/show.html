@@ -1,13 +1,12 @@
-
 {% extends "../layout.html" %}
 
 {% block pageTitle %}
-  Case details
+Case details
 {% endblock %}
 
 {% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {{ hmctsHeader({
+{% include "includes/cookie-banner.html" %}
+{{ hmctsHeader({
 
     service: {
       name: serviceName,
@@ -23,11 +22,11 @@
     }
   }) }}
 
-  {% set searchHtml %}
-    <a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
-  {% endset %}
+{% set searchHtml %}
+<a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
+{% endset %}
 
-  {{ hmctsPrimaryNavigation({
+{{ hmctsPrimaryNavigation({
     label: 'Primary navigation',
     items: [{
     text: 'Your cases',
@@ -58,29 +57,29 @@ href: 'index'
 {% endblock %}
 
 {% block content %}
-  <div class="hmcts-page-heading">
-<div class="hmcts-page-heading__title">
-<h1 class="govuk-heading-xl">Case details (h1)</h1>
-</div>
-<div class="hmcts-page-heading__actions">
-<div class="hmcts-menu">
-  <div class="hmcts-menu__wrapper">
-    <div class="govuk-form-group">
-      <select class="govuk-select" id="sort" name="sort" onchange="location = this.value;">
-        <option value="#" selected>Select action</option>
-        <option value="assign">Assign to another solicitor</option>
-        <option value="inbound">Contact HMCTS about this case</option>
-      </select>
-    </div>
-<!--
+<div class="hmcts-page-heading">
+  <div class="hmcts-page-heading__title">
+    <h1 class="govuk-heading-xl">Case details (h1)</h1>
+  </div>
+  <div class="hmcts-page-heading__actions">
+    <div class="hmcts-menu">
+      <div class="hmcts-menu__wrapper">
+        <div class="govuk-form-group">
+          <select class="govuk-select" id="sort" name="sort" onchange="location = this.value;">
+            <option value="#" selected>Select action</option>
+            <option value="assign">Share case with respondent solicitor</option>
+            <option value="inbound">Contact HMCTS about this case</option>
+          </select>
+        </div>
+        <!--
 <p><a href="inbound" role="button" draggable="false" class="govuk-button hmcts-menu__item hmcts-button--secondary hmcts-page-heading__action">
   Contact HMCTS about this case
 </a></p>
 -->
-  </div>
-</div>
+      </div>
+    </div>
 
-</div>
+  </div>
 
   <!--  <div class="hmcts-page-heading__title">
       <h1 class="govuk-heading-xl">Case details (h1)</h1>
@@ -98,13 +97,13 @@ href: 'index'
           </div>
         </a>
     </div> -->
+</div>
+
+
+<a href="#">
+  <div class="black-box">
+    <h1 class="govuk-heading-l">Case details</h1>
   </div>
-
-
-  <a href="#">
-    <div class="black-box">
-      <h1 class="govuk-heading-l">Case details</h1>
-    </div>
-  </a>
+</a>
 
 {% endblock %}
