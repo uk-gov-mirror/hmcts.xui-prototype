@@ -1,0 +1,93 @@
+{% extends "../layout.html" %}
+{% set pageId = 'case-access' %}
+{% block pageTitle %}
+Case access
+{% endblock %}
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ hmctsHeader({
+
+    service: {
+      name: serviceName,
+      url: '/'
+    },
+
+    navigation: {
+      label: 'Account navigation',
+      items: [{
+        text: 'Sign out',
+        href: '#1'
+      }]
+    }
+  }) }}
+
+  {% set searchHtml %}
+    <a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
+  {% endset %}
+
+  {{ hmctsPrimaryNavigation({
+    label: 'Primary navigation',
+    items: [{
+    text: 'Your cases',
+    href: getUrl('/cases'),
+    active: pageId == 'your-cases'
+    },
+    {
+    text: 'Case access',
+    href: getUrl('/cases/notice'),
+    active: pageId == 'case-access'
+  }
+    ],
+    searchHtml: searchHtml
+  }) }}
+
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{{govukBackLink({
+href: 'notice'
+})}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">Notice of acting</span>
+  Change an existing legal representative
+</h1>
+
+        <form action="/v4/cases/details">
+            {{ govukInput({
+            label: {
+            text: "Your client’s case reference",
+            classes: 'govuk-label--s'
+            },
+            hint: {
+            text: "This is a 16-digit number. For example: 1111-2222-3333-4444"
+            },
+            id: "reference",
+            name: "reference"
+            }) }}
+            {{ govukInput({
+            label: {
+            text: "Your client’s email address",
+            classes: 'govuk-label--s'
+            },
+            hint: {
+            text: "This is the email address they used to create their case"
+            },
+            id: "emailaddress",
+            name: "emailaddress"
+            }) }}
+            {{govukButton({
+            text: 'Continue'
+            })}}
+        </form>
+    </div>
+</div>
+{% endblock %}

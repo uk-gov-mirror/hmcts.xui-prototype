@@ -4,27 +4,36 @@
 {% set pageId = 'notice-of-acting' %}
 
 {% block pageTitle %}
-  Notice of acting confirmation
+  Confirmation email sent
 {% endblock %}
 
 {% block content %}
+
+
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
          {{ govukPanel({
-              titleText: "Confirmation sent to",
-              html: data['emailaddress']
+              titleText: "Message sent"
             }) }}
       <h2 class="govuk-heading-m">What happens next</h2>
 
      
        <p class="govuk-body"> 
-       The recepient will get an email from HM Courts and Tribunals asking them to confirm the notice of acting request to act ... some more text in here... 
+       Your client will receive an [email] [letter] from HM Courts and Tribunals Service to confirm they want you to act on their behalf.
       </p>
+
+<p>The link will expire 14 days from the date the email is sent.</p>
+
     <p><a href="index.html">Back to your cases</a></p>
+    <h3 class="govuk-heading-m"><a style="color:blue" href="confirmation-email">Email - continue journey from recepient point of view</a></h3>
+  
+     <p></p>
     </div>
+
   </div>
 
-<p><a href="confirmation-email">Continue journey - Link to email - they will see</a></p>
+
 
 {% endblock %}
 

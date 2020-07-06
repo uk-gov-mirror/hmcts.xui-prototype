@@ -1,0 +1,143 @@
+{% extends "../layout.html" %}
+{% set pageId = 'notice-of-acting' %}
+{% block pageTitle %}
+Prefered method of confirmation - Notice of acting
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{{govukBackLink({
+href: 'start'
+})}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="/v3/cases/sol-details">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading"><span class="govuk-caption-xl">Notice of acting</span>
+                            How does your client want to be contacted?
+                        </h1>
+                    </legend>
+          <p class="govuk-body-l">This will allow your client to confirm they want you to act on their behalf.</p>
+
+                       {% set emailHtml %}
+                   {{ govukInput({
+  id: "contact-by-email",
+  name: "contact-by-email",
+  type: "email",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Email address"
+  },
+  attributes: {
+    spellcheck: "false"
+  }
+}) }}
+{% endset -%}
+
+{% set postHtml %}
+{{ govukInput({
+  id: "contact-by-post",
+  name: "contact-by-post",
+  type: "tel",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Building and street"
+  }
+}) }}
+{{ govukInput({
+  id: "contact-by-post",
+  name: "contact-by-post",
+  type: "tel",
+  classes: "govuk-!-width-two-thirds",
+   label: {
+    text: ""
+  }
+}) }}
+
+{{ govukInput({
+  id: "contact-by-post",
+  name: "contact-by-post",
+  type: "tel",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Town or city"
+
+  }
+}) }}
+
+{{ govukInput({
+  id: "contact-by-post",
+  name: "contact-by-post",
+  type: "tel",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "County"
+  }
+}) }}
+
+{{ govukInput({
+  id: "contact-by-post",
+  name: "contact-by-post",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Postcode"
+  }
+}) }}
+{% endset -%}
+
+
+{% set textHtml %}
+{{ govukInput({
+  id: "contact-by-text",
+  name: "contact-by-text",
+  type: "tel",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Mobile phone number"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "how-contacted-conditional",
+  name: "how-contacted",
+  fieldset: {
+
+  },
+  items: [
+    {
+      value: "Email",
+      text: "Client's email address",
+      html: data['emailaddress']
+    },
+    {
+      value: "Post",
+                    text: "By post",
+                    conditional: {
+                    html: postHtml
+      }
+    }
+  ]
+}) }}
+                </fieldset>
+             
+
+            </div>
+            {{govukButton({
+            text: 'Continue'
+            })}}
+        </form>
+        <p><a href="sol-details-post">By post example</a></p>
+    </div>
+
+</div>
+{% endblock %}

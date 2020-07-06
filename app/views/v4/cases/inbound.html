@@ -1,0 +1,129 @@
+{% extends "../layout.html" %}
+{% set pageId = 'notice-of-acting' %}
+{% block pageTitle %}
+Contact HMCTS
+{% endblock %}
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ hmctsHeader({
+
+    service: {
+      name: serviceName,
+      url: '/'
+    },
+
+    navigation: {
+      label: 'Account navigation',
+      items: [{
+        text: 'Sign out',
+        href: '#1'
+      }]
+    }
+  }) }}
+
+  {% set searchHtml %}
+    <a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
+  {% endset %}
+
+  {{ hmctsPrimaryNavigation({
+    label: 'Primary navigation',
+    items: [{
+    text: 'Your cases',
+    href: getUrl('/cases'),
+    active: pageId == 'your-cases'
+    },
+    {
+    text: 'Case access',
+    href: getUrl('/cases/case-access'),
+    active: pageId == 'case-access'
+  }
+    ],
+    searchHtml: searchHtml
+  }) }}
+
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ super() }}
+{{govukBackLink({
+href: 'show'
+})}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="inbound-0">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold"> <!--<span class="govuk-caption-xl">Case reference: 1111-0000-8888-9999</span> -->
+                            Contact HMCTS
+                        </h1>
+                    </legend>
+                    <span id="sign-in-hint" class="govuk-hint">
+                        Use this service if you need to send us a message about this case only.<br>If you require help or technical assistance please contact your service representative.
+                    </span>
+                    <p class="govuk-body">We will aim to reply within {X} working days.</p>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="option-1" name="option-1" type="radio" value="option-1" aria-describedby="option-1-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-label--s" for="option-1">
+                                Solicitor’s letters
+                            </label>
+                            <span id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                Hint text to go here.
+                            </span>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="option-2" name="option-2" type="radio" value="option-2" aria-describedby="option-2-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-label--s" for="option-2">
+                                Hearing postponed
+                            </label>
+                            <span id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                Hint text to go here.
+                            </span>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="option-3" name="option-3" type="radio" value="option-3" aria-describedby="option-3-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-label--s" for="option-3">
+                                Ask Judge to clarify a direction
+                            </label>
+                            <span id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                Hint text to go here.
+                            </span>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="option-4" name="option-4" type="radio" value="option-4" aria-describedby="option-4-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-label--s" for="option-4">
+                                Provide information, referencing an attachment
+                            </label>
+                            <span id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                Hint text to go here.
+                            </span>
+                        </div>
+                        <div class="govuk-radios__divider">or</div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="option-5" name="option-5" type="radio" value="option-5" aria-describedby="option-5-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-label--s" for="option-5">
+                                Something else
+                            </label>
+                            <span id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                Hint text to go here.
+                            </span>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            {{govukButton({
+            text: 'Continue'
+            })}}
+        </form>
+    </div>
+</div>
+{% endblock %}

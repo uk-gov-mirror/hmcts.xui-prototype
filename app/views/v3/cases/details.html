@@ -1,0 +1,118 @@
+{% extends "../layout.html" %}
+{% set pageId = 'notice-of-acting' %}
+{% block pageTitle %}
+Prefered method of confirmation - Notice of acting
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{govukBackLink({
+href: 'sol-details'
+})}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+        <form action="/v3/cases/notice-confirmation">
+            <h1 class="govuk-heading-xl">
+            <span class="govuk-caption-xl">Notice of acting</span>
+            Check details
+        </h1>
+            <h2 class="govuk-heading-m">Your details</h2>
+            {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+            key: {
+            text: "Name"
+            },
+            value: {
+            text: "Janet Tempest"
+            },
+            actions: {
+            items: [
+            {
+            href: "sol-details",
+            text: "Change",
+            visuallyHiddenText: "name"
+            }
+            ]
+            }
+            },
+            {
+            key: {
+            text: "Organisation"
+            },
+            value: {
+            html: " Hamlin and Tinklin Solicitors"
+            },
+            actions: {
+            items: [
+            {
+            href: "sol-details",
+            text: "Change",
+            visuallyHiddenText: "organisation"
+            }
+            ]
+            }
+            
+            }
+            ]
+            }) }}
+            <h2 class="govuk-heading-m">Your client’s details</h2>
+            {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+            key: {
+            text: "Case reference"
+            },
+            value: {
+            text: "1234-5678-9876-4321",
+            html: data['reference']
+            },
+            actions: {
+            }
+            },
+            {
+            key: {
+            text: "Email address"
+            },
+            value: {
+            text: "Email address of client",
+            html: data['emailaddress']
+            },
+            actions: {
+            }
+            },
+            {
+            key: {
+            text: "Method of contact"
+            },
+            value: {
+            text: "",
+            html: "Email"            },
+            actions: {
+            items: [
+            {
+            href: "method",
+            text: "Change",
+            visuallyHiddenText: "method"
+            }
+            ]
+            }
+            }
+            ]
+            }) }}
+            {{govukButton({
+            text: 'Submit'
+            })}}
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -16,20 +16,87 @@
       <p class="govuk-body">This is the prototype to let judges, panel members, legal advisors, solicitors, paralegals manage cases.</p>
 
       <h2 class="govuk-heading-l">Iterations</h2>
-
-
  {% set iterationTwoHtml %}
-        <p class="govuk-body">Added support for Notice of Acting</p>
-        <ul class="govuk-list">
-          <li><a href="/v3/cases">View prototype</a></li>
+          <ul class="govuk-list">
+ <p class="govuk-body govuk-!-font-weight-bold">Get help telephone numbers</p>
+  <li><a href="/v3/cases">Case access - Get help link shown in footer</a></li>
+ <li><a href="/v3/cases/get-help">Get help - details page</a></li>
+ <br>
+
+  <p class="govuk-body govuk-!-font-weight-bold">Private beta</p>
+<li><a href="/v3/cases/get-help">Get help - details page - shows status using badges</a></li>
+<br>
+            <p class="govuk-body govuk-!-font-weight-bold">Notice of acting</p>
+        <li><a href="/v3/cases">Case access</a></li>
+        <li><a href="/v3/cases/case-access">Case access - Notice of acting</a></li>
+         <li><a href="/v3/cases/notice">Notice of acting - Options</a></li>
+          <li><a href="/v3/cases/start">Notice of acting - Act on a client’s behalf - step 1</a></li>
+          <li><a href="/v3/cases/method">Notice of acting - Act on a client’s behalf - step 2 - Choose</a></li>
+<li><a href="/v3/cases/sol-details">Notice of acting - Act on a client’s behalf - step 3 - Email route - Solicitor details</a></li>
+<li><a href="/v3/cases/sol-details-post">Notice of acting - Act on a client’s behalf - step 3 - Post route - Solicitor details and corresponence address</a></li>
+
+<li><a href="/v3/cases/details">Notice of acting - Act on a client’s behalf - step 4 - Email route - Check answers</a></li>
+<li><a href="/v3/cases/details-post">Notice of acting - Act on a client’s behalf - step 4 - Post route - Check answerss</a></li>
+
+<li><a href="/v3/cases/notice-confirmation">Notice of acting - Act on a client’s behalf - step 5 - Email route</a></li>
+<li><a href="/v3/cases/notice-confirmation-post">Notice of acting - Act on a client’s behalf - step 5 - Post route</a></li>
+<br>
+<li><a href="/v3/cases/confirmation-email">Notice of acting - Email - Continue journey from recepient point of view - step 1</a></li>
+<li><a href="/v3/cases/confirmation-post">Notice of acting - Post - Continue journey from recepient point of view - step 1</a></li>
+<br>
+<li><a href="/v3/cases/confirmation-portal">Notice of acting - Portal - Continue journey from recepient point of view - step 2</a></li>
+<li><a href="/v3/cases/confirmation-portal-cancel">Notice of acting - Portal - Cancel - Continue journey from recepient point of view - step 3</a></li>
+<li><a href="/v3/cases/confirmation-portal-success">Notice of acting - confirmation sent - Continue journey from recepient point of view - step 4</a></li>
+<br>
+<li><a href="/v3/cases/confirmation-email-portal">Notice of acting - Act on a client’s behalf - step 6</a></li>
+<li><a href="/v3/cases/show">Notice of acting - Act on a client’s behalf - step 7</a></li>
         </ul>
+        <p class="govuk-body govuk-!-font-weight-bold">Inbound communication</p>
+        <ul class="govuk-list">
+          <li><a href="/v3/cases/show">Inbound communications - Action on case</a></li>
+          <li><a href="/v3/cases/inbound">Inbound communications - Contact us about ...</a></li>
+          <li><a href="/v3/cases/inbound-error">Inbound communications - Contact us about error ...</a></li>
+          <li><a href="/v3/cases/inbound-0">Inbound communications - Contact us about ... Solicitor’s letters - no file added</a></li>
+          <li><a href="/v3/cases/inbound-1-error">Inbound communications - Contact us about error ... Solicitor’s letters</a></li>
+          <li><a href="/v3/cases/inbound-1">Inbound communications - Contact us about ... Solicitor’s letters - with file added</a></li>
+          <li><a href="/v3/cases/inbound-confirm">Inbound communications - Message sent</a></li>
+          <li><a href="/v3/cases/confirmation-email-message">Inbound communications - Email to user</a></li>
+          <li><a href="/v3/cases/confirmation-email-message-error">Inbound communications - Email to user - virus detected</a></li>
+          <li><a href="/v3/cases/confirmation-email-message-support">Inbound communications - Email to support team - example of ticket</a></li>
+        </ul>
+     
       {% endset %}
 
+ 
+ {% set iterationFourHtml %}
+  <p class="govuk-body govuk-!-font-weight-bold">Get help telephone numbers updated with IAC and FPLA</p>
+ <ul class="govuk-list"><li><a href="/v4/cases/get-help">Get help - details page (no service badges)</a></li>
+ <br>
+
+           <p class="govuk-body govuk-!-font-weight-bold">Notice of Acting</p>
+          <li><a href="/v4/cases/show">Notice of Acting</a></li>
+        </ul>
+        <p class="govuk-body govuk-!-font-weight-bold">Terms and Conditions</p>
+        <ul class="govuk-list">
+          <li><a href="/v4">Terms and Conditions - Sign in</a></li>
+          <li><a href="/v4/terms">Terms and Conditions - New terms - EUI-1593 - text changes updated April 2020 EUI-1855.</a></li>
+          <li><a href="/v4/terms-pop">Terms and Conditions - New terms pop up (EUI-1855)</a></li>
+        </ul>
+      {% endset %}     
+
+
+ {{ govukDetails({
+        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Iteration 4 (Latest April 2020)</div>',
+        html: iterationFourHtml
+      }) }}
+
+     
       {{ govukDetails({
-        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Iteration 3</div>',
+        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Iteration 3 (Dec 2019)</div>',
         html: iterationTwoHtml
       }) }}
 
+        
       {% set iterationOneHtml %}
         <p class="govuk-body">Illustrate the components and journey as black boxes including the way the components load and render indepently.</p>
         <ul class="govuk-list">
@@ -78,5 +145,7 @@
 
     </div>
 </div>
+
+
 
 {% endblock %}

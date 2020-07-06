@@ -1,61 +1,60 @@
-
 {% extends "../layout.html" %}
-
-{% set pageId = 'notice-of-acting' %}
-
+{% set pageId = 'case-access' %}
 {% block pageTitle %}
-  Notice of acting
+Case access
 {% endblock %}
-
-
 {% block beforeContent %}
-
-  {{ super() }}
-
+{{ govukPhaseBanner({
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{{govukBackLink({
+href: 'case-access'
+})}}
 {% endblock %}
-
-
 {% block content %}
- <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-
-          <h1 class="govuk-heading-xl">Notice of Acting</h1>
-
-          <p>[NEW TEXT REQUIRED - Context for action]</p>
-
-          <form action="/v3/cases/notice-confirmation">
-
-           {{ govukInput({
-              label: {
-                text: "Court reference number",
-                classes: 'govuk-label--m'
-                },
-                hint: {
-                text: "Example: 4458-8429-2491-3791"
-              },
-              id: "firstname",
-              name: "firstname"
-            }) }}
-         
-            {{ govukInput({
-              label: {
-                text: "Email address",
-                classes: 'govuk-label--m'
-              },
-                hint: {
-                text: ""
-              },
-              id: "emailaddress",
-              name: "emailaddress"
-            }) }}
-         
-
-            {{govukButton({
-              text: 'Submit'
-            })}}
-          </form>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <form action="/v3/cases/start">
+                <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-heading-xl">
+                            <span class="govuk-caption-xl">Notice of acting</span>
+                            What do you want to do?
+                        </h1>
+                    </legend>
+                    <span id="changed-name-hint" class="govuk-hint">
+                        Select one of the following:
+                    </span>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in">
+                                Become a client’s new legal representative
+                            </label>
+                            <span id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                               For example, if they no longer want to represent themselves
+                            </span>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                            <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-2">
+                                Change a client's existing solicitor
+                            </label>
+                            <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                                For example, if they want to change their current solicitor
+                            </span>
+                        </div>
+                    </div>
+                </fieldset>
         </div>
-      </div>
-    </main>
-  </div>
+        {{govukButton({
+        text: 'Continue'
+        })}}
+        </form>
+    </div>
+</div>
 {% endblock %}

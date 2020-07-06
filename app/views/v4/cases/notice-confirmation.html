@@ -1,0 +1,36 @@
+
+{% extends "../layout.html" %}
+
+{% set pageId = 'notice-of-acting' %}
+
+{% block pageTitle %}
+  Confirmation email sent
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+         {{ govukPanel({
+              titleText: "Success"
+            }) }}
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+     
+       <p class="govuk-body"> 
+       You have succesfully changed legal representative on behalf of the client. 
+
+    <p><a href="index.html">Back to your cases</a></p>
+   
+  
+     <p></p>
+    </div>
+
+  </div>
+
+
+
+{% endblock %}
+

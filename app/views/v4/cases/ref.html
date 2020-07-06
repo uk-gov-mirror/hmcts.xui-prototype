@@ -1,0 +1,78 @@
+{% extends "../layout.html" %}
+{% set pageId = 'notice-of-acting' %}
+{% block pageTitle %}
+Contact HMCTS
+{% endblock %}
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{{ hmctsHeader({
+
+    service: {
+      name: serviceName,
+      url: '/'
+    },
+    navigation: {
+      label: 'Account navigation',
+      items: [{
+        text: 'Sign out',
+        href: '#1'
+      }]
+    }
+  }) }}
+
+{% set searchHtml %}
+<a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
+{% endset %}
+
+{{ hmctsPrimaryNavigation({
+    label: 'Primary navigation',
+    items: [{
+    text: 'Your cases',
+    href: getUrl('/cases'),
+    active: pageId == 'your-cases'
+    },
+    {
+    text: 'Case access',
+    href: getUrl('/cases/case-access'),
+    active: pageId == 'case-access'
+  }
+    ],
+    searchHtml: searchHtml
+  }) }}
+
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ super() }}
+{{govukBackLink({
+href: 'BR31'
+})}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <h1 class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold"> <span class="govuk-caption-xl">Share case with respondent solicitor</span>
+        Add a reference
+      </h1>
+    </div>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-7">
+    <span id="" class="govuk-hint hmcts-search__hint ">
+      You can add a reference to help you find a case. For example, the respondent solicitor’s name, email address or unique case ID.</span>
+    <input class="govuk-input hmcts-search__input" id="new" name="" type="search" aria-describedby="" value="">
+  </div>
+</div>
+{{ govukButton({
+text: "Continue",
+href: "check"
+}) }}
+{% endblock %}

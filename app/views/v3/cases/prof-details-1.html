@@ -1,0 +1,87 @@
+{% extends "../layout.html" %}
+{% set pageId = 'case-access' %}
+{% block pageTitle %}
+Case access
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{{govukBackLink({
+href: 'method'
+})}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            <span class="govuk-caption-xl">Notice of acting</span>
+            Confirm details of legal represenatative
+        </h1>
+        <form action="/v3/cases/details">
+            {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+            key: {
+            text: "Name"
+            },
+            value: {
+            text: "Janet Tempest"
+            },
+            actions: {
+            items: [
+            {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+            }
+            ]
+            }
+            },
+            {
+            key: {
+            text: "Organisation"
+            },
+            value: {
+            html: " Hamlin and Tinklin Solicitors"
+            },
+            actions: {
+            items: [
+            {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "organisation"
+            }
+            ]
+            }
+            },
+            {
+            key: {
+            text: "Address"
+            },
+            value: {
+            html: "72 Guild Street<br>London<br>SE23 6FH"
+            },
+            actions: {
+            items: [
+            {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+            }
+            ]
+            }
+            }
+            ]
+            }) }}
+            {{govukButton({
+            text: 'Continue'
+            })}}
+        </form>
+    </div>
+</div>
+{% endblock %}

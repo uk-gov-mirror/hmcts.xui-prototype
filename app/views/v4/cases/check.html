@@ -1,0 +1,186 @@
+{% extends "../layout.html" %}
+{% set pageId = 'notice-of-acting' %}
+{% block pageTitle %}
+Contact HMCTS
+{% endblock %}
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{{ hmctsHeader({
+
+    service: {
+      name: serviceName,
+      url: '/'
+    },
+    navigation: {
+      label: 'Account navigation',
+      items: [{
+        text: 'Sign out',
+        href: '#1'
+      }]
+    }
+  }) }}
+
+{% set searchHtml %}
+<a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
+{% endset %}
+
+{{ hmctsPrimaryNavigation({
+    label: 'Primary navigation',
+    items: [{
+    text: 'Your cases',
+    href: getUrl('/cases'),
+    active: pageId == 'your-cases'
+    },
+    {
+    text: 'Case access',
+    href: getUrl('/cases/case-access'),
+    active: pageId == 'case-access'
+  }
+    ],
+    searchHtml: searchHtml
+  }) }}
+
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{{ super() }}
+{{govukBackLink({
+href: 'ref'
+})}}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <h1 class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold"> <span class="govuk-caption-xl">Share case with respondent solicitor</span>
+        Check and confirm details
+      </h1>
+    </div>
+
+
+
+    <h2 class="govuk-heading-m">Solicitors details</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Organisation name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Pritchard Joyce & Hinds
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="BR31">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          108-110 Beckenham High Street<br>
+          Beckenham<br>
+          Kent<br>
+          BR3 1EB
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="BR31">
+            <span class="govuk-visually-hidden"> address</span>
+          </a>
+        </dd>
+      </div>
+
+
+    </dl>
+
+    <h2 class="govuk-heading-m">Case details</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Case title
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Neha Venkatanarasimharaj Vs Sanjet Venkatanarasimharaj
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            <span class="govuk-visually-hidden"> previous application number</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Case type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Divorce case - v115.00
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            <span class="govuk-visually-hidden"> licence type</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Case reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          9417-3739-9576-5131
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="ref">
+            <span class="govuk-visually-hidden"> previous application number</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+    <h2 class="govuk-heading-m">Respondent solicitor reference</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Michele Serrano EB-345-2020
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="ref">Change
+            <span class="govuk-visually-hidden"> previous application number</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+    <p class="govuk-body">By submitting this request you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+    <form action="/form-handler" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      {{ govukButton({
+          text: "Accept and submit",
+          href: "confirm"
+          }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
