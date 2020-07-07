@@ -1,0 +1,103 @@
+{% extends "../layout.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+{% block header %}
+
+    {% include "includes/cookie-banner.html" %}
+
+    {{ hmctsHeader
+        ({
+            service: {
+              name: serviceName,
+              url: '/'
+            },
+
+            navigation: {
+              label: 'Account navigation',
+              items: [{
+                text: 'Sign out',
+                href: '#1'
+              }]
+            }
+        })
+    }}
+
+    {% set searchHtml %}
+        <a class="hmcts-search-toggle__button" href="{{getUrl('/search')}}">Find case</a>
+    {% endset %}
+
+    {{ hmctsPrimaryNavigation
+        ({
+            label: 'Primary navigation',
+            items: [{
+                        text: 'Your cases',
+                        href: getUrl('/cases'),
+                        active: pageId == 'your-cases'
+                    },
+                    {
+                        text: 'Case access',
+                        href: getUrl('/cases/notice'),
+                        active: pageId == 'case-access'
+                    }
+                    ],
+            searchHtml: searchHtml
+        })
+    }}
+
+{% endblock %}
+
+
+{% block beforeContent %}
+    {{ govukPhaseBanner
+        ({
+          tag: {
+            text: "beta"
+          },
+          html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+        })
+    }}
+
+    {{ super() }}
+
+    {{ govukBackLink
+        ({   href: 'index'  })
+    }}
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="hmcts-page-heading">
+
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-xl">Case details (h1)</h1>
+          </div>
+
+          <div class="hmcts-page-heading__actions">
+            <div class="hmcts-menu">
+              <div class="hmcts-menu__wrapper">
+
+                <div class="govuk-form-group">
+                  <select class="govuk-select" id="sort" name="sort" onchange="location = this.value;">
+                    <option value="#" selected>Select action</option>
+                    <option value="assign">Share case with respondent solicitor</option>
+                    <option value="inbound">Contact HMCTS about this case</option>
+                  </select>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+    <a href="#">
+          <div class="black-box">
+            <h1 class="govuk-heading-l">Case details</h1>
+          </div>
+    </a>
+
+{% endblock %}

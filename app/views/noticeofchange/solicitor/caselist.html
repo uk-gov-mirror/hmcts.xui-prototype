@@ -1,0 +1,65 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="hmcts-page-heading">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-xl">Case Lists</h1>
+          </div>
+    </div>
+
+    <button class="govuk-button govuk-button--secondary govuk-!-margin-top-3 " data-module="govuk-button">
+          Show filter
+    </button>
+
+
+    <h2 class="govuk-heading-m  govuk-!-margin-top-4">Case list</h2>
+
+    <p>Displaying 1 - 3 out of 3 results</p>
+
+    <table class="govuk-table ">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-16">Claim number</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-16 ">Last modified date</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-16 ">Claimant Vs Defendant</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-16 ">Case ID</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-16 ">Direction order created on</th>
+            </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="#">3689-2642-5857-7069</a></td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16">24 Jun 2020, 3:47:26 PM</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16">3689-2642-5857-7069</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="#">1593-0136-4696-9976</a></td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16">218 Jun 2020, 10:55:01 AM</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16">1593-0136-4696-9976</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="#">3827-2010-3565-3933</a></td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16">5 Jun 2020, 4:22:49 PM</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16">3827-2010-3565-3933</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+{% endblock %}
