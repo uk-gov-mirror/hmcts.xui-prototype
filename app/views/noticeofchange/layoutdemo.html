@@ -68,13 +68,18 @@
     label: 'Primary navigation',
     items: [{
               text: 'Case list',
-              href: getUrl('/noticeofchange/solicitor/caselist'),
-              active: pageId == 'your-cases'
+              href: getUrl('/solicitor/caselist'),
+              active: pageId == '#'
           },
           {
               text: 'Create case',
-              href: getUrl('#'),
-              active: pageId == 'your-cases'
+              href: getUrl('/solicitor/caselist'),
+              active: pageId == '#'
+          },
+          {
+              text: 'Notice of change',
+              href: getUrl('/solicitor/startorstop'),
+              active: pageId == '#'
           }
     ],
     searchHtml: searchHtml

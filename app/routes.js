@@ -5,6 +5,8 @@ router.use('/', require('./routes/base'));
 
 module.exports = router
 
+
+
 // Branching
 router.post('/v3/cases/method', function (req, res) {
   // Get the answer from session data
@@ -18,4 +20,42 @@ router.post('/v3/cases/method', function (req, res) {
   } else {
     res.redirect('/v3/cases/details-post')
   }
+})
+
+
+
+
+// NOTICE OF CHANGE
+router.post( '/noticeofchange/solicitor/startorstop', function (req, res)
+{
+  if(req.session.data['startorstop'] == 'start')
+  {
+    res.redirect('/noticeofchange/solicitor/addenterdetails');
+  }
+  else
+  {
+    res.redirect('/noticeofchange/solicitor/caselist');
+  }
+})
+
+
+// NOTICE OF CHANGE
+router.post( '/noticeofchange/solicitor/addenterdetails', function (req, res)
+{
+    res.redirect('/noticeofchange/solicitor/reviewcase');
+})
+
+router.post( '/noticeofchange/solicitor/reviewcase', function (req, res)
+{
+  res.redirect('/noticeofchange/solicitor/selectparty');
+})
+
+router.post( '/noticeofchange/solicitor/selectparty', function (req, res)
+{
+  res.redirect('/noticeofchange/solicitor/selectrole');
+})
+
+router.post( '/noticeofchange/solicitor/selectrole', function (req, res)
+{
+  res.redirect('/noticeofchange/solicitor/checkanswers');
 })

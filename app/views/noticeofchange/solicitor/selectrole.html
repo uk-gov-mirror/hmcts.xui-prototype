@@ -1,0 +1,52 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="hmcts-page-heading">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-l">What will be your role in the case?</h1>
+          </div>
+    </div>
+
+    <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off">
+
+        <div class="govuk-form-group govuk-!-margin-bottom-7">
+            <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="solicitor" name="role" type="radio" value="solicitor" >
+                    <label class="govuk-label govuk-radios__label" for="solicitor">
+                        Solicitor
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="barrister" name="role" type="radio" value="barrister" >
+                    <label class="govuk-label govuk-radios__label" for="barrister">
+                        Barrister
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="paralegal" name="role" type="radio" value="paralegal" >
+                    <label class="govuk-label govuk-radios__label" for="paralegal">
+                        Paralegal
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+
+    </form>
+
+{% endblock %}

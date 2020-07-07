@@ -1,0 +1,46 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="hmcts-page-heading">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-l">Which party will you be representing?</h1>
+          </div>
+    </div>
+
+    <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off">
+
+        <div class="govuk-form-group govuk-!-margin-bottom-7">
+            <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="defendant" name="role" type="radio" value="defendant" >
+                    <label class="govuk-label govuk-radios__label" for="defendant">
+                        Laura Narran (Claimant)
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="claimant" name="role" type="radio" value="claimant" >
+                    <label class="govuk-label govuk-radios__label" for="claimant">
+                        Dave Scott (Defendant)
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+
+    </form>
+
+{% endblock %}
