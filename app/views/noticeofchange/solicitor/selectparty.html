@@ -9,7 +9,7 @@ Case details
 
     <div class="hmcts-page-heading">
           <div class="hmcts-page-heading__title">
-               <h1 class="govuk-heading-l">Which party will you be representing?</h1>
+               <h1 class="govuk-heading-l">Confirm the party you be representing</h1>
           </div>
     </div>
 
@@ -22,17 +22,31 @@ Case details
         <div class="govuk-form-group govuk-!-margin-bottom-7">
             <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="defendant" name="role" type="radio" value="defendant" >
+                    <input class="govuk-radios__input" id="defendant" name="role" type="radio" value="defendant" checked>
                     <label class="govuk-label govuk-radios__label" for="defendant">
                         Laura Narran (Claimant)
                     </label>
                 </div>
-                <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="claimant" name="role" type="radio" value="claimant" >
-                    <label class="govuk-label govuk-radios__label" for="claimant">
-                        Dave Scott (Defendant)
-                    </label>
-                </div>
+
+
+
+                <details class="govuk-details  govuk-!-margin-top-5" data-module="govuk-details" >
+                    <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                              Or choose another party
+                            </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="claimant" name="role" type="radio" value="claimant" >
+                            <label class="govuk-label govuk-radios__label" for="claimant">
+                                Dave Scott (Defendant)
+                            </label>
+                        </div>
+                    </div>
+                </details>
+
+
             </div>
         </div>
 

@@ -1,0 +1,87 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+<div class="">
+    <main class="" id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-panel govuk-panel--confirmation">
+
+                    {% if data.autoapproved == 'true' %}
+                        <!-- Automatic approval -->
+                        <h1 class="govuk-panel__title">
+                            Request successful<br><br>
+                            <div class="govuk-panel__body">
+                                You're now the representative
+                            </div>
+                        </h1>
+                    {% endif %}
+
+                    <!-- Approval needed -->
+                    {% if data.autoapproved == 'false' %}
+                    <h1 class="govuk-panel__title">
+                        Notice of change request submitted<br><br>
+                        <div class="govuk-panel__body">
+                            We'll review your request
+                        </div>
+                    </h1>
+                    {% endif %}
+                </div>
+
+                {% if data.autoapproved == 'true' %}
+                    <!-- Automatic approval -->
+                    <p class="govuk-body govuk-!-margin-top-6">We have sent you a confirmation email.</p>
+                    <p class="govuk-body">We've also emailed the solicitor who previously represented the case.</p>
+
+                    <h2 class="govuk-heading-m ">What happens next</h2>
+
+                    <p class="govuk-body">
+                        This case will now appear in your case list.
+                    </p>
+                    <p class="govuk-body">
+                        <a href="#">View the case</a>
+                    </p>
+                {% endif %}
+
+
+                <!-- When approval is needed  -->
+                {% if data.autoapproved == 'false' %}
+                    <h2 class="govuk-heading-m govuk-!-margin-top-6">What happens next</h2>
+                    <p>We'll send you a an email when we approve your request. <br>This may take a few days.</p>
+                    <p class="govuk-body">
+                        <a href="#">Go to case list</a>
+                    </p>
+                {% endif %}
+
+            </div>
+        </div>
+    </main>
+
+</div>
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="autoapproved=true&"
+                    {% if data.autoapproved == 'true' %}selected{% endif %}
+            >Automatically accpeted</option>
+
+            <option value="autoapproved=false&"
+                    {% if data.autoapproved == 'false' %}selected{% endif %}
+            >Being reviewed</option>
+
+        </select>
+    </form>
+
+
+
+
+
+{% endblock %}

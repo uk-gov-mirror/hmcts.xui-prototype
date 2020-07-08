@@ -47,15 +47,21 @@ router.post( '/noticeofchange/solicitor/addenterdetails', function (req, res)
 
 router.post( '/noticeofchange/solicitor/reviewcase', function (req, res)
 {
-  res.redirect('/noticeofchange/solicitor/selectparty');
+    res.redirect('/noticeofchange/solicitor/selectparty');
 })
 
 router.post( '/noticeofchange/solicitor/selectparty', function (req, res)
 {
-  res.redirect('/noticeofchange/solicitor/selectrole');
+    res.redirect('/noticeofchange/solicitor/checkanswers');
 })
 
+router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
+{
+    res.redirect('/noticeofchange/solicitor/confirmation');
+})
+
+// NOT USED AS ROLE SEEMS TO BE WHO THEY ARE REPRESENTING
 router.post( '/noticeofchange/solicitor/selectrole', function (req, res)
 {
-  res.redirect('/noticeofchange/solicitor/checkanswers');
+    res.redirect('/noticeofchange/solicitor/checkanswers');
 })

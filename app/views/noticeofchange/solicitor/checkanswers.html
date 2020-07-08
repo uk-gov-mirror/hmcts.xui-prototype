@@ -7,26 +7,103 @@ Case details
 
 {% block content %}
 
-    <div class="hmcts-page-heading">
-          <div class="hmcts-page-heading__title">
-               <h1 class="govuk-heading-l">Check and submit</h1>
-          </div>
-    </div>
+<div class="govuk-width-container">
 
-    <form
-        name="aspnetForm"
-        method="post"
-        id="aspnetForm"
-        autocomplete="off">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                <h1 class="govuk-heading-l">Check and submit</h1>
+
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Change request
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Start representing
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Case number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            4523-3443-3226-2436
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                                Change
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Case type
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Divorce
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+
+                <h2 class="govuk-heading-m">Your client</h2>
+
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Current First and Middle names
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Laura
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                                Change
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Current Last Name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Narran
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                                Change
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
 
 
+                <h2 class="govuk-heading-m">Notifications</h2>
 
-        <!-- -->
+                <p class="govuk-body  govuk-!-margin-bottom-7">Once approved we will send a confirmation email of this notice of change to you snd the legal firm that is being taken off the record.</p>
 
-        <button class="govuk-button" data-module="govuk-button">
-            Continue
-        </button>
 
-    </form>
+                <form  method="post" >
+
+                    <input type="hidden" name="answers-checked" value="true">
+
+                    <button class="govuk-button" data-module="govuk-button">
+                        Submit request
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </main>
+</div>
 
 {% endblock %}
