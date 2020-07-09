@@ -1,0 +1,54 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <div class="hmcts-page-heading">
+                      <div class="hmcts-page-heading__title">
+                           <h1 class="govuk-heading-l">Confirm you want to stop representation</h1>
+                      </div>
+                </div>
+
+                <form
+                        name="aspnetForm"
+                        method="post"
+                        id="aspnetForm"
+                        autocomplete="off">
+
+
+                        <p>Control of the case will be given to the Sarah Jones if you stop representing.</p>
+
+
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                <div class="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                        <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                            I confirm I want to stop representing Sarah Jones
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <button class="govuk-button" data-module="govuk-button">
+                            Submit request
+                        </button>
+
+                        <p><a href="casedetails.html">Stay representing</a></p>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+<div class="">
+    <main class="" id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-panel govuk-panel--confirmation">
+
+                    <!-- Automatic approval -->
+                    <h1 class="govuk-panel__title">
+                        You've stopped representing this case<br><br>
+                    </h1>
+
+                </div>
+
+
+                    <!-- Automatic approval -->
+                    <p class="govuk-body govuk-!-margin-top-6">We have sent you a confirmation email.</p>
+                    <p class="govuk-body">We'll also send a letter to the party confirming you no longer represent them.</p>
+
+                    <h2 class="govuk-heading-m ">What happens next</h2>
+
+                    <p class="govuk-body">
+                        This case will no longer appear in your case list.
+                    </p>
+                    <p class="govuk-body">
+                        <a href="caselist">View case list</a>
+                    </p>
+
+            </div>
+        </div>
+    </main>
+
+</div>
+
+
+
+
+
+
+{% endblock %}

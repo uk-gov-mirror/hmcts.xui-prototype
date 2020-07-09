@@ -60,6 +60,16 @@ router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
     res.redirect('/noticeofchange/solicitor/confirmation?autoapproved=true&');
 })
 
+// STOP REPRESENTING CLIENT
+router.post( '/noticeofchange/solicitor/casedetails', function (req, res)
+{
+    res.redirect('/noticeofchange/solicitor/confirmstop');
+})
+router.post( '/noticeofchange/solicitor/confirmstop', function (req, res)
+{
+    res.redirect('/noticeofchange/solicitor/confirmationofstopping');
+})
+
 // NOT USED AS ROLE SEEMS TO BE WHO THEY ARE REPRESENTING
 router.post( '/noticeofchange/solicitor/selectrole', function (req, res)
 {
