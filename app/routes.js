@@ -42,22 +42,22 @@ router.post( '/noticeofchange/solicitor/startorstop', function (req, res)
 // NOTICE OF CHANGE
 router.post( '/noticeofchange/solicitor/addenterdetails', function (req, res)
 {
-    res.redirect('/noticeofchange/solicitor/reviewcase');
+    res.redirect('/noticeofchange/solicitor/selectroleprobate');
 })
 
-router.post( '/noticeofchange/solicitor/reviewcase', function (req, res)
+router.post( '/noticeofchange/solicitor/selectroleprobate', function (req, res)
 {
-    res.redirect('/noticeofchange/solicitor/selectparty');
+    res.redirect('/noticeofchange/solicitor/securityquestionprobate');
 })
 
-router.post( '/noticeofchange/solicitor/selectparty', function (req, res)
+router.post( '/noticeofchange/solicitor/securityquestionprobate', function (req, res)
 {
     res.redirect('/noticeofchange/solicitor/checkanswers');
 })
 
 router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
 {
-    res.redirect('/noticeofchange/solicitor/confirmation');
+    res.redirect('/noticeofchange/solicitor/confirmation?autoapproved=true&');
 })
 
 // NOT USED AS ROLE SEEMS TO BE WHO THEY ARE REPRESENTING

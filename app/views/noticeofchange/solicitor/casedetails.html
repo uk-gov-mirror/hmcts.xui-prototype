@@ -1,0 +1,43 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="" id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class=""  style="display: flex; justify-content: space-between;">
+
+                <div style="display: flex; ">
+                    <h1 class="govuk-heading-l">#3689-2642-5857-7069 &nbsp; </h1>
+
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Print
+                    </button>
+                </div>
+
+
+                <div style="display: flex; align-items:right" >
+                    <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+
+                    <select class="govuk-select" id="sort" name="sort">
+                        <option value="published" selected>Deceased details</option>
+                        <option value="updated" >Stop representation</option>
+                    </select>
+
+                    <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+                        Go
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}
