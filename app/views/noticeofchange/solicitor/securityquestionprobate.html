@@ -11,6 +11,37 @@ Case details
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-half">
 
+
+                {% if data.errorsecurityprobate == 'true' %}
+                    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            There is a problem
+                        </h2>
+                        <div class="govuk-error-summary__body">
+                            <ul class="govuk-list govuk-error-summary__list">
+                                <li>
+                                    <a href="#casenumber">You must enter the party's last name</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if data.errorsecurityprobatewrongname == 'true' %}
+                <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                    <h2 class="govuk-error-summary__title" id="error-summary-title">
+                        There is a problem
+                    </h2>
+                    <div class="govuk-error-summary__body">
+                        <ul class="govuk-list govuk-error-summary__list">
+                            <li>
+                                <a href="#casenumber">Your entry didn't match our records</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+
+
                 <div class="hmcts-page-heading">
                       <div class="hmcts-page-heading__title">
                            <h1 class="govuk-heading-l">Enter case details</h1>
@@ -25,11 +56,24 @@ Case details
                         autocomplete="off">
 
 
-                        <div class="govuk-form-group">
-                            <label class="govuk-label" for="full-name">
+                        {% if data.errorsecurityprobate == 'true' or   data.errorsecurityprobatewrongname == 'true' %}
+                            <div class="govuk-form-group govuk-form-group--error">
+                        {% else %}
+                            <div class="govuk-form-group ">
+                        {% endif %}
+
+                            <label class="govuk-label" for="last-name">
                                 Last name of the person you will be representing
                             </label>
-                            <input class="govuk-input govuk-input--width-10" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+
+                            {% if data.errorsecurityprobate == 'true'  or   data.errorsecurityprobatewrongname == 'true' %}
+                                <span id="national-insurance-number-error" class="govuk-error-message">
+                                    <span class="govuk-visually-hidden">Error:</span> Enter the part's last name
+                                </span>
+                                <input class="govuk-input govuk-input--width-10" id="lastname" name="lastname" type="text" autocomplete="name" spellcheck="false" value="{{data.lastname}}">
+                            {% else %}
+                                <input class="govuk-input govuk-input--width-10" id="lastname" name="lastname" type="text" autocomplete="name" spellcheck="false" value="{{data.lastname}}">
+                            {% endif %}
                         </div>
 
 

@@ -17,9 +17,15 @@ Case details
                         <!-- Automatic approval -->
                         <h1 class="govuk-panel__title">
                             Request successful<br><br>
-                            <div class="govuk-panel__body">
-                                You're now the representative
-                            </div>
+                            {% if data.adminonly == 'true' %}
+                                <div class="govuk-panel__body">
+                                     The case is now with your company administrator
+                                </div>
+                            {% else %}
+                                <div class="govuk-panel__body">
+                                    You're now the representative
+                                </div>
+                            {% endif %}
                         </h1>
                     {% endif %}
 
@@ -41,9 +47,16 @@ Case details
 
                     <h2 class="govuk-heading-m ">What happens next</h2>
 
-                    <p class="govuk-body">
-                        This case will now appear in your case list.
-                    </p>
+                    {% if data.adminonly == 'true' %}
+                        <p class="govuk-body">
+                            Contact Ronan Wise at your company to get the case added to your caselist.
+                        </p>
+                    {% else %}
+                        <p class="govuk-body">
+                            This case will now appear in your case list.
+                        </p>
+                    {% endif %}
+
                     <p class="govuk-body">
                         <a href="#">View the case</a>
                     </p>
@@ -55,7 +68,7 @@ Case details
                     <h2 class="govuk-heading-m govuk-!-margin-top-6">What happens next</h2>
                     <p>We'll send you a an email when we approve your request. <br>This may take a few days.</p>
                     <p class="govuk-body">
-                        <a href="caselist">Go to case list</a>
+                        <a href="caselist">View case list</a>
                     </p>
                 {% endif %}
 
@@ -69,9 +82,14 @@ Case details
     <form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
         <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
-            <option value="autoapproved=true&"
-                    {% if data.autoapproved == 'true' %}selected{% endif %}
+            <option value="autoapproved=true&adminonly=false&"
+                    {% if data.autoapproved == 'true' and data.adminonly == 'false' %}selected{% endif %}
             >Automatically accpeted</option>
+
+            <option value="autoapproved=true&adminonly=true&"
+                    {% if data.autoapproved == 'true' and data.adminonly == 'true'  %}selected{% endif %}
+            >Automatically accpeted - admin access only</option>
+
 
             <option value="autoapproved=false&"
                     {% if data.autoapproved == 'false' %}selected{% endif %}
