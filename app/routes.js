@@ -91,6 +91,7 @@ router.post( '/noticeofchange/solicitor/securityquestionprobate', function (req,
         {
             req.session.data['errorsecurityprobate'] = 'false';
             req.session.data['errorsecurityprobatewrongname'] = 'false';
+            req.session.data['sot'] = 'undefined';
             res.redirect('/noticeofchange/solicitor/checkanswers');
         }
     }
@@ -100,8 +101,20 @@ router.post( '/noticeofchange/solicitor/securityquestionprobate', function (req,
 
 router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
 {
-    res.redirect('/noticeofchange/solicitor/confirmation?autoapproved=true&');
+    console.warn("Main Router +" + req.session.data['sot']  + "+++");
+    if(req.session.data['sot'] != 'on' )
+    {
+        req.session.data['errorsot'] = 'true';
+        res.redirect('checkanswers');
+    }
+    else
+    {
+        req.session.data['errorsot'] = 'false';
+        res.redirect('/noticeofchange/solicitor/confirmation?autoapproved=true&');
+    }
 })
+
+
 
 // STOP REPRESENTING CLIENT
 router.post( '/noticeofchange/solicitor/casedetails', function (req, res)
@@ -110,8 +123,19 @@ router.post( '/noticeofchange/solicitor/casedetails', function (req, res)
 })
 router.post( '/noticeofchange/solicitor/confirmstop', function (req, res)
 {
-    res.redirect('/noticeofchange/solicitor/confirmationofstopping');
+    if(req.session.data['stopstop'] != 'on' )
+    {
+        req.session.data['errorstopconfirm'] = 'true';
+        res.redirect('confirmstop');
+    }
+    else
+    {
+        req.session.data['errorstopconfirm'] = 'false';
+        res.redirect('/noticeofchange/solicitor/confirmationofstopping');
+    }
 })
+
+
 
 // NOT USED AS ROLE SEEMS TO BE WHO THEY ARE REPRESENTING
 router.post( '/noticeofchange/solicitor/selectrole', function (req, res)

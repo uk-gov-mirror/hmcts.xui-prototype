@@ -11,6 +11,22 @@ Case details
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
+                {% if data.errorstopconfirm == 'true' %}
+                    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            There is a problem
+                        </h2>
+                        <div class="govuk-error-summary__body">
+                            <ul class="govuk-list govuk-error-summary__list">
+                                <li>
+                                    <a href="#confirmthestop">You haven't ticked to confirm stopping representation</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+
+
                 <div class="hmcts-page-heading">
                       <div class="hmcts-page-heading__title">
                            <h1 class="govuk-heading-l">Confirm you want to stop representation</h1>
@@ -26,13 +42,24 @@ Case details
 
                         <p>Control of the case will be given to the Sarah Jones if you stop representing.</p>
 
+                        {% if data.errorstopconfirm == 'true'%}
+                            <div class="govuk-form-group govuk-form-group--error" id="confirmthestop">
+                        {% else %}
+                            <div class="govuk-form-group">
+                        {% endif %}
 
-                        <div class="govuk-form-group">
+                            {% if data.errorstopconfirm == 'true'%}
+                                        <span id="national-insurance-number-error" class="govuk-error-message">
+                                              <span class="govuk-visually-hidden">Error:</span> Tick the box to confirm you want to stop representing
+                                        </span>
+                            {% endif %}
+
                             <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
                                 <div class="govuk-checkboxes">
                                     <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                                        <label class="govuk-label govuk-checkboxes__label" for="waste">
+
+                                        <input class="govuk-checkboxes__input" id="stopstop" name="stopstop" type="checkbox" >
+                                        <label class="govuk-label govuk-checkboxes__label" for="stopstop">
                                             I confirm I want to stop representing Sarah Jones
                                         </label>
                                     </div>
