@@ -20,7 +20,7 @@ Case details
                         <div class="govuk-error-summary__body">
                             <ul class="govuk-list govuk-error-summary__list">
                                 <li>
-                                    <a href="#casenumber">You must enter the party's last name</a>
+                                    <a href="#casenumber">Your client’s name didn’t match our records. Check the details are correct and try again</a>
                                 </li>
                             </ul>
                         </div>
@@ -34,7 +34,7 @@ Case details
                     <div class="govuk-error-summary__body">
                         <ul class="govuk-list govuk-error-summary__list">
                             <li>
-                                <a href="#casenumber">Your entry didn't match our records</a>
+                                <a href="#casenumber">Your client’s name didn’t match our records. Check the details are correct and try again</a>
                             </li>
                         </ul>
                     </div>
@@ -44,7 +44,7 @@ Case details
 
                 <div class="hmcts-page-heading">
                       <div class="hmcts-page-heading__title">
-                           <h1 class="govuk-heading-l">Enter case details</h1>
+                           <h1 class="govuk-heading-l">Enter the last name of the client you will be representing</h1>
                       </div>
                 </div>
 
@@ -62,13 +62,10 @@ Case details
                             <div class="govuk-form-group ">
                         {% endif %}
 
-                            <label class="govuk-label" for="last-name">
-                                Last name of the person you will be representing
-                            </label>
 
                             {% if data.errorsecurityprobate == 'true'  or   data.errorsecurityprobatewrongname == 'true' %}
                                 <span id="national-insurance-number-error" class="govuk-error-message">
-                                    <span class="govuk-visually-hidden">Error:</span> Enter the part's last name
+                                    <span class="govuk-visually-hidden">Error:</span> Enter your client’s last name
                                 </span>
                                 <input class="govuk-input govuk-input--width-10" id="lastname" name="lastname" type="text" autocomplete="name" spellcheck="false" value="{{data.lastname}}">
                             {% else %}

@@ -19,7 +19,7 @@ Case details
                         <div class="govuk-error-summary__body">
                             <ul class="govuk-list govuk-error-summary__list">
                                 <li>
-                                    <a href="#confirmthestop">You haven't ticked to confirm stopping representation</a>
+                                    <a href="#confirmthestop">You must confirm you no longer want to represent the case</a>
                                 </li>
                             </ul>
                         </div>
@@ -29,7 +29,7 @@ Case details
 
                 <div class="hmcts-page-heading">
                       <div class="hmcts-page-heading__title">
-                           <h1 class="govuk-heading-l">Confirm you want to stop representation</h1>
+                           <h1 class="govuk-heading-l">Are you sure you want to stop representing this case?</h1>
                       </div>
                 </div>
 
@@ -40,7 +40,7 @@ Case details
                         autocomplete="off">
 
 
-                        <p>Control of the case will be given to the Sarah Jones if you stop representing.</p>
+                        <p>If you stop representing this case, you’ll no longer have access to it. Full control of the case will be given to the client. </p>
 
                         {% if data.errorstopconfirm == 'true'%}
                             <div class="govuk-form-group govuk-form-group--error" id="confirmthestop">
@@ -50,7 +50,7 @@ Case details
 
                             {% if data.errorstopconfirm == 'true'%}
                                         <span id="national-insurance-number-error" class="govuk-error-message">
-                                              <span class="govuk-visually-hidden">Error:</span> Tick the box to confirm you want to stop representing
+                                              <span class="govuk-visually-hidden">Error:</span> Tick the box to confirm you no longer want to represent the case
                                         </span>
                             {% endif %}
 
@@ -60,7 +60,7 @@ Case details
 
                                         <input class="govuk-checkboxes__input" id="stopstop" name="stopstop" type="checkbox" >
                                         <label class="govuk-label govuk-checkboxes__label" for="stopstop">
-                                            I confirm I want to stop representing Sarah Jones
+                                            I confirm I no longer want to represent this case
                                         </label>
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@ Case details
                             Submit request
                         </button>
 
-                        <p><a href="casedetailsprobate.html">Stay representing</a></p>
+                        <p><a href="casedetailsprobate.html">Continue representing this case</a></p>
                 </form>
 
             </div>

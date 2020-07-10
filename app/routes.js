@@ -146,6 +146,10 @@ router.post( '/noticeofchange/solicitor/securityquestiondivorce', function (req,
     }
     else
     {
+        var months = ['filler', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
+        req.session.data['monthoutput'] = months[req.session.data['month']];
+        console.warn("Main Router " + req.session.data['monthoutput']);
+
         req.session.data['errorsecuritydivorce'] = 'false';
         req.session.data['sot'] = 'undefined';
         res.redirect('/noticeofchange/solicitor/checkanswers');
@@ -157,6 +161,7 @@ router.post( '/noticeofchange/solicitor/securityquestiondivorce', function (req,
 router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
 {
     console.warn("Main Router +" + req.session.data['sot']  + "+++");
+    console.warn("****************************");
     if(req.session.data['sot'] != 'on' )
     {
         req.session.data['errorsot'] = 'true';
@@ -174,11 +179,18 @@ router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
 // STOP REPRESENTING CLIENT
 router.post( '/noticeofchange/solicitor/casedetailsprobate', function (req, res)
 {
+
+    req.session.data['stopstop'] = '';
+
     res.redirect('/noticeofchange/solicitor/confirmstop');
 })
 
 router.post( '/noticeofchange/solicitor/casedetailsdivorce', function (req, res)
 {
+
+    req.session.data['stopstop'] = '';
+    console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
+
     res.redirect('/noticeofchange/solicitor/confirmstop');
 })
 
@@ -186,6 +198,7 @@ router.post( '/noticeofchange/solicitor/casedetailsdivorce', function (req, res)
 
 router.post( '/noticeofchange/solicitor/confirmstop', function (req, res)
 {
+    console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
     if(req.session.data['stopstop'] != 'on' )
     {
         req.session.data['errorstopconfirm'] = 'true';

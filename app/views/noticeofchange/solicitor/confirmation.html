@@ -16,14 +16,16 @@ Case details
                     {% if data.autoapproved == 'true' %}
                         <!-- Automatic approval -->
                         <h1 class="govuk-panel__title">
-                            Request successful<br><br>
+
                             {% if data.adminonly == 'true' %}
+                            Notice of change request successful<br><br>
                                 <div class="govuk-panel__body">
-                                     The case is now with your company administrator
+                                    The case is now with your organisation administrator
                                 </div>
                             {% else %}
+                                Notice of change successful<br><br>
                                 <div class="govuk-panel__body">
-                                    You're now the representative
+                                    You’re now the representative of case {{data.casenumber}}
                                 </div>
                             {% endif %}
                         </h1>
@@ -34,7 +36,7 @@ Case details
                     <h1 class="govuk-panel__title">
                         Notice of change request submitted<br><br>
                         <div class="govuk-panel__body">
-                            We'll review your request
+                            We’ll send you a confirmation email when we approve your request. This can take up to X days.
                         </div>
                     </h1>
                     {% endif %}
@@ -49,17 +51,19 @@ Case details
 
                     {% if data.adminonly == 'true' %}
                         <p class="govuk-body">
-                            Contact Ronan Wise at your company to get the case added to your caselist.
+                            Contact your organisation administrator to get the case added to your case list.
                         </p>
                     {% else %}
                         <p class="govuk-body">
                             This case will now appear in your case list.
                         </p>
+                        <p class="govuk-body"> <a href="#">View this case</a></p>
                     {% endif %}
 
-                    <p class="govuk-body">
-                        <a href="caselist">View case list</a>
-                    </p>
+
+
+                    <p class="govuk-body"><a href="caselist">View case list</a></p>
+
                 {% endif %}
 
 

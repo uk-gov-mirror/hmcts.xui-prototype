@@ -21,7 +21,7 @@ Case details
                         <div class="govuk-error-summary__body">
                             <ul class="govuk-list govuk-error-summary__list">
                                 <li>
-                                    <a href="#sotruth">You haven't ticked the statement of truth</a>
+                                    <a href="#sotruth">You must confirm the statement of truth</a>
                                 </li>
                             </ul>
                         </div>
@@ -37,7 +37,7 @@ Case details
                             Change request
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            Start representing
+                            Start representing the case (notice of change)
                         </dd>
                         <dd class="govuk-summary-list__actions">
                         </dd>
@@ -76,10 +76,10 @@ Case details
                                 Date case was submitted
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                {{data.day}} May {{data.year}}
+                                {{data.day}} {{data.monthoutput}} {{data.year}}
                             </dd>
                             <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="securityquestionprobate">
+                                <a class="govuk-link" href="securityquestiondivorce">
                                     Change
                                 </a>
                             </dd>
@@ -142,7 +142,7 @@ Case details
 
                     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Notifications</h2>
 
-                    <p class="govuk-body  govuk-!-margin-bottom-7">Once approved we will send a confirmation email of this notice of change to you snd the legal firm that is being taken off the record.</p>
+                    <p class="govuk-body  govuk-!-margin-bottom-7">Once we’ve approved this notice of change, we’ll send a confirmation email to you. We’ll also email the legal firm that will no longer be representing the case</p>
 
 
 

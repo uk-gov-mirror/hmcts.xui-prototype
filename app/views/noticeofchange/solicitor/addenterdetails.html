@@ -29,7 +29,7 @@ Case details
 
                 <div class="hmcts-page-heading">
                       <div class="hmcts-page-heading__title">
-                           <h1 class="govuk-heading-l">Enter case number</h1>
+                           <h1 class="govuk-heading-l">Enter case reference number</h1>
                       </div>
                 </div>
 
@@ -48,13 +48,13 @@ Case details
 
 
                           <span id="case-number-hint" class="govuk-hint">
-                            This is a 16 digit number
+                            This is a 16-digit number, for example 1111-2222-3333-4444
                           </span>
 
 
                             {% if data.errorcasenumber == 'true' %}
                                 <span id="national-insurance-number-error" class="govuk-error-message">
-                                    <span class="govuk-visually-hidden">Error:</span> The case number must be 16 digits
+                                    <span class="govuk-visually-hidden">Error:</span> The case number must be 16 digits, for example 1111-2222-3333-4444.
                                 </span>
                                 <input class="govuk-input govuk-input--width-10 govuk-input--error" id="casenumber" name="casenumber" type="text" spellcheck="false" value="{{data.casenumber}}">
                             {% else %}
