@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6156641b-a27b-446d-8e07-173e57bbd13c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsimmigration.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailspubliclaw.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.js" afterPath="$PROJECT_DIR$/app/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/layoutdemo.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/layoutdemo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsdivorce.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsdivorce.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsimmigration.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsimmigration.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/checkanswers.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/checkanswers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmation.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmation.html" />
     </list>
     <ignored path="xui-prototype.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,26 +37,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2962963">
+              <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="caselist.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="caselist.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37107623">
-              <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
+            <state vertical-scroll-proportion="-19.615385">
+              <caret line="159" column="107" selection-start-line="159" selection-start-column="107" selection-end-line="159" selection-end-column="107" />
               <folding>
                 <element signature="n#table#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#table#1;n#!!top" expanded="false" />
-                <element signature="n#table#2;n#!!top" expanded="false" />
                 <element signature="n#table#3;n#!!top" expanded="false" />
               </folding>
             </state>
@@ -70,8 +65,8 @@
       <file leaf-file-name="casedetailsimmigration.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsimmigration.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.327273">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.8076925">
+              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
@@ -89,21 +84,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layoutdemo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/layoutdemo.html">
+      <file leaf-file-name="casedetailspubliclaw.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailspubliclaw.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.727272">
-              <caret line="96" column="28" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="28" />
+            <state vertical-scroll-proportion="-27.461538">
+              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1594727882968" expanded="true" signature="3633:4250" placeholder="{&quot;label&quot;: 'Primary navigation'...}" />
-                <marker date="1594727882968" expanded="true" signature="3703:4192" placeholder="[...]" />
-                <marker date="1594727882968" expanded="true" signature="3704:3849" placeholder="{&quot;text&quot;: 'Case list'...}" />
-                <marker date="1594727882968" expanded="true" signature="3867:4014" placeholder="{&quot;text&quot;: 'Create case'...}" />
-                <marker date="1594727882968" expanded="true" signature="4032:4174" placeholder="{&quot;text&quot;: 'Represent a case'...}" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="casedetailsprobate.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.461538">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="81" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,9 +137,10 @@
         <option value="$PROJECT_DIR$/app/views/noticeofchange/layoutdemo.html" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsdivorce.html" />
-        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsimmigration.html" />
-        <option value="$PROJECT_DIR$/app/routes.js" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html" />
+        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsimmigration.html" />
+        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailspubliclaw.html" />
+        <option value="$PROJECT_DIR$/app/routes.js" />
       </list>
     </option>
   </component>
@@ -310,46 +309,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xui-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xui-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xui-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xui-prototype" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -361,17 +320,17 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\noticeofchange\solicitor" />
-      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\v4\cases" />
-      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\v4" />
-      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\noticeofchange\solicitor" />
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\noticeofchange" />
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views" />
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\v4\cases" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\noticeofchange\solicitor" />
+      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\v4\cases" />
+      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\v4" />
+      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -471,13 +430,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/reviewcase.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../cmc-prototype/app/views/prototypes/prototype-feb-2020/dashboard/applications-and-judgments/general-application/need-a-hearing.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -779,14 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsdivorce.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -812,10 +756,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.538462">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.615385">
+          <caret line="159" column="107" selection-start-line="159" selection-start-column="107" selection-end-line="159" selection-end-column="107" />
+          <folding>
+            <element signature="n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#table#1;n#!!top" expanded="false" />
+            <element signature="n#table#3;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsimmigration.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.327273">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.8076925">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
@@ -832,33 +797,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailspubliclaw.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-27.461538">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2962963">
+          <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.538462">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37107623">
-          <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
-          <folding>
-            <element signature="n#table#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#table#1;n#!!top" expanded="false" />
-            <element signature="n#table#2;n#!!top" expanded="false" />
-            <element signature="n#table#3;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>

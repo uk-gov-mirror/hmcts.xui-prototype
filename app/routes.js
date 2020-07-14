@@ -204,6 +204,15 @@ router.post( '/noticeofchange/solicitor/casedetailsimmigration', function (req, 
     res.redirect('/noticeofchange/solicitor/confirmstop');
 })
 
+router.post( '/noticeofchange/solicitor/casedetailspubliclaw', function (req, res)
+{
+
+    req.session.data['stopstop'] = '';
+    console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
+
+    res.redirect('/noticeofchange/solicitor/confirmstop');
+})
+
 
 
 router.post( '/noticeofchange/solicitor/confirmstop', function (req, res)

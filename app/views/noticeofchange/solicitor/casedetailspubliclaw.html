@@ -1,0 +1,169 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class=" govuk-!-margin-bottom-0" id="main-content" role="main" >
+        <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+            <div class=""  style="display: flex; justify-content: space-between; ">
+
+                <div style="display: flex; ">
+                    <h1 class="govuk-heading-l">#3689-2642-5857-7069 &nbsp; </h1>
+
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Print
+                    </button>
+                </div>
+
+
+                <div style="display: flex; align-items:right" >
+
+
+
+
+
+                    <select class="govuk-select" id="sort" name="sort">
+                        <option value="published" selected>Select action</option>
+
+                            <option _ngcontent-yiv-c9="" value="1: Object" title="Add case note (limit 150 characters)">Add case note</option>
+                            <option _ngcontent-yiv-c9="" value="2: Object" title="Amend Multiple">Amend Multiple</option>
+                            <option _ngcontent-yiv-c9="" value="3: Object" title="Amend Date of Receipt">Amend Date of Receipt</option>
+                            <option _ngcontent-yiv-c9="" value="4: Object" title="Amend Brought Forward Date">Amend Brought Forward Date</option>
+                            <option _ngcontent-yiv-c9="" value="5: Object" title="Amend Clerk responsible">Amend Clerk responsible</option>
+                            <option _ngcontent-yiv-c9="" value="6: Object" title="Amend Current Position">Amend Current Position</option>
+                            <option _ngcontent-yiv-c9="" value="7: Object" title="Amend Location">Amend Location</option>
+                            <option _ngcontent-yiv-c9="" value="8: Object" title="Add or amend details of parties to a case">Amend Parties of Interest</option>
+                            <option _ngcontent-yiv-c9="" value="9: Object" title="Schedule claim for Hearing">Schedule Hearing</option>
+                            <option _ngcontent-yiv-c9="" value="10: Object" title="Amend assigned office">Amend assignee</option>
+                            <option _ngcontent-yiv-c9="" value="11: Object" title="Record deposit amounts for claimants and respondents">Record a Deposit</option>
+                            <option _ngcontent-yiv-c9="" value="12: Object" title="Issue final judgment for claim">Claim Judgment</option>
+                            <option _ngcontent-yiv-c9="" value="13: Object" title="Dispose the case">Dispose Case</option>
+                            <option _ngcontent-yiv-c9="" value="14: Object" title="Issue non-hearing judgment">Non-Hearing Judgment</option>
+                            <option _ngcontent-yiv-c9="" value="15: Object" title="Allocate Jurisdiction Code(s)">Jurisdiction – Add Jur. Codes</option>
+                            <option _ngcontent-yiv-c9="" value="16: Object" title="Select applicable tribunal office">Select Tribunal Office</option>
+                            <option _ngcontent-yiv-c9="" value="17: Object" title="Select user location">Select User Location</option>
+                            <option _ngcontent-yiv-c9="" value="18: Object" title="Amend sub multiple">Amend sub multiple</option>
+                            <option _ngcontent-yiv-c9="" value="19: Object" title="Manage Judicial Panel">Manage Judicial Panel</option>
+                            <option _ngcontent-yiv-c9="" value="20: Object" title="Upload documentation">Documents – Upload docs</option>
+                            <option _ngcontent-yiv-c9="" value="21: Object" title="Refer to Employment Tribunal Judge">Refer to ET Judge</option>
+                            <option _ngcontent-yiv-c9="" value="22: Object" title="Response from Employment Tribunal Judge">Response from ET Judge</option>
+                            <option _ngcontent-yiv-c9="" value="23: Object" title="Accept Case">Accept Case</option>
+                            <option _ngcontent-yiv-c9="" value="24: Object" title="Reject Case">Reject Case</option>
+                            <option _ngcontent-yiv-c9="" value="25: Object" title="Add Case ID to the case">Add Case ID</option>
+                            <option _ngcontent-yiv-c9="" value="26: Object" title="Response to claim">Claim Response</option>
+                            <option _ngcontent-yiv-c9="" value="27: Object" title="Issue judgment under Rule 21">Judgment (Rule 21)</option>
+                            <option _ngcontent-yiv-c9="" value="28: Object" title="Amend case assignee">Amend assignee</option>
+                            <option _ngcontent-yiv-c9="" value="29: Object" title="Amend Multiple">Amend Multiple</option>
+                            <option _ngcontent-yiv-c9="" value="30: Object" title="List the claim">List claim</option>
+                            <option _ngcontent-yiv-c9="" value="31: Object" title="Add bundle document to the case">Upload bundle</option>
+                            <option _ngcontent-yiv-c9="" value="32: Object" title="Issue interim decision for claim">Interim decision</option>
+                            <option _ngcontent-yiv-c9="" value="33: Object" title="Withdraw the case">Withdraw case</option>
+                            <option _ngcontent-yiv-c9="" value="34: Object" title="Archive the case">Archive case</option>
+                            <option _ngcontent-yiv-c9="" value="35: Object" title="Additional Information">Additional Information</option>
+                            <option _ngcontent-yiv-c9="" value="36: Object" title="Manage Reconsideration">Manage Reconsideration</option>
+
+                        <option value="updated" >Stop representing a case</option>
+                    </select>
+
+                    <form
+                            name="aspnetForm"
+                            method="post"
+                            id="aspnetForm"
+                            autocomplete="off">
+                            <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+                                Go
+                            </button>
+                    </form>
+                </div>
+
+            </div>
+
+
+
+            <div class="govuk-tabs" data-module="govuk-tabs">
+                <h2 class="govuk-tabs__title">
+                    Contents
+                </h2>
+                <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                        <a class="govuk-tabs__tab" href="#event">
+                            Overview
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Case Details
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Claimant
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Respondent
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="govuk-tabs__panel" id="event" style="display: flex; padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+                    <div style="margin-top: 20px;  width:1220px; ">
+
+                        <h2 class="govuk-!-margin-top-2 govuk-heading-l">Claimant is &nbsp;</h2>
+
+                        <hr>
+
+                        <h2 class="govuk-!-margin-top-6 govuk-!-margin-bottom-0 govuk-heading-l">Respondent  is &nbsp;</h2>
+
+
+                        <table class="govuk-table">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header"  style="width: 300px; padding-right: 30px;"></th>
+                                    <th scope="col" class="govuk-table__header"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Assigned Office</td>
+                                    <td class="govuk-table__cell">Bristol</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Case note</td>
+                                    <td class="govuk-table__cell"></td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Single or Multiple</td>
+                                    <td class="govuk-table__cell">Single</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Fee Group Reference</td>
+                                    <td class="govuk-table__cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </main>
+</div>
+
+{% endblock %}
