@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6156641b-a27b-446d-8e07-173e57bbd13c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsimmigration.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.js" afterPath="$PROJECT_DIR$/app/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/layoutdemo.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/layoutdemo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsdivorce.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsdivorce.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/checkanswers.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/checkanswers.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmation.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/selectroleprobate.html" afterPath="$PROJECT_DIR$/app/views/noticeofchange/solicitor/selectroleprobate.html" />
     </list>
     <ignored path="xui-prototype.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,42 +31,79 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="selectroleprobate.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/selectroleprobate.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.961538">
-              <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="casedetailsdivorce.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsdivorce.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="32" column="73" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="confirmation.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="confirmation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5044843">
-              <caret line="63" column="78" selection-start-line="63" selection-start-column="78" selection-end-line="63" selection-end-column="78" />
+            <state vertical-scroll-proportion="-22.538462">
+              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="caselist.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="caselist.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.0">
-              <caret line="85" column="8" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="18" />
-              <folding />
+            <state vertical-scroll-proportion="0.37107623">
+              <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
+              <folding>
+                <element signature="n#table#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#table#1;n#!!top" expanded="false" />
+                <element signature="n#table#2;n#!!top" expanded="false" />
+                <element signature="n#table#3;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="casedetailsimmigration.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsimmigration.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.327273">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layoutdemo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/layoutdemo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-23.727272">
+              <caret line="96" column="28" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="28" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <marker date="1594727882968" expanded="true" signature="3633:4250" placeholder="{&quot;label&quot;: 'Primary navigation'...}" />
+                <marker date="1594727882968" expanded="true" signature="3703:4192" placeholder="[...]" />
+                <marker date="1594727882968" expanded="true" signature="3704:3849" placeholder="{&quot;text&quot;: 'Case list'...}" />
+                <marker date="1594727882968" expanded="true" signature="3867:4014" placeholder="{&quot;text&quot;: 'Create case'...}" />
+                <marker date="1594727882968" expanded="true" signature="4032:4174" placeholder="{&quot;text&quot;: 'Represent a case'...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,19 +128,20 @@
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/selectrole.html" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/selectparty.html" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetails.html" />
-        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html" />
-        <option value="$PROJECT_DIR$/app/routes.js" />
-        <option value="$PROJECT_DIR$/app/views/noticeofchange/layoutdemo.html" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/addenterdetails.html" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/securityquestionprobate.html" />
-        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/checkanswers.html" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/securityquestiondivorce.html" />
-        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html" />
-        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsdivorce.html" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmstop.html" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmationofstopping.html" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/selectroleprobate.html" />
+        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/checkanswers.html" />
         <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmation.html" />
+        <option value="$PROJECT_DIR$/app/views/noticeofchange/layoutdemo.html" />
+        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html" />
+        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsdivorce.html" />
+        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsimmigration.html" />
+        <option value="$PROJECT_DIR$/app/routes.js" />
+        <option value="$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html" />
       </list>
     </option>
   </component>
@@ -143,8 +188,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -265,6 +310,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xui-prototype" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xui-prototype" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xui-prototype" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xui-prototype" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -276,17 +361,17 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\noticeofchange\solicitor" />
-      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\noticeofchange" />
-      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views" />
-      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\v4\cases" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\noticeofchange\solicitor" />
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\v4\cases" />
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\v4" />
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\noticeofchange\solicitor" />
+      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\noticeofchange" />
+      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views" />
+      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\v4\cases" />
     </key>
   </component>
   <component name="RunManager">
@@ -360,13 +445,13 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18645833" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46194503" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.462908" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -386,13 +471,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/addenterdetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/reviewcase.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -645,24 +723,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42592594">
-          <caret line="184" column="58" selection-start-line="184" selection-start-column="58" selection-end-line="184" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/addenterdetails.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55269057">
           <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/layoutdemo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.019058296">
-          <caret line="109" column="39" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -673,25 +737,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/checkanswers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41928253">
-          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4002242">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmationofstopping.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6289238">
           <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -699,7 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41928253">
           <caret line="22" column="78" selection-start-line="22" selection-start-column="78" selection-end-line="22" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -707,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6098655">
           <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -715,39 +762,103 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9338565">
           <caret line="52" column="160" selection-start-line="52" selection-start-column="160" selection-end-line="52" selection-end-column="160" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/selectroleprobate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.961538">
+        <state vertical-scroll-proportion="0.5235426">
           <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/checkanswers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.56278026">
+          <caret line="86" column="55" selection-start-line="86" selection-start-column="55" selection-end-line="86" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsprobate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsdivorce.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="32" column="73" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html">
+    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/layoutdemo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0">
-          <caret line="85" column="8" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="18" />
+        <state vertical-scroll-proportion="-23.727272">
+          <caret line="96" column="28" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1594727882968" expanded="true" signature="3633:4250" placeholder="{&quot;label&quot;: 'Primary navigation'...}" />
+            <marker date="1594727882968" expanded="true" signature="3703:4192" placeholder="[...]" />
+            <marker date="1594727882968" expanded="true" signature="3704:3849" placeholder="{&quot;text&quot;: 'Case list'...}" />
+            <marker date="1594727882968" expanded="true" signature="3867:4014" placeholder="{&quot;text&quot;: 'Create case'...}" />
+            <marker date="1594727882968" expanded="true" signature="4032:4174" placeholder="{&quot;text&quot;: 'Represent a case'...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/casedetailsimmigration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.327273">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/confirmation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5044843">
-          <caret line="63" column="78" selection-start-line="63" selection-start-column="78" selection-end-line="63" selection-end-column="78" />
+        <state vertical-scroll-proportion="-22.538462">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/noticeofchange/solicitor/caselist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37107623">
+          <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
+          <folding>
+            <element signature="n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#table#1;n#!!top" expanded="false" />
+            <element signature="n#table#2;n#!!top" expanded="false" />
+            <element signature="n#table#3;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
