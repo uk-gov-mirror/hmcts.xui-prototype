@@ -206,7 +206,55 @@ Case details
                 </tbody>
             </table>
 
+        {% elseif data.caselist == 'financialremedy' %}
+            <p>Displaying 1 - 3 out of 3 results</p>
+            <table class="govuk-table ">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-16">Case Reference</th>
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-16 ">Solicitor Reference</th>
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-16 ">Applicant Name</th>
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-16 ">Respondent Name</th>
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-16 ">Date of Last Event</th>
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-16 ">Status</th>
+                </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsfinancialremedy">3689-2642-5857-7069</a></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">AY-34137102</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Anne</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Yang</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">24 Jun 2020, 3:47:26 PM</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Application Drafted</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsfinancialremedy">1593-0136-4696-9976</a></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">AY-34137102</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Ethel</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Williams</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">5 April 2020, 9:50:28 AM</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Application Drafted</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsfinancialremedy">3827-2010-3565-3933</a></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">NJ-7982475</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Norman</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Jones</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">26 April 2019, 3:09:18 PM</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Application Drafted</td>
+                </tr>
+            </tbody>
+        </table>
+
         {% endif %}
+
+
+
 
 
 <form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
@@ -216,13 +264,17 @@ Case details
                 {% if data.caselist == 'divorce' %}selected{% endif %}
         >Divorce</option>
 
+        <option value="caselist=financialremedy&"
+                {% if data.caselist == 'financialremedy' %}selected{% endif %}
+        >Financial remedy</option>
+
         <option value="caselist=probate&"
                 {% if data.caselist == 'probate' %}selected{% endif %}
         >Probate</option>
 
         <option value="caselist=publiclaw&"
                 {% if data.caselist == 'publiclaw' %}selected{% endif %}
-        >Public Law</option>
+        >Family public Law</option>
 
         <option value="caselist=immigration&"
                 {% if data.caselist == 'immigration' %}selected{% endif %}
