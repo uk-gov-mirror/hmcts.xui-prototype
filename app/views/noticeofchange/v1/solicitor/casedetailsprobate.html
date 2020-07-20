@@ -1,0 +1,116 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="" id="main-content" role="main">
+        <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+            <div class=""  style="display: flex; justify-content: space-between; ">
+
+                <div style="display: flex; ">
+                    <h1 class="govuk-heading-l">#3689-2642-5857-7069 &nbsp; </h1>
+
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Print
+                    </button>
+                </div>
+
+
+                <div style="display: flex; align-items:right" >
+                    <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+
+                    <select class="govuk-select" id="sort" name="sort">
+                        <option value="published" selected>Deceased details</option>
+                        <option value="updated" >Stop representing a case</option>
+                    </select>
+
+                    <form
+                            name="aspnetForm"
+                            method="post"
+                            id="aspnetForm"
+                            autocomplete="off">
+                            <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+                                Go
+                            </button>
+                    </form>
+                </div>
+
+            </div>
+
+
+            <div class="govuk-tabs" data-module="govuk-tabs">
+                <h2 class="govuk-tabs__title">
+                    Contents
+                </h2>
+                <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                        <a class="govuk-tabs__tab" href="#event">
+                            Event History
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Applicant details
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="govuk-tabs__panel" id="event" style="display: flex; padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+                    <div style="margin-top: 20px;">
+                        <h2 class="govuk-heading-m">History</h2>
+                        <table class="govuk-table" style="width:600px; margin-right: 20px;">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Event</th>
+                                    <th scope="col" class="govuk-table__header">Date</th>
+                                    <th scope="col" class="govuk-table__header">Author</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" >
+                                <tr class="govuk-table__row" style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
+                                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Apply for probate</a></td>
+                                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 3:49:22 PM</td>
+                                    <td class="govuk-table__cell">Hemesh Steadman</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="width: 580px; border: 1px solid #bfc1c3; padding:10px; margin-top: 20px;" >
+                        <h2 class="govuk-heading-m  govuk-!-margin-top-3 govuk-!-margin-bottom-4">Details</h2>
+                        <div style="display: flex;">
+                            <div style="width: 210px;">
+                                <p>Date</p>
+                                <p>Author</p>
+                                <p>End state</p>
+                                <p>Event</p>
+                                <p>Summary</p>
+                                <p>Comment</p>
+                            </div>
+                            <div>
+                                <p style="text-decoration: underline;">17 May 2020, 3:49:22 PM</p>
+                                <p>Hemesh Steadman</p>
+                                <p>Application created</p>
+                                <p>Apply for probate</p>
+                                <p>-</p>
+                                <p>-</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </main>
+</div>
+
+{% endblock %}

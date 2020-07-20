@@ -1,0 +1,93 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+
+
+            <div class="hmcts-page-heading">
+                  <div class="hmcts-page-heading__title">
+                       <h1 class="govuk-heading-l">Check case details</h1>
+                  </div>
+            </div>
+
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                </thead>
+                <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__cell  govuk-!-width-one-half">Case type</td>
+                    <td class="govuk-table__cell  govuk-!-width-one-half">Divorce</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__cell">Case number</td>
+                    <td class="govuk-table__cell">1572-3457-6858-2939</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-half">Applicant Details</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-half"> </th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">Current First and Middle names</td>
+                        <td class="govuk-table__cell">Laura</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">Current Last Name</td>
+                        <td class="govuk-table__cell">Narran</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Respondent Detail</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-half"> </th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__cell">Current First and Middle names</td>
+                    <td class="govuk-table__cell">Dave</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__cell">Current Last Name</td>
+                    <td class="govuk-table__cell">Scott</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <form
+                name="aspnetForm"
+                method="post"
+                id="aspnetForm"
+                autocomplete="off">
+
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
