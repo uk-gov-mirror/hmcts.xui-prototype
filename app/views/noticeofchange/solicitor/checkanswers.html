@@ -37,7 +37,12 @@ Case details
                             Change request
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            Start representing the case (notice of change)
+                            Start representing the case (notice of change)<br>
+                            {% if data.takenfrom == 'lip' %}
+                                Transferred from a citizen
+                            {% else %}
+                                Transferring from a solicitor
+                            {% endif %}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                         </dd>
@@ -159,5 +164,20 @@ Case details
         </div>
     </main>
 </div>
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+        <option value="takenfrom=lip&"
+                {% if data.takenfrom == 'lip' %}selected{% endif %}
+        >Transferred from citizen</option>
+
+        <option value="takenfrom=solicitor&"
+                {% if data.takenfrom == 'solicitor' %}selected{% endif %}
+        >Transferring from solicitor</option>
+
+    </select>
+</form>
 
 {% endblock %}

@@ -36,7 +36,7 @@ Case details
                     <h1 class="govuk-panel__title">
                         Notice of change request submitted<br><br>
                         <div class="govuk-panel__body">
-                            We’ll send you a confirmation email when we approve your request. This can take up to X days.
+                            Wait for a judge to review this request.
                         </div>
                     </h1>
                     {% endif %}
@@ -71,7 +71,8 @@ Case details
                 <!-- When approval is needed  -->
                 {% if data.autoapproved == 'false' %}
                     <h2 class="govuk-heading-m govuk-!-margin-top-6">What happens next</h2>
-                    <p>We'll send you a an email when we approve your request. <br>This may take a few days.</p>
+                    <p>A judge will decide to accept or reject your request.</p>
+                    <p class="govuk-inset-text">You won't be notified when this happens.</p>
                     <p class="govuk-body">
                         <a href="caselist">View case list</a>
                     </p>
@@ -87,15 +88,15 @@ Case details
     <form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
         <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
-            <option value="autoapproved=true&adminonly=false&"
+            <option value="autoapproved=true&adminonly=false&caseadded=true&"
                     {% if data.autoapproved == 'true' and data.adminonly == 'false' %}selected{% endif %}
             >Automatically accpeted</option>
 
-            <option value="autoapproved=true&adminonly=true&"
+            <option value="autoapproved=true&adminonly=true&caseadded=true&"
                     {% if data.autoapproved == 'true' and data.adminonly == 'true'  %}selected{% endif %}
             >Automatically accpeted - admin access only</option>
 
-            <option value="autoapproved=false&"
+            <option value="autoapproved=false&caseadded=false&"
                     {% if data.autoapproved == 'false' %}selected{% endif %}
             >Being reviewed</option>
 

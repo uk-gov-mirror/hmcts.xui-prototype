@@ -40,7 +40,7 @@ Case details
 
                 <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsdivorce">3689-2642-5857-7069</a></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsdivorce?casenumberselected=3689264258577069&caseadded=false&">3689-2642-5857-7069</a></td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-16">5 Feb 2020, 9:50:28 AM</td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-16">James</td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Smith</td>
@@ -52,7 +52,7 @@ Case details
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
                     </tr>
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsdivorce">1593-0136-4696-9976</a></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsdivorce?casenumberselected=1593013646969976&caseadded=false&">1593-0136-4696-9976</a></td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-16">12 Mar 2020, 1:48:33 PM</td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Mary</td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Hoyle</td>
@@ -64,7 +64,7 @@ Case details
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
                     </tr>
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsdivorce">3827-2010-3565-3933</a></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsdivorce?casenumberselected=3827201035653933&caseadded=false&">3827-2010-3565-3933</a></td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-16">2 Dec 2019, 4:23:50 PM</td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Neil</td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Higham</td>
@@ -95,32 +95,44 @@ Case details
                 </thead>
 
                 <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsprobate">3689-2642-5857-7069</a></td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">AY-34137102</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Anne</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Yang</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">24 Jan 2020</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
-                </tr>
+                {% if data.caseadded == 'true' %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsprobate">{{ data.casenumberselected }}</a></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Martin</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Chen</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">18 Feb 2020</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
+                    </tr>
 
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsprobate">1593-0136-4696-9976</a></td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">EW-6671238</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Ethel</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Williams</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> 1 May 2020</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
-                </tr>
+                {% endif %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsprobate?casenumberselected=3689-2642-5857-7069&caseadded=false&">3689-2642-5857-7069</a></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">AY-34137102</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Anne</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Yang</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">24 Jan 2020</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
+                    </tr>
 
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsprobate">3827-2010-3565-3933</a></td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">NJ-7982475</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Norman</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Jones</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16">12 Mar 2020 </td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
-                </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsprobate?casenumberselected=1593-0136-4696-9976&caseadded=false&">1593-0136-4696-9976</a></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">EW-6671238</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Ethel</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Williams</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> 1 May 2020</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsprobate?casenumberselected=3827-2010-3565-3933&caseadded=false&">3827-2010-3565-3933</a></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">NJ-7982475</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Norman</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Jones</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16">12 Mar 2020 </td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-16"> </td>
+                    </tr>
+
 
 
                 </tbody>
@@ -141,7 +153,7 @@ Case details
 
             <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailspubliclaw">3689-2642-5857-7069</a></td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailspubliclaw?casenumberselected=3689-2642-5857-7069&caseadded=false&">3689-2642-5857-7069</a></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Cardiff</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
@@ -149,7 +161,7 @@ Case details
             </tr>
 
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailspubliclaw">1593-0136-4696-9976</a></td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailspubliclaw?casenumberselected=1593-0136-4696-9976&caseadded=false&">1593-0136-4696-9976</a></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-16">London East</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
@@ -157,7 +169,7 @@ Case details
             </tr>
 
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailspubliclaw">3827-2010-3565-3933</a></td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailspubliclaw?casenumberselected=3827-2010-3565-3933&caseadded=false&">3827-2010-3565-3933</a></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-16">midlands East</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
@@ -182,21 +194,21 @@ Case details
 
                 <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsimmigration">DRAFT</a></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsimmigration?casenumberselected=DRAFT&caseadded=false&">DRAFT</a></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Anne Yang</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Appeal started</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
                 </tr>
 
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsimmigration">DRAFT</a></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsimmigration?casenumberselected=DRAFT&caseadded=false&">DRAFT</a></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Ethel Williams</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Appeal started</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
                 </tr>
 
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsimmigration">3827-2010-3565-3933</a></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsimmigration?casenumberselected=3827-2010-3565-3933&caseadded=false&">3827-2010-3565-3933</a></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Norman Jones</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Appeal submitted</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16"></td>
@@ -222,7 +234,7 @@ Case details
 
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsfinancialremedy">3689-2642-5857-7069</a></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsfinancialremedy?casenumberselected=3689264258577069&caseadded=false&">3689-2642-5857-7069</a></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">AY-34137102</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Anne</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Yang</td>
@@ -231,7 +243,7 @@ Case details
                 </tr>
 
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsfinancialremedy">1593-0136-4696-9976</a></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsfinancialremedy?casenumberselected=1593013646969976&caseadded=false&">1593-0136-4696-9976</a></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">AY-34137102</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Ethel</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Williams</td>
@@ -241,7 +253,7 @@ Case details
                 </tr>
 
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsfinancialremedy">3827-2010-3565-3933</a></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-16"><a href="casedetailsfinancialremedy?casenumberselected=3827201035653933&caseadded=false&">3827-2010-3565-3933</a></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">NJ-7982475</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Norman</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-16">Jones</td>

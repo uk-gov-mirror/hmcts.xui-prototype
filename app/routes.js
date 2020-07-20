@@ -170,6 +170,8 @@ router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
     else
     {
         req.session.data['errorsot'] = 'false';
+        req.session.data['casenumberselected'] = req.session.data['casenumber'];
+        req.session.data['caseadded'] = 'true';
         res.redirect('/noticeofchange/solicitor/confirmation?autoapproved=true&');
     }
 })
@@ -179,7 +181,6 @@ router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
 // STOP REPRESENTING CLIENT
 router.post( '/noticeofchange/solicitor/casedetailsprobate', function (req, res)
 {
-
     req.session.data['stopstop'] = '';
 
     res.redirect('/noticeofchange/solicitor/confirmstop');
@@ -187,7 +188,6 @@ router.post( '/noticeofchange/solicitor/casedetailsprobate', function (req, res)
 
 router.post( '/noticeofchange/solicitor/casedetailsdivorce', function (req, res)
 {
-
     req.session.data['stopstop'] = '';
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 
@@ -197,7 +197,6 @@ router.post( '/noticeofchange/solicitor/casedetailsdivorce', function (req, res)
 
 router.post( '/noticeofchange/solicitor/casedetailsimmigration', function (req, res)
 {
-
     req.session.data['stopstop'] = '';
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 
@@ -206,7 +205,6 @@ router.post( '/noticeofchange/solicitor/casedetailsimmigration', function (req, 
 
 router.post( '/noticeofchange/solicitor/casedetailspubliclaw', function (req, res)
 {
-
     req.session.data['stopstop'] = '';
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 
