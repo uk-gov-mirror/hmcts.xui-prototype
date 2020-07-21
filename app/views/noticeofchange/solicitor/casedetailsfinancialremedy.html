@@ -14,16 +14,7 @@ Case details
             <div class=""  style="display: flex; justify-content: space-between; ">
 
                 <div style="display: flex; ">
-                    {% if data.newcaseselected == 'true' %}
-                        <h1 class="govuk-heading-l">#{{ data.casenumber }} &nbsp; </h1>
-                    {% else %}
-                        <h1 class="govuk-heading-l">#{{ data.casenumberselected }} &nbsp; </h1>
-                    {% endif %}
-
-
-                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                        Print
-                    </button>
+                    <p class="govuk-!-font-weight-bold">{{ data.casenumberselected }}: Anne Yang vs Tony Yang  &nbsp; </p>
                 </div>
 
 
@@ -32,7 +23,10 @@ Case details
 
                     <select class="govuk-select" id="sort" name="sort">
                         <option value="published" selected>Select action</option>
-                        <option value="published" >Deceased details</option>
+                        <option value="published" >Submit amended application</option>
+                        <option value="published" >Link respondent</option>
+                        <option value="published" >Add Note</option>
+                        <option value="published" >Upload document</option>
                         <option value="updated" >Stop representing a case</option>
                     </select>
 
@@ -57,12 +51,37 @@ Case details
                 <ul class="govuk-tabs__list">
                     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
                         <a class="govuk-tabs__tab" href="#event">
-                            Event History
+                            History
                         </a>
                     </li>
                     <li class="govuk-tabs__list-item">
                         <a class="govuk-tabs__tab" href="#past-week">
-                            Applicant details
+                            Applicant
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Divorce Details
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Nature of Application
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Case documents
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Gatekeeping and allocation
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Scheduling and Listing
                         </a>
                     </li>
                 </ul>
@@ -79,25 +98,11 @@ Case details
                                 </tr>
                             </thead>
                             <tbody class="govuk-table__body" >
-
-                                {% if data.newcaseselected == 'true' %}
-                                    <tr class="govuk-table__row" style=" ">
-                                        <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Apply for probate</a></td>
-                                        <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 3:49:22 PM</td>
-                                        <td class="govuk-table__cell">Doug Jones</td>
-                                    </tr>
-                                    <tr class="govuk-table__row" style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
-                                        <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Notice of change</a></td>
-                                        <td class="govuk-table__cell" style="text-decoration: underline;">{{ data['todaydate'] }}, {{ data.todaydatetime }}</td>
-                                        <td class="govuk-table__cell">Alex Smith</td>
-                                    </tr>
-                                {% else %}
-                                    <tr class="govuk-table__row"  style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
-                                        <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Apply for probate</a></td>
-                                        <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 3:49:22 PM</td>
-                                        <td class="govuk-table__cell">Alex Smith</td>
-                                    </tr>
-                                {% endif %}
+                                <tr class="govuk-table__row" style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
+                                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Case submitted</a></td>
+                                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 3:49:22 PM</td>
+                                    <td class="govuk-table__cell">Alex Smith</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -112,26 +117,14 @@ Case details
                                 <p>Summary</p>
                                 <p>Comment</p>
                             </div>
-                            {% if data.newcaseselected == 'true' %}
-                                <div>
-                                    <p style="text-decoration: underline;">{{ data['todaydate'] }}, {{ data.todaydatetime }}</p>
-                                    <p>Alex Smith</p>
-                                    <p>Case transferred to new solicitor</p>
-                                    <p>Notice of change</p>
-                                    <p>-</p>
-                                    <p>-</p>
-                                </div>
-                            {% else %}
-                                <div>
-                                    <p style="text-decoration: underline;">17 May 2020, 3:49:22 PM</p>
-                                    <p>Doug Jones</p>
-                                    <p>Application created</p>
-                                    <p>Apply for probate</p>
-                                    <p>-</p>
-                                    <p>-</p>
-                                </div>
-                            {% endif %}
-
+                            <div>
+                                <p style="text-decoration: underline;">17 May 2020, 3:49:22 PM</p>
+                                <p>Alex Smith</p>
+                                <p>Solicitor - Awaiting Payment Confirmation</p>
+                                <p>Case submission</p>
+                                <p>-</p>
+                                <p>-</p>
+                            </div>
                         </div>
 
                     </div>

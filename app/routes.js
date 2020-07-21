@@ -352,7 +352,21 @@ router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
     }
     else
     {
+        // Sort out the data and time of right now
+        var months = ['filler', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
+        var currentDate = new Date()
+        var day = currentDate.getDate()
+        var monthtoday = currentDate.getMonth() + 1
+        var year = currentDate.getFullYear()
+
+        var timenowis = currentDate.toLocaleString('en-US', { hour: 'numeric',  minute: 'numeric', second: 'numeric', hour12: true })
+
+        req.session.data['todaydate'] = day + " " + months[monthtoday] + " " + year;
+        req.session.data['todaydatetime'] = timenowis;
         req.session.data['errorsot'] = 'false';
+        req.session.data['casenumberselected'] = req.session.data['casenumber'];
+        req.session.data['caseadded'] = 'true';
+        req.session.data['adminonly'] = 'true';
         res.redirect('/noticeofchange/solicitor/confirmation?autoapproved=true&');
     }
 })
@@ -362,7 +376,6 @@ router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
 // STOP REPRESENTING CLIENT
 router.post( '/noticeofchange/solicitor/casedetailsprobate', function (req, res)
 {
-
     req.session.data['stopstop'] = '';
 
     res.redirect('/noticeofchange/solicitor/confirmstop');
@@ -370,7 +383,23 @@ router.post( '/noticeofchange/solicitor/casedetailsprobate', function (req, res)
 
 router.post( '/noticeofchange/solicitor/casedetailsdivorce', function (req, res)
 {
+    req.session.data['stopstop'] = '';
+    console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 
+    res.redirect('/noticeofchange/solicitor/confirmstop');
+})
+
+
+router.post( '/noticeofchange/solicitor/casedetailsimmigration', function (req, res)
+{
+    req.session.data['stopstop'] = '';
+    console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
+
+    res.redirect('/noticeofchange/solicitor/confirmstop');
+})
+
+router.post( '/noticeofchange/solicitor/casedetailspubliclaw', function (req, res)
+{
     req.session.data['stopstop'] = '';
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 

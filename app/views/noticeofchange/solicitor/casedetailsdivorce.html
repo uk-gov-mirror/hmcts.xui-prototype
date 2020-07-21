@@ -14,7 +14,7 @@ Case details
             <div class=""  style="display: flex; justify-content: space-between; ">
 
                 <div style="display: flex; ">
-                    <p class="">3689264258577069: Smith vs Blythe  &nbsp; </p>
+                    <p class="">{{ data.casenumberselected }}: {{ data.divorcename }}  &nbsp; </p>
 
                     <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
                         Print
@@ -26,7 +26,8 @@ Case details
                     <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
 
                     <select class="govuk-select" id="sort" name="sort">
-                        <option value="published" selected>Submit amended application</option>
+                        <option value="published" selected>Select action</option>
+                        <option value="published" >Submit amended application</option>
                         <option value="published" >Link respondent</option>
                         <option value="published" >Add Note</option>
                         <option value="published" >Upload document</option>
@@ -96,11 +97,24 @@ Case details
                                 </tr>
                             </thead>
                             <tbody class="govuk-table__body" >
+                            {% if data.newcaseselected == 'true' %}
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Case submitted</a></td>
+                                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 3:49:22 PM</td>
+                                    <td class="govuk-table__cell">Peter Bach</td>
+                                </tr>
+                                <tr class="govuk-table__row" style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
+                                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Notice of change</a></td>
+                                    <td class="govuk-table__cell" style="text-decoration: underline;">{{ data['todaydate'] }}, {{ data.todaydatetime }}</td>
+                                    <td class="govuk-table__cell">Alex Smith</td>
+                                </tr>
+                            {% else %}
                                 <tr class="govuk-table__row" style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
                                     <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Case submitted</a></td>
                                     <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 3:49:22 PM</td>
-                                    <td class="govuk-table__cell">Hemesh Steadman</td>
+                                    <td class="govuk-table__cell">Alex Smith</td>
                                 </tr>
+                            {% endif %}
                             </tbody>
                         </table>
                     </div>
@@ -115,14 +129,25 @@ Case details
                                 <p>Summary</p>
                                 <p>Comment</p>
                             </div>
-                            <div>
-                                <p style="text-decoration: underline;">17 May 2020, 3:49:22 PM</p>
-                                <p>Hemesh Steadman</p>
-                                <p>Solicitor - Awaiting Payment Confirmation</p>
-                                <p>Case submission</p>
-                                <p>-</p>
-                                <p>-</p>
-                            </div>
+                            {% if data.newcaseselected == 'true' %}
+                                <div>
+                                    <p style="text-decoration: underline;">{{ data['todaydate'] }}, {{ data.todaydatetime }}</p>
+                                    <p>Alex Smith</p>
+                                    <p>Case transferred to new solicitor</p>
+                                    <p>Notice of change</p>
+                                    <p>-</p>
+                                    <p>-</p>
+                                </div>
+                            {% else %}
+                                <div>
+                                    <p style="text-decoration: underline;">17 May 2020, 3:49:22 PM</p>
+                                    <p>Alex Smith</p>
+                                    <p>Solicitor - Awaiting Payment Confirmation</p>
+                                    <p>Case submission</p>
+                                    <p>-</p>
+                                    <p>-</p>
+                                </div>
+                            {% endif %}
                         </div>
 
                     </div>
