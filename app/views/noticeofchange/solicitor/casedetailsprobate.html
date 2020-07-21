@@ -14,7 +14,12 @@ Case details
             <div class=""  style="display: flex; justify-content: space-between; ">
 
                 <div style="display: flex; ">
-                    <h1 class="govuk-heading-l">#{{ data.casenumberselected }} &nbsp; </h1>
+                    {% if data.newcaseselected == 'true' %}
+                        <h1 class="govuk-heading-l">#{{ data.casenumber }} &nbsp; </h1>
+                    {% else %}
+                        <h1 class="govuk-heading-l">#{{ data.casenumberselected }} &nbsp; </h1>
+                    {% endif %}
+
 
                     <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
                         Print
@@ -75,7 +80,7 @@ Case details
                             </thead>
                             <tbody class="govuk-table__body" >
 
-                                {% if data.caseadded == 'true' %}
+                                {% if data.newcaseselected == 'true' %}
                                     <tr class="govuk-table__row" style=" ">
                                         <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Apply for probate</a></td>
                                         <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 3:49:22 PM</td>
@@ -83,7 +88,7 @@ Case details
                                     </tr>
                                     <tr class="govuk-table__row" style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
                                         <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Notice of change</a></td>
-                                        <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 3:49:22 PM</td>
+                                        <td class="govuk-table__cell" style="text-decoration: underline;">{{ data['todaydate'] }}, {{ data.todaydatetime }}</td>
                                         <td class="govuk-table__cell">Alex Smith</td>
                                     </tr>
                                 {% else %}
@@ -107,9 +112,9 @@ Case details
                                 <p>Summary</p>
                                 <p>Comment</p>
                             </div>
-                            {% if data.caseadded == 'true' %}
+                            {% if data.newcaseselected == 'true' %}
                                 <div>
-                                    <p style="text-decoration: underline;">17 May 2020, 3:49:22 PM</p>
+                                    <p style="text-decoration: underline;">{{ data['todaydate'] }}, {{ data.todaydatetime }}</p>
                                     <p>Alex Smith</p>
                                     <p>Case transferred to new solicitor</p>
                                     <p>Notice of change</p>

@@ -58,9 +58,9 @@ Case details
                         </p>
 
                         {% if data.divorcecaselist == 'true'%}
-                            <p class="govuk-body"> <a href="casedetailsdivorce">View this case</a></p>
+                            <p class="govuk-body"> <a href="casedetailsdivorce?newcaseselected=true&">View this case</a></p>
                         {% else %}
-                            <p class="govuk-body"> <a href="casedetailsprobate">View this case</a></p>
+                            <p class="govuk-body"> <a href="casedetailsprobate?newcaseselected=true&">View this case</a></p>
                         {% endif %}
 
                     {% endif %}
@@ -88,11 +88,11 @@ Case details
     <form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
         <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
-            <option value="autoapproved=true&adminonly=false&caseadded=true&"
+            <option value="autoapproved=true&adminonly=false&"
                     {% if data.autoapproved == 'true' and data.adminonly == 'false' %}selected{% endif %}
             >Automatically accpeted</option>
 
-            <option value="autoapproved=true&adminonly=true&caseadded=true&"
+            <option value="autoapproved=true&adminonly=true&"
                     {% if data.autoapproved == 'true' and data.adminonly == 'true'  %}selected{% endif %}
             >Automatically accpeted - admin access only</option>
 
