@@ -225,6 +225,12 @@ router.post( '/noticeofchange/v1/solicitor/selectrole', function (req, res)
 
 
 
+
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Latest version
 router.get( '/noticeofchange/startnoc', function (req, res)
@@ -264,9 +270,20 @@ router.post( '/noticeofchange/solicitor/addenterdetails', function (req, res)
     {
         req.session.data['errorcasenumber'] = 'false';
         req.session.data['role'] = 'undefined';
-        res.redirect('/noticeofchange/solicitor/selectroleprobate');
+
+
+        if(req.session.data['caselist'] == 'probate')
+        {
+            res.redirect('/noticeofchange/solicitor/selectroleprobate');
+        }
+        else
+        {
+            req.session.data['caselist'] = 'divorce';
+            res.redirect('/noticeofchange/solicitor/selectroledivorce');
+        }
     }
 })
+
 
 router.post( '/noticeofchange/solicitor/selectroleprobate', function (req, res)
 {
@@ -279,17 +296,27 @@ router.post( '/noticeofchange/solicitor/selectroleprobate', function (req, res)
     {
         req.session.data['errorrole'] = 'false';
 
-        if(req.session.data['divorcecaselist'] == 'true' )
-        {
-            res.redirect('/noticeofchange/solicitor/securityquestiondivorce');
-        }
-        else
-        {
-            res.redirect('/noticeofchange/solicitor/securityquestionprobate');
-        }
-
+        res.redirect('/noticeofchange/solicitor/securityquestionprobate');
     }
 })
+
+
+router.post( '/noticeofchange/solicitor/selectroledivorce', function (req, res)
+{
+    if(req.session.data['role'] == 'undefined' )
+    {
+        req.session.data['errorrole'] = 'true';
+        res.redirect('selectroledivorce');
+    }
+    else
+    {
+        req.session.data['errorrole'] = 'false';
+
+        res.redirect('/noticeofchange/solicitor/securityquestiondivorce');
+    }
+})
+
+
 
 router.post( '/noticeofchange/solicitor/securityquestionprobate', function (req, res)
 {
