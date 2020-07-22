@@ -445,6 +445,19 @@ router.post( '/noticeofchange/solicitor/confirmstop', function (req, res)
     }
     else
     {
+        console.warn("case to hide  +" + req.session.data['casetohide']  + "+++");
+        if (req.session.data['casetohide'] == 'a')
+        {
+            req.session.data['hideone'] = 'true';
+        }
+        else if (req.session.data['casetohide'] == 'b')
+        {
+            req.session.data['hidetwo'] = 'true';
+        }
+        else if (req.session.data['casetohide'] == 'c')
+        {
+            req.session.data['hidethree'] = 'true';
+        }
         req.session.data['errorstopconfirm'] = 'false';
         res.redirect('/noticeofchange/solicitor/confirmationofstopping');
     }
