@@ -11,16 +11,17 @@ Case details
     <main class="" id="main-content" role="main">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <div class="govuk-panel govuk-panel--confirmation">
+
 
                     {% if data.autoapproved == 'true' %}
+                        <div class="govuk-panel govuk-panel--confirmation">
                         <!-- Automatic approval -->
                         <h1 class="govuk-panel__title">
 
                             {% if data.adminonly == 'true' %}
-                            Notice of change request successful<br><br>
+                                Notice of change request successful<br><br>
                                 <div class="govuk-panel__body">
-                                    The case is now with your organisation administrator
+                                    The case is not shared with anyone
                                 </div>
                             {% else %}
                                 Notice of change successful<br><br>
@@ -33,25 +34,33 @@ Case details
 
                     <!-- Approval needed -->
                     {% if data.autoapproved == 'false' %}
-                    <h1 class="govuk-panel__title">
-                        Notice of change request submitted<br><br>
-                        <div class="govuk-panel__body">
-                            Wait for a judge to review this request.
-                        </div>
-                    </h1>
+                        {% if data.inreview == 'true' %}
+                            <div class="govuk-panel govuk-panel--confirmation">
+                                <h1 class="govuk-panel__title">
+                                    Notice of change request submitted<br><br>
+                                    <div class="govuk-panel__body">
+                                        Wait for us to review this request
+                                    </div>
+                                </h1>
+                        {% else %}
+                            <div>
+                                <h1  class="govuk-heading-l">Request rejected</h1>
+                        {% endif %}
+
                     {% endif %}
                 </div>
 
                 {% if data.autoapproved == 'true' %}
                     <!-- Automatic approval -->
-                    <p class="govuk-body govuk-!-margin-top-6">We've  emailed the solicitor who previously represented the case.</p>
+                    <p class="govuk-body govuk-!-margin-top-6">We've  emailed the person who previously represented the case.</p>
 
                     <h2 class="govuk-heading-m ">What happens next</h2>
 
                     {% if data.adminonly == 'true' %}
                         <p class="govuk-body">
-                            Contact your organisation administrator to get the case added to your case list.
+                            You'll need to share the case with someone.
                         </p>
+                        <p class="govuk-body"><a href="#">Share this case</a></p>
                     {% else %}
                         <p class="govuk-body">
                             This case will now appear in your case list.
@@ -63,19 +72,29 @@ Case details
                             <p class="govuk-body"> <a href="casedetailsprobate?newcaseselected=true&">View this case</a></p>
                         {% endif %}
 
+                        <p class="govuk-body"><a href="caselist">View case list</a></p>
+
                     {% endif %}
-                    <p class="govuk-body"><a href="caselist">View case list</a></p>
+
                 {% endif %}
 
 
                 <!-- When approval is needed  -->
                 {% if data.autoapproved == 'false' %}
-                    <h2 class="govuk-heading-m govuk-!-margin-top-6">What happens next</h2>
-                    <p>A judge will decide to accept or reject your request.</p>
-                    <p class="govuk-inset-text">You won't be notified when this happens.</p>
-                    <p class="govuk-body">
-                        <a href="caselist">View case list</a>
-                    </p>
+                    {% if data.inreview == 'true' %}
+                        <h2 class="govuk-heading-m govuk-!-margin-top-6">What happens next</h2>
+                        <p>Will decide to accept or reject your request.</p>
+                        <p class="govuk-inset-text">You won't be notified when this happens.</p>
+                        <p>If your request is accepted the case will appear in your caselist.</p>
+                        <p class="govuk-body">
+                            <a href="caselist">View case list</a>
+                        </p>
+                    {% else %}
+                        <p>Notice of change request has been rejected.</p>
+                        <p>This may be because X, Y, or Z</p>
+                        <p><a href="caselist">View case list</a></p>
+                    {% endif %}
+
                 {% endif %}
 
             </div>
@@ -94,11 +113,15 @@ Case details
 
             <option value="autoapproved=true&adminonly=true&"
                     {% if data.autoapproved == 'true' and data.adminonly == 'true'  %}selected{% endif %}
-            >Automatically accpeted - admin access only</option>
+            >Automatically accpeted - Case access admin</option>
 
-            <option value="autoapproved=false&caseadded=false&"
+            <option value="autoapproved=false&caseadded=false&inreview=true&"
                     {% if data.autoapproved == 'false' %}selected{% endif %}
             >Being reviewed</option>
+
+            <option value="autoapproved=false&caseadded=false&inreview=false&"
+                    {% if data.autoapproved == 'false' %}selected{% endif %}
+            >Rejected</option>
 
         </select>
     </form>
