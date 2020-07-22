@@ -116,11 +116,11 @@ Case details
             >Automatically accpeted - Case access admin</option>
 
             <option value="autoapproved=false&caseadded=false&inreview=true&"
-                    {% if data.autoapproved == 'false' %}selected{% endif %}
+                    {% if data.autoapproved == 'false' and  data.inreview == 'true'  %}selected{% endif %}
             >Being reviewed</option>
 
             <option value="autoapproved=false&caseadded=false&inreview=false&"
-                    {% if data.autoapproved == 'false' %}selected{% endif %}
+                    {% if data.autoapproved == 'false' and  data.inreview == 'false' %}selected{% endif %}
             >Rejected</option>
 
         </select>
