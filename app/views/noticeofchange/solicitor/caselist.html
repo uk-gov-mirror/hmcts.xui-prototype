@@ -22,7 +22,13 @@ Case details
 
 
         {% if data.caselist == 'probate' %}
-            <p>Displaying 1 - 3 out of 3 results</p>
+            {% if data.hideone == 'true' and data.hidetwo == 'true' and data.hidethree == 'true' %}
+                <p>Displaying 0 out of 0 results</p>
+            {% else %}
+                <p>Displaying 1 - 3 out of 3 results</p>
+            {% endif %}
+
+
             <table class="govuk-table ">
                 <thead class="govuk-table__head">
                 <tr class="govuk-table__row">

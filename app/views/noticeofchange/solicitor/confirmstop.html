@@ -20,7 +20,7 @@ Case details
 
                 <h2 class="govuk-heading-m">Stop representing</h2>
 
-                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <dl class="govuk-summary-list ">
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             Change request
@@ -47,19 +47,24 @@ Case details
                             </a>
                         </dd>
                     </div>
-
-
                 </dl>
+
+                {% if data.stoppingoutcome == 'auto' %}
+                    <div class="govuk-inset-text">
+                        <p class="govuk-!-font-weight-bold">After submitting</p>
+                        <p>You'll receive an email to confirm you've stopped representation.</p>
+                        <p>You will no longer have acces to the case.</p>
+                    </div>
+                {% endif %}
+
+                <br>
+
 
                 <form
                         name="aspnetForm"
                         method="post"
                         id="aspnetForm"
                         autocomplete="off">
-
-
-
-
 
                         <div>
                             <a class="govuk-button govuk-button--secondary" data-module="govuk-button">

@@ -356,7 +356,12 @@ router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
 {
     console.warn("Main Router +" + req.session.data['sot']  + "+++");
     console.warn("****************************");
-    if(req.session.data['sot'] != 'on' )
+    if(req.session.data['solicitorhasalready'] != 'on' )
+    {
+        // where solicitor in firm already has case
+        res.redirect('alreadygotcaseerror');
+    }
+    else if(req.session.data['sot'] != 'on' )
     {
         req.session.data['errorsot'] = 'true';
         res.redirect('checkanswers');
