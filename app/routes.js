@@ -383,7 +383,7 @@ router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
         req.session.data['casenumberselected'] = req.session.data['casenumber'];
         req.session.data['caseadded'] = 'true';
         req.session.data['adminonly'] = 'true';
-        res.redirect('/noticeofchange/solicitor/confirmation?autoapproved=true&');
+        res.redirect('/noticeofchange/solicitor/confirmation?autoapproved=true&adminonly=false&servicedown=false&');
     }
 })
 
