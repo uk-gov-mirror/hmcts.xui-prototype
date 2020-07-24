@@ -134,7 +134,6 @@ router.post( '/noticeofchange/v1/solicitor/securityquestionprobate', function (r
     }
 })
 
-
 router.post( '/noticeofchange/v1/solicitor/securityquestiondivorce', function (req, res)
 {
     console.warn("Main Router  " + req.session.data['day']);
@@ -157,8 +156,6 @@ router.post( '/noticeofchange/v1/solicitor/securityquestiondivorce', function (r
     }
 })
 
-
-
 router.post( '/noticeofchange/v1/solicitor/checkanswers', function (req, res)
 {
     console.warn("Main Router +" + req.session.data['sot']  + "+++");
@@ -174,7 +171,6 @@ router.post( '/noticeofchange/v1/solicitor/checkanswers', function (req, res)
         res.redirect('/noticeofchange/v1/solicitor/confirmation?autoapproved=true&');
     }
 })
-
 
 
 // STOP REPRESENTING CLIENT
@@ -195,8 +191,6 @@ router.post( '/noticeofchange/v1/solicitor/casedetailsdivorce', function (req, r
     res.redirect('/noticeofchange/v1/solicitor/confirmstop');
 })
 
-
-
 router.post( '/noticeofchange/v1/solicitor/confirmstop', function (req, res)
 {
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
@@ -211,8 +205,6 @@ router.post( '/noticeofchange/v1/solicitor/confirmstop', function (req, res)
         res.redirect('/noticeofchange/v1/solicitor/confirmationofstopping');
     }
 })
-
-
 
 // NOT USED AS ROLE SEEMS TO BE WHO THEY ARE REPRESENTING
 router.post( '/noticeofchange/v1/solicitor/selectrole', function (req, res)
@@ -256,7 +248,6 @@ router.get( '/noticeofchange/startnoc', function (req, res)
     res.redirect('/noticeofchange/solicitor/addenterdetails');
 })
 
-
 router.post( '/noticeofchange/solicitor/addenterdetails', function (req, res)
 {
     //console.warn("Main Router " + req.session.data['casenumber'].length);
@@ -284,7 +275,6 @@ router.post( '/noticeofchange/solicitor/addenterdetails', function (req, res)
     }
 })
 
-
 router.post( '/noticeofchange/solicitor/selectroleprobate', function (req, res)
 {
     if(req.session.data['role'] == 'undefined' )
@@ -300,7 +290,6 @@ router.post( '/noticeofchange/solicitor/selectroleprobate', function (req, res)
     }
 })
 
-
 router.post( '/noticeofchange/solicitor/selectroledivorce', function (req, res)
 {
     if(req.session.data['role'] == 'undefined' )
@@ -315,8 +304,6 @@ router.post( '/noticeofchange/solicitor/selectroledivorce', function (req, res)
         res.redirect('/noticeofchange/solicitor/securityquestiondivorce');
     }
 })
-
-
 
 router.post( '/noticeofchange/solicitor/securityquestionprobate', function (req, res)
 {
@@ -343,7 +330,6 @@ router.post( '/noticeofchange/solicitor/securityquestionprobate', function (req,
     }
 })
 
-
 router.post( '/noticeofchange/solicitor/securityquestiondivorce', function (req, res)
 {
     console.warn("Main Router  " + req.session.data['day']);
@@ -365,8 +351,6 @@ router.post( '/noticeofchange/solicitor/securityquestiondivorce', function (req,
         res.redirect('/noticeofchange/solicitor/checkanswers');
     }
 })
-
-
 
 router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
 {
@@ -405,7 +389,7 @@ router.post( '/noticeofchange/solicitor/casedetailsprobate', function (req, res)
 {
     req.session.data['stopstop'] = '';
 
-    res.redirect('/noticeofchange/solicitor/confirmstop');
+    res.redirect('/noticeofchange/solicitor/stopselectclients');
 })
 
 router.post( '/noticeofchange/solicitor/casedetailsdivorce', function (req, res)
@@ -413,16 +397,15 @@ router.post( '/noticeofchange/solicitor/casedetailsdivorce', function (req, res)
     req.session.data['stopstop'] = '';
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 
-    res.redirect('/noticeofchange/solicitor/confirmstop');
+    res.redirect('/noticeofchange/solicitor/stopselectclients');
 })
-
 
 router.post( '/noticeofchange/solicitor/casedetailsimmigration', function (req, res)
 {
     req.session.data['stopstop'] = '';
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 
-    res.redirect('/noticeofchange/solicitor/confirmstop');
+    res.redirect('/noticeofchange/solicitor/stopselectclients');
 })
 
 router.post( '/noticeofchange/solicitor/casedetailspubliclaw', function (req, res)
@@ -430,21 +413,33 @@ router.post( '/noticeofchange/solicitor/casedetailspubliclaw', function (req, re
     req.session.data['stopstop'] = '';
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 
-    res.redirect('/noticeofchange/solicitor/confirmstop');
+    res.redirect('/noticeofchange/solicitor/stopselectclients');
 })
 
+router.post( '/noticeofchange/solicitor/stopselectclients', function (req, res)
+{
+    if(req.session.data['clientselected'] != 'on' )
+    {
+        req.session.data['errorstopnoperson'] = 'true';
+        res.redirect('stopselectclients');
+    }
+    else
+    {
+        req.session.data['errorstopnoperson'] = 'false';
+        res.redirect('/noticeofchange/solicitor/stopreason');
+    }
 
+})
+
+router.post( '/noticeofchange/solicitor/stopreason', function (req, res)
+{
+    res.redirect('/noticeofchange/solicitor/confirmstop');
+})
 
 router.post( '/noticeofchange/solicitor/confirmstop', function (req, res)
 {
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
-    if(req.session.data['stopstop'] != 'on' )
-    {
-        req.session.data['errorstopconfirm'] = 'true';
-        res.redirect('confirmstop');
-    }
-    else
-    {
+
         console.warn("case to hide  +" + req.session.data['casetohide']  + "+++");
         if (req.session.data['casetohide'] == 'a')
         {
@@ -458,9 +453,23 @@ router.post( '/noticeofchange/solicitor/confirmstop', function (req, res)
         {
             req.session.data['hidethree'] = 'true';
         }
-        req.session.data['errorstopconfirm'] = 'false';
-        res.redirect('/noticeofchange/solicitor/confirmationofstopping');
-    }
+
+        // Redirect to correct confirmation style
+        if (req.session.data['stoppingoutcome'] == 'approval')
+        {
+            res.redirect('/noticeofchange/solicitor/confirmationofstopping');
+        }
+        else if (req.session.data['stoppingoutcome'] == 'error')
+        {
+            res.redirect('/noticeofchange/solicitor/confirmationofstopping');
+        }
+        else
+        {
+            res.redirect('/noticeofchange/solicitor/caselist');
+        }
+
+
+
 })
 
 

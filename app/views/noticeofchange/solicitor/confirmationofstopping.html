@@ -11,29 +11,38 @@ Case details
     <main class="" id="main-content" role="main">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <div class="govuk-panel govuk-panel--confirmation">
 
-                    <!-- Automatic approval -->
-                    <h1 class="govuk-panel__title">
-                        Notice of change successful<br><br>
-                        <div class="govuk-panel__body">
-                            You’ve stopped representing case <br>3689-2642-5857-7069
-                        </div>
-                    </h1>
+                {% if data.stoppingoutcome == 'error' %}
+                    <h1  class="govuk-heading-l">Something went wrong</h1>
 
-                </div>
-
-
-                    <!-- Automatic approval -->
-
+                    <p>This service has stopped working.</p>
+                    <p>Your request has not been submitted.</p>
+                    <p>Please try again in a few hours.</p>
+                {% else %}
+                    <div class="govuk-panel govuk-panel--confirmation">
+                        <!-- Automatic approval -->
+                        <h1 class="govuk-panel__title">
+                            Stop representation request submitted<br><br>
+                            <div class="govuk-panel__body">
+                                Wait for us to review this request
+                            </div>
+                        </h1>
+                    </div>
 
                     <h2 class="govuk-heading-m  govuk-!-margin-top-6">What happens next</h2>
-                    <p class="govuk-body">We’ve sent you a confirmation email.</p>
-                    <p class="govuk-body">We’ll also send a letter to your former client confirming you are no longer their legal representative. </p>
-                    <p class="govuk-body">This case will no longer appear in your case list.</p>
+                    <p>We'll decide to accept or reject your request and email you the outcome.</p>
+                    <p>If your request is accepted the case will appear in your caselist.</p>
                     <p class="govuk-body">
                         <a href="caselist">View case list</a>
                     </p>
+
+                {% endif %}
+
+
+                    <!-- Automatic approval -->
+
+
+
 
             </div>
         </div>
@@ -43,7 +52,19 @@ Case details
 
 
 
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
+        <option value="stoppingoutcome=approval&"
+                {% if data.stoppingoutcome == 'approval' %}selected{% endif %}
+        >Approval</option>
+
+        <option value="stoppingoutcome=error&"
+                {% if data.stoppingoutcome == 'error' %}selected{% endif %}
+        >Error</option>
+
+    </select>
+</form>
 
 
 {% endblock %}

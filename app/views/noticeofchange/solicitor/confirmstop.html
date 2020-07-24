@@ -11,27 +11,45 @@ Case details
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
-                {% if data.errorstopconfirm == 'true' %}
-                    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-                        <h2 class="govuk-error-summary__title" id="error-summary-title">
-                            There is a problem
-                        </h2>
-                        <div class="govuk-error-summary__body">
-                            <ul class="govuk-list govuk-error-summary__list">
-                                <li>
-                                    <a href="#confirmthestop">You must confirm you no longer want to represent the case</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                {% endif %}
-
 
                 <div class="hmcts-page-heading">
                       <div class="hmcts-page-heading__title">
-                           <h1 class="govuk-heading-l">Are you sure you want to stop representing this case?</h1>
+                           <h1 class="govuk-heading-l">Check your answers before submitting request</h1>
                       </div>
                 </div>
+
+                <h2 class="govuk-heading-m">Stop representing</h2>
+
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Change request
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data.clientname }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="stopselectclients">
+                                Change
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Reason
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{data.stoppingmoredetail}}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="stopreason">
+                                Change
+                            </a>
+                        </dd>
+                    </div>
+
+
+                </dl>
 
                 <form
                         name="aspnetForm"
@@ -40,42 +58,43 @@ Case details
                         autocomplete="off">
 
 
-                        <p>If you stop representing this case, you’ll no longer have access to it. Full control of the case will be given to the client. </p>
 
-                        {% if data.errorstopconfirm == 'true'%}
-                            <div class="govuk-form-group govuk-form-group--error" id="confirmthestop">
-                        {% else %}
-                            <div class="govuk-form-group">
-                        {% endif %}
 
-                            {% if data.errorstopconfirm == 'true'%}
-                                        <span id="national-insurance-number-error" class="govuk-error-message">
-                                              <span class="govuk-visually-hidden">Error:</span> Tick the box to confirm you no longer want to represent the case
-                                        </span>
-                            {% endif %}
 
-                            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                                <div class="govuk-checkboxes">
-                                    <div class="govuk-checkboxes__item">
-
-                                        <input class="govuk-checkboxes__input" id="stopstop" name="stopstop" type="checkbox" >
-                                        <label class="govuk-label govuk-checkboxes__label" for="stopstop">
-                                            I confirm I no longer want to represent this case
-                                        </label>
-                                    </div>
-                                </div>
-                            </fieldset>
+                        <div>
+                            <a class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Previous
+                            </a>
+                            <button class="govuk-button" data-module="govuk-button">
+                                Submit
+                            </button>
                         </div>
 
-                        <button class="govuk-button" data-module="govuk-button">
-                            Submit request
-                        </button>
-
-                        <p><a href="casedetailsprobate.html">Continue representing this case</a></p>
+                        <p><a href="casedetailsprobate.html">Cancel</a></p>
                 </form>
 
             </div>
         </div>
     </div>
+
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+        <option value="stoppingoutcome=auto&"
+                {% if data.stoppingoutcome == 'auto' %}selected{% endif %}
+        >Next step: Automatic</option>
+
+        <option value="stoppingoutcome=approval&"
+                {% if data.stoppingoutcome == 'approval' %}selected{% endif %}
+        >Next step: Approval</option>
+
+        <option value="stoppingoutcome=error&"
+                {% if data.stoppingoutcome == 'error' %}selected{% endif %}
+        >Next step: Error</option>
+
+    </select>
+</form>
 
 {% endblock %}
