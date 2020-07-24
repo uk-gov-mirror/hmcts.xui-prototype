@@ -37,11 +37,11 @@ Case details
                             Change request
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            Start representing the case (notice of change)<br>
+
                             {% if data.takenfrom == 'lip' %}
-                                Transferred from a citizen
+                                Transfer existing case from a citizen (Notice of Change)
                             {% else %}
-                                Transferring from a solicitor
+                                Transfer existing case from a solicitor (Notice of Change)
                             {% endif %}
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -92,7 +92,7 @@ Case details
                     {% elseif data.caselist == 'probate' %}
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Last name of party
+                                Client’s last name
                             </dt>
                             <dd class="govuk-summary-list__value">
                                 Narran
@@ -132,11 +132,10 @@ Case details
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="sot" name="sot" type="checkbox">
                                     <label class="govuk-label govuk-checkboxes__label" for="sot">
-                                        <p>I believe myself or my organisation has been requested to represent a party in this case.</p>
+                                        <p>My organisation or I have been requested to represent a party in this case.</p>
 
                                         <p>I understand that proceedings for contempt of court may be brought against
-                                            anyone who requests access to a case verified by a statement of truth without
-                                            an honest belief in its truth.</p>
+                                            anyone who requests access to a case verified by a statement of truth without an honest belief in its truth.</p>
                                     </label>
                                 </div>
                             </div>
@@ -147,7 +146,8 @@ Case details
 
                     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Notifications</h2>
 
-                    <p class="govuk-body  govuk-!-margin-bottom-7">Once we’ve approved this notice of change, we’ll email the legal firm that will no longer be representing the case.</p>
+                    <p class="govuk-body  govuk-!-margin-bottom-7">Once we’ve approved this notice of change,
+                        we’ll email the legal firm that will no longer be representing the case.</p>
 
 
 

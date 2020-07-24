@@ -15,7 +15,7 @@ Case details
     <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
             <li>
-                <a href="#clientselected">You must seect one or more clients</a>
+                <a href="#clientselected">Select the clients you want to stop representing</a>
             </li>
         </ul>
     </div>
@@ -25,7 +25,7 @@ Case details
 
 <div class="hmcts-page-heading">
     <div class="hmcts-page-heading__title">
-        <h1 class="govuk-heading-l">Select who you want to stop representing</h1>
+        <h1 class="govuk-heading-l">Which client do you want to stop representing?</h1>
     </div>
 </div>
 
@@ -43,7 +43,7 @@ Case details
 
                 {% if data.errorstopnoperson == 'true'%}
                                             <span id="national-insurance-number-error" class="govuk-error-message">
-                                                  <span class="govuk-visually-hidden">Error:</span> Tick the box of who you want to stop representing
+                                                  <span class="govuk-visually-hidden">Error:</span> Select the clients you want to stop representing’
                                             </span>
                 {% endif %}
 

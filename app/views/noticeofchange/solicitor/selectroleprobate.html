@@ -15,7 +15,7 @@ Case details
             <div class="govuk-error-summary__body">
                 <ul class="govuk-list govuk-error-summary__list">
                     <li>
-                        <a href="#govuk-radios">You must select how you will be representing the case</a>
+                        <a href="#govuk-radios">You must select who you you will be representing the case</a>
                     </li>
                 </ul>
             </div>
@@ -25,7 +25,7 @@ Case details
 
     <div class="hmcts-page-heading">
           <div class="hmcts-page-heading__title">
-               <h1 class="govuk-heading-l">What will be your role in the case?</h1>
+               <h1 class="govuk-heading-l">Who will you be representing in the case?</h1>
           </div>
     </div>
 
@@ -38,7 +38,7 @@ Case details
         {% if data.errorrole == 'true' %}
             <div class="govuk-form-group govuk-!-margin-bottom-7 govuk-form-group--error">
                 <span id="national-insurance-number-error" class="govuk-error-message">
-                    <span class="govuk-visually-hidden">Error:</span> Select how you will be representing the case
+                    <span class="govuk-visually-hidden">Error:</span> Select who you will be representing in the case
                 </span>
         {% else %}
             <div class="govuk-form-group govuk-!-margin-bottom-7">
@@ -47,13 +47,7 @@ Case details
                 <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="radio1" name="role" type="radio" value="Petitioner" >
                     <label class="govuk-label govuk-radios__label" for="radio1">
-                        Petitioner
-                    </label>
-                </div>
-                <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="radio2" name="role" type="radio" value="Respondent" >
-                    <label class="govuk-label govuk-radios__label" for="radio2">
-                        Respondent
+                        Relative of the deceased
                     </label>
                 </div>
             </div>

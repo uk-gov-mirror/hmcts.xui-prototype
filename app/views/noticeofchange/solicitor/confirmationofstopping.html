@@ -15,14 +15,14 @@ Case details
                 {% if data.stoppingoutcome == 'error' %}
                     <h1  class="govuk-heading-l">Something went wrong</h1>
 
-                    <p>This service has stopped working.</p>
                     <p>Your request has not been submitted.</p>
-                    <p>Please try again in a few hours.</p>
+                    <p>We’re working to fix the problem.</p>
+                    <p>Please try again shortly. Contact your case administrator if you’re still having problems.</p>
                 {% else %}
                     <div class="govuk-panel govuk-panel--confirmation">
                         <!-- Automatic approval -->
                         <h1 class="govuk-panel__title">
-                            Stop representation request submitted<br><br>
+                            Your request to stop representing a client has been submitted <br><br>
                             <div class="govuk-panel__body">
                                 Wait for us to review this request
                             </div>
@@ -30,8 +30,9 @@ Case details
                     </div>
 
                     <h2 class="govuk-heading-m  govuk-!-margin-top-6">What happens next</h2>
-                    <p>We'll decide to accept or reject your request and email you the outcome.</p>
-                    <p>If your request is accepted the case will appear in your caselist.</p>
+                    <p>We’re reviewing your request.</p>
+                    <p>We’ll send you an email confirming our decision.</p>
+                    <p>If your request is accepted, the case will no longer appear in your case list.</p>
                     <p class="govuk-body">
                         <a href="caselist">View case list</a>
                     </p>
