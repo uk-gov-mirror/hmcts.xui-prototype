@@ -39,10 +39,11 @@ Case details
                         <dd class="govuk-summary-list__value">
 
                             {% if data.takenfrom == 'lip' %}
-                                Transfer existing case from a citizen (Notice of Change)
+                                Transfer existing case from a citizen
                             {% else %}
-                                Transfer existing case from a solicitor (Notice of Change)
+                                Transfer existing case from a solicitor
                             {% endif %}
+                            <br>(Notice of Change)
                         </dd>
                         <dd class="govuk-summary-list__actions">
                         </dd>
@@ -169,13 +170,15 @@ Case details
 <form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
     <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
-        <option value="takenfrom=lip&"
-                {% if data.takenfrom == 'lip' %}selected{% endif %}
-        >Transferred from citizen</option>
+
 
         <option value="takenfrom=solicitor&"
                 {% if data.takenfrom == 'solicitor' %}selected{% endif %}
         >Transferring from solicitor</option>
+
+        <option value="takenfrom=lip&"
+                {% if data.takenfrom == 'lip' %}selected{% endif %}
+        >Transferred from citizen</option>
 
     </select>
 </form>
