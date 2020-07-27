@@ -400,6 +400,7 @@ router.post( '/noticeofchange/solicitor/casedetailsprobate', function (req, res)
 router.post( '/noticeofchange/solicitor/casedetailsdivorce', function (req, res)
 {
     req.session.data['stopstop'] = '';
+    req.session.data['stoppingmoredetail'] = '';
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 
     res.redirect('/noticeofchange/solicitor/stopselectclients');
@@ -408,6 +409,7 @@ router.post( '/noticeofchange/solicitor/casedetailsdivorce', function (req, res)
 router.post( '/noticeofchange/solicitor/casedetailsimmigration', function (req, res)
 {
     req.session.data['stopstop'] = '';
+    req.session.data['stoppingmoredetail'] = '';
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 
     res.redirect('/noticeofchange/solicitor/stopselectclients');
@@ -416,6 +418,7 @@ router.post( '/noticeofchange/solicitor/casedetailsimmigration', function (req, 
 router.post( '/noticeofchange/solicitor/casedetailspubliclaw', function (req, res)
 {
     req.session.data['stopstop'] = '';
+    req.session.data['stoppingmoredetail'] = '';
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 
     res.redirect('/noticeofchange/solicitor/stopselectclients');
