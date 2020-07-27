@@ -238,9 +238,9 @@ router.get( '/noticeofchange/startnoc', function (req, res)
     req.session.data['errorsecurityprobatewrongname'] = 'false';
     req.session.data['sot'] = 'undefined';
 
-    req.session.data['day'] == '';
-    req.session.data['month'] == '';
-    req.session.data['year'] == '';
+    req.session.data['day'] = '';
+    req.session.data['month'] = '';
+    req.session.data['year'] = '';
     req.session.data['errorsecuritydivorce'] = 'false';
 
     req.session.data['errorsot'] = 'false';
