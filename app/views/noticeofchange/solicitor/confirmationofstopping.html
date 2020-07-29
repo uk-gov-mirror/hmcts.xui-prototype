@@ -12,12 +12,27 @@ Case details
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
-                {% if data.stoppingoutcome == 'error' %}
+
+
+                {% if data.stoppingoutcome == 'auto' %}
+                    <div class="govuk-panel govuk-panel--confirmation">
+                        <h1  class="govuk-panel__title">You have successfully stopped representation</h1>
+                    </div>
+                    <p class="govuk-!-margin-top-6">We've sent an email to confirm you’ve stopped representing this client.</p>
+                    <p>The case has been removed from the case and you no longer have access to it.</p>
+                    <p>We'll send the case to this client.</p>
+
+                    <p class="govuk-body">
+                        <a href="caselist">View case list</a>
+                    </p>
+
+                {% elif data.stoppingoutcome == 'error' %}
                     <h1  class="govuk-heading-l">Something went wrong</h1>
 
                     <p>Your request has not been submitted.</p>
                     <p>We’re working to fix the problem.</p>
                     <p>Please try again shortly. Contact your case administrator if you’re still having problems.</p>
+
                 {% else %}
                     <div class="govuk-panel govuk-panel--confirmation">
                         <!-- Automatic approval -->
@@ -55,6 +70,11 @@ Case details
 
 <form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
     <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+
+        <option value="stoppingoutcome=auto&"
+                {% if data.stoppingoutcome == 'auto' %}selected{% endif %}
+        >Automatic</option>
 
         <option value="stoppingoutcome=approval&"
                 {% if data.stoppingoutcome == 'approval' %}selected{% endif %}

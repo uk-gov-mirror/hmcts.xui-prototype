@@ -463,18 +463,7 @@ router.post( '/noticeofchange/solicitor/confirmstop', function (req, res)
         }
 
         // Redirect to correct confirmation style
-        if (req.session.data['stoppingoutcome'] == 'approval')
-        {
             res.redirect('/noticeofchange/solicitor/confirmationofstopping');
-        }
-        else if (req.session.data['stoppingoutcome'] == 'error')
-        {
-            res.redirect('/noticeofchange/solicitor/confirmationofstopping');
-        }
-        else
-        {
-            res.redirect('/noticeofchange/solicitor/caselist');
-        }
 
 
 

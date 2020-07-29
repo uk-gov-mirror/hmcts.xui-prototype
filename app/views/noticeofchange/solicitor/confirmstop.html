@@ -12,17 +12,22 @@ Case details
             <div class="govuk-grid-column-two-thirds">
 
 
-                <div class="hmcts-page-heading">
+                <div class="">
                       <div class="hmcts-page-heading__title">
-                           <h1 class="govuk-heading-l">Check your answers before submitting request</h1>
+
+                          <p class="govuk-heading-m govuk-!-margin-bottom-3">Stop representing a client</p>
+
+                          <p class="govuk-heading-m govuk-!-margin-bottom-3">#{{ data.casenumberselectedccdformat }}&nbsp; </p>
+
+                          <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Check your answers</h1>
                       </div>
                 </div>
 
-                <h2 class="govuk-heading-m">Stop representing</h2>
+                <p class="govuk-!-margin-bottom-2">Check the information below carefully.</p>
 
                 <dl class="govuk-summary-list ">
                     <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
+                        <dt class="govuk-summary-list__value">
                             Change request
                         </dt>
                         <dd class="govuk-summary-list__value">
@@ -35,7 +40,7 @@ Case details
                         </dd>
                     </div>
                     <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
+                        <dt class="govuk-summary-list__value">
                             Reason
                         </dt>
                         <dd class="govuk-summary-list__value">
@@ -49,13 +54,7 @@ Case details
                     </div>
                 </dl>
 
-                {% if data.stoppingoutcome == 'auto' %}
-                    <div class="govuk-inset-text">
-                        <p class="govuk-!-font-weight-bold">After submitting</p>
-                        <p>You’ll receive an email to confirm you’ve stopped representing this client.</p>
-                        <p>You’ll be removed from the case and no longer have access to it.</p>
-                    </div>
-                {% endif %}
+
 
                 <br>
 
@@ -67,7 +66,7 @@ Case details
                         autocomplete="off">
 
                         <div>
-                            <a class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="stopreason">
                                 Previous
                             </a>
                             <button class="govuk-button" data-module="govuk-button">
