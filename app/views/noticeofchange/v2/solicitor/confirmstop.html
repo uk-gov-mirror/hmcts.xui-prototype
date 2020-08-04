@@ -1,0 +1,104 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+
+                <div class="">
+                      <div class="hmcts-page-heading__title">
+
+                          <p class="govuk-heading-m govuk-!-margin-bottom-3">Stop representing a client</p>
+
+                          <p class="govuk-heading-m govuk-!-margin-bottom-3">#{{ data.casenumberselectedccdformat }}&nbsp; </p>
+
+                          <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Check your answers</h1>
+                      </div>
+                </div>
+
+                <p class="govuk-!-margin-bottom-2">Check the information below carefully.</p>
+
+                <dl class="govuk-summary-list ">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__value">
+                            Change request
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data.clientname }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="stopselectclients">
+                                Change
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__value">
+                            Reason
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{data.stoppingmoredetail}}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="stopreason">
+                                Change
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+
+
+
+                <br>
+
+
+                <form
+                        name="aspnetForm"
+                        method="post"
+                        id="aspnetForm"
+                        autocomplete="off">
+
+                        <div>
+                            <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="stopreason">
+                                Previous
+                            </a>
+                            <button class="govuk-button" data-module="govuk-button">
+                                Submit
+                            </button>
+                        </div>
+
+                        <p><a href="casedetailsprobate.html">Cancel</a></p>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+        <option value="stoppingoutcome=auto&"
+                {% if data.stoppingoutcome == 'auto' %}selected{% endif %}
+        >Next step: Automatic</option>
+
+        <option value="stoppingoutcome=approval&"
+                {% if data.stoppingoutcome == 'approval' %}selected{% endif %}
+        >Next step: Approval</option>
+
+        <option value="stoppingoutcome=error&"
+                {% if data.stoppingoutcome == 'error' %}selected{% endif %}
+        >Next step: Error</option>
+
+    </select>
+</form>
+
+{% endblock %}

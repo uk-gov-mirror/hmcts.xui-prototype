@@ -1,0 +1,81 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+{% if data.errorstopnoperson == 'true' %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <a href="#clientselected">Select the clients you want to stop representing</a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+
+<div class="hmcts-page-heading">
+    <div class="hmcts-page-heading__title">
+
+        <p class="govuk-heading-m govuk-!-margin-bottom-3">Stop representing a client</p>
+
+        <p class="govuk-heading-m govuk-!-margin-bottom-3">#{{ data.casenumberselectedccdformat }}&nbsp; </p>
+
+        <h1 class="govuk-heading-m">Which clients do you want to stop representing?</h1>
+    </div>
+</div>
+
+<form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off">
+
+        {% if data.errorstopnoperson == 'true'%}
+        <div class="govuk-form-group govuk-form-group--error" id="confirmthestop">
+            {% else %}
+            <div class="govuk-form-group">
+                {% endif %}
+
+                {% if data.errorstopnoperson == 'true'%}
+                                            <span id="national-insurance-number-error" class="govuk-error-message">
+                                                  <span class="govuk-visually-hidden">Error:</span> Select the clients you want to stop representing’
+                                            </span>
+                {% endif %}
+
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                    <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+
+                            <input class="govuk-checkboxes__input" id="clientselected" name="clientselected" type="checkbox" >
+                            <label class="govuk-label govuk-checkboxes__label" for="clientselected">
+                                {{ data.clientname }}
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        <br>
+        <div>
+            <a class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Previous
+            </a>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </div>
+        <p><a href="caselist">Cancel</a></p>
+
+
+</form>
+
+{% endblock %}

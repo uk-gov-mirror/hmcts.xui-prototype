@@ -1,0 +1,46 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="hmcts-page-heading">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-l">What is the change?</h1>
+          </div>
+    </div>
+
+    <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off">
+
+        <div class="govuk-form-group govuk-!-margin-bottom-7">
+            <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="start" name="startorstop" type="radio" value="start" >
+                    <label class="govuk-label govuk-radios__label" for="start">
+                        Start representing
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="stop" name="startorstop" type="radio" value="stop" >
+                    <label class="govuk-label govuk-radios__label" for="stop">
+                        Stop representing
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+
+    </form>
+
+{% endblock %}

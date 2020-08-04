@@ -1,0 +1,180 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class=" govuk-!-margin-bottom-0" id="main-content" role="main" >
+        <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+            <div class=""  style="display: flex; justify-content: space-between; ">
+
+                <div style="display: flex; ">
+                    <h1 class="govuk-heading-l">{{ data.casenumberselected }}</h1>
+                </div>
+
+
+                <div style="display: flex; align-items:right" >
+                    <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+
+                    <select class="govuk-select" id="sort" name="sort">
+                        <option value="published" selected>Select action</option>
+                        <option value="updated" >Edit appeal</option>
+                        <option value="updated" >Submit your appeal</option>
+                        <option value="updated" >Share case with colleague</option>
+                        <option value="updated" >Stop representing a client</option>
+                    </select>
+
+                    <form
+                            name="aspnetForm"
+                            method="post"
+                            id="aspnetForm"
+                            autocomplete="off">
+                            <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+                                Go
+                            </button>
+                    </form>
+                </div>
+
+            </div>
+
+
+
+            <div class="govuk-tabs" data-module="govuk-tabs">
+                <h2 class="govuk-tabs__title">
+                    Contents
+                </h2>
+                <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                        <a class="govuk-tabs__tab" href="#event">
+                            Overview
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Appeal
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Appellant
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Documents
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Directions
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="govuk-tabs__panel" id="event" style="display: flex; padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+                    <div style="margin-top: 20px;  width:1220px; ">
+                        <h2 class="govuk-heading-m">Overview</h2>
+                        <h3 class="govuk-heading-s">Current progress of the case</h3>
+
+                        <img src="/public/images/immigrationstages.png"  width="769" height="115">
+
+                        <h3 class="govuk-heading-s govuk-!-margin-top-6">Do this next</h3>
+                        <p class=" govuk-!-margin-bottom-1">You still need to submit your appeal.</p>
+                        <p class=" govuk-!-margin-bottom-1"><a href="#">Submit your appeal</a></p>
+                        <p class=" govuk-!-margin-bottom-1">You can also review and edit your appeal.</p>
+                        <p class=" govuk-!-margin-bottom-1"><a href="#">Edit appeal</a></p>
+                        <hr>
+
+
+                        <h3 class="govuk-heading-s govuk-!-margin-top-8  govuk-!-margin-bottom-0">Case details</h3>
+                        <table class="govuk-table">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header"  style="width: 300px; padding-right: 30px;"></th>
+                                    <th scope="col" class="govuk-table__header"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Appeal reference</td>
+                                    <td class="govuk-table__cell">DRAFT</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Appellant</td>
+                                    <td class="govuk-table__cell">Anne Yang</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Date of birth</td>
+                                    <td class="govuk-table__cell">11 May 2020</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Nationalities</td>
+                                    <td class="govuk-table__cell">
+                                            <table class="govuk-table" style="border: 1px solid #bfc1c3; ">
+                                                <thead class="govuk-table__head">
+                                                    <tr class="govuk-table__row" style="background-color: #dee0e2; ">
+                                                        <th scope="col" class="govuk-table__header"  style="width: 300px; padding-right: 30px; padding-left: 5px;">Nationalities 1</th>
+                                                        <th scope="col" class="govuk-table__header"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="govuk-table__body">
+                                                    <tr class="govuk-table__row">
+                                                        <td scope="row" class="govuk-table__cell" style="padding-left: 5px;">Nationality</td>
+                                                        <td class="govuk-table__cell">Tonga</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Type of appeal</td>
+                                    <td class="govuk-table__cell">Refusal of a human rights claim</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Home Office reference</td>
+                                    <td class="govuk-table__cell">A1234567/001</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+                        <h3 class="govuk-heading-s govuk-!-margin-top-8  govuk-!-margin-bottom-0">Legal representative</h3>
+                        <table class="govuk-table  govuk-!-margin-bottom-0">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header"  style="width: 300px; padding-right: 30px;"></th>
+                                    <th scope="col" class="govuk-table__header"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Company</td>
+                                    <td class="govuk-table__cell">Legal corp ltd</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">Legal representative reference</td>
+                                    <td class="govuk-table__cell">HS-472471</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </main>
+</div>
+
+{% endblock %}

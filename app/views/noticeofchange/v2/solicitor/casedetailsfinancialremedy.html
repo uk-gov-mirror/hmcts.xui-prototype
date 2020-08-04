@@ -1,0 +1,141 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="" id="main-content" role="main">
+        <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+            <div class=""  style="display: flex; justify-content: space-between; ">
+
+                <div style="display: flex; ">
+                    <p class="govuk-!-font-weight-bold">{{ data.casenumberselected }}: Anne Yang vs Tony Yang  &nbsp; </p>
+                </div>
+
+
+                <div style="display: flex; align-items:right" >
+                    <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+
+                    <select class="govuk-select" id="sort" name="sort">
+                        <option value="published" selected>Select action</option>
+                        <option value="published" >Submit amended application</option>
+                        <option value="published" >Link respondent</option>
+                        <option value="published" >Add Note</option>
+                        <option value="published" >Upload document</option>
+                        <option value="updated">Stop representing a client</option>
+                    </select>
+
+                    <form
+                            name="aspnetForm"
+                            method="post"
+                            id="aspnetForm"
+                            autocomplete="off">
+                            <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+                                Go
+                            </button>
+                    </form>
+                </div>
+
+            </div>
+
+
+            <div class="govuk-tabs" data-module="govuk-tabs">
+                <h2 class="govuk-tabs__title">
+                    Contents
+                </h2>
+                <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                        <a class="govuk-tabs__tab" href="#event">
+                            History
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Applicant
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Divorce Details
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Nature of Application
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Case documents
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Gatekeeping and allocation
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Scheduling and Listing
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="govuk-tabs__panel" id="event" style="display: flex; padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+                    <div style="margin-top: 20px;">
+                        <h2 class="govuk-heading-m">History</h2>
+                        <table class="govuk-table" style="width:600px; margin-right: 20px;">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Event</th>
+                                    <th scope="col" class="govuk-table__header">Date</th>
+                                    <th scope="col" class="govuk-table__header">Author</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" >
+                                <tr class="govuk-table__row" style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
+                                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Case submitted</a></td>
+                                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 3:49:22 PM</td>
+                                    <td class="govuk-table__cell">Alex Smith</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="width: 580px; border: 1px solid #bfc1c3; padding:10px; margin-top: 20px;" >
+                        <h2 class="govuk-heading-m  govuk-!-margin-top-3 govuk-!-margin-bottom-4">Details</h2>
+                        <div style="display: flex;">
+                            <div style="width: 210px;">
+                                <p>Date</p>
+                                <p>Author</p>
+                                <p>End state</p>
+                                <p>Event</p>
+                                <p>Summary</p>
+                                <p>Comment</p>
+                            </div>
+                            <div>
+                                <p style="text-decoration: underline;">17 May 2020, 3:49:22 PM</p>
+                                <p>Alex Smith</p>
+                                <p>Solicitor - Awaiting Payment Confirmation</p>
+                                <p>Case submission</p>
+                                <p>-</p>
+                                <p>-</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </main>
+</div>
+
+{% endblock %}
