@@ -15,9 +15,9 @@ Case details
                 {% if data.servicedown == 'true' %}
                 <h1  class="govuk-heading-l">Something went wrong</h1>
 
-                <p>This service has stopped working.</p>
                 <p>Your request has not been submitted.</p>
-                <p>Please try again in a few hours.</p>
+                <p>We’re working to fix the problem.</p>
+                <p>Please try again shortly. Contact Jane Smith, the case admin for your organisation if you’re still having problems.</p>
 
                 <p><a href="caselist">View case list</a></p>
 
@@ -75,6 +75,10 @@ Case details
                             <p class="govuk-body">
                                 This case will now appear in your case list.
                             </p>
+                            <p class="govuk-body">
+                                This is a new online process - you don’t need to file any further documents to the court.
+                            </p>
+
 
                             {% if data.divorcecaselist == 'true'%}
                                 <p class="govuk-body"> <a href="casedetailsdivorce?newcaseselected=true&">View this case</a></p>
@@ -100,9 +104,9 @@ Case details
                                     <a href="caselist">View case list</a>
                                 </p>
                         {% else %}
-                            <p>Notice of change request has been rejected.</p>
-                            <p>This may be because you entered incorrct details.</p>
-                            <p>Please <a href="#">try again</a> or <a href="#">contact HMCTS</a>.</p>
+                            <p>This Notice of Change request has been rejected.</p>
+                            <p>This may be because you entered incorrect details.</p>
+                            <p>You can try again <a href="#">try again</a> or <a href="#">contact HMCTS</a>.</p>
                             <p><a href="caselist">View case list</a></p>
                         {% endif %}
 

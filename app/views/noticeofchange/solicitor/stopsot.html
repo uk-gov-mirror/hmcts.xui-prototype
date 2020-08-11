@@ -1,0 +1,54 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="hmcts-page-heading">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-l">Handing the case to the client</h1>
+          </div>
+    </div>
+
+    <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off">
+
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">
+                    Statement of truth
+                </h2>
+            </legend>
+            <p>Tick to “sign” this statement of truth.</p>
+            {% if data.errorsot == 'true'%}
+                                <span id="national-insurance-number-error" class="govuk-error-message">
+                                      <span class="govuk-visually-hidden">Error:</span> Tick the box to sign the statement of truth
+                                </span>
+            {% endif %}
+            <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="sot" name="sot" type="checkbox">
+                    <label class="govuk-label govuk-checkboxes__label" for="sot">
+                        <p>My organisation or I have been requested to stop representing a party in this case.</p>
+
+                        <p>I understand that proceedings for contempt of court may be brought against
+                            anyone who  access to a case verified by a statement of truth without an honest belief in its truth.</p>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+
+        <button class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+
+    </form>
+
+{% endblock %}
