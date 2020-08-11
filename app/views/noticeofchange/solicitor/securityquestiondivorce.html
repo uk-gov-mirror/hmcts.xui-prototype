@@ -19,9 +19,18 @@ Case details
                         </h2>
                         <div class="govuk-error-summary__body">
                             <ul class="govuk-list govuk-error-summary__list">
-                                <li>
-                                    <a href="#dateerror">You must enter a date</a>
-                                </li>
+                                {% if data.errorsecuritydivorcefirstname == 'true'  %}
+                                    <li>
+                                        <a href="#firstnamelinkpoint">You must enter a first name</a>
+                                    </li>
+                                {% endif %}
+
+                                {% if data.errorsecuritydivorcelastname == 'true'  %}
+                                    <li>
+                                        <a href="#lastnamelinkpoint">You must enter a last name</a>
+                                    </li>
+                                {% endif %}
+
                             </ul>
                         </div>
                     </div>
@@ -30,7 +39,7 @@ Case details
 
                 <div class="hmcts-page-heading">
                       <div class="hmcts-page-heading__title">
-                           <h1 class="govuk-heading-l">What was the date of marriage?</h1>
+                           <h1 class="govuk-heading-l">What is your client's name?</h1>
                       </div>
                 </div>
 
@@ -41,86 +50,60 @@ Case details
                         id="aspnetForm"
                         autocomplete="off">
 
+                        <div>
 
-                        {% if data.errorsecuritydivorce == 'true'  %}
-                            <div class="govuk-form-group govuk-form-group--error" id="dateerror">
-                        {% else %}
-                            <div class="govuk-form-group ">
-                        {% endif %}
 
-                            {% if data.errorsecuritydivorce == 'true'  %}
-                                <span id="national-insurance-number-error" class="govuk-error-message">
-                                    <span class="govuk-visually-hidden">Error:</span> Enter a date
-                                </span>
 
-                                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                                            <span id="passport-issued-hint" class="govuk-hint">
-                                              For example, 12 11 2019
-                                            </span>
-                                    <div class="govuk-date-input" id="passport-issued">
-                                        <div class="govuk-date-input__item">
-                                            <div class="govuk-form-group">
-                                                <label class="govuk-label govuk-date-input__label" for="day">
-                                                    Day
-                                                </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day"
-                                                       name="day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data.day}}">
-                                            </div>
+                                <fieldset class="govuk-fieldset" role="group" >
+                                    {% if data.errorsecuritydivorcefirstname == 'true'  %}
+                                        <div class="govuk-form-group govuk-form-group--error" id="firstnamelinkpoint">
+                                    {% else %}
+                                        <div class="govuk-form-group ">
+                                    {% endif %}
+                                            <label class="govuk-label" for="firstname">
+                                                First name
+                                            </label>
+                                            {% if data.errorsecuritydivorcefirstname == 'true'  %}
+                                                <span id="" class="govuk-error-message">
+                                                    <span class="govuk-visually-hidden">Error:</span> Enter your client's first name
+                                                </span>
+                                            {% endif %}
+
+                                            {% if data.errorsecuritydivorcefirstname == 'true'  %}
+                                                <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
+                                            {% else %}
+                                                <input class="govuk-input govuk-!-width-one-half" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
+                                            {% endif %}
+
                                         </div>
-                                        <div class="govuk-date-input__item">
-                                            <div class="govuk-form-group">
-                                                <label class="govuk-label govuk-date-input__label" for="month">
-                                                    Month
-                                                </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month"
-                                                       name="month" type="text" pattern="[0-9]*" inputmode="numeric"  value="{{data.month}}">
-                                            </div>
+
+                                    {% if data.errorsecuritydivorcelastname == 'true'  %}
+                                        <div class="govuk-form-group govuk-form-group--error"  id="lastnamelinkpoint">
+                                    {% else %}
+                                        <div class="govuk-form-group ">
+                                    {% endif %}
+                                            <label class="govuk-label" for="lastname">
+                                                Last name
+                                            </label>
+                                            {% if data.errorsecuritydivorcelastname == 'true'  %}
+                                                <span id="" class="govuk-error-message">
+                                                    <span class="govuk-visually-hidden">Error:</span> Enter your client's last name
+                                                </span>
+                                            {% endif %}
+
+                                            {% if data.errorsecuritydivorcelastname == 'true'  %}
+                                                <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
+                                            {% else %}
+                                                <input class="govuk-input govuk-!-width-one-half" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
+                                            {% endif %}
+
                                         </div>
-                                        <div class="govuk-date-input__item">
-                                            <div class="govuk-form-group">
-                                                <label class="govuk-label govuk-date-input__label" for="year">
-                                                    Year
-                                                </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year"
-                                                       name="year" type="text" pattern="[0-9]*" inputmode="numeric"  value="{{data.year}}">
-                                            </div>
-                                        </div>
-                                    </div>
                                 </fieldset>
 
-                            {% else %}
-                                    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                                            <span id="passport-issued-hint" class="govuk-hint">
-                                              For example, 12 11 2019
-                                            </span>
-                                        <div class="govuk-date-input" id="passport-issued">
-                                            <div class="govuk-date-input__item">
-                                                <div class="govuk-form-group">
-                                                    <label class="govuk-label govuk-date-input__label" for="day">
-                                                        Day
-                                                    </label>
-                                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day" name="day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data.day}}">
-                                                </div>
-                                            </div>
-                                            <div class="govuk-date-input__item">
-                                                <div class="govuk-form-group">
-                                                    <label class="govuk-label govuk-date-input__label" for="month">
-                                                        Month
-                                                    </label>
-                                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month" name="month" type="text" pattern="[0-9]*" inputmode="numeric"  value="{{data.month}}">
-                                                </div>
-                                            </div>
-                                            <div class="govuk-date-input__item">
-                                                <div class="govuk-form-group">
-                                                    <label class="govuk-label govuk-date-input__label" for="year">
-                                                        Year
-                                                    </label>
-                                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year" name="year" type="text" pattern="[0-9]*" inputmode="numeric"  value="{{data.year}}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                            {% endif %}
+                                <!--
+
+                                -->
+
                         </div>
 
 

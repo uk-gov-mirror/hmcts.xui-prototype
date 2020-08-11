@@ -19,32 +19,40 @@ Case details
                         </h2>
                         <div class="govuk-error-summary__body">
                             <ul class="govuk-list govuk-error-summary__list">
+                                {% if data.errorsecurityprobatetitle == 'true'  %}
                                 <li>
-                                    <a href="#casenumber">Your client’s name didn’t match our records. Check the details are correct and try again</a>
+                                    <a href="#titlelinkpoint">You must enter a title</a>
                                 </li>
+                                {% endif %}
+
+                                {% if data.errorsecurityprobatefirstname == 'true'  %}
+                                <li>
+                                    <a href="#firstnamelinkpoint">You must enter a first name</a>
+                                </li>
+                                {% endif %}
+
+                                {% if data.errorsecurityprobatelastname == 'true'  %}
+                                <li>
+                                    <a href="#lastnamelinkpoint">You must enter a last name</a>
+                                </li>
+                                {% endif %}
+
+                                {% if data.errorsecurityprobatedate == 'true'  %}
+                                <li>
+                                    <a href="#doblinkpoint">You must enter a date</a>
+                                </li>
+                                {% endif %}
+
+
                             </ul>
                         </div>
                     </div>
-                {% endif %}
-                {% if data.errorsecurityprobatewrongname == 'true' %}
-                <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-                    <h2 class="govuk-error-summary__title" id="error-summary-title">
-                        There is a problem
-                    </h2>
-                    <div class="govuk-error-summary__body">
-                        <ul class="govuk-list govuk-error-summary__list">
-                            <li>
-                                <a href="#casenumber">Your client’s name didn’t match our records. Check the details are correct and try again</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 {% endif %}
 
 
                 <div class="hmcts-page-heading">
                       <div class="hmcts-page-heading__title">
-                           <h1 class="govuk-heading-l">Enter the last name of the client you will be representing</h1>
+                           <h1 class="govuk-heading-l">Details of the deceased</h1>
                       </div>
                 </div>
 
@@ -55,29 +63,151 @@ Case details
                         id="aspnetForm"
                         autocomplete="off">
 
+                                <fieldset class="govuk-fieldset govuk-form-group " role="group" >
 
-                        {% if data.errorsecurityprobate == 'true' or   data.errorsecurityprobatewrongname == 'true' %}
-                            <div class="govuk-form-group govuk-form-group--error">
-                        {% else %}
-                            <div class="govuk-form-group ">
-                        {% endif %}
+                                    {% if data.errorsecurityprobatetitle == 'true'  %}
+                                        <div class="govuk-form-group govuk-form-group--error"  id="titlelinkpoint">
+                                    {% else %}
+                                        <div class="govuk-form-group ">
+                                    {% endif %}
+                                            <label class="govuk-label govuk-!-font-weight-bold" for="lastname">
+                                                Title
+                                            </label>
+                                            {% if data.errorsecurityprobatetitle == 'true'  %}
+                                                <span id="" class="govuk-error-message">
+                                                    <span class="govuk-visually-hidden">Error:</span> Enter the deceased's title
+                                                </span>
+                                            {% endif %}
+
+                                            {% if data.errorsecurityprobatetitle == 'true'  %}
+                                                <input class="govuk-input govuk-!-width-one-third govuk-input--error" id="title" name="title" type="text" value="{{data.title}}">
+                                            {% else %}
+                                                <input class="govuk-input govuk-!-width-one-third" id="title" name="title" type="text" value="{{data.title}}">
+                                            {% endif %}
+
+                                        </div>
+
+                                    {% if data.errorsecurityprobatefirstname == 'true'  %}
+                                        <div class="govuk-form-group govuk-form-group--error" id="firstnamelinkpoint">
+                                    {% else %}
+                                        <div class="govuk-form-group ">
+                                    {% endif %}
+                                            <label class="govuk-label govuk-!-font-weight-bold" for="firstname">
+                                                First name
+                                            </label>
+                                            {% if data.errorsecurityprobatefirstname == 'true'  %}
+                                                <span id="" class="govuk-error-message">
+                                                    <span class="govuk-visually-hidden">Error:</span> Enter the deceased's first name
+                                                </span>
+                                            {% endif %}
+
+                                            {% if data.errorsecurityprobatefirstname == 'true'  %}
+                                                <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
+                                            {% else %}
+                                                <input class="govuk-input govuk-!-width-one-half" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
+                                            {% endif %}
+
+                                        </div>
+
+                                    {% if data.errorsecurityprobatelastname == 'true'  %}
+                                        <div class="govuk-form-group govuk-form-group--error"  id="lastnamelinkpoint">
+                                    {% else %}
+                                        <div class="govuk-form-group ">
+                                    {% endif %}
+                                            <label class="govuk-label  govuk-!-font-weight-bold" for="lastname">
+                                                Last name
+                                            </label>
+                                            {% if data.errorsecurityprobatelastname == 'true'  %}
+                                                <span id="" class="govuk-error-message">
+                                                    <span class="govuk-visually-hidden">Error:</span> Enter the deceased's last name
+                                                </span>
+                                            {% endif %}
+
+                                            {% if data.errorsecurityprobatelastname == 'true'  %}
+                                                <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
+                                            {% else %}
+                                                <input class="govuk-input govuk-!-width-one-half" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
+                                            {% endif %}
+                                        </div>
+
+                                </fieldset>
 
 
-                            {% if data.errorsecurityprobate == 'true'  or   data.errorsecurityprobatewrongname == 'true' %}
-                                <span id="national-insurance-number-error" class="govuk-error-message">
-                                    <span class="govuk-visually-hidden">Error:</span> Enter your client’s last name
-                                </span>
-                                <input class="govuk-input govuk-input--width-10" id="lastname" name="lastname" type="text" autocomplete="name" spellcheck="false" value="{{data.lastname}}">
-                            {% else %}
-                                <input class="govuk-input govuk-input--width-10" id="lastname" name="lastname" type="text" autocomplete="name" spellcheck="false" value="{{data.lastname}}">
-                            {% endif %}
+
+                                <fieldset class="govuk-fieldset govuk-form-group govuk-body govuk-!-margin-top-6 govuk-body govuk-!-margin-bottom-7" role="group" >
+                                    {% if data.errorsecurityprobatedate == 'true'  %}
+                                        <div class="govuk-form-group govuk-form-group--error"  id="doblinkpoint">
+                                    {% else %}
+                                        <div class="govuk-form-group ">
+                                    {% endif %}
+                                            <p class=" govuk-!-font-weight-bold">Date of birth
+                                                <span id="passport-issued-hint" class="govuk-hint">
+                                                 For example, 12 6 1950
+                                                </span>
+                                                    {% if data.errorsecurityprobatedate == 'true'  %}
+                                                    <span id="" class="govuk-error-message">
+                                                        <span class="govuk-visually-hidden">Error:</span> Enter a valid date
+                                                    </span>
+                                                {% endif %}
+                                            </p>
+
+                                            <div class="govuk-date-input" id="passport-issued">
+                                                <div class="govuk-date-input__item">
+                                                    <div class="govuk-form-group">
+                                                        <label class="govuk-label govuk-date-input__label" for="day">
+                                                            Day
+                                                        </label>
+                                                        {% if data.errorsecurityprobatedateday == 'true'  %}
+                                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2  govuk-input--error" id="day"
+                                                                   name="day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data.day}}">
+                                                        {% else %}
+                                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day"
+                                                                   name="day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data.day}}">
+                                                        {% endif %}
+
+                                                    </div>
+                                                </div>
+                                                <div class="govuk-date-input__item">
+                                                    <div class="govuk-form-group">
+                                                        <label class="govuk-label govuk-date-input__label" for="month">
+                                                            Month
+                                                        </label>
+                                                        {% if data.errorsecurityprobatedatemonth == 'true'  %}
+                                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="month"
+                                                                   name="month" type="text" pattern="[0-9]*" inputmode="numeric"  value="{{data.month}}">
+                                                        {% else %}
+                                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month"
+                                                                   name="month" type="text" pattern="[0-9]*" inputmode="numeric"  value="{{data.month}}">
+                                                        {% endif %}
+
+                                                    </div>
+                                                </div>
+                                                <div class="govuk-date-input__item">
+                                                    <div class="govuk-form-group">
+                                                        <label class="govuk-label govuk-date-input__label" for="year">
+                                                            Year
+                                                        </label>
+                                                        {% if data.errorsecurityprobatedateyear == 'true'  %}
+                                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4  govuk-input--error" id="year"
+                                                                   name="year" type="text" pattern="[0-9]*" inputmode="numeric"  value="{{data.year}}">
+                                                        {% else %}
+                                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year"
+                                                                   name="year" type="text" pattern="[0-9]*" inputmode="numeric"  value="{{data.year}}">
+                                                        {% endif %}
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                </fieldset>
+
+
+                        <div class="govuk-form-group ">
+                            <button class="govuk-button" data-module="govuk-button">
+                                Continue
+                            </button>
                         </div>
-
-
-                        <button class="govuk-button" data-module="govuk-button">
-                            Continue
-                        </button>
-
                 </form>
 
             </div>

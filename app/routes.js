@@ -227,7 +227,7 @@ router.get( '/noticeofchange/v2/startnoc', function (req, res)
     req.session.data['role'] == 'undefined';
     req.session.data['errorrole'] = 'false';
 
-    req.session.data['lastname'] == 'undefined'
+    req.session.data['lastname'] = 'undefined'
     req.session.data['errorsecurityprobate'] = 'false';
     req.session.data['errorsecurityprobatewrongname'] = 'false';
     req.session.data['sot'] = 'undefined';
@@ -383,7 +383,7 @@ router.post( '/noticeofchange/v2/solicitor/checkanswers', function (req, res)
 
 
 
-// STOP REPRESENTING CLIENT
+// STOP REPRESENTING CLIENT - V2
 router.post( '/noticeofchange/v2/solicitor/casedetailsprobate', function (req, res)
 {
     req.session.data['stopstop'] = '';
@@ -479,7 +479,9 @@ router.get( '/noticeofchange/startnoc', function (req, res)
     req.session.data['role'] == 'undefined';
     req.session.data['errorrole'] = 'false';
 
-    req.session.data['lastname'] == 'undefined'
+    req.session.data['title'] = '';
+    req.session.data['firstname'] = '';
+    req.session.data['lastname'] = '';
     req.session.data['errorsecurityprobate'] = 'false';
     req.session.data['errorsecurityprobatewrongname'] = 'false';
     req.session.data['sot'] = 'undefined';
@@ -523,6 +525,7 @@ router.post( '/noticeofchange/solicitor/addenterdetails', function (req, res)
 
 router.post( '/noticeofchange/solicitor/selectroleprobate', function (req, res)
 {
+    console.warn("orobate radio selection +" + req.session.data['role']  + "+++");
     if(req.session.data['role'] == 'undefined' )
     {
         req.session.data['errorrole'] = 'true';
@@ -553,32 +556,149 @@ router.post( '/noticeofchange/solicitor/selectroledivorce', function (req, res)
 
 router.post( '/noticeofchange/solicitor/securityquestionprobate', function (req, res)
 {
-    console.warn("Main Router  " + req.session.data['lastname']);
-    if(req.session.data['lastname'] == 'undefined' )
+
+    console.warn("Main Router THE NAME IS " + req.session.data['lastname']);
+
+    if(req.session.data['lastname'] == '' || req.session.data['firstname'] == '' || req.session.data['title'] == '' ||
+        req.session.data['day'] == ''  ||
+        req.session.data['month'] == '' ||
+        req.session.data['year'] == ''  )
     {
-        req.session.data['errorsecurityprobate'] = 'true';
+        req.session.data['errorsecurityprobate'] = 'true'
+        if(req.session.data['title'] == '')
+        {
+            req.session.data['errorsecurityprobatetitle'] = 'true'
+        }
+        else
+        {
+            req.session.data['errorsecurityprobatetitle'] = 'false';
+        }
+        if(req.session.data['firstname'] == '')
+        {
+            req.session.data['errorsecurityprobatefirstname'] = 'true'
+        }
+        else
+        {
+            req.session.data['errorsecurityprobatefirstname'] = 'false';
+        }
+        if(req.session.data['lastname'] == '')
+        {
+            req.session.data['errorsecurityprobatelastname'] = 'true'
+        }
+        else
+        {
+            req.session.data['errorsecurityprobatelastname'] = 'false';
+        }
+
+        if(req.session.data['day'] == '')
+        {
+            req.session.data['errorsecurityprobatedate'] = 'true'
+            req.session.data['errorsecurityprobatedateday'] = 'true'
+        }
+        else
+        {
+            req.session.data['errorsecurityprobatedateday'] = 'false';
+        }
+        if(req.session.data['month'] == '')
+        {
+            req.session.data['errorsecurityprobatedate'] = 'true'
+            req.session.data['errorsecurityprobatedatemonth'] = 'true'
+        }
+        else
+        {
+            req.session.data['errorsecurityprobatedatemonth'] = 'false';
+        }
+        if(req.session.data['year'] == '')
+        {
+            req.session.data['errorsecurityprobatedate'] = 'true'
+            req.session.data['errorsecurityprobatedateyear'] = 'true'
+        }
+        else
+        {
+            req.session.data['errorsecurityprobatedateyear'] = 'false';
+        }
+
+        //  The date has no errors
+        if(req.session.data['day'] != ''  &&
+            req.session.data['month'] != '' &&
+            req.session.data['year'] != ''  )
+        {
+            req.session.data['errorsecurityprobatedate'] = 'false'
+        }
+
         res.redirect('securityquestionprobate');
     }
     else
     {
-        if(req.session.data['lastname'] != 'Narran'  &&  req.session.data['lastname'] != 'narran' )
+        req.session.data['tempmonthdateformat'] = req.session.data['month'];
+        //work with 01 month format
+        console.warn("Date substring is :  " +  req.session.data['tempmonthdateformat'].substring(0, 1));
+        if(req.session.data['tempmonthdateformat'].substring(0, 1) == '0')
         {
-            req.session.data['errorsecurityprobatewrongname'] = 'true';
-            res.redirect('securityquestionprobate');
+            req.session.data['tempmonthdateformat'] = req.session.data['tempmonthdateformat'].substring(1, 2)
+            console.warn("BRAND NEW  date is :  " +  req.session.data['tempmonthdateformat']);
         }
-        else
-        {
-            req.session.data['errorsecurityprobate'] = 'false';
-            req.session.data['errorsecurityprobatewrongname'] = 'false';
-            req.session.data['sot'] = 'undefined';
-            res.redirect('/noticeofchange/solicitor/checkanswers');
-        }
+
+        var months = ['filler', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
+        req.session.data['monthoutput'] = months[req.session.data['tempmonthdateformat']];
+        console.warn("Main Router " + req.session.data['monthoutput']);
+
+
+        // Clear all the errors
+        req.session.data['errorsecurityprobate'] = 'false';
+
+        req.session.data['errorsecurityprobatetitle'] = 'false';
+        req.session.data['errorsecurityprobatefirstname'] = 'false';
+        req.session.data['errorsecurityprobatelastname'] = 'false';
+
+        req.session.data['errorsecurityprobatedate'] = 'false'
+        req.session.data['errorsecurityprobatedateday'] = 'false';
+        req.session.data['errorsecurityprobatedatemonth'] = 'false';
+        req.session.data['errorsecurityprobatedateyear'] = 'false';
+
+        res.redirect('/noticeofchange/solicitor/checkanswers');
+
     }
+
+
 })
 
 router.post( '/noticeofchange/solicitor/securityquestiondivorce', function (req, res)
 {
-    console.warn("Main Router  " + req.session.data['day']);
+    console.warn("Main Router THE NAME IS " + req.session.data['lastname']);
+
+    if(req.session.data['lastname'] == '' || req.session.data['firstname'] == '')
+    {
+        req.session.data['errorsecuritydivorce'] = 'true'
+        if(req.session.data['firstname'] == '')
+        {
+            req.session.data['errorsecuritydivorcefirstname'] = 'true'
+        }
+        else
+        {
+            req.session.data['errorsecuritydivorcefirstname'] = 'false';
+        }
+        if(req.session.data['lastname'] == '')
+        {
+            req.session.data['errorsecuritydivorcelastname'] = 'true'
+        }
+        else
+        {
+            req.session.data['errorsecuritydivorcelastname'] = 'false';
+        }
+
+        res.redirect('securityquestiondivorce');
+    }
+    else
+    {
+            req.session.data['errorsecuritydivorce'] = 'false';
+            req.session.data['errorsecuritydivorcefirstname'] = 'false';
+            req.session.data['errorsecuritydivorcelastname'] = 'false';
+            res.redirect('/noticeofchange/solicitor/checkanswers');
+
+    }
+
+    /*
     if(req.session.data['day'] == ''  ||
         req.session.data['month'] == '' ||
         req.session.data['year'] == ''  )
@@ -605,6 +725,8 @@ router.post( '/noticeofchange/solicitor/securityquestiondivorce', function (req,
         req.session.data['sot'] = 'undefined';
         res.redirect('/noticeofchange/solicitor/checkanswers');
     }
+
+    */
 })
 
 router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
@@ -674,6 +796,7 @@ router.post( '/noticeofchange/solicitor/casedetailspubliclaw', function (req, re
 {
     req.session.data['stopstop'] = '';
     req.session.data['stoppingmoredetail'] = '';
+    req.session.data['clientselected'] = 'undefined'
     console.warn("stop checkbox +" + req.session.data['stopstop']  + "+++");
 
     res.redirect('/noticeofchange/solicitor/stopselectclients');
@@ -681,7 +804,9 @@ router.post( '/noticeofchange/solicitor/casedetailspubliclaw', function (req, re
 
 router.post( '/noticeofchange/solicitor/stopselectclients', function (req, res)
 {
-    if(req.session.data['clientselected'] != 'on' )
+    console.warn("stop client selected +" + req.session.data['clientselectedradio']  + "+++");
+
+    if(req.session.data['clientselectedradio'] == 'undefined' )
     {
         req.session.data['errorstopnoperson'] = 'true';
         res.redirect('stopselectclients');

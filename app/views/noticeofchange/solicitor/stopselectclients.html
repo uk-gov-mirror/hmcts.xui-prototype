@@ -53,11 +53,10 @@ Case details
                 {% endif %}
 
                 <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                    <div class="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-
-                            <input class="govuk-checkboxes__input" id="clientselected" name="clientselected" type="checkbox" >
-                            <label class="govuk-label govuk-checkboxes__label" for="clientselected">
+                    <div class="govuk-radios" id="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="radio1" name="clientselectedradio" type="radio" value="{{ data.clientname }}" >
+                            <label class="govuk-label govuk-radios__label" for="radio1">
                                 {{ data.clientname }}
                             </label>
                         </div>
