@@ -9,9 +9,25 @@ Case details
 
     <div class="hmcts-page-heading">
           <div class="hmcts-page-heading__title">
-               <h1 class="govuk-heading-l">Handing the case to the client</h1>
+               <h1 class="govuk-heading-l">Handing the case over to the client</h1>
           </div>
     </div>
+
+    <div class="govuk-form-group ">
+        <h2 class="govuk-heading-s">
+            Client details
+        </h2>
+
+        <p>We'll send the case file to:</p>
+
+        <p>{{ data.clientname }}<br>
+            Flat C<br>
+            46 Clement Drive<br>
+            Saffron-on-Sea<br>
+            SS17 7HT<br>
+        </p>
+    </div>
+
 
     <form
         name="aspnetForm"
@@ -26,19 +42,15 @@ Case details
                 </h2>
             </legend>
             <p>Tick to “sign” this statement of truth.</p>
-            {% if data.errorsot == 'true'%}
-                                <span id="national-insurance-number-error" class="govuk-error-message">
-                                      <span class="govuk-visually-hidden">Error:</span> Tick the box to sign the statement of truth
-                                </span>
-            {% endif %}
+
             <div class="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="sot" name="sot" type="checkbox">
                     <label class="govuk-label govuk-checkboxes__label" for="sot">
-                        <p>My organisation or I have been requested to stop representing a party in this case.</p>
+                        <p>I have informed this client my organisation will stop representing them in this case.</p>
 
                         <p>I understand that proceedings for contempt of court may be brought against
-                            anyone who  access to a case verified by a statement of truth without an honest belief in its truth.</p>
+                            anyone who requests access to a case verified by a statement of truth without an honest belief in its truth.</p>
                     </label>
                 </div>
             </div>

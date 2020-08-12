@@ -821,8 +821,15 @@ router.post( '/noticeofchange/solicitor/stopselectclients', function (req, res)
 
 router.post( '/noticeofchange/solicitor/stopreason', function (req, res)
 {
+    res.redirect('/noticeofchange/solicitor/stopsot');
+})
+
+
+router.post( '/noticeofchange/solicitor/stopsot', function (req, res)
+{
     res.redirect('/noticeofchange/solicitor/confirmstop');
 })
+
 
 router.post( '/noticeofchange/solicitor/confirmstop', function (req, res)
 {
