@@ -96,17 +96,16 @@ Case details
                     <!-- When approval is needed  -->
                     {% if data.autoapproved == 'false' %}
                         {% if data.inreview == 'true' %}
-                                <h2 class="govuk-heading-m  govuk-!-margin-top-6">What happens next</h2>
-                                <p>We’re reviewing your request.</p>
-                                <p>We’ll send you an email confirming our decision.</p>
-                                <p>If your request is accepted, the case will appear in your case list.</p>
-                                <p class="govuk-body">
-                                    <a href="caselist">View case list</a>
-                                </p>
+                            <h2 class="govuk-heading-m  govuk-!-margin-top-6">What happens next</h2>
+                            <p>We’re reviewing your request.</p>
+                            <p>We’ll send you an email confirming our decision.</p>
+                            <p>If your request is accepted, the case will appear in your case list.</p>
+                            <p class="govuk-body">
+                                <a href="caselist">View case list</a>
+                            </p>
                         {% else %}
                             <p>This Notice of Change request has been rejected.</p>
-                            <p>This may be because you entered incorrect details.</p>
-                            <p>You can try again <a href="#">try again</a> or <a href="#">contact HMCTS</a>.</p>
+                            <p>To continue <a href="contactus">contact HMCTS</a>.</p>
                             <p><a href="caselist">View case list</a></p>
                         {% endif %}
 

@@ -1,0 +1,126 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl" id="cookies">Get help</h1>
+                <p class="govuk-body">When contacting us, you should provide:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>your user ID (email address)</li>
+                    <li>your organisation name</li>
+                    <li>the URL you're trying to access</li>
+                    <li>a brief description of the problem</li>
+                    <li>a screenshot of the problem (if emailing)</li>
+                </ul><!----><!----><xuilib-contact-details _nghost-sau-c2=""><!---->
+
+                <div _ngcontent-sau-c2="" class="contact-details"><!---->
+                    <h3 _ngcontent-sau-c2="" class="govuk-heading-m govuk-!-margin-bottom-2  govuk-!-margin-top-6">Probate</h3>
+
+                    <p class="govuk-body" >
+                        <span class="govuk-!-font-weight-bold">Email:</span>
+                        <a _ngcontent-sau-c2="" href="mailto:contactprobate@justice.gov.uk">contactprobate@justice.gov.uk</a>
+                        <br>
+                        <span  class="govuk-!-font-weight-bold">Phone:</span> 0300 303 0648
+                        <br>
+                        <span class="govuk-!-font-weight-bold">Opening times: </span>
+                        Monday to Friday, 9:30am to 5pm (excluding public holidays)
+                    </p>
+                </div>
+
+            </xuilib-contact-details><xuilib-contact-details _nghost-sau-c2=""><!----><div _ngcontent-sau-c2="" class="contact-details"><!---->
+                <h3 _ngcontent-sau-c2="" class="govuk-heading-m govuk-!-margin-bottom-2  govuk-!-margin-top-6">Divorce</h3>
+
+                <p class="govuk-body" >
+                    <span class="govuk-!-font-weight-bold">Email:</span>
+                    <a _ngcontent-sau-c2="" href="mailto:contactprobate@justice.gov.uk">divorcecase@justice.gov.uk</a>
+                    <br>
+                    <span  class="govuk-!-font-weight-bold">Phone:</span> 0300 303 0642
+                    <br>
+                    <span class="govuk-!-font-weight-bold">Opening times: </span>
+                    Monday to Friday, 9:30am to 5pm (excluding public holidays)
+                </p>
+
+
+
+            </div>
+
+            </xuilib-contact-details><xuilib-contact-details _nghost-sau-c2="">
+                <!----><div _ngcontent-sau-c2="" class="contact-details"><!---->
+                <h3 _ngcontent-sau-c2="" class="govuk-heading-m govuk-!-margin-bottom-2  govuk-!-margin-top-6">Financial Remedy</h3>
+
+                    <p class="govuk-body" >
+                        <span class="govuk-!-font-weight-bold">Email:</span>
+                            <a _ngcontent-sau-c2="" href="mailto:contactfinancialremedy@justice.gov.uk">contactfinancialremedy@justice.gov.uk</a>
+                        <br>
+                        <span  class="govuk-!-font-weight-bold">Phone:</span> 0300 303 0642
+                        <br>
+                        <span class="govuk-!-font-weight-bold">Opening times: </span>
+                            Monday to Friday, 9:30am to 5pm (excluding public holidays)
+                    </p>
+            </div>
+
+            </xuilib-contact-details><xuilib-contact-details _nghost-sau-c2=""><!---->
+                <div _ngcontent-sau-c2="" class="contact-details"><!---->
+                    <h3 _ngcontent-sau-c2="" class="govuk-heading-m govuk-!-margin-bottom-2  govuk-!-margin-top-6">Immigration and Asylum</h3>
+
+                    <p class="govuk-body" >
+                        <span class="govuk-!-font-weight-bold">Email:</span>
+                        <a _ngcontent-sau-c2="" href="mailto:customer.service@justice.gov.uk">customer.service@justice.gov.uk</a>
+                        <br>
+                        <span  class="govuk-!-font-weight-bold">Phone:</span> 0300 123 1711
+                        <br>
+                        <span class="govuk-!-font-weight-bold">Opening times: </span>
+                        Monday to Friday, 9:30am to 5pm (excluding public holidays)
+                    </p>
+
+                </div>
+
+            </xuilib-contact-details><xuilib-contact-details _nghost-sau-c2=""><!---->
+                <div _ngcontent-sau-c2="" class="contact-details"><!---->
+                    <h3 _ngcontent-sau-c2="" class="govuk-heading-m govuk-!-margin-bottom-2  govuk-!-margin-top-6">Family Public Law and Adoption</h3><!----><!---->
+
+                    <p class="govuk-body" >
+                        <span class="govuk-!-font-weight-bold">Email:</span>
+                        <a _ngcontent-sau-c2="" href="mailto:fpla@justice.gov.uk">fpla@justice.gov.uk</a>
+                        <br>
+                        <span  class="govuk-!-font-weight-bold">Phone:</span> 0330 808 4424
+                        <br>
+                        <span class="govuk-!-font-weight-bold">Opening times: </span>
+                        Monday to Friday, 9:30am to 5pm (excluding public holidays)
+                    </p>
+
+                </div>
+            </xuilib-contact-details>
+            </div>
+
+        </div>
+    </div>
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+        <option value="errorcasenumber=false&serviceeligibilityerror=false&"
+                {% if data.errorcasenumber == 'false' %}selected{% endif %}
+        >Default</option>
+
+        <option value="errorcasenumber=true&serviceeligibilityerror=false&"
+                {% if data.errorcasenumber == 'true'  %}selected{% endif %}
+        >Format error</option>
+
+        <option value="errorcasenumber=false&serviceeligibilityerror=true&"
+                {% if data.errorcasenumber == 'false' and  data.serviceeligibilityerror == 'true'  %}selected{% endif %}
+        >Service not eligible</option>
+
+    </select>
+</form>
+
+{% endblock %}

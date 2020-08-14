@@ -469,12 +469,25 @@ router.post( '/noticeofchange/v2/solicitor/confirmstop', function (req, res)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Latest version
 router.get( '/noticeofchange/startnoc', function (req, res)
 {
     req.session.data['casenumber'] = '';
     req.session.data['errorcasenumber'] = 'false';
+    req.session.data['serviceeligibilityerror'] = 'false';
 
     req.session.data['role'] == 'undefined';
     req.session.data['errorrole'] = 'false';
@@ -513,12 +526,12 @@ router.post( '/noticeofchange/solicitor/addenterdetails', function (req, res)
 
         if(req.session.data['caselist'] == 'probate')
         {
-            res.redirect('/noticeofchange/solicitor/selectroleprobate');
+            res.redirect('/noticeofchange/solicitor/securityquestionprobate');
         }
         else
         {
             req.session.data['caselist'] = 'divorce';
-            res.redirect('/noticeofchange/solicitor/selectroledivorce');
+            res.redirect('/noticeofchange/solicitor/securityquestiondivorce');
         }
     }
 })

@@ -37,7 +37,6 @@ Case details
                             Change request
                         </dt>
                         <dd class="govuk-summary-list__value">
-
                             {% if data.takenfrom == 'lip' %}
                                 Acquire case file from a citizen
                             {% else %}
@@ -62,27 +61,29 @@ Case details
                         </dd>
                     </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Client type
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            {{data.role}}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="selectroleprobate">
-                                Change
-                            </a>
-                        </dd>
-                    </div>
+
 
                     {% if data.caselist == 'divorce' %}
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Client Name
+                                Client first name
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                {{data.firstname}} {{data.lastname}}
+                                {{data.firstname}}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="securityquestiondivorce">
+                                    Change
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Client last name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data.lastname}}
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="securityquestiondivorce">
@@ -95,10 +96,38 @@ Case details
                     {% elseif data.caselist == 'probate' %}
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Deceased's name
+                                Deceased's title
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                {{data.title}} {{data.firstname}} {{data.lastname}}
+                                {{data.title}}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="securityquestionprobate">
+                                    Change
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Deceased's first name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data.firstname}}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="securityquestionprobate">
+                                    Change
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Deceased's last name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data.lastname}}
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="securityquestionprobate">
@@ -116,6 +145,20 @@ Case details
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="securityquestiondivorce">
+                                    Change
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Client type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data.role}}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="selectroleprobate">
                                     Change
                                 </a>
                             </dd>
