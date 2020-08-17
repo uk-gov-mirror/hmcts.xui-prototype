@@ -19,6 +19,10 @@ Case details
                         </h2>
                         <div class="govuk-error-summary__body">
                             <ul class="govuk-list govuk-error-summary__list">
+
+
+
+
                                 {% if data.errorsecuritydivorcefirstname == 'true'  %}
                                     <li>
                                         <a href="#firstnamelinkpoint">You must enter a first name</a>
@@ -39,10 +43,11 @@ Case details
 
                 <div class="hmcts-page-heading">
                       <div class="hmcts-page-heading__title">
-                           <h1 class="govuk-heading-l">What is your client's name?</h1>
+                           <h1 class="govuk-heading-l">Enter client details</h1>
                       </div>
                 </div>
 
+                <p>You must enter the details exactly as they’re written on the case, including any mistakes.</p>
 
                 <form
                         name="aspnetForm"
@@ -60,7 +65,7 @@ Case details
                                     {% else %}
                                         <div class="govuk-form-group ">
                                     {% endif %}
-                                            <label class="govuk-label" for="firstname">
+                                            <label class="govuk-label  govuk-!-font-weight-bold" for="firstname">
                                                 First name
                                             </label>
                                             {% if data.errorsecuritydivorcefirstname == 'true'  %}
@@ -82,7 +87,7 @@ Case details
                                     {% else %}
                                         <div class="govuk-form-group ">
                                     {% endif %}
-                                            <label class="govuk-label" for="lastname">
+                                            <label class="govuk-label  govuk-!-font-weight-bold" for="lastname">
                                                 Last name
                                             </label>
                                             {% if data.errorsecuritydivorcelastname == 'true'  %}

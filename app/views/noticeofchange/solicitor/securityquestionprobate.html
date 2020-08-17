@@ -39,7 +39,7 @@ Case details
 
                                 {% if data.errorsecurityprobatedate == 'true'  %}
                                 <li>
-                                    <a href="#doblinkpoint">You must enter a date</a>
+                                    <a href="#doblinkpoint">You must enter a date of birth</a>
                                 </li>
                                 {% endif %}
 
@@ -52,9 +52,11 @@ Case details
 
                 <div class="hmcts-page-heading">
                       <div class="hmcts-page-heading__title">
-                           <h1 class="govuk-heading-l">Details of the deceased</h1>
+                           <h1 class="govuk-heading-l">Enter client details</h1>
                       </div>
                 </div>
+
+                <p>You must enter the details exactly as they’re written on the case, including any mistakes.</p>
 
 
                 <form
@@ -71,11 +73,11 @@ Case details
                                         <div class="govuk-form-group ">
                                     {% endif %}
                                             <label class="govuk-label govuk-!-font-weight-bold" for="lastname">
-                                                Title
+                                                Title of deceased
                                             </label>
                                             {% if data.errorsecurityprobatetitle == 'true'  %}
                                                 <span id="" class="govuk-error-message">
-                                                    <span class="govuk-visually-hidden">Error:</span> Enter title of the deceased
+                                                    <span class="govuk-visually-hidden">Error:</span> Title must exactly match the details on the case, including any mistakes.
                                                 </span>
                                             {% endif %}
 
@@ -93,11 +95,11 @@ Case details
                                         <div class="govuk-form-group ">
                                     {% endif %}
                                             <label class="govuk-label govuk-!-font-weight-bold" for="firstname">
-                                                First name
+                                                First name of deceased
                                             </label>
                                             {% if data.errorsecurityprobatefirstname == 'true'  %}
                                                 <span id="" class="govuk-error-message">
-                                                    <span class="govuk-visually-hidden">Error:</span> Enter first name of the deceased
+                                                    <span class="govuk-visually-hidden">Error:</span> First name must exactly match the details on the case, including any mistakes.
                                                 </span>
                                             {% endif %}
 
@@ -115,11 +117,11 @@ Case details
                                         <div class="govuk-form-group ">
                                     {% endif %}
                                             <label class="govuk-label  govuk-!-font-weight-bold" for="lastname">
-                                                Last name
+                                                Last name of deceased
                                             </label>
                                             {% if data.errorsecurityprobatelastname == 'true'  %}
                                                 <span id="" class="govuk-error-message">
-                                                    <span class="govuk-visually-hidden">Error:</span> Enter last name of the deceased
+                                                    <span class="govuk-visually-hidden">Error:</span> Last name must exactly match the details on the case, including any mistakes.
                                                 </span>
                                             {% endif %}
 
@@ -140,13 +142,13 @@ Case details
                                     {% else %}
                                         <div class="govuk-form-group ">
                                     {% endif %}
-                                            <p class=" govuk-!-font-weight-bold">Date of birth
+                                            <p class=" govuk-!-font-weight-bold">Date of birth of deceased
                                                 <span id="passport-issued-hint" class="govuk-hint">
                                                  For example, 12 6 1950
                                                 </span>
                                                     {% if data.errorsecurityprobatedate == 'true'  %}
                                                     <span id="" class="govuk-error-message">
-                                                        <span class="govuk-visually-hidden">Error:</span> Enter a valid date
+                                                        <span class="govuk-visually-hidden">Error:</span> Date of birth must exactly match the details on the case, including any mistakes.
                                                     </span>
                                                 {% endif %}
                                             </p>

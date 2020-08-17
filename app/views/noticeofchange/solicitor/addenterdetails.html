@@ -17,13 +17,13 @@ Case details
                 {% if data.serviceeligibilityerror == 'true' %}
                     <div class="hmcts-page-heading">
                         <div class="hmcts-page-heading__title">
-                            <h1 class="govuk-heading-l">Your case isn't supported</h1>
+                            <h1 class="govuk-heading-l">Your case isn’t supported online</h1>
                         </div>
                     </div>
 
-                    <p>This online Notice of change services doesn't currently support this case.</p>
+                    <p>You can’t currently file an online notice of change for this case.</p>
 
-                    <p>Please use the paper form to complete this Notice of change process offline.</p>
+                    <p>Fill out the <a href="https://www.gov.uk/government/publications/form-n434-notice-of-change-of-solicitor">paper form</a>  to complete a notice of change for this case offline.</p>
 
                     <p class="govuk-body"><a href="caselist">View case list</a></p>
 
@@ -40,7 +40,7 @@ Case details
                                 <div class="govuk-error-summary__body">
                                     <ul class="govuk-list govuk-error-summary__list">
                                         <li>
-                                            <a href="#casenumber">The case number must be 16 digits</a>
+                                            <a href="#casenumber">The online case reference must be 16 digits</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -76,7 +76,7 @@ Case details
 
                                     {% if data.errorcasenumber == 'true' %}
                                         <span id="national-insurance-number-error" class="govuk-error-message">
-                                            <span class="govuk-visually-hidden">Error:</span> The case number must be 16 digits, for example 1111-2222-3333-4444
+                                            <span class="govuk-visually-hidden">Error:</span> The online case reference must be 16 digits, for example 1111-2222-3333-4444
                                         </span>
                                         <input class="govuk-input govuk-input--width-10 govuk-input--error" id="casenumber" name="casenumber" type="text" spellcheck="false" value="{{data.casenumber}}">
                                     {% else %}
