@@ -485,6 +485,7 @@ router.post( '/noticeofchange/v2/solicitor/confirmstop', function (req, res)
 // Latest version
 router.get( '/noticeofchange/startnoc', function (req, res)
 {
+    // Resetting all the data before the user starts
     req.session.data['casenumber'] = '';
     req.session.data['errorcasenumber'] = 'false';
     req.session.data['serviceeligibilityerror'] = 'false';
@@ -498,6 +499,22 @@ router.get( '/noticeofchange/startnoc', function (req, res)
     req.session.data['errorsecurityprobate'] = 'false';
     req.session.data['errorsecurityprobatewrongname'] = 'false';
     req.session.data['sot'] = 'undefined';
+
+    req.session.data['errorsecuritydivorce'] = 'false';
+    req.session.data['errorsecuritydivorcefirstname'] = 'false';
+    req.session.data['errorsecuritydivorcelastname'] = 'false';
+
+    req.session.data['errorsecurityprobate'] = 'false';
+
+    req.session.data['errorsecurityprobatetitle'] = 'false';
+    req.session.data['errorsecurityprobatefirstname'] = 'false';
+    req.session.data['errorsecurityprobatelastname'] = 'false';
+
+    req.session.data['errorsecurityprobatedate'] = 'false';
+    req.session.data['errorsecurityprobatedateday'] = 'false';
+    req.session.data['errorsecurityprobatedatemonth'] = 'false';
+    req.session.data['errorsecurityprobatedateyear'] = 'false';
+
 
     req.session.data['day'] = '';
     req.session.data['month'] = '';

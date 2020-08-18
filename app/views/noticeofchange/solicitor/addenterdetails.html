@@ -51,10 +51,11 @@ Case details
 
                         <div class="hmcts-page-heading">
                               <div class="hmcts-page-heading__title">
-                                   <h1 class="govuk-heading-l">Enter online case reference number</h1>
+                                   <h1 class="govuk-heading-l">Notice of acting</h1>
                               </div>
                         </div>
 
+                        <p>You can use this notice of acting to tell a court that the legal representative in a case has changed.</p>
 
                         <form
                                 name="aspnetForm"
@@ -67,11 +68,13 @@ Case details
                                 {% else %}
                                     <div class="govuk-form-group ">
                                 {% endif %}
+                                        <label class="govuk-label  govuk-!-font-weight-bold" for="casenumber">
+                                            Online case reference number
+                                        </label>
 
-
-                                  <span id="case-number-hint" class="govuk-hint">
-                                    This is a 16-digit number from MyHMCTS, for example 1111-2222-3333-4444
-                                  </span>
+                                      <span id="case-number-hint" class="govuk-hint">
+                                        This is a 16-digit number from MyHMCTS, for example 1111-2222-3333-4444
+                                      </span>
 
 
                                     {% if data.errorcasenumber == 'true' %}
