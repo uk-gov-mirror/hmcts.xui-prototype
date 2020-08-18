@@ -9,7 +9,7 @@ Case details
 
     <div class="govuk-width-container">
         <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-half">
+            <div class="govuk-grid-column-two-thirds">
 
 
                 {% if data.errorsecurityprobate == 'true' %}
@@ -82,9 +82,9 @@ Case details
                                             {% endif %}
 
                                             {% if data.errorsecurityprobatetitle == 'true'  %}
-                                                <input class="govuk-input govuk-!-width-one-third govuk-input--error" id="title" name="title" type="text" value="{{data.title}}">
+                                                <input class="govuk-input  govuk-input--width-5 govuk-input--error" id="title" name="title" type="text" value="{{data.title}}">
                                             {% else %}
-                                                <input class="govuk-input govuk-!-width-one-third" id="title" name="title" type="text" value="{{data.title}}">
+                                                <input class="govuk-input  govuk-input--width-5" id="title" name="title" type="text" value="{{data.title}}">
                                             {% endif %}
 
                                         </div>
@@ -104,9 +104,9 @@ Case details
                                             {% endif %}
 
                                             {% if data.errorsecurityprobatefirstname == 'true'  %}
-                                                <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
+                                                <input class="govuk-input  govuk-input--width-10 govuk-input--error" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
                                             {% else %}
-                                                <input class="govuk-input govuk-!-width-one-half" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
+                                                <input class="govuk-input govuk-input--width-10" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
                                             {% endif %}
 
                                         </div>
@@ -126,9 +126,9 @@ Case details
                                             {% endif %}
 
                                             {% if data.errorsecurityprobatelastname == 'true'  %}
-                                                <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
+                                                <input class="govuk-input  govuk-input--width-10 govuk-input--error" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
                                             {% else %}
-                                                <input class="govuk-input govuk-!-width-one-half" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
+                                                <input class="govuk-input  govuk-input--width-10" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
                                             {% endif %}
                                         </div>
 

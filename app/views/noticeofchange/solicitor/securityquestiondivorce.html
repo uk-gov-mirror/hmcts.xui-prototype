@@ -9,7 +9,7 @@ Case details
 
     <div class="govuk-width-container">
         <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-half">
+            <div class="govuk-grid-column-two-thirds">
 
 
                 {% if data.errorsecuritydivorce == 'true' %}
@@ -75,9 +75,9 @@ Case details
                                             {% endif %}
 
                                             {% if data.errorsecuritydivorcefirstname == 'true'  %}
-                                                <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
+                                                <input class="govuk-input govuk-input--width-10 govuk-input--error" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
                                             {% else %}
-                                                <input class="govuk-input govuk-!-width-one-half" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
+                                                <input class="govuk-input govuk-input--width-10" id="firstname" name="firstname" type="text"  value="{{data.firstname}}">
                                             {% endif %}
 
                                         </div>
@@ -97,9 +97,9 @@ Case details
                                             {% endif %}
 
                                             {% if data.errorsecuritydivorcelastname == 'true'  %}
-                                                <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
+                                                <input class="govuk-input govuk-input--width-10 govuk-input--error" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
                                             {% else %}
-                                                <input class="govuk-input govuk-!-width-one-half" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
+                                                <input class="govuk-input govuk-input--width-10" id="lastname" name="lastname" type="text" value="{{data.lastname}}">
                                             {% endif %}
 
                                         </div>
