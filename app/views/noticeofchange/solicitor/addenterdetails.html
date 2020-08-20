@@ -40,7 +40,7 @@ Case details
                                 <div class="govuk-error-summary__body">
                                     <ul class="govuk-list govuk-error-summary__list">
                                         <li>
-                                            <a href="#casenumber">The online case reference must be 16 digits</a>
+                                            <a href="#casenumber">Enter an online case reference in the correct format</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -79,7 +79,7 @@ Case details
 
                                     {% if data.errorcasenumber == 'true' %}
                                         <span id="national-insurance-number-error" class="govuk-error-message">
-                                            <span class="govuk-visually-hidden">Error:</span> The online case reference must be 16 digits, for example 1111-2222-3333-4444
+                                            <span class="govuk-visually-hidden">Error:</span> You must enter an online case reference number that exactly matches the case details
                                         </span>
                                         <input class="govuk-input govuk-input--width-10 govuk-input--error" id="casenumber" name="casenumber" type="text" spellcheck="false" value="{{data.casenumber}}">
                                     {% else %}
