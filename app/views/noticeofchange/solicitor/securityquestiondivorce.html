@@ -20,7 +20,11 @@ Case details
                         <div class="govuk-error-summary__body">
                             <ul class="govuk-list govuk-error-summary__list">
 
-
+                                {% if data.errornomatch == 'true'  %}
+                                    <li>
+                                        <a href="#firstnamelinkpoint">AAAAAAAAAAAAAAAAAAAAAAAA</a>
+                                    </li>
+                                {% endif %}
 
 
                                 {% if data.errorsecuritydivorcefirstname == 'true'  %}
@@ -57,9 +61,11 @@ Case details
 
                         <div>
 
-
-
                                 <fieldset class="govuk-fieldset" role="group" >
+                                    {% if data.errornomatch == 'true'  %}
+                                        <div class="govuk-form-group govuk-form-group--error" id="firstnamelinkpoint">
+                                    {% endif %}
+
                                     {% if data.errorsecuritydivorcefirstname == 'true'  %}
                                         <div class="govuk-form-group govuk-form-group--error" id="firstnamelinkpoint">
                                     {% else %}
@@ -82,11 +88,11 @@ Case details
 
                                         </div>
 
-                                    {% if data.errorsecuritydivorcelastname == 'true'  %}
-                                        <div class="govuk-form-group govuk-form-group--error"  id="lastnamelinkpoint">
-                                    {% else %}
-                                        <div class="govuk-form-group ">
-                                    {% endif %}
+                                        {% if data.errorsecuritydivorcelastname == 'true'  %}
+                                            <div class="govuk-form-group govuk-form-group--error"  id="lastnamelinkpoint">
+                                        {% else %}
+                                            <div class="govuk-form-group ">
+                                        {% endif %}
                                             <label class="govuk-label  govuk-!-font-weight-bold" for="lastname">
                                                 Last name
                                             </label>
@@ -103,6 +109,11 @@ Case details
                                             {% endif %}
 
                                         </div>
+
+
+                                    {% if data.errornomatch == 'true'  %}
+                                        </div>
+                                    {% endif %}
                                 </fieldset>
 
                                 <!--
@@ -121,5 +132,23 @@ Case details
             </div>
         </div>
     </div>
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+        <option value="errorsecuritydivorce=true&errorsecuritydivorcefirstname=true&errorsecuritydivorcelastname=true&errornomatch=false&"
+                {% if data.errorsecuritydivorcefirstname == 'true' and data.errorsecuritydivorcelastname == 'true'  %}selected{% endif %}
+        >Empty fields</option>
+
+        <option value="errorsecuritydivorce=true&errornomatch=true&errorsecuritydivorcefirstname=false&errorsecuritydivorcelastname=false&"
+                {% if data.errornomatch == 'true'  %}selected{% endif %}
+        >Not matching case data</option>
+
+    </select>
+</form>
+
+
+
 
 {% endblock %}
