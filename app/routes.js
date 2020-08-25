@@ -521,6 +521,8 @@ router.get( '/noticeofchange/startnoc', function (req, res)
     req.session.data['year'] = '';
     req.session.data['errorsecuritydivorce'] = 'false';
 
+    req.session.data['errornomatch'] = 'false';
+
     req.session.data['errorsot'] = 'false';
 
     res.redirect('/noticeofchange/solicitor/addenterdetails');
