@@ -21,7 +21,7 @@ Case details
 
                                 {% if data.errornomatch == 'true'  %}
                                 <li>
-                                    <a href="#firstnamelinkpoint">AAAAAAAAAAAAAAAAAAAAAAAA</a>
+                                    <a href="#titlelinkpoint">You must enter the correct details</a>
                                 </li>
                                 {% endif %}
 
@@ -62,6 +62,12 @@ Case details
                 </div>
 
                 <p>You must enter the details exactly as they’re written on the case, including any mistakes.</p>
+
+                {% if data.errornomatch == 'true'  %}
+                    <span id="" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> The details must exactly match the case, including any mistakes
+                    </span>
+                {% endif %}
 
 
                 <form

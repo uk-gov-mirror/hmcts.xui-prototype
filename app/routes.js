@@ -591,11 +591,29 @@ router.post( '/noticeofchange/solicitor/securityquestionprobate', function (req,
 
     console.warn("Main Router THE NAME IS " + req.session.data['lastname']);
 
-    if(req.session.data['lastname'] == '' || req.session.data['firstname'] == '' || req.session.data['title'] == '' ||
+    if(req.session.data['firstname'] == 'Joe'  ||  req.session.data['firstname'] == 'joe')
+    {
+        req.session.data['errorsecurityprobate'] = 'true';
+        req.session.data['errornomatch'] = 'true';
+
+        req.session.data['errorsecurityprobatetitle'] = 'false';
+        req.session.data['errorsecurityprobatefirstname'] = 'false';
+        req.session.data['errorsecurityprobatelastname'] = 'false';
+        req.session.data['errorsecurityprobatedate'] = 'false';
+
+        req.session.data['errorsecurityprobatedateday'] = 'false';
+        req.session.data['errorsecurityprobatedatemonth'] = 'false';
+        req.session.data['errorsecurityprobatedateyear'] = 'false';
+
+        res.redirect('securityquestionprobate');
+    }
+
+    else if(req.session.data['lastname'] == '' || req.session.data['firstname'] == '' || req.session.data['title'] == '' ||
         req.session.data['day'] == ''  ||
         req.session.data['month'] == '' ||
         req.session.data['year'] == ''  )
     {
+        req.session.data['errornomatch'] = 'false';
         req.session.data['errorsecurityprobate'] = 'true'
         if(req.session.data['title'] == '')
         {
@@ -699,9 +717,20 @@ router.post( '/noticeofchange/solicitor/securityquestiondivorce', function (req,
 {
     console.warn("Main Router THE NAME IS " + req.session.data['lastname']);
 
-    if(req.session.data['lastname'] == '' || req.session.data['firstname'] == '')
+    if(req.session.data['firstname'] == 'Joe'  ||  req.session.data['firstname'] == 'joe')
+    {
+        req.session.data['errorsecuritydivorce'] = 'true';
+        req.session.data['errornomatch'] = 'true';
+
+        req.session.data['errorsecuritydivorcefirstname'] = 'false';
+        req.session.data['errorsecuritydivorcelastname'] = 'false';
+
+        res.redirect('securityquestiondivorce');
+    }
+    else if(req.session.data['lastname'] == '' || req.session.data['firstname'] == '')
     {
         req.session.data['errorsecuritydivorce'] = 'true'
+        req.session.data['errornomatch'] = 'false';
         if(req.session.data['firstname'] == '')
         {
             req.session.data['errorsecuritydivorcefirstname'] = 'true'
