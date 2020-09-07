@@ -1,0 +1,124 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+
+
+
+                <div class="hmcts-page-heading">
+                      <div class="hmcts-page-heading__title">
+                           <h1 class="govuk-heading-l">Search for other parties solicitor's firm</h1>
+                      </div>
+                </div>
+
+                <form
+                    name="aspnetForm"
+                    method="post"
+                    id="aspnetForm"
+                    autocomplete="off">
+
+                    <div class="govuk-form-group ">
+                        <label class="govuk-label" for="searchinput">
+                            Name, address or postcode (optional)</span>
+                        </label>
+                        <input class="govuk-input govuk-input--width-20 "
+                               id="searchinput" name="searchinput" type="text" spellcheck="false" value="">
+                    </div>
+
+                    <div id="resultstest" style="">
+
+                        <div id="noresults" style="display: none;">
+                            <p><span class="govuk-!-font-weight-bold">No results found</span>
+                            <br>The solicitor's firm may not be registered with our online.</p>
+                        </div>
+
+                        <div id="testesult1" style="display: none;">
+                            <p><span class="govuk-!-font-weight-bold">Name of org</span>
+                            <br>Line 1
+                            <br>Line 2
+                            <br>Line 3
+                            <br>Town
+                            <br>POSTCODE
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+
+    var inputbox = document.getElementById("searchinput");
+
+
+
+
+    function debounce(func, wait, immediate) {
+        var timeout;
+
+        return function executedFunction() {
+            var context = this;
+            var args = arguments;
+
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+
+            var callNow = immediate && !timeout;
+
+            clearTimeout(timeout);
+
+            timeout = setTimeout(later, wait);
+
+            if (callNow) func.apply(context, args);
+        };
+    };
+
+    inputbox.addEventListener('input', debounce(function()
+    {
+        var entertedtext = document.getElementById("searchinput").value;
+        if(entertedtext.length > 8)
+        {
+            document.getElementById("noresults").style.display = "block"
+            document.getElementById("testesult1").style.display = "none"
+        }
+        else if(entertedtext.length > 1)
+        {
+            document.getElementById("noresults").style.display = "none"
+            document.getElementById("testesult1").style.display = "block"
+            document.getElementById("testesult1").style.display = "block"
+            document.getElementById("testesult1").style.display = "block"
+            document.getElementById("testesult1").style.display = "block"
+
+        }
+        else
+        {
+            document.getElementById("testesult1").style.display = "none"
+        }
+    }, 500));
+
+
+
+</script>
+
+
+{% endblock %}
