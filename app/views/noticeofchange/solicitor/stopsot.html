@@ -36,30 +36,35 @@ Case details
         autocomplete="off">
 
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <!--<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <h2 class="govuk-fieldset__heading">
                     Statement of truth
                 </h2>
-            </legend>
-            <p>Tick to “sign” this statement of truth.</p>
+            </legend>-->
+            <p>When you’re satisfied that all the information is accurate, you should tick to “sign”.</p>
 
             <div class="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="sot" name="sot" type="checkbox">
                     <label class="govuk-label govuk-checkboxes__label" for="sot">
-                        <p>I have informed this client my organisation will stop representing them in this case.</p>
-
-                        <p>I understand that proceedings for contempt of court may be brought against
-                            anyone who requests access to a case verified by a statement of truth without an honest belief in its truth.</p>
+                        <p>I confirm all these details are accurate.</p>
                     </label>
                 </div>
             </div>
         </fieldset>
 
+        <br>
+        <br>
 
-        <button class="govuk-button" data-module="govuk-button">
-            Continue
-        </button>
+        <div>
+            <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="stopreason">
+                Previous
+            </a>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </div>
+        <p><a href="caselist">Cancel</a></p>
 
     </form>
 

@@ -38,11 +38,13 @@ Case details
                         </dt>
                         <dd class="govuk-summary-list__value">
                             {% if data.takenfrom == 'lip' %}
-                                Acquire case file from a citizen
+                                Acquire case file from a litigant
+                                <br>(Notice of acting)
                             {% else %}
                                 Acquire case file from a solicitor
+                                <br>(Notice of change)
                             {% endif %}
-                            <br>(Notice of Change)
+
                         </dd>
                         <dd class="govuk-summary-list__actions">
                         </dd>
@@ -60,7 +62,6 @@ Case details
                             </a>
                         </dd>
                     </div>
-
 
 
                     {% if data.caselist == 'divorce' %}
@@ -163,12 +164,12 @@ Case details
                     {% endif %}
 
                         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <!--<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 <h2 class="govuk-fieldset__heading">
                                     Statement of truth
                                 </h2>
-                            </legend>
-                            <p>Tick to “sign” this statement of truth.</p>
+                            </legend>-->
+                            <p>When you’re satisfied that all the information is accurate, you should tick to “sign”.</p>
                             {% if data.errorsot == 'true'%}
                                 <span id="national-insurance-number-error" class="govuk-error-message">
                                       <span class="govuk-visually-hidden">Error:</span> Tick the box to sign the statement of truth
@@ -178,10 +179,7 @@ Case details
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="sot" name="sot" type="checkbox">
                                     <label class="govuk-label govuk-checkboxes__label" for="sot">
-                                        <p>My organisation or I have been requested to represent a party in this case.</p>
-
-                                        <p>I understand that proceedings for contempt of court may be brought against
-                                            anyone who stops representing a client verified by a statement of truth without an honest belief in its truth.</p>
+                                        <p>I confirm all these details are accurate.</p>
                                     </label>
                                 </div>
                             </div>
@@ -192,8 +190,8 @@ Case details
 
                     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Notifications</h2>
 
-                    <p class="govuk-body  govuk-!-margin-bottom-7">Once we’ve approved this notice of change,
-                        we’ll let the previous legal firm or client know that they’re no longer the representative for this case.</p>
+                    <p class="govuk-body  govuk-!-margin-bottom-7">Once we’ve approved this notice of change, we’ll let the previous legal firm,
+                        solicitor or client know that they’re no longer the representative for this case.</p>
 
 
 
