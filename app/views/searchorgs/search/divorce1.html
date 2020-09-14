@@ -43,12 +43,20 @@ Case details
                         </div>
 
                         <div id="testesult1" style="display: none;">
-                            <p><span class="govuk-!-font-weight-bold">Name of org</span>
+                            <p id="results1" ><span class="govuk-!-font-weight-bold">Name of org</span>
                             <br>Line 1
                             <br>Line 2
-                            <br>Line 3
+                            <br>Linee 3
                             <br>Town
                             <br>POSTCODE
+                            </p>
+                        </div>
+
+                        <div id="testesult2" style="display: none;">
+                            <p id="results2" ><span class="govuk-!-font-weight-bold">Admiral</span>
+                                <br>David Street
+                                <br>Cardiff
+                                <br>CF10 2EH
                             </p>
                         </div>
                     </div>
@@ -94,26 +102,55 @@ Case details
         };
     };
 
-    inputbox.addEventListener('input', debounce(function()
+    inputbox.addEventListener('keydown', debounce(function()
     {
+        //alert("running");
+        // Make lower case string out of inputted value
         var entertedtext = document.getElementById("searchinput").value;
-        if(entertedtext.length > 8)
-        {
-            document.getElementById("noresults").style.display = "block"
-            document.getElementById("testesult1").style.display = "none"
-        }
-        else if(entertedtext.length > 1)
-        {
-            document.getElementById("noresults").style.display = "none"
-            document.getElementById("testesult1").style.display = "block"
-            document.getElementById("testesult1").style.display = "block"
-            document.getElementById("testesult1").style.display = "block"
-            document.getElementById("testesult1").style.display = "block"
 
-        }
-        else
+
+        // Check which results match inputted text
+        var matchcount = 0;
+        var str = "";
+        var prefixaddresswords = 'results';
+        var prefixaddresscontainer = 'testesult';
+        // check input has at least 2 character
+        var datacountplusone = 3;
+        if (0 == entertedtext.length)
         {
-            document.getElementById("testesult1").style.display = "none"
+            document.getElementById("noresults").style.display = "none";
+            // Hide all results
+            for (i = 1; i < datacountplusone; i++)
+            {
+                document.getElementById(prefixaddresscontainer + i).style.display = "none";
+            }
+        }
+        else if (1 < entertedtext.length)
+        {
+            // search through companies
+            for (i = 1; i < datacountplusone; i++)
+            {
+                //alert(" loop " + i + "  "  + str );
+                //make a lower case string out of each possible result
+                str = document.getElementById(prefixaddresswords + i).innerHTML.toLowerCase();
+                //alert(" loop " + i + "  "  + str );
+
+                // check if input string is contained each result
+                if ( str.includes(entertedtext.toString().toLowerCase()) )
+                {
+                    //alert("match");
+                    document.getElementById("noresults").style.display = "none";
+                    document.getElementById(prefixaddresscontainer + i).style.display = "block";
+                    matchcount = matchcount + 1;
+                }
+            }
+        }
+
+        if (0 == matchcount  &&  1 < entertedtext.length)
+        {
+            //alert("NO match");
+            document.getElementById("testesult1").style.display = "none";
+            document.getElementById("noresults").style.display = "block";
         }
     }, 500));
 
