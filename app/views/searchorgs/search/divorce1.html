@@ -18,11 +18,7 @@ Case details
                       </div>
                 </div>
 
-                <form
-                    name="aspnetForm"
-                    method="post"
-                    id="aspnetForm"
-                    autocomplete="off">
+
 
                     <div class="govuk-form-group ">
                         <label class="govuk-label" for="searchinput">
@@ -32,6 +28,7 @@ Case details
                                id="searchinput" name="searchinput" type="text" spellcheck="false" value="">
                     </div>
 
+
                     <div id="resultstest" style="">
 
                         <div id="noresults" style="display: none;">
@@ -39,22 +36,45 @@ Case details
                             <br>The solicitor's firm may not be registered with our online.</p>
                         </div>
 
-                        <div id="testesult1" style="display: none;">
-                            <p id="results1" ><span class="govuk-!-font-weight-bold">@Cornwall Law LLP</span>
-                            <br>11 Edward Street
-                            <br>Cornwall
-                            <br>TR1 3AR
-                            </p>
+                        <div id="testesult1" style=" display: none;  ">
+                            <div style="width:310px;">
+                                <p id="results1" ><span class="govuk-!-font-weight-bold">@Cornwall Law LLP</span>
+                                    <br>11 Edward Street
+                                    <br>Cornwall
+                                    <br>TR1 3AR
+                                </p>
+                            </div>
+                            <div style="display: flex; flex-direction: column;">
+                                <div style=" flex-grow: 2"> </div>
+                                <div style=" justify-content: center; margin-top:32px;">
+                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+                                            onclick="showselectedresult(1)">
+                                        Select
+                                    </button>
+                                </div>
+                                <div style=" flex-grow: 2"> </div>
+                            </div>
                         </div>
 
-                        <div id="testesult2" style="display: none;">
-                            <p id="results2" >
-                                <span class="govuk-!-font-weight-bold">2 Dr Johnson's Buildings</span>
-                                <br>2 Doctor Johnson's Buildings
-                                <br>Temple
-                                <br>London
-                                <br>EC4Y 7AY
-                            </p>
+                        <div id="testesult2" style=" display: none;  ">
+                            <div style="width:310px;">
+                                <p id="results2" >
+                                    <span class="govuk-!-font-weight-bold">2 Dr Johnson's Buildings</span>
+                                    <br>2 Doctor Johnson's Buildings
+                                    <br>Temple
+                                    <br>London
+                                    <br>EC4Y 7AY
+                                </p>
+                            </div>
+                            <div style="display: flex; flex-direction: column;">
+                                <div style=" flex-grow: 2"> </div>
+                                <div style=" justify-content: center; margin-top:32px;">
+                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                        Select
+                                    </button>
+                                </div>
+                                <div style=" flex-grow: 2"> </div>
+                            </div>
                         </div>
 
                         <div id="testesult3" style="display: none;">
@@ -228,10 +248,14 @@ Case details
                             </p>
                         </div>
 
-
                     </div>
 
 
+                <form
+                        name="aspnetForm"
+                        method="post"
+                        id="aspnetForm"
+                        autocomplete="off">
                     <button class="govuk-button" data-module="govuk-button">
                         Continue
                     </button>
@@ -246,8 +270,6 @@ Case details
 <script>
 
     var inputbox = document.getElementById("searchinput");
-
-
 
 
     function debounce(func, wait, immediate) {
@@ -310,7 +332,7 @@ Case details
                 {
                     //alert("match");
                     document.getElementById("noresults").style.display = "none";
-                    document.getElementById(prefixaddresscontainer + i).style.display = "block";
+                    document.getElementById(prefixaddresscontainer + i).style.display = "flex";
                     matchcount = matchcount + 1;
                 }
             }
@@ -319,7 +341,6 @@ Case details
         if (0 == matchcount  &&  1 < entertedtext.length)
         {
             //alert("NO match");
-            document.getElementById("testesult1").style.display = "none";
             // Hide all results
             for (i = 1; i < datacountplusone; i++)
             {
@@ -330,6 +351,22 @@ Case details
         }
     }, 500));
 
+
+    function showselectedresult(itemnumber)
+    {
+
+        var prefixaddresscontainer = 'testesult';
+        var datacountplusone = 18;
+        for (i = 1; i < datacountplusone; i++)
+        {
+            document.getElementById(prefixaddresscontainer + i).style.display = "none";
+        }
+        document.getElementById("noresults").style.display = "none";
+
+        alert("selection");
+        document.getElementById(prefixaddresscontainer + itemnumber).style.display = "flex";
+
+    }
 
 
 </script>
