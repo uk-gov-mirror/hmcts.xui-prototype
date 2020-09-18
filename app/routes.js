@@ -875,7 +875,7 @@ router.post( '/noticeofchange/solicitor/stopselectclients', function (req, res)
     else
     {
         req.session.data['errorstopnoperson'] = 'false';
-        res.redirect('/noticeofchange/solicitor/stopreason');
+        res.redirect('/noticeofchange/solicitor/stopsot');
     }
 
 })

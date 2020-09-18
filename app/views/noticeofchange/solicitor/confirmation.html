@@ -62,7 +62,7 @@ Case details
 
                     {% if data.autoapproved == 'true' %}
                         <!-- Automatic approval -->
-                        <p class="govuk-body govuk-!-margin-top-6">We've  emailed the person who previously represented the case.</p>
+                        <p class="govuk-body govuk-!-margin-top-6">We've emailed the person who previously represented the client.</p>
 
                         <h2 class="govuk-heading-m ">What happens next</h2>
 
@@ -75,8 +75,15 @@ Case details
                             <p class="govuk-body">
                                 This case will now appear in your case list.
                             </p>
+                            <div class="govuk-warning-text">
+                                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                <strong class="govuk-warning-text__text">
+                                    <span class="govuk-warning-text__assistive">Warning</span>
+                                    You should update any of the information you’ve amended on the case, for example the unique solicitor reference or client details.
+                                </strong>
+                            </div>
                             <p class="govuk-body">
-                                You should inform all parties involved in the case.
+                                You should also inform all parties involved in the case.
                             </p>
                             <p class="govuk-body">
                                 This is a new online process - you don’t need to file any further documents to the court.

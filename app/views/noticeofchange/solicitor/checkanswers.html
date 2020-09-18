@@ -37,14 +37,7 @@ Case details
                             Change request
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {% if data.takenfrom == 'lip' %}
-                                Acquire case file from a litigant
-                                <br>(Notice of acting)
-                            {% else %}
-                                Acquire case file from a solicitor
-                                <br>(Notice of change)
-                            {% endif %}
-
+                            Acquire case file (notice of change)
                         </dd>
                         <dd class="govuk-summary-list__actions">
                         </dd>
@@ -190,11 +183,13 @@ Case details
 
                     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Notifications</h2>
 
-                    <p class="govuk-body  govuk-!-margin-bottom-7">Once we’ve approved this notice of change, we’ll let the previous legal firm,
-                        solicitor or client know that they’re no longer the representative for this case.</p>
+                    <p class="govuk-body  govuk-!-margin-bottom-7">Once we’ve approved this notice of change, we’ll let the previous
+                        legal firm or solicitor know that they’re no longer representing this client.</p>
 
 
-
+                    <div class="govuk-inset-text">
+                        This can take up to a minute.
+                    </div>
 
                     <input type="hidden" name="answers-checked" value="true">
 
