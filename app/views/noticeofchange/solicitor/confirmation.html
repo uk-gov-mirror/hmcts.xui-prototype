@@ -36,7 +36,7 @@ Case details
                                 {% else %}
                                     Notice of change successful<br><br>
                                     <div class="govuk-panel__body">
-                                        You’re now the representative of case <br>{{data.casenumber}}
+                                        You're now representing a client on case <br>{{data.casenumber}}
                                     </div>
                                 {% endif %}
                             </h1>
@@ -62,13 +62,13 @@ Case details
 
                     {% if data.autoapproved == 'true' %}
                         <!-- Automatic approval -->
-                        <p class="govuk-body govuk-!-margin-top-6">We've emailed the person who previously represented the client.</p>
+                        <p class="govuk-body govuk-!-margin-top-6">If the client had legal representation, we've sent an to email their solicitor.</p>
 
                         <h2 class="govuk-heading-m ">What happens next</h2>
 
                         {% if data.adminonly == 'true' %}
                             <p class="govuk-body">
-                                You'll need to share the case with someone.
+                                You'll must to share the case with someone.
                             </p>
                             <p class="govuk-body"><a href="#">Share this case</a></p>
                         {% else %}
@@ -79,11 +79,11 @@ Case details
                                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                                 <strong class="govuk-warning-text__text">
                                     <span class="govuk-warning-text__assistive">Warning</span>
-                                    You should update any of the information you’ve amended on the case, for example the unique solicitor reference or client details.
+                                     You should now amend the case details, for example the unique solicitor reference and the correspondence address.
                                 </strong>
                             </div>
                             <p class="govuk-body">
-                                You should also inform all parties involved in the case.
+                                You must also inform all parties involved in the case.
                             </p>
                             <p class="govuk-body">
                                 This is a new online process - you don’t need to file any further documents to the court.

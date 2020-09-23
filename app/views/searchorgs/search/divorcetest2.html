@@ -1,0 +1,177 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+
+        <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="Email">
+                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                    fsrgwer
+                </label>
+            </div>
+
+
+
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="Post" aria-controls="conditional-how-contacted-conditional-2" aria-expanded="true">
+                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                    By post
+                </label>
+            </div>
+
+            <div class="govuk-radios__conditional  govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-post">
+                        Building and street
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-post" name="contact-by-post" type="tel">
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+<script>
+
+    var inputbox = document.getElementById("searchinput");
+
+
+    function debounce(func, wait, immediate) {
+        var timeout;
+
+        return function executedFunction() {
+            var context = this;
+            var args = arguments;
+
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+
+            var callNow = immediate && !timeout;
+
+            clearTimeout(timeout);
+
+            timeout = setTimeout(later, wait);
+
+            if (callNow) func.apply(context, args);
+        };
+    };
+
+
+
+    function updateresults()
+    {
+        //alert("running");
+        // Make lower case string out of inputted value
+        var entertedtext = document.getElementById("searchinput").value;
+
+
+        // Check which results match inputted text
+        var buttonname = 'selectbutton';
+        var matchcount = 0;
+        var str = "";
+        var prefixaddresswords = 'results';
+        var prefixaddresscontainer = 'testesult';
+        // check input has at least 2 character
+        var datacountplusone = 18;
+        if (0 == entertedtext.length)
+        {
+            document.getElementById("noresults").style.display = "none";
+            // Hide all results
+            for (i = 1; i < datacountplusone; i++)
+            {
+                document.getElementById(prefixaddresscontainer + i).style.display = "none";
+                document.getElementById(buttonname + i).innerHTML = 'Select';
+            }
+        }
+        else if (1 < entertedtext.length)
+        {
+            // search through companies
+            for (i = 1; i < datacountplusone; i++)
+            {
+                //alert(" loop " + i + "  "  + str );
+                //make a lower case string out of each possible result
+                str = document.getElementById(prefixaddresswords + i).innerHTML.toLowerCase();
+                //alert(" loop " + i + "  "  + str );
+                document.getElementById(buttonname + i).innerHTML = 'Select';
+
+                // check if input string is contained each result
+                if ( str.includes(entertedtext.toString().toLowerCase()) )
+                {
+                    //alert("match");
+                    document.getElementById("noresults").style.display = "none";
+                    document.getElementById(prefixaddresscontainer + i).style.display = "flex";
+                    matchcount = matchcount + 1;
+                }
+            }
+        }
+
+        if (0 == matchcount  &&  1 < entertedtext.length)
+        {
+            //alert("NO match");
+            // Hide all results
+            for (i = 1; i < datacountplusone; i++)
+            {
+                document.getElementById(prefixaddresscontainer + i).style.display = "none";
+            }
+
+            document.getElementById("noresults").style.display = "block";
+        }
+
+    }
+
+
+
+    inputbox.addEventListener('keydown', debounce(function()
+    {
+        updateresults();
+    }, 500));
+
+
+
+    function showselectedresult(itemnumber) {
+        var prefixaddresscontainer = 'testesult';
+        var buttonname = 'selectbutton';
+        var datacountplusone = 18;
+
+        if (document.getElementById(buttonname + itemnumber).innerHTML != 'Deselect')
+        {
+            for (i = 1; i < datacountplusone; i++) {
+                document.getElementById(prefixaddresscontainer + i).style.display = "none";
+            }
+            document.getElementById("noresults").style.display = "none";
+
+            //alert("selection");
+            document.getElementById(prefixaddresscontainer + itemnumber).style.display = "flex";
+
+            // Change button to deselect
+            document.getElementById(buttonname + itemnumber).innerHTML = 'Deselect';
+        }
+        else
+        {
+            document.getElementById(buttonname + itemnumber).innerHTML = 'Select';
+            updateresults();
+        }
+    }
+
+
+</script>
+
+
+{% endblock %}
