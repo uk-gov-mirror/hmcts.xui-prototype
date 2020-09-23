@@ -204,7 +204,7 @@ router.post( '/noticeofchange/v1/solicitor/confirmstop', function (req, res)
     else
     {
         req.session.data['errorstopconfirm'] = 'false';
-        res.redirect('/noticeofchange/v1/solicitor/confirmationofstopping');
+        res.redirect('/noticeofchange/v1/solicitor/confirmationofstopping?stoppingoutcome=auto&');
     }
 })
 
