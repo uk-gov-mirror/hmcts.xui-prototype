@@ -1,8 +1,9 @@
 {% extends "../layoutdemo.html" %}
 
 {% block pageTitle %}
-Case details
+Divorce
 {% endblock %}
+
 
 
 {% block content %}
@@ -12,11 +13,154 @@ Case details
         <div class="govuk-grid-row govuk-grid-column-two-thirds">
             <div class="">
 
-                <div class="hmcts-page-heading">
-                      <div class="hmcts-page-heading__title">
-                           <h1 class="govuk-heading-l">Search for the other party's solicitor firm</h1>
-                      </div>
+                <!--
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" >
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h1 class="govuk-fieldset__heading">
+                                Is the other party being represented by a solicitor?
+                            </h1>
+                        </legend>
+                        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="idontknow" name="firmornot" type="radio" >
+                                <label class="govuk-label govuk-radios__label" for="idontknow">
+                                    I don't know
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="nosolicitor" name="firmornot" type="radio" >
+                                <label class="govuk-label govuk-radios__label" for="nosolicitor">
+                                    No
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="yessolicitor" name="firmornot" type="radio"  data-aria-controls="conditionalsolicitoryes">
+                                <label class="govuk-label govuk-radios__label" for="yessolicitor">
+                                    Yes
+                                </label>
+                            </div>
+                                <!--  conditional stuff for knowing the solicitor  -->  <!--
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditionalsolicitoryes">
+                                    <div class="govuk-form-group">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                                <h1 class="govuk-fieldset__heading">
+                                                    Do you know the name of the firm?
+                                                </h1>
+                                            </legend>
+
+
+                                    </div>
+                                </div>
+
+                        </div>
+
+                    </fieldset>
                 </div>
+                -->
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset">
+
+
+                        <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="Email">
+                                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                                    fsrgwer
+                                </label>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="Post" aria-controls="conditional-how-contacted-conditional-2" aria-expanded="true">
+                                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                                    By post
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__conditional" id="conditional-how-contacted-conditional-2">
+
+
+
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="contact-by-post">
+                                        Building and street
+                                    </label>
+
+
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-post" name="contact-by-post" type="tel">
+                                </div>
+
+
+
+                                <div class="govuk-form-group">
+
+
+
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-post" name="contact-by-post" type="tel">
+                                </div>
+
+
+
+
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="contact-by-post">
+                                        Town or city
+                                    </label>
+
+
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-post" name="contact-by-post" type="tel">
+                                </div>
+
+
+
+
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="contact-by-post">
+                                        County
+                                    </label>
+
+
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-post" name="contact-by-post" type="tel">
+                                </div>
+
+
+
+
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="contact-by-post">
+                                        Postcode
+                                    </label>
+
+
+                                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-post" name="contact-by-post" type="tel">
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+                    </fieldset>
+
+
+                </div>
+
+
+
 
 
 
@@ -437,7 +581,6 @@ Case details
 
                     </div>
 
-
                 <form
                         name="aspnetForm"
                         method="post"
@@ -452,6 +595,11 @@ Case details
         </div>
 
 </div>
+
+
+
+
+{% block scripts %}
 
 
 <script>
@@ -580,6 +728,10 @@ Case details
 
 
 </script>
+
+
+
+{% endblock %}
 
 
 {% endblock %}
