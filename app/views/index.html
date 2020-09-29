@@ -15,7 +15,68 @@
 
       <p class="govuk-body">This is the prototype to let judges, panel members, legal advisors, solicitors, paralegals manage cases.</p>
 
-      <h2 class="govuk-heading-l">Iterations</h2>
+
+<!-- Latest design -->
+
+      <h2 class="govuk-heading-l">Latest iteration - Notice of change</h2>
+
+
+      <p class="govuk-!-font-weight-bold">NOC starting pages</p>
+
+      <p><a target="_blank" href="/noticeofchange/solicitor/caselist?hideone=false&hidetwo=false&hidethree=false&stoppingoutcome=auto&caselist=divorce&">Caselist - Divorce</a></p>
+
+      <!--  <p><a target="_blank" href="/noticeofchange/solicitor/caselist?hideone=false&hidetwo=false&hidethree=false&stoppingoutcome=auto&caselist=financialremedy&">Caselist - Financial Remedy</a></p>  -->
+
+      <p><a target="_blank" href="/noticeofchange/solicitor/caselist?hideone=false&hidetwo=false&hidethree=false&stoppingoutcome=auto&caselist=probate&">Caselist - Probate</a></p>
+
+      <br>
+      <br>
+
+      <p class="govuk-!-font-weight-bold">Emails - generic across services  </p>
+
+      <p><a target="_blank" href="/noticeofchange/solicitor/emailofremoved">You are no longer on record</a></p>
+
+      <p><a target="_blank" href="/noticeofchange/solicitor/emailgoingonrecordaccepted">Go on record - review outcome - accepted</a></p>
+
+      <p><a target="_blank" href="/noticeofchange/solicitor/emailgoingonrecordrejected">Go on record - review outcome - rejected</a></p>
+
+      <p><a target="_blank" href="/noticeofchange/solicitor/emailgoingoffrecordaccepted">Go off record - review outcome - accepted</a></p>
+
+      <p><a target="_blank" href="/noticeofchange/solicitor/emailgoingoffrecordrejected">Go off record - review outcome - rejected</a></p>
+
+      <br>
+      <br>
+      <p class="govuk-!-font-weight-bold">Error sates</p>
+
+      <p><a target="_blank" href="/noticeofchange/solicitor/alreadygotcaseerror">Already have access</a></p>
+
+      <p><a target="_blank" href="/noticeofchange/solicitor/errormultiplematch">Details match multiple parties</a></p>
+
+      <p><a target="_blank" href="/noticeofchange/solicitor/errornocinprogress">NOC already in progress</a></p>
+
+      <p><a target="_blank" href="/noticeofchange/solicitor/errorcontactus">Problem - Contact us</a></p>
+
+
+<!-- For devs -->
+
+        <h3 class="govuk-heading-m">Historical for developers (for reference only)</h3>
+
+        {% set sprintOneSearchHtml %}
+          <p class="govuk-body">Illustrate signing in, landing on search page, then seeing search results.</p>
+          <ul class="govuk-list">
+            <li><a href="/s1">View</a></li>
+          </ul>
+        {% endset %}
+
+        {{ govukDetails({
+          summaryHtml: '<div class="govuk-!-font-size-16 govuk-!-font-weight-bold">Sprint 2 — login and search</div>',
+          html: sprintOneSearchHtml
+        }) }}
+
+<!-- historical designs -->
+
+
+      <h3 class="govuk-heading-m">Historical design iterations (for reference only)</h3>
  {% set iterationTwoHtml %}
           <ul class="govuk-list">
  <p class="govuk-body govuk-!-font-weight-bold">Get help telephone numbers</p>
@@ -64,10 +125,16 @@
           <li><a href="/v3/cases/confirmation-email-message-error">Inbound communications - Email to user - virus detected</a></li>
           <li><a href="/v3/cases/confirmation-email-message-support">Inbound communications - Email to support team - example of ticket</a></li>
         </ul>
-     
+
       {% endset %}
 
- 
+
+
+
+
+
+
+
  {% set iterationFourHtml %}
   <p class="govuk-body govuk-!-font-weight-bold">Get help telephone numbers updated with IAC and FPLA</p>
  <ul class="govuk-list"><li><a href="/v4/cases/get-help">Get help - details page (no service badges)</a></li>
@@ -82,21 +149,21 @@
           <li><a href="/v4/terms">Terms and Conditions - New terms - EUI-1593 - text changes updated April 2020 EUI-1855.</a></li>
           <li><a href="/v4/terms-pop">Terms and Conditions - New terms pop up (EUI-1855)</a></li>
         </ul>
-      {% endset %}     
+      {% endset %}
 
 
  {{ govukDetails({
-        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Iteration 4 (Latest April 2020)</div>',
+        summaryHtml: '<div class="govuk-!-font-size-16 govuk-!-font-weight-bold">Iteration 4 (Latest April 2020)</div>',
         html: iterationFourHtml
       }) }}
 
-     
+
       {{ govukDetails({
-        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Iteration 3 (Dec 2019)</div>',
+        summaryHtml: '<div class="govuk-!-font-size-16 govuk-!-font-weight-bold">Iteration 3 (Dec 2019)</div>',
         html: iterationTwoHtml
       }) }}
 
-        
+
       {% set iterationOneHtml %}
         <p class="govuk-body">Illustrate the components and journey as black boxes including the way the components load and render indepently.</p>
         <ul class="govuk-list">
@@ -113,7 +180,7 @@
       {% endset %}
 
       {{ govukDetails({
-        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Iteration 2</div>',
+        summaryHtml: '<div class="govuk-!-font-size-16 govuk-!-font-weight-bold">Iteration 2</div>',
         html: iterationTwoHtml
       }) }}
 
@@ -125,23 +192,11 @@
       {% endset %}
 
       {{ govukDetails({
-        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Iteration 1</div>',
+        summaryHtml: '<div class="govuk-!-font-size-16 govuk-!-font-weight-bold">Iteration 1</div>',
         html: iterationOneHtml
       }) }}
 
-      <h2 class="govuk-heading-l">For developers</h2>
 
-      {% set sprintOneSearchHtml %}
-        <p class="govuk-body">Illustrate signing in, landing on search page, then seeing search results.</p>
-        <ul class="govuk-list">
-          <li><a href="/s1">View</a></li>
-        </ul>
-      {% endset %}
-
-      {{ govukDetails({
-        summaryHtml: '<div class="govuk-!-font-size-24 govuk-!-font-weight-bold">Sprint 2 — login and search</div>',
-        html: sprintOneSearchHtml
-      }) }}
 
     </div>
 </div>
