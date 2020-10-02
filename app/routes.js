@@ -924,3 +924,53 @@ router.post( '/noticeofchange/solicitor/selectrole', function (req, res)
 {
     res.redirect('/noticeofchange/solicitor/checkanswers');
 })
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+////////////// SEARCH FOR ORG FOR A CITIZEN DICORCE APPLENT //////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+
+
+router.post( '/searchorgs/search/divorce1', function (req, res)
+{
+    if(req.session.data['represented'] == 'yes')
+    {
+        res.redirect('/searchorgs/search/divorce2');
+    }
+    else
+    {
+        res.redirect('/searchorgs/search/therestofapplication');
+    }
+})
+
+
+router.post( '/searchorgs/search/divorce2', function (req, res)
+{
+    if(req.session.data['firmname'] == 'yes')
+    {
+        res.redirect('/searchorgs/search/divorce3');
+    }
+    else
+    {
+        res.redirect('/searchorgs/search/therestofapplication');
+    }
+})
+
+
+router.post( '/searchorgs/search/divorce3', function (req, res)
+{
+    res.redirect('/searchorgs/search/therestofapplication');
+})
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
