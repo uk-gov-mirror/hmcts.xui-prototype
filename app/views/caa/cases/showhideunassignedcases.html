@@ -1,0 +1,312 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Divorce
+{% endblock %}
+
+
+{% block content %}
+
+<div style="width:1220px; display: flex; margin: 0 auto;">
+    <div class="govuk-grid-row govuk-grid-column-full">
+
+        <form
+                name="aspnetForm"
+                method="post"
+                id="aspnetForm"
+                autocomplete="off">
+
+                <div class="govuk-form-group">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+                            <h1 class="govuk-fieldset__heading">
+                                Filter unassigned cases
+                            </h1>
+                        </legend>
+
+                        <div  class=" govuk-!-margin-bottom-6">
+
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                        <h3 class="govuk-fieldset__heading">
+                                            Order by
+                                        </h3>
+                                    </legend>
+                                    <div class="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                                            <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                                                Case type
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                                Solicitor's firm
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+                                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                                Solicitor's firm
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
+                                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                                                Date sent
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
+                                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                                                Deadline
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div>
+                        </div>
+
+                </div>
+
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-padding-top-5">
+                                <h3 class="govuk-fieldset__heading">
+                                    Show case types
+                                </h3>
+                            </legend>
+                            <!--
+                            <div id="waste-hint" class="govuk-hint">
+                                Select all that apply.
+                            </div>
+                            -->
+                            <p style="font-weight: 700">Family Divorce</p>
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                        Divorce
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                                    <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                                        Financial Remedy Contested
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                        Financial Remedy Consented
+                                    </label>
+                                </div>
+                            </div>
+
+
+
+                            <p class="govuk-!-padding-top-6" style="font-weight: 700">Public law</p>
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                        Care, supervision and emergency protection orders
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <p class="govuk-!-padding-top-6 " style="font-weight: 700">Immigration and Asylum</p>
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                        Appeal
+                                    </label>
+                                </div>
+                            </div>
+
+                            <p class="govuk-!-padding-top-6 " style="font-weight: 700">Civil Money Claims</p>
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                        Money Claim
+                                    </label>
+                                </div>
+                            </div>
+
+                            <p class="govuk-!-padding-top-6 " style="font-weight: 700">Probate</p>
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                        Grant of representation
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                                    <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                                        Caveat
+                                    </label>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                        </fieldset>
+                    </div>
+
+
+
+            <div class="govuk-form-group govuk-!-padding-top-4">
+                <button class="govuk-button" data-module="govuk-button">
+                    Update list
+                </button>
+            </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+
+    var inputbox = document.getElementById("searchinput");
+
+
+    function debounce(func, wait, immediate) {
+        var timeout;
+
+        return function executedFunction() {
+            var context = this;
+            var args = arguments;
+
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+
+            var callNow = immediate && !timeout;
+
+            clearTimeout(timeout);
+
+            timeout = setTimeout(later, wait);
+
+            if (callNow) func.apply(context, args);
+        };
+    };
+
+
+
+    function updateresults()
+    {
+        //alert("running");
+        // Make lower case string out of inputted value
+        var entertedtext = document.getElementById("searchinput").value;
+
+
+        // Check which results match inputted text
+        var buttonname = 'selectbutton';
+        var matchcount = 0;
+        var str = "";
+        var prefixaddresswords = 'results';
+        var prefixaddresscontainer = 'testesult';
+        // check input has at least 2 character
+        var datacountplusone = 18;
+        if (0 == entertedtext.length)
+        {
+            document.getElementById("noresults").style.display = "none";
+            // Hide all results
+            for (i = 1; i < datacountplusone; i++)
+            {
+                document.getElementById(prefixaddresscontainer + i).style.display = "none";
+                document.getElementById(buttonname + i).innerHTML = 'Select';
+            }
+        }
+        else if (1 < entertedtext.length)
+        {
+            // search through companies
+            for (i = 1; i < datacountplusone; i++)
+            {
+                //alert(" loop " + i + "  "  + str );
+                //make a lower case string out of each possible result
+                str = document.getElementById(prefixaddresswords + i).innerHTML.toLowerCase();
+                //alert(" loop " + i + "  "  + str );
+                document.getElementById(buttonname + i).innerHTML = 'Select';
+
+                // check if input string is contained each result
+                if ( str.includes(entertedtext.toString().toLowerCase()) )
+                {
+                    //alert("match");
+                    document.getElementById("noresults").style.display = "none";
+                    document.getElementById(prefixaddresscontainer + i).style.display = "flex";
+                    matchcount = matchcount + 1;
+                }
+            }
+        }
+
+        if (0 == matchcount  &&  1 < entertedtext.length)
+        {
+            //alert("NO match");
+            // Hide all results
+            for (i = 1; i < datacountplusone; i++)
+            {
+                document.getElementById(prefixaddresscontainer + i).style.display = "none";
+            }
+
+            document.getElementById("noresults").style.display = "block";
+        }
+
+    }
+
+
+
+    inputbox.addEventListener('keydown', debounce(function()
+    {
+        updateresults();
+    }, 500));
+
+
+
+    function showselectedresult(itemnumber)
+    {
+        var prefixaddresscontainer = 'testesult';
+        var buttonname = 'selectbutton';
+        var datacountplusone = 18;
+
+        if (document.getElementById(buttonname + itemnumber).innerHTML != 'Deselect')
+        {
+            for (i = 1; i < datacountplusone; i++) {
+                document.getElementById(prefixaddresscontainer + i).style.display = "none";
+            }
+            document.getElementById("noresults").style.display = "none";
+
+            //alert("selection");
+            document.getElementById(prefixaddresscontainer + itemnumber).style.display = "flex";
+
+            // Change button to deselect
+            document.getElementById(buttonname + itemnumber).innerHTML = 'Deselect';
+        }
+        else
+        {
+            document.getElementById(buttonname + itemnumber).innerHTML = 'Select';
+            updateresults();
+        }
+    }
+
+
+</script>
+
+{% endblock %}
