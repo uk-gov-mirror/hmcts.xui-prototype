@@ -10,20 +10,18 @@ Divorce
 <div style="width:1220px; display: flex; margin: 0 auto;">
     <div class="govuk-grid-row govuk-grid-column-full">
 
-        <form
-                name="aspnetForm"
-                method="post"
-                id="aspnetForm"
-                autocomplete="off">
 
                 <div class="govuk-form-group">
 
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-6">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l ">
                             <h1 class="govuk-fieldset__heading">
-                                Filter unassigned cases
+                                Filter unassigned cases by case type
                             </h1>
                         </legend>
 
+
+
+                    <!--
                         <div  class=" govuk-!-margin-bottom-6">
 
                             <div class="govuk-form-group">
@@ -69,15 +67,19 @@ Divorce
                                 </fieldset>
                             </div>
                         </div>
-
+                        -->
                 </div>
+
+                    <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary govuk-!-margin-bottom-4" data-module="govuk-button">
+                        Select all
+                    </a>
 
 
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-padding-top-5">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
                                 <h3 class="govuk-fieldset__heading">
-                                    Show case types
+
                                 </h3>
                             </legend>
                             <!--
@@ -90,19 +92,19 @@ Divorce
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
                                     <label class="govuk-label govuk-checkboxes__label" for="waste">
-                                        Divorce
+                                        Divorce &nbsp; (1)
                                     </label>
                                 </div>
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
                                     <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                                        Financial Remedy Contested
+                                        Financial Remedy Contested &nbsp; (2)
                                     </label>
                                 </div>
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
                                     <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                                        Financial Remedy Consented
+                                        Financial Remedy Consented  &nbsp; (0)
                                     </label>
                                 </div>
                             </div>
@@ -114,7 +116,7 @@ Divorce
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
                                     <label class="govuk-label govuk-checkboxes__label" for="waste">
-                                        Care, supervision and emergency protection orders
+                                        Care, supervision and emergency protection orders  &nbsp; (0)
                                     </label>
                                 </div>
                             </div>
@@ -125,7 +127,7 @@ Divorce
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
                                     <label class="govuk-label govuk-checkboxes__label" for="waste">
-                                        Appeal
+                                        Appeal  &nbsp; (0)
                                     </label>
                                 </div>
                             </div>
@@ -135,7 +137,7 @@ Divorce
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
                                     <label class="govuk-label govuk-checkboxes__label" for="waste">
-                                        Money Claim
+                                        Money Claim  &nbsp; (0)
                                     </label>
                                 </div>
                             </div>
@@ -145,13 +147,13 @@ Divorce
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
                                     <label class="govuk-label govuk-checkboxes__label" for="waste">
-                                        Grant of representation
+                                        Grant of representation  &nbsp; (0)
                                     </label>
                                 </div>
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
                                     <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                                        Caveat
+                                        Caveat  &nbsp; (0)
                                     </label>
                                 </div>
                             </div>
@@ -165,13 +167,17 @@ Divorce
                     </div>
 
 
-
-            <div class="govuk-form-group govuk-!-padding-top-4">
-                <button class="govuk-button" data-module="govuk-button">
-                    Update list
-                </button>
-            </div>
-
+            <form
+                    name="unassignedcases"
+                    method="post"
+                    id="aspnetForm"
+                    autocomplete="off">
+                    <div class="govuk-form-group govuk-!-padding-top-4">
+                        <button class="govuk-button" data-module="govuk-button">
+                            Update list
+                        </button>
+                    </div>
+            </form>
 
     </div>
 
