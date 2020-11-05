@@ -29,13 +29,13 @@ Case details
 
                                 {% if data.errorsecuritydivorcefirstname == 'true'  %}
                                     <li>
-                                        <a href="#firstnamelinkpoint">You must enter a first name</a>
+                                        <a href="#firstnamelinkpoint">You must enter a client first name</a>
                                     </li>
                                 {% endif %}
 
                                 {% if data.errorsecuritydivorcelastname == 'true'  %}
                                     <li>
-                                        <a href="#lastnamelinkpoint">You must enter a last name</a>
+                                        <a href="#lastnamelinkpoint">You must enter a client last name</a>
                                     </li>
                                 {% endif %}
 
@@ -51,11 +51,11 @@ Case details
                       </div>
                 </div>
 
-                <p>You must enter the details exactly as they’re written on the case, including any mistakes.</p>
+                <p>You must enter the client details exactly as they’re written on the case, including any mistakes.</p>
 
                 {% if data.errornomatch == 'true'  %}
                     <span id="" class="govuk-error-message">
-                        <span class="govuk-visually-hidden">Error:</span> The details must exactly match the case, including any mistakes
+                        <span class="govuk-visually-hidden">Error:</span> The client details must exactly match as they’re written on the case, including any mistakes
                     </span>
                 {% endif %}
 
@@ -82,7 +82,7 @@ Case details
                                             </label>
                                             {% if data.errorsecuritydivorcefirstname == 'true'  %}
                                                 <span id="" class="govuk-error-message">
-                                                    <span class="govuk-visually-hidden">Error:</span> First name must exactly match the details on the case, including any mistakes
+                                                    <span class="govuk-visually-hidden">Error:</span> Client first name must exactly match as they’re written on the case, including any mistakes
                                                 </span>
                                             {% endif %}
 
@@ -104,7 +104,7 @@ Case details
                                             </label>
                                             {% if data.errorsecuritydivorcelastname == 'true'  %}
                                                 <span id="" class="govuk-error-message">
-                                                    <span class="govuk-visually-hidden">Error:</span> Last name must exactly match the details on the case, including any mistakes
+                                                    <span class="govuk-visually-hidden">Error:</span> Client last name must exactly match as they’re written on the case, including any mistakes
                                                 </span>
                                             {% endif %}
 

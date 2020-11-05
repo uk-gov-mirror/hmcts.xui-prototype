@@ -1,0 +1,109 @@
+{% extends "../layoutdemo.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="hmcts-page-heading">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-l">Confirm details</h1>
+          </div>
+    </div>
+
+    <!--
+    <div class="govuk-form-group ">
+        <h2 class="govuk-heading-s">
+            Client details
+        </h2>
+
+        <p>We'll send the case file to:</p>
+
+        <p>{{ data.clientname }}<br>
+            Flat C<br>
+            46 Clement Drive<br>
+            Saffron-on-Sea<br>
+            SS17 7HT<br>
+        </p>
+    </div>
+    -->
+
+    <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off">
+
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+
+
+          <!-- STAMENT OF STRUTH -->
+          {% if data.errorsot == 'true'%}
+              <div class="govuk-form-group govuk-form-group--error" id="sotruth">
+          {% else %}
+              <div class="govuk-form-group">
+          {% endif %}
+
+              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                  <!--<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h2 class="govuk-fieldset__heading">
+                          Statement of truth
+                      </h2>
+                  </legend>-->
+                  <p>When you're satisfied that all the information matches what is written on the case, you should tick to “sign”.</p>
+                  {% if data.errorsot == 'true'%}
+                      <span id="national-insurance-number-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> Tick the box to confirm all these details are accurate and match what is written on the case
+                      </span>
+                  {% endif %}
+                  <div class="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="sot" name="sot" type="checkbox">
+                          <label class="govuk-label govuk-checkboxes__label" for="sot">
+                              <p>I confirm all these details are accurate and match what is written on the case.</p>
+                          </label>
+                      </div>
+                  </div>
+              </fieldset>
+              </div>
+
+
+            <!--<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h2 class="govuk-fieldset__heading">
+                    Statement of truth
+                </h2>
+            </legend>
+            <p>When you’re satisfied that all the information is as written on the case, you should tick to “sign”.</p>
+
+            <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="sot" name="sot" type="checkbox">
+                    <label class="govuk-label govuk-checkboxes__label" for="sot">
+                        <p>I confirm all these details are as written on the case.</p>
+                    </label>
+                </div>
+            </div>
+        </fieldset> -->
+
+        <br>
+        <div>
+            <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="stopreason">
+                Previous
+            </a>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </div>
+        <p><a href="caselist">Cancel</a></p>
+
+
+
+
+
+
+
+
+{% endblock %}
