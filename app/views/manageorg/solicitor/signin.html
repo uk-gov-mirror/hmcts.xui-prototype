@@ -1,0 +1,73 @@
+{% extends "../layoutnewfooter.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+          <h1 class="govuk-heading-l" style="">
+            Sign in to HMCTS
+          </h1>
+
+
+      <form
+          name="aspnetForm"
+          method="post"
+          id="aspnetForm"
+          autocomplete="off">
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                  Email address
+                </label>
+                <input class="govuk-input govuk-\!-width-one-third" id="email" name="email" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="password">
+                  Password
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="password" name="password" type="password">
+
+              </div>
+            </fieldset>
+
+
+              <form
+                  action="/manageorg/solicitor/organisation"
+                  name="aspnetForm"
+                  method="post"
+                  id="aspnetForm"
+                  autocomplete="off">
+
+                  <button class="govuk-button govuk-!-margin-top-7" data-module="govuk-button" >
+                      Sign in
+                  </button>
+              </form>
+
+          <!--<h2 class="govuk-heading-s govuk-!-margin-top-3 govuk-!-margin-bottom-1">Problems signing in</h2>-->
+          <p class="govuk-body  govuk-!-margin-bottom-1"><a href="##">Forgotten password</a></p>
+          <p class="govuk-body "><a href="https://login.microsoftonline.com/723e4557-2f17-43ed-9e71-f1beb253e546/saml2?SAMLRequest=nVJLj9MwEP4rke952Hk1VlupbIWotEC1LXvgglx70hocO3ichf33pMkilsMuEjd7Zr75Hpolis70fDOEi72D7wNgiH52xiKfGisyeMudQI3cig6QB8kPm%2Fe3nCUZ770LTjpDnkFeRwhE8EE7S6LddkW%2BFJLlIqNSVNVClZKpomlyoRZ520JVtFRVeSObCtiJRPfgcUSuyLhohCMOsLMYhA1jKWNZTLM4q4%2BUcVZyuvhMou3oRlsRJtQlhB55mhp31jbptPQOXRucNdpCIl2X1iyHoizrmLW0joscVNxATeOWnuDEyhzKokqvHhmJNr%2BN3DiLQwf%2BAP5BS%2Fh0d%2FuH6uugtNTCjBEZOEPy9PePydk9JMO3VIyxzxtT7OdHLCQm%2FaX%2FJ5hE%2B6f432irtD2%2FnvxpHkL%2B7njcx%2FuPhyNZL6%2BMfErSr%2F9TdAdBKBHEVfMyfb5wOZ%2FWh1HKbrt3RsvH6K3znQgvK6UJnSpaxe00ygeLPUjdalBj6sa4HzceRIAVCX4Akq5n0r9PeP0L&RelayState=https%3A%2F%2Fjudicialcollege.judiciary.gov.uk%2Fauth%2Fsaml2%2Flogin.php&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=kZbz5KJeQdGHF5b68Icwe%2Bp4glG3KdGZvm6QXna%2FYDyYGQTFaSZ5jJ24EW%2FkLmlj5Wynvtq1%2B92w1zkdytdLFa7PcjddV%2FGAVr9%2BXHUnIJjBx3F0mM61Bb9wK2zYAt%2BZ2AGh4ljX0cJyvcrf4yptGRDk2Nx9essj7unGrdWed%2BcLvlYjE0AqIqHN0cdNkSm%2FvpJR00kPcB1cR3zpRKgzJapncJ7hpMsnJ5lTZ3BobD7fxzGS6Bj3DM%2Fq%2Fqa2qdJvnxwcuQhyXCuF6np9GtZpUbf3VJK%2FhlWJAN4ZgLxTpszlvjuZpyMTzTOvdmk0Uzr8i66f97SpTxXirL3h2td0Yw%3D%3D&sso_reload=true">Sign in</a> with an eJudiciary account</p>
+
+
+          </div>
+      </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,96 @@
+{% extends "../layoutmanageorgusersonly.html" %}
+
+{% block pageTitle %}
+Divorce
+{% endblock %}
+
+
+{% block content %}
+
+<div style="width:1220px; display: flex; margin: 0 auto; margin-right: 480px;">
+    <div class="">
+
+        <div class="govuk-form-group">
+
+
+            <h1 class="govuk-fieldset__legend--l  govuk-!-margin-bottom-7">
+                Edit user
+            </h1>
+
+            <h2 class="govuk-heading-m">{{ data.name }}</h2>
+
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Permissions</h3>
+            <div id="passport-issued-hint" class="govuk-hint">
+                Choose what the user will be able to do.  You can change this later.
+            </div>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                    <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="mc" name="mc" type="checkbox" checked value="carcasses">
+                            <label class="govuk-label govuk-checkboxes__label" for="mc">
+                                Manage Cases
+                            </label>
+                            <div id="passport-issued-hint" class="govuk-hint" style="margin-left:15px;">
+                                View, create and progress cases.
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="mu" name="mu" type="checkbox" checked  value="mines">
+                            <label class="govuk-label govuk-checkboxes__label" for="mu">
+                                Manage Users
+                            </label>
+                            <div id="passport-issued-hint" class="govuk-hint" style="margin-left:15px;">
+                                Invite users.
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="mo" name="mo" type="checkbox" checked  value="farm">
+                            <label class="govuk-label govuk-checkboxes__label" for="mo">
+                                Manage Organisation
+                            </label>
+                            <div id="passport-issued-hint" class="govuk-hint" style="margin-left:15px;">
+                                View organisation name and addresses.
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="caa" name="caa" type="checkbox" value="farm">
+                            <label class="govuk-label govuk-checkboxes__label" for="caa">
+                                Case Access Administrator
+                            </label>
+                            <div id="passport-issued-hint" class="govuk-hint" style="margin-left:15px;">
+                                Admin case access
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+
+            <form
+                    action="/manageorg/solicitor/userdetails?showcaapermish=true&showcaaheader=true&"
+                    name="aspnetForm"
+                    method="post"
+                    id="aspnetForm"
+                    autocomplete="off">
+
+                <button class="govuk-button govuk-!-margin-top-7" data-module="govuk-button" >
+                    Submit
+                </button>
+            </form>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+</script>
+
+{% endblock %}

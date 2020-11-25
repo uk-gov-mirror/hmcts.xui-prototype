@@ -1,0 +1,61 @@
+{% extends "../layoutmanageorgusersonly.html" %}
+
+{% block pageTitle %}
+Divorce
+{% endblock %}
+
+
+{% block content %}
+
+<a href="/manageorg/solicitor/users" class="govuk-back-link govuk-!-margin-top-0  govuk-!-margin-bottom-6">Back</a>
+
+<div style="width:1220px; display: flex; margin: 0 auto; margin-right: 480px;">
+    <div class="">
+
+        <div class="govuk-form-group">
+
+
+            <h1 class="govuk-fieldset__legend--l govuk-!-margin-top-0">
+                Users
+            </h1>
+
+            <div style="width:800px;" >
+
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__cell" style="width:100px;">Name</th>
+                            <td class="govuk-table__cell" style="width:580px;">{{ data.name }}</td>
+                            <td class="govuk-table__cell" style="width:120px;"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__cell" style="width:280px;">Email address</th>
+                            <td class="govuk-table__cell" style="width:580px;">{{ data.emailaddress }}</td>
+                            <td class="govuk-table__cell" style="width:120px;"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__cell">Permissions</th>
+                            <td class="govuk-table__cell">Manage Organisation<br>Manage Users<br>Manage Cases<br>{% if data.showcaapermish == 'true' %}Case Access Administrator{% endif %}</td>
+                            <td class="govuk-table__cell" style="width:40px;">
+                                <p><a href="editpermissions" style="text-decoration: underline;">Change</a></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+</script>
+
+{% endblock %}
