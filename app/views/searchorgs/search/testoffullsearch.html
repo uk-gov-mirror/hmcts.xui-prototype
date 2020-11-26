@@ -1,0 +1,567 @@
+{% extends "../layoutdemomyhmcts.html" %}
+
+{% block pageTitle %}
+Divorce
+{% endblock %}
+
+
+{% block content %}
+
+<div style="width:610px; display: flex; margin: 0 auto; margin-right: 610px;">
+    <div style="width:620px;">
+
+        <div class="govuk-form-group">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l  govuk-!-margin-top-5">
+                <h1 class="govuk-fieldset__heading">
+                    Consent Order Application
+                </h1>
+            </legend>
+
+
+            <h3 class="govuk-heading-s govuk-!-margin-top-7 govuk-!-margin-bottom-4">RESPONDENT DETAILS</h3>
+
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="names" style="font-size:18px;">
+                    Current First and Middle names
+                </label>
+                <input class="govuk-input " id="names" name="names" type="text" style="border: solid 1px; height:32px; font-size:18px;">
+            </div>
+
+            <p onclick="showsomecsvdata()">asfaffasdfa</p>
+
+
+
+
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="lastname" style="font-size:18px;">
+                    Current Last Name
+                </label>
+                <input class="govuk-input " id="lastname" name="lastname" type="text" style="border: solid 1px; height:32px; font-size:18px;">
+            </div>
+
+
+            <div class="govuk-form-group  govuk-!-margin-bottom-8">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend ">
+                        <p class="govuk-fieldset__heading" >
+                            Is the respondent represented ?
+
+                        </p>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes"  onclick="showsolicitorsdetails()">
+                            <label class="govuk-label govuk-radios__label" for="changed-name" style=" font-size:18px;"  onclick="showsolicitorsdetails()">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no"  onclick="hidesolicitorsdetails()">
+                            <label class="govuk-label govuk-radios__label" for="changed-name-2" style=" font-size:18px;"  onclick="hidesolicitorsdetails()">
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+
+
+
+
+
+            <div  id="hiddensolicitorfields" class="govuk-form-group" style="display:none">
+
+
+                    <h3 class="govuk-heading-s govuk-!-margin-top-7 govuk-!-margin-bottom-4"
+                        style="border-left: 10px solid #bfc1c3; padding-left: 15px; margin-bottom: 30px!important;"
+                        >RESPONDENT SOLICITOR’S DETAILS</h3>
+
+                    <div class="govuk-form-group"
+                         style="border-left: 10px solid #bfc1c3; padding-left: 15px; margin-bottom: 30px!important;">
+                        <label class="govuk-label" for="lastname" style="font-size:18px;" >
+                            Respondent Solicitor’s name
+                        </label>
+                        <input class="govuk-input " id="lastname" name="lastname" type="text" style="border: solid 1px; height:32px; font-size:18px; margin-bottom: 30px;">
+                    </div>
+
+
+
+                    <div style="border-left: 10px solid #bfc1c3; padding-left: 15px;  margin-bottom: 30px;">
+
+
+                        <!-- <h3 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-4">Respondent Organisation Policy</h3>  -->
+
+
+                        <h3 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-4">Search for an organisation</h3>
+
+                        <div id="passport-issued-hint" class="govuk-hint">
+                            You can only search for organisations already registered with MyHMCTS. For example, you can search by organisation name or address.
+                        </div>
+
+
+
+                        <div class="govuk-form-group ">
+                            <label class="govuk-label" for="searchinput">
+                                <!-- Enter the firm's name, address or postcode </span>-->
+                            </label>
+                            <input class="govuk-input  "
+                                   id="searchinput" name="searchinput" type="text" spellcheck="false" value=""  style="border: solid 1px; height:32px; font-size:18px;">
+                        </div>
+
+
+                        <h3 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-4">Organisation name and address</h3>
+                        <hr>
+
+                        <div id="resultstest" class="govuk-!-margin-top-5" style="width:650px;">
+
+                            <div id="noresults" style="display: none;">
+                                <p ><span >No results found</span></p>
+                                <!--<br>The solicitor's firm may not be registered with our online service.-->
+                                <!--<p>You can search again by entering different details or continue without selecting a firm.  This won't have an impact on your application.</p>-->
+                            </div>
+
+
+
+                            <div id="texterdiv"></div>
+
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <details class="govuk-details govuk-!-margin-top-6" data-module="govuk-details" >
+                            <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                              Can’t find the organisation you are looking for?
+                            </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                If you know that the solicitor is already registered with MyHMCTS, check that you have entered
+                                their details correctly. Remember that organisations can only register one office address.
+                                This means that the details could be slightly different from what you're expecting.
+                                Contact the solicitor directly if you have any concerns.
+                            </div>
+                        </details>
+
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="ownrefernceagain">
+                                Reference (Optional)
+                            </label>
+                            <input class="govuk-input " id="ownrefernceagain" name="ownrefernceagain" type="text"
+                                   style="border: solid 1px; height:32px; font-size:18px; margin-bottom: 30px">
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="govuk-form-group"
+                         style="border-left: 10px solid #bfc1c3; padding-left: 15px; margin-bottom: 30px!important;">
+                        <label class="govuk-label" for="firmname">
+                            Respondent solicitor’s firm
+                        </label>
+                        <input class="govuk-input " id="firmname" name="firmname" type="text"
+                               style="border: solid 1px; height:32px; font-size:18px; margin-bottom: 30px">
+                    </div>
+
+                    <div class="govuk-form-group"
+                         style="border-left: 10px solid #bfc1c3; padding-left: 15px; margin-bottom: 30px!important;">
+                        <label class="govuk-label" for="solref">
+                            Respondent solicitor’s reference (Optional)
+                        </label>
+                        <input class="govuk-input " id="solref" name="solref" type="text"
+                               style="border: solid 1px; height:32px; font-size:18px; margin-bottom: 30px">
+                    </div>
+
+
+
+                    <div style="border-left: 10px solid #bfc1c3; padding-left: 15px; margin-bottom: 30px!important;">
+                        <h3 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-4">Their address</h3>
+
+                        <div class="govuk-form-group" style="margin:0;">
+                            <label class="govuk-label" for="postcodesearch" style="font-size:18px;">
+                                Enter a UK postcode
+                            </label>
+                            <div  class="form-group form-group-related">
+                                <input class="govuk-input " id="postcodesearch" name="postcodesearch" type="text" style="border: solid 1px; height:32px; font-size:18px; width:250px;">
+                                <button  class="govuk-button" type="submit" style=" font-size: 1.05rem; height:30px; " onclick="showsomecsvdata()">Find address</button>
+                            </div>
+                        </div>
+
+                        <p style="font-size:16px; "><a href="#">I can't enter a UK postcode</a></p>
+                    </div>
+
+
+                    <div id="hiddenaddress" class="govuk-form-group" style="display:none">
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="building" style="font-size:18px;">
+                                Building and Street
+                            </label>
+                            <input class="govuk-input " id="building" name="building" type="text" style="border: solid 1px; height:32px; font-size:18px;">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="address2" style="font-size:18px;">
+                                Address Line 2
+                            </label>
+                            <input class="govuk-input " id="address2" name="address2" type="text" style="border: solid 1px; height:32px; font-size:18px;">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="address3" style="font-size:18px;">
+                                Address Line 3
+                            </label>
+                            <input class="govuk-input " id="address3" name="address3" type="text" style="border: solid 1px; height:32px; font-size:18px;">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="town" style="font-size:18px;">
+                                Town or City
+                            </label>
+                            <input class="govuk-input " id="town" name="town" type="text" style="border: solid 1px; height:32px; font-size:18px;">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="county" style="font-size:18px;">
+                                County
+                            </label>
+                            <input class="govuk-input " id="county" name="county" type="text" style="border: solid 1px; height:32px; font-size:18px;">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="postcode" style="font-size:18px;">
+                                Postcode/Zipcode
+                            </label>
+                            <input class="govuk-input " id="postcode" name="postcode" type="text" style="border: solid 1px; height:32px; font-size:18px;">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="country" style="font-size:18px;">
+                                Country
+                            </label>
+                            <input class="govuk-input " id="country" name="country" type="text" style="border: solid 1px; height:32px; font-size:18px;">
+                        </div>
+
+                    </div>
+
+
+                    <div class="govuk-form-group"
+                         style="border-left: 10px solid #bfc1c3; padding-left: 15px; margin-bottom: 30px!important;">
+                        <label class="govuk-label" for="phone">
+                            Phone Number (Optional)
+                        </label>
+                        <input class="govuk-input " id="phone" name="phone" type="text"
+                               style="border: solid 1px; height:32px; font-size:18px; margin-bottom: 30px">
+                    </div>
+
+                    <div class="govuk-form-group"
+                         style="border-left: 10px solid #bfc1c3; padding-left: 15px; margin-bottom: 30px!important;">
+                        <label class="govuk-label" for="email">
+                            Email (Optional)
+                        </label>
+                        <input class="govuk-input " id="email" name="email" type="text"
+                               style="border: solid 1px; height:32px; font-size:18px;">
+                    </div>
+
+                    <div class="govuk-form-group"
+                         style="border-left: 10px solid #bfc1c3; padding-left: 15px; margin-bottom: 30px!important;">
+                        <label class="govuk-label" for="dxnum">
+                            DX number (Optional)
+                        </label>
+                        <input class="govuk-input " id="dxnum" name="dxnum" type="text"
+                               style="border: solid 1px; height:32px; font-size:18px; margin-bottom: 30px">
+                    </div>
+
+            </div>
+
+
+
+        </div>
+
+
+        <div class="govuk-form-group">
+            <div  class="form-group form-group-related">
+                <form
+                    action="/searchorgs/search/fr6"
+                    name="aspnetForm"
+                    method="post"
+                    id="aspnetForm"
+                    autocomplete="off">
+
+                    <a  class="govuk-button govuk-button--secondary" href="fr4"   style=" font-size: 1.05rem;">Previous</a>
+                    <button  class="govuk-button" type="submit" style=" font-size: 1.05rem;">Continue</button>
+                </form>
+            </div>
+
+            <p class="cancel" >
+                <a  href="/searchorgs/search/caselist">Cancel</a>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<script>
+
+
+    function showsomecsvdata()
+    {
+
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", "/public/data/mindatacsv.csv", false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var allText = rawFile.responseText;
+                    //alert(allText);
+
+                    var allRows = allText.split(/\r?\n|\r/);
+                    var row1 =  allRows[0].split(',');
+                    //alert(allRows.length);
+
+                    var divonpage = document.getElementById('texterdiv');
+
+                    var resultscounter = 0;
+                    divonpage.innerHTML = '';
+
+                    for(i=0; i<allRows.length-1; i++)
+                    {
+                        if(resultscounter<10)
+                        {
+                            var row1 =  allRows[i].split(',');
+                            var templowercase = row1.toString().toLowerCase();
+
+                            var enteredtext = document.getElementById("searchinput").value;
+
+                            //Compare
+                            if ( templowercase.includes(enteredtext.toString().toLowerCase()) )
+                            {
+                                divonpage.innerHTML = divonpage.innerHTML + '<div id="testesult'+resultscounter+'" style="display: flex;">' +
+                                                                                '<div style="width:560px;">' +
+                                                                                    '<p id="results'+resultscounter+'">' +
+                                                                                        '<span class="govuk-!-font-weight-bold">'
+                                                                                            + row1 +
+                                                                                    '</p>' +
+                                                                                '</div>' +
+                                                                                '<div style="display:flex; flex-direction:column;">' +
+                                                                                    '<div style=" flex-grow: 2">' +
+                                                                                    '</div>' +
+                                                                                    '<div style="justify-content:center; margin-top:32px;">' +
+                                                                                        '<p id="selectbutton'+resultscounter+'" style="color:#005ea5; cursor:pointer; text-decoration:underline;" data-module="govuk-button" onclick="showselectedresult('+resultscounter+')">Select</p>' +
+                                                                                    '</div>' +
+                                                                                    '<div style="flex-grow:2">' +
+                                                                                    '</div>' +
+                                                                                '</div>' +
+                                                                            '</div>';
+
+                                resultscounter = resultscounter + 1;
+                            }
+                        }
+                    }
+
+                    // if no results
+                    if(resultscounter == 0)
+                    {
+                        document.getElementById("noresults").style.display = "block";
+                    }
+                    else
+                    {
+                        document.getElementById("noresults").style.display = "none";
+                    }
+
+                }
+            }
+        }
+        rawFile.send(null);
+    }
+
+
+
+
+
+
+    var inputbox = document.getElementById("searchinput");
+
+
+    function debounce(func, wait, immediate) {
+        var timeout;
+
+        return function executedFunction() {
+            var context = this;
+            var args = arguments;
+
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+
+            var callNow = immediate && !timeout;
+
+            clearTimeout(timeout);
+
+            timeout = setTimeout(later, wait);
+
+            if (callNow) func.apply(context, args);
+        };
+    };
+
+
+
+    function updateresults()
+    {
+        //alert("running");
+        // Make lower case string out of inputted value
+        var entertedtext = document.getElementById("searchinput").value;
+        //alert("entered text: " + entertedtext);
+
+        // Check which results match inputted text
+        var buttonname = 'selectbutton';
+        var matchcount = 0;
+        var str = "";
+        var prefixaddresswords = 'results';
+        var prefixaddresscontainer = 'testesult';
+        // check input has at least 2 character
+        var datacountplusone = 22;
+        if (0 == entertedtext.length)
+        {
+            document.getElementById("noresults").style.display = "none";
+            // Hide all results
+            for (i = 1; i < datacountplusone; i++)
+            {
+                document.getElementById(prefixaddresscontainer + i).style.display = "none";
+                document.getElementById(buttonname + i).innerHTML = 'Select';
+            }
+        }
+        else if (1 < entertedtext.length)
+        {
+            // search through companies
+            for (i = 1; i < datacountplusone; i++)
+            {
+                //alert(" loop " + i + "  "  + str );
+                //make a lower case string out of each possible result
+                str = document.getElementById(prefixaddresswords + i).innerHTML.toLowerCase();
+
+                //alert(" loop " + i + "  "  + str );
+                document.getElementById(buttonname + i).innerHTML = 'Select';
+
+                // check if input string is contained each result
+                if ( str.includes(entertedtext.toString().toLowerCase()) )
+                {
+                    //alert("match");
+                    document.getElementById("noresults").style.display = "none";
+                    document.getElementById(prefixaddresscontainer + i).style.display = "flex";
+                    matchcount = matchcount + 1;
+                }
+                else
+                {
+                    //remove result from showing as it no longer matches
+                    document.getElementById(prefixaddresscontainer + i).style.display = "none";
+                }
+            }
+        }
+
+        if (0 == matchcount  &&  1 < entertedtext.length)
+        {
+            //alert("NO match");
+            // Hide all results
+            for (i = 1; i < datacountplusone; i++)
+            {
+                document.getElementById(prefixaddresscontainer + i).style.display = "none";
+            }
+
+            document.getElementById("noresults").style.display = "block";
+        }
+
+    }
+
+
+
+    inputbox.addEventListener('keydown', debounce(function()
+    {
+        showsomecsvdata();
+    }, 500));
+
+
+
+    function showselectedresult(itemnumber)
+    {
+        var prefixaddresscontainer = 'testesult';
+        var buttonname = 'selectbutton';
+        var datacount = 10;
+
+        if (document.getElementById(buttonname + itemnumber).innerHTML != 'Clear')
+        {
+            for (i = 0; i < datacount; i++)
+            {
+                if(itemnumber != i)
+                {
+                    document.getElementById(prefixaddresscontainer + i).style.display = "none";
+                }
+                else
+                {
+                    document.getElementById(buttonname + itemnumber).innerHTML = 'Clear';
+                }
+            }
+
+            document.getElementById("noresults").style.display = "none";
+
+            //alert("selection");
+            //document.getElementById(prefixaddresscontainer + itemnumber).style.display = "flex";
+
+            // Change button to deselect
+
+        }
+        else
+        {
+            // clear all the results
+            alert("clear all resutls");
+            document.getElementById(buttonname + itemnumber).innerHTML = 'Select';
+            document.getElementById("searchinput").value = "";
+            // wipe results
+            document.getElementById('texterdiv').innerHTML = '';
+        }
+    }
+
+
+
+    function showaddressfields()
+    {
+        document.getElementById("hiddenaddress").style.display = "block";
+    }
+
+    function showsolicitorsdetails()
+    {
+        document.getElementById("hiddensolicitorfields").style.display = "block";
+    }
+
+    function hidesolicitorsdetails()
+    {
+        document.getElementById("hiddensolicitorfields").style.display = "none";
+    }
+
+
+
+</script>
+
+
+{% endblock %}
