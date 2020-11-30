@@ -114,9 +114,9 @@ Divorce
 
 
 
-                        <div id="resultstest" class="govuk-!-margin-top-5" style="width:650px;">
+                        <div id="resultstest" class="govuk-!-margin-top-1" style="width:612px; max-height: 600px; overflow-y: auto;">
 
-                            <div id="noresults" style="display: none;">
+                            <div id="noresults" class="govuk-!-margin-top-1"  style="display: none;">
                                 <p ><span >No results found</span></p>
                                 <!--<br>The solicitor's firm may not be registered with our online service.-->
                                 <!--<p>You can search again by entering different details or continue without selecting a firm.  This won't have an impact on your application.</p>-->
@@ -316,9 +316,9 @@ Divorce
     function showsomecsvdata()
     {
 
-        var enteredtext = inputbox.value;
+        var enteredtext = inputbox.value.toString().toLowerCase();
 
-        if (0 == enteredtext.length.toString().toLowerCase())
+        if (0 == enteredtext.length)
         {
             document.getElementById('texterdiv').innerHTML = '';
         }
@@ -346,31 +346,39 @@ Divorce
 
                         for(i=0; i<allRows.length-1; i++)
                         {
-                            if(resultscounter<10)
+                            // Artifical constraint of 100, this isn't in live I presume.
+                            if(resultscounter<100)
                             {
                                 var row1 =  allRows[i].split(',');
                                 var templowercase = row1.toString().toLowerCase();
 
-                                //Compare
+                                // If match then build HTML to match tbe poor layout in the live service
                                 if ( templowercase.includes(enteredtext) )
                                 {
-                                    divonpage.innerHTML = divonpage.innerHTML + '<div id="testesult'+resultscounter+'" style="display: flex;">' +
-                                            '<div style="width:560px;">' +
+                                    divonpage.innerHTML = divonpage.innerHTML +
+                                            '<div  style="width: 612px;" id="testesult'+ resultscounter +'" >' +
+                                            '<div style="display: flex;">' +
+                                            '<div style="width:525px;">' +
                                             '<p id="results'+resultscounter+'">' +
                                             '<span class="govuk-!-font-weight-bold">'
                                             + row1 +
                                             '</p>' +
                                             '</div>' +
                                             '<div style="display:flex; flex-direction:column;">' +
+                                            '<div style=" height:25px;">' +
+                                            '</div> <!-- crap layout but is live -->' +
                                             '<div style=" flex-grow: 2">' +
                                             '</div>' +
-                                            '<div style="justify-content:center; margin-top:32px;">' +
-                                            '<p id="selectbutton'+resultscounter+'" style="color:#005ea5; cursor:pointer; text-decoration:underline;" data-module="govuk-button" onclick="showselectedresult('+resultscounter+')">Select</p>' +
+                                            '<div style="justify-content:center;">' +
+                                            '<p id="selectbutton'+resultscounter+'" style="color:#005ea5; cursor:pointer; text-decoration:underline; margin: 0px;" data-module="govuk-button" onclick="showselectedresult('+resultscounter+')">Select</p>' +
                                             '</div>' +
                                             '<div style="flex-grow:2">' +
                                             '</div>' +
                                             '</div>' +
+                                            '</div>' +
+                                            '<hr>' +
                                             '</div>';
+
 
                                     resultscounter = resultscounter + 1;
                                 }
@@ -433,7 +441,7 @@ Divorce
     {
         var prefixaddresscontainer = 'testesult';
         var buttonname = 'selectbutton';
-        var datacount = 10;
+        var datacount = 100;
 
         if (document.getElementById(buttonname + itemnumber).innerHTML != 'Clear')
         {
@@ -484,7 +492,6 @@ Divorce
 
 
 </script>
-
 
 
 {% endblock %}
