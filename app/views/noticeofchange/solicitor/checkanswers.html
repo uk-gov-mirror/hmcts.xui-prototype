@@ -13,16 +13,24 @@ Case details
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds-from-desktop">
 
-                {% if data.errorsot == 'true' %}
+                {% if data.errorsot == 'true'    or   data.errorgivennotice == 'true'  %}
                     <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
                         <h2 class="govuk-error-summary__title" id="error-summary-title">
                             There is a problem
                         </h2>
+
                         <div class="govuk-error-summary__body">
                             <ul class="govuk-list govuk-error-summary__list">
-                                <li>
-                                    <a href="#sotruth">You must confirm the information you've provided</a>
-                                </li>
+                                {% if data.errorsot == 'true'  %}
+                                    <li>
+                                        <a href="#sotruth">You must confirm the information you've provided</a>
+                                    </li>
+                                {% endif  %}
+                                {% if data.errorgivennotice == 'true'  %}
+                                    <li>
+                                        <a href="#containerfornoticesharing">You must confirm you've served notice on the other parties.</a>
+                                    </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
@@ -173,6 +181,26 @@ Case details
                                     </label>
                                 </div>
                             </div>
+
+                            <!--   SECOND CHECKBOX  -->
+                                {% if data.errorgivennotice == 'true'%}
+                                    <div class="govuk-form-group govuk-form-group--error" id="containerfornoticesharing">
+                                        <span id="national-insurance-number-error" class="govuk-error-message">
+                                              <span class="govuk-visually-hidden">Error:</span> Tick the box to confirm you have served notice of this change on all other parties
+                                        </span>
+                                {% else %}
+                                    <div class="govuk-form-group">
+                                {% endif %}
+                                    <div class="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="noticecheckbox" name="noticecheckbox" type="checkbox">
+                                            <label class="govuk-label govuk-checkboxes__label" for="noticecheckbox">
+                                                <p>I can confirm I have served notice of this change on all other parties.</p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
                         </fieldset>
                     </div>
                     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Notifications</h2>

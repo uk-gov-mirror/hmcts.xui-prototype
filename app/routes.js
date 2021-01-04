@@ -799,9 +799,26 @@ router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
         // where solicitor in firm already has case
         res.redirect('alreadygotcaseerror');
     }
-    else if(req.session.data['sot'] != 'on' )
+    else if(req.session.data['sot'] != 'on'  ||   req.session.data['noticecheckbox'] != 'on' )
     {
-        req.session.data['errorsot'] = 'true';
+        if(req.session.data['sot'] != 'on')
+        {
+            req.session.data['errorsot'] = 'true';
+        }
+        else
+        {
+            req.session.data['errorsot'] = 'false';
+        }
+
+        if(req.session.data['noticecheckbox'] != 'on' )
+        {
+            req.session.data['errorgivennotice'] = 'true';
+        }
+        else
+        {
+            req.session.data['errorgivennotice'] = 'false';
+        }
+
         res.redirect('checkanswers');
     }
     else
@@ -818,6 +835,7 @@ router.post( '/noticeofchange/solicitor/checkanswers', function (req, res)
         req.session.data['todaydate'] = day + " " + months[monthtoday] + " " + year;
         req.session.data['todaydatetime'] = timenowis;
         req.session.data['errorsot'] = 'false';
+        req.session.data['errorgivennotice'] = 'false';
         req.session.data['casenumberselected'] = req.session.data['casenumber'];
         req.session.data['caseadded'] = 'true';
         req.session.data['adminonly'] = 'true';
