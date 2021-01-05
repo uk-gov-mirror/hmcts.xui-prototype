@@ -28,7 +28,7 @@ Case details
                                 {% endif  %}
                                 {% if data.errorgivennotice == 'true'  %}
                                     <li>
-                                        <a href="#containerfornoticesharing">You must confirm you've served notice on the other parties.</a>
+                                        <a href="#containerfornoticesharing">You must confirm you've served notice of this change.</a>
                                     </li>
                                 {% endif %}
                             </ul>
@@ -186,7 +186,7 @@ Case details
                                 {% if data.errorgivennotice == 'true'%}
                                     <div class="govuk-form-group govuk-form-group--error" id="containerfornoticesharing">
                                         <span id="national-insurance-number-error" class="govuk-error-message">
-                                              <span class="govuk-visually-hidden">Error:</span> Tick the box to confirm you have served notice of this change on all other parties
+                                              <span class="govuk-visually-hidden">Error:</span>Tick the box to confirm you've served notice of this change on all other parties
                                         </span>
                                 {% else %}
                                     <div class="govuk-form-group">
@@ -235,6 +235,13 @@ Case details
         <option value="takenfrom=lip&"
                 {% if data.takenfrom == 'lip' %}selected{% endif %}
         >Transferred from citizen</option>
+
+        <option value="errorsot=true&errorgivennotice=true&"
+        >Error messages - SHOW</option>
+
+        <option value="errorsot=true&errorgivennotice=false&"
+        >Error messages - Hide</option>
+
 
     </select>
 </form>
