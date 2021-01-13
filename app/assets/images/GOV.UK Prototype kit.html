@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/index -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>
+  GOV.UK Prototype kit
+</title>
+
+    <link rel="shortcut icon" href="https://pui-prototype.herokuapp.com/public/images/favicon.ico" type="image/x-icon">
+    <link rel="mask-icon" href="https://pui-prototype.herokuapp.com/public/images/gov.uk_logotype_crown.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pui-prototype.herokuapp.com/public/images/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://pui-prototype.herokuapp.com/public/images/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://pui-prototype.herokuapp.com/public/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" href="https://pui-prototype.herokuapp.com/public/images/apple-touch-icon.png">
+
+    <meta name="theme-color" content="#0b0c0c">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="/public/images/opengraph-image.png">
+    <link rel="stylesheet" href="./GOV.UK Prototype kit_files/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+   <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+        <!--[if gt IE 8]><!--><link href="./GOV.UK Prototype kit_files/application.css" media="screen" rel="stylesheet" type="text/css"><!--<![endif]-->
+<link href="./GOV.UK Prototype kit_files/icons.css" media="screen" rel="stylesheet" type="text/css">
+
+  </head>
+
+  <body class="govuk-template__body  js-enabled">
+
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    
+
+    
+      <a href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/index#main-content" class="govuk-skip-link">Skip to main content</a>
+
+    
+
+    
+<header class="hmcts-header" role="banner">
+  <div class="hmcts-header__container">
+    <a class="hmcts-header__link" href="https://pui-prototype.herokuapp.com/">Manage cases</a>
+    <div class="hmcts-header__content">
+      <nav class="hmcts-header__navigation" aria-label="Account navigation">
+        <ul class="hmcts-header__navigation-list">
+          <!-- <li class="hmcts-header__navigation-item">
+                        <a class="hmcts-header__navigation-link" href="#1">
+                            Profile
+                        </a>
+                    </li> -->
+          <li class="hmcts-header__navigation-item">
+            <a class="hmcts-header__navigation-link" href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/index#">
+              Sign out
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <nav class="hmcts-primary-navigation">
+      <ul class="hmcts-primary-navigation__list">
+        <li class="hmcts-primary-navigation__item">
+          <a class="hmcts-primary-navigation__link" href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-list/">
+            Task list
+          </a>
+        </li>
+        <li class="hmcts-primary-navigation__item">
+          <a class="hmcts-primary-navigation__link" aria-current="page" href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/">
+            Task manager
+          </a>
+        </li>
+        <li class="hmcts-primary-navigation__item">
+          <a class="hmcts-primary-navigation__link" href="https://pui-prototype.herokuapp.com/mvp-4-WA/case-list/">
+            Case list
+          </a>
+        </li>
+
+        <li class="hmcts-primary-navigation__item">
+          <a class="hmcts-primary-navigation__link" href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/index#">
+            Create case
+          </a>
+        </li>
+
+        <!--  <li class="hmcts-primary-navigation__item">
+                    <a class="hmcts-primary-navigation__link" href="/mvp-4/manage-organisation/payments">
+                        Fee accounts
+                    </a>
+                </li> -->
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+
+
+
+
+   
+
+<style>
+  #no-underline {
+    underline: none;
+  }
+
+  /* // RESPONSIVE table */
+
+  body {
+    line-height: 1.25;
+  }
+
+  table {
+    border-bottom: 1px solid #fff;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    table-layout: auto;
+  }
+
+  table caption {
+    /* font-size: 1.5em; */
+    margin: .5em 0 .75em;
+  }
+
+  table tr {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: .35em;
+  }
+
+  table th,
+  table td {
+    padding: .625em 0;
+    text-align: left;
+
+  }
+
+  table th {}
+
+  @media screen and (max-width: 650px) {
+    table {
+      border: 0;
+    }
+
+    table caption {
+      /* font-size: 1.3em; */
+    }
+
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+
+    }
+
+    table tr {
+      border-bottom: 5px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+
+    }
+
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      /* font-size: .8em; */
+      text-align: right;
+    }
+
+    table td::before {
+      /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+    }
+
+    table td:last-child {
+      border-bottom: 0;
+
+    }
+  }
+</style>
+
+<div class="hmcts-width-container">
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+<span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/index#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+
+  <main role="main" class="govuk-main-wrapper">
+    <h1 class="govuk-heading-xl">Task manager</h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <p>Filter tasks by assignee and location. Select unassigned from the asignee dropdown to see available tasks.</p>
+<p>You can also add, update or delete existing staff details.</p>
+
+        <div class="hmcts-scrollable-pane">
+          <div class="hmcts-scrollable-pane__wrapper">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+
+
+                <div class="govuk-date-input" id="passport-issued">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                        <strong>Assignee</strong>
+                      </label>
+                      <select class="govuk-select" id="sort" name="sort" onchange="location = this.value;">
+                        <option value="index" selected="">All caseworkers</option>
+                        <option value="index-ut">None (unassigned tasks)</option>
+                        <option value="bisa">Bisa Butler - bisa.butler@mail.com</option>
+                        <option value="#"> Brandi Halliday - firstname.lastname@mail.com</option>
+                        <option value="#"> Caris Wicks - firstname.lastname@mail.com</option>
+                        <option value="#"> Charmaine Howe - firstname.lastname@mail.com</option>
+                        <option value="#"> Darrell Calhoun - firstname.lastname@mail.com</option>
+                        <option value="#"> Derrick Bradley - firstname.lastname@mail.com</option>
+                        <option value="#"> Dominick Hudson - firstname.lastname@mail.com</option>
+                        <option value="#"> Dylan Brett - firstname.lastname@mail.com</option>
+                        <option value="#"> Eleni Pollard - firstname.lastname@mail.com</option>
+                        <option value="#"> Ellesha Mcguire - firstname.lastname@mail.com</option>
+                        <option value="#"> Ferne Xiong - firstname.lastname@mail.com</option>
+                        <option value="#"> Gabriela Oliver - firstname.lastname@mail.com</option>
+                        <option value="#"> Grover Hume - firstname.lastname@mail.com</option>
+                        <option value="#"> Hania Wong - firstname.lastname@mail.com</option>
+                        <option value="#"> Hashir Vega - firstname.lastname@mail.com</option>
+                        <option value="#"> Issa Gale - firstname.lastname@mail.com</option>
+                        <option value="#"> Izabela Gay - firstname.lastname@mail.com</option>
+                        <option value="#"> Jamie-Lee O'Reilly - firstname.lastname@mail.com</option>
+                        <option value="#"> Jasmin Field - firstname.lastname@mail.com</option>
+                        <option value="#"> Joan Brock - firstname.lastname@mail.com</option>
+                        <option value="#"> Kacy Kavanagh - firstname.lastname@mail.com</option>
+                        <option value="#"> Kaif Le - firstname.lastname@mail.com</option>
+                        <option value="#"> Keanan Wills - firstname.lastname@mail.com</option>
+                        <option value="#"> Kiara Braun - firstname.lastname@mail.com</option>
+                        <option value="#"> Konrad Pate - firstname.lastname@mail.com</option>
+                        <option value="#"> Kwabena Pritchard - firstname.lastname@mail.com</option>
+                        <option value="#"> Lee Neale - firstname.lastname@mail.com</option>
+                        <option value="#"> Lilly-Ann Pitts - firstname.lastname@mail.com</option>
+                        <option value="#"> Maggie Vinson - firstname.lastname@mail.com</option>
+                        <option value="#"> Nadeem Wiley - firstname.lastname@mail.com</option>
+                        <option value="#"> Noel Lynch - firstname.lastname@mail.com</option>
+                        <option value="#"> Nicholas Boyce - firstname.lastname@mail.com</option>
+                        <option value="#"> Beck - ralf.beck@mail.com</option>
+                        <option value="#"> Rahma Alvarado - firstname.lastname@mail.com</option>
+                        <option value="#"> Rodney Herbert - firstname.lastname@mail.com</option>
+                        <option value="#"> Shiloh Zamora - firstname.lastname@mail.com</option>
+                        <option value="#"> Star Gilmore - firstname.lastname@mail.com</option>
+                        <option value="#"> Tiya Sears - firstname.lastname@mail.com</option>
+                        <option value="#"> Tobias Durham - firstname.lastname@mail.com</option>
+                        <option value="#">Yasmin Alrais - yasmin.alrais@mail.com</option>
+      </select>
+      </div>
+
+
+
+
+
+
+
+
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                          <strong>Task location</strong>
+                        </label>
+                        <select class="govuk-select" id="sort" name="sort">
+                          <option value="index" selected="">All locations</option>
+                          <option value="#">Birmingham</option>
+                          <option value="#">Bradford</option>
+                          <option value="#">Glasgow</option>
+                          <option value="#">Manchester</option>
+                          <option value="#">Newport</option>
+                          <option value="#">Nottingham</option>
+                          <option value="#">Northshields</option>
+                          <option value="#">Taylor House</option>
+                        </select>
+                      </div>
+                    </div>
+
+                  </div>
+
+              </fieldset>
+            </div>
+
+            <p>Displaying <strong> 4 </strong>tasks</p>
+
+            <p class="govuk-body">
+              </p><table class="govuk-body" id="transactionstable">
+              
+              <thead>
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" aria-sort="ascending"><button type="button" data-index="0">Case reference</button></th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Case name</button></th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Location</button></th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Task</button></th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Date</button></th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Assignee</button></th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none"></th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Payment reference"><a href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/index#">1542-5226-7383-2772</a></td>
+                  <td data-label="Case">Robert Doors</td>
+                  <td data-label="Reference">Protection</td>
+                  <td data-label="Status">Taylor House</td>
+                  <td data-label="Date">Review respondent evidence</td>
+                  <td data-label="Amount"><span class="hmcts-badge hmcts-badge--orange">Today</span> </td>
+                  <td data-label="Date">Bisa Butler</td>
+                  <td data-label="Amount"><a href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/taskmanager-open" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+
+                </tr>
+                <tr>
+                  <td data-label="Payment reference"><a href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/index#">1526-8943-7271-8327</a></td>
+                  <td data-label="Case">Hudson Remi </td>
+                  <td data-label="Reference">Revocation</td>
+                  <td data-label="Status">Birmingham</td>
+                  <td data-label="Date">Review appellant case</td>
+                  <td data-label="Amount"><span class="hmcts-badge hmcts-badge--green">9 nov</span> </td>
+                  <td data-label="Date">Yasmin Alrais</td>
+                  <td data-label="Amount"><a href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/taskmanager-open-b" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Payment reference"><a href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/index#">1526-8943-7271-8327</a></td>
+                  <td data-label="Case">Niki Shana </td>
+                  <td data-label="Reference">EEA</td>
+                  <td data-label="Status">Newport</td>
+                  <td data-label="Date">Create case summary</td>
+                  <td data-label="Amount"><span class="hmcts-badge hmcts-badge--green">9 nov</span> </td>
+                  <td data-label="Date">Ralf Beck</td>
+                  <td data-label="Amount"><a href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/index#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+                </tr>
+
+                <tr>
+                  <td data-label="Payment reference"><a href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/index#">1526-8943-7271-8327</a></td>
+                  <td data-label="Case">Kai Vaiaksi</td>
+                  <td data-label="Reference">Human rights</td>
+                  <td data-label="Status">Cambridge</td>
+                  <td data-label="Date">Review respondent evidence</td>
+                  <td data-label="Amount"><span class="hmcts-badge hmcts-badge--green">9 nov</span> </td>
+                  <td data-label="Date">Yasmin Alrais</td>
+                  <td data-label="Amount"><a href="https://pui-prototype.herokuapp.com/mvp-4-WA/task-manager/index#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+  </div></div></main>
+</div>
+
+
+
+
+
+<footer class="govuk-footer" role="contentinfo"><div class="hmcts-width-container "><div class="govuk-footer__meta"><div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+<!--
+<h2 class="hmcts-footer__heading">Help</h2>
+
+<ul class="hmcts-footer__list">
+  <li class="hmcts-footer__list-item">For Probate you can contact:</li><br>
+
+  <li class="hmcts-footer__list-item">Email: <a class="hmcts-footer__link" href="mailto:#">contactprobate@justice.gov.uk</a></li>
+  <li class="hmcts-footer__list-item">Phone: 0300 303 0648</li>
+  <li class="hmcts-footer__list-item"><span class="visually-hidden">Opening times: </span>Monday to Friday, 9.30am to 5pm (excluding public holidays)</li>
+  <br><li class="hmcts-footer__list-item"><span class="visually-hidden">For all other services:  </span>contact your service representative for further help and information.</li>
+</ul>
+-->
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<ul class="hmcts-footer__list hmcts-footer__list--inline">
+
+  <li class="hmcts-footer__list-item">
+          <a target="_blank" class="hmcts-footer__link" href="https://pui-prototype.herokuapp.com/mvp-4/manage-organisation/accessibility.html">Accessibility</a>
+        </li>
+       <li class="hmcts-footer__list-item">
+          <a target="_blank" class="hmcts-footer__link" href="https://pui-prototype.herokuapp.com/mvp-4/manage-organisation/terms">Terms and conditions</a>
+        </li>
+
+        <li class="hmcts-footer__list-item">
+          <a target="_blank" class="hmcts-footer__link" href="https://pui-prototype.herokuapp.com/mvp-4/manage-organisation/cookies">Cookies</a>
+        </li>
+
+        <li class="hmcts-footer__list-item">
+          <a target="_blank" class="hmcts-footer__link" href="https://pui-prototype.herokuapp.com/mvp-4/manage-organisation/privacy">Privacy policy</a>
+        </li>
+                <li class="hmcts-footer__list-item">
+          <a target="_blank" class="hmcts-footer__link" href="https://pui-prototype.herokuapp.com/mvp-4/manage-organisation/get-help">Get help</a>
+        </li>
+                <li class="hmcts-footer__list-item">
+          <a target="_blank" class="hmcts-footer__link" href="https://pui-prototype.herokuapp.com/prototype-admin/view-data">View data</a>
+        </li>
+                <li class="hmcts-footer__list-item">
+          <a target="_blank" class="hmcts-footer__link" href="https://pui-prototype.herokuapp.com/prototype-admin/clear-data">Clear data</a>
+        </li>
+
+</ul>
+
+</div>
+<div class="govuk-footer__meta-item"><a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a></div></div></div>
+
+</footer>
+
+
+<!--
+
+    
+      <footer class="hmcts-footer" role="contentinfo">
+
+  <div class="hmcts-width-container">
+
+
+    <h2 class="hmcts-footer__heading">Help</h2>
+    <ul class="hmcts-footer__list">
+      <li class="hmcts-footer__list-item">Email: <a class="hmcts-footer__link" href="mailto:#">service-desk@hmcts.gov.uk</a></li>
+      <li class="hmcts-footer__list-item">Phone: 0207 633 4140</li>
+      <li class="hmcts-footer__list-item"><span class="visually-hidden">Opening times: </span>Monday to Friday, 8am to 6pm (excluding public holidays)</li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <ul class="hmcts-footer__list  hmcts-footer__list--inline">
+      <li class="hmcts-footer__list-item"><a class="hmcts-footer__link" href="/footer/terms-and-conditions">Terms and conditions</a></li>
+      <li class="hmcts-footer__list-item"><a class="hmcts-footer__link" href="/footer/cookies">Cookies</a></li>
+      <li class="hmcts-footer__list-item"><a class="hmcts-footer__link" href="/footer/privacy-policy">Privacy policy</a></li>
+    </ul>
+
+  </div>
+
+</footer>
+    
+-->
+    <div id="global-app-error" class="app-error hidden"></div>
+
+    
+      
+        <!-- Javascript -->
+<script src="./GOV.UK Prototype kit_files/jquery.js.download"></script>
+<script src="./GOV.UK Prototype kit_files/all.js.download"></script>
+<script src="./GOV.UK Prototype kit_files/all.js(1).download"></script>
+<script src="./GOV.UK Prototype kit_files/accessible-autocomplete.min.js.download"></script>
+<script src="./GOV.UK Prototype kit_files/application.js.download"></script>
+<script src="./GOV.UK Prototype kit_files/casefile.js.download"></script>
+<script src="./GOV.UK Prototype kit_files/tree.js.download"></script>
+<script src="./GOV.UK Prototype kit_files/filter-menu-button.js.download"></script>
+
+
+  <script src="./GOV.UK Prototype kit_files/auto-store-data.js.download"></script>
+
+
+        
+      
+      <!-- GOV.UK Prototype kit v7.0.0-beta.4 -->
+    
+
+    <script>if (typeof window.GOVUKFrontend === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
+
+  
+
+
+</body></html>

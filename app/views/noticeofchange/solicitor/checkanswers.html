@@ -42,7 +42,7 @@ Case details
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Change request
+                            Request
                         </dt>
                         <dd class="govuk-summary-list__value">
                           Notice of change
@@ -167,7 +167,12 @@ Case details
                                     Statement of truth
                                 </h2>
                             </legend>-->
-                            <p>When you're satisfied that all the information matches what is written on the case, you should tick to “sign”.</p>
+                            <p>You should tick to ‘sign’ when:</p>
+                            <ol  class="govuk-body">
+                                <li>you’re satisfied that all the information matches what is written on the case</li>
+                                <li>you have served notice of this change on every party to the claim (including the former legal representative)</li>
+                            </ol>
+
                             {% if data.errorsot == 'true'%}
                                 <span id="national-insurance-number-error" class="govuk-error-message">
                                       <span class="govuk-visually-hidden">Error:</span> Tick the box to confirm all these details are accurate and match what is written on the case
@@ -186,7 +191,7 @@ Case details
                                 {% if data.errorgivennotice == 'true'%}
                                     <div class="govuk-form-group govuk-form-group--error" id="containerfornoticesharing">
                                         <span id="national-insurance-number-error" class="govuk-error-message">
-                                              <span class="govuk-visually-hidden">Error:</span>Tick the box to confirm you've served notice of this change on all other parties
+                                              <span class="govuk-visually-hidden">Error:</span>Tick the box to confirm you’ve served notice of this change on every party to the claim and on the former legal representative
                                         </span>
                                 {% else %}
                                     <div class="govuk-form-group">
@@ -195,7 +200,7 @@ Case details
                                         <div class="govuk-checkboxes__item">
                                             <input class="govuk-checkboxes__input" id="noticecheckbox" name="noticecheckbox" type="checkbox">
                                             <label class="govuk-label govuk-checkboxes__label" for="noticecheckbox">
-                                                <p>I confirm I have served notice of this change on all other parties.</p>
+                                                <p>I have served notice of this change on every party to the claim and on the former legal representative.</p>
                                             </label>
                                         </div>
                                     </div>
@@ -206,7 +211,7 @@ Case details
                     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Notifications</h2>
                     <p class="govuk-body  govuk-!-margin-bottom-7">If the client had legal representation, we’ll let the previous legal firm or solicitor know that they’re no longer representing this client.</p>
                     <div class="govuk-inset-text">
-                        After you submit a notice of change, you might have to wait a few seconds before you receive confirmation.
+                        After you submit a notice of change, you might not see the confirmation page immediately.
                     </div>
 
                     <input type="hidden" name="answers-checked" value="true">
