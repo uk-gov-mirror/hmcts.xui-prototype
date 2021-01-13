@@ -13,7 +13,7 @@ Case details
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds-from-desktop">
 
-                {% if data.errorsot == 'true'    or   data.errorgivennotice == 'true'  %}
+
                     <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
                         <h2 class="govuk-error-summary__title" id="error-summary-title">
                             There is a problem
@@ -21,20 +21,17 @@ Case details
 
                         <div class="govuk-error-summary__body">
                             <ul class="govuk-list govuk-error-summary__list">
-                                {% if data.errorsot == 'true'  %}
+
                                     <li>
                                         <a href="#sotruth">You must confirm the information you've provided</a>
                                     </li>
-                                {% endif  %}
-                                {% if data.errorgivennotice == 'true'  %}
-                                    <li>
-                                        <a href="#containerfornoticesharing">You must confirm you've served notice of this change</a>
-                                    </li>
-                                {% endif %}
+
+
+
                             </ul>
                         </div>
                     </div>
-                {% endif %}
+
 
 
                 <h1 class="govuk-heading-l">Check and submit</h1>
@@ -42,7 +39,7 @@ Case details
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Request
+                            Change request
                         </dt>
                         <dd class="govuk-summary-list__value">
                           Notice of change
@@ -156,30 +153,21 @@ Case details
                 </dl>
                 <form  method="post" >
                     <!-- STAMENT OF STRUTH -->
-                    {% if data.errorsot == 'true'%}
+
                         <div class="govuk-form-group govuk-form-group--error" id="sotruth">
-                    {% else %}
-                        <div class="govuk-form-group">
-                    {% endif %}
+
                         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
                             <!--<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 <h2 class="govuk-fieldset__heading">
                                     Statement of truth
                                 </h2>
                             </legend>-->
+                            <p>When you're satisfied that all the information matches what is written on the case, and you have informed all other parties of this change, you should tick to “sign”.</p>
 
-                            <p>You should tick to ‘sign’ when:</p>
-                            <ol  class="govuk-body">
-                                <li>you’re satisfied that all the information matches what is written on the case</li>
-                                <li>you have served notice of this change on every party to the claim (including the former legal representative)</li>
-                            </ol>
-
-
-                            {% if data.errorsot == 'true'%}
                                 <span id="national-insurance-number-error" class="govuk-error-message">
                                       <span class="govuk-visually-hidden">Error:</span> Tick the box to confirm all these details are accurate and match what is written on the case
                                 </span>
-                            {% endif %}
+
                             <div class="govuk-checkboxes">
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="sot" name="sot" type="checkbox">
@@ -190,19 +178,14 @@ Case details
                             </div>
 
                             <!--   SECOND CHECKBOX  -->
-                                {% if data.errorgivennotice == 'true'%}
-                                    <div class="govuk-form-group govuk-form-group--error" id="containerfornoticesharing">
-                                        <span id="national-insurance-number-error" class="govuk-error-message">
-                                              <span class="govuk-visually-hidden">Error:</span>Tick the box to confirm you’ve served notice of this change on every party to the claim and on the former legal representative
-                                        </span>
-                                {% else %}
+
                                     <div class="govuk-form-group">
-                                {% endif %}
+
                                     <div class="govuk-checkboxes">
                                         <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="noticecheckbox" name="noticecheckbox" type="checkbox">
+                                            <input class="govuk-checkboxes__input" id="noticecheckbox" name="noticecheckbox" type="checkbox" checked>
                                             <label class="govuk-label govuk-checkboxes__label" for="noticecheckbox">
-                                                <p>I have served notice of this change on every party to the claim and on the former legal representative.</p>
+                                                <p>I confirm I have served notice of this change on all other parties.</p>
                                             </label>
                                         </div>
                                     </div>
@@ -213,7 +196,7 @@ Case details
                     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Notifications</h2>
                     <p class="govuk-body  govuk-!-margin-bottom-7">If the client previously had legal representation, we’ll let the legal firm or solicitor know that they no longer have access to the case.</p>
                     <div class="govuk-inset-text">
-                        After you submit a notice of change, you might not see the confirmation page immediately.
+                        After you submit a notice of change, you might have to wait a few seconds before you receive confirmation.
                     </div>
 
                     <input type="hidden" name="answers-checked" value="true">
@@ -266,9 +249,6 @@ Case details
 
     </select>
 
-
 </form>
-
-
 
 {% endblock %}
