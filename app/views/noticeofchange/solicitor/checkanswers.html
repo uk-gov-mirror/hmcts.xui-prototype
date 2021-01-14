@@ -23,12 +23,12 @@ Case details
                             <ul class="govuk-list govuk-error-summary__list">
                                 {% if data.errorsot == 'true'  %}
                                     <li>
-                                        <a href="#sotruth">You must confirm the information you've provided</a>
+                                        <a href="#sotruth">Tick the box to confirm all the information is accurate and matches what is written on the case</a>
                                     </li>
                                 {% endif  %}
                                 {% if data.errorgivennotice == 'true'  %}
                                     <li>
-                                        <a href="#containerfornoticesharing">You must confirm you've served notice of this change</a>
+                                        <a href="#containerfornoticesharing">Tick the box to confirm you’ve served notice of this change on every party to the claim and on the former legal representative</a>
                                     </li>
                                 {% endif %}
                             </ul>
@@ -170,14 +170,14 @@ Case details
 
                             <p>You should tick to ‘sign’ when:</p>
                             <ol  class="govuk-body">
-                                <li>you’re satisfied that all the information matches what is written on the case</li>
+                                <li>you’re satisfied that all the information is accurate and matches what is written on the case</li>
                                 <li>you have served notice of this change on every party to the claim (including the former legal representative)</li>
                             </ol>
 
 
                             {% if data.errorsot == 'true'%}
                                 <span id="national-insurance-number-error" class="govuk-error-message">
-                                      <span class="govuk-visually-hidden">Error:</span> Tick the box to confirm all these details are accurate and match what is written on the case
+                                      <span class="govuk-visually-hidden">Error:</span> Tick the box to confirm all the information is accurate and matches what is written on the case
                                 </span>
                             {% endif %}
                             <div class="govuk-checkboxes">

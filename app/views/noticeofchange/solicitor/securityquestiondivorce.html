@@ -22,20 +22,20 @@ Case details
 
                                 {% if data.errornomatch == 'true'  %}
                                     <li>
-                                        <a href="#firstnamelinkpoint">You must enter the correct details</a>
+                                        <a href="#firstnamelinkpoint">Enter the client details exactly as they’re written on the case, including any mistakes</a>
                                     </li>
                                 {% endif %}
 
 
                                 {% if data.errorsecuritydivorcefirstname == 'true'  %}
                                     <li>
-                                        <a href="#firstnamelinkpoint">You must enter a client first name</a>
+                                        <a href="#firstnamelinkpoint">Enter the client’s first name exactly as it’s written on the case, including any mistakes</a>
                                     </li>
                                 {% endif %}
 
                                 {% if data.errorsecuritydivorcelastname == 'true'  %}
                                     <li>
-                                        <a href="#lastnamelinkpoint">You must enter a client last name</a>
+                                        <a href="#lastnamelinkpoint">Enter the client’s last name exactly as it’s written on the case, including any mistakes</a>
                                     </li>
                                 {% endif %}
 
@@ -56,7 +56,7 @@ Case details
 
                 {% if data.errornomatch == 'true'  %}
                     <span id="" class="govuk-error-message">
-                        <span class="govuk-visually-hidden">Error:</span> The client details must exactly match as they’re written on the case, including any mistakes
+                        <span class="govuk-visually-hidden">Error:</span> Enter the client details exactly as they’re written on the case, including any mistakes
                     </span>
                 {% endif %}
 
@@ -83,7 +83,7 @@ Case details
                                             </label>
                                             {% if data.errorsecuritydivorcefirstname == 'true'  %}
                                                 <span id="" class="govuk-error-message">
-                                                    <span class="govuk-visually-hidden">Error:</span> Client first name must exactly match as they’re written on the case, including any mistakes
+                                                    <span class="govuk-visually-hidden">Error:</span> Enter the client’s first name exactly as it’s written on the case, including any mistakes
                                                 </span>
                                             {% endif %}
 
@@ -105,7 +105,7 @@ Case details
                                             </label>
                                             {% if data.errorsecuritydivorcelastname == 'true'  %}
                                                 <span id="" class="govuk-error-message">
-                                                    <span class="govuk-visually-hidden">Error:</span> Client last name must exactly match as they’re written on the case, including any mistakes
+                                                    <span class="govuk-visually-hidden">Error:</span> Enter the client’s last name exactly as it’s written on the case, including any mistakes
                                                 </span>
                                             {% endif %}
 
