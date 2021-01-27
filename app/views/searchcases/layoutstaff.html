@@ -46,72 +46,37 @@
 
 
 
-    <header class="hmcts-header" role="banner" style="background-color: #8d100e">
-
+    <header class="hmcts-header" role="banner">
 
         <div style="width:1220px; display: flex; margin: 0 auto;">
 
             <div style="width: 406px; ">
-                <img src="/public/images/govlogowhite.png" width="73" height="60" style="margin-top:10px;">
+                <a style="color: white; font-size: 30px; font-weight: bold; text-decoration: none;" href="#">MyHMCTS</a>
             </div>
 
+            <div class="hmcts-header__container" style="width: 812px;">
 
-            <div>
 
-                <div class="hmcts-header__container" style="width: 800px;">
-
-                    <div class="hmcts-header__logo">
-                        <a class="hmcts-header__link" href="/noticeofchange/solicitor/caselist" aria-current="page">Manage Cases</a>
-                    </div>
-
-                    <div class="hmcts-header__content">
-                        <nav class="hmcts-header__navigation" aria-label="Account navigation">
-                            <ul class="hmcts-header__navigation-list">
-                                <li class="hmcts-header__navigation-item">
-                                    <a class="hmcts-header__navigation-link" href="#">
-                                        Sign out
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                <div class="hmcts-header__logo">
+                    <a class="hmcts-header__link" href="/noticeofchange/solicitor/caselist" aria-current="page">Manage Cases</a>
                 </div>
 
 
-
-                <div  style="background-color: #8d100e">
-                    <div style=" display: flex; margin: 0 auto; background-color: #8d100e">
-
-                        <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style="background-color: #8d100e">
-                            <ul class="hmcts-primary-navigation__list">
-                                <li class="hmcts-primary-navigation__item">
-                                    <a class="hmcts-primary-navigation__link" href="/searchcases/solicitor/caselist">
-                                        Your cases
-                                    </a>
-                                </li>
-                                <li class="hmcts-primary-navigation__item">
-                                    <a class="hmcts-primary-navigation__link" href="/searchcases/solicitor/caselist">
-                                        Your hearings
-                                    </a>
-                                </li>
-                                <li class="hmcts-primary-navigation__item">
-                                    <a class="hmcts-primary-navigation__link" href="/searchcases/startnoc">
-                                        Search cases
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                <div class="hmcts-header__content">
+                    <nav class="hmcts-header__navigation" aria-label="Account navigation">
+                        <ul class="hmcts-header__navigation-list">
+                            <li class="hmcts-header__navigation-item">
+                                <a class="hmcts-header__navigation-link" href="#">
+                                    Sign out
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
 
             </div>
 
         </div>
-
-
-
-
-
 
 
     </header>
@@ -121,7 +86,39 @@
   {% endset %}
 
 
+    <div  style="background-color: #0b0c0c;">
+        <div style="width:1220px; display: flex; margin: 0 auto; background-color: #0b0c0c;">
 
+            <div style="width: 406px; ">
+
+            </div>
+
+            <div class="hmcts-header__container" style="width: 814px;">
+                {{ hmctsPrimaryNavigation({
+                label: 'Primary navigation',
+                items: [{
+                text: 'Case list',
+                href: getUrl('/solicitor/caselist'),
+                active: pageId == '#'
+                },
+                {
+                text: 'Create case',
+                href: getUrl('/solicitor/caselist'),
+                active: pageId == '#'
+                },
+                {
+                text: 'Notice of change',
+                href: getUrl('/startnoc'),
+                active: pageId == '#'
+                }
+                ],
+                searchHtml: searchHtml
+                }) }}
+            </div>
+
+        </div>
+
+    </div>
 
 
 
@@ -136,12 +133,6 @@
     </p>
   </div>
 
-  <!-- Back link -->
-    <div style="width:1220px; display: flex; margin: 0 auto;">
-        <p style="margin-bottom: 0px;">
-            <a href="javascript:history.back()" class="govuk-back-link"  style="margin-bottom: 0px;">Back</a>
-        </p>
-    </div>
 
 
 

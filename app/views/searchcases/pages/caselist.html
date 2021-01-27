@@ -1,4 +1,10 @@
-{% extends "../layoutdemo.html" %}
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+
+
 
 {% block pageTitle %}
 Case details
