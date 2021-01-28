@@ -51,7 +51,7 @@ Case details
                     <input class="govuk-input govuk-input--width-10" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" >
                 </div>
                 <div class="govuk-form-group">
-                    <label class="govuk-label" for="account-number" onclick="window.alert("sometext");">
+                    <label class="govuk-label" for="account-number">
                         Name of a person involved
                     </label>
                     <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
@@ -78,7 +78,7 @@ Case details
 
 
         <!--  FAMILY -->
-        <div id='family'>
+        <div id='family' style="display: none;">
             <div class="govuk-form-group">
                 <label class="govuk-label" for="email">
                     Court name/ hearing venue
@@ -118,10 +118,8 @@ Case details
         </div>
 
 
-
-
         <!--  Immigration and Asylum -->
-        <div id="iac">
+        <div id="iac" style="display: none;">
             <div class="govuk-form-group">
                 <label class="govuk-label" for="email">
                     Court name/ hearing venue
@@ -161,10 +159,8 @@ Case details
         </div>
 
 
-
-
         <!--  Money claims -->
-        <div id="cmc">
+        <div id="cmc" style="display: none;">
             <div class="govuk-form-group">
                 <label class="govuk-label" for="email">
                     Court name/ hearing venue
@@ -174,10 +170,8 @@ Case details
         </div>
 
 
-
-
         <!--  Tribunals -->
-        <div id="tribunals">
+        <div id="tribunals" style="display: none;">
             <div class="govuk-form-group">
                 <label class="govuk-label" for="email">
                     Court name/ hearing venue
@@ -194,7 +188,7 @@ Case details
 
 
         <!--  UPPER Tribunals -->
-        <div id="uppertribunals">
+        <div id="uppertribunals" style="display: none;">
             <div class="govuk-form-group">
                 <label class="govuk-label" for="email">
                     Court name/ hearing venue
@@ -246,7 +240,7 @@ Case details
             </button>
 
 
-        </div>
+
 
 
     </form>
@@ -299,24 +293,47 @@ Case details
 
     <script>
 
-        myfunction()
+        function myfunction()
         {
-            window.alert("sometext");
-            if ( $('#service').value == '2')
+            document.getElementById("family").style.display = "none";
+            document.getElementById("iac").style.display = "none";
+            document.getElementById("cmc").style.display = "none";
+            document.getElementById("tribunals").style.display = "none";
+            document.getElementById("uppertribunals").style.display = "none";
+
+            if ( document.getElementById("service").value == '2')
             {
-                window.alert("sometext");
-                $("#family").show();
+                document.getElementById("family").style.display = "block";
+            }
+            if ( document.getElementById("service").value == '3')
+            {
+                document.getElementById("iac").style.display = "block";
+            }
+            if ( document.getElementById("service").value == '4')
+            {
+                document.getElementById("cmc").style.display = "block";
+            }
+            if ( document.getElementById("service").value == '5')
+            {  }
+            if ( document.getElementById("service").value == '6')
+            {  }
+            if ( document.getElementById("service").value == '7')
+            {
+                document.getElementById("tribunals").style.display = "block";
+            }
+            if ( document.getElementById("service").value == '8')
+            {
+                document.getElementById("uppertribunals").style.display = "block";
             }
             else
             {
-                window.alert("sometext");
-                $("#family").hide();
+
+
             }
-        });
+        }
 
     </script>
 
-    {% include "includes/scripts.html" %}
 
 
 {% endblock %}
