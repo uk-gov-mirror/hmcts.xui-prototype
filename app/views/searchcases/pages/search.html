@@ -20,212 +20,230 @@ Case details
     </div>
 
     <form
-            name="aspnetForm"
-            method="post"
-            id="aspnetForm"
-            autocomplete="off"
-            action="results">
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off"
+        action="results">
 
-        <div style="display: flex; ">
 
+        <!-- <h2 class="govuk-heading-m">Case information</h2>  -->
+
+        <div >
 
             <div style="width: 350px;">
-                <!-- <h2 class="govuk-heading-m">Case information</h2>  -->
-
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="email">
-                        Case reference
+                        HMCTS Case reference
                     </label>
                     <div id="email-hint" class="govuk-hint">
                         This must be 16 digits
                     </div>
                     <input class="govuk-input govuk-input--width-10" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" >
                 </div>
+            </div>
 
-
+            <div style="width: 350px;">
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="email">
+                        Any other case reference
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" >
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="account-number" onclick="window.alert("sometext");">
+                        Name of a person involved
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+                </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="email">
                         Jurisdiction and service
                     </label>
-                    <select class="govuk-select govuk-input--width-10" id="sort" name="sort">
-                        <option>All</option>
-                        <option>Family</option>
-                        <option>Immigration and Asylum</option>
-                        <option>Money claims</option>
-                        <option>Probate</option>
-                        <option>Public law</option>
+                    <select class="govuk-select govuk-input--width-10" id="service" name="service" onchange="myfunction()">
+                        <option value="1">All</option>
+                        <option value="2">Family</option>
+                        <option value="3">Immigration and Asylum</option>
+                        <option value="4">Money claims</option>
+                        <option value="5">Probate</option>
+                        <option value="6">Public law</option>
+                        <option value="7">Tribunals</option>
+                        <option value="8">Upper Tribunal</option>
                     </select>
                 </div>
+            </div>
+
+        </div>
 
 
-                <details class="govuk-details" data-module="govuk-details">
-                    <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                            More search options
-                        </span>
-                    </summary>
-                    <div class="govuk-details__text">
 
+        <!--  FAMILY -->
+        <div id='family'>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Court name/ hearing venue
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
+            </div>
+            <!--   DOB  -->
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <label class="govuk-label" for="account-number">
+                    Party date of birth
+                </label>
+                <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
-                            <label class="govuk-label" for="email">
-                               Home office case reference
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
                             </label>
-                            <div id="email-hint" class="govuk-hint">
-                                For example PA/12345/2020
-                            </div>
-                            <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text"  >
-                        </div>
-
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
-                            <label class="govuk-label" for="email">
-                                Court name/ hearing venue
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
                             </label>
-                            <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
-                        </div>
-
-
-
-                        <!--   HEARING DATE   -->
-                        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                            <label class="govuk-label" for="account-number">
-                                Hearing date
-                            </label>
-                            <div class="govuk-date-input" id="passport-issued">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                                            Day
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                                            Month
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                                            Year
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
-                            </div>
-                        </fieldset>
-
-
-                        <!--   DECISION DATE   -->
-                        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                            <label class="govuk-label" for="account-number">
-                                Date of decision
-                            </label>
-                            <div class="govuk-date-input" id="passport-issued">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                                            Day
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                                            Month
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                                            Year
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                </div>
-                            </div>
-                        </fieldset>
-
-
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
-                </details>
-
-
-                <button class="govuk-button" data-module="govuk-button">
-                    Search
-                </button>
-
-            </div>
-
-            <div style="width: 350px;">
-                <!-- <h2 class="govuk-heading-m">Parties</h2> -->
-
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="account-number">
-                        Party name
-                    </label>
-                    <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
-                </div>
-
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="account-number">
-                        Party  National Insurance number
-                    </label>
-                    <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
-                </div>
-
-                <!--   DOB  -->
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                    <label class="govuk-label" for="account-number">
-                        Party date of birth
-                    </label>
-                    <div class="govuk-date-input" id="passport-issued">
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                                    Day
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                                    Month
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                                    Year
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                        </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
-
-                </fieldset>
-
-            </div>
-
-
-
-            <div style="width: 350px;">
-                <!-- <h2 class="govuk-heading-m">Representative</h2> -->
-
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="account-number">
-                        Representative person
-                    </label>
-                    <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
                 </div>
 
-                <div class="govuk-form-group">
-                    <label class="govuk-label" for="account-number">
-                        Representative firm
-                    </label>
-                    <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
-                </div>
+            </fieldset>
+        </div>
+
+
+
+
+        <!--  Immigration and Asylum -->
+        <div id="iac">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Court name/ hearing venue
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
             </div>
+
+            <!--   HEARING DATE   -->
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <label class="govuk-label" for="account-number">
+                    Hearing date
+                </label>
+                <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+
+
+        <!--  Money claims -->
+        <div id="cmc">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Court name/ hearing venue
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
+            </div>
+        </div>
+
+
+
+
+        <!--  Tribunals -->
+        <div id="tribunals">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Court name/ hearing venue
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="account-number">
+                    Party  National Insurance number
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+            </div>
+        </div>
+
+
+        <!--  UPPER Tribunals -->
+        <div id="uppertribunals">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Court name/ hearing venue
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="account-number">
+                    Party  National Insurance number
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+            </div>
+            <!--   DECISION DATE   -->
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <label class="govuk-label" for="account-number">
+                    Date of decision
+                </label>
+                <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+
+
+            <button class="govuk-button" data-module="govuk-button">
+                Search
+            </button>
 
 
         </div>
@@ -275,14 +293,39 @@ Case details
     </select>
 </div>
 -->
+{% endblock %}
 
+{% block scripts %}
 
+    <script>
 
+        myfunction()
+        {
+            window.alert("sometext");
+            if ( $('#service').value == '2')
+            {
+                window.alert("sometext");
+                $("#family").show();
+            }
+            else
+            {
+                window.alert("sometext");
+                $("#family").hide();
+            }
+        });
 
+    </script>
 
-
-
-
+    {% include "includes/scripts.html" %}
 
 
 {% endblock %}
+
+
+
+
+
+
+
+
+
