@@ -51,14 +51,14 @@
         <div style="width:1220px; display: flex; margin: 0 auto;">
 
             <div style="width: 406px; ">
-                <a style="color: white; font-size: 24px; font-weight: bold; text-decoration: none;" href="#">Manage Cases</a>
+                <a style="color: white; font-size: 30px; font-weight: bold; text-decoration: none;" href="#">MyHMCTS</a>
             </div>
 
             <div class="hmcts-header__container" style="width: 812px;">
 
 
                 <div class="hmcts-header__logo">
-                    <a class="hmcts-header__link" href="/noticeofchange/solicitor/caselist" aria-current="page"></a>
+                    <a class="hmcts-header__link" href="/noticeofchange/solicitor/caselist" aria-current="page">Manage Cases</a>
                 </div>
 
 
@@ -89,11 +89,11 @@
     <div  style="background-color: #0b0c0c;">
         <div style="width:1220px; display: flex; margin: 0 auto; background-color: #0b0c0c;">
 
-            <div style="width: 0px; ">
+            <div style="width: 406px; ">
 
             </div>
 
-            <div class="hmcts-header__container" style="width: 1220px;">
+            <div class="hmcts-header__container" style="width: 814px;">
                 {{ hmctsPrimaryNavigation({
                 label: 'Primary navigation',
                 items: [{
@@ -104,6 +104,11 @@
                 {
                 text: 'Create case',
                 href: getUrl('/solicitor/caselist'),
+                active: pageId == '#'
+                },
+                {
+                text: 'Notice of change',
+                href: getUrl('/startnoc'),
                 active: pageId == '#'
                 }
                 ],
