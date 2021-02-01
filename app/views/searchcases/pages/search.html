@@ -58,17 +58,18 @@ Case details
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="email">
-                        Jurisdiction and service
+                        Jurisdiction
                     </label>
                     <select class="govuk-select govuk-input--width-10" id="service" name="service" onchange="myfunction()">
-                        <option value="1">All</option>
-                        <option value="2">Family</option>
-                        <option value="3">Immigration and Asylum</option>
-                        <option value="4">Money claims</option>
+                        <option value="all">All</option>
+                        <option value="ddemployment">Employment</option>
+                        <option value="ddfamily">Family</option>
+                        <option value="ddiac">Immigration and Asylum</option>
+                        <option value="ddmoneyclaims">Money claims</option>
                         <option value="5">Probate</option>
                         <option value="6">Public law</option>
-                        <option value="7">Tribunals</option>
-                        <option value="8">Upper Tribunal</option>
+                        <<option value="7">Social Security and Child Support</option>
+                        <!-- <option value="8">Upper Tribunal</option> -->
                     </select>
                 </div>
             </div>
@@ -156,6 +157,18 @@ Case details
                     </div>
                 </div>
             </fieldset>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Court name/ hearing venue
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="account-number">
+                    Party  National Insurance number
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+            </div>
         </div>
 
 
@@ -172,21 +185,11 @@ Case details
 
         <!--  Tribunals -->
         <div id="tribunals" style="display: none;">
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="email">
-                    Court name/ hearing venue
-                </label>
-                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
-            </div>
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="account-number">
-                    Party  National Insurance number
-                </label>
-                <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
-            </div>
+
         </div>
 
 
+        <!--  NOT IN SCOPE  -->
         <!--  UPPER Tribunals -->
         <div id="uppertribunals" style="display: none;">
             <div class="govuk-form-group">
@@ -301,15 +304,15 @@ Case details
             document.getElementById("tribunals").style.display = "none";
             document.getElementById("uppertribunals").style.display = "none";
 
-            if ( document.getElementById("service").value == '2')
+            if ( document.getElementById("service").value == 'ddfamily')
             {
                 document.getElementById("family").style.display = "block";
             }
-            if ( document.getElementById("service").value == '3')
+            if ( document.getElementById("service").value == 'ddiac')
             {
                 document.getElementById("iac").style.display = "block";
             }
-            if ( document.getElementById("service").value == '4')
+            if ( document.getElementById("service").value == 'ddmoneyclaims')
             {
                 document.getElementById("cmc").style.display = "block";
             }
@@ -319,11 +322,11 @@ Case details
             {  }
             if ( document.getElementById("service").value == '7')
             {
-                document.getElementById("tribunals").style.display = "block";
+               // document.getElementById("tribunals").style.display = "block";
             }
             if ( document.getElementById("service").value == '8')
             {
-                document.getElementById("uppertribunals").style.display = "block";
+                //document.getElementById("uppertribunals").style.display = "block";
             }
             else
             {
