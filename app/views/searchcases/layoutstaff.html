@@ -56,11 +56,9 @@
 
             <div class="hmcts-header__container" style="width: 812px;">
 
-
                 <div class="hmcts-header__logo">
                     <a class="hmcts-header__link" href="/noticeofchange/solicitor/caselist" aria-current="page"></a>
                 </div>
-
 
                 <div class="hmcts-header__content">
                     <nav class="hmcts-header__navigation" aria-label="Account navigation">
@@ -98,17 +96,15 @@
                 label: 'Primary navigation',
                 items: [{
                 text: 'Case list',
-                href: getUrl('/solicitor/caselist'),
-                active: pageId == '#'
-                },
-                {
-                text: 'Create case',
-                href: getUrl('/solicitor/caselist'),
+                href: getUrl('/pages/caselist'),
                 active: pageId == '#'
                 }
-                ],
-                searchHtml: searchHtml
+                ]
                 }) }}
+            </div>
+
+            <div class="hmcts-primary-navigation__search" style="width:122px;">
+                <a class="hmcts-search-toggle__button" href="/searchcases/pages/search" ">Find case</a>
             </div>
 
         </div>
