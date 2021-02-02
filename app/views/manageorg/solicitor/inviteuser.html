@@ -1,0 +1,126 @@
+{% extends "../layoutmanageorgusersonly.html" %}
+
+{% block pageTitle %}
+Divorce
+{% endblock %}
+
+
+{% block content %}
+
+<a href="/manageorg/solicitor/userdetails" class="govuk-back-link govuk-!-margin-top-0  govuk-!-margin-bottom-6">Back</a>
+
+<div style="width:1220px; display: flex; margin: 0 auto; margin-right: 480px;">
+
+
+     <div class="govuk-form-group govuk-grid-column-two-thirds govuk-!-padding-left-0">
+
+
+            <h1 class="govuk-fieldset__legend--l  govuk-!-margin-bottom-7" >
+                Invite user
+            </h1>
+
+            <p>When you send this invitation, the user will receive an email from HM Courts and Tribunals Registrations so they can finish setting up their account.</p>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="email">
+                    First name
+                </label>
+                <div id="email-hint" class="govuk-hint">
+                    Include all middle names.
+                </div>
+                <input class="govuk-input govuk-!-width-one-half" id="email" name="email" type="text" >
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="email">
+                    Last name
+                </label>
+                <input class="govuk-input  govuk-input--width-10" id="email" name="email" type="text" >
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="email">
+                    Email address
+                </label>
+                <input class="govuk-input govuk-!-width-one-half" id="email" name="email" type="text" >
+            </div>
+
+
+
+            <h2 class="govuk-heading-m">{{ data.name }}</h2>
+
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Permissions</h3>
+            <div id="passport-issued-hint" class="govuk-hint">
+                Choose at least one action the user can do.  You can change this later.
+            </div>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                    <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="mc" name="mc" type="checkbox" checked value="carcasses">
+                            <label class="govuk-label govuk-checkboxes__label" for="mc">
+                                Manage cases
+                            </label>
+                            <div id="passport-issued-hint" class="govuk-hint" style="margin-left:15px;">
+                                View, create and progress cases.
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="mu" name="mu" type="checkbox" checked  value="mines">
+                            <label class="govuk-label govuk-checkboxes__label" for="mu">
+                                Manage users
+                            </label>
+                            <div id="passport-issued-hint" class="govuk-hint" style="margin-left:15px;">
+                                Invite users.
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="mo" name="mo" type="checkbox" checked  value="farm">
+                            <label class="govuk-label govuk-checkboxes__label" for="mo">
+                                Manage organisation
+                            </label>
+                            <div id="passport-issued-hint" class="govuk-hint" style="margin-left:15px;">
+                                View the organisation name and address.
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="caa" name="caa" type="checkbox" value="farm">
+                            <label class="govuk-label govuk-checkboxes__label" for="caa">
+                                Case access administrator
+                            </label>
+                            <div id="passport-issued-hint" class="govuk-hint" style="margin-left:15px;">
+                                Manage case access for all users within the organisation.
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+
+            <form
+                    action="/manageorg/solicitor/userdetails?showcaapermish=true&showcaaheader=true&"
+                    name="aspnetForm"
+                    method="post"
+                    id="aspnetForm"
+                    autocomplete="off">
+
+                <button class="govuk-button govuk-!-margin-top-7" data-module="govuk-button" >
+                    Send invitation
+                </button>
+            </form>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+</script>
+
+{% endblock %}
