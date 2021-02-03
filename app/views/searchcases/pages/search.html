@@ -31,7 +31,7 @@ Case details
 
         <div >
 
-            <div style="width: 350px;">
+            <div style="width: 500px;">
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="email">
                         HMCTS case reference
@@ -43,25 +43,28 @@ Case details
                 </div>
             </div>
 
-            <div style="width: 350px;">
+            <div style="width: 500px;">
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="email">
                         Other case reference
                     </label>
+                    <div id="email-hint" class="govuk-hint">
+                        For example, Solicitor's reference, Caseman, Familyman
+                    </div>
                     <input class="govuk-input govuk-input--width-10" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" >
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="account-number">
-                        Name of a person involved
+                        Name
                     </label>
                     <div id="email-hint" class="govuk-hint">
-                        For example, a party or solicitor
+                        For example, Party, Solicitor, Judge
                     </div>
                     <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
                 </div>
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="email">
-                        Jurisdiction
+                        Services
                     </label>
                     <select class="govuk-select govuk-input--width-10" id="service" name="service" onchange="myfunction()">
                         <option value="all">All</option>
