@@ -1,0 +1,128 @@
+{% extends "../layoutmanageorgusersunassigned.html" %}
+
+{% block pageTitle %}
+Divorce
+{% endblock %}
+
+
+{% block content %}
+
+
+<div style="width:1220px;  ">
+
+
+    <div class=" govuk-grid-column-full govuk-!-padding-left-0">
+        <h1 class="govuk-fieldset__legend--l  govuk-!-margin-bottom-6" >
+            Unassigned cases
+        </h1>
+
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                     Can't find a case?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <p>You might not see any cases listed if either of the following apply:</p>
+                <ul  class="govuk-body">
+                    <li>the case access administrator role is not yet available for your service</li>
+                    <li>you are not named as a respondent on any applications'</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+
+     <div>
+         <div class="hmcts-scrollable-pane__wrapper">
+
+             <nav class="hmcts-sub-navigation">
+                 <ul class="hmcts-sub-navigation__list">
+                     <li class="hmcts-sub-navigation__item">
+                         <a class="hmcts-sub-navigation__link" aria-current="page" href="#">
+                             Caveat
+                         </a>
+                     </li>
+                     <li class="hmcts-sub-navigation__item">
+                         <a class="hmcts-sub-navigation__link" href="/mvp-4/manage-organisation/cases/financial-remedy">
+                             Grant of Representation
+                         </a>
+                     </li>
+                 </ul>
+             </nav>
+         <div>
+
+
+         <a href="#" role="button" draggable="false" class="govuk-button">
+             Share case
+         </a>
+
+
+         <table class="govuk-table">
+             <thead class="govuk-table__head">
+                 <tr class="govuk-table__row">
+                     <th class="govuk-table__header" scope="col">
+                         <div class="govuk-checkboxes__item">
+                             <input class="govuk-checkboxes__input" id="selectall-1" name="selectall" type="checkbox" value="selectall">
+                             <label class="govuk-label govuk-checkboxes__label" for="selectall-1">
+                             </label>
+                         </div>
+                     </th>
+                     <th class="govuk-table__header" scope="col">Solicitor<br>reference</th>
+                     <th class="govuk-table__header" scope="col">Case<br>reference</th>
+                     <th class="govuk-table__header" scope="col">Case<br>created date</th>
+                     <th class="govuk-table__header" scope="col">Pet.<br>First name</th>
+                     <th class="govuk-table__header" scope="col">Pet.<br>Last name</th>
+                     <th class="govuk-table__header" scope="col">Resp.<br>First name</th>
+                     <th class="govuk-table__header" scope="col">Resp.<br>Last name</th>
+                     <th class="govuk-table__header" scope="col">Due Date</th>
+                 </tr>
+             </thead>
+
+             <tbody class="govuk-table__body">
+                 <tr class="govuk-table__row">
+                     <th class="govuk-table__header" scope="row">
+                         <div class="govuk-checkboxes__item">
+                             <input class="govuk-checkboxes__input" id="selectall-1" name="selectall" type="checkbox" value="selectall">
+                             <label class="govuk-label govuk-checkboxes__label" for="selectall-1">
+                             </label>
+                         </div>
+                     </th>
+                     <td class="govuk-table__cell "></td>
+                     <td class="govuk-table__cell ">4748-2828-7712-8233</td>
+                     <td class="govuk-table__cell ">16 Jun 2020</td>
+                     <td class="govuk-table__cell ">Paul</td>
+                     <td class="govuk-table__cell ">Saddlebrook</td>
+                     <td class="govuk-table__cell ">Jennifer</td>
+                     <td class="govuk-table__cell ">Saddlebrook</td>
+                     <td class="govuk-table__cell "></td>
+                     </tr>
+                 <tr class="govuk-table__row">
+                     <th class="govuk-table__header" scope="row">
+                         <div class="govuk-checkboxes__item">
+                             <input class="govuk-checkboxes__input" id="selectall-1" name="selectall" type="checkbox" value="selectall">
+                             <label class="govuk-label govuk-checkboxes__label" for="selectall-1">
+                             </label>
+                         </div>
+                     </th>
+                     <td class="govuk-table__cell ">Michele Serrano<br>EB-345-2020</td>
+                     <td class="govuk-table__cell ">9417-3739-9576-5131</td>
+                     <td class="govuk-table__cell ">22 May 2020</td>
+                     <td class="govuk-table__cell ">Neha</td>
+                     <td class="govuk-table__cell ">Venkatanarasimharaj</td>
+                     <td class="govuk-table__cell ">Sanjet</td>
+                     <td class="govuk-table__cell ">Venkatanarasimharaj</td>
+                     <td class="govuk-table__cell ">17 Aug 2020</td>
+                 </tr>
+             </tbody>
+         </table>
+
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}
