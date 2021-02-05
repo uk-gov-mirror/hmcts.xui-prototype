@@ -1,0 +1,64 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Case access prototype
+        </h1>
+
+
+        <div style="display: flex; margin-top: 80px;">
+
+            <div style="width: 500px;">
+                <h2 class="govuk-heading-m">Judiciary</h2>
+
+                <h3 class="govuk-heading-s">Scenario 1</h3>
+                <p><a target="_blank" href="/caseaccess/pages/results?usertype=judiciary&">Search entry</a><br></p>
+                <p><a target="_blank" href="/caseaccess/pages/PA-00321-2018?usertype=judiciary&">Case details</a><br>Challanged access - Flow request - Subject to change</br></p>
+                <p><a target="_blank" href="/caseaccess/pages/PA-00321-2018-request?usertype=judiciary&"">Request access</a><br>Challanged access - Flow request - Subject to change</br></p>
+                <p><a target="_blank" href="/caseaccess/pages/PA-00321-2018-confirmation?usertype=judiciary&"">Confirmation</a><br>Challanged access - Flow request - Subject to change</br></p>
+                <p><a target="_blank" href="/caseaccess/pages/mycases-r?usertype=judiciary&"">My cases</a><br>Challanged access - Flow request - Subject to change</br></p>
+                <p><a target="_blank" href="/caseaccess/pages/PA-00321-2018-a?usertype=judiciary&"">Case details</a><br>Challanged access - Flow request - Subject to change</br></p>
+
+                <h3 class="govuk-heading-s">Scenario 2</h3>
+                  <p><a target="_blank" href="/caseaccess/pages/results-s2?usertype=judiciary&">Search entry</a><br></p>
+                <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017?usertype=judiciary&">Case details</a><br>Restricted access - Flow request - Subject to change</br></p>
+                <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-request?usertype=judiciary&"">Request access</a><br>Restricted access - Flow request - Subject to change</br></p>
+                <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-confirmation?usertype=judiciary&"">Confirmation</a><br>Restricted access - Flow request - Subject to change</br></p>
+                <p><a target="_blank" href="/caseaccess/pages/mycases-p?usertype=judiciary&"">My cases</a><br>Restricted access - Flow request - Subject to change</br></p>
+                <p><a target="_blank" href="/caseaccess/pages/mywork-s2?usertype=judiciary&"">My tasks</a><br>Restricted access - Flow approve - Subject to change</br></p>
+            </div>
+
+            <div>
+                <h2 class="govuk-heading-m">Staff</h2>
+          <!--      <p><a target="_blank" href="/caseaccess/pages/caselist?usertype=staff&">Caselist</a><br>Subject to change</br></p> -->
+                <p><a target="_blank" href="/caseaccess/pages/search?usertype=staff&">Search entry</a><br>Subject to change</br></p>
+          <!--      <p><a target="_blank" href="/caseaccess/pages/results?usertype=staff&"">Search results</a><br>Subject to change</br></p> -->
+          <!--      <p><a target="_blank" href="/caseaccess/pages/resultsmany?usertype=staff&"">Many results</a><br>Subject to change</br></p> -->
+            </div>
+
+        </div>
+
+
+
+
+        <br>
+        <br>
+
+
+
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}

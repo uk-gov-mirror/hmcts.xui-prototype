@@ -1,0 +1,366 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="hmcts-page-heading">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-xl">Search cases</h1>
+          </div>
+    </div>
+
+    <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off"
+        action="results">
+
+
+        <!-- <h2 class="govuk-heading-m">Case information</h2>  -->
+
+        <div >
+
+            <div style="width: 350px;">
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="email">
+                        HMCTS case reference
+                    </label>
+                    <div id="email-hint" class="govuk-hint">
+                        This must be 16 digits
+                    </div>
+                    <input class="govuk-input govuk-input--width-10" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" >
+                </div>
+            </div>
+
+            <div style="width: 350px;">
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="email">
+                        Other case reference
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" >
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="account-number">
+                        Name of a person involved
+                    </label>
+                    <div id="email-hint" class="govuk-hint">
+                        For example, a party or solicitor
+                    </div>
+                    <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+                </div>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="email">
+                        Jurisdiction
+                    </label>
+                    <select class="govuk-select govuk-input--width-10" id="service" name="service" onchange="myfunction()">
+                        <option value="all">All</option>
+                        <option value="ddemployment">Employment</option>
+                        <option value="ddfamily">Family</option>
+                        <option value="ddiac">Immigration and Asylum</option>
+                        <option value="ddmoneyclaims">Money claims</option>
+                        <option value="5">Probate</option>
+                        <option value="6">Public law</option>
+                        <<option value="7">Social Security and Child Support</option>
+                        <!-- <option value="8">Upper Tribunal</option> -->
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!--  FAMILY -->
+        <div id='family' style="display: none;">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Location
+                </label>
+                <div id="email-hint" class="govuk-hint">
+                    For example, a region, cluster, court area, court or hearing centre
+                </div>
+                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
+            </div>
+            <!--   DOB  -->
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <label class="govuk-label" for="account-number">
+                    Date of birth of a party
+                </label>
+                <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+
+        <!--  Immigration and Asylum -->
+        <div id="iac" style="display: none;">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Location
+                </label>
+                <div id="email-hint" class="govuk-hint">
+                    For example, a region, cluster, court area, court or hearing centre
+                </div>
+                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
+            </div>
+
+            <!--   HEARING DATE   -->
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <label class="govuk-label" for="account-number">
+                    Hearing date
+                </label>
+                <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Location
+                </label>
+                <div id="email-hint" class="govuk-hint">
+                    For example, a region, cluster, court area, court or hearing centre
+                </div>
+                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="account-number">
+                    Party  National Insurance number
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+            </div>
+        </div>
+
+
+        <!--  Money claims -->
+        <div id="cmc" style="display: none;">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Location
+                </label>
+                <div id="email-hint" class="govuk-hint">
+                    For example, a region, cluster, court area, court or hearing centre
+                </div>
+                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
+            </div>
+        </div>
+
+
+        <!--  Tribunals -->
+        <div id="tribunals" style="display: none;">
+
+        </div>
+
+
+        <!--  NOT IN SCOPE  -->
+        <!--  UPPER Tribunals -->
+        <div id="uppertribunals" style="display: none;">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Court name/ hearing venue
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="account-number">
+                    Party  National Insurance number
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+            </div>
+            <!--   DECISION DATE   -->
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <label class="govuk-label" for="account-number">
+                    Date of decision
+                </label>
+                <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+
+
+            <button class="govuk-button" data-module="govuk-button">
+                Search
+            </button>
+
+
+
+
+
+    </form>
+
+<!--
+<div class="govuk-form-group">
+    <label class="govuk-label" for="email">
+        Case state
+    </label>
+    <select _ngcontent-rpu-c8="" aria-controls="search-result" class="form-control form-control-3-4 ccd-dropdown ng-pristine ng-valid ng-touched" id="wb-case-state" name="state">
+        <option>Any</option>
+        <option>Application Drafted</option>
+        <option>Awaiting HWF Decision</option>
+        <option>Awaiting Payment Response</option>
+        <option>Application Submitted</option>
+        <option>Application Issued</option>
+        <option>Gate Keeping And Allocation</option>
+        <option>Scheduling And Hearing</option>
+        <option>Prepare For Hearing</option>
+        <option>Ready for Hearing</option>
+        <option>Close</option>
+        <option>Consent Process</option>
+        <option>Awaiting Judiciary Response</option>
+        <option>Consent Order Approved</option>
+        <option>Consent Order Not Approved</option>
+        <option>Consent Order Made</option>
+        <option>Case Worker Review</option>
+        <option>Judge Draft Order</option>
+        <option>Solicitor Draft Order</option>
+        <option>Review Order</option>
+        <option>Draft Order Not Approved</option>
+        <option>Schedule &amp; Raise Directions Order</option>
+        <option>Order Drawn</option>
+        <option>Order Sent</option>
+        <option>Consented Order Submitted</option>
+        <option>Awaiting Judiciary Response (Consent)</option>
+        <option>Consent Assigned to Judge</option>
+        <option>Consented Order Approved</option>
+        <option>Response Received</option>
+        <option>Consented Order Not Approved</option>
+        <option>General Application</option>
+        <option>Awaiting Judiciary Response (Application)</option>
+        <option>General Application Outcome</option>
+    </select>
+</div>
+-->
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+
+        function myfunction()
+        {
+            document.getElementById("family").style.display = "none";
+            document.getElementById("iac").style.display = "none";
+            document.getElementById("cmc").style.display = "none";
+            document.getElementById("tribunals").style.display = "none";
+            document.getElementById("uppertribunals").style.display = "none";
+
+            if ( document.getElementById("service").value == 'ddfamily')
+            {
+                document.getElementById("family").style.display = "block";
+            }
+            if ( document.getElementById("service").value == 'ddiac')
+            {
+                document.getElementById("iac").style.display = "block";
+            }
+            if ( document.getElementById("service").value == 'ddmoneyclaims')
+            {
+                document.getElementById("cmc").style.display = "block";
+            }
+            if ( document.getElementById("service").value == '5')
+            {  }
+            if ( document.getElementById("service").value == '6')
+            {  }
+            if ( document.getElementById("service").value == '7')
+            {
+               // document.getElementById("tribunals").style.display = "block";
+            }
+            if ( document.getElementById("service").value == '8')
+            {
+                //document.getElementById("uppertribunals").style.display = "block";
+            }
+            else
+            {
+
+
+            }
+        }
+
+    </script>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
