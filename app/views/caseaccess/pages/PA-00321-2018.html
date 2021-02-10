@@ -26,7 +26,7 @@ Case details
       </svg>
       <div class="hmcts-banner__message">
         <span class="hmcts-banner__assistive">information</span>
-        This case is located outside your working region. Access to this case is logged for auditing purposes.
+        Challenge access. <br>This case is located outside your working region. Access to this case is logged for auditing purposes.
       </div>
     </div>
     <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
@@ -42,15 +42,7 @@ Case details
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key summary-key">
-            Appeal reference
-          </dt>
-          <dd class="govuk-summary-list__value">
-            PA/00321/2018
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key summary-key">
-            Appellant
+            Case name
           </dt>
           <dd class="govuk-summary-list__value">
             Robert Saddlebrook
@@ -58,27 +50,62 @@ Case details
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key summary-key">
-            Date of birth
+            Status
           </dt>
           <dd class="govuk-summary-list__value">
-            05/05/1992
+            Review respondent evidence
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key summary-key">
-            Nationalities
+            Location
           </dt>
           <dd class="govuk-summary-list__value">
-            Swedish
+            Manchester
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key summary-key">
+            Judge
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Judge Smith
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key summary-key">
+            Next hearing
+          </dt>
+          <dd class="govuk-summary-list__value">
+          20 June 202
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key summary-key">
+            Access
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Challenged
           </dd>
         </div>
       </dl>
     </div>
 
-    <button class="govuk-button" data-module="govuk-button">
-        Request access
-    </button>
+    {{ govukButton({
+  text: "Request access",
+  href: "PA-00321-2018-request",
+  classes: "govuk-!-margin-right-1"
+}) }}
+
+{{ govukButton({
+  text: "Cancel",
+  href: "results",
+  classes: "govuk-button--secondary"
+}) }}
 
   </form>
+
+
+
 
 {% endblock %}

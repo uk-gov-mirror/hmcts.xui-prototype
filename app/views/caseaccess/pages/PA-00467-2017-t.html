@@ -1,0 +1,219 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+  <div class="" style="display: flex; justify-content: space-between; ">
+
+
+    <div>
+      <h1 class="govuk-heading-xl">PA/00467/2017</h1>
+    </div>
+
+
+    <div style="display: flex; align-items:right">
+      <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published" selected="">Select action</option>
+        <option value="published">Submit amended application</option>
+        <option value="published">Link respondent</option>
+        <option value="published">Add Note</option>
+        <option value="published">Upload document</option>
+        <option value="updated">Stop representing a client</option>
+      </select>
+
+      <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+          Go
+        </button>
+      </form>
+    </div>
+
+
+
+  </div>
+
+
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-t">
+          Tasks
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-ar">
+          Roles / access
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-a">
+          Overview
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Appeal
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Appellent
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Documents
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Directions
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week" >
+          Applications
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Case notes
+        </a>
+      </li>
+  <!--    <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Hearing
+        </a>
+      </li> -->
+    </ul>
+
+
+
+    <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+      <div >
+
+
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          <h2 class="govuk-heading-l  govuk-!-margin-bottom-2">Active tasks</h2>
+          <p></p>
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">1. Review specific access request <span class="hmcts-badge hmcts-badge--green hmcts-badge_right">12 Feb</span></caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Request from</th>
+                <td class="govuk-table__cell">Judge Randel-Combeswardly</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Reason for access</th>
+                <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices enim in egestas porttitor. Vivamus iaculis ex eu dolor feugiat elementum. Nunc id laoreet elit. In hac habitasse platea dictumst</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Manage</th>
+                <td class="govuk-table__cell"><a href="PA-00467-2017-tr">Review request</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">2. Review application decision <span class="hmcts-badge hmcts-badge--green hmcts-badge_right">14 Feb</span></caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Assigned to</th>
+                <td class="govuk-table__cell">Judge Beech</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Manage</th>
+                <td class="govuk-table__cell"><a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a> <a href="">Refer a task</a> </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+          <h2 class="govuk-heading-m  govuk-!-margin-bottom-4">Task history</h2>
+
+            <div class="hmcts-timeline">
+
+                <div class="hmcts-timeline__item">
+
+                  <div class="hmcts-timeline__header">
+                    <h3 class="hmcts-timeline__title"><a href="#">Case reasssigned to you</a></h3>
+
+                      <p class="hmcts-timeline__by">by Jane Doe, court administrator</p>
+
+                  </div>
+
+                  <p class="hmcts-timeline__date"><time datetime="2018-09-14T09:38:00.000Z">Fri 14 Sep 2018 at 9:38am</time></p>
+
+                </div>
+
+                <div class="hmcts-timeline__item">
+
+                  <div class="hmcts-timeline__header">
+                    <h3 class="hmcts-timeline__title"><a href="#">Approved consent order uploaded</a></h3>
+
+                      <p class="hmcts-timeline__by">by Simon Saint, court administrator</p>
+
+                  </div>
+
+                  <p class="hmcts-timeline__date"><time datetime="2018-09-12T09:38:00.000Z">Wed 12 Sep 2018 at 9:38am</time></p>
+
+                </div>
+
+                <div class="hmcts-timeline__item">
+
+                  <div class="hmcts-timeline__header">
+                    <h3 class="hmcts-timeline__title"><a href="#">Consent order approved</a></h3>
+
+                      <p class="hmcts-timeline__by">by DJ Nightingale</p>
+
+                  </div>
+
+                  <p class="hmcts-timeline__date"><time datetime="2018-09-11T16:15:00.000Z">Tue 11 Sep 2018 at 4:15pm</time></p>
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <p><a href="#">View full timeline</a></p>
+
+
+
+        </div>
+
+      </div>
+
+
+
+</div>
+
+{% endblock %}

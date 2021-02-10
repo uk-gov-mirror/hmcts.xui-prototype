@@ -21,69 +21,29 @@ Case details
   </svg>
   <div class="hmcts-banner__message">
     <span class="hmcts-banner__assistive">information</span>
-    This case is located outside your working region. Access to this case is logged for auditing purposes.
+    Challenge access. <br>This case is located outside your working region. Access to this case is logged for auditing purposes.
   </div>
 </div>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-    {% set emailHtml %}
-    {{ govukInput({
-      id: "contact-by-email",
-      name: "contact-by-email",
-      type: "email",
-      spellcheck: false,
-      classes: "govuk-!-width-one-third",
-      label: {
-        text: "Email address"
-      }
-    }) }}
-    {% endset -%}
-
-    {% set textHtml %}
 
 
-    {{ govukTextarea({
-      name: "more-detail",
-      id: "more-detail",
-      label: {
-        text: "Please provide details"
-      }
-    }) }}
-
-
-    {% endset -%}
-
-
-
-    {{ govukRadios({
-      idPrefix: "contact",
-      name: "contact",
-      fieldset: {
-        legend: {
-          text: "Why are you requesting access to this case?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
-      hint: {
-        text: "Select one option."
-      },
-      items: [
-      {
-    value: "decision",
-    text: "I'm responsible for decision making on a related case"
-  },
-        {
-          value: "text",
-          text: "Another reason",
-          conditional: {
-          html: textHtml
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Why are you requesting access to this case?
+",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "You must provide a reason."
           }
-        }
-      ]
-    }) }}
+        }) }}
+
 
     {{ govukButton({
   text: "Submit request",
