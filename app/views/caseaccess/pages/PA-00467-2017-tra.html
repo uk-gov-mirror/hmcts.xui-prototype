@@ -103,81 +103,100 @@ Case details
       </li> -->
     </ul>
 
-
-
     <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
-      <div >
-
-
-
-
-
-
       <div class="govuk-grid-row">
-
         <div class="govuk-grid-column-two-thirds">
 
-          <h2 class="govuk-heading-l  govuk-!-margin-bottom-2">Approve specific access request</h2>
-          <p></p>
-          <table class="govuk-table">
 
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Request from</th>
-                <td class="govuk-table__cell">Judge Randel-Combeswardly</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Reason for access</th>
-                <td class="govuk-table__cell">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices enim in egestas porttitor. Vivamus iaculis ex eu dolor feugiat elementum. Nunc id laoreet elit. In hac habitasse platea dictumst </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {{ govukDateInput({
-        id: "passport-issued",
-        namePrefix: "passport-issued",
-        fieldset: {
-          legend: {
-            text: "Case access starts",
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "For example, 12 11 2007"
+    {% set setDuration %}
+    {{ govukDateInput({
+      id: "passport-issued",
+      namePrefix: "passport-issued",
+      fieldset: {
+        legend: {
+          text: "Access starts",
+          classes: "govuk-fieldset__legend--m"
         }
-      }) }}
+      },
+      hint: {
+        text: "For example, 12 11 2007"
+      }
+    }) }}
 
-      {{ govukDateInput({
-  id: "passport-issued",
-  namePrefix: "passport-issued",
-  fieldset: {
+    {{ govukDateInput({
+    id: "passport-issued",
+    namePrefix: "passport-issued",
+    fieldset: {
     legend: {
-      text: "Case access ends",
-      classes: "govuk-fieldset__legend--m"
+    text: "Access ends",
+    classes: "govuk-fieldset__legend--m"
     }
-  },
-  hint: {
+    },
+    hint: {
     text: "For example, 12 11 2007"
-  }
-}) }}
+    }
+    }) }}
+
+    {% endset -%}
+
+    {% set textHtml %}
+    {{ govukInput({
+      id: "contact-by-text",
+      name: "contact-by-text",
+      type: "tel",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Mobile phone number"
+      }
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "contact",
+      name: "contact",
+      fieldset: {
+        legend: {
+          text: "Duration of case access",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      items: [
+        {
+          value: "email",
+          text: "24hrs"
+        },
+        {
+          value: "phone",
+          text: "Other duration",
+          hint: {
+        text: "You’ll need to specify both start and end date."
+      },
+          conditional: {
+            html: setDuration
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "/caseaccess/pages/PA-00467-2017-trac"
+    }) }}
+
+    {{ govukButton({
+      text: "Cancel",
+      classes: "govuk-button--secondary",
+      href: "/caseaccess/pages/PA-00467-2017-tr"
+    }) }}
+
+    </div>
 
 
-</div>
 
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Continue",
-    href: "/caseaccess/pages/PA-00467-2017-trac"
-  }) }}
 
-  {{ govukButton({
-    text: "Cancel",
-    classes: "govuk-button--secondary",
-    href: "/caseaccess/pages/PA-00467-2017-tr"
-  }) }}
-</div>
 
 {% endblock %}
