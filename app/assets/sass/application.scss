@@ -190,6 +190,7 @@ a.hmcts-search-toggle__button {
   padding-right: 5px;
 }
 
+
 .govuk-tabs__tab {
   font-family: "nta", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -259,7 +260,7 @@ a.hmcts-search-toggle__button {
   }
 }
 
-.govuk-tabs__tab[aria-current="true"] {
+.govuk-tabs__tab [aria-current="true"] {
   color: #0b0c0c;
   text-decoration: none;
 }
@@ -302,6 +303,23 @@ a.hmcts-search-toggle__button {
     text-align: center;
     text-decoration: none;
   }
+
+  .js-enabled .govuk-tabs__tab_b {
+    margin-right: 5px;
+    margin-top: -5px;
+    margin-bottom: -1px;
+    padding-top: 14px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom:11px;
+    border-bottom: 0;
+    float: left;
+    color: #ffffff;
+    background-color: #005ea5;
+    text-align: center;
+    text-decoration: none;
+  }
+
   .js-enabled .govuk-tabs__tab--selected {
     margin-top: -5px;
     margin-bottom: -1px;
