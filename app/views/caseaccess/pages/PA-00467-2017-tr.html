@@ -3,28 +3,17 @@
 {% else %}
     {% extends "../layoutstaff.html" %}
 {% endif %}
-
-
 {% block pageTitle %}
 Case details
 {% endblock %}
-
-
 {% block content %}
-
-
 <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
   <div class="" style="display: flex; justify-content: space-between; ">
-
-
     <div>
       <h1 class="govuk-heading-xl">PA/00467/2017</h1>
     </div>
-
-
     <div style="display: flex; align-items:right">
       <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
-
       <select class="govuk-select" id="sort" name="sort">
         <option value="published" selected="">Select action</option>
         <option value="published">Submit amended application</option>
@@ -33,31 +22,25 @@ Case details
         <option value="published">Upload document</option>
         <option value="updated">Stop representing a client</option>
       </select>
-
       <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
         <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
           Go
         </button>
       </form>
     </div>
-
-
-
   </div>
-
-
   <div class="govuk-tabs" data-module="govuk-tabs">
     <h2 class="govuk-tabs__title">
       Contents
     </h2>
     <ul class="govuk-tabs__list">
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab_b" href="PA-00467-2017-t">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-t">
           Tasks
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab_b" href="PA-00467-2017-ar">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-ar">
           Roles / access
         </a>
       </li>
@@ -102,25 +85,13 @@ Case details
         </a>
       </li> -->
     </ul>
-
-
-
     <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
       <div >
-
-
-
-
-
-
       <div class="govuk-grid-row">
-
         <div class="govuk-grid-column-two-thirds">
-
           <h2 class="govuk-heading-l  govuk-!-margin-bottom-2">Review specific access request</h2>
           <p></p>
           <table class="govuk-table">
-
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header" style="width: 220px;">Request from</th>
@@ -134,21 +105,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices eni
             </tbody>
           </table>
         </div>
-
-
-
       </div>
-
-
-
-
-
-
-
-
-
-
-
   <form action="#" method="post" onsubmit="usePage(this, 'bob');">
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
@@ -170,13 +127,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices eni
               Reject request
             </label>
           </div>
-
-
         </div>
-
       </fieldset>
     </div>
-
 <div class="govuk-button-group">
   <button class="govuk-button" data-module="govuk-button" type="submit">
     Continue
@@ -187,7 +140,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices eni
     href: "/caseaccess/pages/PA-00467-2017-t"
   }) }}
 </form>
-
 <script type="text/javascript">
 function usePage(frm,nm){
 for (var i_tem = 0, bobs=frm.elements; i_tem < bobs.length; i_tem++)
@@ -195,5 +147,4 @@ if(bobs[i_tem].name==nm&&bobs[i_tem].checked)
 frm.action=bobs[i_tem].value;
 }
 </script>
-
 {% endblock %}

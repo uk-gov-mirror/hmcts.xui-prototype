@@ -3,36 +3,27 @@
 {% else %}
 {% extends "../layoutstaff.html" %}
 {% endif %}
-
-
 {% block pageTitle %}
 Case details
 {% endblock %}
-
-
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
       <form
           name="paForm"
           method="post"
           id="paForm"
           autocomplete="off"
           action="PA-00321-2018-request">
-
       {{ govukPanel({
         titleText: "Access requested",
         html: "Case ref:<br><strong>PA/00467/2017</strong>"
       }) }}
-
   <!--    <p class="govuk-body">We have sent you a confirmation email.</p>
 -->
       <h2 class="govuk-heading-m">What happens next</h2>
-
       <p class="govuk-body">
       Your request to access the case file has been sent to the team responsible for this case.</p>
-
       <p class="govuk-body">
         You will be notified by email when this has been granted.
       </p>
@@ -40,9 +31,6 @@ Case details
         All access requests are logged for auiting purposes.
       </p>
       <p>The case will appear in your <a href="mycases-p" class="govuk-link">My cases</a> tab.
-
-
-
     </div>
   </div>
 {% endblock %}

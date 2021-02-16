@@ -3,15 +3,10 @@
 {% else %}
 {% extends "../layoutstaff.html" %}
 {% endif %}
-
-
 {% block pageTitle %}
 Case details
 {% endblock %}
-
-
 {% block content %}
-
     <form
         name="paForm"
         method="post"
@@ -26,14 +21,12 @@ Case details
       </svg>
       <div class="hmcts-banner__message">
         <span class="hmcts-banner__assistive">information</span>
-        Challenge access. <br>This case is located outside your working region. Access to this case is logged for auditing purposes.
+        Challenged access. <br>This case is located outside your working region. Access to this case is logged for auditing purposes.
       </div>
     </div>
     <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
       <div class="" style="display: flex; justify-content: space-between; ">
         <div style="display: flex; ">
-
-
             <h1 class="govuk-heading-xl">PA/00321/2018</h1>
           </div>
         </div>
@@ -90,22 +83,15 @@ Case details
         </div>
       </dl>
     </div>
-
     {{ govukButton({
   text: "Request access",
   href: "PA-00321-2018-request",
   classes: "govuk-!-margin-right-1"
 }) }}
-
 {{ govukButton({
   text: "Cancel",
   href: "results",
   classes: "govuk-button--secondary"
 }) }}
-
   </form>
-
-
-
-
 {% endblock %}

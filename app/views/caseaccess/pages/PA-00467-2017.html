@@ -3,15 +3,10 @@
 {% else %}
 {% extends "../layoutstaff.html" %}
 {% endif %}
-
-
 {% block pageTitle %}
 Case details
 {% endblock %}
-
-
 {% block content %}
-
     <form
         name="paForm"
         method="post"
@@ -27,13 +22,10 @@ Case details
         <div class="hmcts-banner__message">
           <span class="hmcts-banner__assistive">information</span>
 Specific access.<br>Access requires manual authorisation from team responsible for this case. Access to this case is logged for auditing purposes.</div>
-
 </div>
     <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
       <div class="" style="display: flex; justify-content: space-between; ">
         <div style="display: flex; ">
-
-
             <h1 class="govuk-heading-xl">PA/00467/2017</h1>
           </div>
         </div>
@@ -77,7 +69,6 @@ Specific access.<br>Access requires manual authorisation from team responsible f
             Next hearing
           </dt>
           <dd class="govuk-summary-list__value">
-
           </dd>
         </div>  <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key summary-key">
@@ -94,13 +85,10 @@ Specific access.<br>Access requires manual authorisation from team responsible f
   href: "PA-00467-2017-request",
   classes: "govuk-!-margin-right-1"
 }) }}
-
 {{ govukButton({
   text: "Cancel",
   href: "results-s2",
   classes: "govuk-button--secondary"
 }) }}
-
   </form>
-
 {% endblock %}

@@ -3,31 +3,22 @@
 {% else %}
     {% extends "../layoutstaff.html" %}
 {% endif %}
-
-
-
 {% block pageTitle %}
 My work
 {% endblock %}
-
-
 {% block content %}
-
-
     <div class="hmcts-page-heading">
           <div class="hmcts-page-heading__title">
                <h1 class="govuk-heading-xl">My work</h1>
           </div>
     </div>
     <p>See your tasks and view tasks available for you to pick up.</p>
-
     <div class="hmcts-scrollable-pane">
       <div class="hmcts-scrollable-pane__wrapper">
-
         <nav class="hmcts-sub-navigation">
           <ul class="hmcts-sub-navigation__list">
             <li class="hmcts-sub-navigation__item">
-              <a class="hmcts-sub-navigation__link" aria-current="page" href="mywork">
+              <a class="hmcts-sub-navigation__link" aria-current="page" href="mywork-s2">
                 My tasks
               </a>
             </li>
@@ -48,8 +39,6 @@ My work
             </li>
           </ul>
         </nav>
-
-
                     <table class="govuk-table ">
                         <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
@@ -64,28 +53,18 @@ My work
                         </tr>
                         </thead>
                         <tbody class="govuk-table__body">
-
                             <tr class="govuk-table__row">
                                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="PA-00467-2017-a">8999-6730-3210-1121</a></td>
                                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Amelia Chu</td>
                                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
-
                                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">London</td>
                                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review specific access request</td>
                                 <td class="govuk-table__cell"><span class="hmcts-badge hmcts-badge--green">12 Feb</span> </td>
                                 <td class="govuk-table__cell"><a href="mywork-s2o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
                             </tr>
-
-
                         </tbody>
                     </table>
-
-
-
-
 {% endblock %}
-
 {% block scripts %}
-
 {% endblock %}

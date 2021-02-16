@@ -3,34 +3,23 @@
 {% else %}
     {% extends "../layoutstaff.html" %}
 {% endif %}
-
-
-
 {% block pageTitle %}
 Case details
 {% endblock %}
-
-
 {% block content %}
-
     <div class="hmcts-page-heading">
           <div class="hmcts-page-heading__title">
                <h1 class="govuk-heading-xl">Search cases</h1>
           </div>
     </div>
-
     <form
         name="aspnetForm"
         method="post"
         id="aspnetForm"
         autocomplete="off"
         action="results">
-
-
         <!-- <h2 class="govuk-heading-m">Case information</h2>  -->
-
         <div >
-
             <div style="width: 350px;">
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="email">
@@ -42,7 +31,6 @@ Case details
                     <input class="govuk-input govuk-input--width-10" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" >
                 </div>
             </div>
-
             <div style="width: 350px;">
                 <div class="govuk-form-group">
                     <label class="govuk-label" for="email">
@@ -76,11 +64,7 @@ Case details
                     </select>
                 </div>
             </div>
-
         </div>
-
-
-
         <!--  FAMILY -->
         <div id='family' style="display: none;">
             <div class="govuk-form-group">
@@ -120,11 +104,8 @@ Case details
                             <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                 </div>
-
             </fieldset>
         </div>
-
-
         <!--  Immigration and Asylum -->
         <div id="iac" style="display: none;">
             <div class="govuk-form-group">
@@ -136,7 +117,6 @@ Case details
                 </div>
                 <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
             </div>
-
             <!--   HEARING DATE   -->
             <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                 <label class="govuk-label" for="account-number">
@@ -182,8 +162,6 @@ Case details
                 <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
             </div>
         </div>
-
-
         <!--  Money claims -->
         <div id="cmc" style="display: none;">
             <div class="govuk-form-group">
@@ -196,14 +174,9 @@ Case details
                 <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
             </div>
         </div>
-
-
         <!--  Tribunals -->
         <div id="tribunals" style="display: none;">
-
         </div>
-
-
         <!--  NOT IN SCOPE  -->
         <!--  UPPER Tribunals -->
         <div id="uppertribunals" style="display: none;">
@@ -249,20 +222,10 @@ Case details
                 </div>
             </fieldset>
         </div>
-
-
-
-
             <button class="govuk-button" data-module="govuk-button">
                 Search
             </button>
-
-
-
-
-
     </form>
-
 <!--
 <div class="govuk-form-group">
     <label class="govuk-label" for="email">
@@ -306,11 +269,8 @@ Case details
 </div>
 -->
 {% endblock %}
-
 {% block scripts %}
-
     <script>
-
         function myfunction()
         {
             document.getElementById("family").style.display = "none";
@@ -318,7 +278,6 @@ Case details
             document.getElementById("cmc").style.display = "none";
             document.getElementById("tribunals").style.display = "none";
             document.getElementById("uppertribunals").style.display = "none";
-
             if ( document.getElementById("service").value == 'ddfamily')
             {
                 document.getElementById("family").style.display = "block";
@@ -345,22 +304,7 @@ Case details
             }
             else
             {
-
-
             }
         }
-
     </script>
-
-
-
 {% endblock %}
-
-
-
-
-
-
-
-
-
