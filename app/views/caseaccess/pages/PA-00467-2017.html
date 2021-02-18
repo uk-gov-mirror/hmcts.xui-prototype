@@ -3,15 +3,10 @@
 {% else %}
 {% extends "../layoutstaff.html" %}
 {% endif %}
-
-
 {% block pageTitle %}
 Case details
 {% endblock %}
-
-
 {% block content %}
-
     <form
         name="paForm"
         method="post"
@@ -19,22 +14,18 @@ Case details
         autocomplete="off"
         action="PA-00467-2017-request">
     <div>
-      <div class="hmcts-banner hmcts-banner--warning">
-
-<svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-<path d="M13.6,15.4h-2.3v-4.5h2.3V15.4z M13.6,19.8h-2.3v-2.2h2.3V19.8z M0,23.2h25L12.5,2L0,23.2z" /></svg>
-
-<div class="hmcts-banner__message">
-<span class="hmcts-banner__assistive">Warning</span>
-Access to this case is restricted and requires authorisation from the Leadership Judge responsible. Access to this case is logged for auditing purposes.
-</div>
-
+      <div class="hmcts-banner">
+        <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+          <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+        C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+        </svg>
+        <div class="hmcts-banner__message">
+          <span class="hmcts-banner__assistive">information</span>
+Specific access.<br>Access requires manual authorisation. Access to this case is logged for auditing purposes.</div>
 </div>
     <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
       <div class="" style="display: flex; justify-content: space-between; ">
         <div style="display: flex; ">
-
-
             <h1 class="govuk-heading-xl">PA/00467/2017</h1>
           </div>
         </div>
@@ -43,43 +34,61 @@ Access to this case is restricted and requires authorisation from the Leadership
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key summary-key">
-            Appeal reference
+            Case name
           </dt>
           <dd class="govuk-summary-list__value">
-            PA/00467/2017
+          Amelia Chu
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key summary-key">
-            Appellant
+            Staus
           </dt>
           <dd class="govuk-summary-list__value">
-            Amelia Chu
+            Pre hearing
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key summary-key">
-            Date of birth
+          Location
           </dt>
           <dd class="govuk-summary-list__value">
-            14/09/1998
+            London
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key summary-key">
-            Nationalities
+            Judge
           </dt>
           <dd class="govuk-summary-list__value">
-            British
+            Judge Warden
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key summary-key">
+            Next hearing
+          </dt>
+          <dd class="govuk-summary-list__value">
+          </dd>
+        </div>  <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key summary-key">
+              Access
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Specific
+            </dd>
+          </div>
       </dl>
     </div>
-
-    <button class="govuk-button" data-module="govuk-button">
-        Request access
-    </button>
-
+    {{ govukButton({
+  text: "Request access",
+  href: "PA-00467-2017-request",
+  classes: "govuk-!-margin-right-1"
+}) }}
+{{ govukButton({
+  text: "Cancel",
+  href: "results-s2",
+  classes: "govuk-button--secondary"
+}) }}
   </form>
-
 {% endblock %}

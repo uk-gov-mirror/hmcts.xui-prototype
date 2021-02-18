@@ -3,26 +3,16 @@
 {% else %}
     {% extends "../layoutstaff.html" %}
 {% endif %}
-
-
-
 {% block pageTitle %}
 Case details
 {% endblock %}
-
-
 {% block content %}
-
     <div class="hmcts-page-heading">
           <div class="hmcts-page-heading__title">
                <h1 class="govuk-heading-xl">Search results</h1>
           </div>
     </div>
-
     <p><a href="search.html">Change search</a></p>
-
-
-
     <table class="govuk-table ">
         <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -35,7 +25,6 @@ Case details
             <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 84px;"></th>
         </tr>
         </thead>
-
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Collyer v Zukowski</td>
@@ -129,7 +118,4 @@ Case details
             </tr>
         </tbody>
     </table>
-
-
-
 {% endblock %}

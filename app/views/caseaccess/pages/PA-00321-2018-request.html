@@ -3,17 +3,10 @@
 {% else %}
 {% extends "../layoutstaff.html" %}
 {% endif %}
-
-
 {% block pageTitle %}
 Case details
-
 {% endblock %}
-
-
-
 {% block content %}
-
 <div class="hmcts-banner">
   <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
@@ -21,84 +14,34 @@ Case details
   </svg>
   <div class="hmcts-banner__message">
     <span class="hmcts-banner__assistive">information</span>
-    This case is located outside your working region. Access to this case is logged for auditing purposes.
+    Challenged access. <br>This case is located outside your working region. Access to this case is logged for auditing purposes.
   </div>
 </div>
-
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-
-    {% set emailHtml %}
-    {{ govukInput({
-      id: "contact-by-email",
-      name: "contact-by-email",
-      type: "email",
-      spellcheck: false,
-      classes: "govuk-!-width-one-third",
-      label: {
-        text: "Email address"
-      }
-    }) }}
-    {% endset -%}
-
-    {% set textHtml %}
-
-
-    {{ govukTextarea({
-      name: "more-detail",
-      id: "more-detail",
-      label: {
-        text: "Please provide details"
-      }
-    }) }}
-
-
-    {% endset -%}
-
-
-
-    {{ govukRadios({
-      idPrefix: "contact",
-      name: "contact",
-      fieldset: {
-        legend: {
-          text: "Why are you requesting access to this case?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
-      hint: {
-        text: "Select one option."
-      },
-      items: [
-      {
-    value: "decision",
-    text: "I'm responsible for decision making on a related case"
-  },
-        {
-          value: "text",
-          text: "Another reason",
-          conditional: {
-          html: textHtml
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "State why you are accessing this case
+",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Access will be granted for [duration]. You must provide a reason."
           }
-        }
-      ]
-    }) }}
-
+        }) }}
     {{ govukButton({
-  text: "Submit request",
+  text: "Submit",
   href: "PA-00321-2018-confirmation",
   classes: "govuk-!-margin-right-1"
 }) }}
-
 {{ govukButton({
   text: "Cancel",
   href: "results",
   classes: "govuk-button--secondary"
 }) }}
-
-
 </div>
 </div>
-
 {% endblock %}
