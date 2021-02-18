@@ -13,20 +13,6 @@ Case details
 
 {% block content %}
 
-    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-        <h2 class="govuk-error-summary__title" id="error-summary-title">
-            There is a problem
-        </h2>
-        <div class="govuk-error-summary__body">
-            <ul class="govuk-list govuk-error-summary__list">
-                <li>
-                    <a href="#casenumber">Enter an online case reference number that exactly matches the case details</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-
     <div class="hmcts-page-heading">
           <div class="hmcts-page-heading__title">
                <h1 class="govuk-heading-xl">Search cases</h1>
@@ -41,35 +27,22 @@ Case details
         method="post"
         id="aspnetForm"
         autocomplete="off"
-        >
+        action="results">
 
 
         <!-- <h2 class="govuk-heading-m">Case information</h2>  -->
 
         <div >
 
-            <div style="width: 680px;">
-                {% if data.errorcasenumber == 'true'  or  data.errorcasenumbernomatch == 'true' %}
-                    <div class="govuk-form-group govuk-form-group--error">
-                {% else %}
-                    <div class="govuk-form-group">
-                {% endif %}
+            <div style="width: 500px;">
+                <div class="govuk-form-group">
                     <label class="govuk-label govuk-!-font-weight-bold" for="hmctsref">
                         HMCTS case reference
                     </label>
                     <div id="email-hint" class="govuk-hint">
                         This must be 16 digits
                     </div>
-                        {% if  data.errorcasenumber == 'true'  or  data.errorcasenumbernomatch == 'true'  %}
-                            <span id="national-insurance-number-error" class="govuk-error-message">
-                                <span class="govuk-visually-hidden">Error:</span> Enter an online case reference number that exactly matches the case details
-                            </span>
-                            <input class="govuk-input govuk-input--width-10 govuk-input--error" id="hmctsref" name="hmctsref" type="text" spellcheck="false" >
-                        {% else %}
-                            <input class="govuk-input govuk-input--width-10" id="hmctsref" name="hmctsref" type="text" spellcheck="false" >
-                        {% endif %}
-
-
+                    <input class="govuk-input govuk-input--width-10" id="hmctsref" name="hmctsref" type="text" spellcheck="false" >
                 </div>
             </div>
 

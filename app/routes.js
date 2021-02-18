@@ -24,6 +24,40 @@ router.post('/v3/cases/method', function (req, res) {
 
 
 
+//  CASE SEARCH
+// If the user enters a ccd reference number then take them directly to the case
+router.post( '/searchcases/pages/search', function (req, res)
+{
+    req.session.data['errorcasenumber'] = 'false';
+    if(req.session.data['hmctsref'] == '')
+    {
+        req.session.casereference = '8771785741275065';
+        res.redirect('/searchcases/pages/results');
+    }
+    else
+    {
+        if(req.session.data['hmctsref'].length < 16  ||  20 < req.session.data['hmctsref'].length )
+        {
+            req.session.data['errorcasenumber'] = 'true';
+            //console.warn("Main Router " + req.session.data['errorcasenumber']);
+            res.redirect('/searchcases/pages/search');
+        }
+        else
+        {
+            req.session.data['casereference'] = req.session.data['hmctsref'];
+            res.redirect('/searchcases/pages/casedetailsdivorce');
+        }
+
+    }
+})
+
+
+
+
+
+
+
+
 
 // NOTICE OF CHANGE
 router.post( '/noticeofchange/solicitor/startorstop', function (req, res)
