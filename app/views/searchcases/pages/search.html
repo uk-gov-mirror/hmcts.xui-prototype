@@ -13,18 +13,20 @@ Case details
 
 {% block content %}
 
-    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-        <h2 class="govuk-error-summary__title" id="error-summary-title">
-            There is a problem
-        </h2>
-        <div class="govuk-error-summary__body">
-            <ul class="govuk-list govuk-error-summary__list">
-                <li>
-                    <a href="#casenumber">Enter an online case reference number that exactly matches the case details</a>
-                </li>
-            </ul>
+    {% if data.errorcasenumber == 'true' %}
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                        <a href="#casenumber">Enter an online case reference number that exactly matches the case details</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    {% endif %}
 
 
     <div class="hmcts-page-heading">
@@ -43,13 +45,12 @@ Case details
         autocomplete="off"
         >
 
-
         <!-- <h2 class="govuk-heading-m">Case information</h2>  -->
 
         <div >
 
             <div style="width: 680px;">
-                {% if data.errorcasenumber == 'true'  or  data.errorcasenumbernomatch == 'true' %}
+                {% if data.errorcasenumber == 'true' %}
                     <div class="govuk-form-group govuk-form-group--error">
                 {% else %}
                     <div class="govuk-form-group">
@@ -74,6 +75,7 @@ Case details
             </div>
 
             <div style="width: 500px;">
+
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-!-font-weight-bold" for="otherref">
                         Other case reference
@@ -83,28 +85,46 @@ Case details
                     </div>
                     <input class="govuk-input govuk-input--width-10" id="otherref" name="otherref" type="text" spellcheck="false" >
                 </div>
+
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-!-font-weight-bold" for="names">
-                        Name
+                        Full name
                     </label>
                     <div id="email-hint" class="govuk-hint">
-                        For example, party, solicitor or judge
+                        For example, party, solicitor
                     </div>
                     <input class="govuk-input govuk-input--width-10" id="names" name="names" type="text" spellcheck="false">
                 </div>
+
                 <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="postcode">
+                        Postcode of party
+                    </label>
+                    <input class="govuk-input" id="postcode" name="postcode" type="text" spellcheck="false" style="width: 120px;">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="email">
+                        Email address
+                    </label>
+                    <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" spellcheck="false" style="">
+                </div>
+
+                <div class="govuk-form-group" style="margin-bottom: 10px">
                     <label class="govuk-label govuk-!-font-weight-bold" for="service">
                         Services
                     </label>
                     <select class="govuk-select govuk-input--width-10" id="service" name="service" onchange="myfunction()">
                         <option value="all">All</option>
+                        <option value="ddemployment">Divorce</option>
                         <option value="ddemployment">Employment</option>
-                        <option value="ddfamily">Family</option>
+                        <option value="ddfamily">Financial Remedy</option>
                         <option value="ddiac">Immigration and Asylum</option>
                         <option value="ddmoneyclaims">Money claims</option>
-                        <option value="5">Probate</option>
+                        <option value="ddprobate">Probate</option>
+                        <option value="6">Private law</option>
                         <option value="6">Public law</option>
-                        <<option value="7">Social Security and Child Support</option>
+                        <<option value="ddscss">Social Security and Child Support</option>
                         <!-- <option value="8">Upper Tribunal</option> -->
                     </select>
                 </div>
@@ -115,7 +135,7 @@ Case details
 
 
         <!--  FAMILY -->
-        <div id='family' style="display: none;">
+        <div class="govuk-details__text" id='family' style="display: none;">
             <div class="govuk-form-group">
                 <label class="govuk-label" for="email">
                     Location
@@ -159,15 +179,13 @@ Case details
 
 
         <!--  Immigration and Asylum -->
-        <div id="iac" style="display: none;">
+        <div class="govuk-details__text" id="iac" style="display: none;">
+
             <div class="govuk-form-group">
-                <label class="govuk-label" for="email">
-                    Location
+                <label class="govuk-label" for="account-number">
+                    Party  National Insurance number
                 </label>
-                <div id="email-hint" class="govuk-hint">
-                    For example, a region, cluster, court area, court or hearing centre
-                </div>
-                <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
+                <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
             </div>
 
             <!--   HEARING DATE   -->
@@ -208,17 +226,11 @@ Case details
                 </div>
                 <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
             </div>
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="account-number">
-                    Party  National Insurance number
-                </label>
-                <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
-            </div>
         </div>
 
 
         <!--  Money claims -->
-        <div id="cmc" style="display: none;">
+        <div class="govuk-details__text" id="cmc" style="display: none;">
             <div class="govuk-form-group">
                 <label class="govuk-label" for="email">
                     Location
@@ -237,12 +249,12 @@ Case details
         </div>
 
 
-        <!--  NOT IN SCOPE  -->
-        <!--  UPPER Tribunals -->
-        <div id="uppertribunals" style="display: none;">
+
+        <!--  SCSS -->
+        <div class="govuk-details__text" id="uppertribunals" style="display: none;">
             <div class="govuk-form-group">
                 <label class="govuk-label" for="email">
-                    Court name/ hearing venue
+                    Court or Hearing centre
                 </label>
                 <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text" >
             </div>
@@ -284,12 +296,45 @@ Case details
         </div>
 
 
+            <div class="govuk-details__text" id="probate" style="display: none;">
+                <!--   DECISION DATE   -->
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                    <label class="govuk-label" for="account-number">
+                        Date of death
+                    </label>
+                    <div class="govuk-date-input" id="passport-issued">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
 
 
-            <button class="govuk-button" data-module="govuk-button">
-                Search
-            </button>
 
+            <div class="govuk-form-group  govuk-!-margin-top-5" >
+                <button class="govuk-button" data-module="govuk-button">
+                    Search
+                </button>
+            </div>
 
 
 
@@ -350,7 +395,9 @@ Case details
             document.getElementById("iac").style.display = "none";
             document.getElementById("cmc").style.display = "none";
             document.getElementById("tribunals").style.display = "none";
-            document.getElementById("uppertribunals").style.display = "none";
+            document.getElementById("sscs").style.display = "none";
+            document.getElementById("probate").style.display = "none";
+            document.getElementById("sscs").style.display = "none";
 
             if ( document.getElementById("service").value == 'ddfamily')
             {
@@ -364,10 +411,14 @@ Case details
             {
                 document.getElementById("cmc").style.display = "block";
             }
-            if ( document.getElementById("service").value == '5')
-            {  }
-            if ( document.getElementById("service").value == '6')
-            {  }
+            if ( document.getElementById("service").value == 'ddprobate')
+            {
+                document.getElementById("probate").style.display = "block";
+            }
+            if ( document.getElementById("service").value == 'ddsscs')
+            {
+                document.getElementById("sscs").style.display = "block";
+            }
             if ( document.getElementById("service").value == '7')
             {
                // document.getElementById("tribunals").style.display = "block";
