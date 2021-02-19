@@ -22,27 +22,50 @@ Case details
     <p><a href="search.html">Change search</a></p>
 
 
-
     <table class="govuk-table ">
         <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 300px;">Case name</th>
-            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 250px;">Status</th>
-            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 250px;">Location</th>
-            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 60px;">Flags</th>
-            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 84px;"></th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 33%;">Case name</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 20%;">Service</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 33%;">Court or Hearing centre</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 7%;">State</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 7%;"></th>
         </tr>
         </thead>
 
-        <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Macallister v Ministry of Defence</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Prepare for hearing</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">South Eastern</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
-            </tr>
-        </tbody>
+        {% if  data.results == 'many'   %}
+            <!-- One result -->s
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Macallister v Narran</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Money claims</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">South Eastern</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bath Law Courts</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                </tr>
+            </tbody>
+        {% else %}
+            <!-- One result -->
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Macallister v Narran</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Money claims</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bath Law Courts</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Open</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/caseaccess/pages/PA-00321-2018">Request access</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Macallister v Narran</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Money claims</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bath Law Courts</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Closed</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                </tr>
+            </tbody>
+        {% endif %}
+
+
     </table>
 
 
