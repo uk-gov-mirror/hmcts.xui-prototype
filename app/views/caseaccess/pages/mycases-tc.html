@@ -13,6 +13,10 @@ My work
           </div>
     </div>
     <p>See your tasks and view tasks available for you to pick up.</p>
+    {{ govukButton({
+  text: "Show my work settings",
+  classes: "govuk-button--secondary"
+}) }}
     <div class="hmcts-scrollable-pane">
       <div class="hmcts-scrollable-pane__wrapper">
         <nav class="hmcts-sub-navigation">
@@ -39,58 +43,66 @@ My work
             </li>
           </ul>
         </nav>
+        <h2 class="govuk-heading-m">My roles</h2>
         <table class="govuk-table ">
             <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 505px;" aria-sort="ascending"><button type="button" data-index="0">Case reference</button></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 300px;" aria-sort="none"><button type="button" data-index="1">Case name</button></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 300px;" aria-sort="none"><button type="button" data-index="1">Jurisdiction</button></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 300px;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19"  aria-sort="none"><button type="button" data-index="1">Location</button></th>
-                <th scope="col" class="govuk-table__header"></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 380px;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 60px;" aria-sort="none"><button type="button" data-index="1">Due</button></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 150px;" aria-sort="none"></th>
-            </tr>
+              <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 405px;" aria-sort="ascending"><button type="button" data-index="0">Case name</button></th>
+                  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 300px;" aria-sort="none"><button type="button" data-index="1">Jurisdiction</button></th>
+                  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 200px;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 420px;" aria-sort="none"><button type="button" data-index="1">Case role</button></th>
+                  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 200px;" aria-sort="none"><button type="button" data-index="1">Hearing date</button></th>
+                  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 150px;" aria-sort="none"></th>
+              </tr>
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="/caseaccess/pages/PA-00467-2017-atc">8999-6730-3210-1121</a</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Amelia Chu</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Patti Jo</a></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">London</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Specific access until [duration]</td>
-                    <td class="govuk-table__cell"><span class="hmcts-badge hmcts-badge--green">12 FEB</span>  </td>
-                    <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">1542-5226-7383-2772</a></td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Patti Jo</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review respondent evidence</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Leadership Judge</td>
                     <td class="govuk-table__cell"><span class="hmcts-badge hmcts-badge--orange">Today</span> </td>
                     <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">1526-8943-7271-8327</a></td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hudson Remi</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Hudson Remi</a></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-19">HR</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Virtual</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" path style="fill: orange">
-                    <title>This case has more than one task. Review needed.</title><path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
-                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" /></svg></td>
-                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review appellant case</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hearing Judge</td>
                     <td class="govuk-table__cell"><span class="hmcts-badge hmcts-badge--green">9 nov</span>  </td>
                     <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
                 </tr>
             </tbody>
         </table>
+          <h2 class="govuk-heading-m">My access</h2>
+          <table class="govuk-table ">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 505px;" aria-sort="ascending"><button type="button" data-index="0">Case name</button></th>
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 400px;" aria-sort="none"><button type="button" data-index="1">Jurisdiction</button></th>
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 300px;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 420px;" aria-sort="none"><button type="button" data-index="1">Case role</button></th>
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 400px;" aria-sort="none"><button type="button" data-index="1">Start</button></th>
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 200px;" aria-sort="none"><button type="button" data-index="1">End</button></th>
+                    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 200px;" aria-sort="none"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="/caseaccess/pages/PA-00467-2017-atc">Amelia Chu</a></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Specific access until [duration]</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">14 Mar 2021</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">14 Apr 2021 </td>
+                    <td class="govuk-table__cell"><a href="#">Goto case</a></td>
+                </tr>
+
+              </tbody>
+          </table>
 {% endblock %}
 {% block scripts %}
 {% endblock %}
