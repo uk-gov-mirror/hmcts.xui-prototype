@@ -24,7 +24,14 @@ router.post('/v3/cases/method', function (req, res) {
 
 
 
+
+
+
+
 //  CASE SEARCH
+// Start new search
+
+
 // If the user enters a ccd reference number then take them directly to the case
 router.post( '/searchcases/pages/search', function (req, res)
 {
