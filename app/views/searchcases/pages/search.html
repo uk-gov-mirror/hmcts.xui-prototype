@@ -21,7 +21,7 @@ Case details
             <div class="govuk-error-summary__body">
                 <ul class="govuk-list govuk-error-summary__list">
                     <li>
-                        <a href="#referrorarea">Enter an online case reference number that exactly matches the case details</a>
+                        <a href="#referrorarea">Enter a 16-digit HMCTS case reference number</a>
                     </li>
                 </ul>
             </div>
@@ -88,12 +88,9 @@ Case details
                     <label class="govuk-label govuk-!-font-weight-bold" for="hmctsref">
                         HMCTS case reference
                     </label>
-                    <div id="email-hint" class="govuk-hint">
-                        This must be 16 digits
-                    </div>
                     {% if  data.errorcasenumber == 'true' %}
                         <span id="refhin-error" class="govuk-error-message">
-                            <span class="govuk-visually-hidden">Error:</span> Enter an online case reference number that exactly matches the case details
+                            <span class="govuk-visually-hidden">Error:</span> Enter an HMCTS case reference number
                         </span>
                         <input class="govuk-input govuk-input--width-10 govuk-input--error" id="hmctsref" name="hmctsref" type="text" spellcheck="false" value="{{ data.hmctsref }}">
                     {% else %}
@@ -111,9 +108,9 @@ Case details
                         Other case reference
                     </label>
                     <div id="otherref-hint" class="govuk-hint">
-                        For example, Caseman, Familyman or solicitor's reference
+                        For example: Caseman, Familyman or solicitor's reference
                     </div>
-                    <input class="govuk-input govuk-input--width-10" id="otherref" name="otherref" type="text" spellcheck="false" >
+                    <input class="govuk-input govuk-input--width-10" id="otherref" name="otherref" type="text" spellcheck="false"  value="{{ data.otherref }}">
                 </div>
 
                 <div class="govuk-form-group">
@@ -121,9 +118,9 @@ Case details
                         Full name
                     </label>
                     <div id="names-hint" class="govuk-hint">
-                        For example, party, solicitor
+                        For example: name of a party or solicitor
                     </div>
-                    <input class="govuk-input govuk-input--width-20" id="names" name="names" type="text" spellcheck="false">
+                    <input class="govuk-input govuk-input--width-20" id="names" name="names" type="text" spellcheck="false"  value="{{ data.names }}">
                 </div>
 
                 {% if data.errorpostcodeinvalid == 'true' %}
@@ -132,11 +129,14 @@ Case details
                     <div class="govuk-form-group">
                 {% endif %}
                     <label class="govuk-label govuk-!-font-weight-bold" for="postcode">
-                        Postcode of party
+                        Postcode
                     </label>
+                    <div id="postcode-hint" class="govuk-hint">
+                        For a party only
+                    </div>
                     {% if data.errorpostcodeinvalid == 'true'   %}
                         <span id="postcodeareahint-error" class="govuk-error-message">
-                            <span class="govuk-visually-hidden">Error:</span> Enter a valid postcode
+                            <span class="govuk-visually-hidden">Error:</span> Enter a postcode, like AA1 1AA
                         </span>
                         <input class="govuk-input govuk-input--error" id="postcode" name="postcode" type="text" spellcheck="false" style="width: 120px;"   value="{{ data.postcode }}">
                     {% else %}
@@ -154,7 +154,7 @@ Case details
                     </label>
                     {% if data.erroremail == 'true'   %}
                         <span id="emailareahint-error" class="govuk-error-message">
-                            <span class="govuk-visually-hidden">Error:</span> Enter a valid email address
+                            <span class="govuk-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
                         </span>
                         <input class="govuk-input govuk-input--width-20 govuk-input--error" id="email" name="email" type="text" spellcheck="false" style=""   value="{{ data.email }}">
                     {% else %}
@@ -169,15 +169,15 @@ Case details
                     </label>
                     <select class="govuk-select govuk-input--width-10" id="service" name="service" onchange="myfunction()">
                         <option value="all">All</option>
-                        <option value="dddivorcet">Divorce</option>
-                        <option value="ddemployment">Employment</option>
-                        <option value="ddfinancialremedy">Financial Remedy</option>
-                        <option value="ddiac">Immigration and Asylum</option>
-                        <option value="ddmoneyclaims">Money claims</option>
+                        <option value="dddivorcet">Divorce</option>  <!-- DONE -->
+                        <option value="ddemployment">Employment</option> <!-- DONE - EMPTY - UNKNOWN -->
+                        <option value="ddfinancialremedy">Financial Remedy</option>  <!-- DONE - EMPTY -->
+                        <option value="ddiac">Immigration and Asylum</option>   <!-- DONE -->
+                        <option value="ddmoneyclaims">Money claims</option>   <!-- DONE -->
                         <option value="ddprobate">Probate</option>
-                        <option value="ddprivatelaw">Private law</option>
+                        <option value="ddprivatelaw">Private law</option> <!-- DONE - EMPTY - UNKNOWN -->
                         <option value="ddpubliclaw">Public law</option>
-                        <<option value="ddscss">Social Security and Child Support</option>
+                        <<option value="ddscss">Social Security and Child Support</option>   <!-- DONE -->
                     </select>
                 </div>
             </div>
@@ -198,37 +198,43 @@ Case details
                     </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="divorcecentre1" name="divorcecentre" type="radio" value="england">
+                            <input class="govuk-radios__input" id="divorcecentre0" name="divorcecentre" type="radio" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="divorcecentre0">
+                                All
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="divorcecentre1" name="divorcecentre" type="radio">
                             <label class="govuk-label govuk-radios__label" for="divorcecentre1">
                                 Bury St Edmunds
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="divorcecentre2" name="divorcecentre" type="radio" value="england">
+                            <input class="govuk-radios__input" id="divorcecentre2" name="divorcecentre" type="radio" >
                             <label class="govuk-label govuk-radios__label" for="divorcecentre2">
                                 North West Regional Divorce Unit (Liverpool)
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="divorcecentre3" name="divorcecentre" type="radio" value="england">
+                            <input class="govuk-radios__input" id="divorcecentre3" name="divorcecentre" type="radio" >
                             <label class="govuk-label govuk-radios__label" for="divorcecentre3">
                                 South West Regional Divorce Unit (Southampton)
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="divorcecentre4" name="divorcecentre" type="radio" value="england">
+                            <input class="govuk-radios__input" id="divorcecentre4" name="divorcecentre" type="radio" >
                             <label class="govuk-label govuk-radios__label" for="divorcecentre4">
                                 West Midlands Divorce Unit (Stoke)
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="divorcecentre5" name="divorcecentre" type="radio" value="england">
+                            <input class="govuk-radios__input" id="divorcecentre5" name="divorcecentre" type="radio" >
                             <label class="govuk-label govuk-radios__label" for="divorcecentre5">
                                 East Midlands Divorce Unit (Nottingham)
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="divorcecentre6" name="divorcecentre" type="radio" value="england">
+                            <input class="govuk-radios__input" id="divorcecentre6" name="divorcecentre" type="radio" >
                             <label class="govuk-label govuk-radios__label" for="divorcecentre6">
                                 Courts and Tribunals Service Centre
                             </label>
@@ -241,28 +247,28 @@ Case details
         </div>
 
         <!--  Money claims -->
-        <div class="govuk-details__text" id="moneyclaims" style="display: none;">
+        <div class="govuk-details__text  govuk-!-padding-bottom-0" id="moneyclaims" style="display: none;">
             <fieldset class="govuk-fieldset" role="group" >
-                <label class="govuk-label" for="account-number">
-                    Issued date
+                <label class="govuk-label  govuk-!-font-weight-bold" >
+                    Date the claim was issued
                 </label>
-                <div class="govuk-date-input" id="cmc-issued">
+                <div class="govuk-date-input" id="cmc-issued" >
                     <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
                             <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                                 Day
                             </label>
                             <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cmc-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                     <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
                             <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                                 Month
                             </label>
                             <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cmc-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                     <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
                             <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                                 Year
                             </label>
@@ -285,51 +291,127 @@ Case details
         <!--  Immigration and Asylum -->
         <div class="govuk-details__text" id="iac" style="display: none;">
 
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="account-number">
-                    Party  National Insurance number
-                </label>
-                <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
-            </div>
-
-            <!--   HEARING DATE   -->
+            <!--   DOB    -->
             <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                <label class="govuk-label" for="account-number">
-                    Hearing date
+                <label class="govuk-label govuk-!-font-weight-bold" >
+                    Date of birth
                 </label>
-                <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input" >
                     <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                                 Day
                             </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="iacdob-day" name="scssdob" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                     <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                                 Month
                             </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="iacdob-month" name="scssdob" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                     <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                                 Year
                             </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="iacdob-year" name="scssdob" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                     </div>
                 </div>
             </fieldset>
+
             <div class="govuk-form-group">
-                <label class="govuk-label" for="iaclocation">
-                    Location
-                </label>
-                <div id="iaclocation-hint" class="govuk-hint">
-                    For example, a region, cluster, court area, court or hearing centre
-                </div>
-                <input class="govuk-input govuk-input--width-10" id="iaclocation" name="iaclocation" type="text" >
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <label class="govuk-label govuk-!-font-weight-bold" >
+                            Hearing centre
+                        </label>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre0" name="iaccentre" type="radio" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre0">
+                                All
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre1" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre1">
+                                Birmingham
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre2" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre2">
+                                Bradford
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre3" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre3">
+                                Coventry Magistrates Court
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre4" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre4">
+                                Glasgow Tribunals Centre
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre5" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre5">
+                                Glasgow (eagle Building)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre6" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre6">
+                                Hatton Cross
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre7" name="iaccentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre7">
+                                Manchester
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre8" name="iaccentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre8">
+                                Newcastle Civil & family Couts and Tribunals Centre
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre9" name="iaccentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre9">
+                                Newport
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre10" name="iaccentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre10">
+                                North Shields
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre11" name="iaccentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre11">
+                                Nottingham Justic Centre
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre12" name="iaccentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre12">
+                                Taylor House
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
             </div>
+
         </div>
 
 
@@ -338,7 +420,7 @@ Case details
         <div class="govuk-details__text" id="probate" style="display: none;">
             <!--   DECISION DATE   -->
             <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                <label class="govuk-label" for="account-number">
+                <label class="govuk-label govuk-!-font-weight-bold">
                     Date of death
                 </label>
                 <div class="govuk-date-input" id="passport-issued">
@@ -365,6 +447,97 @@ Case details
                     </div>
                 </div>
             </fieldset>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <label class="govuk-label govuk-!-font-weight-bold" >
+                            Registry location
+                        </label>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre0" name="probatecentre" type="radio" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre0">
+                                All
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre1" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre1">
+                                Birmingham
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre2" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre2">
+                                Brighton
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre3" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre3">
+                                Bristol
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre4" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre4">
+                                Cardiff
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre5" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre5">
+                                CTSC
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre6" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre6">
+                                Leeds
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre7" name="probatecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre7">
+                                Liverpool
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre8" name="probatecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre8">
+                                London
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre9" name="probatecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre9">
+                                Manchester
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre10" name="probatecentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre10">
+                                Newcastle
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre11" name="probatecentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre11">
+                                Oxford
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre12" name="probatecentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre12">
+                                Winchester
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
         </div>
 
         <!--  PRIVATE LAW  -->
@@ -373,80 +546,45 @@ Case details
         </div>
 
         <!--  POUBLIC LAW  -->
-        <div id="publiclaw" style="display: none;">
-
+        <div  class="govuk-details__text" id="publiclaw" style="display: none;">
+            <div class="govuk-form-group" style="margin-bottom: 10px">
+                <label class="govuk-label govuk-!-font-weight-bold" for="service">
+                    Local authority
+                </label>
+                <select class="govuk-select govuk-input--width-10" id="localauth" name="localauth" >
+                    <option value="all">All</option>
+                    <option value="1">Cardiff Council</option>
+                    <option value="2">East Riding of Yorkshire Council</option>
+                    <option value="3">Knowsley Borough Council</option>
+                    <option value="4">Liverpool County Council</option>
+                    <option value="5">London Borough Hillingdon</option>
+                    <option value="6">North East Lincolnshire Council</option>
+                    <option value="7">North Lincolnshire Council</option>
+                    <option value="8">Portsmouth City Council</option>
+                    <option value="9">Reading Borough Council</option>
+                    <option value="10">Southampton City Council</option>
+                    <option value="11">Staffordshire County Council</option>
+                    <option value="12">Swansea City Council</option>
+                    <option value="13">Swindon Borough Council</option>
+                    <option value="14">Wiltshire Council</option>
+                </select>
             </div>
+        </div>
 
         <!--  SCSS -->
-        <div class="govuk-details__text" id="sscs" style="display: none; padding-top:20px; padding-bottom: 0px;">
+        <div class="govuk-details__text" id="sscs" style="display: none; padding-top:20px; ">
 
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <label class="govuk-label govuk-!-font-weight-bold" >
-                            Regional centre
-                        </label>
-                    </legend>
-                    <div class="govuk-radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="sscsecentre1" name="sscsecentre" type="radio" value="england">
-                            <label class="govuk-label govuk-radios__label" for="sscsecentre1">
-                                Birmingham (Midlands and South East)
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="sscsecentre2" name="sscsecentre" type="radio" value="england">
-                            <label class="govuk-label govuk-radios__label" for="sscsecentre2">
-                                Cardiff (South West and Wales)
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="sscsecentre3" name="sscsecentre" type="radio" value="england">
-                            <label class="govuk-label govuk-radios__label" for="sscsecentre3">
-                                Glasgow (Scotland)
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="sscsecentre4" name="sscsecentre" type="radio" value="england">
-                            <label class="govuk-label govuk-radios__label" for="sscsecentre4">
-                                Leeds (North East)
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="sscsecentre5" name="sscsecentre" type="radio" value="england">
-                            <label class="govuk-label govuk-radios__label" for="sscsecentre5">
-                                Liverpool (North West)
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="sscsecentre6" name="sscsecentre" type="radio" value="england">
-                            <label class="govuk-label govuk-radios__label" for="sscsecentre6">
-                                Newcastle (North East)
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="sscsecentre7" name="sscsecentre" type="radio" value="england">
-                        <label class="govuk-label govuk-radios__label" for="sscsecentre7">
-                            Sutton (London)
-                        </label>
-                    </div>
-                    </div>
-
-                </fieldset>
-            </div>
-
-
-            <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-weight-bold" for="account-number">
-                    Party  National Insurance number
+                <label class="govuk-label govuk-!-font-weight-bold" >
+                    National Insurance number
                 </label>
                 <input class="govuk-input govuk-input--width-10" id="ni-number" name="ni-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
             </div>
 
 
-            <!--   DECISION BIRHT   -->
+            <!--   DOB    -->
             <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                <label class="govuk-label govuk-!-font-weight-bold" for="account-number">
+                <label class="govuk-label govuk-!-font-weight-bold" >
                     Date of birth
                 </label>
                 <div class="govuk-date-input" id="passport-issued">
@@ -473,6 +611,67 @@ Case details
                     </div>
                 </div>
             </fieldset>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <label class="govuk-label govuk-!-font-weight-bold" >
+                            Regional centre
+                        </label>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre0" name="sscsecentre" type="radio" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre0">
+                                All
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre1" name="sscsecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre1">
+                                Birmingham (Midlands and South East)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre2" name="sscsecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre2">
+                                Cardiff (South West and Wales)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre3" name="sscsecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre3">
+                                Glasgow (Scotland)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre4" name="sscsecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre4">
+                                Leeds (North East)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre5" name="sscsecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre5">
+                                Liverpool (North West)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre6" name="sscsecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre6">
+                                Newcastle (North East)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre7" name="sscsecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre7">
+                                Sutton (London)
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
         </div>
 
 

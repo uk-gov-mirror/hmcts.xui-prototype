@@ -30,7 +30,20 @@ router.post('/v3/cases/method', function (req, res) {
 
 //  CASE SEARCH
 // Start new search
+router.get( '/searchcases/pages/startsearch', function (req, res)
+{
+    req.session.data['errorcasenumber'] = 'false';
+    req.session.data['errorpostcodeinvalid'] = 'false';
+    req.session.data['erroremail'] = 'false';
 
+    req.session.data['hmctsref'] = '';
+    req.session.data['otherref'] = '';
+    req.session.data['names'] = '';
+    req.session.data['postcode'] = '';
+    req.session.data['email'] = '';
+
+    res.redirect('/searchcases/pages/search');
+})
 
 // If the user enters a ccd reference number then take them directly to the case
 router.post( '/searchcases/pages/search', function (req, res)
