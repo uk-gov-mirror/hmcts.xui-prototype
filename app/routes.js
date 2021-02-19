@@ -28,14 +28,53 @@ router.post('/v3/cases/method', function (req, res) {
 // If the user enters a ccd reference number then take them directly to the case
 router.post( '/searchcases/pages/search', function (req, res)
 {
+    // Set the error state to normal
     req.session.data['errorcasenumber'] = 'false';
+    req.session.data['errorpostcodeinvalid'] = 'false';
+    req.session.data['erroremail'] = 'false';
+
+    // Check if the user has entered an HMCTS reference
     if(req.session.data['hmctsref'] == '')
     {
+        //If no reference is entered then we make one up for them
         req.session.casereference = '8771785741275065';
+
+        // If a postcode is entered we validate against it
+        if(req.session.data['postcode'] != '')
+        {
+            if (req.session.data['postcode'].length < 6  ||  9 < req.session.data['postcode'].length)
+            {
+                req.session.data['errorpostcodeinvalid'] = 'true';
+                res.redirect('/searchcases/pages/search');
+            }
+            else
+            {
+                // Postcode is valid so continue to results
+            }
+        }
+
+        // If a postcode is entered we validate against it
+        if(req.session.data['email'] != '')
+        {
+            //console.log( "content is " + req.session.data['email'].includes("@"));
+
+            // Check email contains correct symbols
+            if( req.session.data['email'].includes("@") == false )
+            {
+                req.session.data['erroremail'] = 'true';
+                res.redirect('/searchcases/pages/search');
+            }
+            else
+            {
+                // email is valid so continue to results
+            }
+        }
+
         res.redirect('/searchcases/pages/results');
     }
     else
     {
+        // if the hmcts reference is too short or too long them reload the page with an exception
         if(req.session.data['hmctsref'].length < 16  ||  20 < req.session.data['hmctsref'].length )
         {
             req.session.data['errorcasenumber'] = 'true';
@@ -44,10 +83,10 @@ router.post( '/searchcases/pages/search', function (req, res)
         }
         else
         {
+            // if the hmcts reference is valid then go straight to the case
             req.session.data['casereference'] = req.session.data['hmctsref'];
             res.redirect('/searchcases/pages/casedetailsdivorce');
         }
-
     }
 })
 
