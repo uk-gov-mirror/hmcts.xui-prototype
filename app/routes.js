@@ -48,6 +48,9 @@ router.get( '/searchcases/pages/startsearch', function (req, res)
 // If the user enters a ccd reference number then take them directly to the case
 router.post( '/searchcases/pages/search', function (req, res)
 {
+    // set results to show normal amount, NOT 'many results'
+    req.session.data['results'] = 'few';
+
     // Set the error state to normal
     req.session.data['errorcasenumber'] = 'false';
     req.session.data['errorpostcodeinvalid'] = 'false';
@@ -57,7 +60,7 @@ router.post( '/searchcases/pages/search', function (req, res)
     if(req.session.data['hmctsref'] == '')
     {
         //If no reference is entered then we make one up for them
-        req.session.casereference = '8771785741275065';
+        req.session.data['casereference'] = '8771785741275065';
 
         // If a postcode is entered we validate against it
         if(req.session.data['postcode'] != '')
