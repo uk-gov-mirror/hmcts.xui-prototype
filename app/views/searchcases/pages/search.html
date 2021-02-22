@@ -58,6 +58,21 @@ Case details
         </div>
     {% endif %}
 
+    {% if data.errorallfieldsempty == 'true' %}
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                        <p style="font-weight:700; color: #b10e1e;">Enter information in at least one field</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+
 
     <div class="hmcts-page-heading">
           <div class="hmcts-page-heading__title">
@@ -101,14 +116,14 @@ Case details
                 </div>
             </div>
 
-            <div style="width: 500px;">
+            <div style="width: 750px;">
 
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-!-font-weight-bold" for="otherref">
-                        Other case reference
+                        Other reference
                     </label>
                     <div id="otherref-hint" class="govuk-hint">
-                        For example: Caseman, Familyman or solicitor's reference
+                        For example: Caseman, Familyman, solicitor's reference or National Insurance number
                     </div>
                     <input class="govuk-input govuk-input--width-10" id="otherref" name="otherref" type="text" spellcheck="false"  value="{{ data.otherref }}">
                 </div>
@@ -131,9 +146,10 @@ Case details
                     <label class="govuk-label govuk-!-font-weight-bold" for="postcode">
                         Postcode
                     </label>
+                        <!--
                     <div id="postcode-hint" class="govuk-hint">
                         For a party only
-                    </div>
+                    </div> -->
                     {% if data.errorpostcodeinvalid == 'true'   %}
                         <span id="postcodeareahint-error" class="govuk-error-message">
                             <span class="govuk-visually-hidden">Error:</span> Enter a postcode, like AA1 1AA
@@ -246,7 +262,7 @@ Case details
 
         </div>
 
-        <!--  Money claims -->
+        <!--  Money claims - Marc says this isn't needed -->
         <div class="govuk-details__text  govuk-!-padding-bottom-0" id="moneyclaims" style="display: none;">
             <fieldset class="govuk-fieldset" role="group" >
                 <label class="govuk-label  govuk-!-font-weight-bold" >
@@ -286,7 +302,7 @@ Case details
         <!--  FINANCIAL REMEDY  -->
         <div class="govuk-details__text" id="financialremedy" style="display: none;">
 
-            </div>
+        </div>
 
         <!--  Immigration and Asylum -->
         <div class="govuk-details__text" id="iac" style="display: none;">
@@ -574,13 +590,14 @@ Case details
         <!--  SCSS -->
         <div class="govuk-details__text" id="sscs" style="display: none; padding-top:20px; ">
 
+            <!--
             <div class="govuk-form-group">
                 <label class="govuk-label govuk-!-font-weight-bold" >
                     National Insurance number
                 </label>
                 <input class="govuk-input govuk-input--width-10" id="ni-number" name="ni-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
             </div>
-
+            -->
 
             <!--   DOB    -->
             <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -737,16 +754,19 @@ Case details
         <option value=""
         >Select error states</option>
 
-        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&"
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&"
         >No errors</option>
 
-        <option value="errorcasenumber=true&errorpostcodeinvalid=false&erroremail=false&"
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=true&"
+        >Nothing entered error</option>
+
+        <option value="errorcasenumber=true&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&"
         >Reference error</option>
 
-        <option value="errorcasenumber=false&errorpostcodeinvalid=true&erroremail=false&"
+        <option value="errorcasenumber=false&errorpostcodeinvalid=true&erroremail=false&errorallfieldsempty=false&"
         >Postcode error</option>
 
-        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=true&"
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=true&errorallfieldsempty=false&"
         >Email error</option>
 
     </select>
@@ -783,9 +803,9 @@ Case details
                 //document.getElementById("employment").style.display = "block";
             }
 
-            if ( document.getElementById("service").value == 'ddmoneyclaims')
+            if ( document.getElementById("service").value == 'ddfinancialremedy')
             {
-                document.getElementById("financialremedy").style.display = "block";
+                //document.getElementById("financialremedy").style.display = "block";
             }
 
             if ( document.getElementById("service").value == 'ddiac')
@@ -795,7 +815,8 @@ Case details
 
             if ( document.getElementById("service").value == 'ddmoneyclaims')
             {
-                document.getElementById("moneyclaims").style.display = "block";
+                // Marc says this isn't needed
+                //document.getElementById("moneyclaims").style.display = "block";
             }
 
             if ( document.getElementById("service").value == 'ddprobate')

@@ -35,6 +35,7 @@ router.get( '/searchcases/pages/startsearch', function (req, res)
     req.session.data['errorcasenumber'] = 'false';
     req.session.data['errorpostcodeinvalid'] = 'false';
     req.session.data['erroremail'] = 'false';
+    req.session.data['errorallfieldsempty'] = 'false';
 
     req.session.data['hmctsref'] = '';
     req.session.data['otherref'] = '';
