@@ -48,6 +48,29 @@ a.hmcts-search-toggle__button {
 
 
 
+.xui-alert-link__text {
+  text-decoration: underline;
+  display: inline-block;
+  margin-right: govuk-spacing(1);
+}
+
+.xui-alert-link__number {
+  @include govuk-font($size: 16, $line-height: 25px);
+  border-radius: 50%;
+  background-color: #1d70b8;
+  color: govuk-colour('white');
+  font-weight: bold;
+  width: 25px;
+  height: 25px;
+  margin-left: govuk-spacing(1);
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+
+
+
 // close button for banner messages
 
 #close-banner {
