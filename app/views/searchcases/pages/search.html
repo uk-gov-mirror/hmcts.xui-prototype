@@ -105,7 +105,7 @@ Case details
                     </label>
                     {% if  data.errorcasenumber == 'true' %}
                         <span id="refhin-error" class="govuk-error-message">
-                            <span class="govuk-visually-hidden">Error:</span> Enter an HMCTS case reference number
+                            <span class="govuk-visually-hidden">Error:</span> Enter a 16-digit HMCTS case reference number
                         </span>
                         <input class="govuk-input govuk-input--width-10 govuk-input--error" id="hmctsref" name="hmctsref" type="text" spellcheck="false" value="{{ data.hmctsref }}">
                     {% else %}
