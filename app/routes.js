@@ -116,6 +116,27 @@ router.post( '/searchcases/pages/search', function (req, res)
 
 
 
+// Go directly to a case
+router.get( '/opencase', function (req, res)
+{
+    req.session.data['errorcasenumber'] = 'false';
+    req.session.data['errorpostcodeinvalid'] = 'false';
+    req.session.data['erroremail'] = 'false';
+    req.session.data['errorallfieldsempty'] = 'false';
+
+    req.session.data['hmctsref'] = '';
+    req.session.data['otherref'] = '';
+    req.session.data['names'] = '';
+    req.session.data['postcode'] = '';
+    req.session.data['email'] = '';
+
+    req.session.data['casereference'] = '8771785741275065';
+
+    res.redirect('/searchcases/pages/casedetailsdivorce');
+})
+
+
+
 
 
 
