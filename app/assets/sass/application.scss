@@ -178,12 +178,16 @@ a.hmcts-search-toggle__button {
   float: right;
 }
 
-
-
 .hmcts-badge--orange {
   border-color: govuk-colour("orange");
   color: govuk-colour("orange");
 }
+
+.hmcts-badge--black {
+  border-color: govuk-colour("black");
+  color: govuk-colour("black");
+}
+
 
 .govuk-tabs__list {
   margin: 0;

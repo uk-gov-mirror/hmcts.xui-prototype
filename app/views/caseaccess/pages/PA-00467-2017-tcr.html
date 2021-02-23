@@ -7,6 +7,7 @@
 Case details
 {% endblock %}
 {% block content %}
+
 <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
   <div class="" style="display: flex; justify-content: space-between; ">
     <div>
@@ -45,7 +46,7 @@ Case details
         </a>
       </li>
       <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-        <a class="govuk-tabs__tab" href="#">
+        <a class="govuk-tabs__tab" href="#c">
           Overview
         </a>
       </li>
@@ -87,18 +88,53 @@ Case details
     </ul>
     <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
       <div >
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-              {{ govukPanel({
-                titleText: "Access denied"
-              }) }}
-              <h2 class="govuk-heading-m">What happens next</h2>
-              <p class="govuk-body">
-                The requester has been denied access to this case.
-              </p>
-              <p class="govuk-body">
-                <a href="/caseaccess/pages/PA-00467-2017-tcr" class="govuk-link">Back to tasks</a>.
-              </p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l  govuk-!-margin-bottom-2">Tasks</h2>
+          <p></p>
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">1. Review application decision <span class="hmcts-badge hmcts-badge--green hmcts-badge_right">14 Feb</span></caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Assigned to</th>
+                <td class="govuk-table__cell">Judge Beech</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Manage</th>
+                <td class="govuk-table__cell"><a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a> <a href="">Refer a task</a> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <!--
+          <h2 class="govuk-heading-m  govuk-!-margin-bottom-4">Task history</h2>
+            <div class="hmcts-timeline">
+                <div class="hmcts-timeline__item">
+                  <div class="hmcts-timeline__header">
+                    <h3 class="hmcts-timeline__title"><a href="#">Case reasssigned to you</a></h3>
+                      <p class="hmcts-timeline__by">by Jane Doe, court administrator</p>
+                  </div>
+                  <p class="hmcts-timeline__date"><time datetime="2018-09-14T09:38:00.000Z">Fri 14 Sep 2018 at 9:38am</time></p>
+                </div>
+                <div class="hmcts-timeline__item">
+                  <div class="hmcts-timeline__header">
+                    <h3 class="hmcts-timeline__title"><a href="#">Approved consent order uploaded</a></h3>
+                      <p class="hmcts-timeline__by">by Simon Saint, court administrator</p>
+                  </div>
+                  <p class="hmcts-timeline__date"><time datetime="2018-09-12T09:38:00.000Z">Wed 12 Sep 2018 at 9:38am</time></p>
+                </div>
+                <div class="hmcts-timeline__item">
+                  <div class="hmcts-timeline__header">
+                    <h3 class="hmcts-timeline__title"><a href="#">Consent order approved</a></h3>
+                      <p class="hmcts-timeline__by">by DJ Nightingale</p>
+                  </div>
+                  <p class="hmcts-timeline__date"><time datetime="2018-09-11T16:15:00.000Z">Tue 11 Sep 2018 at 4:15pm</time></p>
+                </div>
             </div>
-          </div>
+            <p><a href="#">View full timeline</a></p>
+            -->
+        </div>
+      </div>
+</div>
 {% endblock %}
