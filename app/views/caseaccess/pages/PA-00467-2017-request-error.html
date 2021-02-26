@@ -7,6 +7,18 @@
 Case details
 {% endblock %}
 {% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#passport-issued-error">Enter more detail</a>
+      </li>
+    </ul>
+  </div>
+</div>
 <div class="hmcts-banner">
   <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
     <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
@@ -28,8 +40,11 @@ Specific access.<br>Access requires manual authorisation. Access to this case is
             isPageHeading: true
           },
           hint: {
-            text: "Access requires manual authorisation. You must provide a reason."
-          }
+            text: "Access will be granted until midnight tonight. You must provide a reason."
+          },
+  errorMessage: {
+    text: "Enter more detail"
+  }
         }) }}
     {{ govukButton({
   text: "Submit",
