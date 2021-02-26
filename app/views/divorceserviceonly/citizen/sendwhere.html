@@ -36,7 +36,7 @@ Case details
                 </div>
 
 
-                <p>If your [wife/husband] has given you a specific address for you to send their divorce papers to, you must use that address.</p>
+                <p>If your [wife/husband] has given you a specific address to send their divorce papers to, you must use that address.</p>
 
                 <form
                     name="aspnetForm"
@@ -48,7 +48,7 @@ Case details
                     {% if data.errornotselected == 'true' %}
                         <div class="govuk-form-group  govuk-form-group--error" id="optionsarea">
                             <span  class="govuk-error-message">
-                                <span class="govuk-visually-hidden">Error:</span> Select one option
+                                <span class="govuk-visually-hidden">Error:</span> You must select an option
                             </span>
                     {% else %}
                         <div class="govuk-form-group">
@@ -76,19 +76,19 @@ Case details
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" onclick="hideshow(2)">
                                     <label class="govuk-label govuk-radios__label" for="contact-2">
-                                        Their solicitor
+                                        Their solicitor’s address
                                     </label>
                                 </div>
                                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-2">
                                     <div class="govuk-form-group">
-                                        <p><br>You'll need to know the solicitor's name, firm, address and email.<br><br></p>
+                                        <p><br>You'll need to know the solicitor's name, firm, full address and email.<br><br></p>
                                     </div>
                                 </div>
 
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" onclick="hideshow(3)">
                                     <label class="govuk-label govuk-radios__label" for="contact-3">
-                                        A different address
+                                        Another address
                                     </label>
                                 </div>
                             </div>

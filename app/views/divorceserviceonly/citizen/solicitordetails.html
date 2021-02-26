@@ -24,10 +24,10 @@ Case details
                                     <a href="#optionsarea">Enter the firm's name</a>
                                 </li>
                                 <li>
-                                    <a href="#optionsarea">Enter the solicitors name</a>
+                                    <a href="#optionsarea">Enter the solicitor's name</a>
                                 </li>
                                 <li>
-                                    <a href="#optionsarea">Enter the firm name and address</a>
+                                    <a href="#optionsarea">Enter the firm's name and address</a>
                                 </li>
                             </ul>
                         </div>
@@ -156,9 +156,9 @@ Case details
                         <div style="width:660px;">
                             <p>There are no results for the firm you entered.</p>
 
-                            <p>This may be due to the firm not being registered online with HMCTS</p>
+                            <p>This may be because the firm is not registered online with HMCTS.</p>
 
-                            <p>You can search again with different spelling or enter the details manually.</p>
+                            <p>You can check the spelling and search again, or enter the details manually.</p>
 
                             <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="; margin-top: 5px;" onclick="manualentryfields()">
                                 Enter details manually
@@ -181,7 +181,7 @@ Case details
 
                     <div class="govuk-form-group" style="width:  400px;">
                         <label class="govuk-label govuk-!-font-weight-bold" for="email">
-                            Solicitors email address (optional)
+                            Solicitor’s email address (optional)
                         </label>
                         <input class="govuk-input" id="email" name="email" type="text" spellcheck="false" aria-describedby="email-hint" autocomplete="">
                     </div>
@@ -203,7 +203,7 @@ Case details
                         </label>
                         {% if data.validaton == 'true' %}
                             <span  class="govuk-error-message">
-                                <span class="govuk-visually-hidden">Error:</span> Enter the solicitors name
+                                <span class="govuk-visually-hidden">Error:</span> Enter the solicitor's name
                             </span>
                         {% endif %}
                         <input class="govuk-input" id="name" name="text" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="">
@@ -211,7 +211,7 @@ Case details
 
                     <div class="govuk-form-group" style="width:  400px;">
                         <label class="govuk-label  govuk-!-font-weight-bold" for="email">
-                            Solicitors email address (optional)
+                            Solicitor’s email address (optional)
                         </label>
                         <input class="govuk-input" id="email" name="text" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="">
                     </div>
@@ -223,11 +223,11 @@ Case details
                         <div class="govuk-form-group" style="width:  400px;">
                     {% endif %}
                         <label class="govuk-label  govuk-!-font-weight-bold" for="email">
-                            Solicitors firm and address
+                            Solicitor’s firm and address
                         </label>
                         {% if data.validaton == 'true' %}
                             <span  class="govuk-error-message">
-                                <span class="govuk-visually-hidden">Error:</span> Enter the firm name and address
+                                <span class="govuk-visually-hidden">Error:</span> Enter the firm's name and address
                             </span>
                         {% endif %}
                         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
