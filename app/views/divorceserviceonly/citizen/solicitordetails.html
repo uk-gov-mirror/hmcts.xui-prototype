@@ -13,7 +13,7 @@ Case details
             <div class="govuk-grid-column-two-thirds">
 
 
-                {% if data.errornotselected == 'true' %}
+                {% if data.validaton == 'true' %}
                     <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
                         <h2 class="govuk-error-summary__title" id="error-summary-title">
                             There is a problem
@@ -21,7 +21,13 @@ Case details
                         <div class="govuk-error-summary__body">
                             <ul class="govuk-list govuk-error-summary__list">
                                 <li>
-                                    <a href="#optionsarea">You must select an option</a>
+                                    <a href="#optionsarea">Enter the firm's name</a>
+                                </li>
+                                <li>
+                                    <a href="#optionsarea">Enter the solicitors name</a>
+                                </li>
+                                <li>
+                                    <a href="#optionsarea">Enter the firm name and address</a>
                                 </li>
                             </ul>
                         </div>
@@ -36,11 +42,21 @@ Case details
                 </div>
 
 
-                <div class="govuk-form-group">
+                {% if data.validaton == 'true' %}
+                    <div class="govuk-form-group  govuk-form-group--error" id="optionsarea">
+                {% else %}
+                    <div class="govuk-form-group">
+                {% endif %}
                     <div >
-                            <label class="govuk-label govuk-label--s" for="event-name">
-                                Enter the name of their solicitor's firm
-                            </label>
+                        <label class="govuk-label govuk-label--s" for="event-name">
+                            Enter the name of their solicitor's firm
+                        </label>
+                        {% if data.validaton == 'true' %}
+                            <span  class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> Enter the firm's name
+                            </span>
+                        {% endif %}
+
                         <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
                     </div>
                     <button class="govuk-button govuk-!-margin-bottom-1 govuk-!-margin-top-1" data-module="govuk-button" onclick="showresults()">
@@ -172,12 +188,24 @@ Case details
 
                 </div>
 
-
-                <div id="manualdetails" style="display: none;">
-                    <div class="govuk-form-group" style="width:  400px;">
+                {% if data.validaton == 'true' %}
+                    <div id="manualdetails" style="display: block;">
+                {% else %}
+                    <div id="manualdetails" style="display: none;">
+                {% endif %}
+                    {% if data.validaton == 'true' %}
+                        <div class="govuk-form-group  govuk-form-group--error" style="width:  400px;">
+                    {% else %}
+                        <div class="govuk-form-group" style="width:  400px;">
+                    {% endif %}
                         <label class="govuk-label govuk-!-font-weight-bold" for="email">
                             Solicitor's name
                         </label>
+                        {% if data.validaton == 'true' %}
+                            <span  class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> Enter the solicitors name
+                            </span>
+                        {% endif %}
                         <input class="govuk-input" id="name" name="text" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="">
                     </div>
 
@@ -188,10 +216,20 @@ Case details
                         <input class="govuk-input" id="email" name="text" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="">
                     </div>
 
-                    <div class="govuk-form-group" style="width:  400px;">
+
+                    {% if data.validaton == 'true' %}
+                        <div class="govuk-form-group  govuk-form-group--error" style="width:  400px;">
+                    {% else %}
+                        <div class="govuk-form-group" style="width:  400px;">
+                    {% endif %}
                         <label class="govuk-label  govuk-!-font-weight-bold" for="email">
                             Solicitors firm and address
                         </label>
+                        {% if data.validaton == 'true' %}
+                            <span  class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> Enter the firm name and address
+                            </span>
+                        {% endif %}
                         <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
                     </div>
 
@@ -204,7 +242,7 @@ Case details
                     Continue
                 </button>
 
-                <p><a href="sendwhere.html">Back</a></p>
+                <p><a href="sendwhere?errornotselected=false&">Back</a></p>
 
 
             </div>
@@ -217,13 +255,17 @@ Case details
     <p style="margin-bottom: 5px;">Results states</p>
     <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
-        <option value="noresults=true&"
+        <option value="noresults=false&validaton=false&"
                 {% if data.noresults != 'true' %}selected{% endif %}
         >Default </option>
 
-        <option value="noresults=true&"
+        <option value="noresults=true&validaton=false&"
                 {% if data.noresults == 'true'  %}selected{% endif %}
         >No results</option>
+
+        <option value="noresults=false&validaton=true&"
+                {% if data.validaton == 'true'  %}selected{% endif %}
+        >All validation errors</option>
 
 
     </select>
