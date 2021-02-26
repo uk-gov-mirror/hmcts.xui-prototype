@@ -1,0 +1,202 @@
+{% extends "../layoutdivorcelive.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="govuk-width-container" style="width:1000px">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+
+                {% if data.errornotselected == 'true' %}
+                    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            There is a problem
+                        </h2>
+                        <div class="govuk-error-summary__body">
+                            <ul class="govuk-list govuk-error-summary__list">
+                                <li>
+                                    <a href="#optionsarea">You must select an option</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+
+
+                <div class="hmcts-page-heading">
+                      <div class="hmcts-page-heading__title">
+                           <h1 class="govuk-heading-l">Where should your [wife's/husband's] divorce papers be sent?</h1>
+                      </div>
+                </div>
+
+
+                <p>If your [wife/husband] has given you a specific address for you to send their divorce papers to, you must use that address.</p>
+
+                <form
+                    name="aspnetForm"
+                    method="post"
+                    id="aspnetForm"
+                    autocomplete="off">
+
+
+                    {% if data.errornotselected == 'true' %}
+                        <div class="govuk-form-group  govuk-form-group--error" id="optionsarea">
+                            <span  class="govuk-error-message">
+                                <span class="govuk-visually-hidden">Error:</span> Select one option
+                            </span>
+                    {% else %}
+                        <div class="govuk-form-group">
+                    {% endif %}
+                        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" onclick="hideshow(1)">
+                                    <label class="govuk-label govuk-radios__label" for="contact">
+                                        Their address
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-1">
+                                    <div class="govuk-form-group">
+                                        <p><br>123 Dean Street<br>
+                                           Soho<br>
+                                           London<br>
+                                           WC13 7HW<br>
+                                           <br>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" onclick="hideshow(2)">
+                                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                                        Their solicitor
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-2">
+                                    <div class="govuk-form-group">
+                                        <p><br>You'll need to know the solicitors name, address and email.<br><br></p>
+                                    </div>
+                                </div>
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" onclick="hideshow(3)">
+                                    <label class="govuk-label govuk-radios__label" for="contact-3">
+                                        A different address
+                                    </label>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </div>
+
+                </form>
+
+                    <!--  NEXT PAGE  CHNAGING BASED ON SELECTION  -->
+
+                    <!--  NO SELECTION -->
+                        <a href="/divorceserviceonly/citizen/sendwhere?errornotselected=true&" style="display: block" id="link0">
+                            <button class="govuk-button" data-module="govuk-button">
+                                Continue
+                            </button>
+                        </a>
+
+                    <!--  Selected entered address -->
+                        <a href="#" style="display: none" id="link1">
+                            <button class="govuk-button" data-module="govuk-button">
+                                Continue
+                            </button>
+                        </a>
+
+                    <!--  Selected solicitor -->
+                        <a href="/divorceserviceonly/citizen/#" style="display: none" id="link2">
+                            <button class="govuk-button" data-module="govuk-button">
+                                Continue
+                            </button>
+                        </a>
+
+                    <!--  Selected solicitor -->
+                    <a href="/divorceserviceonly/citizen/enteraddress" style="display: none" id="link3">
+                        <button class="govuk-button" data-module="govuk-button">
+                            Continue
+                        </button>
+                    </a>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+    <p style="margin-bottom: 5px;">Error states</p>
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+        <option value="errornotselected=false&"
+                {% if data.errornotselected != 'true' %}selected{% endif %}
+        >Default - no error</option>
+
+        <option value="errornotselected=true&"
+                {% if data.errornotselected == 'true'  %}selected{% endif %}
+        >Error: not selected</option>
+
+
+    </select>
+</form>
+
+
+
+{% block scripts %}
+
+<script>
+
+    function hideshow(x)
+    {
+
+        //alert( " dasdf    "  +  document.getElementById("service").value  );
+        document.getElementById("link0").style.display = "none";
+
+        if ( x == 1 )
+        {
+            document.getElementById("conditional-1").style.display = "block";
+            document.getElementById("conditional-2").style.display = "none";
+            document.getElementById("link1").style.display = "block";
+            document.getElementById("link2").style.display = "none";
+            document.getElementById("link3").style.display = "none";
+        }
+
+        else if ( x == 2 )
+        {
+            document.getElementById("conditional-2").style.display = "block";
+            document.getElementById("conditional-1").style.display = "none";
+            document.getElementById("link1").style.display = "none";
+            document.getElementById("link2").style.display = "block";
+            document.getElementById("link3").style.display = "none";
+        }
+
+        else if ( x == 3 )
+        {
+            document.getElementById("conditional-1").style.display = "none";
+            document.getElementById("conditional-2").style.display = "none";
+            document.getElementById("link1").style.display = "none";
+            document.getElementById("link2").style.display = "none";
+            document.getElementById("link3").style.display = "block";
+        }
+
+    }
+
+</script>
+
+
+{% endblock %}
+
+{% endblock %}
