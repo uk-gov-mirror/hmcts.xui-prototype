@@ -1,3 +1,4 @@
+
 {% if  data.usertype == 'judiciary'   %}
     {% extends "../layoutjudicial.html" %}
 {% else %}
@@ -129,13 +130,13 @@ Reason A          </tr>
         </legend>
         <div class="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live" name="bob" type="radio" value="/caseaccess/pages/PA-00467-2017-tra">
+            <input class="govuk-radios__input" id="where-do-you-live" name="bob" type="radio" value="/caseaccess/pages/PA-00467-2017-tra-case">
             <label class="govuk-label govuk-radios__label" for="where-do-you-live">
               Approve request
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live-2" name="bob" type="radio" value="/caseaccess/pages/PA-00467-2017-trr">
+            <input class="govuk-radios__input" id="where-do-you-live-2" name="bob" type="radio" value="/caseaccess/pages/PA-00467-2017-trr-case">
             <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
               Reject request
             </label>
@@ -150,10 +151,10 @@ Reason A          </tr>
   }) }}
   {{ govukButton({
     text: "Cancel and unassign task",
-    href: "/caseaccess/pages/available-tasks-s2o",
+    href: "/caseaccess/pages/PA-00467-2017-t",
     classes: "govuk-button--secondary"
   }) }}
-  
+
 </div>
 </form>
 <script type="text/javascript">

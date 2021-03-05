@@ -1,0 +1,124 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<!-- <div class="hmcts-banner">
+  <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+  C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+  </svg>
+  <div class="hmcts-banner__message">
+    <span class="hmcts-banner__assistive">information</span>
+    This case is a lead case blurb ...
+  </div>
+</div> -->
+<div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+  <div class="" style="display: flex; justify-content: space-between; ">
+    <div>
+      <span class="govuk-caption-xl">Class action appeal</span>
+<h1 class="govuk-heading-xl">#9920-3119-0034-0101</h1>
+
+    </div>
+    <div style="display: flex; align-items:right">
+      <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+      <select class="govuk-select" id="sort" name="sort" onchange="document.location.href=this.value">
+        <option value="#" selected="">Select action</option>
+        <option value="#">Submit amended application</option>
+        <option value="#">Link respondent</option>
+        <option value="#">Add Note</option>
+        <option value="#">Upload document</option>
+        <option value="/complexcase/pages/PA-00467-2017-create"">Create complex case</option>
+        <option value="#">Stop representing a client</option>
+      </select>
+      <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+          Go
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+
+
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-l">
+          Summary
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-e">
+          Event history
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-cd">
+          Case details
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-r">
+          Related cases
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-p">
+          Parties
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-h">
+          Hearings
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-n">
+          Notifications
+        </a>
+      </li>
+    </ul>
+    <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+      <div>
+        <h2 class="govuk-heading-l">Summary</h2>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table">
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header" style="width: 200px;" >Case name</th>
+      <td class="govuk-table__cell">Supercard Vs Financial Ombudsman Service</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Case owner</th>
+      <td class="govuk-table__cell">Janet Worsley</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Case creation date</th>
+      <td class="govuk-table__cell">03 March 2021</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Case description</th>
+      <td class="govuk-table__cell">Consumer class-action suit</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Case comments</th>
+      <td class="govuk-table__cell">Based on a 2007 legal finding by the European Commission, which found Supercard imposed unfair fees on all transactions made using its card network between May 1992 and December 2007.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

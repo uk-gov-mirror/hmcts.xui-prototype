@@ -17,27 +17,28 @@ My work
   text: "Filter my work",
   classes: "govuk-button--secondary"
 }) }}
-    <div class="hmcts-scrollable-pane">
-      <div class="hmcts-scrollable-pane__wrapper">
-        <nav class="hmcts-sub-navigation">
-          <ul class="hmcts-sub-navigation__list">
-            <li class="hmcts-sub-navigation__item">
-              <a class="hmcts-sub-navigation__link" href="#">
-                My tasks
-              </a>
-            </li>
-            <li class="hmcts-sub-navigation__item">
-              <a class="hmcts-sub-navigation__link" href="#">
-                Available tasks
-              </a>
-            </li>
-            <li class="hmcts-sub-navigation__item">
-              <a class="hmcts-sub-navigation__link" aria-current="page"  href="mycases-r">
-                My cases <!-- <span class="xui-alert-link__number"> 1 </span> -->
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <div class="hmcts-scrollable-pane">
+          <div class="hmcts-scrollable-pane__wrapper">
+            <nav class="hmcts-sub-navigation">
+              <ul class="hmcts-sub-navigation__list">
+                <li class="hmcts-sub-navigation__item">
+                  <a class="hmcts-sub-navigation__link"  href="mywork-c">
+                    My tasks
+                  </a>
+                </li>
+                <li class="hmcts-sub-navigation__item">
+                  <a class="hmcts-sub-navigation__link" href="available-tasks-c">
+                    Available tasks
+                  </a>
+                </li>
+                <li class="hmcts-sub-navigation__item">
+                  <a class="hmcts-sub-navigation__link" aria-current="page" href="mycases-c">
+                    My cases
+                  </a>
+                </li>
+              </ul>
+            </nav
+</div>
         <table class="govuk-table ">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
@@ -74,17 +75,7 @@ My work
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                   <!--   <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td> -->
                     <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
-
                 </tr>
-                  <tr class="govuk-table__row">
-                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="PA-00321-2018-a">Robert Saddlebrook</a></td>
-                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
-                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Challenged</td>
-                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">14 Mar 2021</td>
-                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">14 Apr 2021</td>
-                  <td class="govuk-table__cell"><a href="PA-00321-2018-a" class="right_">Go to case</a></td>
-                  </tr>
                   <tr class="govuk-table__row">
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Mr Peter Williams Vs Mrs Janet Richards</a></td>
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
@@ -109,7 +100,6 @@ My work
                   </tr>
               </tbody>
           </table>
-
 {% endblock %}
 {% block scripts %}
 {% endblock %}

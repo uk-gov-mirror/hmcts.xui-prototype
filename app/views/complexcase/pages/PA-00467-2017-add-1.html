@@ -1,0 +1,91 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<h1 class="govuk-heading-xl">Add related case files</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">You can always do this later.</p>
+<p class="govuk-body"><a href="/complexcase/pages/search">Search for a case</a></p>
+
+
+
+<div class="govuk-form-group">
+ <label class="govuk-label govuk-label--m" for="">
+   HMCTS case reference (optional)
+ </label>
+ <input class="govuk-input govuk-input--width-20" id="" name="" type="text" value="PA/00467/2017" data-name="" data-id="">
+</div>
+
+<div class="govuk-form-group">
+ <label class="govuk-label govuk-label--m" for="">
+   HMCTS case reference (optional)
+ </label>
+ <input class="govuk-input govuk-input--width-20" id="" name="" type="text" value="1614-7675-1234-5216" data-name="" data-id="">
+</div>
+<div class="govuk-form-group">
+ <label class="govuk-label govuk-label--m" for="">
+   HMCTS case reference (optional)
+ </label>
+ <input class="govuk-input govuk-input--width-20" id="" name="" type="text" value="1548-1231-9907-3334" data-name="" data-id="">
+</div>
+
+
+
+
+
+    {% from "fieldset/macro.njk" import govukFieldset %}
+    {% from "input/macro.njk" import govukInput %}
+    {% from "textarea/macro.njk" import govukTextarea %}
+    {% from "button/macro.njk" import govukButton %}
+    <div class="hmcts-add-another">
+      <form action="/complexcase/pages/PA-00467-2017-check-new">
+        {% call govukFieldset({
+                            classes: 'hmcts-add-another__item'
+                          }) %}
+        {{ govukInput({
+                              label: {
+                              html: 'HMCTS case reference (optional)',
+                              classes: 'govuk-label--m'
+                              },
+                              id: "pba-1",
+                              name: "pba-1",
+                              value: "",
+                              attributes: {
+                                  'data-name': 'pba-[%index%]',
+                                  'data-id': 'pba-[%index%]'
+                              },
+                              classes: 'govuk-input--width-20'
+                          }) }}
+
+        {% endcall %}
+       <div class="hmcts-button-action" style="padding-bottom: 40px;">
+          {{ govukButton({
+                              text: 'Add another related case ',
+                              classes: 'hmcts-button--secondary  hmcts-add-another__add-button  govuk-!-margin-bottom-4'
+                            }) }}
+        </div>
+        {{ govukButton({
+                            text: "Previous",
+                            classes: "govuk-button--secondary",
+                            href: "/complexcase/pages/PA-00467-2017-create"
+                          }) }}
+                          {{govukButton({
+                                        text: 'Continue'
+                                            })}}
+  </form>
+    </div>
+  </div>
+</div>
+<p class="govuk-body"><a href="/complexcase/pages/PA-00467-2017">Cancel</a></p>
+{% endblock %}
+{% block pageScripts %}
+<script>
+  new HMCTSFrontend.AddAnother($('.hmcts-add-another'));
+</script>
+{% endblock %}

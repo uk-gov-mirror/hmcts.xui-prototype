@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Complex case prototype PROOF OF CONCEPT
+    </h1>
+    <div style="display: flex; margin-top: 80px;">
+      <div style="width: 800px;">
+        <h2 class="govuk-heading-l">Judiciary</h2>
+        <h3 class="govuk-heading-s">Scenario A - Create a new complex case</h3>
+      <!--  <p><a target="_blank" href="/complexcase/pages/results?usertype=judiciary&">Search entry</a><br></p> -->
+        <p><a target="_blank" href="/complexcase/pages/PA-00467-2017?usertype=judiciary&">Case details</a><br></br></p>
+        </div>
+      <div>
+        <h2 class="govuk-heading-l">Staff</h2>
+        <div style="width: 600px;">
+          <h3 class="govuk-heading-s">Scenario A - Create a new complex case</h3>
+      <!--    <p><a target="_blank" href="/complexcase/pages/search?usertype=staff&">Search entry</a></p> -->
+          <p><a target="_blank" href="/complexcase/pages/PA-00467-2017?usertype=staff&">Case details</a><br></br></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

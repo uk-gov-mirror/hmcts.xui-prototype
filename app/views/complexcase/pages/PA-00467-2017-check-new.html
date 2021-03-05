@@ -1,0 +1,188 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Check your answers</h1>
+
+      <h2 class="govuk-heading-m">Class action appeal details </h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Supercard Vs Financial Ombudsman Service
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> Case name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case owner
+          </dt>
+          <dd class="govuk-summary-list__value">
+          Janet Worsley
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">Case owner</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case creation date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            03 March 2021
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">Case creation date</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">Consumer class-action suit</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">Case description</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case comments
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">Based on a 2007 legal finding by the European Commission, which found Supercard imposed unfair fees on all transactions made using its card network between May 1992 and December 2007.</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">Case description</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Related cases</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            HMCTS case reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            PA/00467/2017
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">HMCTS case reference</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Case name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Amelia Chu Vs Supercard
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+        <br>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            HMCTS case reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1614-7675-1234-5216
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">HMCTS case reference</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+Case name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Macallister Vs Supercard
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+        <br>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            HMCTS case reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1548-1231-9907-3334
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> home address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Berricks Vs Supercard
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+      </dl>
+
+
+      <form action="/form-handler" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+        {{ govukButton({
+          text: "Previous",
+          classes: "govuk-button--secondary",
+          href: "/complexcase/pages/PA-00467-2017-add"
+        }) }}
+        {{ govukButton({
+        "text": "Confirm and submit",
+        href: '/complexcase/pages/PA-00467-2017-l'
+        }) }}
+
+      </form>
+
+    <p class="govuk-body"><a href="/complexcase/pages/PA-00467-2017">Cancel</a></p>
+
+
+    </div>
+  </div>
+
+
+        {% endblock %}

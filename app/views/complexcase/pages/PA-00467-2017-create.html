@@ -1,0 +1,98 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+
+      <h1 class="govuk-heading-xl">Create [class action appeal]</h1>
+
+      <!--       <p class="govuk-body">Blurb on [case type], and what it's used for.</p>
+           <h3 class="govuk-heading-m">Before you start</h3>
+            <p class="govuk-body">If you want to associate any related cases with this case, you will need the case file<br> reference for example 1234-4321-1234-4321</p>  <p class="govuk-body">You can always add related files later.</p>
+-->
+
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h2 class="govuk-fieldset__heading">
+      Case details
+    </h2>
+  </legend>
+  <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-form-group">
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-town">
+      Case name (Optional)
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" value="Supercard Vs Financial Ombudsman Service"></div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-county">
+      Case owner (Optional)
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text" value="Janet Worsley"> </div>
+    <div class="govuk-date-input" id="passport-issued">
+      <label class="govuk-label" for="address-town">
+        Case creation date (Optional)
+      </label>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric" value="03"></div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric" value="03"></div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric" value="2021"></div>
+          </div>
+          </div>
+          </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-postcode">
+      Case description (Optional)
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text" value="Consumer class-action suit"></div>
+    <label class="govuk-label" for="address-postcode">
+      Case comments (Optional)
+    </label>
+    <textarea class="govuk-textarea govuk-!-width-two-thirds" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint">Based on a 2007 legal finding by the European Commission, which found Supercard imposed unfair fees on all transactions made using its card network between May 1992 and December 2007.</textarea>
+  </div>
+</fieldset>
+
+
+
+
+                  <div class="govuk-button-group">
+                    {{ govukButton({
+        text: "Previous",
+        classes: "govuk-button--secondary",
+        disabled: true,
+        href: "#"
+      }) }}  {{ govukButton({
+                    "text": "Continue",
+                    href: '/complexcase/pages/PA-00467-2017-add'
+                    }) }}
+
+
+              </div>
+              <p class="govuk-body"><a href="/complexcase/pages/PA-00467-2017">Cancel</a></p>
+            </div>
+
+            {% endblock %}
