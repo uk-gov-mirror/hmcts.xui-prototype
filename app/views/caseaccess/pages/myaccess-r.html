@@ -1,5 +1,5 @@
 {% if  data.usertype == 'judiciary'   %}
-    {% extends "../layoutjudicial.html" %}
+    {% extends "../layoutjudicial-c.html" %}
 {% else %}
     {% extends "../layoutstaff.html" %}
 {% endif %}
@@ -17,29 +17,33 @@ My work
   text: "Filter my work",
   classes: "govuk-button--secondary"
 }) }}
-        <div class="hmcts-scrollable-pane">
-          <div class="hmcts-scrollable-pane__wrapper">
-            <nav class="hmcts-sub-navigation">
-              <ul class="hmcts-sub-navigation__list">
-                <li class="hmcts-sub-navigation__item">
-                  <a class="hmcts-sub-navigation__link"  href="mywork">
-                    My tasks
-                  </a>
-                </li>
-                <li class="hmcts-sub-navigation__item">
-                  <a class="hmcts-sub-navigation__link" href="available-tasks">
-                    Available tasks
-                  </a>
-                </li>
-                <li class="hmcts-sub-navigation__item">
-                  <a class="hmcts-sub-navigation__link" aria-current="page" href="mycases">
-                    My cases
-                  </a>
-                </li>
-              </ul>
-            </nav>
-</div>
-<p class="govuk-body">Displaying <strong>4</strong> of <strong>4</strong> cases </p>
+    <div class="hmcts-scrollable-pane">
+      <div class="hmcts-scrollable-pane__wrapper">
+        <nav class="hmcts-sub-navigation">
+          <ul class="hmcts-sub-navigation__list">
+            <li class="hmcts-sub-navigation__item">
+              <a class="hmcts-sub-navigation__link" href="#">
+                My tasks
+              </a>
+            </li>
+            <li class="hmcts-sub-navigation__item">
+              <a class="hmcts-sub-navigation__link" href="#">
+                Available tasks
+              </a>
+            </li>
+            <li class="hmcts-sub-navigation__item">
+              <a class="hmcts-sub-navigation__link"  href="mycases-r">
+                My cases <!-- <span class="xui-alert-link__number"> 1 </span> -->
+              </a>
+            </li>
+            <li class="hmcts-sub-navigation__item">
+              <a class="hmcts-sub-navigation__link" aria-current="page"  href="myaccess-r">
+                My access <!-- <span class="xui-alert-link__number"> 1 </span> -->
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <p class="govuk-body">Displaying <strong>3</strong> of <strong>3</strong> cases </p>
         <table class="govuk-table ">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
@@ -47,7 +51,8 @@ My work
                   <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Jurisdiction</button></th>
                   <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 140px;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
                 <!--  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none""></th> -->
-                  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case role</button></th>
+  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 120px;" aria-sort="none"><button type="button" data-index="1">Case role</button></th>
+                  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Access</button></th>
                   <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 120px;" aria-sort="none"><button type="button" data-index="1">Start</button></th>
                   <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 120px;" aria-sort="none"><button type="button" data-index="1">End</button></th>
                 <!--     <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 130px;" aria-sort="none"><button type="button" data-index="1">Hearing date</button></th> -->
@@ -55,38 +60,27 @@ My work
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Patti Jo</a></td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-                  <!--  <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td> -->
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Leadership Judge</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">03 Oct 2020 </td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">03 May 2021 </td>
-                  <!--  <td class="govuk-table__cell">18 Apr 2021</td> -->
-                    <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Hudson Remi</a></td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">HR</td>
-                    <!--  <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td> -->
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hearing Judge</td>
-                    <td class="govuk-table__cell">09 Nov 2020  </td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-                  <!--   <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td> -->
-                    <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
-                </tr>
+                  <tr class="govuk-table__row">
+                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="PA-00321-2018-a">Robert Saddlebrook</a></td>
+                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Reviewer</td>
+                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Challenged</td>
+                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">14 Mar 2021</td>
+                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">14 Apr 2021</td>
+                  <td class="govuk-table__cell"></td>
+                  </tr>
                   <tr class="govuk-table__row">
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Mr Peter Williams Vs Mrs Janet Richards</a></td>
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Adoption</td>
                     <!--  <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td> -->
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Reviewer</td>
+                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Challenged</td>
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">14 Mar 2021</td>
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">14 Apr 2021 </td>
                   <!--    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">N/A</td> -->
-                      <td class="govuk-table__cell"><a href="#" class="right_">Go to case</a></td>
+                      <td class="govuk-table__cell"></td>
                   </tr>
                   <tr class="govuk-table__row">
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Mrs Mary Hunter-bridge Vs Mrs Caroline Manning</a></td>
@@ -94,13 +88,15 @@ My work
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Care and supervision</td>
                       <!-- <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td> -->
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Reviewer</td>
-                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19">22 Mar 2021</td>
-                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19">22 Mar 2021 </td>
+                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Challenged</td>
+                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19">14 Mar 2021</td>
+                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19">14 Apr 2021 </td>
                   <!--    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">N/A</td> -->
-                      <td class="govuk-table__cell"><a href="#" class="right_m">Go to case</a></td>
+                      <td class="govuk-table__cell"></td>
                   </tr>
               </tbody>
           </table>
+
 {% endblock %}
 {% block scripts %}
 {% endblock %}

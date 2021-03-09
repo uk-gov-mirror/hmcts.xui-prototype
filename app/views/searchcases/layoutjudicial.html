@@ -1,5 +1,4 @@
 {% extends "template.njk" %}
-
 {% from "accordion/macro.njk"        import govukAccordion %}
 {% from "back-link/macro.njk"        import govukBackLink %}
 {% from "breadcrumbs/macro.njk"      import govukBreadcrumbs %}
@@ -25,45 +24,26 @@
 {% from "tag/macro.njk"              import govukTag %}
 {% from "textarea/macro.njk"         import govukTextarea %}
 {% from "warning-text/macro.njk"     import govukWarningText %}
-
 {% from "hmcts-badge/macro.njk"     import hmctsBadge %}
 {% from "hmcts-page-header-with-actions/macro.njk" import hmctsPageHeaderWithActions %}
 {% from "hmcts-header/macro.njk" import hmctsHeader %}
 {% from "hmcts-footer/macro.njk" import hmctsFooter %}
 {% from "hmcts-primary-navigation/macro.njk" import hmctsPrimaryNavigation %}
-
-
-
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}
-
-
-
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-
-
-
-
     <header class="hmcts-header" role="banner" style="background-color: #8d100e">
-
-
         <div style="width:1220px; display: flex; margin: 0 auto;">
-
             <div style="width: 100px; ">
                 <img src="/public/images/govlogowhite.png" width="73" height="60" style="margin-top:10px;">
             </div>
-
-
             <div>
-
                 <div class="hmcts-header__container" style="width: 1116px;">
-
                     <div class="hmcts-header__logo">
                         <a class="hmcts-header__link" href="/noticeofchange/solicitor/caselist" aria-current="page">Judicial case manager</a>
                     </div>
-
                     <div class="hmcts-header__content">
                         <nav class="hmcts-header__navigation" aria-label="Account navigation">
                             <ul class="hmcts-header__navigation-list">
@@ -76,13 +56,8 @@
                         </nav>
                     </div>
                 </div>
-
-
-
                 <div  style="background-color: #8d100e">
-
                     <div style=" display: flex; margin: 0 auto; background-color: #8d100e; ">
-
                         <div>
                             <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style="background-color: #8d100e; width: 697px;">
                                 <ul class="hmcts-primary-navigation__list">
@@ -91,13 +66,11 @@
                                             Your cases
                                         </a>
                                     </li>
-
                                     <li class="hmcts-primary-navigation__item">
                                         <a class="hmcts-primary-navigation__link" href="#">
                                             Manage tasks and cases
                                         </a>
                                     </li>
-
                                     <li class="hmcts-primary-navigation__item">
                                         <a class="hmcts-primary-navigation__link" href="/searchcases/pages/startsearch">
                                             Search cases
@@ -106,7 +79,6 @@
                                 </ul>
                             </nav>
                         </div>
-
                         <div style="display: flex;flex-direction: row; ">
                             <p style="color: white; margin-top:8px; margin-bottom: 0px;">Case reference:  &nbsp;</p>
                             <input class="govuk-input" id="hmctsref" name="hmctsref" type="text" spellcheck="false" style="width:219px;">
@@ -115,32 +87,14 @@
                                 Find
                             </a>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
-
-
-
-
-
-
     </header>
-
   {% set searchHtml %}
     <a class="hmcts-search-toggle__button" href="#">Find case</a>
   {% endset %}
-
-
-
-
-
-
   <div class="govuk-phase-banner govuk-width-container">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -151,12 +105,7 @@
       </span>
     </p>
   </div>
-
-
 {% endblock %}
-
-
-
   {% block footer %}
     {{ govukFooter({
       meta: {
@@ -173,8 +122,6 @@
       }
     }) }}
   {% endblock %}
-
-
   {% block bodyEnd %}
     {% block scripts %}
       {% include "./scripts.html" %}
