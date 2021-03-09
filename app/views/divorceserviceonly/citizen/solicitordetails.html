@@ -181,18 +181,24 @@ Case details
 
                     <div class="govuk-form-group" style="width:  400px;">
                         <label class="govuk-label govuk-!-font-weight-bold" for="email">
-                            Solicitor’s email address (optional)
+                            Solicitor’s email address
                         </label>
                         <input class="govuk-input" id="email" name="email" type="text" spellcheck="false" aria-describedby="email-hint" autocomplete="">
                     </div>
 
                 </div>
 
+
+
+
                 {% if data.validaton == 'true' %}
                     <div id="manualdetails" style="display: block;">
                 {% else %}
                     <div id="manualdetails" style="display: none;">
                 {% endif %}
+
+
+
                     {% if data.validaton == 'true' %}
                         <div class="govuk-form-group  govuk-form-group--error" style="width:  400px;">
                     {% else %}
@@ -332,7 +338,7 @@ Case details
     function manualentryfields()
     {
         //alert( " dasdf    "  +  document.getElementById("service").value  );
-        document.getElementById("noresultsshowing").style.display = "block";
+        document.getElementById("noresultsshowing").style.display = "none";
         document.getElementById("manualdetails").style.display = "block";
         document.getElementById("normaldetails").style.display = "none";
         document.getElementById("resultsshowing").style.display = "none";
