@@ -1,0 +1,48 @@
+<!-- Javascript -->
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+{% for scriptUrl in extensionConfig.scripts %}
+  <script src="{{scriptUrl}}"></script>
+{% endfor %}
+
+<script src="/public/javascripts/application.js"></script>
+
+{% if useAutoStoreData %}
+  <script src="/public/javascripts/auto-store-data.js"></script>
+{% endif %}
+
+<script>
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+var blackBoxes = $('.black-box');
+var blackBoxesArray = blackBoxes.toArray();
+blackBoxes.hide();
+$.each(blackBoxesArray, function(i, el) {
+  fadeInAfterDelay(el, (Math.floor(Math.random() * 1500) + 1000));
+});
+
+function fadeInAfterDelay(el, delay) {
+  window.setTimeout(function() {
+    $(el).fadeIn();
+  }, delay);
+}
+
+</script>

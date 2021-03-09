@@ -37,4 +37,44 @@ Case details
       text: "Continue",
       href: "/caseaccess/pages/booking-location"
     }) }}
+
+
+    {% set emailHtml %}
+    {{ govukInput({
+      id: "contact-by-email",
+      name: "contact-by-email",
+      type: "email",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Email address"
+      }
+    }) }}
+    {% endset -%}
+
+    {% set phoneHtml %}
+    {{ govukInput({
+      id: "contact-by-phone",
+      name: "contact-by-phone",
+      type: "tel",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Phone number"
+      }
+    }) }}
+    {% endset -%}
+
+    {% set textHtml %}
+    {{ govukInput({
+      id: "contact-by-text",
+      name: "contact-by-text",
+      type: "tel",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Mobile phone number"
+      }
+    }) }}
+    {% endset -%}
+
+
 {% endblock %}

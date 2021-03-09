@@ -6,13 +6,15 @@
 {% block pageTitle %}
 Case details
 {% endblock %}
+
 {% block content %}
-<div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+
+<!-- <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
   <div class="" style="display: flex; justify-content: space-between; ">
-    <div>
-      <h1 class="govuk-heading-xl">PA/00467/2017</h1>
-    </div>
-    <div style="display: flex; align-items:right">
+    <div> -->
+  <!--    <h1 class="govuk-heading-xl">PA/00467/2017</h1> -->
+  <!--  </div> -->
+  <!--  <div style="display: flex; align-items:right">
       <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
       <select class="govuk-select" id="sort" name="sort">
         <option value="published" selected="">Select action</option>
@@ -84,15 +86,23 @@ Case details
           Hearing
         </a>
       </li> -->
-    </ul>
-    <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
-      <div >
+  <!--  </ul> -->
+  <!--  <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+      <div > -->
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h2 class="govuk-heading-l  govuk-!-margin-bottom-2">Review specific access request</h2>
           <p></p>
           <table class="govuk-table">
             <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Case name</th>
+                <td class="govuk-table__cell">Amelia Chu</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Case reference</th>
+                <td class="govuk-table__cell">PA/00467/2017</td>
+              </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header" style="width: 220px;">Request from</th>
                 <td class="govuk-table__cell">Judge Randel-Combeswardly</td>
@@ -104,8 +114,7 @@ Case details
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header" style="width: 220px;">Reason for access</th>
                 <td class="govuk-table__cell">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices enim in egestas porttitor. Vivamus iaculis ex eu dolor feugiat elementum. Nunc id laoreet elit. In hac habitasse platea dictumst </td>
-              </tr>
+Reviewer          </tr>
             </tbody>
           </table>
         </div>
@@ -134,15 +143,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices eni
         </div>
       </fieldset>
     </div>
-<div class="govuk-button-group">
-  <button class="govuk-button" data-module="govuk-button" type="submit">
-    Continue
-  </button>
+  <div class="govuk-button-group">
   {{ govukButton({
-    text: "Cancel",
-    classes: "govuk-button--secondary",
-    href: "/caseaccess/pages/PA-00467-2017-t"
+    text: "Continue",
+    classes: "govuk-!-margin-right-3"
   }) }}
+  {{ govukButton({
+    text: "Cancel and unassign task",
+    href: "/caseaccess/pages/available-tasks-s2o",
+    classes: "govuk-button--secondary"
+  }) }}
+
+</div>
 </form>
 <script type="text/javascript">
 function usePage(frm,nm){

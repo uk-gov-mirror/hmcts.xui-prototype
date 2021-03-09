@@ -1,7 +1,7 @@
 {% if  data.usertype == 'judiciary'   %}
-    {% extends "../layoutjudicial.html" %}
+    {% extends "../layoutjudicial-c.html" %}
 {% else %}
-    {% extends "../layoutstaff.html" %}
+    {% extends "../layoutstaff-c.html" %}
 {% endif %}
 {% block pageTitle %}
 Case details
@@ -31,7 +31,7 @@ Case details
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Open</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/caseaccess/pages/PA-00321-2018">Challenged access</a></td>
             </tr>
-  
+
         </tbody>
     </table>
 {% endblock %}

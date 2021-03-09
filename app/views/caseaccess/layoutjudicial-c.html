@@ -1,0 +1,153 @@
+{% extends "template.njk" %}
+{% from "accordion/macro.njk"        import govukAccordion %}
+{% from "back-link/macro.njk"        import govukBackLink %}
+{% from "breadcrumbs/macro.njk"      import govukBreadcrumbs %}
+{% from "button/macro.njk"           import govukButton %}
+{% from "character-count/macro.njk"  import govukCharacterCount %}
+{% from "checkboxes/macro.njk"       import govukCheckboxes %}
+{% from "date-input/macro.njk"       import govukDateInput %}
+{% from "details/macro.njk"          import govukDetails %}
+{% from "error-message/macro.njk"    import govukErrorMessage %}
+{% from "error-summary/macro.njk"    import govukErrorSummary %}
+{% from "fieldset/macro.njk"         import govukFieldset %}
+{% from "file-upload/macro.njk"      import govukFileUpload %}
+{% from "input/macro.njk"            import govukInput %}
+{% from "inset-text/macro.njk"       import govukInsetText %}
+{% from "panel/macro.njk"            import govukPanel %}
+{% from "phase-banner/macro.njk"     import govukPhaseBanner %}
+{% from "radios/macro.njk"           import govukRadios %}
+{% from "select/macro.njk"           import govukSelect %}
+{% from "skip-link/macro.njk"        import govukSkipLink %}
+{% from "summary-list/macro.njk"     import govukSummaryList %}
+{% from "table/macro.njk"            import govukTable %}
+{% from "tabs/macro.njk"             import govukTabs %}
+{% from "tag/macro.njk"              import govukTag %}
+{% from "textarea/macro.njk"         import govukTextarea %}
+{% from "warning-text/macro.njk"     import govukWarningText %}
+{% from "hmcts-badge/macro.njk"     import hmctsBadge %}
+{% from "hmcts-page-header-with-actions/macro.njk" import hmctsPageHeaderWithActions %}
+{% from "hmcts-header/macro.njk" import hmctsHeader %}
+{% from "hmcts-footer/macro.njk" import hmctsFooter %}
+{% from "hmcts-primary-navigation/macro.njk" import hmctsPrimaryNavigation %}
+{% block head %}
+{% include "includes/head.html" %}
+{% endblock %}
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+
+
+    <header class="hmcts-header" role="banner" style="background-color: #8d100e">
+
+
+        <div style="width:1220px; display: flex; margin: 0 auto;">
+
+            <div style="width: 100px; ">
+                <img src="/public/images/govlogowhite.png" width="73" height="60" style="margin-top:10px;">
+            </div>
+
+
+            <div>
+
+                <div class="hmcts-header__container" style="width: 1116px;">
+
+                    <div class="hmcts-header__logo">
+                        <a class="hmcts-header__link" href="/caseaccess" aria-current="page">Judicial case manager</a>
+                    </div>
+
+                    <div class="hmcts-header__content">
+                        <nav class="hmcts-header__navigation" aria-label="Account navigation">
+                            <ul class="hmcts-header__navigation-list">
+                                <li class="hmcts-header__navigation-item">
+                                    <a class="hmcts-header__navigation-link" href="#">
+                                        Sign out
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+
+
+                <div  style="background-color: #8d100e">
+
+                    <div style=" display: flex; margin: 0 auto; background-color: #8d100e; ">
+
+                        <div>
+                            <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style="background-color: #8d100e; width: 697px;">
+                                <ul class="hmcts-primary-navigation__list">
+                                    <li class="hmcts-primary-navigation__item">
+                                        <a class="hmcts-primary-navigation__link" href="/caseaccess/pages/mywork-c">
+                                            My work
+                                        </a>
+                                    </li>
+
+                                    <li class="hmcts-primary-navigation__item">
+                                        <a class="hmcts-primary-navigation__link" href="#">
+                                            All work
+                                        </a>
+                                    </li>
+
+                                    <li class="hmcts-primary-navigation__item">
+                                        <a class="hmcts-primary-navigation__link" href="/caseaccess/pages/search-c">
+                                            Search cases
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div style="display: flex;flex-direction: row; ">
+                            <p style="color: white; margin-top:8px; margin-bottom: 0px;">Case reference:  &nbsp;</p>
+                            <input class="govuk-input" id="hmctsref" name="hmctsref" type="text" spellcheck="false" style="width:219px;">
+                            <a href="/caseaccess/pages/PA-00321-2018" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+                               style="height:36px; margin-left: 4px; margin-top: 2px;  margin-bottom: 0px;">
+                                Find
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+{% set searchHtml %}
+<a class="hmcts-search-toggle__button" href="#">Find case</a>
+{% endset %}
+    <div class=" govuk-phase-banner govuk-width-container">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+</div>
+{% endblock %}
+{% block footer %}
+{{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ]
+      }
+    }) }}
+{% endblock %}
+{% block bodyEnd %}
+{% block scripts %}
+{% include "./scripts.html" %}
+{% block pageScripts %}{% endblock %}
+{% endblock %}
+{% endblock %}

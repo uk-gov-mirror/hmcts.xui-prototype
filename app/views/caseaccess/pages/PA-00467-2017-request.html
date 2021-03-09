@@ -1,7 +1,7 @@
 {% if  data.usertype == 'judiciary'   %}
-{% extends "../layoutjudicial.html" %}
+    {% extends "../layoutjudicial.html" %}
 {% else %}
-{% extends "../layoutstaff.html" %}
+    {% extends "../layoutstaff.html" %}
 {% endif %}
 {% block pageTitle %}
 Case details
@@ -14,31 +14,69 @@ Case details
   </svg>
   <div class="hmcts-banner__message">
     <span class="hmcts-banner__assistive">information</span>
-Specific access.<br>Access requires manual authorisation. Access to this case is logged for auditing purposes.</div>
+    Specific access. <br>Access requires manual authorisation. Access to this case is logged for auditing purposes.
+  </div>
 </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
-          label: {
-            text: "Why are you requesting access to this case?
-",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-          hint: {
-            text: "Access requires manual authorisation. You must provide a reason."
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% set textHtml %}
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail"
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "contact",
+      name: "contact",
+      fieldset: {
+        legend: {
+          text: "Why are you requesting access to this case?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Access requires manual authorisation. Select one option."
+      },
+      items: [
+        {
+          value: "email",
+          text: "Reviewer"
+        },
+        {
+          value: "phone",
+          text: "Reason B"
+        },
+        {
+          value: "email",
+          text: "Reason C"
+        },
+
+        {
+     divider: "or"
+   },
+        {
+          value: "other",
+          text: "Other",
+          conditional: {
+            html: textHtml
           }
-        }) }}
+        }
+      ]
+    }) }}
+
+
+
+
     {{ govukButton({
   text: "Submit",
   href: "PA-00467-2017-confirmation",
-  classes: "govuk-!-margin-right-1"
+  classes: "govuk-!-margin-right-3"
 }) }}
 {{ govukButton({
   text: "Cancel",
-  href: "results-s2",
+  href: "results",
   classes: "govuk-button--secondary"
 }) }}
 </div>
@@ -51,5 +89,4 @@ Specific access.<br>Access requires manual authorisation. Access to this case is
     <option value="/caseaccess/pages/PA-00467-2017-request-error">Missing text</option>
     </select>
 </form>
-
 {% endblock %}

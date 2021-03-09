@@ -1,0 +1,76 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="/caseaccess/pages/PA-00467-2017-tr-case" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+{% set textHtml %}
+{{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail"
+}) }}
+{% endset -%}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Reject specific access request",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "This reason will be sent to the requester. Select one option."
+  },
+  items: [
+    {
+      value: "email",
+      text: "Reason A (Example: More information needed). Please contact me to discuss further."
+    },
+    {
+      value: "phone",
+      text: "Reason B. Please contact me to discuss further."
+    },
+    {
+      value: "email",
+      text: "Reason C. Please contact me to discuss further."
+    },
+
+    {
+ divider: "or"
+},
+    {
+      value: "other",
+      text: "Other. Please contact me to discuss further.",
+      conditional: {
+        html: textHtml
+      }
+    }
+  ]
+}) }}
+<div class="govuk-button-group">
+{{ govukButton({
+  text: "Submit",
+  classes: "govuk-!-margin-right-3",
+  href: "/caseaccess/pages/PA-00467-2017-trrc-case"
+}) }}
+
+{{ govukButton({
+  text: "Cancel and unassign task",
+  href: "/caseaccess/pages/PA-00467-2017-t",
+  classes: "govuk-button--secondary"
+}) }}
+</div>
+
+</div>
+</div>
+{% endblock %}

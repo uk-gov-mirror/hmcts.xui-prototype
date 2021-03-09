@@ -1,0 +1,25 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              {{ govukPanel({
+                titleText: "Access denied"
+              }) }}
+              <h2 class="govuk-heading-m">What happens next</h2>
+              <p class="govuk-body">
+                The requester has been denied access to this case.
+              </p>
+              <p class="govuk-body">
+                <a href="/caseaccess/pages/PA-00467-2017-tca" class="govuk-link">Back to tasks</a>.
+              </p>
+            </div>
+          </div>
+{% endblock %}

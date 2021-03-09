@@ -1,0 +1,500 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<!-- <div class="hmcts-banner">
+  <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+  C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+  </svg>
+  <div class="hmcts-banner__message">
+    <span class="hmcts-banner__assistive">information</span>
+    This case is a lead case blurb ...
+  </div>
+</div> -->
+<div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+  <div class="" style="display: flex; justify-content: space-between; ">
+    <div>
+      <span class="govuk-caption-xl">Class action appeal</span>
+<h1 class="govuk-heading-xl">#9920-3119-0034-0101</h1>
+
+    </div>
+    <div style="display: flex; align-items:right">
+      <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+      <select class="govuk-select" id="sort" name="sort" onchange="document.location.href=this.value">
+        <option value="#" selected="">Select action</option>
+        <option value="#">Submit amended application</option>
+        <option value="#">Link respondent</option>
+        <option value="#">Add Note</option>
+        <option value="#">Upload document</option>
+        <option value="/complexcase/pages/PA-00467-2017-create"">Create complex case</option>
+        <option value="#">Stop representing a client</option>
+      </select>
+      <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+          Go
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+
+
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-l">
+          Summary
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-e">
+          Event history
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-cd">
+          Case details
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-r">
+          Related cases
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-p">
+          Parties
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-h">
+          Hearings
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/complexcase/pages/PA-00467-2017-n">
+          Notifications
+        </a>
+      </li>
+    </ul>    <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+      <div>
+        <h2 class="govuk-heading-l">Parties</h2>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <table class="govuk-table">
+
+                  <tbody class="govuk-table__body">
+
+                          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                HMCTS case reference
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                PA/00467/2017
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                  View case<span class="govuk-visually-hidden">View case</span>
+                                </a>
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Case name
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                	Amelia Chu Vs Supercard
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Case owner
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Janet Worsley
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Amelia Chu
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+
+
+                          </dl>
+
+                          </tbody>
+                      </table>
+                      <table class="govuk-table">
+
+                            <tbody class="govuk-table__body">
+
+                                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                HMCTS case reference
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                1614-7675-1234-5216
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                  View case<span class="govuk-visually-hidden">HMCTS case reference</span>
+                                </a>
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Case name
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Macallister Vs Supercard
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Case owner
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Gary Pickford
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Ayra Morales
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Kennedy Schwartz
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Darcie-Mae Galloway
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Judy Keenan
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Keith Good
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Alistair Sosa
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Susanna Flores
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Esmae Rivera
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Aqib Goff
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Victoria Finley
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Arnold Kim
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Lorna Horn
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Sharmin Snyder
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Abiha Wells
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Eric Carr
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Raj Sheppard
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Kennedy Schwartz
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Gregg Contreras
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Mathew Norman
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Dilara Bostock
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Sameer Blankenship
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                          </dl>
+
+                          </tbody>
+                      </table>
+
+
+
+                            <table class="govuk-table">
+
+                                  <tbody class="govuk-table__body">
+
+                                          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                HMCTS case reference
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                1548-1231-9907-3334
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                  View case<span class="govuk-visually-hidden"> home address</span>
+                                </a>
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Case name
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Berricks Vs Supercard
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Case owner
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Yousaf Gamble
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Maia Cabrera
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Menachem Brady
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Antonina Bryan
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Nicholas Mckay
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Claimant
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Alysia Jackson
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                              </dd>
+                            </div>
+                          </dl>
+
+                          </tbody>
+                      </table>
+
+</div>
+<div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

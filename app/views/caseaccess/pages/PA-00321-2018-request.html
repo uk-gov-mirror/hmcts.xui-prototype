@@ -1,7 +1,7 @@
 {% if  data.usertype == 'judiciary'   %}
-{% extends "../layoutjudicial.html" %}
+    {% extends "../layoutjudicial-c.html" %}
 {% else %}
-{% extends "../layoutstaff.html" %}
+    {% extends "../layoutstaff-c.html" %}
 {% endif %}
 {% block pageTitle %}
 Case details
@@ -17,25 +17,62 @@ Case details
     Challenged access. <br>This case is located outside your working region. Access to this case is logged for auditing purposes.
   </div>
 </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
-          label: {
-            text: "State why you are accessing this case
-",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-          hint: {
-            text: "Access will be granted until midnight tonight. You must provide a reason."
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% set textHtml %}
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail"
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "contact",
+      name: "contact",
+      fieldset: {
+        legend: {
+          text: "Why are you accessing this case?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Access will be granted until midnight tonight. Select one option."
+      },
+      items: [
+        {
+          value: "email",
+          text: "Reviewer"
+        },
+        {
+          value: "phone",
+          text: "Reason B"
+        },
+        {
+          value: "email",
+          text: "Reason C"
+        },
+
+        {
+     divider: "or"
+   },
+        {
+          value: "other",
+          text: "Other",
+          conditional: {
+            html: textHtml
           }
-        }) }}
+        }
+      ]
+    }) }}
+
+
+
+
     {{ govukButton({
   text: "Submit",
   href: "PA-00321-2018-confirmation",
-  classes: "govuk-!-margin-right-1"
+  classes: "govuk-!-margin-right-3"
 }) }}
 {{ govukButton({
   text: "Cancel",
@@ -44,14 +81,12 @@ Case details
 }) }}
 </div>
 </div>
-        <form method=""  action="#" class="for4" style=" float: left; margin-top: 60px;">
-            <p style="margin-bottom: 0px;">Select to show validation errors</p>
-            <select size="1" name="hop" style="height:25px;" onchange="document.location.href=this.value">
-            <option selected value=""> Select an option</option>
-            <option value="/caseaccess/pages/PA-00321-2018-request">No errors</option>
-            <option value="/caseaccess/pages/PA-00321-2018-request-error">Missing text</option>
-            </select>
-        </form>
-        {% endblock %}
-{% block scripts %}
+<form method=""  action="#" class="for4" style=" float: left; margin-top: 60px;">
+    <p style="margin-bottom: 0px;">Select to show validation errors</p>
+    <select size="1" name="hop" style="height:25px;" onchange="document.location.href=this.value">
+    <option selected value=""> Select an option</option>
+    <option value="/caseaccess/pages/PA-00321-2018-request">No errors</option>
+    <option value="/caseaccess/pages/PA-00321-2018-request-error">Missing text</option>
+    </select>
+</form>
 {% endblock %}

@@ -6,13 +6,17 @@
 {% block pageTitle %}
 Case details
 {% endblock %}
+{% block beforeContent %}
+<a href="/caseaccess/pages/PA-00467-2017-tr" class="govuk-back-link">Back</a>
+{% endblock %}
+
 {% block content %}
-<div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+<!-- <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
   <div class="" style="display: flex; justify-content: space-between; ">
-    <div>
-      <h1 class="govuk-heading-xl">PA/00467/2017</h1>
-    </div>
-    <div style="display: flex; align-items:right">
+    <div> -->
+  <!--    <h1 class="govuk-heading-xl">PA/00467/2017</h1> -->
+  <!--  </div> -->
+  <!--  <div style="display: flex; align-items:right">
       <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
       <select class="govuk-select" id="sort" name="sort">
         <option value="published" selected="">Select action</option>
@@ -84,9 +88,9 @@ Case details
           Hearing
         </a>
       </li> -->
-    </ul>
-    <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
-      <div class="govuk-grid-row">
+  <!--  </ul> -->
+  <!--  <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+    -->  <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
     {% set setDuration %}
     {{ govukDateInput({
@@ -144,11 +148,12 @@ Case details
 
         {
           value: "phone",
-          text: "Current day only",
+          text: "7 days ",
           hint: {
-        text: "Starts from today and access ends at midnight."
+        text: "Starts from today and ends at midnight on 7th day."
       }
       },
+
         {
           value: "phone",
           text: "Other duration",
@@ -158,17 +163,27 @@ Case details
           conditional: {
             html: setDuration
           }
-        }
+        },
+        {
+          value: "phone",
+          text: "Indefinite access",
+          hint: {
+        text: "Starts from today and lasts whilst case is open."
+      }
+      }
       ]
     }) }}
+    <div class="govuk-button-group">
     {{ govukButton({
-      text: "Continue",
+      text: "Submit",
+      classes: "govuk-!-margin-right-3",
       href: "/caseaccess/pages/PA-00467-2017-trac"
     }) }}
     {{ govukButton({
-      text: "Cancel",
-      classes: "govuk-button--secondary",
-      href: "/caseaccess/pages/PA-00467-2017-tr"
-    }) }}
+        text: "Cancel and unassign task",
+        href: "/caseaccess/pages/available-tasks-s2o",
+        classes: "govuk-button--secondary"
+      }) }}</div>
+    </div>
     </div>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% if  data.usertype == 'judiciary'   %}
-{% extends "../layoutjudicial.html" %}
+{% extends "../layoutjudicial-c.html" %}
 {% else %}
-{% extends "../layoutstaff.html" %}
+{% extends "../layoutstaff-c.html" %}
 {% endif %}
 {% block pageTitle %}
 Case details
@@ -65,7 +65,7 @@ Case details
             Open
           </dd>
         </div>
-    
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key summary-key">
             Access
@@ -132,7 +132,7 @@ Case details
     {{ govukButton({
   text: "Request access",
   href: "PA-00321-2018-request",
-  classes: "govuk-!-margin-right-1"
+  classes: "govuk-!-margin-right-3"
 }) }}
 {{ govukButton({
   text: "Cancel",
