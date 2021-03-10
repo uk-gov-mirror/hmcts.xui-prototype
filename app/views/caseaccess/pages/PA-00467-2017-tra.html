@@ -156,7 +156,7 @@ Case details
 
         {
           value: "phone",
-          text: "Other duration",
+          text: "Other period",
           hint: {
         text: "You’ll need to specify both start and end date."
       },
@@ -179,11 +179,13 @@ Case details
       classes: "govuk-!-margin-right-3",
       href: "/caseaccess/pages/PA-00467-2017-trac"
     }) }}
-    {{ govukButton({
+  <!--  {{ govukButton({
         text: "Cancel and unassign task",
         href: "/caseaccess/pages/available-tasks-s2o",
         classes: "govuk-button--secondary"
-      }) }}</div>
+      }) }} -->
+  <p><a class="govuk-body" href="/caseaccess/pages/available-tasks-s2o">Cancel and unassign task</a></p>
+    </div>
     </div>
     </div>
 {% endblock %}
