@@ -1,7 +1,7 @@
 {% if  data.usertype == 'judiciary'   %}
-    {% extends "../layoutjudicial.html" %}
+{% extends "../layoutjudicial.html" %}
 {% else %}
-    {% extends "../layoutstaff.html" %}
+{% extends "../layoutstaff.html" %}
 {% endif %}
 {% block pageTitle %}
 Case details
@@ -35,7 +35,7 @@ Case details
       Contents
     </h2>
     <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item" >
+      <li class="govuk-tabs__list-item">
         <a class="govuk-tabs__tab" href="wa-PA-00321-2018">
           Tasks
         </a>
@@ -71,7 +71,7 @@ Case details
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#" >
+        <a class="govuk-tabs__tab" href="#">
           Applications
         </a>
       </li>
@@ -80,64 +80,64 @@ Case details
           Case notes
         </a>
       </li>
-  <!--    <li class="govuk-tabs__list-item">
+      <!--    <li class="govuk-tabs__list-item">
         <a class="govuk-tabs__tab" href="#past-week">
           Hearing
         </a>
       </li> -->
     </ul>
     <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
-      <div >
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Task alert</h2>
-          <div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-warning-text__assistive">Warning</span>
-    There is an application task which might impact other active tasks.
-  </strong>
-</div>
+      <div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Task alert</h2>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                There is an application task which might impact other active tasks.
+              </strong>
+            </div>
 
-          <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Active tasks</h2>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Active tasks</h2>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-          <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--m">Generate decision and reasons <span class="hmcts-badge_right">{{govukTag({
+            <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-table__caption--m">Generate decision and reasons <span class="hmcts-badge_right">{{govukTag({
 text: "dd/mm/yyyy",
 classes: "govuk-tag--grey"
 })}}</span></caption>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Assigned to</th>
-                <td class="govuk-table__cell">Judge Beech</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Manage </th>
-                <td class="govuk-table__cell"><a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a> </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Next steps</th>
-                <td class="govuk-table__cell"><a href="#">Generate decision and reasons</a></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="govuk-!-padding-bottom-6"></div>
-          <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--m">Review application decision <span class="hmcts-badge_right">{{govukTag({
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header" style="width: 220px;">Assigned to</th>
+                  <td class="govuk-table__cell">Judge Beech</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header" style="width: 220px;">Manage </th>
+                  <td class="govuk-table__cell"><a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Next steps</th>
+                  <td class="govuk-table__cell"><a href="#">Generate decision and reasons</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="govuk-!-padding-bottom-6"></div>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-table__caption--m">Review application decision <span class="hmcts-badge_right">{{govukTag({
 text: "dd/mm/yyyy",
 classes: "govuk-tag--grey"
 })}}</span></caption>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Manage</th>
-                <td class="govuk-table__cell"><a href="/workallocation/pages/wa-PA-00321-2018-a" class="right">Assign task to me</a> </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="govuk-grid-column-one-third">
-<!--
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Manage</th>
+                  <td class="govuk-table__cell"><a href="/workallocation/pages/wa-PA-00321-2018-a" class="right">Assign task to me</a> </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <!--
           <h2 class="govuk-heading-m  govuk-!-margin-bottom-4">Task history</h2>
             <div class="hmcts-timeline">
                 <div class="hmcts-timeline__item">
@@ -164,7 +164,7 @@ classes: "govuk-tag--grey"
             </div>
             <p><a href="#">View full timeline</a></p>
 -->
+          </div>
         </div>
       </div>
-</div>
-{% endblock %}
+      {% endblock %}
