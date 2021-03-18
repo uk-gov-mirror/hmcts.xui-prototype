@@ -1,0 +1,187 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<div class="hmcts-banner hmcts-banner--success">
+
+<svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+<path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+<div class="hmcts-banner__message">
+<span class="hmcts-banner__assistive">Success</span>
+You've assigned yourself a task. It's available in My tasks.
+</div>
+</div>
+<div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+  <div class="" style="display: flex; justify-content: space-between; ">
+    <div>
+      <h1 class="govuk-heading-xl">PA/00321/2018</h1>
+    </div>
+    <div style="display: flex; align-items:right">
+      <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published" selected="">Select action</option>
+        <option value="published">Submit amended application</option>
+        <option value="published">Link respondent</option>
+        <option value="published">Add Note</option>
+        <option value="published">Upload document</option>
+        <option value="updated">Stop representing a client</option>
+      </select>
+      <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+          Go
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item" >
+        <a class="govuk-tabs__tab" href="wa-PA-00321-2018">
+          Tasks
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Roles / access
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Overview
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Appeal
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Appellent
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Documents
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Directions
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#" >
+          Applications
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Case notes
+        </a>
+      </li>
+  <!--    <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Hearing
+        </a>
+      </li> -->
+    </ul>
+    <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+      <div >
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Task alert</h2>
+          <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    There is an application task which might impact other active tasks.
+  </strong>
+</div>
+
+          <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Active tasks</h2>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Generate decision and reasons <span class="hmcts-badge_right">{{govukTag({
+text: "dd/mm/yyyy",
+classes: "govuk-tag--grey"
+})}}</span></caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Assigned to</th>
+                <td class="govuk-table__cell">Judge Beech</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Manage </th>
+                <td class="govuk-table__cell"><a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a> </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Next steps</th>
+                <td class="govuk-table__cell"><a href="#">Generate decision and reasons</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="govuk-!-padding-bottom-6"></div>
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Review application decision <span class="hmcts-badge_right">{{govukTag({
+text: "dd/mm/yyyy",
+classes: "govuk-tag--grey"
+})}}</span></caption>
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header" style="width: 220px;">Assigned to</th>
+    <td class="govuk-table__cell">Judge Beech</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header" style="width: 220px;">Manage </th>
+    <td class="govuk-table__cell"><a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a> </td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Next steps</th>
+    <td class="govuk-table__cell"><a href="#">Review application decision</a></td>
+  </tr>
+</tbody>
+          </table>
+        </div>
+        <div class="govuk-grid-column-one-third">
+<!--
+          <h2 class="govuk-heading-m  govuk-!-margin-bottom-4">Task history</h2>
+            <div class="hmcts-timeline">
+                <div class="hmcts-timeline__item">
+                  <div class="hmcts-timeline__header">
+                    <h3 class="hmcts-timeline__title"><a href="#">Case reasssigned to you</a></h3>
+                      <p class="hmcts-timeline__by">by Jane Doe, court administrator</p>
+                  </div>
+                  <p class="hmcts-timeline__date"><time datetime="2018-09-14T09:38:00.000Z">Fri 14 Sep 2018 at 9:38am</time></p>
+                </div>
+                <div class="hmcts-timeline__item">
+                  <div class="hmcts-timeline__header">
+                    <h3 class="hmcts-timeline__title"><a href="#">Approved consent order uploaded</a></h3>
+                      <p class="hmcts-timeline__by">by Simon Saint, court administrator</p>
+                  </div>
+                  <p class="hmcts-timeline__date"><time datetime="2018-09-12T09:38:00.000Z">Wed 12 Sep 2018 at 9:38am</time></p>
+                </div>
+                <div class="hmcts-timeline__item">
+                  <div class="hmcts-timeline__header">
+                    <h3 class="hmcts-timeline__title"><a href="#">Consent order approved</a></h3>
+                      <p class="hmcts-timeline__by">by DJ Nightingale</p>
+                  </div>
+                  <p class="hmcts-timeline__date"><time datetime="2018-09-11T16:15:00.000Z">Tue 11 Sep 2018 at 4:15pm</time></p>
+                </div>
+            </div>
+            <p><a href="#">View full timeline</a></p>
+-->
+        </div>
+      </div>
+</div>
+{% endblock %}
