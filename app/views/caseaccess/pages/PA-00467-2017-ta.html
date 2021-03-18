@@ -7,15 +7,15 @@
 Case details
 {% endblock %}
 {% block content %}
-<div class="hmcts-banner">
-  <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
-  C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
-  </svg>
-  <div class="hmcts-banner__message">
-    <span class="hmcts-banner__assistive">information</span>Specific access.<br>
-    You have been granted access for [duration]. Access to this case is logged for auditing purposes.
-  </div>
+<div class="hmcts-banner hmcts-banner--success">
+
+<svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+<path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+<div class="hmcts-banner__message">
+<span class="hmcts-banner__assistive">Success</span>
+You've assigned yourself a task. It's available in My tasks.
+</div>
 </div>
 <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
   <div class="" style="display: flex; justify-content: space-between; ">
@@ -44,18 +44,18 @@ Case details
       Contents
     </h2>
     <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="PA-00467-2017-tc">
+      <li class="govuk-tabs__list-item" >
+        <a class="govuk-tabs__tab" href="PA-00467-2017-t">
           Tasks
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="PA-00467-2017-ara">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-ar">
           Roles / access
         </a>
       </li>
-      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-        <a class="govuk-tabs__tab" href="PA-00467-2017-atc">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-a">
           Overview
         </a>
       </li>
@@ -102,6 +102,39 @@ Case details
           <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Active tasks</h2>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Review specific access request <span class="hmcts-badge_right">{{govukTag({
+text: "dd/mm/yyyy",
+classes: "govuk-tag--grey"
+})}}</span></caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Request from</th>
+                <td class="govuk-table__cell">Judge Randel-Combeswardly</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Date submitted</th>
+                <td class="govuk-table__cell">DD/MM/YYYY</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Purpose for access</th>
+                <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices enim in egestas porttitor. Vivamus iaculis ex eu dolor feugiat elementum. Nunc id laoreet elit. In hac habitasse platea dictumst</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Assigned to</th>
+                <td class="govuk-table__cell">Judge Beech</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Manage </th>
+                <td class="govuk-table__cell"><a href="" class="right">Reassign task</a> <a href="/caseaccess/pages/PA-00467-2017-t" class="right">Unassign task</a> </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Next steps</th>
+                <td class="govuk-table__cell"><a href="PA-00467-2017-tr">Review specific access request</a></td>
+              </tr>
+            </tbody>
+          </table>
+            <div class="govuk-!-padding-bottom-6"></div>
+          <table class="govuk-table">
             <caption class="govuk-table__caption govuk-table__caption--m">Review application decision <span class="hmcts-badge_right">{{govukTag({
 text: "dd/mm/yyyy",
 classes: "govuk-tag--grey"
@@ -123,7 +156,7 @@ classes: "govuk-tag--grey"
           </table>
         </div>
         <div class="govuk-grid-column-one-third">
-          <!--
+<!--
           <h2 class="govuk-heading-m  govuk-!-margin-bottom-4">Task history</h2>
             <div class="hmcts-timeline">
                 <div class="hmcts-timeline__item">
@@ -149,7 +182,7 @@ classes: "govuk-tag--grey"
                 </div>
             </div>
             <p><a href="#">View full timeline</a></p>
-            -->
+-->
         </div>
       </div>
 </div>
