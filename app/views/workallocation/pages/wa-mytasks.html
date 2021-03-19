@@ -43,7 +43,10 @@ My work
         </li>
       </ul>
     </nav>
-    <p class="govuk-body">Displaying <strong>2</strong> of <strong>2</strong> tasks</p>
+    <p class="govuk-body">Displaying <strong>2</strong> of <strong>2</strong> tasks <span class="hmcts-right">{{ govukButton({
+      text: "Reset sorting",
+      classes: "govuk-button--secondary"
+    }) }}</span></p>
     <table class="govuk-table ">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -53,7 +56,6 @@ My work
           <th scope="col" class="govuk-table__header"></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 500px;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 200px;" aria-sort="none"><button type="button" data-index="1">Date</button></th>
-          <!--  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 200px;" aria-sort="none"><button type="button" data-index="1">Hearing date</button></th> -->
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: 130px;" aria-sort="none"></th>
         </tr>
       </thead>
@@ -68,7 +70,6 @@ My work
           text: "dd/mm/yyyy",
           classes: "govuk-tag--red"
         })}}</td>
-          <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
         <tr class="govuk-table__row">
@@ -85,7 +86,6 @@ My work
           <td class="govuk-table__cell">{{govukTag ({text: "dd/mm/yyyy",
                                 classes: "govuk-tag--yellow"
                               })}} </td>
-          <!--    <td class="govuk-table__cell">N/A<a href="#"></a></td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="/workallocation/pages/wa-mytasks-o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
       </tbody>

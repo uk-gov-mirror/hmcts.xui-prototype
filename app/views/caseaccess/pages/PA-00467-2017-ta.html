@@ -8,10 +8,8 @@ Case details
 {% endblock %}
 {% block content %}
 <div class="hmcts-banner hmcts-banner--success">
-
 <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
 <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
-
 <div class="hmcts-banner__message">
 <span class="hmcts-banner__assistive">Success</span>
 You've assigned yourself a task. It's available in My tasks.
@@ -99,90 +97,96 @@ You've assigned yourself a task. It's available in My tasks.
       <div >
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Active tasks</h2>
+          <h2 class="govuk-heading-m">Active tasks</h2>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--m">Review specific access request <span class="hmcts-badge_right">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}}</span></caption>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Request from</th>
-                <td class="govuk-table__cell">Judge Randel-Combeswardly</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Date submitted</th>
-                <td class="govuk-table__cell">DD/MM/YYYY</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Purpose for access</th>
-                <td class="govuk-table__cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices enim in egestas porttitor. Vivamus iaculis ex eu dolor feugiat elementum. Nunc id laoreet elit. In hac habitasse platea dictumst</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Assigned to</th>
-                <td class="govuk-table__cell">Judge Beech</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Manage </th>
-                <td class="govuk-table__cell"><a href="" class="right">Reassign task</a> <a href="/caseaccess/pages/PA-00467-2017-t" class="right">Unassign task</a> </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Next steps</th>
-                <td class="govuk-table__cell"><a href="PA-00467-2017-tr-case">Review specific access request</a></td>
-              </tr>
-            </tbody>
-          </table>
-            <div class="govuk-!-padding-bottom-6"></div>
-          <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--m">Review application decision <span class="hmcts-badge_right">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}}</span></caption>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Assigned to</th>
-                <td class="govuk-table__cell">Judge Beech</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Manage</th>
-                <td class="govuk-table__cell"><a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a> <a href="">Refer a task</a> </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Next steps</th>
-                <td class="govuk-table__cell"><a href="#">Review application decision</a></td>
-              </tr>
-            </tbody>
-          </table>
+          <p class="govuk-body"><strong>
+Review specific access request</strong> <span class="hmcts-badge_right">{{govukTag({
+      text: "dd/mm/yyyy",
+      classes: "govuk-tag--grey"
+      })}}</span></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Request from
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Judge Randel-Combeswardly
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date submitted
+              </dt>
+              <dd class="govuk-summary-list__value">
+                DD/MM/YYYY
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Purpose for access
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices enim in egestas porttitor. Vivamus iaculis ex eu dolor feugiat elementum. Nunc id laoreet elit. In hac habitasse platea dictumst
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Assigned to
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Judge Beech
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Manage
+              </dt>
+              <dd class="govuk-summary-list__value">
+                	<a href="" class="right">Reassign task</a> <a href="/caseaccess/pages/PA-00467-2017-t" class="right">Unassign task</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Next steps
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="PA-00467-2017-tr-case">Review specific access request</a>
+              </dd>
+            </div>
+          </dl>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <p class="govuk-body"><strong>Review application decision</strong> <span class="hmcts-badge_right">{{govukTag({
+      text: "dd/mm/yyyy",
+      classes: "govuk-tag--grey"
+      })}}</span></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Assigned to
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Judge Beech
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Manage
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Next steps
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="#">Review application decision</a>
+              </dd>
+            </div>
+          </dl>
         </div>
         <div class="govuk-grid-column-one-third">
-<!--
-          <h2 class="govuk-heading-m  govuk-!-margin-bottom-4">Task history</h2>
-            <div class="hmcts-timeline">
-                <div class="hmcts-timeline__item">
-                  <div class="hmcts-timeline__header">
-                    <h3 class="hmcts-timeline__title"><a href="#">Case reasssigned to you</a></h3>
-                      <p class="hmcts-timeline__by">by Jane Doe, court administrator</p>
-                  </div>
-                  <p class="hmcts-timeline__date"><time datetime="2018-09-14T09:38:00.000Z">Fri 14 Sep 2018 at 9:38am</time></p>
-                </div>
-                <div class="hmcts-timeline__item">
-                  <div class="hmcts-timeline__header">
-                    <h3 class="hmcts-timeline__title"><a href="#">Approved consent order uploaded</a></h3>
-                      <p class="hmcts-timeline__by">by Simon Saint, court administrator</p>
-                  </div>
-                  <p class="hmcts-timeline__date"><time datetime="2018-09-12T09:38:00.000Z">Wed 12 Sep 2018 at 9:38am</time></p>
-                </div>
-                <div class="hmcts-timeline__item">
-                  <div class="hmcts-timeline__header">
-                    <h3 class="hmcts-timeline__title"><a href="#">Consent order approved</a></h3>
-                      <p class="hmcts-timeline__by">by DJ Nightingale</p>
-                  </div>
-                  <p class="hmcts-timeline__date"><time datetime="2018-09-11T16:15:00.000Z">Tue 11 Sep 2018 at 4:15pm</time></p>
-                </div>
-            </div>
-            <p><a href="#">View full timeline</a></p>
--->
         </div>
       </div>
 </div>
