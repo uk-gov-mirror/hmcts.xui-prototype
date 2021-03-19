@@ -9,7 +9,16 @@ Case details
 {% endblock %}
 
 {% block content %}
+<div class="hmcts-banner hmcts-banner--success">
 
+<svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+<path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+<div class="hmcts-banner__message">
+<span class="hmcts-banner__assistive">Success</span>
+You've assigned yourself a task.
+</div>
+</div>
 <!-- <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
   <div class="" style="display: flex; justify-content: space-between; ">
     <div> -->
@@ -113,9 +122,9 @@ Case details
                 <td class="govuk-table__cell">DD/MM/YYYY</td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Reason for access</th>
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Purpose for access</th>
                 <td class="govuk-table__cell">
-Reason A          </tr>
+Purpose A          </tr>
             </tbody>
           </table>
         </div>
@@ -149,12 +158,13 @@ Reason A          </tr>
     text: "Continue",
     classes: "govuk-!-margin-right-3"
   }) }}
+  <!--
   {{ govukButton({
     text: "Cancel and unassign task",
     href: "/caseaccess/pages/PA-00467-2017-t",
     classes: "govuk-button--secondary"
-  }) }}
-
+  }) }} -->
+  <p><a class="govuk-body" href="/caseaccess/pages/PA-00467-2017-t">Cancel and unassign task</a></p>
 </div>
 </form>
 <script type="text/javascript">

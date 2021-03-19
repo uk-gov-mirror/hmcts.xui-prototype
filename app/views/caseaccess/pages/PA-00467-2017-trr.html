@@ -34,38 +34,26 @@ Case details
   items: [
     {
       value: "email",
-      text: "Reason A",
-      hint: {
-        text: "More information needed please contact me to discuss further."
-      }
+      text: "More information needed. Please contact me to discuss further."
     },
     {
       value: "phone",
-      text: "Reason B",
-      hint: {
-        text: "More information needed please contact me to discuss further."
-      }
+      text: "Reason B."
     },
     {
       value: "email",
-      text: "Reason C",
-      hint: {
-        text: "More information needed please contact me to discuss further."
-      }
+      text: "Reason C."
     },
 
     {
  divider: "or"
 },
-    {
-      value: "other",
-      text: "Other",
-      hint: {
-        text: "More information needed please contact me to discuss further."
-      },
-      conditional: {
-        html: textHtml
-      }
+{
+  value: "other",
+  text: "Other.",
+  conditional: {
+    html: textHtml
+  }
     }
   ]
 }) }}
@@ -75,12 +63,14 @@ Case details
   classes: "govuk-!-margin-right-3",
   href: "/caseaccess/pages/PA-00467-2017-trrc"
 }) }}
-
+<!--
 {{ govukButton({
   text: "Cancel and unassign task",
   href: "/caseaccess/pages/available-tasks-s2o",
   classes: "govuk-button--secondary"
-}) }}
+}) }} -->
+
+  <p><a class="govuk-body" href="/caseaccess/pages/available-tasks-s2o">Cancel and unassign task</a></p>
 </div>
 
 </div>

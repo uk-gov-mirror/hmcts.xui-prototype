@@ -47,7 +47,7 @@ My work
                           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 180px;" aria-sort="none"><button type="button" data-index="1">Location</button></th>
                           <th scope="col" class="govuk-table__header"></th>
                           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 300px;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
-                          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 180px;" aria-sort="none"><button type="button" data-index="1">Age of task</button></th>
+                          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 180px;" aria-sort="none"><button type="button" data-index="1">Date</button></th>
 <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 200px;" aria-sort="none"><button type="button" data-index="1">Hearing date</button></th>
                           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 120px;" aria-sort="none"></th>
                       </tr>
@@ -60,7 +60,10 @@ My work
                             <td class="govuk-table__cell govuk-body govuk-!-font-size-19">London</td>
                             <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                             <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="PA-00467-2017-tr" class="right_l">Review specific access request</a></td>
-                            <td class="govuk-table__cell"><span class="hmcts-badge hmcts-badge--black">5 days</span> </td>
+                            <td class="govuk-table__cell">{{govukTag({
+      text: "dd/mm/yyyy",
+      classes: "govuk-tag--red"
+    })}}</td>
                             <td class="govuk-table__cell">N/A<a href="#"></a></td>
                               <td class="govuk-table__cell"><a href="mywork-s2" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
                             </tr>

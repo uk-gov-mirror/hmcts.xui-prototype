@@ -90,10 +90,13 @@ Case details
       <div >
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l  govuk-!-margin-bottom-2">Tasks</h2>
-          <p></p>
+          <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Active tasks</h2>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--m">1. Review application decision <span class="hmcts-badge hmcts-badge--green hmcts-badge_right">14 Feb</span></caption>
+            <caption class="govuk-table__caption govuk-table__caption--m">Review application decision <span class="hmcts-badge_right">{{govukTag({
+text: "dd/mm/yyyy",
+classes: "govuk-tag--grey"
+})}}</span></caption>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header" style="width: 220px;">Assigned to</th>
@@ -102,6 +105,10 @@ Case details
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Manage</th>
                 <td class="govuk-table__cell"><a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a> <a href="">Refer a task</a> </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Next steps</th>
+                <td class="govuk-table__cell"><a href="#">Review application decision</a></td>
               </tr>
             </tbody>
           </table>
