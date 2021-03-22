@@ -1,0 +1,110 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<div class="hmcts-banner hmcts-banner--success">
+  <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+  </svg>
+  <div class="hmcts-banner__message">
+    <span class="hmcts-banner__assistive">Success</span>
+    You've assigned yourself a task.
+  </div>
+</div>
+<div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+  <div class="" style="display: flex; justify-content: space-between; ">
+    <div>
+      <h1 class="govuk-heading-xl">PA/00321/2018</h1>
+    </div>
+    <div style="display: flex; align-items:right">
+      <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published" selected="">Select action</option>
+        <option value="published">Submit amended application</option>
+        <option value="published">Link respondent</option>
+        <option value="published">Add Note</option>
+        <option value="published">Upload document</option>
+        <option value="updated">Stop representing a client</option>
+      </select>
+      <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+          Go
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="wa-PA-00321-2018">
+          Tasks
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Roles / access
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Overview
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Appeal
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Appellent
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Documents
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Directions
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Applications
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Case notes
+        </a>
+      </li>
+      <!--    <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Hearing
+        </a>
+      </li> -->
+    </ul>
+    <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+      <div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Application</h2>
+            <p class="govuk-body govuk-!-margin-bottom-9"></p>
+
+            <p class="govuk-body"><a href="/workallocation/pages/wa-PA-00321-2018-c"><strong>Click here to simulate doing the task ...</strong></a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+    </div>
+  </div>
+</div>
+{% endblock %}

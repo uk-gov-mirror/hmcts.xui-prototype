@@ -1,0 +1,45 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+My work
+{% endblock %}
+{% block content %}
+<div class="hmcts-page-heading">
+  <div class="hmcts-page-heading__title">
+    <h1 class="govuk-heading-xl">Reassign task</h1>
+  </div>
+</div>
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+      Find the judge
+    </label>
+  </h2>
+  <div id="event-name-hint" class="govuk-hint">
+    Type the name of the judge to select the right person.
+  </div>
+  <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+</div>
+
+
+    <form>
+        {{ govukButton({
+        text: 'Continue',
+        classes: "govuk-!-margin-right-5",
+        href: "reassign-b"
+        }) }}
+
+
+        {{ govukButton({
+        text: 'Cancel',
+        classes: "govuk-button--secondary",
+        href: "/workallocation/pages/wa-mytasks-ao"
+        }) }}
+
+
+    </form>
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}

@@ -43,7 +43,10 @@ My work
         </li>
       </ul>
     </nav>
-    <p class="govuk-body">Displaying <strong>2</strong> of <strong>2</strong> tasks</p>
+    <p class="govuk-body">Displaying <strong>2</strong> of <strong>2</strong> tasks <span class="hmcts-right">{{ govukButton({
+      text: "Reset sorting",
+      classes: "govuk-button--secondary"
+    }) }}</span></p>
     <table class="govuk-table ">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
