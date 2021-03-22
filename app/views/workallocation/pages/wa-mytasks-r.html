@@ -7,6 +7,15 @@
 My work
 {% endblock %}
 {% block content %}
+<div class="hmcts-banner hmcts-banner--success">
+  <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+  </svg>
+  <div class="hmcts-banner__message">
+    <span class="hmcts-banner__assistive">Success</span>
+    You've reassigned a task to someone else.
+  </div>
+</div>
 <div class="hmcts-page-heading">
   <div class="hmcts-page-heading__title">
     <h1 class="govuk-heading-xl">My work</h1>
@@ -22,22 +31,22 @@ My work
     <nav class="hmcts-sub-navigation">
       <ul class="hmcts-sub-navigation__list">
         <li class="hmcts-sub-navigation__item">
-          <a class="hmcts-sub-navigation__link" aria-current="page" href="wa-mytasks">
+          <a class="hmcts-sub-navigation__link" aria-current="page" href="#">
             My tasks
           </a>
         </li>
         <li class="hmcts-sub-navigation__item">
-          <a class="hmcts-sub-navigation__link" href="wa-available-tasks">
+          <a class="hmcts-sub-navigation__link" href="#">
             Available tasks
           </a>
         </li>
         <li class="hmcts-sub-navigation__item">
-          <a class="hmcts-sub-navigation__link" href="wa-mycases">
+          <a class="hmcts-sub-navigation__link" href="#">
             My cases
           </a>
         </li>
         <li class="hmcts-sub-navigation__item">
-          <a class="hmcts-sub-navigation__link" href="wa-myaccess">
+          <a class="hmcts-sub-navigation__link" href="#">
             My access
           </a>
         </li>
@@ -83,7 +92,7 @@ My work
           <td class="govuk-table__cell">{{govukTag ({text: "dd/mm/yyyy",
                                 classes: "govuk-tag--yellow"
                               })}} </td>
-          <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="/workallocation/pages/wa-mytasks-o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+          <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
       </tbody>
     </table>
