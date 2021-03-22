@@ -81,7 +81,26 @@ Case details
     </div>
 
 
-    <p>All fields are optional.</p>
+    <details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                Don’t have all the case details?
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+            You can use the following to help you search for a case:
+            <ul>
+                <li>A question mark (‘?’) searches for a single missing or unknown character, for example ‘J?hn Smith’</li>
+                <li>An asterisk (‘*’) searches one or more unknown characters in any part of a word, for example ‘J* Smith’</li>
+            </ul>
+
+        </div>
+    </details>
+
+    <p>Search for at least one of the following to find a case:</p>
+
+
+
 
     <form
         name="aspnetForm"
@@ -101,7 +120,7 @@ Case details
                     <div class="govuk-form-group">
                 {% endif %}
                     <label class="govuk-label govuk-!-font-weight-bold" for="hmctsref">
-                        HMCTS case reference
+                        16-digit case reference
                     </label>
                     {% if  data.errorcasenumber == 'true' %}
                         <span id="refhin-error" class="govuk-error-message">
@@ -118,6 +137,8 @@ Case details
 
             <div style="width: 750px;">
 
+
+                <!--  OTHER REFERENCE   -->
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-!-font-weight-bold" for="otherref">
                         Other reference
@@ -128,6 +149,9 @@ Case details
                     <input class="govuk-input govuk-input--width-10" id="otherref" name="otherref" type="text" spellcheck="false"  value="{{ data.otherref }}">
                 </div>
 
+
+
+                <!--  NAME   -->
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-!-font-weight-bold" for="names">
                         Full name
@@ -138,18 +162,27 @@ Case details
                     <input class="govuk-input govuk-input--width-20" id="names" name="names" type="text" spellcheck="false"  value="{{ data.names }}">
                 </div>
 
+
+
+                <!--  FIRST LINE OFF ADDRESS   -->
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" >
+                        First line of address
+                    </label>
+                    <input class="govuk-input govuk-input govuk-input--width-20" id="addressline" name="addressline" type="text" spellcheck="false" style=""  value="{{ data.addressline }}">
+                </div>
+
+
+
+                <!--  POSTCODE   -->
                 {% if data.errorpostcodeinvalid == 'true' %}
                     <div class="govuk-form-group govuk-form-group--error" id="postcodeerrorarea">
                 {% else %}
                     <div class="govuk-form-group">
                 {% endif %}
-                    <label class="govuk-label govuk-!-font-weight-bold" for="postcode">
+                    <label class="govuk-label   govuk-!-font-weight-bold" for="postcode">
                         Postcode
                     </label>
-                        <!--
-                    <div id="postcode-hint" class="govuk-hint">
-                        For a party only
-                    </div> -->
                     {% if data.errorpostcodeinvalid == 'true'   %}
                         <span id="postcodeareahint-error" class="govuk-error-message">
                             <span class="govuk-visually-hidden">Error:</span> Enter a postcode, like AA1 1AA
@@ -160,6 +193,9 @@ Case details
                     {% endif %}
                 </div>
 
+
+
+                <!--  EMAIL ADDRESS   -->
                 {% if data.erroremail == 'true' %}
                     <div class="govuk-form-group govuk-form-group--error" id="emailcodeerrorarea">
                 {% else %}
@@ -179,11 +215,56 @@ Case details
 
                 </div>
 
+
+
+
+                <!--  DATE FIELDS   -->
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h3 class="govuk-fieldset__heading">
+                                Key date
+                            </h3>
+                        </legend>
+                        <div id="passport-issued-hint" class="govuk-hint">
+                            This must relate to the party only, for example date of birth, death or marriage.
+                        </div>
+                        <div class="govuk-date-input" id="passport-issued">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                        Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                        Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                        Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+
+
+
+                <!--  SERVICES DROPDOWN  -->
                 <div class="govuk-form-group" style="margin-bottom: 10px">
                     <label class="govuk-label govuk-!-font-weight-bold" for="service">
                         Services
                     </label>
-                    <select class="govuk-select govuk-input--width-10" id="service" name="service" onchange="myfunction()">
+                    <select class="govuk-select govuk-input--width-10" id="service" name="service" onchange="">
                         <option value="all">All</option>
                         <option value="dddivorcet">Divorce</option>  <!-- DONE -->
                         <option value="ddemployment">Employment</option> <!-- DONE - EMPTY - UNKNOWN -->
@@ -201,6 +282,19 @@ Case details
         </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+     <!-- NO LONGER USED -->
 
         <!--  DIVORCE  -->
         <div class="govuk-details__text" id='divorce' style="display: none;">
