@@ -91,21 +91,29 @@
 
             </div>
 
-            <div class="hmcts-header__container" style="width:791px;">
-                {{ hmctsPrimaryNavigation({
-                label: 'Primary navigation',
-                items: [{
-                text: 'Case list',
-                href: getUrl('/pages/caselist'),
-                active: pageId == '#'
-                },
-                {
-                text: 'Search cases',
-                href: getUrl('/pages/startsearch'),
-                active: pageId == '#'
-                }
-                ]
-                }) }}
+            <div>
+                <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style=" width: 500px;">
+                    <ul class="hmcts-primary-navigation__list">
+                        <li class="hmcts-primary-navigation__item">
+                            <a class="hmcts-primary-navigation__link" href="#">
+                                My work
+                            </a>
+                        </li>
+                        <li class="hmcts-primary-navigation__item">
+                            <a class="hmcts-primary-navigation__link" href="#">
+                                All work
+                            </a>
+                        </li>
+                        <li class="hmcts-primary-navigation__item">
+                            <a class="hmcts-primary-navigation__link" href="/searchcases/pages/startsearch">
+                                Search cases
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div style="display: flex; flex-grow: 1;">
             </div>
 
 
@@ -116,7 +124,7 @@
                 -->
 
             <div style="display: flex;flex-direction: row; ">
-                <p style="color: white; margin-top:8px; margin-bottom: 0px;">Case reference:  &nbsp;</p>
+                <p style="color: white; margin-top:8px; margin-bottom: 0px;">16-digit case reference:  &nbsp;</p>
                 <input class="govuk-input" id="hmctsref" name="hmctsref" type="text" spellcheck="false" style="width:219px;">
                 <a href="/opencase" role="button" draggable="false" class="govuk-button govuk-button--secondary"
                    style="height:36px; margin-left: 4px; margin-top: 2px;  margin-bottom: 0px;">
