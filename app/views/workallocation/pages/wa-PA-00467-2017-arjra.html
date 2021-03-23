@@ -1,0 +1,56 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+{% block content %}
+<span class="govuk-caption-l">Hearing judge</span>
+<h2 class="govuk-heading-l">Remove allocation</h2>
+<p class="govuk-body">This will remove the role from the current user.</p>
+
+<div class="govuk-form-group">
+  <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+      Role summary
+    </label>
+  </h3>
+</div>
+<table class="govuk-table govuk-!-width-three-quarters">
+<thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19">Name</th>
+        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">Role</th>
+        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">Access type</th>
+        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">Location</th>
+
+
+    </tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Silverman</td>
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hearing judge</td>
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Standard access</td>
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+
+    </tr>
+</tbody>
+</table>
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Remove allocation",
+    href: "wa-PA-00467-2017-arjra-de",
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-PA-00467-2017-arjp-o">Cancel</a></p>
+</div>
+</form>
+
+{% endblock %}

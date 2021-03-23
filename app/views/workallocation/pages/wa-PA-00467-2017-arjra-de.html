@@ -11,7 +11,15 @@ Case details
 
 
 {% block content %}
-
+<div class="hmcts-banner hmcts-banner--success">
+  <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+  </svg>
+  <div class="hmcts-banner__message">
+    <span class="hmcts-banner__assistive">Success</span>
+    You've removed a role allocation.
+  </div>
+</div>
 <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
   <div class="" style="display: flex; justify-content: space-between; ">
     <div>
@@ -40,17 +48,17 @@ Case details
     </h2>
     <ul class="govuk-tabs__list">
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="wa-PA-00467-2017-t">
+        <a class="govuk-tabs__tab" href="#">
           Tasks
         </a>
       </li>
        <li class="govuk-tabs__list-item--selected">
-        <a class="govuk-tabs__tab" href="wa-PA-00467-2017-ar">
+        <a class="govuk-tabs__tab" href="#">
           Roles / access
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="PA-00467-2017-a">
+        <a class="govuk-tabs__tab" href="#">
           Overview
         </a>
       </li>
@@ -118,23 +126,11 @@ Case details
                 <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
             </tr>
 
-            <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Nordman</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hearing judge</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Standard access</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">DD/MM/YYYY </td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-                <td class="govuk-table__cell"><a href="wa-PA-00467-2017-arjp" class="right_m">Manage</a><span class="govuk-accordion-wa__iconc"></span></td>
-            </tr>
+      
 
-            <tr class="govuk-table__row">
-
-              <td colspan="7" class="right"> <a href="wa-PA-00467-2017-real" class="right">Reallocate</a> <a href="wa-PA-00467-2017-arjra" class="right_tl">Remove allocation</a></td>
-            </tr>
         </tbody>
     </table>
-    <p><a href="wa-PA-00467-2017-aj" class="govuk-link">Allocate a role</a></p>
+    <p><a href="#" class="govuk-link">Allocate a role</a></p>
         <h2 class="govuk-heading-m">Caseworkers</h2>
         <table class="govuk-table ">
         <thead class="govuk-table__head">
