@@ -1,0 +1,42 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="hmcts-page-heading">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-xl">Something went wrong</h1>
+          </div>
+    </div>
+
+    <p>Your search has returned too many results to display.</p>
+
+<form
+    action="search.html"
+    name="aspnetForm"
+    method="post"
+    id="aspnetForm"
+    autocomplete="off"
+    >
+
+        <div class="govuk-form-group  govuk-!-margin-top-7" >
+            <button class="govuk-button" data-module="govuk-button">
+                Search again
+            </button>
+        </div>
+
+</form>
+
+
+
+{% endblock %}

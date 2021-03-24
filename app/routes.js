@@ -42,6 +42,9 @@ router.get( '/searchcases/pages/startsearch', function (req, res)
     req.session.data['names'] = '';
     req.session.data['postcode'] = '';
     req.session.data['email'] = '';
+    req.session.data['searchday'] = '';
+    req.session.data['searchmonth'] = '';
+    req.session.data['searchyear'] = '';
 
     res.redirect('/searchcases/pages/search');
 })

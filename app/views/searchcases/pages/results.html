@@ -25,56 +25,252 @@ Case details
     <table class="govuk-table ">
         <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 33%;">Case name</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 25%;">Case name</th>
             <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 20%;">Service</th>
-            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 33%;">Court or hearing centre</th>
-            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 7%;">Status</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 18%;">State</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 30%;">Court or hearing centre</th>
             <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 7%;"></th>
         </tr>
         </thead>
 
-        {% if  data.results == 'many'   %}
+
+
+        {% if  data.results == 'one'   %}
             <!-- One result -->
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Macallister v Narran</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Money claims</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">South Eastern</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bath Law Courts</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
-                </tr>
-            </tbody>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Vanetta Medley</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case under review</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        {% elif  data.results == 'three'   %}
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Loan Bourland</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Appeal submitted</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Basilia Bourdeau</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case under review</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Yarl's Wood Immigration and Asylum Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Letha Schwebach</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Money Claims</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Ready for transfer</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Clerkenwell and Shoreditch County Court and Family Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/caseaccess/pages/PA-00467-2017">Specific access</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+
         {% else %}
-            <!-- One result -->
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Macallister v Macallister</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Divorce</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bath Law Courts</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Open</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
-                </tr>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Derrick Rega</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Appeal submitted</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lea Mangan</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Awaiting respondent evidence</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Field House Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Sergio Collyer</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Appeal submitted</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tawanna Kilbourne</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case building</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Newport (South Wales) Immigration and Asylum Tribunal</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Elin Muth</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case under review</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Ann Zukowski</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Respondent review</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Nottingham Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Marica Pangle</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Submit hearing requirements</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Li Teems</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Listing</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bobette Martensen</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Prepare for hearing</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bradford Combined Court Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hellen Ridout</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Prepare for hearing</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hatton Cross Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Anne Mallard</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Final bundling</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Newport (South Wales) Immigration and Asylum Tribunal</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Eufemia Batdorf</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Prepare for hearing</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Rupert Wiesen</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Decision</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Soraya Anthony</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Reasons for appeal submitted</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bradford Combined Court Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tessa Landers</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Awaiting clarifying question answers</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Nottingham Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Genevieve Owings</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Ended</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bradford Combined Court Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Jerrold Speers</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Awaiting CMA requirements</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Coventry Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bok Kita</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Adjourned</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Nottingham Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Chris Finch</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">CMA requirements agreed</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Coventry Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Becky Schneller</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Awaiting CMA requirements</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Harmondsworth Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lena Blanche</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Decided</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Russel Groom</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Decided
+                        </td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
 
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Macallister v King</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Divorce</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Open</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/caseaccess/pages/PA-00321-2018">Challenged access</a></td>
-                </tr>
+                </tbody>
+            </table>
 
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Macallister v North</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Closed</td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/caseaccess/pages/PA-00467-2017">Specific access</a></td>
-                </tr>
-            </tbody>
+
+            <nav class="hmcts-pagination" id="pagination-label">
+
+                <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+                <ul class="hmcts-pagination__list">
+
+                    <li class="hmcts-pagination__item  hmcts-pagination__item--prev">
+                        <a class="hmcts-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+                    </li>
+
+                    <li class="hmcts-pagination__item hmcts-pagination__item--active">1</li>
+
+                    <li class="hmcts-pagination__item"><a class="hmcts-pagination__link" href="#">2</a></li>
+
+                    <li class="hmcts-pagination__item"><a class="hmcts-pagination__link" href="#">3</a></li>
+
+                    <li class="hmcts-pagination__item hmcts-pagination__item--dots">...</li>
+
+                    <li class="hmcts-pagination__item"><a class="hmcts-pagination__link" href="#">10</a></li>
+
+                    <li class="hmcts-pagination__item  hmcts-pagination__item--next">
+                        <a class="hmcts-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
         {% endif %}
 
-
-    </table>
 
 
 
