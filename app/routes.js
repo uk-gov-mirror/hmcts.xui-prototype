@@ -53,7 +53,7 @@ router.get( '/searchcases/pages/startsearch', function (req, res)
 router.post( '/searchcases/pages/search', function (req, res)
 {
     // set results to show normal amount, NOT 'many results'
-    req.session.data['results'] = 'few';
+    req.session.data['results'] = 'three';
 
     // Set the error state to normal
     req.session.data['errorcasenumber'] = 'false';
@@ -97,7 +97,9 @@ router.post( '/searchcases/pages/search', function (req, res)
             }
         }
 
-        res.redirect('/searchcases/pages/results');
+
+
+        res.redirect('/searchcases/pages/loading-screen');
     }
     else
     {
