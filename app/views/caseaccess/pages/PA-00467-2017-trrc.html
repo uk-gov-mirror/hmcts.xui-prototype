@@ -17,9 +17,22 @@ Case details
               <p class="govuk-body">
                 The requester has been denied access to this case.
               </p>
-              <p class="govuk-body">
-                <a href="/caseaccess/pages/available-tasks-s2b" class="govuk-link">Back to available tasks</a>.
-              </p>
+              <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Return to My tasks",
+                href: "mywork",
+                classes: "govuk-!-margin-right-3"
+
+              }) }}
+              <!--
+              {{ govukButton({
+                text: "Cancel and unassign task",
+                href: "/mywork-c",
+                classes: "govuk-button--secondary"
+              }) }} -->
+              <p><a class="govuk-body" href="PA-00467-2017-tca">Return to the Tasks tab for this case</a></p>
+            </div>
+
             </div>
           </div>
 {% endblock %}
