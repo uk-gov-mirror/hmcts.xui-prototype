@@ -30,30 +30,20 @@
 {% from "hmcts-footer/macro.njk" import hmctsFooter %}
 {% from "hmcts-primary-navigation/macro.njk" import hmctsPrimaryNavigation %}
 {% block head %}
-{% include "includes/head.html" %}
+  {% include "includes/head.html" %}
 {% endblock %}
 {% block header %}
-{% include "includes/cookie-banner.html" %}
-
-
+  {% include "includes/cookie-banner.html" %}
     <header class="hmcts-header" role="banner" style="background-color: #8d100e">
-
-
         <div style="width:1220px; display: flex; margin: 0 auto;">
-
             <div style="width: 100px; ">
                 <img src="/public/images/govlogowhite.png" width="73" height="60" style="margin-top:10px;">
             </div>
-
-
             <div>
-
                 <div class="hmcts-header__container" style="width: 1116px;">
-
                     <div class="hmcts-header__logo">
                         <a class="hmcts-header__link" href="/workallocation" aria-current="page">Judicial case manager</a>
                     </div>
-
                     <div class="hmcts-header__content">
                         <nav class="hmcts-header__navigation" aria-label="Account navigation">
                             <ul class="hmcts-header__navigation-list">
@@ -67,29 +57,24 @@
                     </div>
                 </div>
 
-
-
                 <div  style="background-color: #8d100e">
-
                     <div style=" display: flex; margin: 0 auto; background-color: #8d100e; ">
 
                         <div>
-                            <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style="background-color: #8d100e; width: 697px;">
+                            <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style="background-color: #8d100e; width: 500px;">
                                 <ul class="hmcts-primary-navigation__list">
                                     <li class="hmcts-primary-navigation__item">
                                         <a class="hmcts-primary-navigation__link" href="/workallocation/pages/wa-mytasks">
                                             My work
                                         </a>
                                     </li>
-
                                     <li class="hmcts-primary-navigation__item">
                                         <a class="hmcts-primary-navigation__link" href="#">
                                             All work
                                         </a>
                                     </li>
-
                                     <li class="hmcts-primary-navigation__item">
-                                        <a class="hmcts-primary-navigation__link" href="/workallocation/pages/search">
+                                        <a class="hmcts-primary-navigation__link" href="/workallocation/pages/startsearch">
                                             Search cases
                                         </a>
                                     </li>
@@ -97,8 +82,11 @@
                             </nav>
                         </div>
 
-                        <div style="display: flex;flex-direction: row; ">
-                            <p style="color: white; margin-top:8px; margin-bottom: 0px;">Case reference:  &nbsp;</p>
+                        <div style="display: flex; flex-grow: 1;">
+                        </div>
+
+                        <div style="display: flex; flex-direction: row; ">
+                            <p style="color: white; margin-top:8px; margin-bottom: 0px;">16-digit case reference:  &nbsp;</p>
                             <input class="govuk-input" id="hmctsref" name="hmctsref" type="text" spellcheck="false" style="width:219px;">
                             <a href="/workallocation/pages/PA-00467-2017" role="button" draggable="false" class="govuk-button govuk-button--secondary"
                                style="height:36px; margin-left: 4px; margin-top: 2px;  margin-bottom: 0px;">
@@ -107,18 +95,17 @@
                         </div>
 
                     </div>
-
                 </div>
 
-            </div>
 
+
+            </div>
         </div>
     </header>
-
-{% set searchHtml %}
-<a class="hmcts-search-toggle__button" href="#">Find case</a>
-{% endset %}
-    <div class=" govuk-phase-banner govuk-width-container">
+  {% set searchHtml %}
+    <a class="hmcts-search-toggle__button" href="#">Find case</a>
+  {% endset %}
+  <div class="govuk-phase-banner govuk-width-container">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
         beta
@@ -127,10 +114,10 @@
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
       </span>
     </p>
-</div>
+  </div>
 {% endblock %}
-{% block footer %}
-{{ govukFooter({
+  {% block footer %}
+    {{ govukFooter({
       meta: {
         items: [
           {
@@ -144,10 +131,10 @@
         ]
       }
     }) }}
-{% endblock %}
-{% block bodyEnd %}
-{% block scripts %}
-{% include "./scripts.html" %}
-{% block pageScripts %}{% endblock %}
-{% endblock %}
-{% endblock %}
+  {% endblock %}
+  {% block bodyEnd %}
+    {% block scripts %}
+      {% include "./scripts.html" %}
+      {% block pageScripts %}{% endblock %}
+    {% endblock %}
+  {% endblock %}
