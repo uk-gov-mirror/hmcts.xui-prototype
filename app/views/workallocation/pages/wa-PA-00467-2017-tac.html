@@ -35,18 +35,18 @@ Case details
       Contents
     </h2>
     <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#">
+      <li class="govuk-tabs__list-item" >
+        <a class="govuk-tabs__tab" href="PA-00467-2017-t">
           Tasks
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-ar">
           Roles / access
         </a>
       </li>
-      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-        <a class="govuk-tabs__tab" href="#">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-a">
           Overview
         </a>
       </li>
@@ -90,7 +90,40 @@ Case details
       <div >
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Active tasks</h2>
+          <h2 class="govuk-heading-m">Active tasks</h2>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <p class="govuk-body"><strong>
+Review specific access request</strong> <span class="hmcts-badge_right">{{govukTag({
+      text: "dd/mm/yyyy",
+      classes: "govuk-tag--grey"
+      })}}</span></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Assigned to</span>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Judge Beech
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                <span style="padding-left:25px">Manage</span>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                	<a href="" class="right">Reassign task</a> <a href="/workallocation/pages/wa-PA-00467-2017-un" class="right">Unassign task</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Next steps</span>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="wa-PA-00467-2017-tr-case">Review specific access request</a>
+              </dd>
+            </div>
+          </dl>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <p class="govuk-body"><strong>Review application decision</strong> <span class="hmcts-badge_right">{{govukTag({
       text: "dd/mm/yyyy",
@@ -122,38 +155,8 @@ Case details
               </dd>
             </div>
           </dl>
-
-
-
         </div>
         <div class="govuk-grid-column-one-third">
-          <!--
-          <h2 class="govuk-heading-m  govuk-!-margin-bottom-4">Task history</h2>
-            <div class="hmcts-timeline">
-                <div class="hmcts-timeline__item">
-                  <div class="hmcts-timeline__header">
-                    <h3 class="hmcts-timeline__title"><a href="#">Case reasssigned to you</a></h3>
-                      <p class="hmcts-timeline__by">by Jane Doe, court administrator</p>
-                  </div>
-                  <p class="hmcts-timeline__date"><time datetime="2018-09-14T09:38:00.000Z">Fri 14 Sep 2018 at 9:38am</time></p>
-                </div>
-                <div class="hmcts-timeline__item">
-                  <div class="hmcts-timeline__header">
-                    <h3 class="hmcts-timeline__title"><a href="#">Approved consent order uploaded</a></h3>
-                      <p class="hmcts-timeline__by">by Simon Saint, court administrator</p>
-                  </div>
-                  <p class="hmcts-timeline__date"><time datetime="2018-09-12T09:38:00.000Z">Wed 12 Sep 2018 at 9:38am</time></p>
-                </div>
-                <div class="hmcts-timeline__item">
-                  <div class="hmcts-timeline__header">
-                    <h3 class="hmcts-timeline__title"><a href="#">Consent order approved</a></h3>
-                      <p class="hmcts-timeline__by">by DJ Nightingale</p>
-                  </div>
-                  <p class="hmcts-timeline__date"><time datetime="2018-09-11T16:15:00.000Z">Tue 11 Sep 2018 at 4:15pm</time></p>
-                </div>
-            </div>
-            <p><a href="#">View full timeline</a></p>
-            -->
         </div>
       </div>
 </div>
