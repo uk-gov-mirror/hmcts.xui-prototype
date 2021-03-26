@@ -17,7 +17,7 @@ Case details
   </svg>
   <div class="hmcts-banner__message">
     <span class="hmcts-banner__assistive">Success</span>
-    You've allocated a role.
+    You've added an exclusion.
   </div>
 </div>
 <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
@@ -173,14 +173,39 @@ Case details
     </table>
     <p><a href="#" class="govuk-link"></a></p>
         <h2 class="govuk-heading-m">Exclusions</h2>
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
+        <table class="govuk-table ">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">Name</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19">Type</th>
 
-            <dd class="govuk-summary-list__value">
-              There are no exclusions for this case.
-            </dd>
-          </div>
-        </dl>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">User type</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">Location</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">Notes</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">Added</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 "></th>
+            </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width: auto;">
+Judge Birch</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width: auto;">Other</td>
+
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width: auto;">Judicial</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width: 415px;">	The case has been remitted from the Upper Tribunal and requires a different judge.</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width: auto;">DD/MM/YYYY </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width: auto;"></td>
+                <td class="govuk-table__cell"><a href="#" class="right_m">Delete</a></td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
         <p><a href="#" class="govuk-link">Add</a></p>
 <!--
         <form action="#">

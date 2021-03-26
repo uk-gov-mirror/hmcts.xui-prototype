@@ -13,7 +13,7 @@ My work
   </svg>
   <div class="hmcts-banner__message">
     <span class="hmcts-banner__assistive">Success</span>
-    You've unassigned a task. It's now in Available tasks.
+    You've excluded yourself from a case.
   </div>
 </div>
 <div class="hmcts-page-heading">
@@ -31,28 +31,28 @@ My work
     <nav class="hmcts-sub-navigation">
       <ul class="hmcts-sub-navigation__list">
         <li class="hmcts-sub-navigation__item">
-          <a class="hmcts-sub-navigation__link" aria-current="page" href="wa-mytasks">
+          <a class="hmcts-sub-navigation__link" aria-current="page" href="wa-mytasks-ex">
             My tasks
           </a>
         </li>
         <li class="hmcts-sub-navigation__item">
-          <a class="hmcts-sub-navigation__link" href="wa-available-tasks">
+          <a class="hmcts-sub-navigation__link" href="#">
             Available tasks
           </a>
         </li>
         <li class="hmcts-sub-navigation__item">
-          <a class="hmcts-sub-navigation__link" href="wa-mycases">
+          <a class="hmcts-sub-navigation__link" href="#">
             My cases
           </a>
         </li>
         <li class="hmcts-sub-navigation__item">
-          <a class="hmcts-sub-navigation__link" href="wa-myaccess">
+          <a class="hmcts-sub-navigation__link" href="#">
             My access
           </a>
         </li>
       </ul>
     </nav>
-    <p class="govuk-body">Displaying <strong>2</strong> of <strong>2</strong> tasks</p>
+    <p class="govuk-body">Displaying <strong>3</strong> of <strong>3</strong> tasks</p>
     <table class="govuk-table ">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -66,6 +66,20 @@ My work
         </tr>
       </thead>
       <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Lacey-May Sanders</a></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review respondent evidence</a></td>
+          <td class="govuk-table__cell">{{govukTag({
+text: "dd/mm/yyyy",
+classes: "govuk-tag--red"
+})}} </td>
+          <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
+          <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+        </tr>
+
         <tr class="govuk-table__row">
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Patti Jo</a></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>

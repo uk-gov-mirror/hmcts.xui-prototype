@@ -7,7 +7,7 @@
 Case details
 {% endblock %}
 {% block beforeContent %}
-<a href="/caseaccess/pages/PA-00467-2017-tr" class="govuk-back-link">Back</a>
+<a href="/workallocation/pages/wa-PA-00467-2017-tr-case" class="govuk-back-link">Back</a>
 {% endblock %}
 {% block content %}
 {% set textHtml %}
@@ -32,28 +32,28 @@ Case details
     text: "This reason will be sent to the requester. Select one option."
   },
   items: [
-    {
-      value: "email",
-      text: "Based on the reasons you have provided, I do not believe it is appropriate for you to gain access to this case"
-    },
-    {
-      value: "phone",
-      text: "You have not supplied enough information, please contact me to discuss further"
-    },
-    {
-      value: "email",
-      text: "You have a conflict of interest with this case"
-    },
+  {
+    value: "email",
+    text: "Based on the reasons you have provided, I do not believe it is appropriate for you to gain access to this case"
+  },
+  {
+    value: "phone",
+    text: "You have not supplied enough information, please contact me to discuss further"
+  },
+  {
+    value: "email",
+    text: "You have a conflict of interest with this case"
+  },
 
     {
  divider: "or"
 },
-{
-  value: "other",
-  text: "Other",
-  conditional: {
-    html: textHtml
-  }
+    {
+      value: "other",
+      text: "Other",
+      conditional: {
+        html: textHtml
+      }
     }
   ]
 }) }}
@@ -61,16 +61,16 @@ Case details
 {{ govukButton({
   text: "Submit",
   classes: "govuk-!-margin-right-3",
-  href: "/caseaccess/pages/PA-00467-2017-trrc"
+  href: "/workallocation/pages/wa-PA-00467-2017-trrc-case"
 }) }}
 <!--
 {{ govukButton({
   text: "Cancel and unassign task",
-  href: "/caseaccess/pages/available-tasks-s2o",
+  href: "/caseaccess/pages/PA-00467-2017-t",
   classes: "govuk-button--secondary"
-}) }} -->
-
-<p><a class="govuk-body" href="PA-00467-2017-tac">Cancel</a></p>
+}) }}
+-->
+<p><a class="govuk-body" href="wa-PA-00467-2017-tac">Cancel</a></p>
 </div>
 
 </div>
