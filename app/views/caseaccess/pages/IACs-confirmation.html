@@ -1,0 +1,34 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form
+          name="paForm"
+          method="post"
+          id="paForm"
+          autocomplete="off"
+          action="PA-00321-2018-request">
+      {{ govukPanel({
+        titleText: "Request sent",
+        html: "Case reference:<br><strong>PA/00467/2017</strong>"
+      }) }}
+  <!--    <p class="govuk-body">We have sent you a confirmation email.</p>
+-->
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+      Your request to access this case file has been sent.</p>
+
+      <p class="govuk-body">
+        Once your request has been authorised, you’ll be able to access the case through <a href="myaccess-IACs-p" class="govuk-link">My access</a>.
+      </p>
+      <p>Your request will be logged for auditing purposes.
+    </div>
+  </div>
+{% endblock %}

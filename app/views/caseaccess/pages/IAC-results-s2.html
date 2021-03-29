@@ -1,0 +1,36 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+    <div class="hmcts-page-heading">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-xl">Search results</h1>
+          </div>
+    </div>
+    <p><a href="search.html">Change search</a></p>
+    <table class="govuk-table ">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 350px;">Case name</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 300px;">Service</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 350px;">Court or hearing centre</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 "style="width: 100px;">Status</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 200px;"></th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Amelia Chu</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">City of London Magistrates' Court</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Open</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/caseaccess/pages/IACs">Specific access</a></td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
