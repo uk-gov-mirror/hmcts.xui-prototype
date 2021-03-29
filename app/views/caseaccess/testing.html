@@ -3,125 +3,69 @@
 GOV.UK Prototype Kit
 {% endblock %}
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">
-      Case access prototype
-    </h1>
-    <h2 class="govuk-heading-l">
-      Last updated (29/3/20) <br><br>Testing
-
-    </h2>
-    <div style="display: flex; margin-top: 80px;">
-      <div style="width: 800px;">
-
-
-      <!-- STAFF -->
-
-      <div>
-        <div style="width: 600px;">
-          <h2 class="govuk-heading-l">Staff IAC</h2>
-          <h2 class="govuk-heading-m">(IAC USER) Challenged access request</h2>
-          <h3 class="govuk-heading-s">Scenario A - Search for and Challenged Access to case</h3>
-      <!--    <p><a target="_blank" href="/caseaccess/pages/IAC-results?usertype=staff&">Search - entry</a><br></p>
-          <p><a target="_blank" href="/caseaccess/pages/mywork-c?usertype=staff&">My work - entry</a><br>Case reference search from header</p> -->
-          <p><a target="_blank" href="/caseaccess/pages/IAC?usertype=staff&">Case details</a><br>Challanged access - Flow request</br></p>
-        <!--  <p><a target="_blank" href="/caseaccess/pages/IAC-request?usertype=staff&">Request access</a><br>Challanged access - Flow request</br></p>
-          <p><a target="_blank" href="/caseaccess/pages/IAC-confirmation?usertype=staff&">Confirmation</a><br>Challanged access - Flow request</br></p>
-          <p><a target="_blank" href="/caseaccess/pages/IAC-a?usertype=staff&">Case details</a><br>Challanged access - Flow request</br></p>
-          <p><a target="_blank" href="/caseaccess/pages/myaccess-IAC-r?usertype=staff&">My access</a><br>Challanged access - shown in situe</br></p> -->
-
+<h1 class="govuk-heading-xl">
+  Case access prototype
+</h1>
+<h2 class="govuk-heading-l">
+  Last updated (29/3/20) <br><br>Testing
+</h2>
+<div style="display: flex; margin-top: 80px;">
+  <div style="width: 1000px;">
+    <h2 class="govuk-heading-l">Staff IAC</h2>
+    <h2 class="govuk-heading-m">(IAC USER) Challenged access request</h2>
+    <h3 class="govuk-heading-s">Scenario A - Search for and Challenged Access to case</h3>
+    <p><a target="_blank" href="/caseaccess/pages/IAC?usertype=staff&">Case details</a><br>Challanged access - Flow request</br></p>
+    <h2 class="govuk-heading-m">(IAC USER) Specifc access request</h2>
+    <h3 class="govuk-heading-s">Scenario B - Search for and Request Specific Access to case</h3>
+    <p><a target="_blank" href="/caseaccess/pages/IACs?usertype=staff&">Case details</a><br>Specifc access - Flow request</br></p>
+    <!-- SECTION BREAK -->
+    <h2 class="govuk-heading-m">(IAC APPROVER) Approve Specifc access request <br> from AVAILABLE TASKS</h2>
+    <h3 class="govuk-heading-s">Scenario C - Part 1a - Grant request Specific Access to case</h3>
+    <p><a target="_blank" href="/caseaccess/pages/available-tasks-s2?usertype=staff&">Available tasks</a><br>Specifc access - Flow approve</p>
+    <!-- SECTION BREAK -->
+    <h2 class="govuk-heading-m">(IAC USER) Specifc access approved</h2>
+    <h3 class="govuk-heading-s"> Scenario C - Part 2 - Granted (approved)</h3>
+    <p><a target="_blank" href="/caseaccess/pages/myaccess-tc?usertype=staff&">My access</a><br>Specifc access - Flow request</p>
+    <!--     <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-ara?usertype=staff&">Case view - Role / access</a><br>Specifc access - Flow request approved</p>
           <!-- SECTION BREAK -->
-
-          <h2 class="govuk-heading-m">(IAC USER) Specifc access request</h2>
-          <h3 class="govuk-heading-s">Scenario B - Search for and Request Specific Access to case</h3>
-        <!--   <p><a target="_blank" href="/caseaccess/pages/IAC-results-s2?usertype=staff&">Search - entry</a><br></p>
-         <p><a target="_blank" href="/caseaccess/pages/mywork?usertype=staff&">My work - entry</a><br>Case reference search from header</p> -->
-          <p><a target="_blank" href="/caseaccess/pages/IACs?usertype=staff&">Case details</a><br>Specifc access - Flow request</br></p>
-      <!--    <p><a target="_blank" href="/caseaccess/pages/IACs-request?usertype=staff&">Request access</a><br>Specifc access - Flow request</br></p>
-          <p><a target="_blank" href="/caseaccess/pages/IACs-confirmation?usertype=staff&">Confirmation</a><br>Specifc access - Flow request</br></p>
-          <p><a target="_blank" href="/caseaccess/pages/myaccess-IACs-p?usertype=staff&">My access</a><br>Pending Specifc access - Flow request</p>
-        <!--  <p><a target="_blank" href="/caseaccess/pages/myaccess-povd?usertype=staff&">View access request</a><br>Pending Specifc access - Flow request</p>
-          <p><a target="_blank" href="/caseaccess/pages/myaccess-pod?usertype=staff&">Delete request</a><br>Pending Specifc access - Flow request</p>
--->
-          <!-- SECTION BREAK -->
-
-
-          <h2 class="govuk-heading-m">(IAC APPROVER) Approve Specifc access request <br> from AVAILABLE TASKS</h2>
-          <h3 class="govuk-heading-s">Scenario C - Part 1a - Grant request Specific Access to case</h3>
-          <p><a target="_blank" href="/caseaccess/pages/available-tasks-s2?usertype=staff&">Available tasks</a><br>Specifc access - Flow approve</p>
-      <!--    <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-t?usertype=staff&">Active tasks</a><br>Assign to me - Specifc access - Flow approve</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-ta?usertype=staff&">Assigned</a><br>Specifc access - Flow approve</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-tr-case?usertype=staff&"">Review specific access request</a><br>Specifc access - Flow approve</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-tra-case?usertype=staff&">Grant duration of case access
-            </a><br>Specifc access - Flow approve</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-trac-case?usertype=staff&">Access approved</a><br>Specifc access - Flow approve</p>
-
-          <!-- SECTION BREAK -->
-<!--
-          <h2 class="govuk-heading-m">(APPROVER) Approve Specifc access request <br> from INSIDE A CASE</h2>
-          <h3 class="govuk-heading-s">Scenario C - Part 1b - Grant request Specific Access to case</h3>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-a?usertype=staff&">Case view - Overview</a><br>Specifc access - Flow approve</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-ar?usertype=staff&">Case view - Role / access</a><br>Specifc access - Flow approve</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-t?usertype=staff&">Case view - Tasks</a><br>Specifc access - Flow approve</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-ta?usertype=staff&">Case view - assigned yourself a task</a><br>Specifc access - Flow approve</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-tr-case?usertype=staff&">Case view - Review specific access request</a><br>Specifc access - Flow approve</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-tra-case?usertype=staff&">Case view - Grant duration of case access
-            </a><br>Specifc access - Flow approve</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-trac-case?usertype=staff&">Case view - Access approved</a><br>Specifc access - Flow approve</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-tca?usertype=staff&">Case view - Tasks</a><br>Specifc access - Flow approve</p>
-          <!--    <p><a target="_blank" href="/caseaccess/pages/email-approved">Email notifcation - Task Approved</a></p> -->
-
-          <!-- SECTION BREAK -->
-
-          <h2 class="govuk-heading-m">(IAC USER) Specifc access approved</h2>
-          <h3 class="govuk-heading-s"> Scenario C - Part 2 - Granted (approved)</h3>
-          <p><a target="_blank" href="/caseaccess/pages/myaccess-tc?usertype=staff&">My access</a><br>Specifc access - Flow request</p>
-      <!--     <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-ara?usertype=staff&">Case view - Role / access</a><br>Specifc access - Flow request approved</p>
-
-          <!-- SECTION BREAK -->
-
-          <h2 class="govuk-heading-m">(IAC APPROVER) Reject Specifc access request<br> from AVAILABE TASKS</h2>
-          <h3 class="govuk-heading-s">Scenario D (a) - Reject specific access to case </h3>
-          <p><a target="_blank" href="/caseaccess/pages/available-tasks-s2?usertype=staff&">Available tasks</a><br>Specifc access - Flow rejected</p>
-      <!--    <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-tr?usertype=staff&">Review specific access request</a><br>Specifc access - Flow rejected</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-trr?usertype=staff&">Reject specific access request
-            </a><br>Specifc access - Flow rejected</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-trrc?usertype=staff&">Confirmation - Task Rejected</a><br>Specifc access - Flow rejected</p>
-          <!--    <p><a target="_blank" href="/caseaccess/pages/email-rejected">Email notifcation - Task Rejected</a></p> -->
-
-          <!-- SECTION BREAK -->
-<!--
-          <h2 class="govuk-heading-m">(APPROVER) Reject Specifc access request <br> from INSIDE A CASE</h2>
-          <h3 class="govuk-heading-s">Scenario D (b) - Reject specific access to case</h3>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-a?usertype=staff&">Case view - Overview</a><br>Specifc access - Flow reject</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-ar?usertype=staff&">Case view - Role / access</a><br>Specifc access - Flow reject</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-t?usertype=staff&">Case view - Tasks</a><br>Specifc access - Flow reject</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-tr-case?usertype=staff&">Case view - Review specific access request</a><br>Specifc access - Flow reject</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-trr-case?usertype=staff&">Case view - Reject specific access request
-            </a><br>Specifc access - Flow reject</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-trrc-case?usertype=staff&">Case view - Access denied</a><br>Specifc access - Flow reject</p>
-          <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-tca?usertype=staff&">Case view - Tasks</a><br>Specifc access - Flow rejected</p>
-
-          <!-- SECTION BREAK -->
-
-          <h2 class="govuk-heading-m">(IAC USER) Specifc access rejected</h2>
-          <h3 class="govuk-heading-s"> Scenario D (a + b) - Part 2 - Granted (Rejected)</h3>
-          <p><a target="_blank" href="/caseaccess/pages/myaccess-tcr?usertype=staff&">My access</a><br>Specifc access - Flow rejected</p>
-      <!--      <p><a target="_blank" href="/caseaccess/pages/myaccess-tcrvd?usertype=staff&">View details</a><br>Specifc access - Flow rejected</p>
-    <!--      <p><a target="_blank" href="#">Re-request access</a><br>Specifc access - Flow rejected</p> -->
-        <!--  <p><a target="_blank" href="/caseaccess/pages/myaccess-tcrd?usertype=staff&">Delete request</a><br>Specifc access - Flow rejected</p>
--->
-          <!-- SECTION BREAK -->
-<!--
-          <h3 class="govuk-heading-s">Scenario E - Booking UI</h3>
-          <p><a target="_blank" href="/caseaccess/pages/booking?usertype=staff&">Booking UI</a><br>Select type of access</br></p>
-          <p><a target="_blank" href="/caseaccess/pages/booking-location?usertype=staff&">Booking UI - location</a><br>Select location- Subject to change</br></p>
-          <p><a target="_blank" href="/caseaccess/pages/booking-rtn?usertype=staff&">Booking UI</a><br>Return post logout - single</br></p>
-              <p><a target="_blank" href="/caseaccess/pages/booking-rtn-multi?usertype=staff&">Booking UI</a><br>Return post logout - multi</br></p>
-      <!--    <p><a target="_blank" href="/caseaccess/pages/booking-combo?usertype=staff&">Booking UI - Combo</a><br>Alternative design - both screesn combined</br></p>
-      -->  </div>
-      </div>
-    </div>
+    <h2 class="govuk-heading-m">(IAC APPROVER) Reject Specifc access request<br> from AVAILABE TASKS</h2>
+    <h3 class="govuk-heading-s">Scenario D (a) - Reject specific access to case </h3>
+    <p><a target="_blank" href="/caseaccess/pages/available-tasks-s2?usertype=staff&">Available tasks</a><br>Specifc access - Flow rejected</p>
+    <h2 class="govuk-heading-m">(IAC USER) Specifc access rejected</h2>
+    <h3 class="govuk-heading-s"> Scenario D (a + b) - Part 2 - Granted (Rejected)</h3>
+    <p><a target="_blank" href="/caseaccess/pages/myaccess-tcr?usertype=staff&">My access</a><br>Specifc access - Flow rejected</p>
   </div>
-  {% endblock %}
+  <!--
+          ============
+          SSCS
+          ============
+  -->
+  <div style="width: 1000px;">
+    <h2 class="govuk-heading-l">Staff SSCS</h2>
+    <h2 class="govuk-heading-m">(SSCS USER) Challenged access request</h2>
+    <h3 class="govuk-heading-s">Scenario A - Search for and Challenged Access to case</h3>
+    <p><a target="_blank" href="/caseaccess/pages/SSCS?usertype=staff&">Case details</a><br>Challanged access - Flow request</br></p>
+    <h2 class="govuk-heading-m">(SSCS USER) Specifc access request</h2>
+    <h3 class="govuk-heading-s">Scenario B - Search for and Request Specific Access to case</h3>
+    <p><a target="_blank" href="/caseaccess/pages/SSCSs?usertype=staff&">Case details</a><br>Specifc access - Flow request</br></p>
+    <!-- SECTION BREAK -->
+    <h2 class="govuk-heading-m">(SSCS APPROVER) Approve Specifc access request <br> from AVAILABLE TASKS</h2>
+    <h3 class="govuk-heading-s">Scenario C - Part 1a - Grant request Specific Access to case</h3>
+    <p><a target="_blank" href="/caseaccess/pages/available-tasks-s2?usertype=staff&">Available tasks</a><br>Specifc access - Flow approve</p>
+    <!-- SECTION BREAK -->
+    <h2 class="govuk-heading-m">(SSCS USER) Specifc access approved</h2>
+    <h3 class="govuk-heading-s"> Scenario C - Part 2 - Granted (approved)</h3>
+    <p><a target="_blank" href="/caseaccess/pages/myaccess-tc?usertype=staff&">My access</a><br>Specifc access - Flow request</p>
+    <!--     <p><a target="_blank" href="/caseaccess/pages/PA-00467-2017-ara?usertype=staff&">Case view - Role / access</a><br>Specifc access - Flow request approved</p>
+            <!-- SECTION BREAK -->
+    <h2 class="govuk-heading-m">(SSCS APPROVER) Reject Specifc access request<br> from AVAILABE TASKS</h2>
+    <h3 class="govuk-heading-s">Scenario D (a) - Reject specific access to case </h3>
+    <p><a target="_blank" href="/caseaccess/pages/available-tasks-s2?usertype=staff&">Available tasks</a><br>Specifc access - Flow rejected</p>
+    <h2 class="govuk-heading-m">(SSCS USER) Specifc access rejected</h2>
+    <h3 class="govuk-heading-s"> Scenario D (a + b) - Part 2 - Granted (Rejected)</h3>
+    <p><a target="_blank" href="/caseaccess/pages/myaccess-tcr?usertype=staff&">My access</a><br>Specifc access - Flow rejected</p>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}
