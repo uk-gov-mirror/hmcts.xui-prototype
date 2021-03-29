@@ -11,86 +11,7 @@ Case details
 {% endblock %}
 
 {% block content %}
-<!-- <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
-  <div class="" style="display: flex; justify-content: space-between; ">
-    <div> -->
-  <!--    <h1 class="govuk-heading-xl">PA/00467/2017</h1> -->
-  <!--  </div> -->
-  <!--  <div style="display: flex; align-items:right">
-      <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
-      <select class="govuk-select" id="sort" name="sort">
-        <option value="published" selected="">Select action</option>
-        <option value="published">Submit amended application</option>
-        <option value="published">Link respondent</option>
-        <option value="published">Add Note</option>
-        <option value="published">Upload document</option>
-        <option value="updated">Stop representing a client</option>
-      </select>
-      <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
-        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
-          Go
-        </button>
-      </form>
-    </div>
-  </div>
-  <div class="govuk-tabs" data-module="govuk-tabs">
-    <h2 class="govuk-tabs__title">
-      Contents
-    </h2>
-    <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="PA-00467-2017-t">
-          Tasks
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="PA-00467-2017-ar">
-          Roles / access
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-        <a class="govuk-tabs__tab" href="PA-00467-2017-a">
-          Overview
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#past-week">
-          Appeal
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#past-week">
-          Appellent
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#past-week">
-          Documents
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#past-week">
-          Directions
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#past-week" >
-          Applications
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#past-week">
-          Case notes
-        </a>
-      </li>
-  <!--    <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#past-week">
-          Hearing
-        </a>
-      </li> -->
-  <!--  </ul> -->
-  <!--  <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
-    -->  <div class="govuk-grid-row">
+ <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
     {% set setDuration %}
     {{ govukDateInput({
@@ -136,7 +57,7 @@ Case details
       name: "contact",
       fieldset: {
         legend: {
-          text: "Grant duration of case access",
+          text: "How long do you want to give access to this case for?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
@@ -146,30 +67,32 @@ Case details
       },
       items: [
 
-        {
-          value: "phone",
-          text: "7 days ",
-          hint: {
-        text: "Starts from today and ends at midnight on 7th day."
-      }
-      },
+      {
+        value: "phone",
+        text: "7 days ",
+        hint: {
+      text: "Access starts from today and ends at midnight 7 days from now."
+    }
+    },
 
-        {
-          value: "phone",
-          text: "Other period",
-          hint: {
-        text: "You’ll need to specify both start and end date."
-      },
-          conditional: {
-            html: setDuration
-          }
-        },
-        {
-          value: "phone",
-          text: "Indefinite access",
-          hint: {
-        text: "Starts from today and lasts whilst case is open."
-      }
+
+    {
+      value: "phone",
+      text: "Indefinitely",
+      hint: {
+    text: "Access starts from today and lasts while the case is open."
+  }
+  },
+
+      {
+        value: "phone",
+        text: "Another period",
+        hint: {
+      text: "You’ll need to provide both a start and end date for access to the case."
+    },
+        conditional: {
+          html: setDuration
+        }
       }
       ]
     }) }}

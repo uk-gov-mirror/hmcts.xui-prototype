@@ -14,7 +14,7 @@ Case details
   </svg>
   <div class="hmcts-banner__message">
     <span class="hmcts-banner__assistive">information</span>
-    Challenged access. <br>This case is located outside your working region. Access to this case is logged for auditing purposes.
+    This case has challenged access.<br>This is because the case is outside your work area. If you request access to the case, it will be logged for auditing purposes.
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -31,13 +31,16 @@ Case details
       name: "contact",
       fieldset: {
         legend: {
-          text: "Why are you accessing this case?",
+          text: "Why do you need to access this case?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       hint: {
-        text: "Access will be granted until midnight tonight. Select one option."
+        text: "Select a reason.
+
+You’ll be given access to the case until midnight tonight.
+"
       },
       items: [
         {
@@ -52,7 +55,7 @@ Case details
           value: "email",
           text: "To determine if the case needs to be consolidated with my current case"
         },
-        
+
         {
           value: "next",
           text: "To view evidence in the best interest of a child involved in current proceedings"
