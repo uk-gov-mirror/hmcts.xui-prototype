@@ -1,0 +1,37 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              {{ govukPanel({
+                titleText: "Access denied"
+              }) }}
+              <h2 class="govuk-heading-m">What happens next</h2>
+              <p class="govuk-body">
+                The requester has been denied access to this case.
+              </p>
+              <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Return to My tasks",
+                href: "IAC-mywork",
+                classes: "govuk-!-margin-right-3"
+
+              }) }}
+              <!--
+              {{ govukButton({
+                text: "Cancel and unassign task",
+                href: "/mywork-c",
+                classes: "govuk-button--secondary"
+              }) }} -->
+              <p><a class="govuk-body" href="IAC-tca">Return to the Tasks tab for this case</a></p>
+            </div>
+            </div>
+          </div>
+{% endblock %}

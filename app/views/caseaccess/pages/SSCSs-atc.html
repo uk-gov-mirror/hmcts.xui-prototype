@@ -1,7 +1,7 @@
 {% if  data.usertype == 'judiciary'   %}
-    {% extends "../layoutjudicial-c.html" %}
+    {% extends "../layoutjudicial.html" %}
 {% else %}
-    {% extends "../layoutstaff-c.html" %}
+    {% extends "../layoutstaff.html" %}
 {% endif %}
 
 
@@ -18,8 +18,7 @@ Case details
   C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
   </svg>
   <div class="hmcts-banner__message">
-    <span class="hmcts-banner__assistive">information</span>
-    You have been given challenged access to this case until midnight tonight. Access to this case is logged for auditing purposes.
+    <span class="hmcts-banner__assistive">information</span>You have been given specific access to this case until midnight on 06/04/2021. Access to this case is logged for auditing purposes.
   </div>
 </div>
 <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
@@ -27,7 +26,7 @@ Case details
 
 
     <div>
-      <h1 class="govuk-heading-xl">9872574867365860</h1>
+      <h1 class="govuk-heading-xl">IA/56765/2021</h1>
     </div>
 
 
@@ -60,7 +59,7 @@ Case details
       Contents
     </h2>
     <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <li class="govuk-tabs__list-item">
         <a class="govuk-tabs__tab" href="#">
           Tasks
         </a>
@@ -128,22 +127,22 @@ Case details
           <span class="hmcts-progress-bar__label">Appeal<br>submitted</span>
         </li>
 
-        <li class="hmcts-progress-bar__list-item" aria-current="step">
-            <span class="hmcts-progress-bar__icon "></span>
+        <li class="hmcts-progress-bar__list-item">
+            <span class="hmcts-progress-bar__icon hmcts-progress-bar__icon--complete"></span>
           <span class="hmcts-progress-bar__label">Awaiting<br>respondent<br>evidence</span>
         </li>
 
         <li class="hmcts-progress-bar__list-item">
-            <span class="hmcts-progress-bar__icon "></span>
+            <span class="hmcts-progress-bar__icon hmcts-progress-bar__icon--complete"></span>
           <span class="hmcts-progress-bar__label">Case<br>building</span>
         </li>
 
-        <li class="hmcts-progress-bar__list-item">
+        <li class="hmcts-progress-bar__list-item" aria-current="step">
           <span class="hmcts-progress-bar__icon "></span>
           <span class="hmcts-progress-bar__label">Case<br>under<br>review</span>
         </li>
 
-        <li class="hmcts-progress-bar__list-item" >
+        <li class="hmcts-progress-bar__list-item">
           <span class="hmcts-progress-bar__icon"></span>
           <span class="hmcts-progress-bar__label">Respondent<br>review</span>
         </li>
@@ -180,8 +179,8 @@ Case details
         <h2 class="govuk-heading-m">Do this next</h2>
 
         <p class="govuk-body">Check the response uploaded by the respondent.</p>
-        <p class="govuk-body">If it complies with the Procedure Rules and Practice Directions, direct the appellant to <a href="#" class="govuk-link">review the Home Office response</a>.</p>
-        <p class="govuk-body">If it does not comply, direct the respondent to <a href="#" class="govuk-link">amend the appeal response</a>.</p>
+        <p class="govuk-body">If it complies with the Procedure Rules and Practice Directions, direct the appellant to <a href="#" class="govuk-link">review the Home Office response</a></p>
+        <p class="govuk-body">If it does not comply, direct the respondent to <a href="#" class="govuk-link">amend the appeal response</a></p>
 
         <br>
          <h2 class="govuk-heading-m">Case details</h2>
@@ -196,7 +195,8 @@ Case details
                    Appeal reference
                  </dt>
                  <dd class="govuk-summary-list__value">
-                   9872574867365860
+                   IA/56765/2021
+
                  </dd>
 
                </div>
@@ -208,7 +208,7 @@ Case details
                    Appellant
                  </dt>
                  <dd class="govuk-summary-list__value">
-                    Joanna Burns
+                    	Ali Uddin
                  </dd>
 
                </div>
@@ -220,7 +220,7 @@ Case details
                    Date of birth
                  </dt>
                  <dd class="govuk-summary-list__value">
-                   05/05/1992
+                  27/08/1993
                  </dd>
 
                </div>
@@ -232,7 +232,7 @@ Case details
                    Nationalities
                  </dt>
                  <dd class="govuk-summary-list__value">
-                   Swedish
+                   Pushtan
                  </dd>
 
                </div>
