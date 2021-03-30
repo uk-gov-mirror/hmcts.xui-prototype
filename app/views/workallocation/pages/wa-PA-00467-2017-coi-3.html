@@ -1,0 +1,39 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="wa-PA-00467-2017-coi-2" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+<h2 class="govuk-heading-l">Add an exclusion</h2>
+
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+      Find the person
+    </label>
+  </h2>
+  <div id="event-name-hint" class="govuk-hint">
+    Type the name of the person and select them.
+  </div>
+  <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+</div>
+
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+    href: "wa-PA-00467-2017-coi-4",
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-PA-00467-2017-ar">Cancel</a></p>
+</div>
+</form>
+
+{% endblock %}

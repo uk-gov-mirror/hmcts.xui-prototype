@@ -29,20 +29,20 @@ Case details
     }
   },
   hint: {
-    text: "This reason will be sent to the requester. Select one option."
+    text: "Select one reason. This reason will be sent to the person requesting access to the case."
   },
   items: [
     {
       value: "email",
-      text: "More information needed. Please contact me to discuss further."
+      text: "Based on the reasons you have provided, I do not believe it is appropriate for you to gain access to this case"
     },
     {
       value: "phone",
-      text: "Reason B."
+      text: "You have not supplied enough information, please contact me to discuss further"
     },
     {
       value: "email",
-      text: "Reason C."
+      text: "You have a conflict of interest with this case"
     },
 
     {
@@ -50,7 +50,7 @@ Case details
 },
 {
   value: "other",
-  text: "Other.",
+  text: "Other",
   conditional: {
     html: textHtml
   }
@@ -70,7 +70,7 @@ Case details
   classes: "govuk-button--secondary"
 }) }} -->
 
-  <p><a class="govuk-body" href="/caseaccess/pages/available-tasks-s2o">Cancel and unassign task</a></p>
+<p><a class="govuk-body" href="PA-00467-2017-tac">Cancel</a></p>
 </div>
 
 </div>

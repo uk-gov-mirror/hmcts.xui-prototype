@@ -12,23 +12,15 @@ Case details
     <h1 class="govuk-heading-xl">Unassign task</h1>
   </div>
 </div>
-
-
     <p>Unassign this task. This will send it back to the available task list for someone to pick up.</p>
-
-
     <h2 class="govuk-heading-m">Task summary</h2>
-
     <div class="hmcts-scrollable-pane">
       <div class="hmcts-scrollable-pane__wrapper">
-
         <table class="govuk-body" id="transactionstable">
           <p class="govuk-body">
-
           </p>
           <thead>
             <tr class="govuk-table__row">
-
               <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Case name</button></th>
               <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
               <th scope="col" class="govuk-table__header" aria-sort="none"><button type="button" data-index="1">Location</button></th>
@@ -38,11 +30,10 @@ Case details
           </thead>
           <tbody>
             <tr>
-
-              <td data-label="Case">Lacey-May Sanders</td>
+              <td data-label="Case">Amelia Chu</td>
               <td data-label="Reference">Protection</td>
               <td data-label="Status">Taylor House</td>
-              <td data-label="Date">Review respondent evidence</td>
+              <td data-label="Date">	Review specific access request</td>
                 <td data-label="Amount">{{govukTag({
       text: "dd/mm/yyyy",
       classes: "govuk-tag--red"
@@ -59,7 +50,6 @@ Case details
         classes: "govuk-!-margin-right-5",
         href: "/caseaccess/pages/PA-00467-2017-tu"
         }) }}
-
 <!--
         {{ govukButton({
         text: 'Cancel',
@@ -67,7 +57,6 @@ Case details
         href: "/caseaccess/pages/PA-00467-2017-ta"
         }) }}
 -->
-  <p><a class="govuk-body" href="/caseaccess/pages/PA-00467-2017-ta">Cancel</a></p>
-
+  <p><a class="govuk-body" href="/caseaccess/pages/PA-00467-2017-tac">Cancel</a></p>
     </form>
 {% endblock %}

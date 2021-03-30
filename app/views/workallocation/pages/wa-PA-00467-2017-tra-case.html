@@ -1,0 +1,116 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="/workallocation/pages/wa-PA-00467-2017-tr-case" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+ <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+    {% set setDuration %}
+    {{ govukDateInput({
+      id: "passport-issued",
+      namePrefix: "passport-issued",
+      fieldset: {
+        legend: {
+          text: "Access starts",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, 12 11 2007"
+      }
+    }) }}
+    {{ govukDateInput({
+    id: "passport-issued",
+    namePrefix: "passport-issued",
+    fieldset: {
+    legend: {
+    text: "Access ends",
+    classes: "govuk-fieldset__legend--m"
+    }
+    },
+    hint: {
+    text: "For example, 12 11 2007"
+    }
+    }) }}
+    {% endset -%}
+    {% set textHtml %}
+    {{ govukInput({
+      id: "contact-by-text",
+      name: "contact-by-text",
+      type: "tel",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Mobile phone number"
+      }
+    }) }}
+    {% endset -%}
+    {{ govukRadios({
+      idPrefix: "contact",
+      name: "contact",
+      fieldset: {
+        legend: {
+          text: "Grant duration of case access",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      items: [
+
+
+              {
+                value: "phone",
+                text: "7 days ",
+                hint: {
+              text: "Access starts from today and ends at midnight 7 days from now."
+            }
+            },
+
+
+            {
+              value: "phone",
+              text: "Indefinitely",
+              hint: {
+            text: "Access starts from today and lasts while the case is open."
+          }
+          },
+
+              {
+                value: "phone",
+                text: "Another period",
+                hint: {
+              text: "You’ll need to provide both a start and end date for access to the case."
+            },
+                conditional: {
+                  html: setDuration
+                }
+              }
+      ]
+    }) }}
+    <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Submit",
+      classes: "govuk-!-margin-right-3",
+      href: "/workallocation/pages/wa-PA-00467-2017-trac-case"
+    }) }}
+  <!--
+    {{ govukButton({
+        text: "Cancel and unassign task",
+        href: "/workallocation/pages/wa-PA-00467-2017-t",
+        classes: "govuk-button--secondary"
+      }) }} -->
+  <p><a class="govuk-body" href="wa-PA-00467-2017-tac">Cancel</a></p>
+    </div>
+    </div>
+    </div>
+{% endblock %}

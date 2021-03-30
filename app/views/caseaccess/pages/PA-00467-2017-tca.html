@@ -42,7 +42,7 @@ Case details
       </li>
       <li class="govuk-tabs__list-item">
         <a class="govuk-tabs__tab" href="#">
-          Roles / access
+          Roles and access
         </a>
       </li>
       <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
@@ -92,26 +92,39 @@ Case details
         <div class="govuk-grid-column-two-thirds">
           <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Active tasks</h2>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--m">Review application decision <span class="hmcts-badge_right">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}}</span></caption>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Assigned to</th>
-                <td class="govuk-table__cell">Judge Beech</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Manage</th>
-                <td class="govuk-table__cell"><a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a>  </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Next steps</th>
-                <td class="govuk-table__cell"><a href="#">Review application decision</a></td>
-              </tr>
-            </tbody>
-          </table>
+          <p class="govuk-body"><strong>Review application decision</strong> <span class="hmcts-badge_right">{{govukTag({
+      text: "dd/mm/yyyy",
+      classes: "govuk-tag--grey"
+      })}}</span></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Assigned to</span>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Judge Beech
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                <span style="padding-left:25px">Manage</span>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Next steps</span>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="#">Review application decision</a>
+              </dd>
+            </div>
+          </dl>
+
+
+
         </div>
         <div class="govuk-grid-column-one-third">
           <!--

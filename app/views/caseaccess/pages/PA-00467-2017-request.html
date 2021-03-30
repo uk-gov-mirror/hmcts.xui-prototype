@@ -14,7 +14,7 @@ Case details
   </svg>
   <div class="hmcts-banner__message">
     <span class="hmcts-banner__assistive">information</span>
-    Specific access. <br>Access requires manual authorisation. Access to this case is logged for auditing purposes.
+    This case has specific access.<br>This means it requires authorisation. If you request access to the case, it will be logged for auditing purposes.
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -31,26 +31,30 @@ Case details
       name: "contact",
       fieldset: {
         legend: {
-          text: "Why are you requesting access to this case?",
+          text: "Why do you need to access this case?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       hint: {
-        text: "Access requires manual authorisation. Select one option."
+        text: "Select a reason."
       },
       items: [
         {
           value: "email",
-          text: "Purpose A"
+          text: "To view details of last hearing or order related to the parties on my current case"
         },
         {
           value: "phone",
-          text: "Purpose B"
+          text: "To view details of the other case linked to the parties/family on my current case"
         },
         {
           value: "email",
-          text: "Purpose C"
+          text: "To determine if the case needs to be consolidated with my current case"
+        },
+        {
+          value: "next",
+          text: "To view evidence in the best interest of a child involved in current proceedings"
         },
 
         {

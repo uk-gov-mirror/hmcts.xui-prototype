@@ -1,0 +1,99 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<div class="hmcts-banner">
+  <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+  C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+  </svg>
+  <div class="hmcts-banner__message">
+    <span class="hmcts-banner__assistive">information</span>
+    This case has specific access.<br>This means it requires authorisation. If you request access to the case, it will be logged for auditing purposes.
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% set textHtml %}
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail"
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "contact",
+      name: "contact",
+      fieldset: {
+        legend: {
+          text: "Why do you need to access this case?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Select a reason."
+      },
+      items: [
+        {
+          value: "email",
+          text: "To view details of last hearing or order related to the parties on my current case"
+        },
+        {
+          value: "phone",
+          text: "To view details of the other case linked to the parties/family on my current case"
+        },
+        {
+          value: "email",
+          text: "To determine if the case needs to be consolidated with my current case"
+        },
+        {
+          value: "next",
+          text: "To view evidence in the best interest of a child involved in current proceedings"
+        },
+
+        {
+     divider: "or"
+   },
+        {
+          value: "other",
+          text: "Other",
+          conditional: {
+            html: textHtml
+          }
+        }
+      ]
+    }) }}
+
+
+
+
+    {{ govukButton({
+  text: "Submit",
+  href: "SSCSs-confirmation",
+  classes: "govuk-!-margin-right-3"
+}) }}
+
+<!--
+{{ govukButton({
+  text: "Cancel",
+  href: "results",
+  classes: "govuk-button--secondary"
+}) }} -->
+<p>  <a class="govuk-body" href="/searchcases/pages/results">Cancel</a></p>
+</div>
+</div>
+<form method=""  action="#" class="for4" style=" float: left; margin-top: 60px;">
+    <p style="margin-bottom: 0px;">Select to show validation errors</p>
+    <select size="1" name="hop" style="height:25px;" onchange="document.location.href=this.value">
+    <option selected value=""> Select an option</option>
+    <option value="/caseaccess/pages/PA-00467-2017-request">No errors</option>
+    <option value="/caseaccess/pages/PA-00467-2017-request-error">Missing text</option>
+    </select>
+</form>
+{% endblock %}
