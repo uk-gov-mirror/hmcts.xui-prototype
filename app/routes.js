@@ -71,24 +71,70 @@ router.post( '/searchcases/pages/search', function (req, res)
         if(req.session.data['otherref'] == '')
         {}
         else
-        {
-            // IAC scenario
-            if(req.session.data['otherref'] == 'PA/72185/2021')
+        {            // TASK 3- IAC scenario
+            if(req.session.data['otherref'].toString().includes("PA/52185/2021"))
             {
-                res.redirect('/searchcases/pages/loading-screen?results=iacscenario2&');
+                req.session.data['results'] = 'iactask3';
+                res.redirect('/searchcases/pages/loading-screen');
             }
-            else if(req.session.data['otherref'] == 'JL427586K')
+            // TASK 3 - SSCS scenario
+            else if(req.session.data['otherref'].toString().includes("JL427586K"))
             {
-                res.redirect('/searchcases/pages/loading-screen?results=sscsscenario2&');
+                req.session.data['results'] = 'sscstask3';
+                res.redirect('/searchcases/pages/loading-screen');
             }
-
+            // TASK 4 - IAC scenario
+            else if(req.session.data['otherref'].toString().includes("5 2021")  &&  (req.session.data['otherref'].toString().includes("*") ||  req.session.data['otherref'].toString().includes("?")))
+            {
+                if(req.session.data['names'] == 'Mohammed')
+                {
+                    req.session.data['results'] = 'iactask4';
+                    res.redirect('/searchcases/pages/noresults');
+                }
+                else if(req.session.data['names'].toString().includes("Mohammed") &&  (req.session.data['names'].toString().includes("*") ||  req.session.data['names'].toString().includes("?")))
+                {
+                    req.session.data['results'] = 'iactask4';
+                }
+                res.redirect('/searchcases/pages/loading-screen');
+            }
+            // TASK 4 - SCSS scenario
+            else if(req.session.data['otherref'].toString().includes("JL869")   &&  (req.session.data['otherref'].toString().includes("*") ||  req.session.data['otherref'].toString().includes("?")))
+            {
+                if(req.session.data['names'] == 'Tom')
+                {
+                    req.session.data['results'] = 'iactask4';
+                    res.redirect('/searchcases/pages/noresults');
+                }
+                else if(req.session.data['names'].toString().includes("Tom") &&  (req.session.data['names'].toString().includes("*") ||  req.session.data['names'].toString().includes("?")) )
+                {
+                    req.session.data['results'] = 'sscstask4';
+                }
+                res.redirect('/searchcases/pages/loading-screen');
+            }
+            // TASK 5 - IAC scenario
+            else if(req.session.data['otherref'].toString().includes("IA/58778/2021"))
+            {
+                res.redirect('/searchcases/pages/noresults');
+            }
+            else
+            {
+                res.redirect('/searchcases/pages/noresults');
+            }
         }
 
 
         // If a known name is entered then go to specific results
-        if(req.session.data['names'] != 'Talha Awan')
+        if(req.session.data['names'] == '')
+        { }
+        // IAC - TASK 3
+        else if(req.session.data['names'] == 'Talha Awan')
         {
-            res.redirect('/searchcases/pages/loading-screen?results=iacscenario2&');
+            req.session.data['results'] = 'iactask3';
+            res.redirect('/searchcases/pages/loading-screen');
+        }
+        // IAC - TASK 4
+        else if(req.session.data['names'] == 'Mohammed')
+        {
         }
 
 
@@ -144,7 +190,7 @@ router.post( '/searchcases/pages/search', function (req, res)
 
             if( req.session.data['casereference'] == '7495728506858694'  ||  req.session.data['casereference'] == '7495-7285-0685-8694'  )
             {
-                res.redirect('/searchcases/pages/casedetailsiac?');
+                res.redirect('/searchcases/pages/casedetailssscs?');
             }
 
             res.redirect('/searchcases/pages/casedetailsdivorce');
@@ -168,9 +214,28 @@ router.get( '/opencase', function (req, res)
     req.session.data['postcode'] = '';
     req.session.data['email'] = '';
 
-    req.session.data['casereference'] = '8771785741275065';
+    req.session.data['casereference'] = req.session.data['hmctsrefheader'];
 
-    res.redirect('/searchcases/pages/casedetailsdivorce');
+    if(req.session.data['casereference'].length < 16  ||  20 < req.session.data['casereference'].length )
+    {
+        req.session.data['hmctsref'] = req.session.data['hmctsrefheader'];
+        req.session.data['errorcasenumber'] = 'true';
+        //console.warn("Main Router " + req.session.data['errorcasenumber']);
+        res.redirect('/searchcases/pages/search');
+    }
+
+    if( req.session.data['casereference'].toString().includes("7495728506858694")  ||  req.session.data['casereference'] == '7495-7285-0685-8694'  )
+    {
+        res.redirect('/searchcases/pages/casedetailssscs?');
+    }
+
+    if( req.session.data['casereference'].toString().includes("7556 3296 6000 0123")
+        ||  req.session.data['casereference'].toString().includes("7556329660000123")
+        ||  req.session.data['casereference'].toString().includes("7556-3296-6000-0123") )
+    {
+        res.redirect('/caseaccess/pages/restricted');
+    }
+
 })
 
 
