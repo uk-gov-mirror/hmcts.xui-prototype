@@ -34,12 +34,64 @@ Case details
         </thead>
 
 
+        {% if  data.results == 'challengedandspecific'   %}
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Loan Bourland<br><span style="font-size: 16px; color:#505a5f;">0598-5385-1020-1905</span></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Appeal submitted</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Basilia Bourdeau<br><span style="font-size: 16px; color:#505a5f;">4520-3340-3600-1211</span></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case under review</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Field House Tribunal Hearing Centre</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/caseaccess/pages/PA-00321-2018">Challenged access</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Letha Schwebach<br><span style="font-size: 16px; color:#505a5f;">0087-2869-7369-3465</span></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Divorce</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Ready for transfer</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Clerkenwell and Shoreditch County Court and Family Court</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/caseaccess/pages/PA-00467-2017">Specific access</a></td>
+                </tr>
+            </tbody>
+        </table>
 
-        {% if  data.results == 'one'   %}
+        {% elif  data.results == 'iacscenario2'   %}
             <!-- One result -->
                 <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Vanetta Medley<br>0598-5385-1020-1905 </td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Talha Awan<br><span style="font-size: 16px; color:#505a5f;">8771-7857-4127-5065</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case under review</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        {% elif  data.results == 'sscsscenario2'   %}
+            <!-- One result -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Robin Narran<br><span style="font-size: 16px; color:#505a5f;">8771-7857-4127-5065</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case under review</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsdivorce">View</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        {% elif  data.results == 'one'   %}
+            <!-- One result -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Vanetta Medley<br>0598-5385-1020-1905<br><span style="font-size: 16px; color:#505a5f;">0598-5385-1020-1905</span></td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case under review</td>
                         <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>

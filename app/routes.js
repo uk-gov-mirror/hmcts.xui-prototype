@@ -66,6 +66,33 @@ router.post( '/searchcases/pages/search', function (req, res)
         //If no reference is entered then we make one up for them
         req.session.data['casereference'] = '8771785741275065';
 
+
+        // Check if there is another reference
+        if(req.session.data['otherref'] == '')
+        {}
+        else
+        {
+            // IAC scenario
+            if(req.session.data['otherref'] == 'PA/72185/2021')
+            {
+                res.redirect('/searchcases/pages/loading-screen?results=iacscenario2&');
+            }
+            else if(req.session.data['otherref'] == 'JL427586K')
+            {
+                res.redirect('/searchcases/pages/loading-screen?results=sscsscenario2&');
+            }
+
+        }
+
+
+        // If a known name is entered then go to specific results
+        if(req.session.data['names'] != 'Talha Awan')
+        {
+            res.redirect('/searchcases/pages/loading-screen?results=iacscenario2&');
+        }
+
+
+
         // If a postcode is entered we validate against it
         if(req.session.data['postcode'] != '')
         {
@@ -114,6 +141,12 @@ router.post( '/searchcases/pages/search', function (req, res)
         {
             // if the hmcts reference is valid then go straight to the case
             req.session.data['casereference'] = req.session.data['hmctsref'];
+
+            if( req.session.data['casereference'] == '7495728506858694'  ||  req.session.data['casereference'] == '7495-7285-0685-8694'  )
+            {
+                res.redirect('/searchcases/pages/casedetailsiac?');
+            }
+
             res.redirect('/searchcases/pages/casedetailsdivorce');
         }
     }
