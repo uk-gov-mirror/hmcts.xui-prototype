@@ -49,6 +49,9 @@ router.get( '/searchcases/pages/startsearch', function (req, res)
     res.redirect('/searchcases/pages/search');
 })
 
+
+
+
 // If the user enters a ccd reference number then take them directly to the case
 router.post( '/searchcases/pages/search', function (req, res)
 {
@@ -84,7 +87,7 @@ router.post( '/searchcases/pages/search', function (req, res)
                 res.redirect('/searchcases/pages/loading-screen');
             }
             // TASK 4 - IAC scenario
-            else if(req.session.data['otherref'].toString().includes("5 2021")  &&  (req.session.data['otherref'].toString().includes("*") ||  req.session.data['otherref'].toString().includes("?")))
+            else if(req.session.data['otherref'].toString().includes("5/2021")  &&  (req.session.data['otherref'].toString().includes("*") ||  req.session.data['otherref'].toString().includes("?")))
             {
                 if(req.session.data['names'] == 'Mohammed')
                 {
@@ -129,7 +132,7 @@ router.post( '/searchcases/pages/search', function (req, res)
         // IAC - TASK 3
         else if(req.session.data['names'] == 'Talha Awan')
         {
-            req.session.data['results'] = 'iactask3';
+            req.session.data['results'] = 'iactask311';
             res.redirect('/searchcases/pages/loading-screen');
         }
         // IAC - TASK 4
@@ -192,6 +195,12 @@ router.post( '/searchcases/pages/search', function (req, res)
             {
                 res.redirect('/searchcases/pages/casedetailssscs?');
             }
+            else if( req.session.data['casereference'].toString().includes("7556 3296 6000 0123")
+                    ||  req.session.data['casereference'].toString().includes("7556329660000123")
+                    ||  req.session.data['casereference'].toString().includes("7556-3296-6000-0123") )
+                {
+                    res.redirect('/caseaccess/pages/restricted');
+                }
 
             res.redirect('/searchcases/pages/casedetailsdivorce');
         }
