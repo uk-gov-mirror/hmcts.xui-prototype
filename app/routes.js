@@ -137,14 +137,34 @@ router.post( '/searchcases/pages/search', function (req, res)
             req.session.data['results'] = 'iactask311';
             res.redirect('/searchcases/pages/loading-screen');
         }
+
         // IAC - TASK 4
-        else if(req.session.data['names'] == 'Mohammed')
+        else if(  ( req.session.data['names'].toString().includes("Mohammed")  ||  req.session.data['names'].toString().includes("mohammed")  )
+            &&  (req.session.data['names'].toString().includes("*") ||  req.session.data['names'].toString().includes("?")) )
         {
             if(req.session.data['otherref'] == '')
+            {
+                res.redirect('/searchcases/pages/toomanyresults');
+            }
+            else
             {
                 res.redirect('/searchcases/pages/noresults');
             }
         }
+        // SSCS - TASK 4
+        else if(  ( req.session.data['names'].toString().includes("Tom")  ||  req.session.data['names'].toString().includes("tom")  )
+            &&  ( req.session.data['names'].toString().includes("*") ||  req.session.data['names'].toString().includes("?") ) )
+        {
+            if(req.session.data['otherref'] == '')
+            {
+                res.redirect('/searchcases/pages/toomanyresults');
+            }
+            else
+            {
+                res.redirect('/searchcases/pages/noresults');
+            }
+        }
+
         else if(req.session.data['names'] == 'Sufjan Remi' ||  req.session.data['names'] == 'Edward Samuels' )
         {
             res.redirect('/searchcases/pages/noresults');
