@@ -89,25 +89,28 @@ router.post( '/searchcases/pages/search', function (req, res)
             // TASK 4 - IAC scenario
             else if(req.session.data['otherref'].toString().includes("5/2021")  &&  (req.session.data['otherref'].toString().includes("*") ||  req.session.data['otherref'].toString().includes("?")))
             {
-                if(req.session.data['names'] == 'Mohammed')
+                if(req.session.data['names'] == 'Mohammed'  ||  req.session.data['names'] == 'mohammed'  )
                 {
                     res.redirect('/searchcases/pages/noresults');
                 }
-                else if(req.session.data['names'].toString().includes("Mohammed") &&  (req.session.data['names'].toString().includes("*") ||  req.session.data['names'].toString().includes("?")))
+                else if( (req.session.data['names'].toString().includes("Mohammed") ||   req.session.data['names'].toString().includes("mohammed"))
+                    &&  (req.session.data['names'].toString().includes("*") ||  req.session.data['names'].toString().includes("?")))
                 {
                     req.session.data['results'] = 'iactask4';
                 }
                 res.redirect('/searchcases/pages/loading-screen');
             }
             // TASK 4 - SCSS scenario
-            else if(req.session.data['otherref'].toString().includes("JL869")   &&  (req.session.data['otherref'].toString().includes("*") ||  req.session.data['otherref'].toString().includes("?")))
+            else if(  ( req.session.data['otherref'].toString().includes("JL869")   ||  req.session.data['otherref'].toString().includes("jl869")  )
+                &&  (req.session.data['otherref'].toString().includes("*") ||  req.session.data['otherref'].toString().includes("?")))
             {
-                if(req.session.data['names'] == 'Tom')
+                if(req.session.data['names'] == 'Tom'  ||  req.session.data['names'] == 'tom' )
                 {
                     req.session.data['results'] = 'iactask4';
                     res.redirect('/searchcases/pages/noresults');
                 }
-                else if(req.session.data['names'].toString().includes("Tom") &&  (req.session.data['names'].toString().includes("*") ||  req.session.data['names'].toString().includes("?")) )
+                else if(  ( req.session.data['names'].toString().includes("Tom")  ||  req.session.data['names'].toString().includes("tom")  )
+                    &&  (req.session.data['names'].toString().includes("*") ||  req.session.data['names'].toString().includes("?")) )
                 {
                     req.session.data['results'] = 'sscstask4';
                 }
@@ -129,7 +132,7 @@ router.post( '/searchcases/pages/search', function (req, res)
         if(req.session.data['names'] == '')
         { }
         // IAC - TASK 3
-        else if(req.session.data['names'] == 'Talha Awan')
+        else if(  req.session.data['names'] == 'Talha Awan' ||   req.session.data['names'] == 'talha awan'   )
         {
             req.session.data['results'] = 'iactask311';
             res.redirect('/searchcases/pages/loading-screen');
@@ -139,7 +142,7 @@ router.post( '/searchcases/pages/search', function (req, res)
         {
             if(req.session.data['otherref'] == '')
             {
-                res.redirect('/searchcases/pages/toomanyresults');
+                res.redirect('/searchcases/pages/noresults');
             }
         }
         else if(req.session.data['names'] == 'Sufjan Remi' ||  req.session.data['names'] == 'Edward Samuels' )
