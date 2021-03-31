@@ -73,31 +73,34 @@ Case details
     },
     items: [
 
-      {
-        value: "phone",
-        text: "7 days ",
-        hint: {
-      text: "Starts from today and ends at midnight on 7th day."
-    }
-    },
+            {
+              value: "phone",
+              text: "7 days ",
+              hint: {
+            text: "Access starts from today and ends at midnight 7 days from now."
+          }
+          },
 
-      {
-        value: "phone",
-        text: "Other period",
-        hint: {
-      text: "You’ll need to specify both start and end date."
-    },
-        conditional: {
-          html: setDuration
+
+          {
+            value: "phone",
+            text: "Indefinitely",
+            hint: {
+          text: "Access starts from today and lasts while the case is open."
         }
-      },
-      {
-        value: "phone",
-        text: "Indefinite access",
-        hint: {
-      text: "Starts from today and lasts whilst case is open."
-    }
-    }
+        },
+
+            {
+              value: "phone",
+              text: "Another period",
+              hint: {
+            text: "You’ll need to provide both a start and end date for access to the case."
+          },
+              conditional: {
+                html: setDuration
+              }
+            }
+          
     ]
   }) }}
 
