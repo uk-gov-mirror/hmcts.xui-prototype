@@ -138,6 +138,18 @@ router.post( '/searchcases/pages/search', function (req, res)
         // IAC - TASK 4
         else if(req.session.data['names'] == 'Mohammed')
         {
+            if(req.session.data['otherref'] == '')
+            {
+                res.redirect('/searchcases/pages/toomanyresults');
+            }
+        }
+        else if(req.session.data['names'] == 'Sufjan Remi' ||  req.session.data['names'] == 'Edward Samuels' )
+        {
+            res.redirect('/searchcases/pages/noresults');
+        }
+        else
+        {
+            res.redirect('/searchcases/pages/noresults');
         }
 
 
@@ -191,18 +203,21 @@ router.post( '/searchcases/pages/search', function (req, res)
             // if the hmcts reference is valid then go straight to the case
             req.session.data['casereference'] = req.session.data['hmctsref'];
 
-            if( req.session.data['casereference'] == '7495728506858694'  ||  req.session.data['casereference'] == '7495-7285-0685-8694'  )
+            if( req.session.data['casereference'].toString().includes("7495728506858694")  ||  req.session.data['casereference'].toString().includes("7495-7285-0685-8694")
+                ||  req.session.data['casereference'].toString().includes("7495 7285 0685 8694")  )
             {
-                res.redirect('/searchcases/pages/casedetailssscs?');
+                req.session.data['results'] = 'sscstask3';
+                res.redirect('/searchcases/pages/loading-screen');
             }
             else if( req.session.data['casereference'].toString().includes("7556 3296 6000 0123")
                     ||  req.session.data['casereference'].toString().includes("7556329660000123")
                     ||  req.session.data['casereference'].toString().includes("7556-3296-6000-0123") )
                 {
-                    res.redirect('/caseaccess/pages/restricted');
+                    res.redirect('/searchcases/pages/noresults');
                 }
 
-            res.redirect('/searchcases/pages/casedetailsdivorce');
+
+            res.redirect('/searchcases/pages/noresults');
         }
     }
 })
@@ -233,7 +248,8 @@ router.get( '/opencase', function (req, res)
         res.redirect('/searchcases/pages/search');
     }
 
-    if( req.session.data['casereference'].toString().includes("7495728506858694")  ||  req.session.data['casereference'] == '7495-7285-0685-8694'  )
+    if( req.session.data['casereference'].toString().includes("7495728506858694")  ||  req.session.data['casereference'].toString().includes("7495-7285-0685-8694")
+        ||  req.session.data['casereference'].toString().includes("7495 7285 0685 8694")  )
     {
         res.redirect('/searchcases/pages/casedetailssscs?');
     }
