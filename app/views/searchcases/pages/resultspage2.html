@@ -1,0 +1,358 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="hmcts-page-heading">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-xl">Search results</h1>
+          </div>
+    </div>
+
+    <p><a href="search.html">Change search</a></p>
+
+
+    <table class="govuk-table ">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 25%;">Case</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 20%;">Service</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 18%;">State</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 30%;">Court or hearing centre</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 7%;"></th>
+        </tr>
+        </thead>
+
+
+        {% if  data.results == 'challengedandspecific'   %}
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Loan Bourland<br><span style="font-size: 16px; color:#505a5f;">0598-5385-1020-1905</span></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Appeal submitted</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=3453620715339738&">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Basilia Bourdeau<br><span style="font-size: 16px; color:#505a5f;">4520-3340-3600-1211</span></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case under review</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Field House Tribunal Hearing Centre</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/caseaccess/pages/IAC">Challenged access</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Letha Schwebach<br><span style="font-size: 16px; color:#505a5f;">0087-2869-7369-3465</span></td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Social Security and Child Support</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Ready for transfer</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Clerkenwell and Shoreditch County Court and Family Court</td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/caseaccess/pages/SSCSs">Specific access</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+        {% elif  data.results == 'iactask4'   %}
+            <!-- One result -->
+                <tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Mohammed<br><span style="font-size: 16px; color:#505a5f;">8479-7290-0752-7709</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Submit hearing requirements</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=8479729007527709&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Teems<br><span style="font-size: 16px; color:#505a5f;">8354-3305-7448-5056</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Listing</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=8354330574485056">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Martensen<br><span style="font-size: 16px; color:#505a5f;">5972-4726-7215-4697</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Prepare for hearing</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bradford Combined Court Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=5972472672154697">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hellen Mohammed<br><span style="font-size: 16px; color:#505a5f;">9320-1638-1614-1967</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Prepare for hearing</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hatton Cross Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=9320163816141967&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Mallard<br><span style="font-size: 16px; color:#505a5f;">0278-9441-7785-4593</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Final bundling</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Newport (South Wales) Immigration and Asylum Tribunal</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=0278944177854593">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Eufemia Mohammed<br><span style="font-size: 16px; color:#505a5f;">6356-1235-1214-9309</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Prepare for hearing</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=6356123512149309&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Rupert Mohammed<br><span style="font-size: 16px; color:#505a5f;">4434-7213-6393-6403</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Decision</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=4434721363936403&">View</a></td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Jackson<br><span style="font-size: 16px; color:#505a5f;">2980-6371-4786-2587</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Decided</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=2980861820500344&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Davis<br><span style="font-size: 16px; color:#505a5f;">2980-7637-4987-4259</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Decided</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=2980861820500344&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Higham<br><span style="font-size: 16px; color:#505a5f;">2980-2649-7980-7872</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Decided</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=2980861820500344&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Narran<br><span style="font-size: 16px; color:#505a5f;">8771-7857-4127-5065</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case under review</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=8771785741275065&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Sergio Mohammed<br><span style="font-size: 16px; color:#505a5f;">5595-1278-2505-2971</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Appeal submitted</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=5595127825052971&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tawanna Mohammed<br><span style="font-size: 16px; color:#505a5f;">6006-5343-1968-7088</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case building</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Newport (South Wales) Immigration and Asylum Tribunal</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=6006534319687088&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Muth<br><span style="font-size: 16px; color:#505a5f;">1797-0037-4558-8598</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case under review</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=1797003745588598&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Ann Mohammed<br><span style="font-size: 16px; color:#505a5f;">8700-4173-0274-9750</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Respondent review</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Nottingham Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=8700417302749750&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Steadman<br><span style="font-size: 16px; color:#505a5f;">2980-6965-1943-5976</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Decided</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=2980861820500344&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Landers<br><span style="font-size: 16px; color:#505a5f;">2961-9965-1712-8009</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Awaiting clarifying question answers</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Nottingham Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=2961996517128009&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Genevieve Mohammed<br><span style="font-size: 16px; color:#505a5f;">4424-0862-4019-3776</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Ended</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bradford Combined Court Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=4424086240193776&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Soraya Mohammed<br><span style="font-size: 16px; color:#505a5f;">3689-7338-6654-3525</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Reasons for appeal submitted</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bradford Combined Court Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=3689733866543525&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lena Mohammed<br><span style="font-size: 16px; color:#505a5f;">8524-5265-2609-4223</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Decided</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=8524526526094223&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Groom<br><span style="font-size: 16px; color:#505a5f;">2980-8618-7671-0344</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Decided</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=2980861820500344&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Jerrold Mohammed<br><span style="font-size: 16px; color:#505a5f;">2257-5317-4380-4739</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Awaiting CMA requirements</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Coventry Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=2257531743804739&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Mohammed<br><span style="font-size: 16px; color:#505a5f;">1109-2197-5615-3027</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Adjourned</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Nottingham Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=1109219756153027&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Chris Mohammed<br><span style="font-size: 16px; color:#505a5f;">0263-1083-0905-7938</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">CMA requirements agreed</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Coventry Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=0263108309057938&">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Mohammed Schneller<br><span style="font-size: 16px; color:#505a5f;">9926-4195-0432-1167</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Awaiting CMA requirements</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Harmondsworth Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailsiac?casereference=9926419504321167&">View</a></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+                <nav class="hmcts-pagination" id="pagination-label">
+
+                    <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+                    <ul class="hmcts-pagination__list">
+
+
+                        <li class="hmcts-pagination__item  hmcts-pagination__item--prev">
+                            <a class="hmcts-pagination__link" style="text-decoration: underline;" href="/searchcases/pages/results">Previous page</a>
+                        </li>
+
+
+                        <li class="hmcts-pagination__item hmcts-pagination__item--dots">&nbsp;&nbsp;&nbsp;</li>
+                        <li class="hmcts-pagination__item hmcts-pagination__item--dots">...</li>
+                        <li class="hmcts-pagination__item hmcts-pagination__item--dots">&nbsp;&nbsp;&nbsp;</li>
+
+
+                        <li class="hmcts-pagination__item  hmcts-pagination__item--next">
+                            <a class="hmcts-pagination__link" style="color: #000;">Next page</a>
+                        </li>
+
+
+                    </ul>
+
+                </nav>
+
+
+
+
+
+        {% elif  data.results == 'sscstask4'   %}
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tom Narran<br><span style="font-size: 16px; color:#505a5f;">7495-7285-0685-8694</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Social Security and Child Support</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Appeal received</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Stevenage Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailssscs">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tom Mohammed<br><span style="font-size: 16px; color:#505a5f;">3689-7338-6654-3525</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Social Security and Child Support</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Appeal received</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bexleyheath Social Security and Child Support Tribunal</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailssscs">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tom Landers<br><span style="font-size: 16px; color:#505a5f;">2961-9965-1712-8009</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Social Security and Child Support</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Appeal received</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Doncaster Justice Centre North</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailssscs">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tom Schneller<br><span style="font-size: 16px; color:#505a5f;">9926-4195-0432-1167</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Social Security and Child Support</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Evidence received</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Nottingham Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailssscs">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tom Groom<br><span style="font-size: 16px; color:#505a5f;">2980-8618-2050-0344</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Social Security and Child Support</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hearing postponed</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailssscs">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tom Teems<br><span style="font-size: 16px; color:#505a5f;">0263-1083-0905-7938</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Social Security and Child Support</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Evidence received</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Basildon Magistrates' Court and Family Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailssscs">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tom Zukowski<br><span style="font-size: 16px; color:#505a5f;">9926-4195-0432-1167</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Social Security and Child Support</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Supplementary response</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailssscs">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tom Anthony<br><span style="font-size: 16px; color:#505a5f;">0263-1083-0905-7938</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Social Security and Child Support</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hearing reminder</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Sheffield Magistrates' Court</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailssscs">View</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Tom Blanche<br><span style="font-size: 16px; color:#505a5f;">8524-5265-2609-4223</span></td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Social Security and Child Support</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hearing reminder</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hatton Cross Tribunal Hearing Centre</td>
+                        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="text-align: right"><a href="/searchcases/pages/casedetailssscs">View</a></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+
+        {% endif %}
+
+
+
+
+{% endblock %}

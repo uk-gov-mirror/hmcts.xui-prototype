@@ -91,7 +91,6 @@ router.post( '/searchcases/pages/search', function (req, res)
             {
                 if(req.session.data['names'] == 'Mohammed')
                 {
-                    req.session.data['results'] = 'iactask4';
                     res.redirect('/searchcases/pages/noresults');
                 }
                 else if(req.session.data['names'].toString().includes("Mohammed") &&  (req.session.data['names'].toString().includes("*") ||  req.session.data['names'].toString().includes("?")))
