@@ -14,41 +14,31 @@ Case details
   </svg>
   <div class="hmcts-banner__message">
     <span class="hmcts-banner__assistive">information</span>
-    This case has specific access.<br>This means it requires authorisation. If you request access to the case, it will be logged for auditing purposes.
+    This case requires specific access.<br>This means it’s outside your jurisdiction and requires authorisation. If you request access to the case, it will be logged for auditing purposes.
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
-        Why do you need to access this case?
-      </label>
-    </h1>
-
-<!--
-
-{{ govukInput({
-  label: {
-    html: 'Your current role and juristiction<span class="govuk-visually-hidden"></span>'
-  },
-  classes: "govuk-!-width-two-thirds",
-  id: "case ref",
-  name: "case-ref",
-  hint: {
-    text: ""
-}
-}) }} -->
 
 
-    {{ govukTextarea({
-  name: "more-detail",
-  id: "more-detail",
-  label: {
-    text: "Provide clear rational with supporting information"
-  },
-  hint: {
-    text: "Include your current role and juristiction any applicable case references and the length of time you need case access."
-  }
-}) }}
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+          Why do you need to access this case?
+        </label>
+      </h1>
+      <div id="more-detail-hint" class="govuk-body">
+        You should give a reason and also include:
+      </div>
+      <ul class="govuk-list govuk-list--bullet">
+<li>the case reference</li>
+<li>how long you need to access this case for</li>
+</ul>
+      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8" aria-describedby="more-detail-hint"></textarea>
+    </div>
+
+
+
 
     {{ govukButton({
   text: "Submit",
