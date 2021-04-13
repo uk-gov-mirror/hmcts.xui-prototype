@@ -1,8 +1,7 @@
-
 {% if  data.usertype == 'judiciary'   %}
-    {% extends "../layoutjudicial-c.html" %}
+    {% extends "../layoutjudicial.html" %}
 {% else %}
-    {% extends "../layoutstaff-c.html" %}
+    {% extends "../layoutstaff.html" %}
 {% endif %}
 {% block pageTitle %}
 Case details
@@ -15,7 +14,7 @@ Case details
   </svg>
   <div class="hmcts-banner__message">
     <span class="hmcts-banner__assistive">information</span>
-    This case has challenged access.<br>This is because the case is outside your work area. If you request access to the case, it will be logged for auditing purposes.
+    This case has specific access.<br>This means it requires authorisation. If you request access to the case, it will be logged for auditing purposes.
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -38,10 +37,7 @@ Case details
         }
       },
       hint: {
-        text: "Select a reason.
-
-You’ll be given access to the case until midnight tonight.
-"
+        text: "Select a reason."
       },
       items: [
         {
@@ -56,12 +52,10 @@ You’ll be given access to the case until midnight tonight.
           value: "email",
           text: "To determine if the case needs to be consolidated with my current case"
         },
-
         {
           value: "next",
           text: "To view evidence in the best interest of a child involved in current proceedings"
         },
-
         {
           value: "other",
           text: "Other",
@@ -73,29 +67,29 @@ You’ll be given access to the case until midnight tonight.
     }) }}
 
 
+
+
     {{ govukButton({
   text: "Submit",
-  href: "PA-00321-2018-confirmation",
+  href: "IACs-confirmation",
   classes: "govuk-!-margin-right-3"
-}) }}<p><a class="govuk-body" href="results">Cancel</a></p>
+}) }}
+
 <!--
 {{ govukButton({
   text: "Cancel",
   href: "results",
   classes: "govuk-button--secondary"
-}) }}
--->
-
-
-
+}) }} -->
+<p>  <a class="govuk-body" href="/searchcases/pages/results">Cancel</a></p>
 </div>
 </div>
 <form method=""  action="#" class="for4" style=" float: left; margin-top: 60px;">
     <p style="margin-bottom: 0px;">Select to show validation errors</p>
     <select size="1" name="hop" style="height:25px;" onchange="document.location.href=this.value">
     <option selected value=""> Select an option</option>
-    <option value="/caseaccess/pages/PA-00321-2018-request">No errors</option>
-    <option value="/caseaccess/pages/PA-00321-2018-request-error">Missing text</option>
+    <option value="/caseaccess/pages/PA-00467-2017-request">No errors</option>
+    <option value="/caseaccess/pages/PA-00467-2017-request-error">Missing text</option>
     </select>
 </form>
 {% endblock %}

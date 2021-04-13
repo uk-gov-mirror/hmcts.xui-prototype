@@ -19,57 +19,78 @@ Case details
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% set textHtml %}
-    {{ govukTextarea({
-      name: "more-detail",
-      id: "more-detail"
-    }) }}
-    {% endset -%}
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+        Why do you need to access this case?
+      </label>
+    </h1>
 
-    {{ govukRadios({
-      idPrefix: "contact",
-      name: "contact",
-      fieldset: {
-        legend: {
-          text: "Why do you need to access this case?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
+
+
+{{ govukInput({
+  label: {
+    html: 'Your current role and juristiction<span class="govuk-visually-hidden"></span>'
+  },
+  classes: "govuk-!-width-two-thirds",
+  id: "case ref",
+  name: "case-ref",
+  hint: {
+    text: ""
+}
+}) }}
+
+    {{ govukInput({
+      label: {
+        html: 'Any applicable case references<span class="govuk-visually-hidden"></span>'
       },
+      classes: "govuk-!-width-two-thirds",
+      id: "case ref",
+      name: "case-ref",
       hint: {
-        text: "Select a reason."
-      },
-      items: [
-        {
-          value: "email",
-          text: "To view details of last hearing or order related to the parties on my current case"
-        },
-        {
-          value: "phone",
-          text: "To view details of the other case linked to the parties/family on my current case"
-        },
-        {
-          value: "email",
-          text: "To determine if the case needs to be consolidated with my current case"
-        },
-        {
-          value: "next",
-          text: "To view evidence in the best interest of a child involved in current proceedings"
-        },
-
-    
-        {
-          value: "other",
-          text: "Other",
-          conditional: {
-            html: textHtml
-          }
-        }
-      ]
+        text: ""
+ }
     }) }}
 
+    {{ govukSelect({
+  id: "sort",
+  name: "sort",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Length of access"
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+  {
+    value: "published",
+    text: "Please select",
+    selected: true
+  },
+    {
+      value: "published",
+      text: "2 weeks"
+    },
+    {
+      value: "updated",
+      text: "1 month"
+    },
+    {
+      value: "views",
+      text: "Indefinitely"
+    }
+  ]
+}) }}
 
-
+    {{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  label: {
+    text: "Reason for case access"
+  },
+  hint: {
+    text: "Provide clear rational with as much supporting information as possible."
+  }
+}) }}
 
     {{ govukButton({
   text: "Submit",
