@@ -18,6 +18,20 @@ Case details
 {% endset -%}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
+      label: {
+        text: "Reject specific access request",
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+      hint: {
+        text: "You should give a reason why you're rejecting the request to access this case. This reason will be sent to the person requesting access to the case."
+      }
+    }) }}
+<!--
+
 {{ govukRadios({
   idPrefix: "contact",
   name: "contact",
@@ -54,7 +68,7 @@ Case details
       }
     }
   ]
-}) }}
+}) }} -->
 <div class="govuk-button-group">
 {{ govukButton({
   text: "Submit",
