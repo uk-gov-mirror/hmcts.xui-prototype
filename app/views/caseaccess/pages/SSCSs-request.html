@@ -24,73 +24,72 @@ Case details
       </label>
     </h1>
 
-
-
-{{ govukInput({
-  label: {
-    html: 'Your current role and juristiction<span class="govuk-visually-hidden"></span>'
-  },
-  classes: "govuk-!-width-two-thirds",
-  id: "case ref",
-  name: "case-ref",
-  hint: {
-    text: ""
-}
-}) }}
-
     {{ govukInput({
       label: {
-        html: 'Any applicable case references<span class="govuk-visually-hidden"></span>'
+        html: 'Your current role and juristiction<span class="govuk-visually-hidden"></span>'
       },
       classes: "govuk-!-width-two-thirds",
       id: "case ref",
       name: "case-ref",
       hint: {
         text: ""
- }
+    }
     }) }}
 
-    {{ govukSelect({
-  id: "sort",
-  name: "sort",
-  classes: "govuk-!-width-two-thirds",
-  label: {
-    text: "Length of access"
-  },
-  hint: {
-    text: ""
-  },
-  items: [
-  {
-    value: "published",
-    text: "Please select",
-    selected: true
-  },
-    {
-      value: "published",
-      text: "7 days"
-    },
-    {
-      value: "updated",
-      text: "1 month"
-    },
-    {
-      value: "views",
-      text: "Indefinitely"
-    }
-  ]
-}) }}
+        {{ govukInput({
+          label: {
+            html: 'Applicable case references<span class="govuk-visually-hidden"></span>'
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "case ref",
+          name: "case-ref",
+          hint: {
+            text: "For example: FamilyMan ref. CCD ref."
+     }
+        }) }}
 
-    {{ govukTextarea({
-  name: "more-detail",
-  id: "more-detail",
-  label: {
-    text: "Reason for case access"
-  },
-  hint: {
-    text: "Provide clear rational with as much supporting information as possible."
-  }
-}) }}
+        {{ govukSelect({
+      id: "sort",
+      name: "sort",
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Length of access"
+      },
+      hint: {
+        text: ""
+      },
+      items: [
+      {
+        value: "published",
+        text: "Please select",
+        selected: true
+      },
+        {
+          value: "published",
+          text: "7 days"
+        },
+        {
+          value: "updated",
+          text: "1 month"
+        },
+        {
+          value: "views",
+          text: "Indefinitely"
+        }
+      ]
+    }) }}
+
+        {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
+      label: {
+        text: "Reason for case access"
+      },
+      hint: {
+        text: "Provide clear rational with as much supporting information as possible."
+      }
+    }) }}
+
 
     {{ govukButton({
   text: "Submit",

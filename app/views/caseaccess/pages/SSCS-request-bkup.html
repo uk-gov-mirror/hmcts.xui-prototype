@@ -1,3 +1,4 @@
+
 {% if  data.usertype == 'judiciary'   %}
     {% extends "../layoutjudicial.html" %}
 {% else %}
@@ -19,55 +20,19 @@ Case details
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% set textHtml %}
     {{ govukTextarea({
       name: "more-detail",
-      id: "more-detail"
-    }) }}
-    {% endset -%}
-
-    {{ govukRadios({
-      idPrefix: "contact",
-      name: "contact",
-      fieldset: {
-        legend: {
-          text: "Why do you need to access this case?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
+      id: "more-detail",
+      label: {
+        text: "Why do you need to access this case?
+",
+        classes: "govuk-label--l",
+        isPageHeading: true
       },
       hint: {
-        text: "Select a reason."
-      },
-      items: [
-        {
-          value: "email",
-          text: "To view details of last hearing or order related to the parties on my current case"
-        },
-        {
-          value: "phone",
-          text: "To view details of the other case linked to the parties/family on my current case"
-        },
-        {
-          value: "email",
-          text: "To determine if the case needs to be consolidated with my current case"
-        },
-        {
-          value: "next",
-          text: "To view evidence in the best interest of a child involved in current proceedings"
-        },
-
-  
-        {
-          value: "other",
-          text: "Other",
-          conditional: {
-            html: textHtml
-          }
-        }
-      ]
+        text: "Provide an explanation below. You’ll be given access to the case until midnight tonight."
+      }
     }) }}
-
 
 
 

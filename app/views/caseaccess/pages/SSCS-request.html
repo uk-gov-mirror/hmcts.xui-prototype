@@ -19,19 +19,67 @@ Case details
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    {% set textHtml %}
     {{ govukTextarea({
       name: "more-detail",
-      id: "more-detail",
-      label: {
-        text: "Why do you need to access this case?
-",
-        classes: "govuk-label--l",
-        isPageHeading: true
+      id: "more-detail"
+    }) }}
+
+{% set emailHtml %}
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contact-by-email",
+  type: "email",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Case ref for example: FamilyMan ref. CCD ref."
+  }
+}) }}
+{% endset -%}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "contact",
+      name: "contact",
+      fieldset: {
+        legend: {
+          text: "Why do you need to access this case?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
       },
       hint: {
-        text: "Provide an explanation below. You’ll be given access to the case until midnight tonight."
+        text: "Select a reason."
+      },
+      items: [
+        {
+          value: "email",
+          text: "The cases or parties are linked to my current case",
+      conditional: {
+        html: emailHtml
       }
+        },
+        {
+          value: "phone",
+          text: "To determine if the case needs to be consolidated "
+        },
+        {
+          value: "email",
+          text: "To consider an order for transfer "
+        },
+
+
+        {
+          value: "other",
+          text: "Other reason (free text)",
+          conditional: {
+            html: textHtml
+          }
+        }
+      ]
     }) }}
+
 
 
 

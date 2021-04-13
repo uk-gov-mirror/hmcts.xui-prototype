@@ -18,20 +18,36 @@ Case details
 {% endset -%}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-{{ govukTextarea({
-  name: "more-detail",
-  id: "more-detail",
-  label: {
-    text: "Reject specific access request",
-    classes: "govuk-label--l",
-    isPageHeading: true
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Reject specific access request",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
   },
   hint: {
-    text: "This reason will be sent to the person requesting access to the case. Provide clear rational with as much supporting information as possible."
-  }
-}) }}
+    text: "Select one reason. This reason will be sent to the person requesting access to the case."
+  },
+  items: [
+  {
+    value: "email",
+    text: "Based on the information you have provided, I do not believe that it is appropriate for you to gain access to this case"
+  },
 
+
+
+    {
+      value: "other",
+      text: "You have not supplied enough information, please re-submit with the following details",
+      conditional: {
+        html: textHtml
+      }
+    }
+  ]
+}) }}
 <div class="govuk-button-group">
 {{ govukButton({
   text: "Submit",
