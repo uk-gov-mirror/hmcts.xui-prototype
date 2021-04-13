@@ -24,7 +24,7 @@ Case details
       </label>
     </h1>
 
-
+<!--
 
 {{ govukInput({
   label: {
@@ -36,59 +36,17 @@ Case details
   hint: {
     text: ""
 }
-}) }}
+}) }} -->
 
-    {{ govukInput({
-      label: {
-        html: 'Applicable case references<span class="govuk-visually-hidden"></span>'
-      },
-      classes: "govuk-!-width-two-thirds",
-      id: "case ref",
-      name: "case-ref",
-      hint: {
-        text: "For example: FamilyMan ref. CCD ref."
- }
-    }) }}
-
-    {{ govukSelect({
-  id: "sort",
-  name: "sort",
-  classes: "govuk-!-width-two-thirds",
-  label: {
-    text: "Length of access"
-  },
-  hint: {
-    text: ""
-  },
-  items: [
-  {
-    value: "published",
-    text: "Please select",
-    selected: true
-  },
-    {
-      value: "published",
-      text: "7 days"
-    },
-    {
-      value: "updated",
-      text: "1 month"
-    },
-    {
-      value: "views",
-      text: "Indefinitely"
-    }
-  ]
-}) }}
 
     {{ govukTextarea({
   name: "more-detail",
   id: "more-detail",
   label: {
-    text: "Reason for case access"
+    text: "Provide clear rational with supporting information"
   },
   hint: {
-    text: "Provide clear rational with as much supporting information as possible."
+    text: "For example. Your current role and juristiction any applicable case references and the length of time you need case access."
   }
 }) }}
 

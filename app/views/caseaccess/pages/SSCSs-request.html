@@ -23,7 +23,7 @@ Case details
         Why do you need to access this case?
       </label>
     </h1>
-
+<!--
     {{ govukInput({
       label: {
         html: 'Your current role and juristiction<span class="govuk-visually-hidden"></span>'
@@ -90,7 +90,18 @@ Case details
       }
     }) }}
 
+-->
 
+    {{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  label: {
+    text: "Provide clear rational with supporting information"
+  },
+  hint: {
+    text: "For example. Your current role and juristiction any applicable case references and the length of time you need case access."
+  }
+}) }}
     {{ govukButton({
   text: "Submit",
   href: "SSCSs-confirmation",
