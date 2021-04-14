@@ -290,7 +290,7 @@ router.get( '/opencase', function (req, res)
         ||  req.session.data['casereference'].toString().includes("7556329660000123")
         ||  req.session.data['casereference'].toString().includes("7556-3296-6000-0123") )
     {
-        res.redirect('/caseaccess/pages/restricted');
+        res.redirect('/searchcases/pages/restricted');
     }
 
 })
