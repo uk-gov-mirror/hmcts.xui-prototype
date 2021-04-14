@@ -87,6 +87,7 @@ router.post( '/searchcases/pages/search', function (req, res)
                 req.session.data['results'] = 'sscstask3';
                 res.redirect('/searchcases/pages/loading-screen');
             }
+
             // TASK 4 - IAC scenario
             else if(req.session.data['otherref'].toString().includes("5/2021")  &&  (req.session.data['otherref'].toString().includes("*") ||  req.session.data['otherref'].toString().includes("?")))
             {
@@ -99,13 +100,21 @@ router.post( '/searchcases/pages/search', function (req, res)
                 {
                     req.session.data['results'] = 'iactask4';
                 }
+                else
+                {
+                    res.redirect('/searchcases/pages/noresults');
+                }
                 res.redirect('/searchcases/pages/loading-screen');
             }
             // TASK 4 - SCSS scenario
             else if(  ( req.session.data['otherref'].toString().includes("JL869")   ||  req.session.data['otherref'].toString().includes("jl869")  )
                 &&  (req.session.data['otherref'].toString().includes("*") ||  req.session.data['otherref'].toString().includes("????")))
             {
-                if(req.session.data['names'] == 'Tom J'  ||  req.session.data['names'] == 'Tom j'  ||  req.session.data['names'] == 'tom j'   ||  req.session.data['names'] == 'tom J' )
+                if(req.session.data['names'] == ''  )
+                {
+                    res.redirect('/searchcases/pages/toomanyresults');
+                }
+                else if(req.session.data['names'] == 'Tom J'  ||  req.session.data['names'] == 'Tom j'  ||  req.session.data['names'] == 'tom j'   ||  req.session.data['names'] == 'tom J' )
                 {
                     res.redirect('/searchcases/pages/noresults');
                 }
@@ -114,6 +123,10 @@ router.post( '/searchcases/pages/search', function (req, res)
                     &&  (req.session.data['names'].toString().includes("*") ||  req.session.data['names'].toString().includes("????")) )
                 {
                     req.session.data['results'] = 'sscstask2';
+                }
+                else
+                {
+                    res.redirect('/searchcases/pages/noresults');
                 }
                 res.redirect('/searchcases/pages/loading-screen');
             }
@@ -252,6 +265,10 @@ router.post( '/searchcases/pages/search', function (req, res)
             {
                 req.session.data['results'] = 'family2';
             }
+            else
+            {
+                res.redirect('/searchcases/pages/noresults');
+            }
             res.redirect('/searchcases/pages/loading-screen');
         }
 
@@ -285,6 +302,10 @@ router.post( '/searchcases/pages/search', function (req, res)
             {
                 req.session.data['results'] = 'family1';
                 res.redirect('/searchcases/pages/results');
+            }
+            else
+            {
+                res.redirect('/searchcases/pages/noresults');
             }
 
             res.redirect('/searchcases/pages/noresults');
