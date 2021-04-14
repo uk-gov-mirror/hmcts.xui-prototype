@@ -24,6 +24,19 @@ Case details
       name: "more-detail",
       id: "more-detail"
     }) }}
+
+{% set emailHtml %}
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contact-by-email",
+  type: "email",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "16-digit case reference"
+  }
+}) }}
+{% endset -%}
     {% endset -%}
 
     {{ govukRadios({
@@ -37,41 +50,39 @@ Case details
         }
       },
       hint: {
-        text: "Select a reason.
-
-You’ll be given access to the case until midnight tonight.
-"
+        text: "Select a reason."
       },
       items: [
         {
           value: "email",
-          text: "To view details of last hearing or order related to the parties on my current case"
-        },
-        {
-          value: "phone",
-          text: "To view details of the other case linked to the parties/family on my current case"
+          text: "The cases or parties are linked to my current case",
+      conditional: {
+        html: emailHtml
+      }
         },
         {
           value: "email",
-          text: "To determine if the case needs to be consolidated with my current case"
+          text: "To determine if the case needs to be consolidated ",
+      conditional: {
+        html: emailHtml
+      }
+        },
+        {
+          value: "email",
+          text: "To consider an order for transfer "
         },
 
-        {
-          value: "next",
-          text: "To view evidence in the best interest of a child involved in current proceedings"
-        },
-        {
-     divider: "or"
-   },
+
         {
           value: "other",
-          text: "Other",
+          text: "Other reason",
           conditional: {
             html: textHtml
           }
         }
       ]
     }) }}
+
 
 
     {{ govukButton({
