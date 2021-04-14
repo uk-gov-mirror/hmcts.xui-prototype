@@ -339,26 +339,33 @@ router.get( '/opencase', function (req, res)
         res.redirect('/searchcases/pages/search');
     }
 
-    if( req.session.data['casereference'].toString().includes("7495728506858694")  ||  req.session.data['casereference'].toString().includes("7495-7285-0685-8694")
+    else if( req.session.data['casereference'].toString().includes("7495728506858694")  ||  req.session.data['casereference'].toString().includes("7495-7285-0685-8694")
         ||  req.session.data['casereference'].toString().includes("7495 7285 0685 8694")  )
     {
         res.redirect('/searchcases/pages/casedetailssscs?');
     }
 
-    if( req.session.data['casereference'].toString().includes("7556 3296 6000 0123")
+    else if( req.session.data['casereference'].toString().includes("7556 3296 6000 0123")
         ||  req.session.data['casereference'].toString().includes("7556329660000123")
         ||  req.session.data['casereference'].toString().includes("7556-3296-6000-0123") )
     {
         res.redirect('/searchcases/pages/restricted');
     }
 
-    if( req.session.data['casereference'].toString().includes("4321 7285 0685 8694")
+    else if( req.session.data['casereference'].toString().includes("4321 7285 0685 8694")
         ||  req.session.data['casereference'].toString().includes("4321728506858694")
         ||  req.session.data['casereference'].toString().includes("4321-7285-0685-8694") )
     {
         res.redirect('/searchcases/pages/casedetailsfamily');
     }
 
+    else
+    {
+        req.session.data['hmctsref'] = req.session.data['hmctsrefheader'];
+        req.session.data['errorcasenumber'] = 'true';
+        //console.warn("Main Router " + req.session.data['errorcasenumber']);
+        res.redirect('/searchcases/pages/search');
+    }
 
 })
 
