@@ -74,7 +74,8 @@ router.post( '/searchcases/pages/search', function (req, res)
         if(req.session.data['otherref'] == '')
         {}
         else
-        {            // TASK 3- IAC scenario
+        {
+            // TASK 3- IAC scenario
             if(req.session.data['otherref'].toString().includes("PA/52185/2021"))
             {
                 req.session.data['results'] = 'iactask3';
@@ -116,6 +117,7 @@ router.post( '/searchcases/pages/search', function (req, res)
                 }
                 res.redirect('/searchcases/pages/loading-screen');
             }
+
             // TASK 5 - IAC scenario
             else if(req.session.data['otherref'].toString().includes("IA/58778/2021"))
             {
@@ -131,6 +133,13 @@ router.post( '/searchcases/pages/search', function (req, res)
         // If a known name is entered then go to specific results
         if(req.session.data['names'] == '')
         { }
+
+        // Family - TASK 1
+        else if(  req.session.data['names'] == 'Timothy Jones' ||   req.session.data['names'] == 'timothy jones'  )
+        {
+            res.redirect('/searchcases/pages/toomanyresults');
+        }
+
         // IAC - TASK 3
         else if(  req.session.data['names'] == 'Talha Awan' ||   req.session.data['names'] == 'talha awan'   )
         {
@@ -221,10 +230,32 @@ router.post( '/searchcases/pages/search', function (req, res)
 
         res.redirect('/searchcases/pages/loading-screen');
     }
+
+    //MAIN REFERENCE ENTERED
     else
     {
         // if the hmcts reference is too short or too long them reload the page with an exception
-        if(req.session.data['hmctsref'].length < 16  ||  20 < req.session.data['hmctsref'].length )
+        // FAMILY PARTIAL DETAILS
+        if(  ( req.session.data['hmctsref'].toString().includes("70014009")   ||  req.session.data['hmctsref'].toString().includes("7001-4009") )
+            &&  (req.session.data['hmctsref'].toString().includes("*") ||  req.session.data['hmctsref'].toString().includes("????????")))
+        {
+            if(req.session.data['names'] == '')
+            {
+                res.redirect('/searchcases/pages/toomanyresults');
+            }
+            if(req.session.data['names'] == 'Tom J'  ||  req.session.data['names'] == 'tom J'  ||  req.session.data['names'] == 'Tom j'   ||  req.session.data['names'] == 'tom j' )
+            {
+                res.redirect('/searchcases/pages/noresults');
+            }
+            else if(  ( req.session.data['names'].toString().includes("Tom")  ||  req.session.data['names'].toString().includes("Tom") )
+                &&  (req.session.data['names'].toString().includes("J*") ||  req.session.data['names'].toString().includes("j*")) )
+            {
+                req.session.data['results'] = 'family2';
+            }
+            res.redirect('/searchcases/pages/loading-screen');
+        }
+
+        else if(req.session.data['hmctsref'].length < 16  ||  20 < req.session.data['hmctsref'].length )
         {
             req.session.data['errorcasenumber'] = 'true';
             //console.warn("Main Router " + req.session.data['errorcasenumber']);
@@ -248,6 +279,13 @@ router.post( '/searchcases/pages/search', function (req, res)
                     res.redirect('/searchcases/pages/noresults');
                 }
 
+            else if( req.session.data['casereference'].toString().includes("4321 7285 0685 8694")
+                        ||  req.session.data['casereference'].toString().includes("4321728506858694")
+                        ||  req.session.data['casereference'].toString().includes("4321-7285-0685-8694") )
+            {
+                req.session.data['results'] = 'family1';
+                res.redirect('/searchcases/pages/results');
+            }
 
             res.redirect('/searchcases/pages/noresults');
         }
@@ -292,6 +330,14 @@ router.get( '/opencase', function (req, res)
     {
         res.redirect('/searchcases/pages/restricted');
     }
+
+    if( req.session.data['casereference'].toString().includes("4321 7285 0685 8694")
+        ||  req.session.data['casereference'].toString().includes("4321728506858694")
+        ||  req.session.data['casereference'].toString().includes("4321-7285-0685-8694") )
+    {
+        res.redirect('/searchcases/pages/casedetailsfamily');
+    }
+
 
 })
 
