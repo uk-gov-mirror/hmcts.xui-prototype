@@ -74,17 +74,17 @@ Case details
     {% endif %}
 
 
-    <div class="hmcts-page-heading">
+    <div class="hmcts-page-heading govuk-!-margin-bottom-5">
           <div class="hmcts-page-heading__title">
                <h1 class="govuk-heading-xl">Search cases</h1>
           </div>
     </div>
 
 
-    <details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+    <details class="govuk-details govuk-!-margin-bottom-3" data-module="govuk-details">
         <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-                Don’t have all the case details?
+                Using partial information to search for a case
             </span>
         </summary>
         <div class="govuk-details__text">
@@ -97,7 +97,7 @@ Case details
         </div>
     </details>
 
-    <p>Search for at least one of the following to find a case:</p>
+    <p class=" govuk-!-margin-bottom-5">Search for at least one of the following to find a case:</p>
 
 
 
@@ -141,8 +141,8 @@ Case details
                     <label class="govuk-label govuk-!-font-weight-bold" for="otherref">
                         Other reference
                     </label>
-                    <div id="otherref-hint" class="govuk-hint">
-                        For example: Caseman, Familyman, solicitor's reference or National Insurance number.
+                    <div id="otherref-hint" class="govuk-hint" style="width: 900px;">
+                        Any other reference to identify a case, for example a solicitor's reference or National Insurance number.
                     </div>
                     <input class="govuk-input govuk-input--width-10" id="otherref" name="otherref" type="text" spellcheck="false"  value="{{ data.otherref }}">
                 </div>
