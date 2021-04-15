@@ -1,0 +1,36 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial-c.html" %}
+{% else %}
+{% extends "../layoutstaff-c.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form
+          name="paForm"
+          method="post"
+          id="paForm"
+          autocomplete="off"
+          action="PA-00321-2018-request">
+      {{ govukPanel({
+        titleText: "Access granted",
+        html: "Case ref:<br><strong>PA/00321/2018</strong>"
+      }) }}
+  <!--    <p class="govuk-body">We have sent you a confirmation email.</p>
+-->
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+      The case file will be accessible until midnight tonight.</p>
+      <p class="govuk-body">
+        After access expires you will need to request access again.
+      </p>
+      <p class="govuk-body">
+        All access requests are logged for auditing purposes.
+      </p>
+      <p><a href="PA-00321-2018-a" class="govuk-link">View case file</a>.
+    </div>
+  </div>
+{% endblock %}

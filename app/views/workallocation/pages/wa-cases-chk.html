@@ -1,0 +1,64 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+{% block content %}
+<span class="govuk-caption-l">Lead Judge</span>
+<h2 class="govuk-heading-l">Reallocate role</h2>
+
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+      Check your changes
+    </label>
+  </h2>
+  <div id="event-name-hint" class="govuk-hint">
+    This will reallocate the role to the person below. You may need reassign associated tasks too.
+  </div>
+
+</div>
+<table class="govuk-table ">
+<thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19">Case name</th>
+      <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19">Case category</th>
+        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19">Location</th>
+        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">Role</th>
+        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">Access type</th>
+        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">Person</th>
+        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 "></th>
+    </tr>
+</thead>
+
+<tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Libby Mcmahon</a></td>
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lead Judge</td>
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Standard access</td>
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Barringthorn-Wardley</td>
+        <td class="govuk-table__cell"><a href="wa-PA-00467-2017-real" class="right">Change</a></td>
+    </tr>
+
+
+</tbody>
+</table>
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Reallocate",
+    href: "wa-allwork-cases-jb-r",
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-allwork-cases-jb-o">Cancel</a></p>
+</div>
+</form>
+
+{% endblock %}

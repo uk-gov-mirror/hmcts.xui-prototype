@@ -1,0 +1,37 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+{% block content %}
+<span class="govuk-caption-l">Lead Judge</span>
+<h2 class="govuk-heading-l">Reallocate role</h2>
+
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+      Find the person
+    </label>
+  </h2>
+  <div id="event-name-hint" class="govuk-hint">
+    Type the name of the  person and select them.
+  </div>
+  <input class="govuk-input govuk-!-width-one-third" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+</div>
+
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+    href: "wa-cases-chk",
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-allwork-cases-jb-o">Cancel</a></p>
+</div>
+</form>
+
+{% endblock %}
