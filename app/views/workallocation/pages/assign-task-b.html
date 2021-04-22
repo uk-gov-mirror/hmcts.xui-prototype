@@ -1,0 +1,82 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+My work
+{% endblock %}
+{% block content %}
+<div class="hmcts-page-heading">
+  <div class="hmcts-page-heading__title">
+    <h1 class="govuk-heading-xl">Assign task</h1>
+  </div>
+</div>
+<div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+      Check your assignment
+    </label>
+  </h2>
+  <div id="event-name-hint" class="govuk-hint">
+    Check you are assigning work to the right person.
+  </div>
+
+
+
+    <div class="hmcts-scrollable-pane">
+      <div class="hmcts-scrollable-pane__wrapper">
+
+        <table class="govuk-body" id="transactionstable">
+          <p class="govuk-body">
+
+          </p>
+          <thead>
+            <tr class="govuk-table__row">
+
+              <th scope="col" class="govuk-table__header" aria-sort="none">Case name</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Case category</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Location</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Task</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Date</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Person</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td data-label="Case">Alessandra Mccormack</td>
+              <td data-label="Reference">HR</td>
+              <td data-label="Status">Taylor House</td>
+              <td data-label="Date">Review respondent evidence</td>
+                <td data-label="Amount">{{govukTag({
+      text: "dd/mm/yyyy",
+      classes: "govuk-tag--yellow"
+      })}} </td>
+        <td data-label="Status">Judge Birch</td>
+          <td data-label="Status"><a href="assign-task">Change</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p></p>
+    </div>
+    <form>
+        {{ govukButton({
+        text: 'Assign',
+        classes: "govuk-!-margin-right-5",
+        href: "wa-allwork-none-at"
+        }) }}
+<p><a class="govuk-body" href="/workallocation/pages/wa-allwork-none-o">Cancel</a></p>
+<!--
+        {{ govukButton({
+        text: 'Cancel',
+        classes: "govuk-button--secondary",
+        href: "/workallocation/pages/wa-mytasks-ao"
+        }) }}
+-->
+
+    </form>
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}
