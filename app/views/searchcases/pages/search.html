@@ -87,11 +87,16 @@ Case details
                 Using partial information to search for a case
             </span>
         </summary>
-        <div class="govuk-details__text">
-            You can use the following to help you search for a case:
+        <div class="govuk-details__text" style="width: 780px;">
+            <p>You can use an asterisk (*) to search for one or more unknown characters in any part of a word, for example ‘J* Smith’.</p>
+
+            <p>You can only do this if you’re searching for any of the following:</p>
             <ul>
-                <li>a question mark (‘?’) searches for a single missing or unknown character, for example ‘J?hn Smith’</li>
-                <li>an asterisk (‘*’) searches one or more unknown characters in any part of a word, for example ‘J* Smith’</li>
+                <li>16-digit case reference</li>
+                <li>other reference, for example National Insurance number</li>
+                <li>name</li>
+                <li>postcode</li>
+                <li>first line of address</li>
             </ul>
 
         </div>
@@ -152,10 +157,10 @@ Case details
                 <!--  NAME   -->
                 <div class="govuk-form-group">
                     <label class="govuk-label govuk-!-font-weight-bold" for="names">
-                        Full name
+                        Name
                     </label>
                     <div id="names-hint" class="govuk-hint">
-                        For example: name of a party or solicitor.
+                        For example, full or part name of a party or solicitor.
                     </div>
                     <input class="govuk-input govuk-input--width-20" id="names" name="names" type="text" spellcheck="false"  value="{{ data.names }}">
                 </div>
@@ -220,12 +225,12 @@ Case details
                     <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                             <h3 class="govuk-fieldset__heading">
-                                Date
+                                Date of birth
                             </h3>
                         </legend>
-                        <div id="passport-issued-hint" class="govuk-hint">
+                        <!-- <div id="passport-issued-hint" class="govuk-hint">
                             This must relate to the party only, for example date of birth, death or marriage.
-                        </div>
+                        </div> -->
                         <div class="govuk-date-input" id="passport-issued">
                             <div class="govuk-date-input__item">
                                 <div class="govuk-form-group">
@@ -253,6 +258,44 @@ Case details
                     </fieldset>
                 </div>
 
+
+                        <!--  DATE FIELDS   -->
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                    <h3 class="govuk-fieldset__heading">
+                                        Date of death
+                                    </h3>
+                                </legend>
+                                <!-- <div id="passport-issued-hint" class="govuk-hint">
+                                    This must relate to the party only, for example date of birth, death or marriage.
+                                </div>  -->
+                                <div class="govuk-date-input" id="passport-issued">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="searchday" name="searchday" type="text" pattern="[0-9]*" inputmode="numeric"   value="{{ data.email }}"></div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="searchmonth" name="searchmonth" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="searchyear" name="searchyear" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </div>
 
 
 
