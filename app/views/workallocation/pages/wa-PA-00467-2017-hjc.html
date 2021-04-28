@@ -1,0 +1,48 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form
+          name="paForm"
+          method="post"
+          id="paForm"
+          autocomplete="off"
+          action="PA-00321-2018-request">
+          <div class="govuk-panel govuk-panel--confirmation">
+                <h1 class="govuk-panel__title">
+                  You have allocated <br> a hearing judge
+                </h1>
+                <div class="govuk-panel__body">
+
+                </div>
+              </div>
+  <!--    <p class="govuk-body">We have sent you a confirmation email.</p>
+-->
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+      The case allocation is now available in the Role and access tab. You can edit the allocation from there.</p>
+      <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Return to My tasks",
+        href: "wa-mytasks",
+        classes: "govuk-!-margin-right-3"
+
+      }) }}
+      <!--
+      {{ govukButton({
+        text: "Cancel and unassign task",
+        href: "/mywork-c",
+        classes: "govuk-button--secondary"
+      }) }} -->
+      <p><a class="govuk-body" href="wa-PA-00467-2017-none">Return to the Tasks tab for this case</a></p>
+    </div>
+    </div>
+  </div>
+{% endblock %}

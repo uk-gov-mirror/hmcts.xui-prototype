@@ -8,15 +8,15 @@
 Case details
 {% endblock %}
 {% block beforeContent %}
-<a href="wa-PA-00467-2017-ajha-fpj" class="govuk-back-link">Back</a>
+<a href="wa-PA-00467-2017-real" class="govuk-back-link">Back</a>
 {% endblock %}
 {% block content %}
 <span class="govuk-caption-l">Hearing judge</span>
-<h2 class="govuk-heading-l">Allocate a judicial role</h2>
+<h2 class="govuk-heading-l">Reallocate role</h2>
 
 <div class="govuk-form-group">
   <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
-      Duration of access and role
+      Duration of role
     </label>
   </h2>
   {% set setDuration %}
@@ -84,7 +84,7 @@ Case details
 
           {
             value: "phone",
-checked:"true",
+            checked:"true",
             text: "Indefinite",
             hint: {
           text: "Starts from today and lasts while the case is open."
@@ -93,7 +93,6 @@ checked:"true",
 
             {
               value: "phone",
-
               text: "Another period",
               hint: {
             text: "You’ll need to provide both a start and end date for the role."
@@ -109,11 +108,11 @@ checked:"true",
   <div class="govuk-button-group">
   {{ govukButton({
     text: "Continue",
-    href: "wa-PA-00467-2017-ajchk-fpj",
+    href: "wa-PA-00467-2017-real-chk",
     classes: "govuk-!-margin-right-3"
   }) }}
 
-  <p><a class="govuk-body" href="wa-PA-00467-2017-ar-fpj">Cancel</a></p>
+  <p><a class="govuk-body" href="wa-PA-00467-2017-arj-o">Cancel</a></p>
 </div>
 
 
