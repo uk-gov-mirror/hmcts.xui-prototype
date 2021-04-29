@@ -112,7 +112,7 @@ router.post( '/searchcases/pages/search', function (req, res)
             {
                 if(req.session.data['names'] == ''  )
                 {
-                    res.redirect('/searchcases/pages/toomanyresults');
+                    res.redirect('/searchcases/pages/loading-screen-time-out');
                 }
                 else if(req.session.data['names'] == 'Tom J'  ||  req.session.data['names'] == 'Tom j'  ||  req.session.data['names'] == 'tom j'   ||  req.session.data['names'] == 'tom J' )
                 {
@@ -150,7 +150,7 @@ router.post( '/searchcases/pages/search', function (req, res)
         // Family - TASK 1
         else if(  req.session.data['names'] == 'Timothy Jones' ||   req.session.data['names'] == 'timothy jones'  )
         {
-            res.redirect('/searchcases/pages/toomanyresults');
+            res.redirect('/searchcases/pages/loading-screen-time-out');
         }
 
         // IAC - TASK 3
@@ -176,7 +176,7 @@ router.post( '/searchcases/pages/search', function (req, res)
         {
             if(req.session.data['otherref'] == '')
             {
-                res.redirect('/searchcases/pages/toomanyresults');
+                res.redirect('/searchcases/pages/loading-screen-time-out');
             }
             else
             {
@@ -189,7 +189,7 @@ router.post( '/searchcases/pages/search', function (req, res)
         {
             if(req.session.data['otherref'] == '' &&  (req.session.data['names'].toString().includes("*")  ||  req.session.data['names'].toString().includes("????")) )
             {
-                res.redirect('/searchcases/pages/toomanyresults');
+                res.redirect('/searchcases/pages/loading-screen-time-out');
             }
             else
             {
@@ -254,7 +254,7 @@ router.post( '/searchcases/pages/search', function (req, res)
         {
             if(req.session.data['names'] == '')
             {
-                res.redirect('/searchcases/pages/toomanyresults');
+                res.redirect('/searchcases/pages/loading-screen-time-out');
             }
             if(req.session.data['names'] == 'Tom J'  ||  req.session.data['names'] == 'tom J'  ||  req.session.data['names'] == 'Tom j'   ||  req.session.data['names'] == 'tom j' )
             {

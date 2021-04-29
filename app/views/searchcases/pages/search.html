@@ -93,9 +93,8 @@ Case details
             <p>You can only do this if you’re searching for any of the following:</p>
             <ul>
                 <li>16-digit case reference</li>
-                <li>other reference, for example National Insurance number</li>
+                <li>other reference</li>
                 <li>name</li>
-                <li>postcode</li>
                 <li>first line of address</li>
             </ul>
 
@@ -147,7 +146,7 @@ Case details
                         Other reference
                     </label>
                     <div id="otherref-hint" class="govuk-hint" style="width: 900px;">
-                        Any other reference to identify a case, for example a solicitor's reference or National Insurance number.
+                        Any other reference to identify a case, for example National Insurance number or heritage system reference
                     </div>
                     <input class="govuk-input govuk-input--width-10" id="otherref" name="otherref" type="text" spellcheck="false"  value="{{ data.otherref }}">
                 </div>
@@ -894,11 +893,15 @@ Case details
         <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=true&"
         >Nothing entered error</option>
 
+        <!--
         <option value="errorcasenumber=true&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&"
         >Reference error</option>
+        -->
 
+        <!--
         <option value="errorcasenumber=false&errorpostcodeinvalid=true&erroremail=false&errorallfieldsempty=false&"
         >Postcode error</option>
+        -->
 
         <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=true&errorallfieldsempty=false&"
         >Email error</option>
