@@ -7,11 +7,10 @@
 Case details
 {% endblock %}
 {% block content %}
-
 <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
   <div class="" style="display: flex; justify-content: space-between; ">
     <div>
-      <h1 class="govuk-heading-xl">PA/00321/2018</h1>
+      <h1 class="govuk-heading-xl">PA/01236/2019</h1>
     </div>
     <div style="display: flex; align-items:right">
       <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
@@ -36,17 +35,17 @@ Case details
     </h2>
     <ul class="govuk-tabs__list">
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#">
+        <a class="govuk-tabs__tab" href="wa-pj-t">
           Tasks
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#">
+        <a class="govuk-tabs__tab" href="wa-pj-ra">
           Roles and access
         </a>
       </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="wa-pj">
           Overview
         </a>
       </li>
@@ -80,23 +79,48 @@ Case details
           Case notes
         </a>
       </li>
-      <!--    <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#past-week">
-          Hearing
-        </a>
-      </li> -->
     </ul>
     <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
       <div>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Application</h2>
-            <p class="govuk-body govuk-!-margin-bottom-9"></p>
 
-            <p class="govuk-body"><a href="/workallocation/pages/wa-app-confirmation"><strong>Click here to simulate doing the task ...</strong></a></p>
-    </div>
-    <div class="govuk-grid-column-one-third">
-    </div>
-  </div>
-</div>
-{% endblock %}
+            <h2 class="govuk-heading-m">Active tasks</h2>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <p class="govuk-body"><strong>Generate decision and reasons</strong> <span class="hmcts-badge_right">{{govukTag({
+text: "dd/mm/yyyy",
+classes: "govuk-tag--yellow"
+})}}</span></p>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Assigned to</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Judge Beech
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <span style="padding-left:25px">Manage</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Next steps</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="#">Review respondent evidence</a>
+                </dd>
+              </div>
+            </dl>
+
+          </div>
+          <div class="govuk-grid-column-one-third">
+          </div>
+        </div>
+      </div>
+      {% endblock %}
