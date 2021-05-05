@@ -64,9 +64,9 @@ My work
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review respondent evidence</a></td>
           <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--red"
-})}} </td>
+          text: now | date( 'subtract', 2, 'days' ) | date,
+          classes: "govuk-tag--red"
+        })}} </td>
           <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="/workallocation/pages/wa-mytasks-ao" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -78,7 +78,7 @@ classes: "govuk-tag--red"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review respondent evidence</a></td>
           <td class="govuk-table__cell"> {{govukTag({
-          text: "dd/mm/yyyy",
+          text: now | date( 'subtract', 5, 'days' ) | date,
           classes: "govuk-tag--red"
         })}}</td>
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
@@ -94,9 +94,10 @@ classes: "govuk-tag--red"
                                 C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
             </svg></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Generate decision and reasons</a></td>
-          <td class="govuk-table__cell">{{govukTag ({text: "dd/mm/yyyy",
-                                classes: "govuk-tag--yellow"
-                              })}} </td>
+          <td class="govuk-table__cell">{{govukTag({
+          text: now | date( 'add', 1, 'days' ) | date,
+          classes: "govuk-tag--yellow"
+        })}} </td>
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
       </tbody>

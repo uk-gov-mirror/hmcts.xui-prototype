@@ -69,7 +69,7 @@ My work
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review respondent evidence</a></td>
           <td class="govuk-table__cell"> {{govukTag({
-          text: "dd/mm/yyyy",
+          text: now | date( 'subtract', 5, 'days' ) | date,
           classes: "govuk-tag--red"
         })}}</td>
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
@@ -80,9 +80,10 @@ My work
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="wa-PA-00321-2018-c">Generate decision and reasons</a></td>
-          <td class="govuk-table__cell">{{govukTag ({text: "dd/mm/yyyy",
-                                classes: "govuk-tag--yellow"
-                              })}} </td>
+          <td class="govuk-table__cell">{{govukTag({
+          text: now | date( 'add', 1, 'days' ) | date,
+          classes: "govuk-tag--yellow"
+        })}} </td>
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
       </tbody>

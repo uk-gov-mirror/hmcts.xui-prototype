@@ -109,9 +109,9 @@ Case details
             <h2 class="govuk-heading-m">Active tasks</h2>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
             <p class="govuk-body"><strong>Generate decision and reasons</strong> <span class="hmcts-badge_right">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--yellow"
-})}}</span></p>
+            text: now | date( 'add', 1, 'days' ) | date,
+            classes: "govuk-tag--yellow"
+          })}}</span></p>
             <dl class="govuk-summary-list govuk-summary-list--no-border">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -140,9 +140,9 @@ classes: "govuk-tag--yellow"
             </dl>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
             <p class="govuk-body"><strong>Review application decision</strong> <span class="hmcts-badge_right">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}}</span></p>
+            text: now | date( 'add', 5, 'days' ) | date,
+            classes: "govuk-tag--grey"
+          })}}</span></p>
             <dl class="govuk-summary-list govuk-summary-list--no-border">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">

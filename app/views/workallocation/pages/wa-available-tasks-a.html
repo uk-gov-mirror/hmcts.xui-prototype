@@ -74,9 +74,9 @@ My work
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review respondent evidence</td>
           <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--yellow"
-})}} </td>
+          text: now | date( 'add', 3, 'days' ) | date,
+          classes: "govuk-tag--yellow"
+        })}} </td>
           <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -93,9 +93,9 @@ classes: "govuk-tag--yellow"
             </svg></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Create case summary</td>
           <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--yellow"
-})}} </td>
+          text: now | date( 'add', 4, 'days' ) | date,
+          classes: "govuk-tag--yellow"
+        })}} </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -107,9 +107,9 @@ classes: "govuk-tag--yellow"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review appellant case</td>
           <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          text: now | date( 'add', 6, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -126,9 +126,9 @@ classes: "govuk-tag--grey"
             </svg></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review application decision</td>
           <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          text: now | date( 'add', 8, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>

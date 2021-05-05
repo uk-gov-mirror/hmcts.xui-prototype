@@ -6,7 +6,9 @@ module.exports = function (env) {
    * @type {Object}
    */
   var filters = {}
-
+  var date = require('nunjucks-date-filter');
+    date.setDefaultFormat( "D MMMM YYYY" );
+    var filters = { date }
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:
