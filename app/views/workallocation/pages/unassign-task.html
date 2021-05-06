@@ -47,9 +47,9 @@ My work
               <td data-label="Status">Taylor House</td>
               <td data-label="Date">Generate decision and reasons</td>
                 <td data-label="Amount">{{govukTag({
-      text: "dd/mm/yyyy",
-      classes: "govuk-tag--grey"
-      })}} </td>
+                text: now | date( 'add', 12, 'days' ) | date,
+                classes: "govuk-tag--grey"
+              })}} </td>
         <td data-label="Status">Judge Beech</td>
           <td data-label="Status"></td>
             </tr>

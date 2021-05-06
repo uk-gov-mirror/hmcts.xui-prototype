@@ -50,9 +50,9 @@ My work
               <td data-label="Status">Taylor House</td>
               <td data-label="Date">Review respondent evidence</td>
                 <td data-label="Amount">{{govukTag({
-      text: "dd/mm/yyyy",
-      classes: "govuk-tag--yellow"
-      })}} </td>
+                text: now | date( 'subtract', 0, 'days' ) | date,
+                classes: "govuk-tag--yellow"
+              })}} </td>
         <td data-label="Status">Judge Birch</td>
           <td data-label="Status"><a href="assign-task">Change</a></td>
             </tr>

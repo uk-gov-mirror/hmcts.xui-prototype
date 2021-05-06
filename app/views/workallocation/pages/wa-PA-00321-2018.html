@@ -95,7 +95,7 @@ Case details
             <h2 class="govuk-heading-m">Active tasks</h2>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
             <p class="govuk-body"><strong>Generate decision and reasons</strong> <span class="hmcts-badge_right">{{govukTag({
-            text: now | date( 'add', 1, 'days' ) | date,
+            text: now | date( 'add', 0, 'days' ) | date,
             classes: "govuk-tag--yellow"
           })}}</span></p>
             <dl class="govuk-summary-list govuk-summary-list--no-border">

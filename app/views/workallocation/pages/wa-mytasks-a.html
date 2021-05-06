@@ -95,7 +95,7 @@ My work
             </svg></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Generate decision and reasons</a></td>
           <td class="govuk-table__cell">{{govukTag({
-          text: now | date( 'add', 1, 'days' ) | date,
+          text: now | date( 'add', 0, 'days' ) | date,
           classes: "govuk-tag--yellow"
         })}} </td>
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>

@@ -161,7 +161,6 @@ My work
             </thead>
             <tbody class="govuk-table__body">
 
-
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Libby Mcmahon</a></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
@@ -169,9 +168,9 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Generate decision and reasons</a></td>
                 <td class="govuk-table__cell"> {{govukTag({
-                        text: "dd/mm/yyyy",
-                        classes: "govuk-tag--red"
-                      })}}</td>
+                text: now | date( 'subtract', 3, 'days' ) | date,
+                classes: "govuk-tag--red"
+              })}}</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
@@ -185,9 +184,9 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review FTPA application</a></td>
                 <td class="govuk-table__cell"> {{govukTag({
-                        text: "dd/mm/yyyy",
-                        classes: "govuk-tag--yellow"
-                      })}}</td>
+                text: now | date( 'subtract', 0, 'days' ) | date,
+                classes: "govuk-tag--yellow"
+              })}}</td>
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
@@ -198,13 +197,14 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review application decision</a></td>
-                <td class="govuk-table__cell"> {{govukTag({
-                        text: "dd/mm/yyyy",
-                        classes: "govuk-tag--yellow"
-                      })}}</td>
+                <td class="govuk-table__cell">{{govukTag({
+                text: now | date( 'subtract', 0, 'days' ) | date,
+                classes: "govuk-tag--yellow"
+              })}}</td>
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
+
 
 <!--
               <tr class="govuk-table__row">

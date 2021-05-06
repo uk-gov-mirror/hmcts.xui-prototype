@@ -161,9 +161,9 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff"><a href="#">Review respondent evidence</a></td>
                 <td class="govuk-table__cell" style="border-bottom: 1px solid #fff"> {{govukTag({
-                        text: "dd/mm/yyyy",
-                        classes: "govuk-tag--yellow"
-                      })}}</td>
+                text: now | date( 'subtract', 0, 'days' ) | date,
+                classes: "govuk-tag--yellow"
+              })}}</td>
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff"></td>
                 <td class="govuk-table__cell" style="border-bottom: 1px solid #fff">&nbsp;&nbsp;&nbsp;<a href="wa-allwork-none" class="right_m">Manage</a><span class="govuk-accordion-wa__iconc"></span></td>
               </tr>
@@ -179,9 +179,9 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review application case</a></td>
                 <td class="govuk-table__cell"> {{govukTag({
-                        text: "dd/mm/yyyy",
-                        classes: "govuk-tag--grey"
-                      })}}</td>
+                text: now | date( 'add', 5, 'days' ) | date,
+                classes: "govuk-tag--grey"
+              })}}</td>
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
