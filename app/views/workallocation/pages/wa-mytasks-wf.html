@@ -19,10 +19,108 @@ My work
 </div>
 <p>Access tasks and cases.</p>
 {{ govukButton({
-  text: "Show work filter",
+  text: "Hide work filter",
   classes: "govuk-button--secondary",
-  href: "wa-mytasks-wf"
+  href: "wa-mytasks"
 }) }}
+
+
+
+  <div class="govuk-grid-row" >
+    <div class="govuk-grid-column-one-half" style="background-color: #f3f2f1; padding-top: 20px; margin-left: 15px;">
+
+    <h2 class="govuk-heading-m">Immigration and Asylum</h2>
+    <h3 class="govuk-heading-s">Locations</h3>
+    <p class="govuk-body">Show tasks and cases for the selected locations:</p>
+  <!--    <div class="govuk-checkboxes govuk-checkboxes--small">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            Select all / Deselect all
+          </label>
+      </div>
+      </div> -->
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter" style="background-color: 	#f3f2f1; margin-left: 15px;">
+      <div class="govuk-checkboxes govuk-checkboxes--small">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            Birmingham
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            Bradford
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+            Glasgow
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+            Manchester
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-quarter" style="background-color: 	#f3f2f1; ">
+
+      <div class="govuk-checkboxes govuk-checkboxes--small">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            Newport
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            Nottingham
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+            Northshields
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="TH" checked>
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+            Taylor House
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <p></p>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <p></p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half  govuk-body govuk-!-margin-bottom-6" style="background-color: 	#f3f2f1; margin-left: 15px;" >
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+  Apply
+</button>
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Reset to default
+</button>
+    </div>
+  </div>
 
 
 
