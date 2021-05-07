@@ -40,17 +40,17 @@ Case details
     </h2>
     <ul class="govuk-tabs__list">
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="wa-PA-00467-2017-t">
+        <a class="govuk-tabs__tab" href="#">
           Tasks
         </a>
       </li>
        <li class="govuk-tabs__list-item--selected">
-        <a class="govuk-tabs__tab" href="wa-PA-00467-2017-ar">
+        <a class="govuk-tabs__tab" href="#r">
           Roles and access
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="PA-00467-2017-a">
+        <a class="govuk-tabs__tab" href="#">
           Overview
         </a>
       </li>
@@ -96,24 +96,24 @@ Case details
         <h2 class="govuk-heading-m">Judiciary</h2>
         <table class="govuk-table ">
         <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19"  style="width: 300px;">Name</th>
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;">Role</th>
-          <!--        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " >Access type</th> -->
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">Location</th>
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">Start</th>
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">End</th>
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 100px;"></th>
-            </tr>
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19"  style="width: 250px;">Name</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 150px;">Role</th>
+        <!--        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " >Access type</th> -->
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 200px;">Location</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">Start</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 200px;">End</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 100px;"></th>
+          </tr>
         </thead>
 
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Philips</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lead Judge</td>
               <!--  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Standard access</td> -->
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">DD/MM/YYYY </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 50, "day") | date( "D MMMM YYYY" ) }} </td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
             </tr>
@@ -123,7 +123,7 @@ Case details
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hearing judge</td>
               <!--  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Standard access</td> -->
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">DD/MM/YYYY </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 50, "day") | date( "D MMMM YYYY" ) }} </td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell"><a href="wa-PA-00467-2017-arjp-o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
             </tr>
@@ -135,15 +135,15 @@ Case details
         <h2 class="govuk-heading-m">Caseworkers</h2>
         <table class="govuk-table ">
         <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19"  style="width: 300px;">Name</th>
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;">Role</th>
-          <!--        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " >Access type</th> -->
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">Location</th>
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">Start</th>
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">End</th>
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 100px;"></th>
-            </tr>
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19"  style="width: 250px;">Name</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 150px;">Role</th>
+        <!--        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " >Access type</th> -->
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 200px;">Location</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">Start</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 200px;">End</th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 100px;"></th>
+          </tr>
         </thead>
 
         <tbody class="govuk-table__body">
@@ -154,7 +154,7 @@ Case details
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case manager</td>
             <!--    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Standard access</td> -->
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">DD/MM/YYYY </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 50, "day") | date( "D MMMM YYYY" ) }} </td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
 
