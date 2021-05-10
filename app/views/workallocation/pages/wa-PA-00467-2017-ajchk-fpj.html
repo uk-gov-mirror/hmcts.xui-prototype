@@ -63,7 +63,7 @@ Case details
               Role starts
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">DD/MM/YYYY</p>
+              <p class="govuk-body">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</p>
 
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -77,7 +77,7 @@ Case details
               Role ends
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">DD/MM/YYYY</p>
+              <p class="govuk-body">{{ now |  date("add", 120, "day") | date( "D MMMM YYYY" ) }} </p>
 
             </dd>
             <dd class="govuk-summary-list__actions">
