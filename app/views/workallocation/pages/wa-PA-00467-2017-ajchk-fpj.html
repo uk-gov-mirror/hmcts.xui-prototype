@@ -60,10 +60,10 @@ Case details
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Role starts
+              Duration of role
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</p>
+              <p class="govuk-body">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }} to {{ now |  date("add", 120, "day") | date( "D MMMM YYYY" ) }}</p>
 
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -72,20 +72,7 @@ Case details
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Role ends
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">{{ now |  date("add", 120, "day") | date( "D MMMM YYYY" ) }} </p>
-
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="wa-PA-00467-2017-ajhadur-fpjc">
-                Change<span class="govuk-visually-hidden"> contact details</span>
-              </a>
-            </dd>
-          </div>
+          
         </dl>
 
   <div class="govuk-button-group">
