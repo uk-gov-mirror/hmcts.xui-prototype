@@ -35,9 +35,11 @@
 {% block header %}
   {% include "includes/cookie-banner.html" %}
 
-    <header class="hmcts-header" role="banner" style="  background-color: #8d100e;">
+    <header class="hmcts-header" role="banner" style="  background-color: #8d100e; ">
 
-        <div style="max-width:1840px;  min-width:960px;  margin: 0px 40px 0px 40px;  display: flex; justify-content: center;">
+
+        <div style=" max-width:1840px; margin: 0 auto;">
+            <div style="max-width:1840px;  min-width:960px;  margin: 0px 40px 0px 40px;  display: flex; justify-content: center;">
 
             <div style="width: 100px; ">
                 <img src="/public/images/govlogowhite.png" width="73" height="60" style="margin-top:10px;">
@@ -113,24 +115,25 @@
 
         </div>
 
+        </div>
 
     </header>
 
 
 
-
-
-    <div class="govuk-phase-banner govuk-width-container" style=" max-width:1840px;  min-width:960px;   margin: 0px 40px 0px 40px;">
-        <p class="govuk-phase-banner__content">
-            <strong class="govuk-tag govuk-phase-banner__content__tag">
-                beta
-            </strong>
-          <span class="govuk-phase-banner__text">
-            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-          </span>
-        </p>
+<!-- BETA BANNER -->
+    <div style=" max-width:1840px; margin: 0 auto;">
+        <div class="govuk-phase-banner govuk-width-container" style=" max-width:1840px;  min-width:960px;   margin: 0px 40px 0px 40px;">
+            <p class="govuk-phase-banner__content">
+                <strong class="govuk-tag govuk-phase-banner__content__tag">
+                    beta
+                </strong>
+              <span class="govuk-phase-banner__text">
+                This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+              </span>
+            </p>
+        </div>
     </div>
-
 
 {% endblock %}
 
@@ -138,11 +141,13 @@
 
 
 {% block main %}
-    <div style=" max-width:1840px;  min-width:960px;  margin: 0px 40px 0px 40px;">
-        {% block beforeContent %}{% endblock %}
-        <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %} style="padding-top: 25px;">
-            {% block content %}{% endblock %}
-        </main>
+    <div style=" max-width:1840px; margin: 0 auto;">
+        <div style=" max-width:1840px;  min-width:960px;  margin: 20px 40px 0px 40px;">
+            {% block beforeContent %}{% endblock %}
+            <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %} style="padding-top: 25px;">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
     </div>
 {% endblock %}
 
