@@ -34,16 +34,27 @@
 {% endblock %}
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-    <header class="hmcts-header" role="banner" style="background-color: #8d100e">
-        <div style="width:1220px; display: flex; margin: 0 auto;">
+
+    <header class="hmcts-header" role="banner" style="  background-color: #8d100e;">
+
+        <div style="max-width:1840px;  min-width:960px;  margin: 0px 40px 0px 40px;  display: flex; justify-content: center;">
+
             <div style="width: 100px; ">
                 <img src="/public/images/govlogowhite.png" width="73" height="60" style="margin-top:10px;">
             </div>
-            <div>
-                <div class="hmcts-header__container" style="width: 1116px;">
+
+
+            <div style="display: flex; flex-grow: 1; flex-direction: column;">
+
+                <div style="display: flex; flex-grow: 1;">
+
                     <div class="hmcts-header__logo">
                         <a class="hmcts-header__link" href="/noticeofchange/solicitor/caselist" aria-current="page">Judicial case manager</a>
                     </div>
+
+                    <div style="display: flex; flex-grow: 1;">
+                    </div>
+
                     <div class="hmcts-header__content">
                         <nav class="hmcts-header__navigation" aria-label="Account navigation">
                             <ul class="hmcts-header__navigation-list">
@@ -55,13 +66,14 @@
                             </ul>
                         </nav>
                     </div>
+
                 </div>
 
-                <div  style="background-color: #8d100e">
-                    <div style=" display: flex; margin: 0 auto; background-color: #8d100e; ">
+
+                <div  style="background-color: #8d100e; display: flex; flex-grow: 1; flex-direction: row; ">
 
                         <div>
-                            <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style="background-color: #8d100e; width: 500px;">
+                            <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style="background-color: #8d100e; ">
                                 <ul class="hmcts-primary-navigation__list">
                                     <li class="hmcts-primary-navigation__item">
                                         <a class="hmcts-primary-navigation__link" href="#">
@@ -94,28 +106,50 @@
                             </a>
                         </div>
 
-                    </div>
                 </div>
 
-
-
             </div>
+
+
         </div>
+
+
     </header>
-  {% set searchHtml %}
-    <a class="hmcts-search-toggle__button" href="#">Find case</a>
-  {% endset %}
-  <div class="govuk-phase-banner govuk-width-container">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
+
+
+
+
+
+    <div class="govuk-phase-banner govuk-width-container" style=" max-width:1840px;  min-width:960px;   margin: 0px 40px 0px 40px;">
+        <p class="govuk-phase-banner__content">
+            <strong class="govuk-tag govuk-phase-banner__content__tag">
+                beta
+            </strong>
+          <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+          </span>
+        </p>
+    </div>
+
+
 {% endblock %}
+
+
+
+
+{% block main %}
+    <div style=" max-width:1840px;  min-width:960px;  margin: 0px 40px 0px 40px;">
+        {% block beforeContent %}{% endblock %}
+        <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %} style="padding-top: 25px;">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+{% endblock %}
+
+
+
+
+
   {% block footer %}
     {{ govukFooter({
       meta: {
