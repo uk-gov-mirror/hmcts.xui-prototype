@@ -1,0 +1,179 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="wa-PA-00467-2017-ajha-fpj" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+
+      <li>
+        <a href="#passport-issued-error"><a href="#passport-issued-error">The role end date must be after the role start date</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<span class="govuk-caption-l">Hearing judge</span>
+<h2 class="govuk-heading-l">Allocate a judicial role</h2>
+
+<div class="govuk-form-group govuk-form-group--error">
+  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+      Duration of access and role
+    </label>
+  </h2>
+
+  {% set setDuration %}
+
+  {{ govukDateInput({
+    id: "passport-issued",
+    namePrefix: "passport-issued",
+    fieldset: {
+      legend: {
+        text: "Access starts",
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: "For example, 12 11 2007"
+    },
+  items: [
+   {
+     classes: "govuk-input--width-2 ",
+     name: "day",
+     value: "10"
+   },
+   {
+     classes: "govuk-input--width-2 ",
+     name: "month",
+     value: "6"
+   },
+   {
+     classes: "govuk-input--width-4 ",
+     name: "year",
+     value: "2021"
+   }
+ ]
+  }) }}
+
+
+  {{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+  legend: {
+  text: "Access ends",
+  classes: "govuk-fieldset__legend--m"
+  }
+  },
+  hint: {
+  text: "For example, 12 11 2007"
+  },
+  errorMessage: {
+    text: "The role end date must be after the role start date"
+  },
+  items: [
+   {
+     classes: "govuk-input--width-2 govuk-input--error",
+     name: "day",
+     value: "21"
+   },
+   {
+     classes: "govuk-input--width-2 govuk-input--error",
+     name: "month",
+     value: "1"
+   },
+   {
+     classes: "govuk-input--width-4 govuk-input--error",
+     name: "year",
+     value: "2021"
+   }
+ ]
+  }) }}
+
+  {% endset -%}
+  {% set textHtml %}
+  {{ govukInput({
+    id: "contact-by-text",
+    name: "contact-by-text",
+    type: "tel",
+    classes: "govuk-!-width-one-third",
+    label: {
+      text: "Mobile phone number"
+    }
+  }) }}
+
+
+  {% endset -%}
+  {{ govukRadios({
+    idPrefix: "contact",
+    name: "contact",
+    fieldset: {
+      legend: {
+        text: "",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: ""
+    },
+    items: [
+
+            {
+              value: "phone",
+              text: "7 days ",
+              hint: {
+            text: "Starts from today and ends at midnight 7 days from now."
+          }
+          },
+
+
+          {
+            value: "phone",
+
+            text: "Indefinite",
+            hint: {
+          text: "Starts from today and lasts while the case is open."
+        }
+        },
+
+            {
+              value: "phone",
+checked:"true",
+              text: "Another period",
+              hint: {
+            text: "You’ll need to provide both a start and end date for the role."
+          },
+              conditional: {
+                html: setDuration
+              }
+            }
+
+    ]
+  }) }}
+
+  </div>
+
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+    href: "wa-PA-00467-2017-ajchk-fpj",
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-PA-00467-2017-ar-fpj">Cancel</a></p>
+</div>
+
+
+{% endblock %}
