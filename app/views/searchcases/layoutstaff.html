@@ -48,13 +48,18 @@
 
     <header class="hmcts-header" role="banner">
 
-        <div style="width:1220px; display: flex; margin: 0 auto;">
+        <div style="max-width:1840px;  min-width:960px;   margin: 0px 40px 0px 40px; display: flex; ">
 
             <div style="width: 406px; ">
                 <a style="color: white; font-size: 24px; font-weight: bold; text-decoration: none;" href="#">Manage Cases</a>
             </div>
 
-            <div class="hmcts-header__container" style="width: 812px;">
+
+            <div style="display: flex; flex-grow: 1;">
+            </div>
+
+
+            <div class="hmcts-header__container" style="">
 
                 <div class="hmcts-header__logo">
                     <a class="hmcts-header__link" href="/noticeofchange/solicitor/caselist" aria-current="page"></a>
@@ -84,8 +89,8 @@
   {% endset %}
 
 
-    <div  style="background-color: #0b0c0c;">
-        <div style="width:1220px; display: flex; margin: 0 auto; background-color: #0b0c0c;">
+    <div  style="background-color: #0b0c0c;" >
+        <div style=" max-width:1840px;  min-width:960px;   margin: 0px 40px 0px 40px; display: flex; background-color: #0b0c0c;">
 
             <div style="width: 0px; ">
 
@@ -113,15 +118,11 @@
                 </nav>
             </div>
 
+
             <div style="display: flex; flex-grow: 1;">
             </div>
 
 
-                <!--
-                <div style="width: 100px;">
-                    <a class="hmcts-search-toggle__button" href="">Find case</a>
-                </div>
-                -->
             <form
                 name="aspnetForm"
                 method="post"
@@ -147,7 +148,9 @@
 
 
 
-  <div class="govuk-phase-banner govuk-width-container">
+
+
+  <div class="govuk-phase-banner govuk-width-container" style=" max-width:1840px;  min-width:960px;   margin: 0px 40px 0px 40px;">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
         beta
@@ -162,6 +165,19 @@
 
 
 {% endblock %}
+
+
+
+
+    {% block main %}
+        <div style=" max-width:1840px;  min-width:1220px;   margin: 0px 40px 0px 40px;">
+            {% block beforeContent %}{% endblock %}
+            <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %} style="padding-top: 25px;">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    {% endblock %}
+
 
 
 
