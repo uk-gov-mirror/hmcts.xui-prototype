@@ -9,36 +9,37 @@ Case details
 
 {% block content %}
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l  govuk-!-margin-bottom-2">Review specific access request</h2>
-          <p></p>
-          <table class="govuk-table">
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Case name</th>
-                <td class="govuk-table__cell">Amelia Chu</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Case reference</th>
-                <td class="govuk-table__cell">PA/00467/2017</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Request from</th>
-                <td class="govuk-table__cell">Judge Randel-Combeswardly</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Date submitted</th>
-                <td class="govuk-table__cell">DD/MM/YYYY</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 220px;">Reason for case access</th>
-                <td class="govuk-table__cell">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l  govuk-!-margin-bottom-2">Review specific access request</h2>
+    <p></p>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width: 220px;">Case name</th>
+          <td class="govuk-table__cell">Amelia Chu</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width: 220px;">Case reference</th>
+          <td class="govuk-table__cell">PA/00467/2017</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width: 220px;">Date submitted</th>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width: 220px;">Request from</th>
+          <td class="govuk-table__cell">Judge Randel-Combeswardly<br>Hearing judge - HR</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width: 220px;">Reason for case access</th>
+          <td class="govuk-table__cell">
 To view details of the other case linked to the parties/family on my current case.          </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      </tbody>
+    </table>
+  </div>
+</div>
   <form action="#" method="post" onsubmit="usePage(this, 'bob');">
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">

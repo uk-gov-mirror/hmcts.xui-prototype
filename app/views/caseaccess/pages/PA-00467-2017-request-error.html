@@ -26,7 +26,7 @@ Case details
   </svg>
   <div class="hmcts-banner__message">
     <span class="hmcts-banner__assistive">information</span>
-This case has specific access.<br>This means it requires authorisation. If you request access to the case, it will be logged for auditing purposes.</div>
+This case requires specific access.<br>This means it’s outside your jurisdiction and requires authorisation. If you request access to the case, it will be logged for auditing purposes.</div>
 </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -34,28 +34,33 @@ This case has specific access.<br>This means it requires authorisation. If you r
           name: "more-detail",
           id: "more-detail",
           label: {
-            text: "Why are you requesting access to this case?
+            text: "  Why do you need to access this case?
 ",
             classes: "govuk-label--l",
             isPageHeading: true
           },
           hint: {
-            text: "Access will be granted until midnight tonight. You must provide a Purpose."
+            text: "Provide detailed reasons for requesting access."
           },
   errorMessage: {
     text: "Enter more detail"
   }
         }) }}
+
+        {{ govukButton({
+      text: "Submit",
+      href: "PA-00467-2017-confirmation",
+      classes: "govuk-!-margin-right-3"
+    }) }}
+
+    <!--
     {{ govukButton({
-  text: "Submit",
-  href: "PA-00467-2017-confirmation",
-  classes: "govuk-!-margin-right-1"
-}) }}
-{{ govukButton({
-  text: "Cancel",
-  href: "results-s2",
-  classes: "govuk-button--secondary"
-}) }}
+      text: "Cancel",
+      href: "results",
+      classes: "govuk-button--secondary"
+    }) }} -->
+    <p>  <a class="govuk-body" href="results-s2">Cancel</a></p>
+
 </div>
 </div>
 <form method=""  action="#" class="for4" style=" float: left; margin-top: 60px;">

@@ -18,43 +18,34 @@ Case details
 {% endset -%}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-{{ govukRadios({
-  idPrefix: "contact",
-  name: "contact",
-  fieldset: {
-    legend: {
-      text: "Reject specific access request",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  hint: {
-    text: "Select one reason. This reason will be sent to the person requesting access to the case."
-  },
-  items: [
-    {
-      value: "email",
-      text: "Based on the reasons you have provided, I do not believe it is appropriate for you to gain access to this case"
-    },
-    {
-      value: "phone",
-      text: "You have not supplied enough information, please contact me to discuss further"
-    },
-    {
-      value: "email",
-      text: "You have a conflict of interest with this case"
-    },
+    {{ govukRadios({
+      idPrefix: "contact",
+      name: "contact",
+      fieldset: {
+        legend: {
+          text: "Reject specific access request",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Select one reason. This reason will be sent to the person requesting access to the case."
+      },
+      items: [
+      {
+        value: "email",
+        text: "Based on the reasons you have provided, I do not believe it is appropriate for you to gain access to this case"
+      },
 
-
-{
-  value: "other",
-  text: "Other",
-  conditional: {
-    html: textHtml
-  }
-    }
-  ]
-}) }}
+        {
+          value: "other",
+          text: "Provide a reason why you're rejecting the request to access this case",
+          conditional: {
+            html: textHtml
+          }
+        }
+      ]
+    }) }}
 <div class="govuk-button-group">
 {{ govukButton({
   text: "Submit",
