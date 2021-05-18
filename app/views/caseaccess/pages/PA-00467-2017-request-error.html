@@ -28,24 +28,51 @@ Case details
     <span class="hmcts-banner__assistive">information</span>
 This case requires specific access.<br>This means it’s outside your jurisdiction and requires authorisation. If you request access to the case, it will be logged for auditing purposes.</div>
 </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
-          label: {
-            text: "  Why do you need to access this case?
-",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-          hint: {
-            text: "Provide detailed reasons for requesting access."
-          },
-  errorMessage: {
-    text: "Enter more detail"
-  }
-        }) }}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group govuk-form-group--error">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+        Why do you need to access this case?
+      </label>
+    </h1>
+<div class="govuk-!-padding-bottom-3"></div>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with access requests
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+
+        <p class="govuk-body">To help the approver make the decision about your request, you may wish to include:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>the case reference of the linked case </li>
+  <li>how long you would require access to this case</li>
+  <li>reasons why you require access to this case</li>
+</ul>
+
+    </details>
+
+
+
+    <div id="more-detail-hint" class="govuk-hint">
+      Provide detailed reasons for requesting access.
+    </div>
+    <span id="passport-issued-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Enter more detail
+    </span>
+    <!--
+    <ul class="govuk-list govuk-list--bullet">
+<li>the case reference</li>
+<li>how long you need to access this case for</li>
+</ul> -->
+    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8" aria-describedby="more-detail-hint"></textarea>
+    </div>
+
+
+
 
         {{ govukButton({
       text: "Submit",
