@@ -9,7 +9,7 @@ Case details
 {% endblock %}
 
 {% block content %}
-<h2 class="govuk-heading-l">Allocate a legal ops role</h2>
+<h2 class="govuk-heading-l">Allocate a judicial role</h2>
   <form action="#" method="post" onsubmit="usePage(this, 'bob');">
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
@@ -19,11 +19,16 @@ Case details
           </h3>
         </legend>
         <div class="govuk-radios">
-
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live-2" name="bob" type="radio" value="wa-PA-00467-2017-alor-who">
+            <input class="govuk-radios__input" id="where-do-you-live" name="bob" type="radio" value="#">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+              Lead Judge
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live-2" name="bob" type="radio" value="wa-PA-00467-2017-ajhanlo">
             <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-              Case manager
+              Hearing judge
             </label>
           </div>
         </div>
@@ -40,7 +45,7 @@ Case details
     href: "/caseaccess/pages/PA-00467-2017-t",
     classes: "govuk-button--secondary"
   }) }} -->
-  <p><a class="govuk-body" href="wa-PA-00467-2017-lo">Cancel</a></p>
+  <p><a class="govuk-body" href="wa-PA-00467-2017-nojlo">Cancel</a></p>
 </div>
 </form>
 <script type="text/javascript">
