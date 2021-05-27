@@ -34,13 +34,21 @@
 {% endblock %}
 {% block header %}
   {% include "includes/cookie-banner.html" %}
+  <style>
+    .govuk-width-container {
+      max-width: 1820px;
+    }
+  </style>
+
+
     <header class="hmcts-header" role="banner" style="background-color: #8d100e">
-        <div style="width:1220px; display: flex; margin: 0 auto;">
+        <div style="width:1820px; display: flex; margin: 0 auto;">
             <div style="width: 100px; ">
                 <img src="/public/images/govlogowhite.png" width="73" height="60" style="margin-top:10px;">
             </div>
             <div>
-                <div class="hmcts-header__container" style="width: 1116px;">
+              <div class="hmcts-header__container" style="max-width: 1720px; margin: 0px; position: relative;">
+
                     <div class="hmcts-header__logo">
                         <a class="hmcts-header__link" href="/caseaccess" aria-current="page">Judicial case manager</a>
                     </div>
@@ -58,7 +66,7 @@
                 </div>
 
                 <div  style="background-color: #8d100e">
-                    <div style=" display: flex; margin: 0 auto; background-color: #8d100e; ">
+                  <div style="width:1720px; display: flex; margin: 0 auto; background-color: #8d100e; ">
 
                         <div>
                             <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style="background-color: #8d100e; width: 500px;">
