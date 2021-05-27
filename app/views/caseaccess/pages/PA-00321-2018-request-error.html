@@ -14,7 +14,7 @@ Case details
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#passport-issued-error">Enter more detail</a>
+        <a href="#passport-issued-error">Select a reason</a>
       </li>
     </ul>
   </div>
@@ -31,26 +31,72 @@ Case details
 </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        {% set textHtml %}
         {{ govukTextarea({
           name: "more-detail",
-          id: "more-detail",
-          label: {
-            text: "Why do you need to access this case?
+          id: "more-detail"
+        }) }}
 
-",
-            classes: "govuk-label--l",
-            isPageHeading: true
+    {% set emailHtml %}
+    {{ govukInput({
+      id: "contact-by-email",
+      name: "contact-by-email",
+      type: "email",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Case reference"
+      }
+    }) }}
+    {% endset -%}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Why do you need to access this case?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
           },
           hint: {
-            text: "Select a reason.
-
-You’ll be given access to the case until midnight tonight.
-"
+            text: "Select a reason."
           },
-  errorMessage: {
-    text: "Enter more detail"
+          items: [
+            {
+              value: "email",
+              text: "The cases or parties are linked to my current case",
+          conditional: {
+            html: emailHtml
+          }
+            },
+            {
+              value: "email",
+              text: "To determine if the case needs to be consolidated ",
+          conditional: {
+            html: emailHtml
+          }
+            },
+            {
+              value: "email",
+              text: "To consider an order for transfer "
+            },
+
+            {
+              value: "other",
+              text: "Other reason",
+              conditional: {
+                html: textHtml
+              }
+            }
+          ],
+          errorMessage: {
+    text: "Select a reason"
   }
         }) }}
+
     {{ govukButton({
   text: "Submit",
   href: "PA-00321-2018-confirmation",
@@ -68,7 +114,7 @@ You’ll be given access to the case until midnight tonight.
             <select size="1" name="hop" style="height:25px;" onchange="document.location.href=this.value">
             <option selected value=""> Select an option</option>
             <option value="/caseaccess/pages/PA-00321-2018-request">No errors</option>
-            <option value="/caseaccess/pages/PA-00321-2018-request-error">Missing text</option>
+            <option value="/caseaccess/pages/PA-00321-2018-request-error">Missing selection</option>
             </select>
         </form>
         {% endblock %}
