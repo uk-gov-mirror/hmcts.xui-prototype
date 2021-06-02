@@ -11,6 +11,7 @@ Case details
 <a href="wa-PA-00467-2017-coi-4" class="govuk-back-link">Back</a>
 {% endblock %}
 {% block content %}
+
 <h2 class="govuk-heading-l">Add an exclusion</h2>
 <h2 class="govuk-heading-m">Describe the exclusion</h2>
 <div class="govuk-form-group">
@@ -29,6 +30,13 @@ href: "wa-PA-00467-2017-coi-6",
 
   <p><a class="govuk-body" href="wa-PA-00467-2017-ar">Cancel</a></p>
 </div>
+<form method=""  action="#" class="for4" style=" float: left; margin-top: 60px;">
+    <p style="margin-bottom: 0px;">Select to show validation errors</p>
+    <select size="1" name="hop" style="height:25px;" onchange="document.location.href=this.value">
+    <option selected value=""> Select an option</option>
+    <option value="/workallocation/pages/wa-PA-00467-2017-coi-5">No errors</option>
+    <option value="/workallocation/pages/wa-PA-00467-2017-coi-5-error">Missing text</option>
+    </select>
 </form>
 
 {% endblock %}
