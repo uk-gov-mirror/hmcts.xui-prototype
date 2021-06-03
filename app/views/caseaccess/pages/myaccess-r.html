@@ -62,7 +62,7 @@ My work
                   <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="PA-00321-2018-a">Robert Saddlebrook</a></td>
                   <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
                   <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Reviewer</td>
+                  <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}  </td>
                   <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Challenged</td>
                   <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }} </td>
                   <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }} </td>
