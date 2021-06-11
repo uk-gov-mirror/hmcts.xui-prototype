@@ -5,7 +5,7 @@ Refunds
 {% block content %}
 <div class="hmcts-page-heading">
   <div class="hmcts-page-heading__title">
-    <h1 class="govuk-heading-xl">Refund queue</h1>
+    <h1 class="govuk-heading-xl">Refunds to be processed</h1>
   </div>
 </div>
 
@@ -18,7 +18,6 @@ Refunds
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Trigger</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Date</button></th>
-          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Status</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
         </tr>
       </thead>
@@ -30,7 +29,6 @@ Refunds
           text: now | date( 'subtract', 2, 'days' ) | date,
           classes: "govuk-tag--grey"
         })}} </td>
-          <td class="govuk-table__cell">New</a>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/v1caseinccd?state=withdrawn">Review case</a></td>
         </tr>
 
@@ -42,8 +40,7 @@ Refunds
           text: now | date( 'subtract', 5, 'days' ) | date,
           classes: "govuk-tag--grey"
         })}}</td>
-          <td class="govuk-table__cell">Awaiting response</a>
-          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/v1caseinccd?state=withdrawn">Review case</a></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/v1caseinccd?state=remission">Review case</a></td>
         </tr>
         
       </tbody>
