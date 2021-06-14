@@ -16,15 +16,13 @@ Case details
   id: "more-detail"
 }) }}
 {% endset -%}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l">Add an exclusion</h2>
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Add an exclusion</span>
+    Choose an exclusion type
+</h1>
 
     <div class="govuk-form-group">
-      <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
-          Choose an exclusion type
-        </label>
-      </h2>
+
 {{ govukRadios({
   idPrefix: "contact",
   name: "contact",

@@ -9,18 +9,32 @@ Case details
 {% endblock %}
 
 {% block content %}
-<span class="govuk-caption-l">Hearing judge</span>
-<h2 class="govuk-heading-l">Remove allocation</h2>
-<p class="govuk-body">This will remove the role allocation. You may need to unassign or reassign associated tasks too.</p>
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Hearing judge</span>
+    Remove allocation
+</h1>
+
+<div id="event-name-hint" class="govuk-hint">This will remove the role allocation. You may need to unassign or reassign associated tasks too.</div>
 
 <div class="govuk-form-group">
-  <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
-      Role summary
-    </label>
-  </h3>
+
 
   <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-!-width-three-quarters">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Type of role
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">Hearing judge</p>
 
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="wa-PA-00467-2017-ajndur">
+          Change<span class="govuk-visually-hidden"> contact details</span>
+        </a>
+      </dd>
+    </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Person
@@ -35,20 +49,7 @@ Case details
         </a>
       </dd>
     </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Role
-      </dt>
-      <dd class="govuk-summary-list__value">
-        <p class="govuk-body">Hearing judge</p>
 
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="wa-PA-00467-2017-ajndur">
-          Change<span class="govuk-visually-hidden"> contact details</span>
-        </a>
-      </dd>
-    </div>
   </dl>
 </div>
 
