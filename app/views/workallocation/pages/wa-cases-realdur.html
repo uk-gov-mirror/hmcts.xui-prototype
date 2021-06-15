@@ -12,14 +12,12 @@ Case details
 {% endblock %}
 {% block content %}
 
-<span class="govuk-caption-l">Lead Judge</span>
-<h2 class="govuk-heading-l">Reallocate role</h2>
-
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Reallocate Lead Judge</span>
+    Duration of role
+</h1>
 <div class="govuk-form-group">
-  <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
-      Duration of role
-    </label>
-  </h2>
+
   {% set setDuration %}
   {{ govukDateInput({
     id: "passport-issued",

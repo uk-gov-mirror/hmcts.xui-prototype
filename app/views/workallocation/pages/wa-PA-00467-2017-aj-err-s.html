@@ -18,15 +18,15 @@ Case details
     }
   ]
 }) }}
-<h2 class="govuk-heading-l">Allocate a judicial role</h2>
+<div class="govuk-form-group govuk-form-group--error">
+<h1 class="govuk-heading-l ">
+  <span class="govuk-caption-l ">Allocate a judicial role</span>
+    Choose a role
+</h1>
   <form action="#" method="post" onsubmit="usePage(this, 'bob');">
     <div class="govuk-form-group govuk-form-group--error">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h3 class="govuk-fieldset__heading">
-            Choose a role
-          </h3>
-        </legend>
+
         <span id="changed-name-error" class="govuk-error-message">
       <span class="govuk-visually-hidden">Error:</span> You must select an option
     </span>
@@ -46,6 +46,7 @@ Case details
         </div>
       </fieldset>
     </div>
+    </div>
   <div class="govuk-button-group">
   {{ govukButton({
     text: "Continue",
@@ -59,7 +60,7 @@ Case details
   }) }} -->
   <p><a class="govuk-body" href="wa-PA-00467-2017-ar">Cancel</a></p>
 </div>
-</form>
+
 <script type="text/javascript">
 function usePage(frm,nm){
 for (var i_tem = 0, bobs=frm.elements; i_tem < bobs.length; i_tem++)
