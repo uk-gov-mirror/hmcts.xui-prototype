@@ -13,7 +13,7 @@ Case details
   C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
   </svg>
   <div class="hmcts-banner__message">
-    <span class="hmcts-banner__assistive">information</span>You have been given specific access to this case until midnight on DD MM YYYY. Access to this case is logged for auditing purposes.
+    <span class="hmcts-banner__assistive">information</span>You have been given specific access to this case until midnight on {{ now |  date("add", 7, "day") | date( "D MMMM YYYY" ) }}. Access to this case is logged for auditing purposes.
   </div>
 </div>
 <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
@@ -116,7 +116,7 @@ Case details
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lead Judge</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Standard access</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">DD/MM/YYYY </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 60, "day") | date( "D MMMM YYYY" ) }}</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
             </tr>
@@ -125,8 +125,8 @@ Case details
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Reviewer</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Specific access</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Manchester</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">DD/MM/YYYY </td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">DD/MM/YYYY </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("add", 0, "day") | date( "D MMMM YYYY" ) }}</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("add", 7, "day") | date( "D MMMM YYYY" ) }}</td>
                 <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
             </tr>
         </tbody>
@@ -151,7 +151,7 @@ Case details
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case manager</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Standard access</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">DD/MM/YYYY </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 60, "day") | date( "D MMMM YYYY" ) }} </td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width: 100px;"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
             </tr>
