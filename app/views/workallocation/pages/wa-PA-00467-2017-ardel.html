@@ -17,7 +17,7 @@ Case details
   </svg>
   <div class="hmcts-banner__message">
     <span class="hmcts-banner__assistive">Success</span>
-    You've added an exclusion.
+    You've deleted an exclusion.
   </div>
 </div>
 <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
@@ -172,36 +172,16 @@ Case details
         </tbody>
     </table>
     <p><a href="#" class="govuk-link"></a></p>
-        <h2 class="govuk-heading-m">Exclusions</h2>
-        <table class="govuk-table ">
-        <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 250px;">Name</th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 150px;">User type</th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 "style="width: 400px;"">Notes</th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 ">Added</th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 50px;"></th>
-            </tr>
-        </thead>
+    <h2 class="govuk-heading-m">Exclusions</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
 
-        <tbody class="govuk-table__body">
-
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19" >
-Judge Birch</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" >Judicial</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" >	The case has been remitted from the Upper Tribunal and requires a different judge.</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" >{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</td>
-
-                <td class="govuk-table__cell"><a href="wa-PA-00467-2017-coi-del" class="right_m">Delete</a></td>
-
-            </tr>
-
-
-        </tbody>
-    </table>
-        <p><a href="#" class="govuk-link">Add</a></p>
+        <dd class="govuk-summary-list__value">
+          There are no exclusions for this case.
+        </dd>
+      </div>
+    </dl>
+    <p><a href="wa-PA-00467-2017-coi" class="govuk-link">Add</a></p>
 <!--
         <form action="#">
           <div class="govuk-button-group">
