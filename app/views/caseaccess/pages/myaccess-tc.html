@@ -31,12 +31,12 @@ My work
               </a>
             </li>
             <li class="hmcts-sub-navigation__item">
-              <a class="hmcts-sub-navigation__link" href="mycases-tc">
+              <a class="hmcts-sub-navigation__link" href="#">
                 My cases
               </a>
             </li>
             <li class="hmcts-sub-navigation__item">
-              <a class="hmcts-sub-navigation__link" aria-current="page"  href="mycases">
+              <a class="hmcts-sub-navigation__link" aria-current="page"  href="#">
                 My access <span class="xui-alert-link__number">1 </span>
               </a>
             </li>
@@ -49,7 +49,7 @@ My work
                 <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case name</button></th>
                 <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Jurisdiction</button></th>
                 <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Date submitted</button></th>
+          <!--      <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Date submitted</button></th> -->
                 <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Access</button></th>
                 <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Start</button></th>
                 <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">End</button></th>
@@ -62,7 +62,7 @@ My work
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="/caseaccess/pages/PA-00467-2017-atc"><strong>Amelia Chu</strong></a></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>Immigration and Asylum</strong></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>Protection</strong></td>
-                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>{{ now |  date("subtract", 4, "day") | date( "D MMMM YYYY" ) }}</strong></td>
+              <!--      <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>{{ now |  date("subtract", 4, "day") | date( "D MMMM YYYY" ) }}</strong></td> -->
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>Specific access</strong></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>{{ now |  date("add", 0, "day") | date( "D MMMM YYYY" ) }}</strong></td>
                     <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>{{ now |  date("add", 7, "day") | date( "D MMMM YYYY" ) }} </strong></td>

@@ -50,7 +50,7 @@ My work
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case name</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Jurisdiction</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
-          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case role</button></th>
+      <!--    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case role</button></th> -->
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Access</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Start</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">End</button></th>
@@ -62,10 +62,10 @@ My work
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="wa-2017"><strong>Amelia Chu</strong></a></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>Immigration and Asylum</strong></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>Protection</strong></td>
-          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>Reviewer</strong></td>
+    <!--      <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>Reviewer</strong></td> -->
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>Specific</strong></td>
-          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>DD/MM/YYYY</strong></td>
-          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>DD/MM/YYYY</strong></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</strong></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><strong>{{ now |  date("add", 7, "day") | date( "D MMMM YYYY" ) }}</strong></td>
           <td class="govuk-table__cell">
             <!-- &nbsp;&nbsp;&nbsp;<a href="myaccess-po" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span>-->
           </td>
