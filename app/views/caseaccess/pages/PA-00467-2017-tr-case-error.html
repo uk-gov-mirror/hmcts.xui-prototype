@@ -8,7 +8,18 @@
 Case details
 {% endblock %}
 {% block content %}
-
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#passport-issued-error">Select an option</a>
+      </li>
+    </ul>
+  </div>
+</div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h2 class="govuk-heading-l  govuk-!-margin-bottom-2">Review specific access request</h2>
@@ -41,13 +52,16 @@ Case details
         </div>
       </div>
   <form action="#" method="post" onsubmit="usePage(this, 'bob');">
-    <div class="govuk-form-group">
+    <div class="govuk-form-group govuk-form-group--error">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h1 class="govuk-fieldset__heading">
             What do you want to do with this request?
           </h1>
         </legend>
+        <span id="nationality-error" class="govuk-error-message">
+   <span class="govuk-visually-hidden">Error:</span> Select an option
+ </span>
         <div class="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="where-do-you-live" name="bob" type="radio" value="/caseaccess/pages/PA-00467-2017-tra-case">
