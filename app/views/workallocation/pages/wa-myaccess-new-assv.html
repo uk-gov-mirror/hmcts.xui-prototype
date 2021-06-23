@@ -50,7 +50,7 @@ My work
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case name</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Jurisdiction</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
-      <!--    <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case role</button></th> -->
+       <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Date submitted</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Access</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Start</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">End</button></th>
@@ -65,7 +65,7 @@ My work
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="wa-2017">Amelia Chu</a></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-      <!--    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Reviewer</td> -->
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 2, "day") | date( "D MMMM YYYY" ) }}</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Specific</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("add", 7, "day") | date( "D MMMM YYYY" ) }}</td>
@@ -78,7 +78,7 @@ My work
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="wa-2018">Robert Saddlebrook</a></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Immigration and Asylum</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-      <!--    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Reviewer</td> -->
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Challenged</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</td>
