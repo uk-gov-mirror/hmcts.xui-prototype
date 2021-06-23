@@ -13,18 +13,25 @@ Case details
 
 {% block content %}
 
-    <div class="hmcts-page-heading">
+    <div class="hmcts-page-heading" style="margin-bottom: 20px;">
           <div class="hmcts-page-heading__title">
-               <h1 class="govuk-heading-xl">Case Lists</h1>
+               <h1 class="govuk-heading-xl">Case list</h1>
           </div>
     </div>
 
-    <button class="govuk-button govuk-button--secondary govuk-!-margin-top-3 " data-module="govuk-button">
-          Show filter
-    </button>
+    <p style="margin-bottom: 20px;">You can search for and view cases for: Contested Financial Remedy, Financial Remedy Consented </p>
+
+    <div style="display: flex; flex-wrap:wrap;">
+        <button class="govuk-button govuk-button--secondary govuk-!-margin-top-3 " data-module="govuk-button">
+              Show filter
+        </button>
+        <p style="margin: 24px;">
+            <a href="#">Find case</a>
+        </p>
+    </div>
 
 
-    <h2 class="govuk-heading-m  govuk-!-margin-top-4">Case list</h2>
+    <!--<h2 class="govuk-heading-m  govuk-!-margin-top-4">Case list</h2>-->
 
     {% if  data.hideone == 'true'  and  data.hidetwo == 'true'  and  data.hidethree == 'true'  %}
         <p>Displaying 0 out of 0 results</p>
