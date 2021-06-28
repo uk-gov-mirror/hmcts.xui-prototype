@@ -95,10 +95,32 @@
                             <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style=" width: 650px;">
                                 <ul class="hmcts-primary-navigation__list">
 
+                                    {% if data.selectedtab == "mywork"  %}
+                                    <li class="hmcts-primary-navigation__item" style="border-bottom: 5px solid white;">
+                                        <a class="hmcts-primary-navigation__link" style="text-decoration: none; padding-bottom: 8px;" href="/searchcases/transition/available-tasks-sscs-testing?selectedtab=mywork&">
+                                            My work
+                                        </a>
+                                    </li>
+                                    {% else %}
+                                    <li class="hmcts-primary-navigation__item">
+                                        <a class="hmcts-primary-navigation__link" href="/searchcases/transition/available-tasks-sscs-testing?selectedtab=mywork&">
+                                            My work
+                                        </a>
+                                    </li>
+                                    {% endif %}
+
+
+                                    <li class="hmcts-primary-navigation__item">
+                                        <a class="hmcts-primary-navigation__link" href="#">
+                                            All work
+                                        </a>
+                                    </li>
+
+
                                     {% if data.selectedtab == "caselist"  %}
                                         <li class="hmcts-primary-navigation__item" style="border-bottom: 5px solid white;">
                                             <a class="hmcts-primary-navigation__link" style="text-decoration: none; padding-bottom: 8px;" href="/searchcases/transition/caselist?selectedtab=caselist&">
-                                                Caselist
+                                                Case list
                                             </a>
                                         </li>
                                     {% else %}
@@ -109,26 +131,6 @@
                                         </li>
                                     {% endif %}
 
-                                    {% if data.selectedtab == "mywork"  %}
-                                        <li class="hmcts-primary-navigation__item" style="border-bottom: 5px solid white;">
-                                            <a class="hmcts-primary-navigation__link" style="text-decoration: none; padding-bottom: 8px;" href="/searchcases/transition/available-tasks-sscs-testing?selectedtab=mywork&">
-                                                My work
-                                            </a>
-                                        </li>
-                                    {% else %}
-                                        <li class="hmcts-primary-navigation__item">
-                                            <a class="hmcts-primary-navigation__link" href="/searchcases/transition/available-tasks-sscs-testing?selectedtab=mywork&">
-                                                My work
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-
-                                    <li class="hmcts-primary-navigation__item">
-                                        <a class="hmcts-primary-navigation__link" href="#">
-                                            All work
-                                        </a>
-                                    </li>
                                     {% if data.selectedtab == "search"  %}
                                         <li class="hmcts-primary-navigation__item" style="border-bottom: 5px solid white;">
                                             <a class="hmcts-primary-navigation__link" style="text-decoration: none; padding-bottom: 8px;" href="/searchcases/transition/search?selectedtab=search&">
