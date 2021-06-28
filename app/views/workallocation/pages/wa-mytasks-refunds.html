@@ -17,7 +17,7 @@ Refunds
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Trigger</button></th>
-          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Date</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Date updated</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
         </tr>
       </thead>
@@ -29,7 +29,7 @@ Refunds
           text: now | date( 'subtract', 2, 'days' ) | date,
           classes: "govuk-tag--grey"
         })}} </td>
-          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/v1caseinccd?state=withdrawn">Review case</a></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/v1caseinccd?state=withdrawn&casetype=divorce">Review case</a></td>
         </tr>
 
 
@@ -40,7 +40,7 @@ Refunds
           text: now | date( 'subtract', 5, 'days' ) | date,
           classes: "govuk-tag--grey"
         })}}</td>
-          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/v1caseinccd?state=remission">Review case</a></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/v1caseinccd?state=remission&casetype=divorce">Review case</a></td>
         </tr>
         
       </tbody>
