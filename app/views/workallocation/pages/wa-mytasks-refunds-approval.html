@@ -22,6 +22,8 @@ Refunds
         </tr>
       </thead>
       <tbody class="govuk-table__body">
+
+        {% if data['state'] != 'remission' %}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-3164-5845-4819</td>
           <td class="govuk-table__cell">Case withdrawn</a>
@@ -36,6 +38,7 @@ Refunds
         </tr>
 
 
+        {% elseif data['state'] != 'withdrawn' %}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">3164-1234-5845-4819</td>
           <td class="govuk-table__cell">Remission granted</a>
@@ -48,6 +51,8 @@ Refunds
             <a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/review-approve?state=remission">Process refund</a>
           </td>
         </tr>
+
+        {% endif %}
         
       </tbody>
     </table>
