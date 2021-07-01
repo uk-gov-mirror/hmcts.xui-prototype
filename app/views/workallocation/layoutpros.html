@@ -98,12 +98,12 @@
                 label: 'Primary navigation',
                 items: [{
                 text: 'Case list',
-                href: getUrl('/solicitor/caselist'),
+                href: getUrl('/pages/caselist-civil'),
                 active: pageId == '#'
                 },
                 {
                 text: 'Refund list',
-                href: getUrl('/pages/wa-mytasks-refunds'),
+                href: getUrl('/pages/wa-mytasks-refunds-approval') if data['user'] == 'teamleader' else getUrl('/pages/wa-mytasks-refunds'),
                 active: pageId == '#'
                 },
                 {
