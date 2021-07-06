@@ -11,7 +11,19 @@ Refunds
 
 <div class="hmcts-scrollable-pane">
   <div class="hmcts-scrollable-pane__wrapper">
-    <p class="govuk-body">Displaying <strong>3</strong> of <strong>3</strong> refunds</p>
+    <p class="govuk-body" style="float: left">Displaying <strong>3</strong> of <strong>3</strong> refunds</p>
+
+    <div class="govuk-form-group" style="float: right">
+      <label class="govuk-label" for="sort" style="display: inline-block; margin-right: 10px">
+        Filter by caseworker:
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option>All caseworkers</option>
+        <option>Steve Smith</option>
+        <option>Tom Jones</option>
+      </select>
+    </div>
+
     <table class="govuk-table ">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
