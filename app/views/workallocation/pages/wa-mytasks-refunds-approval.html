@@ -15,8 +15,9 @@ Refunds
     <table class="govuk-table ">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case ID</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Reason</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Submitted by</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Date updated</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Action</button></th>
         </tr>
@@ -27,6 +28,7 @@ Refunds
         <tr class="govuk-table__row">
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-3164-5845-4819</td>
           <td class="govuk-table__cell">Case withdrawn</a>
+          <td class="govuk-table__cell">Steve Smith</a>
           <td class="govuk-table__cell">{{govukTag({
           text: now | date( 'subtract', 2, 'days' ) | date,
           classes: "govuk-tag--grey"
@@ -42,6 +44,7 @@ Refunds
         <tr class="govuk-table__row">
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">3164-1234-5845-4819</td>
           <td class="govuk-table__cell">Remission granted</a>
+          <td class="govuk-table__cell">Tom Jones</a>
           <td class="govuk-table__cell"> {{govukTag({
           text: now | date( 'subtract', 5, 'days' ) | date,
           classes: "govuk-tag--grey"
