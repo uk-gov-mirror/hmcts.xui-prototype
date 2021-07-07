@@ -14,7 +14,7 @@ Case details
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#passport-issued-error">Select a reason</a>
+        <a href="#passport-issued-error">Enter a case reference</a>
       </li>
     </ul>
   </div>
@@ -31,6 +31,7 @@ Case details
 </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+
         {% set textHtml %}
         {{ govukTextarea({
           name: "more-detail",
@@ -46,8 +47,13 @@ Case details
       classes: "govuk-!-width-one-third",
       label: {
         text: "Case reference"
+      },
+      errorMessage: {
+        text: "Enter a case reference"
       }
     }) }}
+
+
     {% endset -%}
         {% endset -%}
 
@@ -68,6 +74,7 @@ Case details
             {
               value: "email",
               text: "The cases or parties are linked to my current case",
+              checked: "true",
           conditional: {
             html: emailHtml
           }
@@ -84,13 +91,14 @@ Case details
             {
               value: "other",
               text: "Other reason",
+
               conditional: {
                 html: textHtml
               }
             }
           ],
           errorMessage: {
-    text: "Select a reason"
+    text: ""
   }
         }) }}
 
