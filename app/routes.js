@@ -362,9 +362,7 @@ router.get( '/opencase', function (req, res)
     else
     {
         req.session.data['hmctsref'] = req.session.data['hmctsrefheader'];
-        req.session.data['errorcasenumber'] = 'true';
-        //console.warn("Main Router " + req.session.data['errorcasenumber']);
-        res.redirect('/searchcases/pages/search');
+        res.redirect('/searchcases/pages/casedetailssscs?');
     }
 
 })
