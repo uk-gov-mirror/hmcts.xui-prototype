@@ -43,7 +43,7 @@ Case details
       </label>
       <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO">
 
-          <option value="/caseaccess/pages/booking-location-opt1" selected>Please select</option>
+          <option value="/caseaccess/pages/booking-location-opt1" >Please select</option>
 
     <!--      <option value="published">All</option> -->
         <option value="#">North Eastern Circuit</option>
@@ -51,18 +51,18 @@ Case details
         <option value="#">Midland Circuit</option>
         <option value="#">Wales and Chester Circuit</option>
           <option value="#">South Eastern Circuit</option>
-            <option value="/caseaccess/pages/booking-location-opt1-2">Western Circuit</option>
+            <option value="/caseaccess/pages/booking-location-opt1-2" selected>Western Circuit</option>
       </select>
     </div>
     <div class="govuk-form-group">
       <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
       Cluster</strong>
       </label>
-      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO" disabled >
-  <option value="/caseaccess/pages/booking-location-opt1-2" selected>-</option>
+      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO">
+  <option value="/caseaccess/pages/booking-location-opt1-2"" >Please select</option>
         <option value="#">Wiltshire, Hampshire and IOW</option>
 
-        <option value="/caseaccess/pages/booking-location-opt1-3">Devon, Cornwall and Dorset</option>
+        <option value="/caseaccess/pages/booking-location-opt1-3" selected>Devon, Cornwall and Dorset</option>
         <option value="#">Avon, Somerset and Gloucestershire</option>
 
       </select>
@@ -73,10 +73,10 @@ Case details
       Location</strong>
       </label>
 
-      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO" disabled >
-          <option value="updated" selected>-</option>
+      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO"  >
+          <option value="/caseaccess/pages/booking-location-opt1-3" >Please select</option>
         <option value="#">Dorset</option>
-                <option value="/caseaccess/pages/booking-location-opt1-3">Exeter</option>
+                <option value="/caseaccess/pages/booking-location-opt1-3" selected>Exeter</option>
                         <option value="#">Plymouth</option>
                                 <option value="#">Taunton</option>
                                 <option value="#">Truro</option>
@@ -86,8 +86,8 @@ Case details
 
     {{ govukButton({
       text: "Submit",
-      disabled: true,
-      href: "/caseaccess/pages/mywork"
+
+      href: "/caseaccess/pages/mywork-exeter"
     }) }}
 
 
