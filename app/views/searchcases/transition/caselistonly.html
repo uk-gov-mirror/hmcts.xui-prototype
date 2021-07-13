@@ -1,7 +1,7 @@
 {% if  data.usertype == 'judiciary'   %}
-    {% extends "../layoutjudicialtransition.html" %}
+    {% extends "../layoutstaffcaslistonly.html" %}
 {% else %}
-    {% extends "../layoutstafftransition.html" %}
+    {% extends "../layoutstaffcaslistonly.html" %}
 {% endif %}
 
 
@@ -24,9 +24,6 @@ Case details
         <button class="govuk-button govuk-button--secondary govuk-!-margin-top-3 " data-module="govuk-button">
               Show filter
         </button>
-        <p style="margin: 24px;">
-            <a href="findcase">Find case</a>
-        </p>
     </div>
 
 

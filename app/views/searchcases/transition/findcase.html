@@ -1,0 +1,167 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicialtransition.html" %}
+{% else %}
+    {% extends "../layoutstafftransition.html" %}
+{% endif %}
+
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="hmcts-page-heading" style="margin-bottom: 20px;">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-xl">Search</h1>
+          </div>
+    </div>
+
+
+    <div style="display: flex; flex-wrap:wrap;">
+        <button class="govuk-button govuk-button--secondary govuk-!-margin-top-3 " data-module="govuk-button">
+              Hide Filter
+        </button>
+    </div>
+
+
+            <div style="width: 400px">
+
+                <hr>
+                <h3 class="govuk-heading-m govuk-!-margin-top-5">Filters</h3>
+
+
+                <p class="govuk-!-margin-bottom-1">Jurisdiction*</p>
+                <div >
+                    <select class="govuk-select" id="sort" name="sort" style="width: 100%">
+                        <option value="0: Object">Immigration &amp; Asylum</option>
+                    </select>
+                </div>
+
+
+                <p class="govuk-!-margin-bottom-1  govuk-!-margin-top-5">Case type*</p>
+                <div >
+                    <select class="govuk-select" id="sort" name="sort" style="width: 100%">
+                        <option value="0: Object">IA Asylum Case* prototype</option>
+                        <option value="1: Object">Asylum Case-XUI</option>
+                        <option value="2: Object">Appeal* master</option>
+                    </select>
+                </div>
+
+
+                <p class="govuk-!-margin-bottom-1  govuk-!-margin-top-5">Hearing centre</p>
+                <div >
+                    <select class="govuk-select" id="sort" name="sort" style="width: 100%">
+                        <option value="0: null">--Select a value--</option><!---->
+                        <option value="1: newport">Newport</option>
+                        <option value="2: manchester">Manchester</option>
+                        <option value="3: bradford">Bradford</option>
+                        <option value="4: taylorHouse">Taylor House</option>
+                        <option value="5: northShields">North Shields</option>
+                        <option value="6: birmingham">Birmingham</option>
+                        <option value="7: hattonCross">Hatton Cross</option>
+                        <option value="8: glasgow">Glasgow</option>
+                    </select>
+                </div>
+
+
+                <p class="govuk-!-margin-bottom-1  govuk-!-margin-top-5">HMCTS reference</p>
+                <div>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </div>
+
+
+                <p class="govuk-!-margin-bottom-1  govuk-!-margin-top-5">Appellant name</p>
+                <div>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </div>
+
+
+
+
+                <p class="govuk-!-margin-bottom-1  govuk-!-margin-top-5">Date of birth</p>
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                        <div class="govuk-date-input" id="passport-issued">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                        Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                        Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                        Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+
+                <p class="govuk-!-margin-bottom-1  govuk-!-margin-top-5">Post code</p>
+                <div>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </div>
+
+
+                <p class="govuk-!-margin-bottom-1  govuk-!-margin-top-5">Legal representative reference</p>
+                <div>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </div>
+
+
+
+                <p class="govuk-!-margin-bottom-1  govuk-!-margin-top-5">Home Office reference</p>
+                <div>
+                    <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </div>
+
+
+
+                <br>
+                <br>
+
+
+                <form
+                        name="aspnetForm"
+                        method="post"
+                        id="aspnetForm"
+                        autocomplete="off">
+
+                    <div>
+                        <button class="govuk-button" data-module="govuk-button" style="margin-right: 25px;">
+                            Apply
+                        </button>
+
+                        <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="stopreason">
+                            Reset
+                        </a>
+
+                    </div>
+
+                </form>
+
+
+
+
+                <br>
+
+
+            </div>
+
+
+{% endblock %}
