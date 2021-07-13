@@ -18,9 +18,9 @@ Refunds
         Filter by caseworker:
       </label>
       <select class="govuk-select" id="sort" name="sort">
-        <option>All caseworkers</option>
+        <option selected="selected">All caseworkers</option>
         <option>Steve Smith</option>
-        <option selected="selected">Tom Jones</option>
+        <option>Loren Barrow</option>
       </select>
     </div>
 
@@ -37,13 +37,64 @@ Refunds
         </tr>
       </thead>
       <tbody class="govuk-table__body">
+
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-3164-5845-1567</td>
-          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">RF-1324-6846-2454-5445</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-3164-4633-1567</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">RF-1324-6542-2454-5445</td>
           <td class="govuk-table__cell">Case withdrawn</a>
-          <td class="govuk-table__cell">Tom Jones</a>
+          <td class="govuk-table__cell">Loren Barrow</a>
+          <td class="govuk-table__cell">{{govukTag({
+          text: now | date( 'subtract', 4, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/view-refund?result=returned&refund=adHoc">Review refund</a></td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-5446-5845-3451</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">RF-5634-6846-2454-2456</td>
+          <td class="govuk-table__cell">Duplicate payment</a>
+          <td class="govuk-table__cell">Steve Smith</a>
+          <td class="govuk-table__cell">{{govukTag({
+          text: now | date( 'subtract', 3, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/view-refund?result=returned&refund=adHoc">Review refund</a></td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-3455-5845-8624</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">RF-1324-6846-1563-5334</td>
+          <td class="govuk-table__cell">Case withdrawn</a>
+          <td class="govuk-table__cell">Loren Barrow</a>
           <td class="govuk-table__cell">{{govukTag({
           text: now | date( 'subtract', 2, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/view-refund?result=returned&refund=adHoc">Review refund</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-3164-8734-3452</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">RF-4763-6846-2454-6535</td>
+          <td class="govuk-table__cell">Duplicate payment</a>
+          <td class="govuk-table__cell">Loren Barrow</a>
+          <td class="govuk-table__cell">{{govukTag({
+          text: now | date( 'subtract', 1, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/view-refund?result=returned&refund=adHoc">Review refund</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-3164-5845-3244</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">RF-1324-6846-2454-7543</td>
+          <td class="govuk-table__cell">Case withdrawn</a>
+          <td class="govuk-table__cell">Steve Smith</a>
+          <td class="govuk-table__cell">{{govukTag({
+          text: now | date( 'subtract', 1, 'days' ) | date,
           classes: "govuk-tag--grey"
         })}} </td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/view-refund?result=returned&refund=adHoc">Review refund</a></td>
