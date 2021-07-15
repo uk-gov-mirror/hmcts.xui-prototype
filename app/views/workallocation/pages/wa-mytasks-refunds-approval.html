@@ -54,8 +54,8 @@ Refunds
           classes: "govuk-tag--grey"
         })}} </td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
-            <a href="https://fees-and-payments.herokuapp.com/orders/pages/v1caseinccd?casetype=civil&state=withdrawn&result=submitted">Review case</a> &nbsp;
-            <a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/review-approve?casetype=civil&state=withdrawn">Process refund</a>
+            <a href="https://fees-and-payments.herokuapp.com/orders/pages/v1caseinccd?casetype=civil&state=withdrawn&result=submitted&user={{ data['user'] }}">Review case</a> &nbsp;
+            <a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/review-approve?casetype=civil&state=withdrawn&user={{ data['user'] }}">Process refund</a>
           </td>
         </tr>
 
@@ -85,7 +85,7 @@ Refunds
 
 <div class="hmcts-page-heading">
   <div class="hmcts-page-heading__title">
-    <h2 class="govuk-heading-l">Refunds returned from approval</h2>
+    <h2 class="govuk-heading-l">Refunds returned to caseworker</h2>
   </div>
 </div>
 

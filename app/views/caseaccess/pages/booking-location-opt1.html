@@ -6,12 +6,22 @@
 {% block pageTitle %}
 Case details
 {% endblock %}
+{% block beforeContent %}
+<a href="/caseaccess/pages/booking" class="govuk-back-link">Back</a>
+{% endblock %}
 {% block content %}
-<h1 class="govuk-heading-xl">Booking UI</h1>
 
-
-<h3 class="govuk-heading-m">Where are you working today
-</h3>
+<div class="govuk-form-group">
+    <span class="govuk-caption-l">Work access</span>
+  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+      What is the name of the location?
+    </label>
+  </h1>
+  <div id="event-name-hint" class="govuk-hint">
+    For example, Exeter
+  </div>
+  <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+</div>
 
 <!--
     <div class="govuk-form-group">
@@ -37,6 +47,7 @@ Case details
   </select>
 </div>
 -->
+<!--
     <div class="govuk-form-group">
       <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
       Region</strong>
@@ -45,7 +56,7 @@ Case details
 
           <option value="/caseaccess/pages/booking-location-opt1" selected>Please select</option>
 
-    <!--      <option value="published">All</option> -->
+
         <option value="#">North Eastern Circuit</option>
         <option value="#">Northen Circuit</option>
         <option value="#">Midland Circuit</option>
@@ -73,7 +84,7 @@ Case details
       Location</strong>
       </label>
 
-      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO" disabled >
+      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO" disabled>
           <option value="updated" selected>-</option>
         <option value="#">Dorset</option>
                 <option value="/caseaccess/pages/booking-location-opt1-3">Exeter</option>
@@ -83,11 +94,11 @@ Case details
 
       </select>
     </div>
-
+-->
     {{ govukButton({
-      text: "Submit",
-      disabled: true,
-      href: "/caseaccess/pages/mywork"
+      text: "Continue",
+
+      href: "/caseaccess/pages/booking-location-opt1b"
     }) }}
 
 
