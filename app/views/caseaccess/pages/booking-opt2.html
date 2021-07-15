@@ -6,6 +6,9 @@
 {% block pageTitle %}
 Case details
 {% endblock %}
+{% block beforeContent %}
+<a href="/caseaccess/pages/booking" class="govuk-back-link">Back</a>
+{% endblock %}
 {% block content %}
 <!--
 <h1 class="govuk-heading-xl">Where are you working today?</h1>
@@ -16,25 +19,23 @@ Case details
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-
+  <span class="govuk-caption-l">Work access</span>
             <h1 class="govuk-fieldset__heading">
-              Work location access
+              Your existing bookings
             </h1>
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="where-do-you-live" name="bob" type="radio" value="/caseaccess/pages/booking-location-opt1">
+              <input class="govuk-radios__input" id="where-do-you-live" name="bob" type="radio" value="#">
               <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                Start new booking
+                Plymouth Crown Court
               </label>
-              <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-        The court location where you'll be working
-        </div>
+
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="where-do-you-live-2" name="bob" type="radio" value="/caseaccess/pages/booking-opt2">
+              <input class="govuk-radios__input" id="where-do-you-live-2" name="bob" type="radio" value="/caseaccess/pages/mywork-salisbury">
               <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                Access an existing booking loction
+                Salisbury County Court
               </label>
 
 
