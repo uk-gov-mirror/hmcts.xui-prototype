@@ -30,6 +30,9 @@ Case details
               <label class="govuk-label govuk-radios__label" for="where-do-you-live">
                 Plymouth Crown Court
               </label>
+              <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+        Booking ends {{ now |  date("add", 10, "day") | date( "D MMMM YYYY" ) }}
+        </div>
 
             </div>
             <div class="govuk-radios__item">
@@ -37,6 +40,10 @@ Case details
               <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
                 Salisbury County Court
               </label>
+              <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                Booking ends {{ now |  date("add", 3, "day") | date( "D MMMM YYYY" ) }} 
+
+        </div>
 
 
             </div>
