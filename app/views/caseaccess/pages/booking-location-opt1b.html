@@ -14,12 +14,10 @@ Case details
 
   <span class="govuk-caption-l">Work access</span>
 {% set setDuration %}
-
+<!--
 <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">Access starts</p>
 <p class="govuk-body govuk-!-font-weight-regular govuk-!-font-size-19">{{ now |  date("add", 0, "day") | date( "D MMMM YYYY" ) }}</p>
-
-
-
+-->
 {{ govukDateInput({
 id: "passport-issued",
 namePrefix: "passport-issued",
