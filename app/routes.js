@@ -7,6 +7,132 @@ module.exports = router
 
 
 
+
+
+
+
+
+//  HEARINGS
+
+//Page 0 to page 1
+router.post('/hearings/pages/casedetailsdivorce', function (req, res)
+{
+    if (true)
+    {
+        res.redirect('/hearings/pages/startrequest')
+    }
+    else
+    {
+        res.redirect('#')
+    }
+})
+
+
+
+// Page 1 to page 2
+router.post('/hearings/pages/startrequest', function (req, res)
+{
+    if (true)
+    {
+        res.redirect('/hearings/pages/location')
+    }
+    else
+    {
+        res.redirect('#')
+    }
+})
+
+
+// Page 2 to page 3
+router.post('/hearings/pages/location', function (req, res)
+{
+    if (true)
+    {
+        res.redirect('/hearings/pages/panel')
+    }
+    else
+    {
+        res.redirect('#')
+    }
+})
+
+
+// Page 3 to page 4
+router.post('/hearings/pages/panel', function (req, res)
+{
+    if (true)
+    {
+        res.redirect('/hearings/pages/timing')
+    }
+    else
+    {
+        res.redirect('#')
+    }
+})
+
+
+// Page 4 to page 5
+router.post('/hearings/pages/timing', function (req, res)
+{
+    if (true)
+    {
+        res.redirect('/hearings/pages/language')
+    }
+    else
+    {
+        res.redirect('#')
+    }
+})
+
+
+
+// Page 5 to page 6
+router.post('/hearings/pages/language', function (req, res)
+{
+    if (true)
+    {
+        res.redirect('/hearings/pages/checkyouranswers')
+    }
+    else
+    {
+        res.redirect('#')
+    }
+})
+
+
+
+
+
+// Page 6 to page 7
+router.post('/hearings/pages/checkyouranswers', function (req, res)
+{
+    if (true)
+    {
+        res.redirect('/hearings/pages/confirmation')
+    }
+    else
+    {
+        res.redirect('#')
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Branching
 router.post('/v3/cases/method', function (req, res) {
   // Get the answer from session data

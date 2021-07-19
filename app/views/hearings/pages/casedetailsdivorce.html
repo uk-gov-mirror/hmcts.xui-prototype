@@ -1,0 +1,131 @@
+{% extends "../layoutstaff.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+    <main class="" id="main-content" role="main">
+
+            <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
+
+            <div class=""  style="display: flex; justify-content: space-between; ">
+
+                <div style="display: flex; ">
+                    <p class="">9468-3316-6763-1127: Smith v Smith  &nbsp; </p>
+
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Print
+                    </button>
+                </div>
+
+
+                <div style="display: flex; align-items:right" >
+                    <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+
+                    <select class="govuk-select" id="sort" name="sort">
+                        <option value="published" selected>Select action</option>
+                        <option value="published" >Submit amended application</option>
+                        <option value="published" >Link respondent</option>
+                        <option value="published" >Add Note</option>
+                        <option value="published" >Upload document</option>
+                        <option value="updated" >Stop representing a client</option>
+                    </select>
+
+                    <form
+                            name="aspnetForm"
+                            method="post"
+                            id="aspnetForm"
+                            autocomplete="off">
+                            <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+                                Go
+                            </button>
+                    </form>
+                </div>
+
+            </div>
+
+
+            <div class="govuk-tabs" data-module="govuk-tabs">
+                <h2 class="govuk-tabs__title">
+                    Contents
+                </h2>
+                <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                        <a class="govuk-tabs__tab" href="#event">
+                            History
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Petition
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            AOS
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Outcome of Decree Nisi
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Documents
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item" style="margin-bottom: -1px;">
+                        <a class="govuk-tabs__tab" href="#past-week" style="background-color: white; border: 1px solid black; border-bottom: 1px solid white;">
+                            Hearings
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Marriage Certificate
+                        </a>
+                    </li>
+                </ul>
+
+
+
+                <div class="govuk-tabs__panel" id="event" style="display: flex; padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
+
+                    <div style="margin-top: 40px;">
+
+                        <h2 class="govuk-heading-m">Hearings</h2>
+
+
+                        <form
+                                name="aspnetForm"
+                                method="post"
+                                id="aspnetForm"
+                                autocomplete="off"
+                                >
+
+                            <div class="govuk-form-group  govuk-!-margin-top-5" >
+                                <button class="govuk-button" data-module="govuk-button">
+                                    Request a hearing
+                                </button>
+                            </div>
+
+
+                        </form>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </main>
+
+{% endblock %}
