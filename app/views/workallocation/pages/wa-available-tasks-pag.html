@@ -52,7 +52,7 @@ My work
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Location</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 25px;" aria-sort="none"></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
-          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Date</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task created</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: 100px;" aria-sort="none"></th>
         </tr>
       </thead>
@@ -64,10 +64,10 @@ My work
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review respondent evidence</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--red"
-})}} </td>
+          <td class="govuk-table__cell"><!--{{govukTag({
+          text: now | date( 'subtract', 2, 'days' ) | date,
+          classes: "govuk-tag--red"
+        })}} --> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -78,10 +78,10 @@ classes: "govuk-tag--red"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review respondent evidence</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--yellow"
-})}} </td>
+          <td class="govuk-table__cell"><!--{{govukTag({
+          text: now | date( 'add', 8, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} -->{{ now |  date("subtract", 8, "day") | date( "D MMMM YYYY" ) }} </td>
           <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -97,10 +97,10 @@ classes: "govuk-tag--yellow"
                     C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
             </svg></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Create case summary</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--yellow"
-})}} </td>
+          <td class="govuk-table__cell"><!--{{govukTag({
+          text: now | date( 'add', 8, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} -->{{ now |  date("subtract", 8, "day") | date( "D MMMM YYYY" ) }} </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -111,10 +111,10 @@ classes: "govuk-tag--yellow"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review appellant case</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell"><!--{{govukTag({
+          text: now | date( 'add', 8, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} -->{{ now |  date("subtract", 8, "day") | date( "D MMMM YYYY" ) }} </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -126,10 +126,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -139,10 +136,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }} </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -152,10 +146,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }} </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -165,10 +156,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -178,10 +166,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -191,10 +176,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -204,10 +186,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -217,10 +196,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -230,10 +206,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -243,10 +216,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -256,10 +226,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -269,10 +236,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -282,10 +246,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -295,10 +256,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -308,10 +266,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
@@ -321,10 +276,7 @@ classes: "govuk-tag--grey"
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Value</td>
-          <td class="govuk-table__cell">{{govukTag({
-text: "dd/mm/yyyy",
-classes: "govuk-tag--grey"
-})}} </td>
+          <td class="govuk-table__cell">{{ now |  date("subtract", 10, "day") | date( "D MMMM YYYY" ) }}  </td>
           <!--  <td class="govuk-table__cell">N/A</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>

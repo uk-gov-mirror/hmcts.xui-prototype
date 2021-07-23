@@ -52,7 +52,7 @@ My work
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Location</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 25px;" aria-sort="none"></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
-          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Date</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task created</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: 100px;" aria-sort="none"></th>
         </tr>
       </thead>
@@ -63,10 +63,10 @@ My work
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review respondent evidence</a></td>
-            <td class="govuk-table__cell">{{govukTag({
+            <td class="govuk-table__cell"><!--{{govukTag({
             text: now | date( 'subtract', 5, 'days' ) | date,
             classes: "govuk-tag--red"
-          })}}
+          })}} -->{{ now |  date("subtract", 5, "day") | date( "D MMMM YYYY" ) }}
           </td>
           <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="/workallocation/pages/wa-mytasks-jo" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
@@ -82,10 +82,10 @@ My work
                                 C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
             </svg></td>
           <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff"><a href="/workallocation/pages/wa-PA-00321-2018">Generate decision and reasons</a></td>
-          <td class="govuk-table__cell" style="border-bottom: 1px solid #fff">{{govukTag({
+          <td class="govuk-table__cell" style="border-bottom: 1px solid #fff"><!-- {{govukTag({
           text: now | date( 'add', 0, 'days' ) | date,
           classes: "govuk-tag--yellow"
-        })}}</td>
+        })}} --> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</td>
           <!--    <td class="govuk-table__cell">N/A<a href="#"></a></td> -->
           <td class="govuk-table__cell" style="border-bottom: 1px solid #fff">&nbsp;&nbsp;&nbsp;<a href="/workallocation/pages/wa-mytasks" class="right_m">Manage</a><span class="govuk-accordion-wa__iconc"></span></td>
         </tr>

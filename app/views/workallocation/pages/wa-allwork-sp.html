@@ -112,18 +112,21 @@ My work
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-    <label class="govuk-heading-m" for="sort">
-      Priority
-    </label>
-    <select class="govuk-select" id="sort" name="sort" style="width:100%">
-      <option value="updated" selected>All</option>
-      <option value="views">Urgent (red)</option>
-      <option value="views">Due (yellow)</option>
-      <option value="comments">New (grey)</option>
-    </select>
-
-  </div>
-  <div class="govuk-!-padding-bottom-1"></div>
+    <!--
+        <label class="govuk-heading-m" for="sort">
+          Priority
+        </label>
+        <select class="govuk-select" id="sort" name="sort" style="width:100%">
+          <option value="updated" selected>All</option>
+          <option value="views">Urgent (red)</option>
+          <option value="views">Due (yellow)</option>
+          <option value="comments">New (grey)</option>
+        </select>
+    -->
+      </div>
+      <!--
+      <div class="govuk-!-padding-bottom-1"></div>
+    -->
 
               <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
                 Apply
@@ -144,7 +147,7 @@ My work
                 <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Location</button></th>
                 <th scope="col" class="govuk-table__header"></th>
                 <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Date</button></th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task created</button></th>
                 <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto; color: #005ea5;" aria-sort="none">Person</th>
                 <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: auto;" aria-sort="none"></th>
               </tr>
@@ -158,10 +161,7 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Generate decision and reasons</a></td>
-                <td class="govuk-table__cell"> {{govukTag({
-                text: now | date( 'subtract', 3, 'days' ) | date,
-                classes: "govuk-tag--red"
-              })}}</td>
+                <td class="govuk-table__cell"> {{ now |  date("subtract", 3, "day") | date( "D MMMM YYYY" ) }}</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
@@ -174,10 +174,7 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review FTPA application</a></td>
-                <td class="govuk-table__cell"> {{govukTag({
-                text: now | date( 'subtract', 0, 'days' ) | date,
-                classes: "govuk-tag--yellow"
-              })}}</td>
+                <td class="govuk-table__cell"> {{ now |  date("subtract", 2, "day") | date( "D MMMM YYYY" ) }}</td>
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
@@ -188,10 +185,7 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review application decision</a></td>
-                <td class="govuk-table__cell">{{govukTag({
-                text: now | date( 'subtract', 0, 'days' ) | date,
-                classes: "govuk-tag--yellow"
-              })}}</td>
+                <td class="govuk-table__cell"> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}  </td>
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
@@ -208,10 +202,7 @@ My work
                                               C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
                   </svg></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Generate decision and reasons</a></td>
-                <td class="govuk-table__cell">{{govukTag({
-                text: now | date( 'add', 12, 'days' ) | date,
-                classes: "govuk-tag--grey"
-              })}}</td>
+                <td class="govuk-table__cell">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}  </td>
                                             <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="wa-allwork-sp-o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
