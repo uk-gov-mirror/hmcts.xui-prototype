@@ -34,7 +34,7 @@ router.post('/hearings/pages/startrequest', function (req, res)
 {
     if (true)
     {
-        res.redirect('/hearings/pages/location')
+        res.redirect('/hearings/pages/channel')
     }
     else
     {
@@ -44,9 +44,32 @@ router.post('/hearings/pages/startrequest', function (req, res)
 
 
 // Page 2 to page 3
-router.post('/hearings/pages/location', function (req, res)
+router.post('/hearings/pages/channel', function (req, res)
 {
-    if (true)
+    if(req.session.data['channelradios'] == 'Oral (face to face)')
+    {
+        res.redirect('/hearings/pages/region');
+    }
+    else
+    {
+        res.redirect('/hearings/pages/panel');
+    }
+})
+
+
+// Page 2 to page 3
+router.post('/hearings/pages/region', function (req, res)
+{
+    // Just go to the next page because the vanues are shown based on previous page data
+    res.redirect('/hearings/pages/venue');
+})
+
+
+
+// Page 2 to page 3
+router.post('/hearings/pages/venue', function (req, res)
+{
+    if(true)
     {
         res.redirect('/hearings/pages/panel')
     }
@@ -55,7 +78,6 @@ router.post('/hearings/pages/location', function (req, res)
         res.redirect('#')
     }
 })
-
 
 // Page 3 to page 4
 router.post('/hearings/pages/panel', function (req, res)

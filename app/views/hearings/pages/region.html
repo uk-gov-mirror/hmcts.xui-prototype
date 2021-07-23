@@ -1,0 +1,111 @@
+{% extends "../layoutstaff.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+    <main class="" id="main-content" role="main">
+        <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
+            <div class="govuk-tabs__panel" id="event" style=" padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
+
+
+
+                        <!-- <h2 class="govuk-heading-l">Channel</h2>-->
+
+                        <form
+                            name="aspnetForm"
+                            method="post"
+                            id="aspnetForm"
+                            autocomplete="off"
+                            >
+
+
+
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                        <h1 class="govuk-fieldset__heading">
+                                            Region
+                                        </h1>
+                                    </legend>
+                                    <div class="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="region1" name="region" type="radio" value="London">
+                                            <label class="govuk-label govuk-radios__label" for="region1">
+                                                London
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="region2" name="region" type="radio" value="Midlands">
+                                            <label class="govuk-label govuk-radios__label" for="region2">
+                                                Midlands
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="region3" name="region" type="radio" value="North East">
+                                            <label class="govuk-label govuk-radios__label" for="region3">
+                                                North East
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="region4" name="region" type="radio" value="North West">
+                                            <label class="govuk-label govuk-radios__label" for="region4">
+                                                North West
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="region5" name="region" type="radio" value="Scotland">
+                                            <label class="govuk-label govuk-radios__label" for="region5">
+                                                Scotland
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="region6" name="region" type="radio" value="South East">
+                                            <label class="govuk-label govuk-radios__label" for="region6">
+                                                South East
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="region7" name="region" type="radio" value="South West">
+                                            <label class="govuk-label govuk-radios__label" for="region7">
+                                                South West
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="region8" name="region" type="radio" value="Wales">
+                                            <label class="govuk-label govuk-radios__label" for="region8">
+                                                Wales
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div>
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-form-group  govuk-!-margin-top-5" >
+                                <button class="govuk-button" data-module="govuk-button">
+                                    Continue
+                                </button>
+                            </div>
+
+                        </form>
+
+
+
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

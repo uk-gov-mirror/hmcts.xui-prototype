@@ -1,0 +1,87 @@
+{% extends "../layoutstaff.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+    <main class="" id="main-content" role="main">
+        <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
+            <div class="govuk-tabs__panel" id="event" style=" padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
+
+
+
+                        <!-- <h2 class="govuk-heading-l">Channel</h2>-->
+
+                        <form
+                            name="aspnetForm"
+                            method="post"
+                            id="aspnetForm"
+                            autocomplete="off"
+                            >
+
+
+
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                        <h1 class="govuk-fieldset__heading">
+                                            Channel
+                                        </h1>
+                                    </legend>
+                                    <div class="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="chanel1" name="channelradios" type="radio" value="Oral (face to face)">
+                                            <label class="govuk-label govuk-radios__label" for="chanel1">
+                                                Oral (face to face)
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="chanel2" name="channelradios" type="radio" value="Telephone (BTMeet Me)">
+                                            <label class="govuk-label govuk-radios__label" for="chanel2">
+                                                Telephone (BTMeet Me)
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="chanel3" name="channelradios" type="radio" value="Video (CVP)">
+                                            <label class="govuk-label govuk-radios__label" for="chanel3">
+                                                Video (CVP)
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="chanel4" name="channelradios" type="radio" value="Paper">
+                                            <label class="govuk-label govuk-radios__label" for="chanel4">
+                                                Paper
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div>
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-form-group  govuk-!-margin-top-5" >
+                                <button class="govuk-button" data-module="govuk-button">
+                                    Continue
+                                </button>
+                            </div>
+
+                        </form>
+
+
+
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,668 @@
+{% extends "../layoutstaff.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+    <main class="" id="main-content" role="main">
+        <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
+            <div class="govuk-tabs__panel" id="event" style=" padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
+
+
+
+                        <!-- <h2 class="govuk-heading-l">Channel</h2>-->
+
+                        <form
+                            name="aspnetForm"
+                            method="post"
+                            id="aspnetForm"
+                            autocomplete="off"
+                            >
+
+
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                        <h1 class="govuk-fieldset__heading">
+                                            Select possible venues
+                                        </h1>
+                                    </legend>
+                                    <div id="waste-hint" class="govuk-hint">
+                                        Select all that apply.
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+
+                                        {% if data.region == 'London' %}
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues1" name="venues" type="checkbox" value="BEXLEYHEATH SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues1">
+                                                    BEXLEYHEATH SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues2" name="venues" type="checkbox" value="EAST LONDON TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues2">
+                                                    EAST LONDON TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="ENFIELD SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues3">
+                                                    ENFIELD SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues4" name="venues" type="checkbox" value="FOX COURT SSCS (HOLBORN COURTS AND TRIBUNALS)">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues4">
+                                                    FOX COURT SSCS (HOLBORN COURTS AND TRIBUNALS)
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues5" name="venues" type="checkbox" value="HATTON CROSS TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues5">
+                                                    HATTON CROSS TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues6" name="venues" type="checkbox" value="ROMFORD COUNTY COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues6">
+                                                    ROMFORD COUNTY COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues7" name="venues" type="checkbox" value="SUTTON SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues7">
+                                                    SUTTON SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+
+                                        {% elif data.region == 'Midlands' %}
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues1" name="venues" type="checkbox" value="BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues1">
+                                                    BIRMINGHAM CIVIL AND FAMILY JUSTICE CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues2" name="venues" type="checkbox" value="BIRMINGHAM SSCS">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues2">
+                                                    BIRMINGHAM SSCS
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="CHESTERFIELD MAGISTRATES">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues3">
+                                                    CHESTERFIELD MAGISTRATES
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues4" name="venues" type="checkbox" value="DERBY MAGISTRATES">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues4">
+                                                    DERBY MAGISTRATES
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues5" name="venues" type="checkbox" value="LEICESTER TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues5">
+                                                    LEICESTER TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues6" name="venues" type="checkbox" value="NORTHAMPTON BULK ISSUE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues6">
+                                                    NORTHAMPTON BULK ISSUE CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues7" name="venues" type="checkbox" value="NOTTINGHAM MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues7">
+                                                    NOTTINGHAM MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues8" name="venues" type="checkbox" value="WOLVERHAMPTON SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues8">
+                                                    WOLVERHAMPTON SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+
+                                        {% elif data.region == 'North East' %}
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues1" name="venues" type="checkbox" value="BARNSLEY LAW COURTS">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues1">
+                                                    BARNSLEY LAW COURTS
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues2" name="venues" type="checkbox" value="BRADFORD TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues2">
+                                                    BRADFORD TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="DARLINGTON COUNTY COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues3">
+                                                    DARLINGTON COUNTY COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues4" name="venues" type="checkbox" value="DONCASTER JUSTICE CENTRE SOUTH">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues4">
+                                                    DONCASTER JUSTICE CENTRE SOUTH
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues5" name="venues" type="checkbox" value="DURHAM JUSTICE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues5">
+                                                    DURHAM JUSTICE CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues6" name="venues" type="checkbox" value="GRIMSBY MAGISTRATES COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues6">
+                                                    GRIMSBY MAGISTRATES COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues7" name="venues" type="checkbox" value="HUDDERSFIELD COUNTY COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues7">
+                                                    HUDDERSFIELD COUNTY COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues8" name="venues" type="checkbox" value="HULL TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues8">
+                                                    HULL TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues9" name="venues" type="checkbox" value="LEEDS SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues9">
+                                                    LEEDS SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues10" name="venues" type="checkbox" value="MID AND SOUTH EAST NORTHUMBERLAND LAW COURTS">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues10">
+                                                    MID AND SOUTH EAST NORTHUMBERLAND LAW COURTS
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues11" name="venues" type="checkbox" value="NEWCASTLE CIVIL AND FAMILY COURTS AND TRIBUNALS CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues11">
+                                                    NEWCASTLE CIVIL AND FAMILY COURTS AND TRIBUNALS CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues12" name="venues" type="checkbox" value="SCARBOROUGH JUSTICE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues12">
+                                                    SCARBOROUGH JUSTICE CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues13" name="venues" type="checkbox" value="SHEFFIELD MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues13">
+                                                    SHEFFIELD MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues14" name="venues" type="checkbox" value="SUNDERLAND COUNTY, FAMILY, MAGISTRATES AND TRIBUNAL HEARINGS">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues14">
+                                                    SUNDERLAND COUNTY, FAMILY, MAGISTRATES AND TRIBUNAL HEARINGS
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues16" name="venues" type="checkbox" value="TEESSIDE MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues16">
+                                                    TEESSIDE MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues17" name="venues" type="checkbox" value="WAKEFIELD CIVIL AND FAMILY JUSTICE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues17">
+                                                    WAKEFIELD CIVIL AND FAMILY JUSTICE CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues18" name="venues" type="checkbox" value="YORK COUNTY COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues18">
+                                                    YORK COUNTY COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+
+
+                                        {% elif data.region == 'North West' %}
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues1" name="venues" type="checkbox" value="BARROW-IN-FURNESS COUNTY COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues1">
+                                                    BARROW-IN-FURNESS COUNTY COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues2" name="venues" type="checkbox" value="BIRKENHEAD COUNTY COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues2">
+                                                    BIRKENHEAD COUNTY COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="BLACKBURN SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues3">
+                                                    BLACKBURN SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues4" name="venues" type="checkbox" value="BLACKPOOL SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues4">
+                                                    BLACKPOOL SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues5" name="venues" type="checkbox" value="BOLTON SSCS BAYLEY HOUSE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues5">
+                                                    BOLTON SSCS BAYLEY HOUSE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues6" name="venues" type="checkbox" value="BURNLEY SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues6">
+                                                    BURNLEY SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues7" name="venues" type="checkbox" value="CARLISLE MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues7">
+                                                    CARLISLE MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues8" name="venues" type="checkbox" value="CHESTER CIVIL AND FAMILY JUSTICE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues8">
+                                                    CHESTER CIVIL AND FAMILY JUSTICE CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues9" name="venues" type="checkbox" value="CHESTER MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues9">
+                                                    CHESTER MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues10" name="venues" type="checkbox" value="LANCASTER MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues10">
+                                                    LANCASTER MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues11" name="venues" type="checkbox" value="LIVERPOOL SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues11">
+                                                    LIVERPOOL SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues12" name="venues" type="checkbox" value="MANCHESTER COUNTY AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues12">
+                                                    MANCHESTER COUNTY AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues13" name="venues" type="checkbox" value="MANCHESTER CROWN COURT (CROWN SQUARE)">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues13">
+                                                    MANCHESTER CROWN COURT (CROWN SQUARE)
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues14" name="venues" type="checkbox" value="PRESTON MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues14">
+                                                    PRESTON MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues16" name="venues" type="checkbox" value="ROCHDALE SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues16">
+                                                    ROCHDALE SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues17" name="venues" type="checkbox" value="ST HELENS COUNTY COURT AND FAMILY">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues17">
+                                                    ST HELENS COUNTY COURT AND FAMILY
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues18" name="venues" type="checkbox" value="STOCKPORT MAGISTRATES COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues18">
+                                                    STOCKPORT MAGISTRATES COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues19" name="venues" type="checkbox" value="WIGAN AND LEIGH MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues19">
+                                                    WIGAN AND LEIGH MAGISTRATES COURT
+                                                </label>
+                                            </div>
+
+                                        {% elif data.region == 'Scotland' %}
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues1" name="venues" type="checkbox" value="ABERDEEN TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues1">
+                                                    ABERDEEN TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues2" name="venues" type="checkbox" value="AYR SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues2">
+                                                    AYR SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="EDINBURGH SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues3">
+                                                    EDINBURGH SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues4" name="venues" type="checkbox" value="HAMILTON SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues4">
+                                                    HAMILTON SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues5" name="venues" type="checkbox" value="STIRLING TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues5">
+                                                    STIRLING TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+
+                                        {% elif data.region == 'South East' %}
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues1" name="venues" type="checkbox" value="ASHFORD TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues1">
+                                                    ASHFORD TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues2" name="venues" type="checkbox" value="BASILDON COMBINED COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues2">
+                                                    BASILDON COMBINED COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="BEDFORD AND MID BEDS MAGISTRATES COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues3">
+                                                    BEDFORD AND MID BEDS MAGISTRATES COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues4" name="venues" type="checkbox" value="BRIGHTON TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues4">
+                                                    BRIGHTON TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues5" name="venues" type="checkbox" value="CAMBRIDGE MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues5">
+                                                    CAMBRIDGE MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues6" name="venues" type="checkbox" value="CHELMSFORD MAGISTRATES COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues6">
+                                                    CHELMSFORD MAGISTRATES COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues7" name="venues" type="checkbox" value="HIGH WYCOMBE MAGISTRATES COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues7">
+                                                    HIGH WYCOMBE MAGISTRATES COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues8" name="venues" type="checkbox" value="IPSWICH MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues8">
+                                                    IPSWICH MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues9" name="venues" type="checkbox" value="KINGS LYNN CROWN COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues9">
+                                                    KINGS LYNN CROWN COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues10" name="venues" type="checkbox" value="KINGS LYNN CROWN COURT (& Magistrates)">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues10">
+                                                    KINGS LYNN CROWN COURT (& Magistrates)
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues11" name="venues" type="checkbox" value="LUTON AND SOUTH BEDFORDSHIRE MAGISTRATES COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues11">
+                                                    LUTON AND SOUTH BEDFORDSHIRE MAGISTRATES COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues12" name="venues" type="checkbox" value="MARGATE MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues12">
+                                                    MARGATE MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues13" name="venues" type="checkbox" value="MEDWAY MAGISTRATES COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues13">
+                                                    MEDWAY MAGISTRATES COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues14" name="venues" type="checkbox" value="MILTON KEYNES COUNTY COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues14">
+                                                    MILTON KEYNES COUNTY COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues16" name="venues" type="checkbox" value="NORWICH SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues16">
+                                                    NORWICH SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues17" name="venues" type="checkbox" value="OXFORD COMBINED COURT CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues17">
+                                                    OXFORD COMBINED COURT CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues18" name="venues" type="checkbox" value="PETERBOROUGH MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues18">
+                                                    PETERBOROUGH MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues19" name="venues" type="checkbox" value="READING TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues19">
+                                                    READING TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues19" name="venues" type="checkbox" value="SOUTHEND CROWN COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues19">
+                                                    SOUTHEND CROWN COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues19" name="venues" type="checkbox" value="STEVENAGE MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues19">
+                                                    STEVENAGE MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues19" name="venues" type="checkbox" value="WATFORD TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues19">
+                                                    WATFORD TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+
+
+                                        {% elif data.region == 'South West' %}
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues1" name="venues" type="checkbox" value="ALDERSHOT JUSTICE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues1">
+                                                    ALDERSHOT JUSTICE CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues2" name="venues" type="checkbox" value="BARNSTAPLE MAGISTRATES, COUNTY AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues2">
+                                                    BARNSTAPLE MAGISTRATES, COUNTY AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="BOURNEMOUTH COMBINED COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues3">
+                                                    BOURNEMOUTH COMBINED COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues4" name="venues" type="checkbox" value="BRISTOL MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues4">
+                                                    BRISTOL MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues5" name="venues" type="checkbox" value="EXETER TRIBUNAL HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues5">
+                                                    EXETER TRIBUNAL HEARING CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues6" name="venues" type="checkbox" value="GLOUCESTER AND CHELTENHAM COUNTY AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues6">
+                                                    GLOUCESTER AND CHELTENHAM COUNTY AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues7" name="venues" type="checkbox" value="HAVANT JUSTICE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues7">
+                                                    HAVANT JUSTICE CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues8" name="venues" type="checkbox" value="NEWTON ABBOT MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues8">
+                                                    NEWTON ABBOT MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues9" name="venues" type="checkbox" value="NORTH SOMERSET MAGISTRATES">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues9">
+                                                    NORTH SOMERSET MAGISTRATES
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues10" name="venues" type="checkbox" value="PLYMOUTH AS ST CATHERINE'S HOUSE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues10">
+                                                    PLYMOUTH AS ST CATHERINE'S HOUSE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues11" name="venues" type="checkbox" value="POOLE MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues11">
+                                                    POOLE MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues12" name="venues" type="checkbox" value="TAUNTON MAGISTRATES COURT, TRIBUNALS AND FAMILY HEARING CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues12">
+                                                    TAUNTON MAGISTRATES COURT, TRIBUNALS AND FAMILY HEARING CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues13" name="venues" type="checkbox" value="TRURO MAGISTRATES COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues13">
+                                                    TRURO MAGISTRATES COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues14" name="venues" type="checkbox" value="WEYMOUTH COMBINED COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues14">
+                                                    WEYMOUTH COMBINED COURT
+                                                </label>
+                                            </div>
+
+
+                                        {% elif data.region == 'Wales' %}
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues1" name="venues" type="checkbox" value="ABERYSTWYTH JUSTICE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues1">
+                                                    ABERYSTWYTH JUSTICE CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues2" name="venues" type="checkbox" value="CAERNARFON JUSTICE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues2">
+                                                    CAERNARFON JUSTICE CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="CARDIFF SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues3">
+                                                    CARDIFF SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues4" name="venues" type="checkbox" value="CARMARTHEN COUNTY COURT AND FAMILY COURT">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues4">
+                                                    CARMARTHEN COUNTY COURT AND FAMILY COURT
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues5" name="venues" type="checkbox" value="PORT TALBOT JUSTICE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues5">
+                                                    PORT TALBOT JUSTICE CENTRE
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="venues6" name="venues" type="checkbox" value="PRESTATYN JUSTICE CENTRE">
+                                                <label class="govuk-label govuk-checkboxes__label" for="venues6">
+                                                    PRESTATYN JUSTICE CENTRE
+                                                </label>
+                                            </div>
+
+
+                                        {% endif %}
+
+
+
+
+
+
+                                    </div>
+
+                                </fieldset>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="govuk-form-group  govuk-!-margin-top-5" >
+                                <button class="govuk-button" data-module="govuk-button">
+                                    Continue
+                                </button>
+                            </div>
+
+                        </form>
+
+
+
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
