@@ -158,11 +158,14 @@ Case details
                                     <label class="govuk-label govuk-!-font-weight-bold" for="contact-by-email">
                                         Include specific panel members (optional)
                                     </label>
-                                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false" >
+                                    <input class="govuk-input govuk-!-width-one-third" name="contact-by-email" type="text" spellcheck="false" id="addpersonsname" style="display:none;">
                                 </div>
-                                <button class="govuk-button govuk-button--secondary govuk-!-margin-top-3 " data-module="govuk-button">
+                                <p class="govuk-button govuk-button--secondary govuk-!-margin-top-0 " data-module="govuk-button" id="addperson" onclick="addperson();">
+                                    Add person
+                                </p>
+                                <p class="govuk-button govuk-button--secondary govuk-!-margin-top-3 " data-module="govuk-button" id="addanotherperson" style="display:none;">
                                     Add another person
-                                </button>
+                                </p>
                             </div>
 
 
@@ -172,15 +175,76 @@ Case details
                                     <label class="govuk-label govuk-!-font-weight-bold" for="contact-by-email">
                                         Exclude specific panel members (optional)
                                     </label>
-                                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="text" spellcheck="false" >
+                                    <input class="govuk-input govuk-!-width-one-third" name="contact-by-email" type="text" spellcheck="false" id="excludepersonsname" style="display:none;">
                                 </div>
-                                <button class="govuk-button govuk-button--secondary govuk-!-margin-top-3 " data-module="govuk-button">
+                                <p class="govuk-button govuk-button--secondary govuk-!-margin-top-0 " data-module="govuk-button" id="excludeperson" onclick="excludeperson();">
+                                    Exclude person
+                                </p>
+                                <p class="govuk-button govuk-button--secondary govuk-!-margin-top-3 " data-module="govuk-button" id="excludeanotherperson" style="display:none;">
                                     Exclude another person
-                                </button>
+                                </p>
                             </div>
 
 
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        <h1 class="govuk-fieldset__heading">
+                                            Select any other panel roles required
+                                        </h1>
+                                    </legend>
+                                    <div id="waste-hint" class="govuk-hint">
+                                        Select all that apply.
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="venues1" name="venues" type="checkbox" value="BEXLEYHEATH SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                            <label class="govuk-label govuk-checkboxes__label" for="venues1">
+                                                Salaried legally qualified
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="venues2" name="venues" type="checkbox" value="EAST LONDON TRIBUNAL HEARING CENTRE">
+                                            <label class="govuk-label govuk-checkboxes__label" for="venues2">
+                                                Fee paid legally qualified
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="ENFIELD SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                            <label class="govuk-label govuk-checkboxes__label" for="venues3">
+                                                Disability qualified
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="venues4" name="venues" type="checkbox" value="FOX COURT SSCS (HOLBORN COURTS AND TRIBUNALS)">
+                                            <label class="govuk-label govuk-checkboxes__label" for="venues4">
+                                                Financially qualified
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="venues5" name="venues" type="checkbox" value="HATTON CROSS TRIBUNAL HEARING CENTRE">
+                                            <label class="govuk-label govuk-checkboxes__label" for="venues5">
+                                                Medically qualified - Specialist
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="venues6" name="venues" type="checkbox" value="ROMFORD COUNTY COURT AND FAMILY COURT">
+                                            <label class="govuk-label govuk-checkboxes__label" for="venues6">
+                                                Medically qualified - non specialist
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="venues7" name="venues" type="checkbox" value="SUTTON SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                            <label class="govuk-label govuk-checkboxes__label" for="venues7">
+                                                Salaried - Medcally Qualified
+                                            </label>
+                                        </div>
 
+
+                                    </div>
+
+                                </fieldset>
+                            </div>
 
 
 
@@ -207,6 +271,7 @@ Case details
 
 
 <script>
+
 
     function showJudges()
     {
@@ -236,6 +301,20 @@ Case details
         {
             y.style.display = "block";
         }
+    }
+
+    function addperson()
+    {
+        document.getElementById("addpersonsname").style.display = "block";
+        document.getElementById("addanotherperson").style.display = "inline-block";
+        document.getElementById("addperson").style.display = "none";
+    }
+
+    function excludeperson()
+    {
+        document.getElementById("excludepersonsname").style.display = "block";
+        document.getElementById("excludeanotherperson").style.display = "inline-block";
+        document.getElementById("excludeperson").style.display = "none";
     }
 
 

@@ -82,6 +82,20 @@ router.post('/hearings/pages/venue', function (req, res)
 // Page 3 to page 4
 router.post('/hearings/pages/panel', function (req, res)
 {
+    if(req.session.data['panelsame'] == 'Same panel as last hearing')
+    {
+        res.redirect('/hearings/pages/paneldifferent')
+    }
+    else
+    {
+        res.redirect('/hearings/pages/timing')
+    }
+})
+
+
+// Page 3 to page 4
+router.post('/hearings/pages/paneldifferent', function (req, res)
+{
     if (true)
     {
         res.redirect('/hearings/pages/timing')
