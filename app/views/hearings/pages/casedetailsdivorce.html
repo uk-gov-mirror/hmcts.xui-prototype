@@ -97,24 +97,55 @@ Case details
 
                     <div style="margin-top: 40px;">
 
-                        <h2 class="govuk-heading-m">Hearings</h2>
+                        <h2 class="govuk-heading-m">Upcoming hearings</h2>
+
+
+                        <table class="govuk-table govuk-!-margin-bottom-4">
+                            <thead class="govuk-table__head">
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell" style="width:200px;">19 August 2021</td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&">View details</a></td>
+                                    <td class="govuk-table__cell"><a href="#">Make a change</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
 
 
                         <form
-                                name="aspnetForm"
-                                method="post"
-                                id="aspnetForm"
-                                autocomplete="off"
-                                >
+                            name="aspnetForm"
+                            method="post"
+                            id="aspnetForm"
+                            autocomplete="off"
+                            >
 
-                            <div class="govuk-form-group  govuk-!-margin-top-5" >
-                                <button class="govuk-button" data-module="govuk-button">
+
+                            <div class="govuk-form-group  govuk-!-margin-top-0" >
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
                                     Request a hearing
                                 </button>
                             </div>
 
 
                         </form>
+
+
+
+                        <h2 class="govuk-heading-m">Past hearings</h2>
+
+                        <table class="govuk-table" id="pastshearings" style="width: 325px;;">
+                            <thead class="govuk-table__head">
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell" style="width:200px;">5 May 2021</td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&"">View details</a></td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell">13 December 2021</td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&"">View details</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
 
 
                     </div>

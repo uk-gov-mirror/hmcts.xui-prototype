@@ -13,126 +13,355 @@ Case details
             <div class="govuk-tabs__panel" id="event" style=" padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
 
 
+                {% if  data.drafthearing == 'falce'   %}
+                    <h2 class="govuk-heading-l">Hearing details</h2>
+                {% else %}
+                    <h2 class="govuk-heading-l">Check your answers before sending your request</h2>
+                {% endif %}
 
-                        <h2 class="govuk-heading-l">Check your answers before sending your request</h2>
 
 
-
-
-                                        <h2 class="govuk-heading-m">Personal details</h2>
 
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Name
+                                                    Case name
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    Sarah Philips
+                                                    Jane smith
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change<span class="govuk-visually-hidden"> name</span>
-                                                    </a>
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Date of birth
+                                                    Hearing type
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
                                                     5 January 1978
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change<span class="govuk-visually-hidden"> date of birth</span>
-                                                    </a>
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Address
+                                                    Restrictions
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    72 Guild Street<br>London<br>SE23 6FH
+                                                    Case is restricted
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change<span class="govuk-visually-hidden"> address</span>
-                                                    </a>
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Contact details
+                                                    Case flags
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    <p class="govuk-body">07700 900457</p>
-                                                    <p class="govuk-body">sarah.phillips@example.com</p>
+                                                    Vunerable party
+                                                </dd>
+                                                <dd class="govuk-summary-list__actions">
+                                                </dd>
+                                            </div>
+                                            <div class="govuk-summary-list__row">
+                                                <dt class="govuk-summary-list__key">
+                                                    Required court facilities
+                                                </dt>
+                                                <dd class="govuk-summary-list__value">
+                                                    None
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                     <a class="govuk-link" href="#">
-                                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                                        Change
                                                     </a>
                                                 </dd>
                                             </div>
                                         </dl>
 
-                                        <h2 class="govuk-heading-m">Application details</h2>
+
+
+                                        <h2 class="govuk-heading-m">Hearing Channel</h2>
 
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Previous application number
+                                                    Channel
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    502135326
+                                                    Oral (face to face)
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                     <a class="govuk-link" href="#">
-                                                        Change<span class="govuk-visually-hidden"> previous application number</span>
+                                                        Change
                                                     </a>
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Licence type
+                                                    Region
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    For personal use
+                                                    North East
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                     <a class="govuk-link" href="#">
-                                                        Change<span class="govuk-visually-hidden"> licence type</span>
+                                                        Change
                                                     </a>
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Home address
+                                                    Venues
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    72 Guild Street<br>London<br>SE23 6FH
+                                                    CHESTER CIVIL AND FAMILY JUSTICE CENTRE<br> LANCASTER MAGISTRATES COURT<br>  LANCASTER MAGISTRATES COURT
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                     <a class="govuk-link" href="#">
-                                                        Change<span class="govuk-visually-hidden"> home address</span>
-                                                    </a>
-                                                </dd>
-                                            </div>
-                                            <div class="govuk-summary-list__row">
-                                                <dt class="govuk-summary-list__key">
-                                                    Licence period
-                                                </dt>
-                                                <dd class="govuk-summary-list__value">
-                                                    Valid for 6 months
-                                                </dd>
-                                                <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change<span class="govuk-visually-hidden"> licence period</span>
+                                                        Change
                                                     </a>
                                                 </dd>
                                             </div>
                                         </dl>
+
+
+
+                                        <h2 class="govuk-heading-m">Panel</h2>
+
+                                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                            <div class="govuk-summary-list__row">
+                                                <dt class="govuk-summary-list__key">
+                                                    Same of different panel
+                                                </dt>
+                                                <dd class="govuk-summary-list__value">
+                                                    Totally new panel
+                                                </dd>
+                                                <dd class="govuk-summary-list__actions">
+                                                    <a class="govuk-link" href="#">
+                                                        Change
+                                                    </a>
+                                                </dd>
+                                            </div>
+                                            <div class="govuk-summary-list__row">
+                                                <dt class="govuk-summary-list__key">
+                                                    Judge
+                                                </dt>
+                                                <dd class="govuk-summary-list__value">
+                                                    Not specific
+                                                </dd>
+                                                <dd class="govuk-summary-list__actions">
+                                                    <a class="govuk-link" href="#">
+                                                        Change
+                                                    </a>
+                                                </dd>
+                                            </div>
+                                            <div class="govuk-summary-list__row">
+                                                <dt class="govuk-summary-list__key">
+                                                    Totally new panel
+                                                </dt>
+                                                <dd class="govuk-summary-list__value">
+                                                    Salaried
+                                                </dd>
+                                                <dd class="govuk-summary-list__actions">
+                                                    <a class="govuk-link" href="#">
+                                                        Change
+                                                    </a>
+                                                </dd>
+                                            </div>
+                                            <div class="govuk-summary-list__row">
+                                                <dt class="govuk-summary-list__key">
+                                                    Judge role type
+                                                </dt>
+                                                <dd class="govuk-summary-list__value">
+                                                    All
+                                                </dd>
+                                                <dd class="govuk-summary-list__actions">
+                                                    <a class="govuk-link" href="#">
+                                                        Change
+                                                    </a>
+                                                </dd>
+                                            </div>
+
+                                            <div class="govuk-summary-list__row">
+                                                <dt class="govuk-summary-list__key">
+                                                    Include specific panel members
+                                                </dt>
+                                                <dd class="govuk-summary-list__value">
+                                                    None
+                                                </dd>
+                                                <dd class="govuk-summary-list__actions">
+                                                    <a class="govuk-link" href="#">
+                                                        Change
+                                                    </a>
+                                                </dd>
+                                            </div>
+                                            <div class="govuk-summary-list__row">
+                                                <dt class="govuk-summary-list__key">
+                                                    Exclude specific panel members
+                                                </dt>
+                                                <dd class="govuk-summary-list__value">
+                                                    None
+                                                </dd>
+                                                <dd class="govuk-summary-list__actions">
+                                                    <a class="govuk-link" href="#">
+                                                        Change
+                                                    </a>
+                                                </dd>
+                                            </div>
+                                            <div class="govuk-summary-list__row">
+                                                <dt class="govuk-summary-list__key">
+                                                    Other panel roles required
+                                                </dt>
+                                                <dd class="govuk-summary-list__value">
+                                                    Medically qualified - Specialist
+                                                </dd>
+                                                <dd class="govuk-summary-list__actions">
+                                                    <a class="govuk-link" href="#">
+                                                        Change
+                                                    </a>
+                                                </dd>
+                                            </div>
+                                        </dl>
+
+
+
+
+                                            <h2 class="govuk-heading-m">Timing and priority</h2>
+
+                                            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Morning or afternoon
+                                                    </dt>
+                                                    <dd class="govuk-summary-list__value">
+                                                        AM or PM
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    </dd>
+                                                </div>
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Duration
+                                                    </dt>
+                                                    <dd class="govuk-summary-list__value">
+                                                        1 hour and 45 mins
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    </dd>
+                                                </div>
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Reason for non-standard time
+                                                    <dd class="govuk-summary-list__value">
+                                                        More evidence sent in.
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    </dd>
+                                                </div>
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Days since SLA
+                                                    <dd class="govuk-summary-list__value">
+                                                        5 days
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+
+                                                    </dd>
+                                                </div>
+
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Date requirements
+                                                    <dd class="govuk-summary-list__value">
+                                                        A data range
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    </dd>
+                                                </div>
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Ealiest hearing date
+                                                    <dd class="govuk-summary-list__value">
+                                                        14 August 2021
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    </dd>
+                                                </div>
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Latest hearing date
+                                                    <dd class="govuk-summary-list__value">
+                                                        15 October 2021
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    </dd>
+                                                </div>
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Priority (optional)
+                                                    <dd class="govuk-summary-list__value">
+                                                        Medium
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    </dd>
+                                                </div>
+
+                                            </dl>
+
+
+                                            <h2 class="govuk-heading-m">Welsh and adjustments</h2>
+
+                                            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Welsh
+                                                    </dt>
+                                                    <dd class="govuk-summary-list__value">
+                                                        This hearing will be in Welsh
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    </dd>
+                                                </div>
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Resonable adjustments
+                                                    </dt>
+                                                    <dd class="govuk-summary-list__value">
+                                                        Andy Appleyard
+                                                        A glass and bottle of water on his table.
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    </dd>
+                                                </div>
+                                            </dl>
+
 
 
 
@@ -143,8 +372,6 @@ Case details
                             id="aspnetForm"
                             autocomplete="off"
                             >
-
-
 
                             <div class="govuk-form-group  govuk-!-margin-top-5" >
                                 <button class="govuk-button" data-module="govuk-button">

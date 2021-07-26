@@ -14,7 +14,7 @@ Case details
 
 
 
-                        <h2 class="govuk-heading-l">Language, interpreters and adjustments</h2>
+                        <h2 class="govuk-heading-l">Welsh and adjustments</h2>
 
                         <form
                             name="aspnetForm"
@@ -22,6 +22,91 @@ Case details
                             id="aspnetForm"
                             autocomplete="off"
                             >
+
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                            <h3 class="govuk-fieldset__heading">
+                                                Select for a Welsh hearing
+                                            </h3>
+                                        </legend>
+                                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="welsh1" name="welsh" type="checkbox" value="Welsh">
+                                                <label class="govuk-label govuk-checkboxes__label" for="welsh1">
+                                                    This hearing will be in Welsh
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+
+
+
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                            <h3 class="govuk-fieldset__heading">
+                                                Select any parties which have resonable adjustments
+                                            </h3>
+                                        </legend>
+                                        <div class="govuk-checkboxes" data-module="govuk-checkboxes" >
+                                            <div class="govuk-checkboxes__item" onclick="toggleresonableadjustments1();">
+                                                <input class="govuk-checkboxes__input" id="resonableadjustments1" name="resonableadjustments" type="checkbox" value="resonableadjustments1" >
+                                                <label class="govuk-label govuk-checkboxes__label" for="resonableadjustments1" >
+                                                    <span onclick="toggleresonableadjustments1();">Andy Appleyard </span>
+                                                </label>
+                                            </div>
+
+                                                    <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra1">
+                                                        <div class="govuk-form-group" style="width: 600px;">
+                                                            <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail">
+                                                                Reasonabvle adjustments
+                                                            </label>
+                                                            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+                                                        </div>
+                                                    </div>
+
+
+                                            <div class="govuk-checkboxes__item"  onclick="toggleresonableadjustments2();">
+                                                <input class="govuk-checkboxes__input" id="resonableadjustments2" name="resonableadjustments" type="checkbox" value="resonableadjustments1">
+                                                <label class="govuk-label govuk-checkboxes__label" for="resonableadjustments2">
+                                                    <span onclick="toggleresonableadjustments2();">Bella Brady</span>
+                                                </label>
+                                            </div>
+
+                                                    <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra2">
+                                                        <div class="govuk-form-group" style="width: 600px;">
+                                                            <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail">
+                                                                Reasonabvle adjustments
+                                                            </label>
+                                                            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+                                                        </div>
+                                                    </div>
+
+
+                                            <div class="govuk-checkboxes__item"  onclick="toggleresonableadjustments3();">
+                                                <input class="govuk-checkboxes__input" id="resonableadjustments3" name="resonableadjustments" type="checkbox" value="resonableadjustments1">
+                                                <label class="govuk-label govuk-checkboxes__label" for="resonableadjustments3">
+                                                    <span onclick="toggleresonableadjustments3();"> Carrie Cattrall</span>
+                                                </label>
+                                            </div>
+
+                                                    <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra3">
+                                                        <div class="govuk-form-group" style="width: 600px;">
+                                                            <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail">
+                                                                Reasonabvle adjustments
+                                                            </label>
+                                                            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+
 
 
 
@@ -39,5 +124,62 @@ Case details
             </div>
         </div>
     </main>
+
+
+
+<script>
+
+
+    function toggleresonableadjustments1()
+    {
+        if(document.getElementById("ra1").style.display == "none")
+        {
+            document.getElementById("ra1").style.display = "block";
+            document.getElementById("resonableadjustments1").checked = true;
+        }
+        else
+        {
+            document.getElementById("ra1").style.display = "none";
+            document.getElementById("resonableadjustments1").checked = false;
+        }
+
+    }
+
+
+    function toggleresonableadjustments2()
+    {
+        if(document.getElementById("ra2").style.display == "none")
+        {
+            document.getElementById("ra2").style.display = "block";
+            document.getElementById("resonableadjustments2").checked = true;
+        }
+        else
+        {
+            document.getElementById("ra2").style.display = "none";
+            document.getElementById("resonableadjustments2").checked = false;
+        }
+
+    }
+
+
+
+    function toggleresonableadjustments3()
+    {
+        if(document.getElementById("ra3").style.display == "none")
+        {
+            document.getElementById("ra3").style.display = "block";
+            document.getElementById("resonableadjustments3").checked = true;
+        }
+        else
+        {
+            document.getElementById("ra3").style.display = "none";
+            document.getElementById("resonableadjustments3").checked = false;
+        }
+
+    }
+
+
+
+</script>
 
 {% endblock %}

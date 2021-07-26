@@ -19,7 +19,9 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
 {
     if (true)
     {
+        req.session.data['drafthearing'] = 'true';
         res.redirect('/hearings/pages/startrequest')
+
     }
     else
     {
@@ -82,7 +84,7 @@ router.post('/hearings/pages/venue', function (req, res)
 // Page 3 to page 4
 router.post('/hearings/pages/panel', function (req, res)
 {
-    if(req.session.data['panelsame'] == 'Same panel as last hearing')
+    if(req.session.data['panelsame'] != 'Same panel as last hearing')
     {
         res.redirect('/hearings/pages/paneldifferent')
     }
