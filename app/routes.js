@@ -20,6 +20,8 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
     if (true)
     {
         req.session.data['drafthearing'] = 'true';
+        req.session.data['submissioncomplete'] = 'false';
+        req.session.data['changesallowed'] = 'true';
         res.redirect('/hearings/pages/startrequest')
 
     }

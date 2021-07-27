@@ -15,7 +15,7 @@ Case details
             <div class=""  style="display: flex; justify-content: space-between; ">
 
                 <div style="display: flex; ">
-                    <p class="">9468-3316-6763-1127: Smith v Smith  &nbsp; </p>
+                    <p class="">9468-3316-6763-1127: Jane Smith v DWP &nbsp; </p>
 
                     <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
                         Print
@@ -71,11 +71,6 @@ Case details
                     </li>
                     <li class="govuk-tabs__list-item">
                         <a class="govuk-tabs__tab" href="#past-week">
-                            Outcome of Decree Nisi
-                        </a>
-                    </li>
-                    <li class="govuk-tabs__list-item">
-                        <a class="govuk-tabs__tab" href="#past-week">
                             Documents
                         </a>
                     </li>
@@ -84,12 +79,16 @@ Case details
                             Hearings
                         </a>
                     </li>
-                    <li class="govuk-tabs__list-item">
-                        <a class="govuk-tabs__tab" href="#past-week">
-                            Marriage Certificate
-                        </a>
-                    </li>
                 </ul>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -97,16 +96,32 @@ Case details
 
                     <div style="margin-top: 40px;">
 
-                        <h2 class="govuk-heading-m">Upcoming hearings</h2>
 
+                        {% if data.submissioncomplete == 'true' %}
+                            <h2 class="govuk-heading-m">Pending hearing requests</h2>
+
+                            <table class="govuk-table govuk-!-margin-bottom-9">
+                                <thead class="govuk-table__head">
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <td scope="row" class="govuk-table__cell" style="width:200px;">Today</td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=false&">View details</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        {% endif %}
+
+
+
+                        <h2 class="govuk-heading-m">Upcoming hearings</h2>
 
                         <table class="govuk-table govuk-!-margin-bottom-4">
                             <thead class="govuk-table__head">
                             <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row">
                                     <td scope="row" class="govuk-table__cell" style="width:200px;">19 August 2021</td>
-                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&">View details</a></td>
-                                    <td class="govuk-table__cell"><a href="#">Make a change</a></td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">View details</a></td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">Make a change</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -138,11 +153,11 @@ Case details
                             <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row">
                                     <td scope="row" class="govuk-table__cell" style="width:200px;">5 May 2021</td>
-                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&"">View details</a></td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=false&">View details</a></td>
                                 </tr>
                                 <tr class="govuk-table__row">
                                     <td scope="row" class="govuk-table__cell">13 December 2021</td>
-                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&"">View details</a></td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=false&"">View details</a></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -28,7 +28,7 @@ Case details
                                                     Case name
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    Jane smith
+                                                    Jane Smith v DWP
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                 </dd>
@@ -38,7 +38,7 @@ Case details
                                                     Hearing type
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    5 January 1978
+                                                    03 - Judge, Doctor and disability member
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                 </dd>
@@ -65,35 +65,39 @@ Case details
                                             </div>
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Required court facilities
+                                                    What facilities are required?
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    None
+
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change
-                                                    </a>
+                                                    {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    {% endif %}
                                                 </dd>
                                             </div>
                                         </dl>
 
 
 
-                                        <h2 class="govuk-heading-m">Hearing Channel</h2>
+                                        <h2 class="govuk-heading-m">Type of hearing</h2>
 
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Channel
+                                                    What type of hearing is required?
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    Oral (face to face)
+                                                    In person
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change
-                                                    </a>
+                                                    {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    {% endif %}
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
@@ -104,9 +108,11 @@ Case details
                                                     North East
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change
-                                                    </a>
+                                                    {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    {% endif %}
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
@@ -117,9 +123,11 @@ Case details
                                                     CHESTER CIVIL AND FAMILY JUSTICE CENTRE<br> LANCASTER MAGISTRATES COURT<br>  LANCASTER MAGISTRATES COURT
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change
-                                                    </a>
+                                                    {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    {% endif %}
                                                 </dd>
                                             </div>
                                         </dl>
@@ -137,9 +145,11 @@ Case details
                                                     Totally new panel
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change
-                                                    </a>
+                                                    {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    {% endif %}
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
@@ -150,9 +160,11 @@ Case details
                                                     Not specific
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change
-                                                    </a>
+                                                    {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    {% endif %}
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
@@ -163,9 +175,11 @@ Case details
                                                     Salaried
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change
-                                                    </a>
+                                                    {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    {% endif %}
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
@@ -176,9 +190,11 @@ Case details
                                                     All
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change
-                                                    </a>
+                                                    {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    {% endif %}
                                                 </dd>
                                             </div>
 
@@ -190,9 +206,11 @@ Case details
                                                     None
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change
-                                                    </a>
+                                                    {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    {% endif %}
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
@@ -203,9 +221,11 @@ Case details
                                                     None
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change
-                                                    </a>
+                                                    {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    {% endif %}
                                                 </dd>
                                             </div>
                                             <div class="govuk-summary-list__row">
@@ -216,9 +236,11 @@ Case details
                                                     Medically qualified - Specialist
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
-                                                    <a class="govuk-link" href="#">
-                                                        Change
-                                                    </a>
+                                                    {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="#">
+                                                            Change
+                                                        </a>
+                                                    {% endif %}
                                                 </dd>
                                             </div>
                                         </dl>
@@ -237,9 +259,11 @@ Case details
                                                         AM or PM
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
-                                                        <a class="govuk-link" href="#">
-                                                            Change
-                                                        </a>
+                                                        {% if data.changesallowed != 'false' %}
+                                                            <a class="govuk-link" href="#">
+                                                                Change
+                                                            </a>
+                                                        {% endif %}
                                                     </dd>
                                                 </div>
                                                 <div class="govuk-summary-list__row">
@@ -250,9 +274,11 @@ Case details
                                                         1 hour and 45 mins
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
-                                                        <a class="govuk-link" href="#">
-                                                            Change
-                                                        </a>
+                                                        {% if data.changesallowed != 'false' %}
+                                                            <a class="govuk-link" href="#">
+                                                                Change
+                                                            </a>
+                                                        {% endif %}
                                                     </dd>
                                                 </div>
                                                 <div class="govuk-summary-list__row">
@@ -262,9 +288,11 @@ Case details
                                                         More evidence sent in.
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
-                                                        <a class="govuk-link" href="#">
-                                                            Change
-                                                        </a>
+                                                        {% if data.changesallowed != 'false' %}
+                                                            <a class="govuk-link" href="#">
+                                                                Change
+                                                            </a>
+                                                        {% endif %}
                                                     </dd>
                                                 </div>
                                                 <div class="govuk-summary-list__row">
@@ -285,9 +313,11 @@ Case details
                                                         A data range
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
-                                                        <a class="govuk-link" href="#">
-                                                            Change
-                                                        </a>
+                                                        {% if data.changesallowed != 'false' %}
+                                                            <a class="govuk-link" href="#">
+                                                                Change
+                                                            </a>
+                                                        {% endif %}
                                                     </dd>
                                                 </div>
                                                 <div class="govuk-summary-list__row">
@@ -297,9 +327,11 @@ Case details
                                                         14 August 2021
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
-                                                        <a class="govuk-link" href="#">
-                                                            Change
-                                                        </a>
+                                                        {% if data.changesallowed != 'false' %}
+                                                            <a class="govuk-link" href="#">
+                                                                Change
+                                                            </a>
+                                                        {% endif %}
                                                     </dd>
                                                 </div>
                                                 <div class="govuk-summary-list__row">
@@ -309,9 +341,11 @@ Case details
                                                         15 October 2021
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
-                                                        <a class="govuk-link" href="#">
-                                                            Change
-                                                        </a>
+                                                        {% if data.changesallowed != 'false' %}
+                                                            <a class="govuk-link" href="#">
+                                                                Change
+                                                            </a>
+                                                        {% endif %}
                                                     </dd>
                                                 </div>
                                                 <div class="govuk-summary-list__row">
@@ -321,9 +355,11 @@ Case details
                                                         Medium
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
-                                                        <a class="govuk-link" href="#">
-                                                            Change
-                                                        </a>
+                                                        {% if data.changesallowed != 'false' %}
+                                                            <a class="govuk-link" href="#">
+                                                                Change
+                                                            </a>
+                                                        {% endif %}
                                                     </dd>
                                                 </div>
 
@@ -341,9 +377,11 @@ Case details
                                                         This hearing will be in Welsh
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
-                                                        <a class="govuk-link" href="#">
-                                                            Change
-                                                        </a>
+                                                        {% if data.changesallowed != 'false' %}
+                                                            <a class="govuk-link" href="#">
+                                                                Change
+                                                            </a>
+                                                        {% endif %}
                                                     </dd>
                                                 </div>
                                                 <div class="govuk-summary-list__row">
@@ -355,9 +393,11 @@ Case details
                                                         A glass and bottle of water on his table.
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
-                                                        <a class="govuk-link" href="#">
-                                                            Change
-                                                        </a>
+                                                        {% if data.changesallowed != 'false' %}
+                                                            <a class="govuk-link" href="#">
+                                                                Change
+                                                            </a>
+                                                        {% endif %}
                                                     </dd>
                                                 </div>
                                             </dl>
@@ -365,21 +405,25 @@ Case details
 
 
 
+                        {% if data.changesallowed != 'false' %}
+                            <form
+                                name="aspnetForm"
+                                method="post"
+                                id="aspnetForm"
+                                autocomplete="off"
+                                >
 
-                        <form
-                            name="aspnetForm"
-                            method="post"
-                            id="aspnetForm"
-                            autocomplete="off"
-                            >
+                                <div class="govuk-form-group  govuk-!-margin-top-5" >
+                                    <button class="govuk-button" data-module="govuk-button">
+                                        Submit reuqest
+                                    </button>
+                                </div>
 
-                            <div class="govuk-form-group  govuk-!-margin-top-5" >
-                                <button class="govuk-button" data-module="govuk-button">
-                                    Submit reuqest
-                                </button>
-                            </div>
+                            </form>
+                        {% endif %}
 
-                        </form>
+
+
 
 
             </div>
