@@ -50,7 +50,7 @@ router.post('/hearings/pages/startrequest', function (req, res)
 // Page 2 to page 3
 router.post('/hearings/pages/channel', function (req, res)
 {
-    if(req.session.data['channelradios'] == 'Oral (face to face)')
+    if(req.session.data['channelradios'] == 'In person')
     {
         res.redirect('/hearings/pages/region');
     }
@@ -86,7 +86,7 @@ router.post('/hearings/pages/venue', function (req, res)
 // Page 3 to page 4
 router.post('/hearings/pages/panel', function (req, res)
 {
-    if(req.session.data['panelsame'] != 'Same panel as last hearing')
+    if(req.session.data['panelsame'] != 'Yes - use the same panel as most recent hearing')
     {
         res.redirect('/hearings/pages/paneldifferent')
     }

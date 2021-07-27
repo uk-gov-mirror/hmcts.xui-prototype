@@ -102,7 +102,7 @@ Case details
                                             </div>
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Region
+                                                    Where will the hearing take place?
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
                                                     North East
@@ -117,7 +117,7 @@ Case details
                                             </div>
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Venues
+                                                    Select all possible venues
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
                                                     CHESTER CIVIL AND FAMILY JUSTICE CENTRE<br> LANCASTER MAGISTRATES COURT<br>  LANCASTER MAGISTRATES COURT
@@ -139,7 +139,7 @@ Case details
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Same of different panel
+                                                    Use the most recent panel again?
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
                                                     Totally new panel
@@ -154,10 +154,10 @@ Case details
                                             </div>
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Judge
+                                                    Do you want a specific judge?
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    Not specific
+                                                    No
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                     {% if data.changesallowed != 'false' %}
@@ -169,7 +169,7 @@ Case details
                                             </div>
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Totally new panel
+                                                    Judge contract type
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
                                                     Salaried
@@ -203,7 +203,7 @@ Case details
                                                     Include specific panel members
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    None
+
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                     {% if data.changesallowed != 'false' %}
@@ -218,7 +218,7 @@ Case details
                                                     Exclude specific panel members
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    None
+
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                     {% if data.changesallowed != 'false' %}
@@ -230,7 +230,7 @@ Case details
                                             </div>
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Other panel roles required
+                                                    Select any other panel roles required
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
                                                     Medically qualified - Specialist
@@ -248,15 +248,15 @@ Case details
 
 
 
-                                            <h2 class="govuk-heading-m">Timing and priority</h2>
+                                            <h2 class="govuk-heading-m">When will the hearing take place?</h2>
 
                                             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                                                 <div class="govuk-summary-list__row">
                                                     <dt class="govuk-summary-list__key">
-                                                        Morning or afternoon
+                                                        Select a time
                                                     </dt>
                                                     <dd class="govuk-summary-list__value">
-                                                        AM or PM
+                                                        Morning or afternoon (9am to 5pm)
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
@@ -268,7 +268,7 @@ Case details
                                                 </div>
                                                 <div class="govuk-summary-list__row">
                                                     <dt class="govuk-summary-list__key">
-                                                        Duration
+                                                        Select length of hearing
                                                     </dt>
                                                     <dd class="govuk-summary-list__value">
                                                         1 hour and 45 mins
@@ -283,7 +283,7 @@ Case details
                                                 </div>
                                                 <div class="govuk-summary-list__row">
                                                     <dt class="govuk-summary-list__key">
-                                                        Reason for non-standard time
+                                                        Give a reason why a different length of hearing is required
                                                     <dd class="govuk-summary-list__value">
                                                         More evidence sent in.
                                                     </dd>
@@ -308,9 +308,9 @@ Case details
 
                                                 <div class="govuk-summary-list__row">
                                                     <dt class="govuk-summary-list__key">
-                                                        Date requirements
+                                                        Does the hearing need to take place on a specific date?
                                                     <dd class="govuk-summary-list__value">
-                                                        A data range
+                                                        Choose a date range
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
@@ -322,7 +322,7 @@ Case details
                                                 </div>
                                                 <div class="govuk-summary-list__row">
                                                     <dt class="govuk-summary-list__key">
-                                                        Ealiest hearing date
+                                                        Earliest hearing date
                                                     <dd class="govuk-summary-list__value">
                                                         14 August 2021
                                                     </dd>
@@ -350,9 +350,9 @@ Case details
                                                 </div>
                                                 <div class="govuk-summary-list__row">
                                                     <dt class="govuk-summary-list__key">
-                                                        Priority (optional)
+                                                        How urgent is the hearing?  (optional)
                                                     <dd class="govuk-summary-list__value">
-                                                        Medium
+                                                        Medium priority
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
@@ -371,10 +371,10 @@ Case details
                                             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                                                 <div class="govuk-summary-list__row">
                                                     <dt class="govuk-summary-list__key">
-                                                        Welsh
+                                                        Select if the hearing needs to be in Welsh
                                                     </dt>
                                                     <dd class="govuk-summary-list__value">
-                                                        This hearing will be in Welsh
+
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
@@ -386,11 +386,11 @@ Case details
                                                 </div>
                                                 <div class="govuk-summary-list__row">
                                                     <dt class="govuk-summary-list__key">
-                                                        Resonable adjustments
+                                                        Select any parties who need reasonable adjustments
                                                     </dt>
                                                     <dd class="govuk-summary-list__value">
-                                                        Andy Appleyard
-                                                        A glass and bottle of water on his table.
+                                                        Jane Smith<br>
+                                                        A glass and bottle of water on the table.
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
