@@ -3,16 +3,21 @@
 GOV.UK Prototype Kit
 {% endblock %}
 {% block content %}
+<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
       Work allocation prototype
     </h1>
     <h2 class="govuk-heading-l">
-      Last updated (23/07/21)
+      Last updated (27/07/21)
     </h2>
-    <p> My tasks & Available tasks, 'Date' replaced by 'Task created'<br>Which is ordered by priority not shown for Judicial users </p>
-    <p> Updated H1s in identified sections </p>
+    <p> My tasks & Available tasks, 'Date' replaced by 'Task created'<br>Which is ordered by priority not shown for Judicial users (3.4)</p>
+    <p> Updated Active tasks (3.4) </p>
+    <p> Updated Active tasks (3.4) Seperate (NEW PAGES) created for staff with Priority column</p>
+    <p> Updated H1s in identified sections (3.4) </p>
+    <p> Created stand alone examples of My tasks, Available tasks and Active tasks for Staff - which include Priority column (3.4) </p>
+    <p> All Work - Updated to email from Sharon W 27 July 2021 - Views, Tasks and the filters which include priority removed</p>
     <div style="display: flex; margin-top: 80px;">
 
 
@@ -24,24 +29,24 @@ GOV.UK Prototype Kit
         <div class="govuk-!-padding-bottom-6"></div>
         <!-- SECTION BREAK -->
 
-        <p><a target="_blank" href="/workallocation/pages/wa-mytasks?usertype=judiciary&">My tasks - tab</a><br>Checked with DS - v3.3</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-mytasks?usertype=judiciary&">My tasks - tab</a><br>Checked with DS - v3.4</p>
 
-        <p><a target="_blank" href="/workallocation/pages/wa-mytasks-o?usertype=judiciary&">My tasks - open - Go to tasks</a><br>Checked with DS - v3.3</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018?usertype=judiciary&">Active tasks</a><br> - v3.3  </p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-a?usertype=judiciary&">Active tasks - Assign task to me</a><br> - v3.3</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-mytasks-o?usertype=judiciary&">My tasks - open - Go to tasks</a><br>Checked with DS - v3.4</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018?usertype=judiciary&">Active tasks</a><br> - v3.4  </p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-a?usertype=judiciary&">Active tasks - Assign task to me</a><br> - v3.4</p>
         <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-app?usertype=judiciary&">Active tasks - Next steps - do the task</a><br> - v3.3</p>
         <p><a target="_blank" href="/workallocation/pages/wa-app-confirmation?usertype=judiciary&">Active tasks - task complete</a><br>Checked with DS - v3.3</p>
 
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-c?usertype=judiciary&">Active tasks - task complete - return to task tab</a><br>Checked with DS - v3.3</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-c?usertype=judiciary&">Active tasks - task complete - return to task tab</a><br>Checked with DS - v3.4</p>
 
-        <p><a target="_blank" href="/workallocation/pages/wa-mytasks-ao?usertype=judiciary&">Reassign task - manage open </a><br>Checked with DS - v3.3</p>
-        <p><a target="_blank" href="/workallocation/pages/reassign?usertype=judiciary&">Reassign task - Find the judge</a><br>Checked with DS - v3.3 - updated H1s</p>
-        <p><a target="_blank" href="/workallocation/pages/reassign-b?usertype=judiciary&">Reassign task - Check your changes</a><br>Checked with DS - v3.3 - updated H1s</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-mytasks-r?usertype=judiciary&">My task - Reassigned</a><br>Checked with DS - v3.3</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-mytasks-ao?usertype=judiciary&">Reassign task - manage open </a><br>Checked with DS - v3.4</p>
+        <p><a target="_blank" href="/workallocation/pages/reassign?usertype=judiciary&">Reassign task - Find the judge</a><br>Checked with DS - v3.4 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/reassign-b?usertype=judiciary&">Reassign task - Check your changes</a><br>Checked with DS - v3.4 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-mytasks-r?usertype=judiciary&">My task - Reassigned</a><br>Checked with DS - v3.4</p>
 
-        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks?usertype=judiciary&">Available tasks - tab</a><br>Checked with DS - v3.3 </p>
-        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-reset?usertype=judiciary&">Available tasks - tab - Reset sorting</a><br>Checked with DS - v3.3</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-pag?usertype=judiciary&">Available tasks - tab - pagination (Design as prototype)</a><br>Checked with DS - v3.3 </p>
+        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks?usertype=judiciary&">Available tasks - tab</a><br>Checked with DS - v3.4 </p>
+        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-reset?usertype=judiciary&">Available tasks - tab - Reset sorting</a><br>Checked with DS - v3.4</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-pag?usertype=judiciary&">Available tasks - tab - pagination (Design as prototype)</a><br>Checked with DS - v3.4 </p>
         <p><a target="_blank" href="/workallocation/pages/wa-mycases?usertype=judiciary&">My cases - tab</a><br>Checked with DS - v3.3</p>
         <p><a target="_blank" href="/workallocation/pages/wa-myaccess?usertype=judiciary&">My access - tab</a><br>Checked with DS - v3.3</p>
         <div class="govuk-!-padding-bottom-9"></div>
@@ -59,12 +64,12 @@ GOV.UK Prototype Kit
         <h2 class="govuk-heading-l">Available tasks</h2>
         <div class="xui-alert-link__number">3 </div>
         <div class="govuk-!-padding-bottom-6"></div>
-        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks?usertype=judiciary&">Available tasks - tab</a><br>Checked with DS - v3.3</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-o?usertype=judiciary&">Available tasks - Assign task</a><br>Checked with DS - v3.3</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-a?usertype=judiciary&">Available tasks - Assigned to me</a><br>Checked with DS - v3.3</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-mytasks-ao?usertype=judiciary&">My tasks - Unassign</a><br>Checked with DS - v3.3 </p>
-        <p><a target="_blank" href="/workallocation/pages/lms?usertype=judiciary&">Unassign task - Unassign</a><br> - v3.3 </p>
-        <p><a target="_blank" href="/workallocation/pages/wa-mytasks-u?usertype=judiciary&">Unassigned task - Unassign</a><br>Checked with DS - v3.3</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks?usertype=judiciary&">Available tasks - tab</a><br>Checked with DS - v3.4</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-o?usertype=judiciary&">Available tasks - Assign task</a><br>Checked with DS - v3.4</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-a?usertype=judiciary&">Available tasks - Assigned to me</a><br>Checked with DS - v3.4</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-mytasks-ao?usertype=judiciary&">My tasks - Unassign</a><br>Checked with DS - v3.4 </p>
+        <p><a target="_blank" href="/workallocation/pages/lms?usertype=judiciary&">Unassign task - Unassign</a><br>Checked with DS - v3.4 </p>
+        <p><a target="_blank" href="/workallocation/pages/wa-mytasks-u?usertype=judiciary&">Unassigned task - Unassign</a><br>Checked with DS - v3.4</p>
 
 
         <!-- SECTION BREAK -->
@@ -72,13 +77,13 @@ GOV.UK Prototype Kit
         <h2 class="govuk-heading-l">Allocate a specific role from a task</h2>
         <div class="xui-alert-link__number">4a </div>
         <div class="govuk-!-padding-bottom-6"></div>
-        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks?usertype=judiciary&">Available tasks - tab</a><br>Checked with DS - v3.3</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-o?usertype=judiciary&">Available tasks - Go to tasks</a><br>Checked with DS - v3.3</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-all?usertype=judiciary&">Active tasks</a><br>- v3.3</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hj?usertype=judiciary&">Roles and access - Allocate a hearing judge</a><br> - v3.3 - updated H1s</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjha?usertype=judiciary&">Roles and access - Allocate a hearing judge - Find the judge</a><br> - v3.3 - updated H1s</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjdur?usertype=judiciary&">Roles and access - Allocate a hearing judge - Duration of role</a><br> - v3.3 - updated H1s</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjchk?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Check details</a><br> - v3.3 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks?usertype=judiciary&">Available tasks - tab</a><br>Checked with DS - v3.4</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-o?usertype=judiciary&">Available tasks - Go to tasks</a><br>Checked with DS - v3.4</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-all?usertype=judiciary&">Active tasks</a><br>Checked with DS- v3.4</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hj?usertype=judiciary&">Roles and access - Allocate a hearing judge</a><br> - v3.4 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjha?usertype=judiciary&">Roles and access - Allocate a hearing judge - Find the judge</a><br> - v3.4 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjdur?usertype=judiciary&">Roles and access - Allocate a hearing judge - Duration of role</a><br> - v3.4 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjchk?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Check details</a><br> - v3.4 - updated H1s</p>
         <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjc?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - confirmation</a><br> - v3.3</p>
         <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-none?usertype=judiciary&">Roles and access - no active tasks for case</a> - v3.3</p>
 <br>
@@ -86,12 +91,12 @@ GOV.UK Prototype Kit
 <div class="govuk-!-padding-bottom-6"></div>
 
         <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-noj?usertype=judiciary&">Roles and access - Allocate role</a><br> - v3.3</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajn?usertype=judiciary&">Roles and access - Allocate a judicial role</a><br> - v3.3 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajn?usertype=judiciary&">Roles and access - Allocate a judicial role</a><br> - v3.4 - updated H1s</p>
         <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-aj-err-s?usertype=judiciary&">Roles and access - Allocate role - generic error</a><br>NEW - additional generic error page when no selction has been made</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhn?usertype=judiciary&">Roles and access - Allocate a judicial role - choose</a><br> - v3.3 - updated H1s</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhan?usertype=judiciary&">Roles and access - Allocate a judicial role - find</a><br> - v3.3 - updated H1s</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajndur?usertype=judiciary&">Roles and access - Allocate a judicial role - duration</a><br> - v3.3 - updated H1s</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjchkn?usertype=judiciary&">Roles and access - Allocate a judicial role - check details</a><br> - v3.3 - updated H1s </p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhn?usertype=judiciary&">Roles and access - Allocate a judicial role - choose</a><br> - v3.4 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhan?usertype=judiciary&">Roles and access - Allocate a judicial role - find</a><br> - v3.4 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajndur?usertype=judiciary&">Roles and access - Allocate a judicial role - duration</a><br> - v3.4 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjchkn?usertype=judiciary&">Roles and access - Allocate a judicial role - check details</a><br> - v3.4 - updated H1s </p>
         <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-loj?usertype=judiciary&">Roles and access - Allocate a judicial role - complete</a><br> - v3.3</p>
 
                 <div class="govuk-!-padding-bottom-6"></div>
@@ -109,16 +114,16 @@ GOV.UK Prototype Kit
 <hr class="govuk-section-break govuk-section-break--visible">
 <p class="govuk-!-padding-bottom-2"></p>
 
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjp-o?usertype=judiciary&">Roles and access - Rellocate</a><br> - v3.3 - updated H1s</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-real?usertype=judiciary&">Roles and access - Rellocate role</a><br> - v3.3 - updated H1s</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-real-chk?usertype=judiciary&">Roles and access - Rellocate role - check changes</a><br> - v3.3 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjp-o?usertype=judiciary&">Roles and access - Rellocate</a><br> - v3.4 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-real?usertype=judiciary&">Roles and access - Rellocate role</a><br> - v3.4 - updated H1s</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-real-chk?usertype=judiciary&">Roles and access - Rellocate role - check changes</a><br> - v3.4 - updated H1s</p>
         <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arj-re?usertype=judiciary&">Roles and access - Rellocate role - complete</a><br> - v3.3</p>
 
         <hr class="govuk-section-break govuk-section-break--visible">
         <p class="govuk-!-padding-bottom-2"></p>
 
         <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjp-o?usertype=judiciary&">Roles and access - Remove allocation</a><br> - v3.3</p>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjra?usertype=judiciary&">Roles and access - Remove allocation</a><br> - v3.3 - updated H1s & layout</p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjra?usertype=judiciary&">Roles and access - Remove allocation</a><br> - v3.4 - updated H1s & layout</p>
         <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjra-de?usertype=judiciary&">Roles and access - Removed allocation - complete</a><br> - v3.3 </p>
 
         <!-- SECTION BREAK -->
@@ -126,7 +131,7 @@ GOV.UK Prototype Kit
         <h2 class="govuk-heading-l">Role already exists</h2>
         <div class="xui-alert-link__number">5 </div>
         <div class="govuk-!-padding-bottom-6"></div>
-        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-aj-err?usertype=judiciary&">Allocate judicial role - error</a><br>Checked with DS - v3.3 - updated H1s </p>
+        <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-aj-err?usertype=judiciary&">Allocate judicial role - error</a><br>Checked with DS - v3.4 - updated H1s </p>
 
         <!-- SECTION BREAK -->
 
@@ -134,14 +139,14 @@ GOV.UK Prototype Kit
         <div class="xui-alert-link__number">6 </div>
         <div class="govuk-!-padding-bottom-6"></div>
         <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ar-fpj?usertype=judiciary&">Roles and access - Allocate a role (IAC)</a><br>Checked with DS - v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-aj-fpj?usertype=judiciary&">Roles and access - Allocate a judicial role - Choose a role (IAC)</a><br>Checked with DS - v3.3 - updated H1s</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajh-fpj?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Choose how to allocate... (IAC)</a><br>Checked with DS - v3.3 - updated H1s </p>
-  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajha-fpj?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Find the judge (IAC)</a><br>Checked with DS - v3.3  - updated H1s</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpj?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC)</a><br>Checked with DS - v3.3  - updated H1s</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpj-err?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC) - ERROR - 1</a><br>Checked with DS - v3.3  - updated H1s</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpj-err-2?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC) - ERROR - 2</a><br>Checked with DS - v3.3  - updated H1s</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-aj-fpj?usertype=judiciary&">Roles and access - Allocate a judicial role - Choose a role (IAC)</a><br>Checked with DS - v3.4 - updated H1s</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajh-fpj?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Choose how to allocate... (IAC)</a><br>Checked with DS - v3.4 - updated H1s </p>
+  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajha-fpj?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Find the judge (IAC)</a><br>Checked with DS - v3.4  - updated H1s</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpj?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC)</a><br>Checked with DS - v3.4  - updated H1s</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpj-err?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC) - ERROR - 1</a><br>Checked with DS - v3.4  - updated H1s</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpj-err-2?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC) - ERROR - 2</a><br>Checked with DS - v3.4  - updated H1s</p>
 
-  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajchk-fpj?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Check details (IAC)</a><br>Checked with DS - v3.3  - updated H1s</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajchk-fpj?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - Check details (IAC)</a><br>Checked with DS - v3.4  - updated H1s</p>
   <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arj-fpj?usertype=judiciary&">Roles and access - Allocate a judicial role - Hearing judge - confirmation (IAC)</a><br>Checked with DS - v3.3</p>
 
   <!-- SECTION BREAK -->
@@ -150,24 +155,24 @@ GOV.UK Prototype Kit
   <div class="xui-alert-link__number">6a</div>
   <div class="govuk-!-padding-bottom-6"></div>
 <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ar?usertype=judiciary&">Roles and access</a><br>Checked with DS - v3.3</p>
-<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi?usertype=judiciary&">Roles and access - Add an exclusion - Who</a><br>Checked with DS - v3.3  - updated H1s</p>
-<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-2?usertype=judiciary&">Roles and access - Add an exclusion - Role</a><br>Checked with DS - v3.3  - updated H1s</p>
-<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-3?usertype=judiciary&">Roles and access - Add an exclusion - Find person</a><br>Checked with DS - v3.3  - updated H1s</p>
-<!-- <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-4?usertype=judiciary&">Roles and access - Add an exclusion - Add type</a><br>Checked with DS - v3.3  - updated H1s</p> -->
-<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-5?usertype=judiciary&">Roles and access - Add an exclusion - Describe exclusion</a><br>Checked with DS - v3.3  - updated H1s</p>
-<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-6?usertype=judiciary&">Roles and access - Add an exclusion - Check details</a><br>Checked with DS - v3.3  - updated H1s</p>
+<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi?usertype=judiciary&">Roles and access - Add an exclusion - Who</a><br>Checked with DS - v3.4  - updated H1s</p>
+<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-2?usertype=judiciary&">Roles and access - Add an exclusion - Role</a><br>Checked with DS - v3.4  - updated H1s</p>
+<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-3?usertype=judiciary&">Roles and access - Add an exclusion - Find person</a><br>Checked with DS - v3.4  - updated H1s</p>
+<!-- <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-4?usertype=judiciary&">Roles and access - Add an exclusion - Add type</a><br>Checked with DS - v3.4  - updated H1s</p> -->
+<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-5?usertype=judiciary&">Roles and access - Add an exclusion - Describe exclusion</a><br>Checked with DS - v3.4  - updated H1s</p>
+<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-6?usertype=judiciary&">Roles and access - Add an exclusion - Check details</a><br>Checked with DS - v3.4  - updated H1s</p>
 <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arex?usertype=judiciary&">Roles and access - Add an exclusion - Complete</a><br>Checked with DS - v3.3</p>
-<p><a target="_blank" href="/workallocation/pages/wa-mytasks-ex?usertype=jud iciary&">My tasks - Excluded self</a><br>Checked with DS - v3.3</p>
+<p><a target="_blank" href="/workallocation/pages/wa-mytasks-ex?usertype=judiciary&">My tasks - Excluded self</a><br>Checked with DS - v3.4</p>
 <!-- SECTION BREAK -->
 
 <h2 class="govuk-heading-l">Allocate Legal Ops role (Judicial)</h2>
 <div class="xui-alert-link__number">6b </div>
 <div class="govuk-!-padding-bottom-6"></div>
 <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-lo-j?usertype=judiciary&">Roles and access</a><br>Checked with DS - v3.3</p>
-<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alorj?usertype=judiciary&">Choose a role</a><br>Checked with DS - v3.3  - updated H1s</p>
-<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-ftpj?usertype=judiciary&">Find the person</a><br>Checked with DS - v3.3  - updated H1s</p>
-<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-durj?usertype=judiciary&">Duration of role</a><br>Checked with DS - v3.3  - updated H1s</p>
-<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-chkj?usertype=judiciary&">Check your allocation</a><br>Checked with DS - v3.3  - updated H1s</p>
+<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alorj?usertype=judiciary&">Choose a role</a><br>Checked with DS - v3.4  - updated H1s</p>
+<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-ftpj?usertype=judiciary&">Find the person</a><br>Checked with DS - v3.4  - updated H1s</p>
+<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-durj?usertype=judiciary&">Duration of role</a><br>Checked with DS - v3.4  - updated H1s</p>
+<p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-chkj?usertype=judiciary&">Check your allocation</a><br>Checked with DS - v3.4  - updated H1s</p>
 <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-lo?usertype=judiciary&">Role allocated</a><br>Checked with DS - v3.3</p>
 
 <h2 class="govuk-heading-l">Delete an exclusion</h2>
@@ -218,24 +223,24 @@ GOV.UK Prototype Kit
   <h2 class="govuk-heading-m">TASKS - View tasks not yet assigned</h2>
   <div class="xui-alert-link__number">1 </div>
   <div class="govuk-!-padding-bottom-6"></div>
-  <p><a target="_blank" href="/workallocation/pages/wa-allwork?usertype=judiciary&">All work - tab - Tasks All</a><br>Checked with v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-allwork-none?usertype=judiciary&">All work - tab - Tasks none assigned</a><br>Checked with v3.3</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-allwork?usertype=judiciary&">All work - tab - Tasks All</a><br>Updated to email from Sharon W 27 July 2021</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-allwork-none?usertype=judiciary&">All work - tab - Tasks none assigned</a><br> Updated to email from Sharon W 27 July 2021</p>
 
   <h2 class="govuk-heading-m">TASKS - View all tasks assigned to Judge Beech</h2>
   <div class="xui-alert-link__number">2 </div>
   <div class="govuk-!-padding-bottom-6"></div>
-  <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp?usertype=judiciary&">All work - tab - Tasks - Judge Beech</a><br>Checked with v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp-y?usertype=judiciary&">All work - tab - Tasks - Judge Beech - Priority yellow</a><br>Checked with v3.3</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp?usertype=judiciary&">All work - tab - Tasks - Judge Beech</a><br>Updated to email from Sharon W 27 July 2021</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp-y?usertype=judiciary&">All work - tab - Tasks - Judge Beech</a><br>Updated to email from Sharon W 27 July 2021</p>
 
 
   <h2 class="govuk-heading-m">TASKS - Reassign tasks from Judge Beech<br> to Judge Birch</h2>
   <div class="xui-alert-link__number">3 </div>
   <div class="govuk-!-padding-bottom-6"></div>
-  <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp?usertype=judiciary&">All work - tab - Tasks - Judge Beech</a><br>Checked with v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp-o?usertype=judiciary&">All work - tab - Tasks - Judge Beech - open</a><br>Checked with v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/reassign-t?usertype=judiciary&">All work - tab - Tasks - Reassign - add name</a><br>Checked with v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/reassign-tb?usertype=judiciary&">All work - tab - Tasks - Reassign - Check your changes</a><br>Checked with v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp-r?usertype=judiciary&">All work - tab - Tasks - task complete</a><br>Checked with v3.3</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp?usertype=judiciary&">All work - tab - Tasks - Judge Beech</a><br>Updated to email from Sharon W 27 July 2021</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp-o?usertype=judiciary&">All work - tab - Tasks - Judge Beech - open</a><br>Updated to email from Sharon W 27 July 2021</p>
+  <p><a target="_blank" href="/workallocation/pages/reassign-t?usertype=judiciary&">All work - tab - Tasks - Reassign - add name</a><br>Updated to email from Sharon W 27 July 2021</p>
+  <p><a target="_blank" href="/workallocation/pages/reassign-tb?usertype=judiciary&">All work - tab - Tasks - Reassign - Check your changes</a><br>Updated to email from Sharon W 27 July 2021</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp-r?usertype=judiciary&">All work - tab - Tasks - task complete</a><br>Updated to email from Sharon W 27 July 2021</p>
 
 
   <h2 class="govuk-heading-m">CASES - View all cases with judicial allocations</h2>
@@ -257,9 +262,9 @@ GOV.UK Prototype Kit
   <p><a target="_blank" href="/workallocation/pages/wa-allwork-cases?usertype=judiciary&">All work - tab - Cases - all cases </a><br>Checked with v3.3</p>
   <p><a target="_blank" href="/workallocation/pages/wa-allwork-cases-jb?usertype=judiciary&">All work - tab - Cases - Judge Beech</a><br>Checked with v3.3</p>
   <p><a target="_blank" href="/workallocation/pages/wa-allwork-cases-jb-o?usertype=judiciary&">All work - tab - Cases - Judge Beech - open</a><br>Checked with v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-cases-real?usertype=judiciary&">All work - tab - Cases - Reassign </a><br>Checked with v3.3  - updated H1s</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-cases-realdur?usertype=judiciary&">All work - tab - Cases - Reassign - Duration </a><br>Checked with v3.3  - updated H1s</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-cases-chk?usertype=judiciary&">All work - tab - Cases - Reassign - Check your changes</a><br>Checked with v3.3 - updated H1s</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-cases-real?usertype=judiciary&">All work - tab - Cases - Reassign </a><br>Checked with v3.4  - updated H1s</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-cases-realdur?usertype=judiciary&">All work - tab - Cases - Reassign - Duration </a><br>Checked with v3.4  - updated H1s</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-cases-chk?usertype=judiciary&">All work - tab - Cases - Reassign - Check your changes</a><br>Checked with v3.4 - updated H1s</p>
   <p><a target="_blank" href="/workallocation/pages/wa-allwork-cases-jb-r?usertype=judiciary&">All work - tab - Cases - task complete</a><br>Checked with v3.3</p>
   <p><a target="_blank" href="/workallocation/pages/wa-allwork-cases-r?usertype=judiciary&">All work - tab - Cases - all cases </a><br>Checked with v3.3</p>
 
@@ -267,12 +272,12 @@ GOV.UK Prototype Kit
   <h2 class="govuk-heading-m">ALL WORK OTHER FEATURES </h2>
 
   <div class="govuk-!-padding-bottom-6"></div>
-    <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp-o?usertype=judiciary&">Launch page - assigned</a><br>Checked with v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/mark-as-done?usertype=judiciary&">Mark a task as done</a><br>Checked with v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/cancel-task?usertype=judiciary&">Cancel a task</a><br>Checked with v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/unassign-task?usertype=judiciary&">Unassign a task</a><br>Checked with v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/wa-allwork-none-o?usertype=judiciary&">Launch page - unassigned</a><br>Checked with v3.3</p>
-  <p><a target="_blank" href="/workallocation/pages/assign-task?usertype=judiciary&">Assign a task</a><br>Checked with v3.3  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-allwork-sp-o?usertype=judiciary&">Launch page - assigned</a><br>Updated to email from Sharon W 27 July 2021</p>
+  <p><a target="_blank" href="/workallocation/pages/mark-as-done?usertype=judiciary&">Mark a task as done</a><br>Updated to email from Sharon W 27 July 2021</p>
+  <p><a target="_blank" href="/workallocation/pages/cancel-task?usertype=judiciary&">Cancel a task</a><br>Updated to email from Sharon W 27 July 2021</p>
+    <p><a target="_blank" href="/workallocation/pages/unassign-task?usertype=judiciary&">Unassign a task</a><br>Updated to email from Sharon W 27 July 2021</p>
+  <p><a target="_blank" href="/workallocation/pages/wa-allwork-none-o?usertype=judiciary&">Launch page - unassigned</a><br>Updated to email from Sharon W 27 July 2021</p>
+  <p><a target="_blank" href="/workallocation/pages/assign-task?usertype=judiciary&">Assign a task</a><br>Checked with v3.4  - updated H1s</p>
   </div>
 
 
@@ -284,33 +289,33 @@ GOV.UK Prototype Kit
 
 
 
-    <!-- STAFF -->
+    <!-- STAFF - Originally this UI was ment to be identical to Judicial apart from the header section. Late change has now seen reworking of Date into two columns Date created and Priority, Priority column shown for Staff only.-->
 
     <h2 class="govuk-heading-l">My work staff</h2>
     <div class="xui-alert-link__number">1 </div>
     <div class="govuk-!-padding-bottom-6"></div>
     <!-- SECTION BREAK -->
 
-    <p><a target="_blank" href="/workallocation/pages/wa-mytasks?usertype=staff&">My tasks - tab</a><br>Checked with DS - v3.3</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-staff?usertype=staff&">My tasks - tab</a><br>Checked with DS - v3.4 (NEW PAGE)</p>
 
-    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-o?usertype=staff&">My tasks - open - Go to tasks</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018?usertype=staff&">Active tasks</a><br> - v3.3  </p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-a?usertype=staff&">Active tasks - Assign task to me</a><br> - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-app?usertype=staff&">Active tasks - Next steps - do the task</a><br> - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-app-confirmation?usertype=staff&">Active tasks - task complete</a><br>Checked with DS - v3.3</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-o-staff?usertype=staff&">My tasks - open - Go to tasks</a><br>Checked with DS - v3.4 (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-staff?usertype=staff&">Active tasks</a><br> - v3.4 (NEW PAGE)  </p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-a-staff?usertype=staff&">Active tasks - Assign task to me</a><br> - v3.4 (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-app-staff?usertype=staff&">Active tasks - Next steps - do the task</a><br> - v3.4 (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-app-confirmation-staff?usertype=staff&">Active tasks - task complete</a><br>Checked with DS - v3.4 (NEW PAGE)</p>
 
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-c?usertype=staff&">Active tasks - task complete - return to task tab</a><br>Checked with DS - v3.3</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00321-2018-c-staff?usertype=staff&">Active tasks - task complete - return to task tab</a><br>Checked with DS - v3.4 (NEW PAGE)</p>
 
-    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-ao?usertype=staff&">Reassign task - manage open </a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/reassign?usertype=staff&">Reassign task - Find the judge</a><br>Checked with DS - v3.3 - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/reassign-b?usertype=staff&">Reassign task - Check your changes</a><br>Checked with DS - v3.3 - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-r?usertype=staff&">My task - Reassigned</a><br>Checked with DS - v3.3</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-ao-staff?usertype=staff&">Reassign task - manage open </a><br>Checked with DS - v3.4 (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/reassign-staff?usertype=staff&">Reassign task - Find the judge</a><br>Checked with DS - v3.4 - updated H1s (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/reassign-b-staff?usertype=staff&">Reassign task - Check your changes</a><br>Checked with DS - v3.4 - updated H1s (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-r-staff?usertype=staff&">My task - Reassigned</a><br>Checked with DS - v3.4 (NEW PAGE) </p>
 
-    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks?usertype=staff&">Available tasks - tab</a><br>Checked with DS - v3.3 </p>
-    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-reset?usertype=staff&">Available tasks - tab - Reset sorting</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-pag?usertype=staff&">Available tasks - tab - pagination (Design as prototype)</a><br>Checked with DS - v3.3 </p>
-    <p><a target="_blank" href="/workallocation/pages/wa-mycases?usertype=staff&">My cases - tab</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-myaccess?usertype=staff&">My access - tab</a><br>Checked with DS - v3.3</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-staff?usertype=staff&">Available tasks - tab</a><br>Checked with DS - v3.4 - updated H1s (NEW PAGE) </p>
+    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-reset-staff?usertype=staff&">Available tasks - tab - Reset sorting</a><br>Checked with DS - v3.4 - updated H1s (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-pag-staff?usertype=staff&">Available tasks - tab - pagination (Design as prototype)</a><br>Checked with DS - v3.4 - updated H1s (NEW PAGE) </p>
+    <p><a target="_blank" href="/workallocation/pages/wa-mycases-staff?usertype=staff&">My cases - tab</a><br>Checked with DS - v3.3 (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-myaccess-staff?usertype=staff&">My access - tab</a><br>Checked with DS - v3.3 (NEW PAGE)</p>
     <div class="govuk-!-padding-bottom-9"></div>
     <!-- SECTION BREAK -->
 
@@ -326,12 +331,12 @@ GOV.UK Prototype Kit
     <h2 class="govuk-heading-l">Available tasks</h2>
     <div class="xui-alert-link__number">3 </div>
     <div class="govuk-!-padding-bottom-6"></div>
-    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks?usertype=staff&">Available tasks - tab</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-o?usertype=staff&">Available tasks - Assign task</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-a?usertype=staff&">Available tasks - Assigned to me</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-ao?usertype=staff&">My tasks - Unassign</a><br>Checked with DS - v3.3 </p>
-    <p><a target="_blank" href="/workallocation/pages/lms?usertype=staff&">Unassign task - Unassign</a><br> - v3.3 </p>
-    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-u?usertype=staff&">Unassigned task - Unassign</a><br>Checked with DS - v3.3</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-staff?usertype=staff&">Available tasks - tab</a><br>Checked with DS - v3.4 (NEW PAGE) </p>
+    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-o-staff?usertype=staff&">Available tasks - Assign task</a><br>Checked with DS - v3.4 (NEW PAGE) </p>
+    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-a-staff?usertype=staff&">Available tasks - Assigned to me</a><br>Checked with DS - v3.4 (NEW PAGE) </p>
+    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-ao-staff?usertype=staff&">My tasks - Unassign</a><br>Checked with DS - v3.4 (NEW PAGE) </p>
+    <p><a target="_blank" href="/workallocation/pages/lms-staff?usertype=staff&">Unassign task - Unassign</a><br>Checked with DS - v3.4 (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-u-staff?usertype=staff&">Unassigned task - Unassign</a><br>Checked with DS - v3.4 (NEW PAGE)</p>
 
 
     <!-- SECTION BREAK -->
@@ -339,14 +344,14 @@ GOV.UK Prototype Kit
     <h2 class="govuk-heading-l">Allocate a specific role from a task</h2>
     <div class="xui-alert-link__number">4a </div>
     <div class="govuk-!-padding-bottom-6"></div>
-    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks?usertype=staff&">Available tasks - tab</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-o?usertype=staff&">Available tasks - Go to tasks</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-all?usertype=staff&">Active tasks</a><br>- v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hj?usertype=staff&">Roles and access - Allocate a hearing judge</a><br> - v3.3 - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjha?usertype=staff&">Roles and access - Allocate a hearing judge - Find the judge</a><br> - v3.3 - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjdur?usertype=staff&">Roles and access - Allocate a hearing judge - Duration of role</a><br> - v3.3 - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjchk?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Check details</a><br> - v3.3 - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjc?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - confirmation</a><br> - v3.3</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-staff?usertype=staff&">Available tasks - tab</a><br>Checked with DS - v3.4 (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-available-tasks-o-staff?usertype=staff&">Available tasks - Go to tasks</a><br>Checked with DS - v3.4 (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-all-staff?usertype=staff&">Active tasks</a><br>Checked with DS - v3.4 (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hj-staff?usertype=staff&">Roles and access - Allocate a hearing judge</a><br> - v3.4 - updated H1s (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjha-staff?usertype=staff&">Roles and access - Allocate a hearing judge - Find the judge</a><br> - v3.4 - updated H1s (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjdur-staff?usertype=staff&">Roles and access - Allocate a hearing judge - Duration of role</a><br> - v3.4 - updated H1s (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjchk-staff?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Check details</a><br> - v3.4 - updated H1s (NEW PAGE)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjc-staff?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - confirmation</a><br> - v3.3 (NEW PAGE)</p>
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-none?usertype=staff&">Roles and access - no active tasks for case</a> - v3.3</p>
     <br>
     <div><span class="xui-alert-link__number">4b </span><span class="govuk-body" style="margin-left: 10px;">Staff version - (legal ops user is allocating a judicial role)</span></div>
@@ -365,10 +370,10 @@ GOV.UK Prototype Kit
     <div class="govuk-!-padding-bottom-6"></div>
 -->
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-nojlo?usertype=staff&">Roles and access - Allocate role</a><br> - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajnlo?usertype=staff&">Roles and access - Allocate a judicial role</a><br> - v3.3 - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhanlo?usertype=staff&">Roles and access - Allocate a judicial role - find</a><br> - v3.3 - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajndurlo?usertype=staff&">Roles and access - Allocate a judicial role - duration</a><br> - v3.3 - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjchknlo?usertype=staff&">Roles and access - Allocate a judicial role - check details</a><br> - v3.3 - updated H1s </p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajnlo?usertype=staff&">Roles and access - Allocate a judicial role</a><br> - v3.4 - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhanlo?usertype=staff&">Roles and access - Allocate a judicial role - find</a><br> - v3.4 - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajndurlo?usertype=staff&">Roles and access - Allocate a judicial role - duration</a><br> - v3.4 - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-hjchknlo?usertype=staff&">Roles and access - Allocate a judicial role - check details</a><br> - v3.4 - updated H1s </p>
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-loj?usertype=staff&">Roles and access - Allocate a judicial role - complete</a><br> - v3.3</p>
   <div class="govuk-!-padding-bottom-6"></div>
     <div class="govuk-!-padding-bottom-6"></div>
@@ -379,16 +384,16 @@ GOV.UK Prototype Kit
     <hr class="govuk-section-break govuk-section-break--visible">
     <p class="govuk-!-padding-bottom-2"></p>
 
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjp-o?usertype=staff&">Roles and access - Rellocate</a><br> - v3.3 - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-real?usertype=staff&">Roles and access - Rellocate role</a><br> - v3.3 - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-real-chk?usertype=staff&">Roles and access - Rellocate role - check changes</a><br> - v3.3 - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjp-o?usertype=staff&">Roles and access - Rellocate</a><br> - v3.4 - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-real?usertype=staff&">Roles and access - Rellocate role</a><br> - v3.4 - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-real-chk?usertype=staff&">Roles and access - Rellocate role - check changes</a><br> - v3.4 - updated H1s</p>
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arj-re?usertype=staff&">Roles and access - Rellocate role - complete</a><br> - v3.3</p>
 
     <hr class="govuk-section-break govuk-section-break--visible">
     <p class="govuk-!-padding-bottom-2"></p>
 
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjp-o?usertype=staff&">Roles and access - Remove allocation</a><br> - v3.3 </p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjra?usertype=staff&">Roles and access - Remove allocation</a><br> - v3.3 - updated H1s & layout</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjra?usertype=staff&">Roles and access - Remove allocation</a><br> - v3.4 - updated H1s & layout</p>
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arjra-de?usertype=staff&">Roles and access - Removed allocation - complete</a><br> - v3.3 </p>
 
     <!-- SECTION BREAK -->
@@ -396,7 +401,7 @@ GOV.UK Prototype Kit
     <h2 class="govuk-heading-l">Role already exists</h2>
     <div class="xui-alert-link__number">5 </div>
     <div class="govuk-!-padding-bottom-6"></div>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-aj-err?usertype=staff&">Allocate judicial role - error</a><br>Checked with DS - v3.3 - updated H1s </p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-aj-err?usertype=staff&">Allocate judicial role - error</a><br>Checked with DS - v3.4 - updated H1s </p>
 
     <!-- SECTION BREAK -->
 
@@ -404,14 +409,14 @@ GOV.UK Prototype Kit
     <div class="xui-alert-link__number">6 </div>
     <div class="govuk-!-padding-bottom-6"></div>
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ar-fpjl?usertype=staff&">Roles and access - Allocate a role (IAC)</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-aj-fpjl?usertype=staff&">Roles and access - Allocate a judicial role - Choose a role (IAC)</a><br>Checked with DS - v3.3  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-aj-fpjl?usertype=staff&">Roles and access - Allocate a judicial role - Choose a role (IAC)</a><br>Checked with DS - v3.4  - updated H1s</p>
   <!--  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajh-fpjl?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Choose how to allocate... (IAC)</a><br>Checked with DS - v3.3 </p>
-  -->  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajha-fpjl?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Find the judge (IAC)</a><br>Checked with DS - v3.3  - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpjl?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC)</a><br>Checked with DS - v3.3  - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpj-err?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC) - ERROR - 1</a><br>Checked with DS - v3.3  - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpj-err-2?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC) - ERROR - 2</a><br>Checked with DS - v3.3  - updated H1s</p>
+  -->  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajha-fpjl?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Find the judge (IAC)</a><br>Checked with DS - v3.4  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpjl?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC)</a><br>Checked with DS - v3.4  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpj-err?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC) - ERROR - 1</a><br>Checked with DS - v3.4  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajhadur-fpj-err-2?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Duration of role (IAC) - ERROR - 2</a><br>Checked with DS - v3.4  - updated H1s</p>
 
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajchk-fpjl?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Check details (IAC)</a><br>Checked with DS - v3.3  - updated H1s (DOUBLE CHECK)</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ajchk-fpjl?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - Check details (IAC)</a><br>Checked with DS - v3.4  - updated H1s (DOUBLE CHECK)</p>
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arj-fpj?usertype=staff&">Roles and access - Allocate a judicial role - Hearing judge - confirmation (IAC)</a><br>Checked with DS - v3.3</p>
     <p class="govuk-!-padding-bottom-6"></p>
     <p class="govuk-!-padding-bottom-4"></p>
@@ -421,14 +426,14 @@ GOV.UK Prototype Kit
     <div class="xui-alert-link__number">6a </div>
     <div class="govuk-!-padding-bottom-6"></div>
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-ar?usertype=staff&">Roles and access</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi?usertype=staff&">Roles and access - Add an exclusion - Who</a><br>Checked with DS - v3.3  - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-2?usertype=staff&">Roles and access - Add an exclusion - Role</a><br>Checked with DS - v3.3  - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-3?usertype=staff&">Roles and access - Add an exclusion - Find person</a><br>Checked with DS - v3.3  - updated H1s</p>
-  <!--  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-4?usertype=staff&">Roles and access - Add an exclusion - Add type</a><br>Checked with DS - v3.3  - updated H1s</p> -->
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-5?usertype=staff&">Roles and access - Add an exclusion - Describe exclusion</a><br>Checked with DS - v3.3  - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-6?usertype=staff&">Roles and access - Add an exclusion - Check details</a><br>Checked with DS - v3.3  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi?usertype=staff&">Roles and access - Add an exclusion - Who</a><br>Checked with DS - v3.4  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-2?usertype=staff&">Roles and access - Add an exclusion - Role</a><br>Checked with DS - v3.4  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-3?usertype=staff&">Roles and access - Add an exclusion - Find person</a><br>Checked with DS - v3.4  - updated H1s</p>
+  <!--  <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-4?usertype=staff&">Roles and access - Add an exclusion - Add type</a><br>Checked with DS - v3.4  - updated H1s</p> -->
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-5?usertype=staff&">Roles and access - Add an exclusion - Describe exclusion</a><br>Checked with DS - v3.4  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-coi-6?usertype=staff&">Roles and access - Add an exclusion - Check details</a><br>Checked with DS - v3.4  - updated H1s</p>
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-arex?usertype=staff&">Roles and access - Add an exclusion - Complete</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-ex?usertype=jud iciary&">My tasks - Excluded self</a><br>Checked with DS - v3.3</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-mytasks-ex-staff?usertype=staff&">My tasks - Excluded self</a><br>Checked with DS - v3.4 (NEW PAGE)</p>
 
     <!-- SECTION BREAK -->
 
@@ -436,14 +441,14 @@ GOV.UK Prototype Kit
     <div class="xui-alert-link__number">6b </div>
     <div class="govuk-!-padding-bottom-6"></div>
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-lo?usertype=staff&">Roles and access</a><br>Checked with DS - v3.3</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor?usertype=staff&">Choose a role</a><br>Checked with DS - v3.3  - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-who?usertype=staff&">Allocate the role</a><br>Checked with DS - v3.3  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor?usertype=staff&">Choose a role</a><br>Checked with DS - v3.4  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-who?usertype=staff&">Allocate the role</a><br>Checked with DS - v3.4  - updated H1s</p>
 
 
 
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-ftp?usertype=staff&">Find the person</a><br>Checked with DS - v3.3  - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-dur?usertype=staff&">Duration of role</a><br>Checked with DS - v3.3  - updated H1s</p>
-    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-chk?usertype=staff&">Check your allocation</a><br>Checked with DS - v3.3  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-ftp?usertype=staff&">Find the person</a><br>Checked with DS - v3.4  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-dur?usertype=staff&">Duration of role</a><br>Checked with DS - v3.4  - updated H1s</p>
+    <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-chk?usertype=staff&">Check your allocation</a><br>Checked with DS - v3.4  - updated H1s</p>
     <p><a target="_blank" href="/workallocation/pages/wa-PA-00467-2017-alor-lo?usertype=staff&">Role allocated</a><br>Checked with DS - v3.3</p>
 
     <h2 class="govuk-heading-l">Delete an exclusion</h2>
@@ -555,10 +560,9 @@ GOV.UK Prototype Kit
     </div>
 
 
-
-
-
     </div>
+      
   </div>
+
 </div>
 {% endblock %}

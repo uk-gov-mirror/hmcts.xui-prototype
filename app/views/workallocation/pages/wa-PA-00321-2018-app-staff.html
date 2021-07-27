@@ -36,7 +36,7 @@ Case details
     </h2>
     <ul class="govuk-tabs__list">
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="wa-PA-00321-2018-c">
+        <a class="govuk-tabs__tab" href="#">
           Tasks
         </a>
       </li>
@@ -90,56 +90,10 @@ Case details
       <div>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Application</h2>
+            <p class="govuk-body govuk-!-margin-bottom-9"></p>
 
-            <h2 class="govuk-heading-m">Active tasks</h2>
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <p class="govuk-body"><strong>Generate decision and reasons</strong> </p>
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
-              <!--        <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                          <span style="padding-left:25px">Priority</span>
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          {{govukTag({
-                          text: "MEDIUM",
-                          classes: "govuk-tag--yellow"
-                        })}}
-                        </dd>
-                      </div> -->
-                  <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                          <span style="padding-left:25px">Task created</span>
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}
-                        </dd>
-                      </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  <span style="padding-left:25px">Assigned to</span>
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Judge Beech
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                <span style="padding-left:25px">Manage</span>
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  <span style="padding-left:25px">Next steps</span>
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <a href="#">Generate decision and reasons</a>
-                </dd>
-              </div>
-            </dl>
-
+            <p class="govuk-body"><a href="/workallocation/pages/wa-app-confirmation-staff"><strong>Click here to simulate doing the task ...</strong></a></p>
     </div>
     <div class="govuk-grid-column-one-third">
     </div>

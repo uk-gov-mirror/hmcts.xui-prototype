@@ -87,11 +87,31 @@ Case details
 
             <h2 class="govuk-heading-m">Active tasks</h2>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <p class="govuk-body"><strong>Generate decision and reasons</strong> <span class="hmcts-badge_right">{{govukTag({
-            text: now | date( 'subtract', 5, 'days' ) | date,
-            classes: "govuk-tag--red"
-          })}}</span></p>
+            <p class="govuk-body"><strong>Review respondent evidence</strong></p>
             <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <!--        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          <span style="padding-left:25px">Priority</span>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{govukTag({
+                          text: "MEDIUM",
+                          classes: "govuk-tag--yellow"
+                        })}}
+                        </dd>
+                      </div> -->
+                  <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          <span style="padding-left:25px">Task created</span>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ now |  date("subtract", 5, "day") | date( "D MMMM YYYY" ) }}
+                        </dd>
+                      </div>
+
+
+
+
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   <span style="padding-left:25px">Assigned to</span>

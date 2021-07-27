@@ -7,7 +7,6 @@
 Case details
 {% endblock %}
 {% block content %}
-
 <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
   <div class="" style="display: flex; justify-content: space-between; ">
     <div>
@@ -36,17 +35,17 @@ Case details
     </h2>
     <ul class="govuk-tabs__list">
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="wa-PA-00321-2018-c">
+        <a class="govuk-tabs__tab" href="wa-PA-00321-2018-staff">
           Tasks
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#">
+        <a class="govuk-tabs__tab" href="wa-hr-ra">
           Roles and access
         </a>
       </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="wa-hr">
           Overview
         </a>
       </li>
@@ -80,40 +79,42 @@ Case details
           Case notes
         </a>
       </li>
-      <!--    <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#past-week">
-          Hearing
-        </a>
-      </li> -->
     </ul>
     <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
       <div>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-
+            <h2 class="govuk-heading-m  govuk-!-margin-bottom-2">Task alert</h2>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <span class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                There is an application task which might impact other active tasks.
+              </span>
+            </div>
             <h2 class="govuk-heading-m">Active tasks</h2>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <p class="govuk-body"><strong>Generate decision and reasons</strong> </p>
+            <p class="govuk-body"><strong>Generate decision and reasons</strong> <span class="hmcts-badge_right"></span></p>
             <dl class="govuk-summary-list govuk-summary-list--no-border">
-              <!--        <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                          <span style="padding-left:25px">Priority</span>
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          {{govukTag({
-                          text: "MEDIUM",
-                          classes: "govuk-tag--yellow"
-                        })}}
-                        </dd>
-                      </div> -->
-                  <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                          <span style="padding-left:25px">Task created</span>
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}
-                        </dd>
-                      </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Priority</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{govukTag({
+                  text: "MEDIUM",
+                  classes: "govuk-tag--yellow"
+                })}}
+                </dd>
+              </div>
+          <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Task created</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}
+                </dd>
+              </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   <span style="padding-left:25px">Assigned to</span>
@@ -124,7 +125,7 @@ Case details
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                <span style="padding-left:25px">Manage</span>
+                    <span style="padding-left:25px">Manage</span>
                 </dt>
                 <dd class="govuk-summary-list__value">
                   <a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a>
@@ -139,10 +140,40 @@ Case details
                 </dd>
               </div>
             </dl>
-
-    </div>
-    <div class="govuk-grid-column-one-third">
-    </div>
-  </div>
-</div>
-{% endblock %}
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <p class="govuk-body"><strong>Review application decision</strong> </p>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+           <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Priority</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{govukTag({
+                  text: "high",
+                  classes: "govuk-tag--red"
+                })}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Task created</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ now |  date("subtract", 5, "day") | date( "D MMMM YYYY" ) }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Manage</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="/workallocation/pages/wa-PA-00321-2018-a-staff" class="right">Assign task to me</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="govuk-grid-column-one-third">
+          </div>
+        </div>
+      </div>
+      {% endblock %}

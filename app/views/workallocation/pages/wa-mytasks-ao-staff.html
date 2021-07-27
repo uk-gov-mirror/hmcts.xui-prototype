@@ -1,0 +1,123 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+My work
+{% endblock %}
+{% block content %}
+<div class="hmcts-page-heading">
+  <div class="hmcts-page-heading__title">
+    <h1 class="govuk-heading-xl">My work</h1>
+  </div>
+</div>
+<p>Access tasks and cases.</p>
+{{ govukButton({
+  text: "Show work filter",
+  classes: "govuk-button--secondary"
+}) }}
+<div class="hmcts-scrollable-pane">
+  <div class="hmcts-scrollable-pane__wrapper">
+    <nav class="hmcts-sub-navigation">
+      <ul class="hmcts-sub-navigation__list">
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" aria-current="page" href="wa-mytasks-a-staff">
+            My tasks
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="#">
+            Available tasks
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="#">
+            My cases
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="#">
+            My access
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <p class="govuk-body">Displaying <strong>3</strong> of <strong>3</strong> tasks</p>
+    <table class="govuk-table ">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case name</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Location</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 25px;" aria-sort="none"></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task created</button></th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Priority</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: 100px;" aria-sort="none"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff"><a href="wa-lms">Lacey-May Sanders</a></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff">Protection</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff">Taylor House</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff"></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff">Review respondent evidence</td>
+          <td class="govuk-table__cell" style="border-bottom: 1px solid #fff"><!--{{govukTag({
+          text: now | date( 'subtract', 2, 'days' ) | date,
+          classes: "govuk-tag--red"
+        })}} --> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}  </td>
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff">    {{govukTag({
+            text: "low",
+            classes: "govuk-tag--grey"
+          })}}</td>
+
+          <td class="govuk-table__cell" style="border-bottom: 1px solid #fff">&nbsp;&nbsp;&nbsp;<a href="/workallocation/pages/wa-mytasks-a-staff" class="right_m">Manage</a><span class="govuk-accordion-wa__iconc"></span></td>
+        </tr>  <tr class="govuk-table__row">
+
+            <td colspan="8" class="right"> <a href="reassign-staff" class="right">Reassign</a> <a href="lms-staff" class="right">Unassign</a> <a href="wa-lms-t-staff" class="right_tl">Go to tasks</a></td>
+          </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="wa-pj">Patti Jo</a></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review respondent evidence</a></td>
+          <td class="govuk-table__cell"> <!--{{govukTag({
+          text: now | date( 'subtract', 5, 'days' ) | date,
+          classes: "govuk-tag--red"
+        })}} -->{{ now |  date("subtract", 5, "day") | date( "D MMMM YYYY" ) }}</td>
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" >    {{govukTag({
+            text: "high",
+            classes: "govuk-tag--red"
+          })}}</td>
+          <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="wa-hr">Hudson Remi</a></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">HR</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" path
+              style="fill: black">
+              <title>This case has more than one task. Review needed.</title>
+              <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                                C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+            </svg></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Generate decision and reasons</a></td>
+          <td class="govuk-table__cell"><!-- {{govukTag({
+          text: now | date( 'add', 0, 'days' ) | date,
+          classes: "govuk-tag--yellow"
+        })}} --> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }} </td>
+        <td class="govuk-table__cell">    {{govukTag({
+            text: "medium",
+            classes: "govuk-tag--yellow"
+          })}}</td>
+          <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}

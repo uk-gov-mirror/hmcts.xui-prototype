@@ -94,11 +94,27 @@ Case details
             </div>
             <h2 class="govuk-heading-m">Active tasks</h2>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <p class="govuk-body"><strong>Generate decision and reasons</strong> <span class="hmcts-badge_right">{{govukTag({
-            text: now | date( 'add', 0, 'days' ) | date,
-            classes: "govuk-tag--yellow"
-          })}}</span></p>
+            <p class="govuk-body"><strong>Generate decision and reasons</strong> <span class="hmcts-badge_right"></span></p>
             <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <!--        <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Priority</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{govukTag({
+                  text: "MEDIUM",
+                  classes: "govuk-tag--yellow"
+                })}}
+                </dd>
+              </div> -->
+          <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Task created</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}
+                </dd>
+              </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   <span style="padding-left:25px">Assigned to</span>
@@ -125,11 +141,27 @@ Case details
               </div>
             </dl>
               <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <p class="govuk-body"><strong>Review application decision</strong> <span class="hmcts-badge_right">{{govukTag({
-            text: now | date( 'add', 5, 'days' ) | date,
-            classes: "govuk-tag--grey"
-          })}}</span></p>
+            <p class="govuk-body"><strong>Review application decision</strong> </p>
             <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <!--      <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Priority</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{govukTag({
+                  text: "LOW",
+                  classes: "govuk-tag--grey"
+                })}}
+                </dd>
+              </div> -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Task created</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ now |  date("subtract", 5, "day") | date( "D MMMM YYYY" ) }}
+                </dd>
+              </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   <span style="padding-left:25px">Manage</span>

@@ -7,11 +7,10 @@
 Case details
 {% endblock %}
 {% block content %}
-
 <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
   <div class="" style="display: flex; justify-content: space-between; ">
     <div>
-      <h1 class="govuk-heading-xl">PA/00321/2018</h1>
+      <h1 class="govuk-heading-xl">PA/01236/2019</h1>
     </div>
     <div style="display: flex; align-items:right">
       <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
@@ -36,17 +35,17 @@ Case details
     </h2>
     <ul class="govuk-tabs__list">
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="wa-PA-00321-2018-c">
+        <a class="govuk-tabs__tab" href="wa-pj-t-staff">
           Tasks
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#">
+        <a class="govuk-tabs__tab" href="wa-pj-ra">
           Roles and access
         </a>
       </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="wa-pj">
           Overview
         </a>
       </li>
@@ -80,11 +79,6 @@ Case details
           Case notes
         </a>
       </li>
-      <!--    <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#past-week">
-          Hearing
-        </a>
-      </li> -->
     </ul>
     <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
       <div>
@@ -93,27 +87,31 @@ Case details
 
             <h2 class="govuk-heading-m">Active tasks</h2>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <p class="govuk-body"><strong>Generate decision and reasons</strong> </p>
+            <p class="govuk-body"><strong>Review respondent evidence</strong></p>
             <dl class="govuk-summary-list govuk-summary-list--no-border">
-              <!--        <div class="govuk-summary-list__row">
+                  <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                           <span style="padding-left:25px">Priority</span>
                         </dt>
                         <dd class="govuk-summary-list__value">
                           {{govukTag({
-                          text: "MEDIUM",
-                          classes: "govuk-tag--yellow"
+                          text: "high",
+                          classes: "govuk-tag--red"
                         })}}
                         </dd>
-                      </div> -->
+                      </div>
                   <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                           <span style="padding-left:25px">Task created</span>
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}
+                          {{ now |  date("subtract", 5, "day") | date( "D MMMM YYYY" ) }}
                         </dd>
                       </div>
+
+
+
+
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   <span style="padding-left:25px">Assigned to</span>
@@ -124,7 +122,7 @@ Case details
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                <span style="padding-left:25px">Manage</span>
+                    <span style="padding-left:25px">Manage</span>
                 </dt>
                 <dd class="govuk-summary-list__value">
                   <a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a>
@@ -135,14 +133,14 @@ Case details
                   <span style="padding-left:25px">Next steps</span>
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  <a href="#">Generate decision and reasons</a>
+                  <a href="#">Review respondent evidence</a>
                 </dd>
               </div>
             </dl>
 
-    </div>
-    <div class="govuk-grid-column-one-third">
-    </div>
-  </div>
-</div>
-{% endblock %}
+          </div>
+          <div class="govuk-grid-column-one-third">
+          </div>
+        </div>
+      </div>
+      {% endblock %}
