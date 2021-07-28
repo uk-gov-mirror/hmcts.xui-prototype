@@ -92,11 +92,16 @@ Case details
             <h2 class="govuk-heading-m">Active tasks</h2>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
             <p class="govuk-body"><strong>
-Review specific access request</strong> <span class="hmcts-badge_right">{{govukTag({
-        text: "dd/mm/yyyy",
-        classes: "govuk-tag--grey"
-        })}}</span></p>
+Review specific access request</strong> </p>
             <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <span style="padding-left:25px">Task created</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                {{ now |  date("add", 0, "day") | date( "D MMMM YYYY" ) }}
+                </dd>
+              </div>
           <!--    <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Request from
@@ -131,11 +136,16 @@ Review specific access request</strong> <span class="hmcts-badge_right">{{govukT
               </div>
             </dl>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <p class="govuk-body"><strong>Review application decision</strong> <span class="hmcts-badge_right">{{govukTag({
-        text: "dd/mm/yyyy",
-        classes: "govuk-tag--grey"
-        })}}</span></p>
+            <p class="govuk-body"><strong>Review application decision</strong> </p>
             <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <span style="padding-left:25px">Task created</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ now |  date("subtract", 2, "day") | date( "D MMMM YYYY" ) }}
+                </dd>
+              </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   <span style="padding-left:25px">Assigned to</span>
