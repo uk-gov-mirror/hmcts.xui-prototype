@@ -1,0 +1,66 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="wa-PA-00467-2017-coi-3" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+{% set textHtml %}
+{{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail"
+}) }}
+{% endset -%}
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Add an exclusion</span>
+    Choose an exclusion type
+</h1>
+
+    <div class="govuk-form-group">
+
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+
+  items: [
+  {
+    value: "coi",
+    text: "Conflict of interest"
+  },
+  {
+    value: "other",
+    text: "Other"
+  }
+  ]
+}) }}
+<div class="govuk-button-group">
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-right-3",
+  href: "/workallocation/pages/wa-PA-00467-2017-coi-5"
+}) }}
+<!--
+{{ govukButton({
+  text: "Cancel and unassign task",
+  href: "/caseaccess/pages/PA-00467-2017-t",
+  classes: "govuk-button--secondary"
+}) }}
+-->
+  <p><a class="govuk-body" href="wa-PA-00467-2017-ar">Cancel</a></p>
+</div>
+
+</div>
+</div>
+{% endblock %}

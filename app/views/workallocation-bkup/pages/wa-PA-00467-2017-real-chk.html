@@ -1,0 +1,70 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Reallocate role </span>
+    Check your changes
+</h1>
+
+
+<div class="govuk-form-group">
+
+  <div id="event-name-hint" class="govuk-hint">
+    This will reallocate the role to the person below. You may need reassign associated tasks too.
+  </div>
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-!-width-three-quarters">
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key" style="width: 350px;">
+        Person
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">Judge Goodwin</p>
+        <p class="govuk-body">judge.goodwin@example.com</p>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="wa-PA-00467-2017-hjha">
+          Change<span class="govuk-visually-hidden"> contact details</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Duration of role
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">Indefinite</p>
+
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="wa-PA-00467-2017-hjdur">
+          Change<span class="govuk-visually-hidden"> contact details</span>
+        </a>
+      </dd>
+    </div>
+
+  </dl>
+</div>
+
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Confirm allocation",
+    href: "wa-PA-00467-2017-arj-re",
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-PA-00467-2017-arj-o">Cancel</a></p>
+</div>
+</form>
+
+{% endblock %}

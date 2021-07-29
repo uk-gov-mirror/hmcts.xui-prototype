@@ -52,7 +52,8 @@ My work
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Location</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 25px;" aria-sort="none"></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
-          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task created</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Due date</button></th>
+            <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Priority</button></th>
           <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: 100px;" aria-sort="none"></th>
         </tr>
       </thead>
@@ -68,7 +69,10 @@ My work
           text: now | date( 'subtract', 2, 'days' ) | date,
           classes: "govuk-tag--red"
         })}} --> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }} </td>
-          <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff">    {{govukTag({
+            text: "low",
+            classes: "govuk-tag--grey"
+          })}}</td>
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="/workallocation/pages/wa-available-tasks-o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
         <tr class="govuk-table__row">
@@ -82,7 +86,10 @@ My work
           text: now | date( 'add', 0, 'days' ) | date,
           classes: "govuk-tag--yellow"
         })}} --> {{ now |  date("add", 0, "day") | date( "D MMMM YYYY" ) }} </td>
-          <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
+        <td class="govuk-table__cell govuk-body govuk-!-font-size-19" >    {{govukTag({
+            text: "high",
+            classes: "govuk-tag--red"
+          })}}</td>
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
         <tr class="govuk-table__row">
@@ -101,7 +108,10 @@ My work
           text: now | date( 'add', 0, 'days' ) | date,
           classes: "govuk-tag--yellow"
         })}} --> {{ now |  date("add", 0, "day") | date( "D MMMM YYYY" ) }} </td>
-          <!--  <td class="govuk-table__cell">N/A</td> -->
+        <td class="govuk-table__cell">    {{govukTag({
+            text: "medium",
+            classes: "govuk-tag--yellow"
+          })}}</td>
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
         <tr class="govuk-table__row">
@@ -115,7 +125,10 @@ My work
           text: now | date( 'add', 6, 'days' ) | date,
           classes: "govuk-tag--grey"
         })}} -->{{ now |  date("subtract", 6, "day") | date( "D MMMM YYYY" ) }} </td>
-          <!--  <td class="govuk-table__cell">N/A</td> -->
+        <td class="govuk-table__cell">    {{govukTag({
+            text: "medium",
+            classes: "govuk-tag--yellow"
+          })}}</td>
           <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
         </tr>
 

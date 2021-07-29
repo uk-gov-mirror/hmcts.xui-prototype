@@ -1,0 +1,120 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="wa-PA-00467-2017-real" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Reallocate role </span>
+    Duration of role
+</h1>
+
+<div class="govuk-form-group">
+
+  {% set setDuration %}
+  {{ govukDateInput({
+    id: "passport-issued",
+    namePrefix: "passport-issued",
+    fieldset: {
+      legend: {
+        text: "Access starts",
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: "For example, 12 11 2007"
+    }
+  }) }}
+  {{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+  legend: {
+  text: "Access ends",
+  classes: "govuk-fieldset__legend--m"
+  }
+  },
+  hint: {
+  text: "For example, 12 11 2007"
+  }
+  }) }}
+  {% endset -%}
+  {% set textHtml %}
+  {{ govukInput({
+    id: "contact-by-text",
+    name: "contact-by-text",
+    type: "tel",
+    classes: "govuk-!-width-one-third",
+    label: {
+      text: "Mobile phone number"
+    }
+  }) }}
+  {% endset -%}
+  {{ govukRadios({
+    idPrefix: "contact",
+    name: "contact",
+    fieldset: {
+      legend: {
+        text: "",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: ""
+    },
+    items: [
+
+            {
+              value: "phone",
+              text: "7 days ",
+              hint: {
+            text: "Starts from today and ends at midnight 7 days from now."
+          }
+          },
+
+
+          {
+            value: "phone",
+            checked:"true",
+            text: "Indefinite",
+            hint: {
+          text: "Starts from today and lasts while the case is open."
+        }
+        },
+
+            {
+              value: "phone",
+              text: "Another period",
+              hint: {
+            text: "You’ll need to provide both a start and end date for the role."
+          },
+              conditional: {
+                html: setDuration
+              }
+            }
+
+    ]
+  }) }}
+
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+    href: "wa-PA-00467-2017-real-chk",
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-PA-00467-2017-arj-o">Cancel</a></p>
+</div>
+
+
+{% endblock %}

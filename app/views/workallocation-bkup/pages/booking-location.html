@@ -1,0 +1,74 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicialplain.html" %}
+{% else %}
+    {% extends "../layoutstaffplain.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<h1 class="govuk-heading-xl">Booking UI</h1>
+
+
+<h3 class="govuk-heading-m">Where are you working today
+</h3>
+    <div class="govuk-form-group">
+    <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
+    Jurisdiction</strong>
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+
+    <option value="updated" selected>Please select</option>
+    <option value="views">Immigration and Asylum</option>
+    <option value="comments">Probate</option>
+  </select>
+</div>
+    <div class="govuk-form-group">
+    <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
+    Appointment</strong>
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+
+    <option value="updated" selected>Select if applicable</option>
+    <option value="views">Something</option>
+    <option value="comments">Something else</option>
+  </select>
+</div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
+      Region</strong>
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+
+          <option value="updated" selected>Select if applicable</option>
+          <option value="published">All</option>
+        <option value="updated">NE</option>
+        <option value="views">NW</option>
+        <option value="comments">SE</option>
+        <option value="comments">SW</option>
+          <option value="comments">Etc...</option>
+      </select>
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
+      Location</strong>
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published">East London Family Court</option>
+          <option value="updated" selected>Taylor House</option>
+        <option value="updated">Reading Tribunal Hearing Centre</option>
+        <option value="views">Watford County Court and Family Cour</option>
+        <option value="comments">Watford Tribunal Hearing Centre</option>
+      </select>
+    </div>
+
+
+
+    {{ govukButton({
+      text: "Submit",
+      href: "/workallocation/pages/mywork"
+    }) }}
+
+
+{% endblock %}

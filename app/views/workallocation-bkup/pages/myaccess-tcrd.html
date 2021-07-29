@@ -1,0 +1,146 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="/workallocation/pages/myaccess-tcro" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+<!-- <div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+  <div class="" style="display: flex; justify-content: space-between; ">
+    <div> -->
+  <!--    <h1 class="govuk-heading-xl">PA/00467/2017</h1> -->
+  <!--  </div> -->
+  <!--  <div style="display: flex; align-items:right">
+      <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published" selected="">Select action</option>
+        <option value="published">Submit amended application</option>
+        <option value="published">Link respondent</option>
+        <option value="published">Add Note</option>
+        <option value="published">Upload document</option>
+        <option value="updated">Stop representing a client</option>
+      </select>
+      <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+          Go
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-t">
+          Tasks
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-ar">
+          Roles and access
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-a">
+          Overview
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Appeal
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Appellent
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Documents
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Directions
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week" >
+          Applications
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Case notes
+        </a>
+      </li>
+  <!--    <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Hearing
+        </a>
+      </li> -->
+  <!--  </ul> -->
+  <!--  <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+      <div > -->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l  govuk-!-margin-bottom-2">Delete access request</h1>
+            <!-- <h2 class="govuk-heading-m">Review your access request and decision</h2> -->
+
+          <p class="govuk-body">Check the details below carefully.</p>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Case name</th>
+                <td class="govuk-table__cell">Amelia Chu</td>
+              </tr>
+<!--
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Role requested</th>
+                <td class="govuk-table__cell">(I think this this covered by Reason)</td>
+              </tr> -->
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Date submitted</th>
+                <td class="govuk-table__cell">DD/MM/YYYY</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Reason for access</th>
+                <td class="govuk-table__cell">Reason A (Example: Reviewer)<br>I need to gain access to support the case I'm deciding.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Access decision</th>
+                <td class="govuk-table__cell">Rejected by [Name of Judge / Approver]</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Decision date</th>
+                <td class="govuk-table__cell">DD/MM/YYYY</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Reason for rejection</th>
+                <td class="govuk-table__cell">
+Insufficient ground for access supplied. <br>Please contact me to discuss further.         </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Delete",
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+
+</div>
+
+
+{% endblock %}

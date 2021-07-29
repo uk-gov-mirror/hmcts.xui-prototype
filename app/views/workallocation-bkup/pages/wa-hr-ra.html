@@ -1,0 +1,183 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+  <div class="" style="display: flex; justify-content: space-between; ">
+    <div>
+      <h1 class="govuk-heading-xl">PA/00321/2018</h1>
+    </div>
+    <div style="display: flex; align-items:right">
+      <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published" selected="">Select action</option>
+        <option value="published">Submit amended application</option>
+        <option value="published">Link respondent</option>
+        <option value="published">Add Note</option>
+        <option value="published">Upload document</option>
+        <option value="updated">Stop representing a client</option>
+      </select>
+      <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+          Go
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="wa-PA-00321-2018">
+          Tasks
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="wa-hr-ra">
+          Roles and access
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="wa-hr">
+          Overview
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Appeal
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Appellent
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Documents
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Directions
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Applications
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Case notes
+        </a>
+      </li>
+      <!--  <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Hearing
+        </a>
+      </li> -->
+    </ul>
+    <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+      <div>
+  <h2 class="govuk-heading-l">Roles and access</h2>
+        <h2 class="govuk-heading-m">Judiciary</h2>
+        <table class="govuk-table ">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19"  style="width: 300px;">Name</th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;">Role</th>
+          <!--        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " >Access type</th> -->
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">Location</th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">Start</th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">End</th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 100px;"></th>
+            </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lead Judge</td>
+          <!--          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Standard access</td> -->
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 80, "day") | date( "D MMMM YYYY" ) }}</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+                <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+            </tr>
+
+
+
+        </tbody>
+    </table>
+    <p><a href="#" class="govuk-link">Allocate a role</a></p>
+        <h2 class="govuk-heading-m">Legal Ops</h2>
+        <table class="govuk-table ">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19"  style="width: 300px;">Name</th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;">Role</th>
+          <!--        <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " >Access type</th> -->
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">Location</th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">Start</th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: auto;">End</th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19 " style="width: 100px;"></th>
+            </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Bisa Butler</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Case manager</td>
+        <!--            <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Standard access</td> -->
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">{{ now |  date("subtract", 80, "day") | date( "D MMMM YYYY" ) }}</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+                <td class="govuk-table__cell"><a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+    <p><a href="#" class="govuk-link"></a></p>
+        <h2 class="govuk-heading-m">Exclusions</h2>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+
+            <dd class="govuk-summary-list__value">
+              There are no exclusions for this case.
+            </dd>
+          </div>
+        </dl>
+        <p><a href="wa-PA-00467-2017-coi" class="govuk-link">Add</a></p>
+<!--
+        <form action="#">
+          <div class="govuk-button-group">
+              <button class="govuk-button" data-module="govuk-button">
+                  Add
+              </button>
+          </div>
+        </form>
+-->
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Case access prototype
+    </h1>
+    <h2 class="govuk-heading-l">
+      SUBJECT TO CHANGE
+    </h2>
+    <div style="display: flex; margin-top: 80px;">
+      <div style="width: 800px;">
+
+<!-- JUDICIARY -->
+
+        <h2 class="govuk-heading-l">Judiciary</h2>
+        <h2 class="govuk-heading-m">(USER) Challenged access request</h2>
+        <h3 class="govuk-heading-s">Scenario A - Search for and Challenged Access to case</h3>
+        <p><a target="_blank" href="/workallocation/pages/results?usertype=judiciary&">Search - entry</a><br></p>
+        <p><a target="_blank" href="/workallocation/pages/mywork-c?usertype=judiciary&">My work - entry</a><br>Case reference search from header</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00321-2018?usertype=judiciary&">Case details</a><br>Challanged access - Flow request</br></p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00321-2018-request?usertype=judiciary&">Request access</a><br>Challanged access - Flow request</br></p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00321-2018-confirmation?usertype=judiciary&">Confirmation</a><br>Challanged access - Flow request</br></p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00321-2018-a?usertype=judiciary&">Case details</a><br>Challanged access - Flow request</br></p>
+        <p><a target="_blank" href="/workallocation/pages/mycases-r?usertype=judiciary&">My cases</a><br>Challanged access - shown in situe</br></p>
+
+<!-- SECTION BREAK -->
+
+        <h2 class="govuk-heading-m">(USER) Specifc access request</h2>
+        <h3 class="govuk-heading-s">Scenario B - Search for and Request Specific Access to case</h3>
+        <p><a target="_blank" href="/workallocation/pages/results?usertype=judiciary&">Search - entry</a><br></p>
+        <p><a target="_blank" href="/workallocation/pages/mywork?usertype=judiciary&">My work - entry</a><br>Case reference search from header</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017?usertype=judiciary&">Case details</a><br>Specifc access - Flow request</br></p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-request?usertype=judiciary&">Request access</a><br>Specifc access - Flow request</br></p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-confirmation?usertype=judiciary&">Confirmation</a><br>Specifc access - Flow request</br></p>
+        <p><a target="_blank" href="/workallocation/pages/mycases-p?usertype=judiciary&">My cases</a><br>Specifc access - Flow request</p>
+
+<!-- SECTION BREAK -->
+
+        <h2 class="govuk-heading-m">(APPROVER) Approve Specifc access request <br> from AVAILABLE TASKS</h2>
+        <h3 class="govuk-heading-s">Scenario C - Part 1a - Grant request Specific Access to case</h3>
+        <p><a target="_blank" href="/workallocation/pages/available-tasks-s2?usertype=judiciary&">Available tasks</a><br>Specifc access - Flow approve</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-tr?usertype=judiciary&">Review specific access request</a><br>Specifc access - Flow approve</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-tra?usertype=judiciary&">Grant duration of case access
+</a><br>Specifc access - Flow approve</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-trac?usertype=judiciary&">Access approved</a><br>Specifc access - Flow approve</p>
+        <!--    <p><a target="_blank" href="/workallocation/pages/email-approved">Email notifcation - Task Approved</a></p> -->
+
+<!-- SECTION BREAK -->
+
+<!-- SECTION BREAK -->
+
+        <h2 class="govuk-heading-m">(APPROVER) Approve Specifc access request <br> from INSIDE A CASE</h2>
+        <h3 class="govuk-heading-s">Scenario C - Part 1b - Grant request Specific Access to case</h3>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-a?usertype=judiciary&">Case view - Overview</a><br>Specifc access - Flow approve</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-ar?usertype=judiciary&">Case view - Role / access</a><br>Specifc access - Flow approve</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-t?usertype=judiciary&">Case view - Tasks</a><br>Specifc access - Flow approve</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-tr-case?usertype=judiciary&">Case view - Review specific access request</a><br>Specifc access - Flow approve</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-tra-case?usertype=judiciary&">Case view - Grant duration of case access
+</a><br>Specifc access - Flow approve</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-trac-case?usertype=judiciary&">Case view - Access approved</a><br>Specifc access - Flow approve</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-tca?usertype=judiciary&">Case view - Tasks</a><br>Specifc access - Flow approve</p>
+        <!--    <p><a target="_blank" href="/workallocation/pages/email-approved">Email notifcation - Task Approved</a></p> -->
+
+<!-- SECTION BREAK -->
+
+        <h2 class="govuk-heading-m">(USER) Specifc access approved</h2>
+        <h3 class="govuk-heading-s"> Scenario C - Part 2 - Granted (approved)</h3>
+        <p><a target="_blank" href="/workallocation/pages/mycases-tc?usertype=judiciary&">My cases</a><br>Specifc access - Flow request</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-ara?usertype=judiciary&">Case view - Role / access</a><br>Specifc access - Flow request approved</p>
+
+<!-- SECTION BREAK -->
+
+        <h2 class="govuk-heading-m">(APPROVER) Reject Specifc access request<br> from AVAILABE TASKS</h2>
+        <h3 class="govuk-heading-s">Scenario D (a) - Reject specific access to case </h3>
+        <p><a target="_blank" href="/workallocation/pages/available-tasks-s2?usertype=judiciary&">Available tasks</a><br>Specifc access - Flow rejected</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-tr?usertype=judiciary&">Review specific access request</a><br>Specifc access - Flow rejected</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-trr?usertype=judiciary&">Reject specific access request
+          </a><br>Specifc access - Flow rejected</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-trrc?usertype=judiciary&">Confirmation - Task Rejected</a><br>Specifc access - Flow rejected</p>
+        <!--    <p><a target="_blank" href="/workallocation/pages/email-rejected">Email notifcation - Task Rejected</a></p> -->
+
+<!-- SECTION BREAK -->
+
+        <h2 class="govuk-heading-m">(APPROVER) Reject Specifc access request <br> from INSIDE A CASE</h2>
+        <h3 class="govuk-heading-s">Scenario D (b) - Reject specific access to case</h3>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-a?usertype=judiciary&">Case view - Overview</a><br>Specifc access - Flow reject</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-ar?usertype=judiciary&">Case view - Role / access</a><br>Specifc access - Flow reject</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-t?usertype=judiciary&">Case view - Tasks</a><br>Specifc access - Flow reject</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-tr-case?usertype=judiciary&">Case view - Review specific access request</a><br>Specifc access - Flow reject</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-trr-case?usertype=judiciary&">Case view - Reject specific access request
+</a><br>Specifc access - Flow reject</p>
+        <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-trrc-case?usertype=judiciary&">Case view - Access denied</a><br>Specifc access - Flow reject</p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-tca?usertype=judiciary&">Case view - Tasks</a><br>Specifc access - Flow rejected</p>
+
+<!-- SECTION BREAK -->
+
+        <h3 class="govuk-heading-s">Scenario E - Booking UI</h3>
+        <p><a target="_blank" href="/workallocation/pages/booking?usertype=judiciary&">Booking UI</a><br>Select type of access</br></p>
+        <p><a target="_blank" href="/workallocation/pages/booking-location?usertype=judiciary&">Booking UI - location</a><br>Select location- Subject to change</br></p>
+        <p><a target="_blank" href="/workallocation/pages/booking-combo?usertype=judiciary&">Booking UI - Combo</a><br>Alternative design - both screesn combined</br></p>
+      </div>
+
+<!-- STAFF -->
+
+      <div>
+        <h2 class="govuk-heading-l">Staff (to be updated)</h2>
+        <div style="width: 600px;">
+          <h3 class="govuk-heading-s">Scenario A - Search for and Challenged Access to case</h3>
+          <p><a target="_blank" href="/workallocation/pages/search?usertype=staff&">Search entry</a></p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00321-2018?usertype=staff&">Case details</a><br>Challanged access - Flow request</br></p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00321-2018-request?usertype=staff&">Request access</a><br>Challanged access - Flow request</br></p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00321-2018-confirmation?usertype=staff&">Confirmation</a><br>Challanged access - Flow request</br></p>
+          <p><a target="_blank" href="/workallocation/pages/mycases-r?usertype=staff&">My cases</a><br>Challanged access - Flow request</br></p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00321-2018-a?usertype=staff&">Case details</a><br>Challanged access - Flow request</br></p>
+          <h3 class="govuk-heading-s">Scenario B - Search for and Request Specific Access to case</h3>
+          <p><a target="_blank" href="/workallocation/pages/results-s2?usertype=staff&">Search entry</a><br></p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017?usertype=staff&">Case details</a><br>Specifc access - Flow request</br></p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-request?usertype=staff&">Request access</a><br>Specifc access - Flow request</br></p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-confirmation?usertype=staff&">Confirmation</a><br>Specifc access - Flow request</br></p>
+          <p><a target="_blank" href="/workallocation/pages/mycases-p?usertype=staff&">My cases</a><br>Specifc access - Flow request</p>
+          <h3 class="govuk-heading-s">Scenario C - Part 1 - Grant request Specific Access to case (approve)</h3>
+          <p><a target="_blank" href="/workallocation/pages/available-tasks-s2?usertype=staff&">Available tasks</a><br>Specifc access - Flow approve</p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-a?usertype=staff&">Case view - Overview</a><br>Specifc access - Flow approve</p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-ar?usertype=staff&">Case view - Role / access</a><br>Specifc access - Flow approve</p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-t?usertype=staff&">Case view - Tasks</a><br>Specifc access - Flow approve</p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-tr?usertype=staff&">Case view - Task details</a><br>Specifc access - Flow approve</p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-tra?usertype=staff&">Case view - Task Approve</a><br>Specifc access - Flow approve</p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-trac?usertype=staff&">Case view - Task Approved</a><br>Specifc access - Flow approve</p>
+          <p><a target="_blank" href="/workallocation/pages/email-approved">Email notifcation - Task Approved</a></p>
+          <h3 class="govuk-heading-s">Scenario C - Part 2 - Grant request Specific Access to case (approved)</h3>
+          <p><a target="_blank" href="/workallocation/pages/mycases-tc?usertype=staff&">My cases</a><br>Specifc access - Flow request</p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-ara?usertype=staff&">Case view - Role / access</a><br>Specifc access - Flow request approved</p>
+          <h3 class="govuk-heading-s">Scenario D - Reject specific access to case</h3>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-trr?usertype=staff&">Case view - Task Reject</a><br>Specifc access - Flow rejected</p>
+          <p><a target="_blank" href="/workallocation/pages/PA-00467-2017-trrc?usertype=staff&">Case view - Task Rejected</a><br>Specifc access - Flow rejected</p>
+          <p><a target="_blank" href="/workallocation/pages/email-rejected">Email notifcation - Task Rejected</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

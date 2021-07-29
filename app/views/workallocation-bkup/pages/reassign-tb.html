@@ -1,0 +1,81 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+My work
+{% endblock %}
+{% block content %}
+
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Reassign task</span>
+  Check your answers
+</h1>
+
+    <div id="waste-hint" class="govuk-hint">
+      Check you are reassigning work to the right person.
+    </div>
+
+
+
+
+
+    <div class="hmcts-scrollable-pane">
+      <div class="hmcts-scrollable-pane__wrapper">
+
+        <table class="govuk-body" id="transactionstable">
+          <p class="govuk-body">
+
+          </p>
+          <thead>
+            <tr class="govuk-table__row">
+
+              <th scope="col" class="govuk-table__header" aria-sort="none">Case name</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Case category</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Location</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Task</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Date</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Person</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td data-label="Case">Hudson Remi</td>
+              <td data-label="Reference">Protection</td>
+              <td data-label="Status">Taylor House</td>
+              <td data-label="Date">Generate decision and reasons</td>
+                <td data-label="Amount">{{govukTag({
+                text: now | date( 'add', 12, 'days' ) | date,
+                classes: "govuk-tag--grey"
+              })}} </td>
+        <td data-label="Status">Judge Barringthorn-Wardley</td>
+          <td data-label="Status"><a href="reassign-t">Change</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p></p>
+    </div>
+    <form>
+        {{ govukButton({
+        text: 'Reassign',
+        classes: "govuk-!-margin-right-5",
+        href: "wa-allwork-sp-r"
+        }) }}
+<p><a class="govuk-body" href="wa-allwork-sp-o">Cancel</a></p>
+<!--
+        {{ govukButton({
+        text: 'Cancel',
+        classes: "govuk-button--secondary",
+        href: "/workallocation/pages/wa-mytasks-ao"
+        }) }}
+-->
+
+    </form>
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}
