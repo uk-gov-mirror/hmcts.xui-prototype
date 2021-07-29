@@ -1,0 +1,79 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+My work
+{% endblock %}
+{% block content %}
+<div class="hmcts-page-heading">
+  <div class="hmcts-page-heading__title">
+    <h1 class="govuk-heading-xl">Unassign task</h1>
+  </div>
+</div>
+
+
+    <p>Unassign this task. This will send it back to the available task list for someone to pick up.</p>
+
+
+    <h2 class="govuk-heading-m">Task summary</h2>
+
+    <div class="hmcts-scrollable-pane">
+      <div class="hmcts-scrollable-pane__wrapper">
+
+        <table class="govuk-body" id="transactionstable">
+          <p class="govuk-body">
+
+          </p>
+          <thead>
+            <tr class="govuk-table__row">
+
+              <th scope="col" class="govuk-table__header" aria-sort="none">Case name</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Case category</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Location</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Task</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Due date</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Priority</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Person</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td data-label="Case">Lacey-May Sanders</td>
+              <td data-label="Reference">Protection</td>
+              <td data-label="Status">Taylor House</td>
+              <td data-label="Date">Review respondent evidence</td>
+                <td data-label="Amount">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }} </td>
+  <td data-label="Status">  {{govukTag({
+        text: "low",
+        classes: "govuk-tag--grey"
+      })}}
+    </td>
+
+
+        <td data-label="Status">Judge Beech</td>
+          <td data-label="Status"></td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p></p>
+    </div>
+    <form>
+        {{ govukButton({
+        text: 'Unassign',
+        classes: "govuk-!-margin-right-5",
+        href: "wa-mytasks-u-staff"
+        }) }}
+
+<p><a class="govuk-body" href="/workallocation/pages/wa-mytasks-ao-staff">Cancel</a></p>
+
+
+    </form>
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}

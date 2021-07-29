@@ -1,0 +1,71 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+My work
+{% endblock %}
+{% block content %}
+<div class="hmcts-page-heading">
+  <div class="hmcts-page-heading__title">
+    <h1 class="govuk-heading-xl">My work</h1>
+  </div>
+</div>
+<p>Access tasks and cases.</p>
+{{ govukButton({
+  text: "Show work filter",
+  classes: "govuk-button--secondary"
+}) }}
+<div class="hmcts-scrollable-pane">
+  <div class="hmcts-scrollable-pane__wrapper">
+    <nav class="hmcts-sub-navigation">
+      <ul class="hmcts-sub-navigation__list">
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="wa-mytasks">
+            My tasks
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="wa-available-tasks">
+            Available tasks
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="wa-mycases">
+            My cases
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" aria-current="page" href="wa-myaccess">
+            My access
+          </a>
+        </li>
+      </ul>
+    </nav>
+  <!--  <p class="govuk-body">Displaying <strong>1</strong> of <strong>1</strong> cases </p> -->
+    <table class="govuk-table ">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending">Case name</th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none">Jurisdiction</th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none">Case category</th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none">Date submitted</th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none">Access</th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none">Start</th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none">End</th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: auto;" aria-sort="none"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr>
+            <td colspan="8">Cases you have been granted access to are displayed here.</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}

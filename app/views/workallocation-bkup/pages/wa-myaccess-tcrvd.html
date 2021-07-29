@@ -1,0 +1,67 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="wa-myaccess-new-re-v" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l  govuk-!-margin-bottom-2"> Review your case access request and decision</h1>
+        <!--    <h2 class="govuk-heading-m">Review your access request and decision</h2> -->
+
+          <p class="govuk-body">Check the details of your case access request.</p>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Case name</th>
+                <td class="govuk-table__cell">Amelia Chu</td>
+              </tr>
+<!--
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Role requested</th>
+                <td class="govuk-table__cell">(I think this this covered by Reason)</td>
+              </tr> -->
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Date submitted</th>
+                <td class="govuk-table__cell">DD/MM/YYYY </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Reason for case access</th>
+                <td class="govuk-table__cell">To view details of the other case linked to the parties/family on my current case.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Access decision</th>
+                <td class="govuk-table__cell">Rejected by [Name of Judge / Approver]</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Decision date</th>
+                <td class="govuk-table__cell">DD/MM/YYYY </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 220px;">Reason for rejection</th>
+                <td class="govuk-table__cell">
+	You have not supplied enough information, please contact me to discuss further.       </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  <div class="govuk-button-group">
+<!--    {{ govukButton({
+        text: "Re-request access",
+        href: "/workallocation/pages/wa-PA-00467-2017",
+        classes: "govuk-!-margin-right-3"
+      }) }}
+-->
+
+</div>
+
+
+{% endblock %}

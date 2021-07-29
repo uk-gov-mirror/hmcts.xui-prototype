@@ -1,0 +1,105 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicialplain.html" %}
+{% else %}
+    {% extends "../layoutstaffplain.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="/caseaccess/pages/booking-staff" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+<div class="govuk-form-group">
+    <span class="govuk-caption-l">Work access</span>
+  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+      What is the name of the location?
+    </label>
+  </h1>
+  <div id="event-name-hint" class="govuk-hint">
+    For example, Exeter
+  </div>
+  <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+</div>
+
+<!--
+    <div class="govuk-form-group">
+    <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
+    Jurisdiction</strong>
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+
+    <option value="updated" selected>Please select</option>
+    <option value="views">Immigration and Asylum</option>
+    <option value="comments">Probate</option>
+  </select>
+</div>
+    <div class="govuk-form-group">
+    <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
+    Appointment</strong>
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+
+    <option value="updated" selected>Select if applicable</option>
+    <option value="views">Something</option>
+    <option value="comments">Something else</option>
+  </select>
+</div>
+-->
+<!--
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
+      Region</strong>
+      </label>
+      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO">
+
+          <option value="/caseaccess/pages/booking-location-opt1" selected>Please select</option>
+
+
+        <option value="#">North Eastern Circuit</option>
+        <option value="#">Northen Circuit</option>
+        <option value="#">Midland Circuit</option>
+        <option value="#">Wales and Chester Circuit</option>
+          <option value="#">South Eastern Circuit</option>
+            <option value="/caseaccess/pages/booking-location-opt1-2">Western Circuit</option>
+      </select>
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
+      Cluster</strong>
+      </label>
+      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO" disabled >
+  <option value="/caseaccess/pages/booking-location-opt1-2" selected>-</option>
+        <option value="#">Wiltshire, Hampshire and IOW</option>
+
+        <option value="/caseaccess/pages/booking-location-opt1-3">Devon, Cornwall and Dorset</option>
+        <option value="#">Avon, Somerset and Gloucestershire</option>
+
+      </select>
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-size-19" for="sort" ><strong>
+      Location</strong>
+      </label>
+
+      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO" disabled>
+          <option value="updated" selected>-</option>
+        <option value="#">Dorset</option>
+                <option value="/caseaccess/pages/booking-location-opt1-3">Exeter</option>
+                        <option value="#">Plymouth</option>
+                                <option value="#">Taunton</option>
+                                <option value="#">Truro</option>
+
+      </select>
+    </div>
+-->
+    {{ govukButton({
+      text: "Continue",
+
+      href: "/caseaccess/pages/booking-location-opt1b-staff"
+    }) }}
+
+
+{% endblock %}

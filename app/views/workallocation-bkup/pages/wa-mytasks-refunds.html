@@ -1,0 +1,120 @@
+{% extends "../layoutpros.html" %}
+{% block pageTitle %}
+Refunds
+{% endblock %}
+{% block content %}
+<div class="hmcts-page-heading">
+  <div class="hmcts-page-heading__title">
+    <h2 class="govuk-heading-l">Refunds returned to caseworker</h2>
+  </div>
+</div>
+
+<div class="hmcts-scrollable-pane">
+  <div class="hmcts-scrollable-pane__wrapper">
+    <p class="govuk-body" style="float: left">Displaying <strong>3</strong> of <strong>3</strong> refunds</p>
+
+    <div class="govuk-form-group" style="float: right">
+      <label class="govuk-label" for="sort" style="display: inline-block; margin-right: 10px">
+        Filter by caseworker:
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option selected="selected">All caseworkers</option>
+        <option>Steve Smith</option>
+        <option>Loren Barrow</option>
+      </select>
+    </div>
+
+
+    <table class="govuk-table ">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case ID</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Refund reference</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Reason</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Submitted by</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Date updated</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Action</button></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-3164-4633-1567</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">RF-1324-6542-2454-5445</td>
+          <td class="govuk-table__cell">Case withdrawn</a>
+          <td class="govuk-table__cell">Loren Barrow</a>
+          <td class="govuk-table__cell">{{govukTag({
+          text: now | date( 'subtract', 4, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/view-refund?result=returned&refund=adHoc">Review refund</a></td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-5446-5845-3451</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">RF-5634-6846-2454-2456</td>
+          <td class="govuk-table__cell">Duplicate payment</a>
+          <td class="govuk-table__cell">Steve Smith</a>
+          <td class="govuk-table__cell">{{govukTag({
+          text: now | date( 'subtract', 3, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/view-refund?result=returned&refund=adHoc">Review refund</a></td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-3455-5845-8624</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">RF-1324-6846-1563-5334</td>
+          <td class="govuk-table__cell">Case withdrawn</a>
+          <td class="govuk-table__cell">Loren Barrow</a>
+          <td class="govuk-table__cell">{{govukTag({
+          text: now | date( 'subtract', 2, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/view-refund?result=returned&refund=adHoc">Review refund</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-3164-8734-3452</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">RF-4763-6846-2454-6535</td>
+          <td class="govuk-table__cell">Duplicate payment</a>
+          <td class="govuk-table__cell">Loren Barrow</a>
+          <td class="govuk-table__cell">{{govukTag({
+          text: now | date( 'subtract', 1, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/view-refund?result=returned&refund=adHoc">Review refund</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">4692-3164-5845-3244</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">RF-1324-6846-2454-7543</td>
+          <td class="govuk-table__cell">Case withdrawn</a>
+          <td class="govuk-table__cell">Steve Smith</a>
+          <td class="govuk-table__cell">{{govukTag({
+          text: now | date( 'subtract', 1, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}} </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/refund/view-refund?result=returned&refund=adHoc">Review refund</a></td>
+        </tr>
+
+<!-- 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">3164-1234-5845-4819</td>
+          <td class="govuk-table__cell">Remission granted</a>
+          <td class="govuk-table__cell"> {{govukTag({
+          text: now | date( 'subtract', 5, 'days' ) | date,
+          classes: "govuk-tag--grey"
+        })}}</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="https://fees-and-payments.herokuapp.com/orders/pages/v1caseinccd?state=remission&casetype=civil">Review case</a></td>
+        </tr>
+  -->
+        
+      </tbody>
+    </table>
+
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}

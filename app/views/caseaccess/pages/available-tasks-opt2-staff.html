@@ -1,0 +1,60 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+My work
+{% endblock %}
+{% block content %}
+    <div class="hmcts-page-heading">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-xl">My work</h1>
+          </div>
+    </div>
+    <p>Access tasks and cases.</p>
+    {{ govukButton({
+  text: "Show work filter",
+  classes: "govuk-button--secondary"
+}) }}
+    <div class="hmcts-scrollable-pane">
+      <div class="hmcts-scrollable-pane__wrapper">
+        <nav class="hmcts-sub-navigation">
+          <ul class="hmcts-sub-navigation__list">
+            <li class="hmcts-sub-navigation__item">
+              <a class="hmcts-sub-navigation__link"  href="mywork-opt2-staff">
+                My tasks
+              </a>
+            </li>
+            <li class="hmcts-sub-navigation__item">
+              <a class="hmcts-sub-navigation__link" aria-current="page"href="available-tasks-opt2-staff">
+                Available tasks
+              </a>
+            </li>
+            <li class="hmcts-sub-navigation__item">
+              <a class="hmcts-sub-navigation__link" href="mycases-opt2-staff">
+                My cases
+              </a>
+            </li>
+            <li class="hmcts-sub-navigation__item">
+              <a class="hmcts-sub-navigation__link" href="myaccess-p-opt2-staff">
+                My access
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+
+
+                            <td colspan="7">Available tasks are displayed here.</td>
+                        </tr>
+
+
+                      </tbody>
+                  </table>
+{% endblock %}
+{% block scripts %}
+{% endblock %}

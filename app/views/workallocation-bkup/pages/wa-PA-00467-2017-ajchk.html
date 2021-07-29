@@ -1,0 +1,92 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="wa-PA-00467-2017-ajh" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Allocate a hearing judge</span>
+  Check your answers
+</h1>
+
+<div id="event-name-hint" class="govuk-hint">
+  Check the information below carefully.
+</div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-!-width-three-quarters">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Type of role
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Hearing judge
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="wa-PA-00467-2017-aj">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How the role will be allocated
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Allocate to another judge
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="wa-PA-00467-2017-ajh">
+                Change<span class="govuk-visually-hidden">Selected judge</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Person
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Judge Nordman</p>
+              <p class="govuk-body">judge.nordman@example.com</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="wa-PA-00467-2017-ajha">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Duration of role
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Indefinite </p>
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="wa-PA-00467-2017-ajdur">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Confirm allocation",
+href: "wa-PA-00467-2017-arj",
+
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-PA-00467-2017-ar">Cancel</a></p>
+</div>
+</form>
+
+{% endblock %}

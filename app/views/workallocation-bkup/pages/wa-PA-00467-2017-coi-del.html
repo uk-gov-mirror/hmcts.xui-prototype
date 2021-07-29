@@ -1,0 +1,74 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+
+{% endblock %}
+{% block content %}
+<h1 class="govuk-heading-l">
+
+    Delete an exclusion
+</h1>
+
+<div id="event-name-hint" class="govuk-hint">
+  Check the information below carefully.
+</div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-!-width-three-quarters">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Person
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Judge Birch</p>
+              <p class="govuk-body">judge.birch@example.com</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Describe the exclusion
+            </dt>
+            <dd class="govuk-summary-list__value">
+            The case has been remitted from the Upper Tribunal and requires a different judge.
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+                 <dt class="govuk-summary-list__key">
+                   Added
+                 </dt>
+                 <dd class="govuk-summary-list__value">
+                   {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}
+                 </dd>
+<dd class="govuk-summary-list__actions">
+  </dd>
+               </div>
+
+        </dl>
+
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Delete exclusion",
+href: "wa-PA-00467-2017-ardel",
+
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-PA-00467-2017-arexd">Cancel</a></p>
+</div>
+</form>
+
+{% endblock %}

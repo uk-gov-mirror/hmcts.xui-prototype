@@ -1,0 +1,142 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+  <div class="" style="display: flex; justify-content: space-between; ">
+    <div>
+      <h1 class="govuk-heading-xl">QW/987010/2029</h1>
+    </div>
+    <div style="display: flex; align-items:right">
+      <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published" selected="">Select action</option>
+        <option value="published">Submit amended application</option>
+        <option value="published">Link respondent</option>
+        <option value="published">Add Note</option>
+        <option value="published">Upload document</option>
+        <option value="updated">Stop representing a client</option>
+      </select>
+      <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+          Go
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="wa-lms-t">
+          Tasks
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="wa-lms-ra">
+          Roles and access
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="wa-lms">
+          Overview
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Appeal
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Appellent
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Documents
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Directions
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Applications
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#">
+          Case notes
+        </a>
+      </li>
+    </ul>
+    <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+      <div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-m">Active tasks</h2>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <p class="govuk-body"><strong>Generate decision and reasons</strong></p>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+               <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          <span style="padding-left:25px">Priority</span>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{govukTag({
+                          text: "low",
+                          classes: "govuk-tag--grey"
+                        })}}
+                        </dd>
+                      </div>
+                  <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          <span style="padding-left:25px">Due date</span>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}
+                        </dd>
+                      </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Assigned to</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Judge Beech
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <span style="padding-left:25px">Manage</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Next steps</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="#">Review respondent evidence</a>
+                </dd>
+              </div>
+            </dl>
+
+          </div>
+          <div class="govuk-grid-column-one-third">
+          </div>
+        </div>
+      </div>
+      {% endblock %}

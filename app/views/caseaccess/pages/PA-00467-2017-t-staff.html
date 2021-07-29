@@ -1,0 +1,202 @@
+#{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row" style="width:1220px; margin-left: 0px;">
+  <div class="" style="display: flex; justify-content: space-between; ">
+    <div>
+      <h1 class="govuk-heading-xl">PA/00467/2017</h1>
+    </div>
+    <div style="display: flex; align-items:right">
+      <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published" selected="">Select action</option>
+        <option value="published">Submit amended application</option>
+        <option value="published">Link respondent</option>
+        <option value="published">Add Note</option>
+        <option value="published">Upload document</option>
+        <option value="updated">Stop representing a client</option>
+      </select>
+      <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+          Go
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-t">
+          Tasks
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-ar">
+          Roles and access
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="PA-00467-2017-a">
+          Overview
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Appeal
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Appellent
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Documents
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Directions
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Applications
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Case notes
+        </a>
+      </li>
+      <!--    <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Hearing
+        </a>
+      </li> -->
+    </ul>
+    <div class="govuk-tabs__panel" id="event" style="display: padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+      <div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Active tasks</h2>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <p class="govuk-body"><strong>
+Review specific access request</strong> </p>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <span style="padding-left:25px">Priority</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{govukTag({
+                      text: "high",
+                      classes: "govuk-tag--red"
+                    })}}
+                </dd>
+              </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+        <span style="padding-left:25px">Due date</span>
+    </dt>
+    <dd class="govuk-summary-list__value">
+    {{ now |  date("add", 0, "day") | date( "D MMMM YYYY" ) }}
+    </dd>
+  </div>
+          <!--    <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Request from
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Judge Randel-Combeswardly
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date submitted
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  DD/MM/YYYY
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Purpose for access
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultrices enim in egestas porttitor. Vivamus iaculis ex eu dolor feugiat elementum. Nunc id laoreet elit. In hac habitasse platea dictumst
+                </dd>
+              </div> -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <span style="padding-left:25px">Manage</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="PA-00467-2017-ta">Assign task to me</a>
+                </dd>
+              </div>
+            </dl>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <p class="govuk-body"><strong>Review application decision</strong> </p>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <span style="padding-left:25px">Priority</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{govukTag({
+                      text: "medium",
+                      classes: "govuk-tag--yellow"
+                    })}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    <span style="padding-left:25px">Due date</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                {{ now |  date("subtract", 2, "day") | date( "D MMMM YYYY" ) }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Assigned to</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Judge Beech
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Manage</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="" class="right">Reassign task</a> <a href="" class="right">Unassign task</a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  <span style="padding-left:25px">Next steps</span>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="#">Review application decision</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+        </div>
+      </div>
+    </div>
+    {% endblock %}

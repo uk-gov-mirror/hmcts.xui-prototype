@@ -1,0 +1,103 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicialplain.html" %}
+{% else %}
+    {% extends "../layoutstaffplain.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<h1 class="govuk-heading-xl">Booking UI</h1>
+
+{% set setDuration %}
+{{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: ""
+  },
+  items: [
+
+    {
+      value: "updated",
+      text: "Please select",
+      selected: true
+    },
+    {
+      value: "views",
+      text: "Value one"
+    },
+    {
+      value: "comments",
+      text: "Value two"
+    }
+  ]
+}) }}
+{% endset -%}
+{% set textHtml %}
+{{ govukInput({
+  id: "contact-by-text",
+  name: "contact-by-text",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Mobile phone number"
+  }
+}) }}
+{% endset -%}
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Select your purpose of work today
+",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+  {
+    value: "phone",
+    text: "Continue with my existing booking",
+    hint: {
+  text: ""
+},
+    conditional: {
+      html: setDuration
+    }
+  },
+    {
+      value: "phone",
+      text: "Booked to sit at a specific location",
+      hint: {
+    text: ""
+  }
+  },
+
+
+    {
+      value: "phone",
+      text: "Access my work",
+      hint: {
+    text: ""
+  }
+  }
+  ]
+}) }}
+
+
+
+
+
+    <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-!-margin-right-3"
+    }) }}
+  </div>
+
+  {% endblock %}
