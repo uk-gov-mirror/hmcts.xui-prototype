@@ -27,7 +27,7 @@ Case details
                             <div class="govuk-form-group">
                                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                                     <h1 class="govuk-fieldset__heading">
-                                        Venue
+                                        Hearing venue details
                                     </h1>
                                 </legend>
 
@@ -38,51 +38,58 @@ Case details
 
 
                             <div class="govuk-form-group"style="width: 600px;">
-                                <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail">
-                                    What facilities are required?
+                                <label class="govuk-label govuk-label-m govuk-!-font-weight-bold govuk-!-margin-bottom-3">
+                                    What facilities are required? (optional)
                                 </label>
-                                <div id="more-detail-hint" class="govuk-hint">
-                                    For example, a TV to play video evidence.
-                                </div>
                                 <fieldset class="govuk-fieldset">
-                                    <div class="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="facilities1" name="facilities" type="radio" value="London" onclick="closefacilities();">
-                                            <label class="govuk-label govuk-radios__label" for="facilities1" onclick="closefacilities();">
-                                                example 1
-                                            </label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="facilities2" name="facilities" type="radio" value="Midlands" onclick="closefacilities();">
-                                            <label class="govuk-label govuk-radios__label" for="facilities2" onclick="closefacilities();">
-                                                example 2
-                                            </label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="facilities3" name="facilities" type="radio" value="North East" onclick="closefacilities();">
-                                            <label class="govuk-label govuk-radios__label" for="facilities3" onclick="closefacilities();">
-                                                example 3
-                                            </label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="facilities4" name="facilities" type="radio" value="North West" onclick="closefacilities();">
-                                            <label class="govuk-label govuk-radios__label" for="facilities4" onclick="closefacilities();">
-                                                example 4
-                                            </label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="facilities5" name="facilities" type="radio" value="Wales" onclick="openfacilities();">
-                                            <label class="govuk-label govuk-radios__label" for="facilities5" onclick="openfacilities();">
-                                                Something else
-                                            </label>
-                                        </div>
 
-                                            <div class="govuk-radios__conditional" id="conditionalfacilities"  style="display:none;">
-                                                <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail">
-                                                    Enter the facilities are required
-                                                </label>
-                                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+
+
+                                    <div class=""  id="ra2">
+                                        <div class="govuk-form-group"style="width: 600px;">
+                                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities1" name="facilities" type="checkbox" value="Language interpreter"  >
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities1" >
+                                                        item 1
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities2" name="facilities" type="checkbox" value="Sign language interpreter"  >
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities2"  >
+                                                        item 2
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities3" name="facilities" type="checkbox" value="Hearing loop">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities3"  >
+                                                        item 3
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities4" name="facilities" type="checkbox" value="Accessible hearing rooms"  >
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities4" >
+                                                        item 4
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item"  onclick="togglefacilities();">
+                                                    <input class="govuk-checkboxes__input" id="facilities5" name="facilities" type="checkbox" value="Anything else"  onclick="togglefacilities(); togglefacilities();" >
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities5" onclick="togglefacilities();"  >
+                                                        anything else
+                                                    </label>
+                                                </div>
+
+                                                <div class="govuk-radios__conditional govuk-!-padding-top-5 govuk-!-padding-bottom-5" id="conditionalra2box"  style="display:none;">
+                                                    <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail-adjustments-other-2">
+                                                        Enter the facilities are required
+                                                    </label>
+                                                    <textarea class="govuk-textarea" id="more-detail-adjustments-other-2" name="more-detail-adjustments-other-2" rows="3" aria-describedby="more-detail-hint"></textarea>
+                                                </div>
+
+
                                             </div>
+                                        </div>
 
                                     </div>
 
@@ -117,6 +124,21 @@ Case details
     function closefacilities()
     {
         document.getElementById("conditionalfacilities").style.display = "none";
+    }
+
+
+    function togglefacilities()
+    {
+        if(document.getElementById("conditionalra2box").style.display == "none")
+        {
+            document.getElementById("facilities5").checked = true;
+            document.getElementById("conditionalra2box").style.display = "block";
+        }
+        else
+        {
+            document.getElementById("facilities5").checked = false;
+            document.getElementById("conditionalra2box").style.display = "none";
+        }
     }
 
 </script>
