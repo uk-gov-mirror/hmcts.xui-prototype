@@ -1,0 +1,70 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicialplain.html" %}
+{% else %}
+    {% extends "../layoutstaffplain.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+<h1 class="govuk-heading-xl">Booking UI</h1>
+
+
+
+    <form action="#" method="post" onsubmit="usePage(this, 'bob');">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Select your area of work
+            </h1>
+          </legend>
+
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="sort"><strong>
+              Jurisdiction</strong>
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+              <option value="updated" selected>Please select</option>
+              <option value="published" name="bob" value="/caseaccess/pages/booking-location-opt1">Civil</option>
+              <option value="views">Criminal</option>
+              <option value="comments">Family</option>
+                <option value="comments">Tribunal</option>
+            </select>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="sort"><strong>
+              Service</strong>
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+                  <option value="updated" selected>Please select</option>
+              <option value="published">IAC</option>
+
+              <option value="views">SSCS</option>
+              <option value="comments">Public law</option>
+            </select>
+          </div>
+
+    <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-!-margin-right-3"
+    }) }}
+  </div>
+</div>
+
+
+
+
+  <form method=""  action="#" class="for4" style=" float: left; margin-top: 60px;">
+      <p style="margin-bottom: 0px;">Select to show booking UI routing - depending on selection you will either go straight into WA or be asked to Select your purpose of work </p>
+      <select size="1" name="hop" style="height:25px;" onchange="document.location.href=this.value">
+      <option selected value=""> Select an option</option>
+      <option value="/caseaccess/pages/booking">Select your purpose of work today</option>
+      <option value="/caseaccess/pages/mywork">Straight into Work allocation </option>
+      </select>
+  </form>
+
+  {% endblock %}

@@ -1,0 +1,93 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicialplain.html" %}
+{% else %}
+    {% extends "../layoutstaffplain.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="/caseaccess/pages/booking-location-opt1-staff" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+
+  <span class="govuk-caption-l">Work access</span>
+{% set setDuration %}
+<!--
+<p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">Access starts</p>
+<p class="govuk-body govuk-!-font-weight-regular govuk-!-font-size-19">{{ now |  date("add", 0, "day") | date( "D MMMM YYYY" ) }}</p>
+-->
+{{ govukDateInput({
+id: "passport-issued",
+namePrefix: "passport-issued",
+fieldset: {
+legend: {
+text: "Access ends",
+classes: "govuk-fieldset__legend--m"
+}
+},
+hint: {
+text: "For example, 19 11 2007"
+}
+}) }}
+
+{% endset -%}
+{% set textHtml %}
+{{ govukInput({
+  id: "contact-by-text",
+  name: "contact-by-text",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Mobile phone number"
+  }
+}) }}
+
+
+{% endset -%}
+{{ govukRadios({
+  idPrefix: "contact",
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "How long will you be working here?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "You should provide a date which reflects your actual working time at this location"
+  },
+  items: [
+
+    {
+      value: "phone",
+      text: "Today only ",
+      hint: {
+    text: "Starts from today and access ends at midnight."
+  }
+  },
+
+
+    {
+      value: "phone",
+      text: "Another period",
+      hint: {
+    text: "Starts from today and you’ll need to provide an end date."
+  },
+      conditional: {
+        html: setDuration
+      }
+    }
+  ]
+}) }}
+
+    {{ govukButton({
+      text: "Submit",
+
+      href: "/caseaccess/pages/mywork-exeter-staff"
+    }) }}
+
+
+{% endblock %}
