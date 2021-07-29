@@ -21,54 +21,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="casedetailsdivorce.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/hearings/pages/casedetailsdivorce.html">
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.75">
-              <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="70" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startrequest.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/hearings/pages/startrequest.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paneldifferent.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/hearings/pages/paneldifferent.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="75" column="72" selection-start-line="75" selection-start-column="72" selection-end-line="75" selection-end-column="72" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#2;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#3;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#1;n#div#3;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#1;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#2;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes.js">
+      <file leaf-file-name="venue.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/hearings/pages/venue.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="88" column="88" selection-start-line="88" selection-start-column="88" selection-end-line="88" selection-end-column="88" />
+              <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="84" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checkyouranswers.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/hearings/pages/checkyouranswers.html">
+      <file leaf-file-name="language.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/hearings/pages/language.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66982406">
-              <caret line="391" column="70" selection-start-line="391" selection-start-column="70" selection-end-line="391" selection-end-column="70" />
+            <state vertical-scroll-proportion="-34.555557">
+              <caret line="190" column="58" selection-start-line="190" selection-start-column="58" selection-end-line="190" selection-end-column="58" />
+              <folding>
+                <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="channel.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/hearings/pages/channel.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.833334">
+              <caret line="31" column="80" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="panel.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/hearings/pages/panel.html">
+      <file leaf-file-name="confirmation.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/hearings/pages/confirmation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.5">
-              <caret line="59" column="176" selection-start-line="59" selection-start-column="176" selection-end-line="59" selection-end-column="176" />
+            <state vertical-scroll-proportion="0.38971582">
+              <caret line="32" column="92" selection-start-line="32" selection-start-column="92" selection-end-line="32" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -105,17 +133,18 @@
         <option value="$PROJECT_DIR$/views/searchcases/layoutstaffcaslistonly.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/location.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/region.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/confirmation.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/casedetailsdivorce.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/startrequest.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/panel.html" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/venue.html" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/checkyouranswers.html" />
         <option value="$PROJECT_DIR$/routes.js" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/startrequest.html" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/venuedefault.html" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/timing.html" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/paneldifferent.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/language.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/channel.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/venue.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/paneldifferent.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/timing.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/checkyouranswers.html" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/confirmation.html" />
       </list>
     </option>
   </component>
@@ -126,7 +155,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-4492" />
-    <option name="y" value="-580" />
+    <option name="y" value="-566" />
     <option name="width" value="4504" />
     <option name="height" value="2474" />
   </component>
@@ -155,6 +184,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -229,8 +260,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -240,15 +269,15 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\manageorg" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\hearings\pages" />
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\hearings" />
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\searchcases\transition" />
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\searchcases" />
       <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\searchcases\pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\guytr\Documents\GitHub\xui-prototype\app\views\manageorg" />
     </key>
   </component>
   <component name="RunManager">
@@ -315,7 +344,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4492" y="-580" width="4504" height="2474" extended-state="6" />
+    <frame x="-4492" y="-566" width="4504" height="2474" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16294643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -352,13 +381,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/manageorg/solicitor/editpermissions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="179" selection-start-line="64" selection-start-column="179" selection-end-line="64" selection-end-column="179" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/manageorg/solicitor/inviteuser.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -625,54 +647,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/confirmation.html">
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/checkyouranswers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41407308">
-          <caret line="34" column="130" selection-start-line="34" selection-start-column="130" selection-end-line="34" selection-end-column="130" />
+        <state vertical-scroll-proportion="0.4384303">
+          <caret line="357" column="83" selection-start-line="357" selection-start-column="83" selection-end-line="357" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/casedetailsdivorce.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.255751">
+          <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="88" selection-start-line="88" selection-start-column="88" selection-end-line="88" selection-end-column="88" />
+          <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/casedetailsdivorce.html">
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/panel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.75">
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="70" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#2;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#2;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.5236806">
+          <caret line="59" column="176" selection-start-line="59" selection-start-column="176" selection-end-line="59" selection-end-column="176" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/hearings/pages/startrequest.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="42" />
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/language.html">
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/timing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48849797">
+          <caret line="329" column="118" selection-start-line="329" selection-start-column="118" selection-end-line="329" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/venuedefault.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1096076">
+          <caret line="111" column="4" selection-start-line="111" selection-start-column="4" selection-end-line="119" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/region.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20884077">
+          <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/venue.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="128" selection-start-line="56" selection-start-column="128" selection-end-line="56" selection-end-column="128" />
+          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="84" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -680,62 +716,42 @@
     <entry file="file://$PROJECT_DIR$/views/hearings/pages/paneldifferent.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="165" column="119" selection-start-line="165" selection-start-column="119" selection-end-line="165" selection-end-column="119" />
+          <caret line="75" column="72" selection-start-line="75" selection-start-column="72" selection-end-line="75" selection-end-column="72" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#div#3;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#1;n#div#2;n#div#3;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#1;n#div#1;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#1;n#div#2;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#3;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#1;n#div#3;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#1;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#2;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/timing.html">
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/language.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17320703">
-          <caret line="238" column="82" selection-start-line="238" selection-start-column="82" selection-end-line="238" selection-end-column="82" />
+        <state vertical-scroll-proportion="-34.555557">
+          <caret line="190" column="58" selection-start-line="190" selection-start-column="58" selection-end-line="190" selection-end-column="58" />
           <folding>
-            <element signature="n#style#0;n#div#4;n#div#0;n#fieldset#0;n#div#3;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/hearings/pages/channel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="77" selection-start-line="31" selection-start-column="77" selection-end-line="31" selection-end-column="77" />
+        <state vertical-scroll-proportion="-16.833334">
+          <caret line="31" column="80" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/venue.html">
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/confirmation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="36" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/region.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26792964">
-          <caret line="31" column="78" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/panel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.5">
-          <caret line="59" column="176" selection-start-line="59" selection-start-column="176" selection-end-line="59" selection-end-column="176" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/checkyouranswers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66982406">
-          <caret line="391" column="70" selection-start-line="391" selection-start-column="70" selection-end-line="391" selection-end-column="70" />
+        <state vertical-scroll-proportion="0.38971582">
+          <caret line="32" column="92" selection-start-line="32" selection-start-column="92" selection-end-line="32" selection-end-column="92" />
           <folding />
         </state>
       </provider>

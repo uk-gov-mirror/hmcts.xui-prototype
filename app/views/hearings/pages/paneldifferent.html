@@ -63,27 +63,40 @@ Case details
                                             <div class="govuk-radios__conditional" id="conditionaljudgelevels"  style="display:none;">
 
                                                 <div class="govuk-form-group">
+                                                    <br>
                                                     <fieldset class="govuk-fieldset">
-                                                        <legend class="govuk-fieldset__legend  govuk-fieldset__legend--s">
-                                                            Judge contract type
+                                                        <legend class="govuk-fieldset__legend  govuk-fieldset__legend--s ">
+                                                            Select a judge type
                                                         </legend>
                                                         <div class="govuk-radios">
                                                             <div class="govuk-radios__item">
-                                                                <input class="govuk-radios__input" id="where-do-you-live" name="judgecontract" type="radio" value="england" checked>
-                                                                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                                                                <input class="govuk-radios__input" id="judgecontract1" name="judgecontract" type="radio" value="england" checked>
+                                                                <label class="govuk-label govuk-radios__label" for="judgecontract1">
                                                                     All
                                                                 </label>
                                                             </div>
                                                             <div class="govuk-radios__item">
-                                                                <input class="govuk-radios__input" id="where-do-you-live-2" name="judgecontract" type="radio" value="scotland">
-                                                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                                                                    Salaried
+                                                                <input class="govuk-radios__input" id="judgecontract2" name="judgecontract" type="radio" value="scotland">
+                                                                <label class="govuk-label govuk-radios__label" for="judgecontract2">
+                                                                    Tribunal Judge - salaried
                                                                 </label>
                                                             </div>
                                                             <div class="govuk-radios__item">
-                                                                <input class="govuk-radios__input" id="where-do-you-live-3" name="judgecontract" type="radio" value="wales">
-                                                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-                                                                    Fee-paid
+                                                                <input class="govuk-radios__input" id="judgecontract3" name="judgecontract" type="radio" value="wales">
+                                                                <label class="govuk-label govuk-radios__label" for="judgecontract3">
+                                                                    Tribunal Judge - fee-paid
+                                                                </label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="judgecontract4" name="judgecontract" type="radio" value="scotland">
+                                                                <label class="govuk-label govuk-radios__label" for="judgecontract4">
+                                                                    Regional Tribunal Judge - salaried
+                                                                </label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="judgecontract5" name="judgecontract" type="radio" value="wales">
+                                                                <label class="govuk-label govuk-radios__label" for="judgecontract5">
+                                                                    Regional Tribunal Judge - fee-paid
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -91,8 +104,7 @@ Case details
                                                     </fieldset>
                                                 </div>
 
-
-
+                                                <!--
                                                 <div class="govuk-form-group" id="roles">
                                                     <fieldset class="govuk-fieldset">
                                                         <legend class="govuk-fieldset__legend  govuk-fieldset__legend--s">
@@ -149,8 +161,9 @@ Case details
                                                             </div>
                                                         </div>
 
-                                                    </fieldset>
-                                                </div>
+                                                        </fieldset>
+                                                    </div>
+                                                    -->
 
 
                                                 <div class="govuk-form-group" id="excluejudge">
@@ -219,7 +232,7 @@ Case details
                                 <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
                                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                         <h1 class="govuk-fieldset__heading">
-                                            Select any other panel roles required   &nbsp;  &nbsp;  &nbsp;  &nbsp;  [SSCS LIST NEEDED,  &nbsp;  also, maximum of 1 of each?]
+                                            Select any other panel roles required   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
                                         </h1>
                                     </legend>
                                     <div id="waste-hint" class="govuk-hint">
@@ -227,45 +240,21 @@ Case details
                                     </div>
                                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                                         <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="venues1" name="venues" type="checkbox" value="BEXLEYHEATH SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
-                                            <label class="govuk-label govuk-checkboxes__label" for="venues1">
-                                                Salaried legally qualified
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="venues2" name="venues" type="checkbox" value="EAST LONDON TRIBUNAL HEARING CENTRE">
-                                            <label class="govuk-label govuk-checkboxes__label" for="venues2">
-                                                Fee paid legally qualified
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="ENFIELD SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                            <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="Medical member" checked>
                                             <label class="govuk-label govuk-checkboxes__label" for="venues3">
-                                                Disability qualified
+                                                Medical member
                                             </label>
                                         </div>
                                         <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="venues4" name="venues" type="checkbox" value="FOX COURT SSCS (HOLBORN COURTS AND TRIBUNALS)">
-                                            <label class="govuk-label govuk-checkboxes__label" for="venues4">
-                                                Financially qualified
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="venues5" name="venues" type="checkbox" value="HATTON CROSS TRIBUNAL HEARING CENTRE">
-                                            <label class="govuk-label govuk-checkboxes__label" for="venues5">
-                                                Medically qualified - Specialist
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="venues6" name="venues" type="checkbox" value="ROMFORD COUNTY COURT AND FAMILY COURT">
+                                            <input class="govuk-checkboxes__input" id="venues6" name="venues" type="checkbox" value="Disability qualified member">
                                             <label class="govuk-label govuk-checkboxes__label" for="venues6">
-                                                Medically qualified - non specialist
+                                                Disability qualified member
                                             </label>
                                         </div>
                                         <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="venues7" name="venues" type="checkbox" value="SUTTON SOCIAL SECURITY AND CHILD SUPPORT TRIBUNAL">
+                                            <input class="govuk-checkboxes__input" id="venues7" name="venues" type="checkbox" value="Financely qualified member">
                                             <label class="govuk-label govuk-checkboxes__label" for="venues7">
-                                                Salaried - Medically qualified
+                                                Financely qualified member
                                             </label>
                                         </div>
 

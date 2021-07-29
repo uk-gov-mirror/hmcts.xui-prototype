@@ -1,0 +1,124 @@
+{% extends "../layoutstaff.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+    <main class="" id="main-content" role="main">
+        <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
+            <div class="govuk-tabs__panel" id="event" style=" padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
+
+
+
+                        <!-- <h2 class="govuk-heading-l">Channel</h2>-->
+
+                        <form
+                            name="aspnetForm"
+                            method="post"
+                            id="aspnetForm"
+                            autocomplete="off"
+                            >
+
+
+                            <div class="govuk-form-group">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                    <h1 class="govuk-fieldset__heading">
+                                        Venue
+                                    </h1>
+                                </legend>
+
+                                <p>ROMFORD COUNTY COURT AND FAMILY COURT<br>
+                                    <a href="/hearings/pages/region">Change venue</a></p>
+                            </div>
+
+
+
+                            <div class="govuk-form-group"style="width: 600px;">
+                                <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail">
+                                    What facilities are required?
+                                </label>
+                                <div id="more-detail-hint" class="govuk-hint">
+                                    For example, a TV to play video evidence.
+                                </div>
+                                <fieldset class="govuk-fieldset">
+                                    <div class="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="facilities1" name="facilities" type="radio" value="London" onclick="closefacilities();">
+                                            <label class="govuk-label govuk-radios__label" for="facilities1" onclick="closefacilities();">
+                                                example 1
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="facilities2" name="facilities" type="radio" value="Midlands" onclick="closefacilities();">
+                                            <label class="govuk-label govuk-radios__label" for="facilities2" onclick="closefacilities();">
+                                                example 2
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="facilities3" name="facilities" type="radio" value="North East" onclick="closefacilities();">
+                                            <label class="govuk-label govuk-radios__label" for="facilities3" onclick="closefacilities();">
+                                                example 3
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="facilities4" name="facilities" type="radio" value="North West" onclick="closefacilities();">
+                                            <label class="govuk-label govuk-radios__label" for="facilities4" onclick="closefacilities();">
+                                                example 4
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="facilities5" name="facilities" type="radio" value="Wales" onclick="openfacilities();">
+                                            <label class="govuk-label govuk-radios__label" for="facilities5" onclick="openfacilities();">
+                                                Something else
+                                            </label>
+                                        </div>
+
+                                            <div class="govuk-radios__conditional" id="conditionalfacilities"  style="display:none;">
+                                                <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail">
+                                                    Enter the facilities are required
+                                                </label>
+                                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+                                            </div>
+
+                                    </div>
+
+                                </fieldset>
+                            </div>
+
+
+
+                            <div class="govuk-form-group  govuk-!-margin-top-7" >
+                                <button class="govuk-button" data-module="govuk-button">
+                                    Continue
+                                </button>
+                            </div>
+
+                        </form>
+
+
+
+            </div>
+        </div>
+    </main>
+
+
+
+<script>
+
+    function openfacilities()
+    {
+        document.getElementById("conditionalfacilities").style.display = "block";
+    }
+
+    function closefacilities()
+    {
+        document.getElementById("conditionalfacilities").style.display = "none";
+    }
+
+</script>
+
+{% endblock %}

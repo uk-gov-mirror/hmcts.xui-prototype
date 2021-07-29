@@ -52,7 +52,21 @@ router.post('/hearings/pages/channel', function (req, res)
 {
     if(req.session.data['channelradios'] == 'In person')
     {
-        res.redirect('/hearings/pages/region');
+        res.redirect('/hearings/pages/venuedefault');
+    }
+    else
+    {
+        res.redirect('/hearings/pages/panel');
+    }
+})
+
+
+// Page 2 to page 3
+router.post('/hearings/pages/venuedefault', function (req, res)
+{
+    if(true)
+    {
+        res.redirect('/hearings/pages/panel');
     }
     else
     {

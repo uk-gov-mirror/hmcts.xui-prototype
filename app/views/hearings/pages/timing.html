@@ -71,12 +71,14 @@ Case details
                                     </legend>
                                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
+                                        <!--
                                         <div class="govuk-radios__item">
                                             <input class="govuk-radios__input" id="duration1" name="durationradios" type="radio" value="15 minutes" onclick="hideothertime()">
                                             <label class="govuk-label govuk-radios__label" for="duration1"  onclick="hideothertime()">
                                                 15 minutes
                                             </label>
                                         </div>
+                                        -->
 
                                         <div class="govuk-radios__item">
                                             <input class="govuk-radios__input" id="duration2" name="durationradios" type="radio" value="30 minutes"  onclick="hideothertime()"  >
@@ -85,6 +87,7 @@ Case details
                                             </label>
                                         </div>
 
+                                        <!--
                                         <div class="govuk-radios__item">
                                             <input class="govuk-radios__input" id="duration3" name="durationradios" type="radio" value="1 hour"   onclick="hideothertime()" >
                                             <label class="govuk-label govuk-radios__label" for="duration3" onclick="hideothertime()">
@@ -98,6 +101,7 @@ Case details
                                                 1 hour and 30 minutes
                                             </label>
                                         </div>
+                                        -->
 
                                         <div class="govuk-radios__item">
                                             <input class="govuk-radios__input" id="duration5" name="durationradios" type="radio" value="Other"  onclick="showothertime()"  >
@@ -323,32 +327,17 @@ Case details
                                 <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                         <h3 class="govuk-fieldset__heading">
-                                            How urgent is the hearing?  (optional)       &nbsp;  &nbsp; &nbsp; &nbsp; [SSCS DATA NEEDED]
+                                            Is this a priority hearing?  (optional)       &nbsp;  &nbsp; &nbsp; &nbsp;
                                         </h3>
                                     </legend>
-                                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="priority-1" name="prioritychcokboxes" type="radio" value="AM or PM">
-                                            <label class="govuk-label govuk-radios__label" for="priority-1">
-                                                High priority
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="venues7" name="priority" type="checkbox" value="Priority Hearing">
+                                            <label class="govuk-label govuk-checkboxes__label" for="venues7">
+                                                Priority
                                             </label>
                                         </div>
-
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="priority-2" name="prioritychcokboxes" type="radio" value="AM only"   >
-                                            <label class="govuk-label govuk-radios__label" for="priority-2">
-                                                Medium priority
-                                            </label>
-                                        </div>
-
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="priority-3" name="prioritychcokboxes" type="radio" value="PM only"   >
-                                            <label class="govuk-label govuk-radios__label" for="priority-3">
-                                                Low priority
-                                            </label>
-                                        </div>
-
                                     </div>
 
                                 </fieldset>
