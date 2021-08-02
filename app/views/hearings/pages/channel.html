@@ -34,25 +34,25 @@ Case details
                                     </legend>
                                     <div class="govuk-radios">
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="chanel1" name="channelradios" type="radio" value="In person">
+                                            <input class="govuk-radios__input" id="chanel1" name="channelradios" type="radio" value="In person" {% if data.channelradios == 'In person' %} checked {% endif %}>
                                             <label class="govuk-label govuk-radios__label" for="chanel1">
                                                 In person
                                             </label>
                                         </div>
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="chanel2" name="channelradios" type="radio" value="By phone">
+                                            <input class="govuk-radios__input" id="chanel2" name="channelradios" type="radio" value="By phone" {% if data.channelradios == 'By phone' %} checked {% endif %}>
                                             <label class="govuk-label govuk-radios__label" for="chanel2">
                                                 By phone
                                             </label>
                                         </div>
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="chanel3" name="channelradios" type="radio" value="By video">
+                                            <input class="govuk-radios__input" id="chanel3" name="channelradios" type="radio" value="By video" {% if data.channelradios == 'By video' %} checked {% endif %}>
                                             <label class="govuk-label govuk-radios__label" for="chanel3">
                                                 By video
                                             </label>
                                         </div>
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="chanel4" name="channelradios" type="radio" value="On paper">
+                                            <input class="govuk-radios__input" id="chanel4" name="channelradios" type="radio" value="On paper" {% if data.channelradios == 'On paper' %} checked {% endif %}>
                                             <label class="govuk-label govuk-radios__label" for="chanel4">
                                                 On paper
                                             </label>

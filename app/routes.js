@@ -14,6 +14,257 @@ module.exports = router
 
 //  HEARINGS
 
+router.get('/hearings/first', function (req, res)
+{
+        req.session.data['submissioncomplete'] = 'false';
+
+        req.session.data['hidecurrent'] = 'true';
+        req.session.data['hidepast'] = 'true';
+        req.session.data['hidecancelled'] = 'true';
+
+        req.session.data['channelradios'] = '';
+        req.session.data['otherfailities'] = '';
+        req.session.data['panelsame'] = '';
+        req.session.data['specificjudge'] = '';
+        req.session.data['judgename'] = '';
+        req.session.data['judgecontract'] = '';
+        req.session.data['exludejudgefield'] = '';
+        req.session.data['addpersonsname'] = '';
+        req.session.data['excludepersonsname'] = '';
+        req.session.data['theduration'] = '';
+        req.session.data['durationradios'] = '';
+        req.session.data['durationreason'] = '';
+        req.session.data['dateradios'] = '';
+
+        req.session.data['alternativeentry'] = 'false';
+
+        res.redirect('/hearings/pages/casedetailsdivorce')
+})
+
+
+
+router.get('/hearings/firstalt', function (req, res)
+{
+    req.session.data['submissioncomplete'] = 'false';
+
+
+    req.session.data['hidecurrent'] = 'true';
+    req.session.data['hidepast'] = 'true';
+    req.session.data['hidecancelled'] = 'true';
+
+    req.session.data['channelradios'] = 'In person';
+    req.session.data['otherfailities'] = '';
+    req.session.data['panelsame'] = '	No - select a new panel';
+    req.session.data['specificjudge'] = 'No';
+    req.session.data['judgename'] = '';
+    req.session.data['judgecontract'] = 'All';
+    req.session.data['exludejudgefield'] = '';
+    req.session.data['addpersonsname'] = '';
+    req.session.data['excludepersonsname'] = '';
+    req.session.data['panelmemeberlist'] = 'Regional Medical Member\nDisability Qualified Member';
+    req.session.data['theduration'] = '30 minutes';
+    req.session.data['durationradios'] = '30 minutes';
+    req.session.data['dateradios'] = 'No';
+
+
+    req.session.data['alternativeentry'] = 'true';
+
+    res.redirect('/hearings/pages/casedetailsdivorce')
+})
+
+
+
+
+router.get('/hearings/third', function (req, res)
+{
+    req.session.data['submissioncomplete'] = 'false';
+
+    req.session.data['hidecurrent'] = 'true';
+    req.session.data['hidepast'] = 'false';
+    req.session.data['hidecancelled'] = 'false';
+
+    req.session.data['channelradios'] = '';
+    req.session.data['otherfailities'] = '';
+    req.session.data['panelsame'] = '';
+    req.session.data['specificjudge'] = '';
+    req.session.data['judgename'] = '';
+    req.session.data['judgecontract'] = '';
+    req.session.data['exludejudgefield'] = '';
+    req.session.data['addpersonsname'] = '';
+    req.session.data['excludepersonsname'] = '';
+    req.session.data['theduration'] = '';
+    req.session.data['durationradios'] = '';
+    req.session.data['durationreason'] = '';
+    req.session.data['dateradios'] = '';
+
+    req.session.data['alternativeentry'] = 'false';
+
+    res.redirect('/hearings/pages/casedetailsdivorce')
+})
+
+
+
+router.get('/hearings/aftersubmission', function (req, res)
+{
+    req.session.data['submissioncomplete'] = 'true';
+    req.session.data['aftertenbmins'] = 'false';
+
+    req.session.data['hidecurrent'] = 'true';
+    req.session.data['hidepast'] = 'true';
+    req.session.data['hidecancelled'] = 'true';
+
+
+    /*
+    req.session.data['channelradios'] = '';
+    req.session.data['otherfailities'] = '';
+    req.session.data['panelsame'] = '';
+    req.session.data['specificjudge'] = '';
+    req.session.data['judgename'] = '';
+    req.session.data['judgecontract'] = '';
+    req.session.data['exludejudgefield'] = '';
+    req.session.data['addpersonsname'] = '';
+    req.session.data['excludepersonsname'] = '';
+    req.session.data['theduration'] = '';
+    req.session.data['durationreason'] = '';
+    req.session.data['dateradios'] = '';
+    */
+
+    req.session.data['alternativeentry'] = 'false';
+
+    res.redirect('/hearings/pages/casedetailsdivorce')
+})
+
+
+router.get('/hearings/after10mins', function (req, res)
+{
+    req.session.data['submissioncomplete'] = 'true';
+    req.session.data['aftertenbmins'] = 'true';
+
+    req.session.data['hidecurrent'] = 'true';
+    req.session.data['hidepast'] = 'true';
+    req.session.data['hidecancelled'] = 'true';
+
+    /*
+     req.session.data['channelradios'] = '';
+     req.session.data['otherfailities'] = '';
+     req.session.data['panelsame'] = '';
+     req.session.data['specificjudge'] = '';
+     req.session.data['judgename'] = '';
+     req.session.data['judgecontract'] = '';
+     req.session.data['exludejudgefield'] = '';
+     req.session.data['addpersonsname'] = '';
+     req.session.data['excludepersonsname'] = '';
+     req.session.data['theduration'] = '';
+     req.session.data['durationreason'] = '';
+     req.session.data['dateradios'] = '';
+     */
+
+    req.session.data['alternativeentry'] = 'false';
+
+    res.redirect('/hearings/pages/casedetailsdivorce')
+})
+
+
+router.get('/hearings/aftermonth', function (req, res)
+{
+    req.session.data['submissioncomplete'] = 'false';
+    req.session.data['aftertenbmins'] = 'false';
+
+
+    req.session.data['hidecurrent'] = 'false';
+    req.session.data['hidepast'] = 'true';
+    req.session.data['hidecancelled'] = 'true';
+
+    /*
+     req.session.data['channelradios'] = '';
+     req.session.data['otherfailities'] = '';
+     req.session.data['panelsame'] = '';
+     req.session.data['specificjudge'] = '';
+     req.session.data['judgename'] = '';
+     req.session.data['judgecontract'] = '';
+     req.session.data['exludejudgefield'] = '';
+     req.session.data['addpersonsname'] = '';
+     req.session.data['excludepersonsname'] = '';
+     req.session.data['theduration'] = '';
+     req.session.data['durationreason'] = '';
+     req.session.data['dateradios'] = '';
+     */
+
+    req.session.data['alternativeentry'] = 'false';
+
+    res.redirect('/hearings/pages/casedetailsdivorce')
+})
+
+
+
+router.get('/hearings/aftermonth', function (req, res)
+{
+    req.session.data['submissioncomplete'] = 'false';
+
+    req.session.data['hidecurrent'] = 'false';
+    req.session.data['hidepast'] = 'true';
+    req.session.data['hidecancelled'] = 'true';
+
+    /*
+     req.session.data['channelradios'] = '';
+     req.session.data['otherfailities'] = '';
+     req.session.data['panelsame'] = '';
+     req.session.data['specificjudge'] = '';
+     req.session.data['judgename'] = '';
+     req.session.data['judgecontract'] = '';
+     req.session.data['exludejudgefield'] = '';
+     req.session.data['addpersonsname'] = '';
+     req.session.data['excludepersonsname'] = '';
+     req.session.data['theduration'] = '';
+     req.session.data['durationreason'] = '';
+     req.session.data['dateradios'] = '';
+     */
+
+    req.session.data['alternativeentry'] = 'false';
+
+    res.redirect('/hearings/pages/casedetailsdivorce')
+})
+
+
+
+router.get('/hearings/all', function (req, res)
+{
+    req.session.data['submissioncomplete'] = 'true';
+
+    req.session.data['hidecurrent'] = 'false';
+    req.session.data['hidepast'] = 'false';
+    req.session.data['hidecancelled'] = 'false';
+
+    /*
+     req.session.data['channelradios'] = '';
+     req.session.data['otherfailities'] = '';
+     req.session.data['panelsame'] = '';
+     req.session.data['specificjudge'] = '';
+     req.session.data['judgename'] = '';
+     req.session.data['judgecontract'] = '';
+     req.session.data['exludejudgefield'] = '';
+     req.session.data['addpersonsname'] = '';
+     req.session.data['excludepersonsname'] = '';
+     req.session.data['theduration'] = '';
+     req.session.data['durationreason'] = '';
+     req.session.data['dateradios'] = '';
+     */
+
+    req.session.data['alternativeentry'] = 'false';
+
+    res.redirect('/hearings/pages/casedetailsdivorce')
+})
+
+
+
+
+
+
+
+
+
+
+
 //Page 0 to page 1
 router.post('/hearings/pages/casedetailsdivorce', function (req, res)
 {
@@ -22,7 +273,21 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
         req.session.data['drafthearing'] = 'true';
         req.session.data['submissioncomplete'] = 'false';
         req.session.data['changesallowed'] = 'true';
-        res.redirect('/hearings/pages/startrequest')
+
+
+        if(req.session.data['alternativeentry'] == 'true')
+        {
+            req.session.data['drafthearing'] = "falce";
+            req.session.data['changesallowed'] = "true";
+
+            res.redirect('/hearings/pages/checkyouranswers')
+        }
+        else
+        {
+            res.redirect('/hearings/pages/startrequest')
+        }
+
+
 
     }
     else
@@ -116,6 +381,26 @@ router.post('/hearings/pages/paneldifferent', function (req, res)
 {
     if (true)
     {
+        req.session.data['panelmemeberlist'] = '';
+
+        if(req.session.data['panelmember1'] == 'on')
+        {
+           req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] +  "Regional Medical Member";
+        }
+        if(req.session.data['panelmember2'] == 'on')
+        {
+            req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] + "\nTribunal Medical Member";
+        }
+        if(req.session.data['panelmember3'] == 'on')
+        {
+            req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] + "\nTribunal Specialist Medical Member";
+        }
+        if(req.session.data['panelmember4'] == 'on')
+        {
+            req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] + "\nDisability Qualified Member";
+        }
+
+
         res.redirect('/hearings/pages/timing')
     }
     else
@@ -130,6 +415,18 @@ router.post('/hearings/pages/timing', function (req, res)
 {
     if (true)
     {
+        req.session.data['theduration'] = '';
+        if(req.session.data['durationradios'] == '30 minutes')
+        {
+            req.session.data['theduration'] = '30 minutes';
+        }
+        else
+        {
+            req.session.data['theduration'] = req.session.data['durationhours'] + " hour " +  req.session.data['durationmins']  + " minutes"
+        }
+
+
+
         res.redirect('/hearings/pages/language')
     }
     else

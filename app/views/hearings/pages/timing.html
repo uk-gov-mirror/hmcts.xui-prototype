@@ -126,14 +126,14 @@ Case details
                                                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                                                                     Hours
                                                                 </label>
-                                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric" ></div>
+                                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="durationhours" name="durationhours" type="text" pattern="[0-9]*" inputmode="numeric" ></div>
                                                         </div>
                                                         <div class="govuk-date-input__item">
                                                             <div class="govuk-form-group">
                                                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                                                                     Minutes
                                                                 </label>
-                                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="durationmins" name="durationmins" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                                                         </div>
                                                     </div>
 
@@ -178,10 +178,10 @@ Case details
                                                             <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="reasonsection">
 
 
-                                                                <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail">
+                                                                <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="durationreasontext">
                                                                     Enter a reason
                                                                 </label>
-                                                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="2" aria-describedby="more-detail-hint"></textarea>
+                                                                <textarea class="govuk-textarea" id="durationreasontext" name="durationreasontext" rows="2" aria-describedby="more-detail-hint"></textarea>
 
 
                                                             </div>
@@ -224,14 +224,14 @@ Case details
                                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="dates1" name="dateradios" type="radio" value="15 minutes" onclick="hiderangedate(); hidefixeddate();">
+                                            <input class="govuk-radios__input" id="dates1" name="dateradios" type="radio" value="No" onclick="hiderangedate(); hidefixeddate();">
                                             <label class="govuk-label govuk-radios__label" for="dates1"  onclick="hiderangedate(); hidefixeddate();">
                                                 No
                                             </label>
                                         </div>
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="dates2" name="dateradios" type="radio" value="30 minutes"  onclick="hiderangedate(); showfixeddate();"  >
+                                            <input class="govuk-radios__input" id="dates2" name="dateradios" type="radio" value="Yes"  onclick="hiderangedate(); showfixeddate();"  >
                                             <label class="govuk-label govuk-radios__label" for="dates2" onclick="hiderangedate(); showfixeddate();">
                                                 Yes
                                             </label>
@@ -275,7 +275,7 @@ Case details
 
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="dates3" name="dateradios" type="radio" value="Other"  onclick="showrangedate(); hidefixeddate();"  >
+                                            <input class="govuk-radios__input" id="dates3" name="dateradios" type="radio" value="Choose a date range"  onclick="showrangedate(); hidefixeddate();"  >
                                             <label class="govuk-label govuk-radios__label" for="dates3" onclick="showrangedate();  hidefixeddate();"  >
                                                 Choose a date range
                                             </label>

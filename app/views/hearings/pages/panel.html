@@ -57,14 +57,14 @@ Case details
                                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="panel-1" name="panelsame" type="radio" value="Yes - use the same panel as most recent hearing" >
+                                            <input class="govuk-radios__input" id="panel-1" name="panelsame" type="radio" value="Yes - use the same panel as most recent hearing" {% if data.panelsame == 'Yes - use the same panel as most recent hearing' %} Checked {% endif %}>
                                             <label class="govuk-label govuk-radios__label" for="panel-1"  onclick="showJudges();">
                                                 Yes - use the same panel as most recent hearing
                                             </label>
                                         </div>
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="panel-2" name="panelsame" type="radio" value="Totally new panel"   >
+                                            <input class="govuk-radios__input" id="panel-2" name="panelsame" type="radio" value="No - select a new panel"  {% if data.panelsame == 'No - select a new panel' %}  Checked {% endif %} >
                                             <label class="govuk-label govuk-radios__label" for="panel-2" onclick="hideJudges(); ">
                                                 No - select a new panel
                                             </label>
