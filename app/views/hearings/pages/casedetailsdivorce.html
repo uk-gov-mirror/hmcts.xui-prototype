@@ -10,7 +10,7 @@ Case details
 
     <main class="" id="main-content" role="main">
 
-            <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
+            <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto; margin-top: 30px;">
 
             <div class=""  style="display: flex; justify-content: space-between; ">
 
@@ -98,14 +98,15 @@ Case details
 
 
                         {% if data.submissioncomplete == 'true' %}
-                            <h2 class="govuk-heading-m">Pending hearing requests</h2>
+                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-1">Pending hearing requests</h2>
 
                             <table class="govuk-table govuk-!-margin-bottom-9">
                                 <thead class="govuk-table__head">
                                 <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row">
-                                    <td scope="row" class="govuk-table__cell" style="width:200px;">Today</td>
+                                    <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but not yet processed</td>
                                     <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=false&">View details</a></td>
+                                    <td class="govuk-table__cell" style="text-align: right;"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">Cancel</a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -113,15 +114,16 @@ Case details
 
 
 
-                        <h2 class="govuk-heading-m">Upcoming hearings</h2>
+
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-1">Upcoming hearings</h2>
 
                         <table class="govuk-table govuk-!-margin-bottom-4">
                             <thead class="govuk-table__head">
                             <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row">
                                     <td scope="row" class="govuk-table__cell" style="width:200px;">19 August 2021</td>
-                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">View details</a></td>
-                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">Make a change</a></td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">View and change</a></td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">Cancel</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -134,21 +136,19 @@ Case details
                             autocomplete="off"
                             >
 
-
                             <div class="govuk-form-group  govuk-!-margin-top-0" >
                                 <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
                                     Request a hearing
                                 </button>
                             </div>
 
-
                         </form>
 
 
 
-                        <h2 class="govuk-heading-m">Past hearings</h2>
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Past hearings</h2>
 
-                        <table class="govuk-table" id="pastshearings" style="width: 325px;;">
+                        <table class="govuk-table" id="pastshearings" style="width: 325px;">
                             <thead class="govuk-table__head">
                             <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row">
@@ -159,6 +159,19 @@ Case details
                                     <td scope="row" class="govuk-table__cell">13 December 2021</td>
                                     <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=false&"">View details</a></td>
                                 </tr>
+                            </tbody>
+                        </table>
+
+
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Cancelled hearings</h2>
+
+                        <table class="govuk-table govuk-!-margin-bottom-4" style="width: 325px;">
+                            <thead class="govuk-table__head">
+                            <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <td scope="row" class="govuk-table__cell" style="width:200px;">11 May 2021</td>
+                                <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">View details</a></td>
+                            </tr>
                             </tbody>
                         </table>
 

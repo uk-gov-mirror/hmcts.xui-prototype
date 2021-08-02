@@ -12,9 +12,9 @@ Case details
         <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
             <div class="govuk-tabs__panel" id="event" style=" padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
 
+                <a href="#" class="govuk-back-link govuk-!-margin-bottom-6" onclick="goBack();">Back</a>
 
-
-                        <h2 class="govuk-heading-l">Select a new panel</h2>
+                        <h2 class="govuk-heading-m">Select a new panel</h2>
 
 
                         <form
@@ -23,7 +23,6 @@ Case details
                             id="aspnetForm"
                             autocomplete="off"
                             >
-
 
 
 
@@ -70,33 +69,27 @@ Case details
                                                         </legend>
                                                         <div class="govuk-radios">
                                                             <div class="govuk-radios__item">
-                                                                <input class="govuk-radios__input" id="judgecontract1" name="judgecontract" type="radio" value="england" checked>
+                                                                <input class="govuk-radios__input" id="judgecontract1" name="judgecontract" type="radio" value="All" checked>
                                                                 <label class="govuk-label govuk-radios__label" for="judgecontract1">
                                                                     All
                                                                 </label>
                                                             </div>
                                                             <div class="govuk-radios__item">
-                                                                <input class="govuk-radios__input" id="judgecontract2" name="judgecontract" type="radio" value="scotland">
+                                                                <input class="govuk-radios__input" id="judgecontract2" name="judgecontract" type="radio" value="Tribunal Judge - salaried">
                                                                 <label class="govuk-label govuk-radios__label" for="judgecontract2">
                                                                     Tribunal Judge - salaried
                                                                 </label>
                                                             </div>
                                                             <div class="govuk-radios__item">
-                                                                <input class="govuk-radios__input" id="judgecontract3" name="judgecontract" type="radio" value="wales">
+                                                                <input class="govuk-radios__input" id="judgecontract3" name="judgecontract" type="radio" value="Tribunal Judge - fee-paid">
                                                                 <label class="govuk-label govuk-radios__label" for="judgecontract3">
                                                                     Tribunal Judge - fee-paid
                                                                 </label>
                                                             </div>
                                                             <div class="govuk-radios__item">
-                                                                <input class="govuk-radios__input" id="judgecontract4" name="judgecontract" type="radio" value="scotland">
+                                                                <input class="govuk-radios__input" id="judgecontract4" name="judgecontract" type="radio" value="Regional Tribunal Judge">
                                                                 <label class="govuk-label govuk-radios__label" for="judgecontract4">
-                                                                    Regional Tribunal Judge - salaried
-                                                                </label>
-                                                            </div>
-                                                            <div class="govuk-radios__item">
-                                                                <input class="govuk-radios__input" id="judgecontract5" name="judgecontract" type="radio" value="wales">
-                                                                <label class="govuk-label govuk-radios__label" for="judgecontract5">
-                                                                    Regional Tribunal Judge - fee-paid
+                                                                    Regional Tribunal Judge
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -240,21 +233,27 @@ Case details
                                     </div>
                                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                                         <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="venues3" name="venues" type="checkbox" value="Medical member" checked>
-                                            <label class="govuk-label govuk-checkboxes__label" for="venues3">
-                                                Medical member
+                                            <input class="govuk-checkboxes__input" id="panelmember1" name="panelmember1" type="checkbox" value="Medical member" checked>
+                                            <label class="govuk-label govuk-checkboxes__label" for="panelmember1">
+                                                Regional Medical Member
                                             </label>
                                         </div>
                                         <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="venues6" name="venues" type="checkbox" value="Disability qualified member">
-                                            <label class="govuk-label govuk-checkboxes__label" for="venues6">
-                                                Disability qualified member
+                                            <input class="govuk-checkboxes__input" id="panelmember2" name="panelmember2" type="checkbox" value="Disability qualified member">
+                                            <label class="govuk-label govuk-checkboxes__label" for="panelmember2">
+                                                Tribunal Medical Member
                                             </label>
                                         </div>
                                         <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="venues7" name="venues" type="checkbox" value="Financely qualified member">
-                                            <label class="govuk-label govuk-checkboxes__label" for="venues7">
-                                                Financely qualified member
+                                            <input class="govuk-checkboxes__input" id="panelmember3" name="panelmember3" type="checkbox" value="Financely qualified member">
+                                            <label class="govuk-label govuk-checkboxes__label" for="panelmember3">
+                                                Tribunal Specialist Medical Member
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="panelmember4" name="panelmember4" type="checkbox" value="Financely qualified member" checked>
+                                            <label class="govuk-label govuk-checkboxes__label" for="panelmember4">
+                                                Disability Qualified Member
                                             </label>
                                         </div>
 
@@ -344,7 +343,16 @@ Case details
 
 
 
+
+
+
+    function goBack() {
+        window.history.back();
+    }
 </script>
+
+
+
 
 
 

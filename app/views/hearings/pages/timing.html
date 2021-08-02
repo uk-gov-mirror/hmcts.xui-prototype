@@ -12,9 +12,9 @@ Case details
         <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
             <div class="govuk-tabs__panel" id="event" style="padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
 
+                <a href="#" class="govuk-back-link govuk-!-margin-bottom-6" onclick="goBack();">Back</a>
 
-
-                        <h2 class="govuk-heading-l">When will the hearing take place?</h2>
+                        <h2 class="govuk-heading-m">When will the hearing take place?</h2>
 
                         <form
                             name="aspnetForm"
@@ -23,7 +23,7 @@ Case details
                             autocomplete="off"
                             >
 
-
+                            <!--
                             <div class="govuk-form-group govuk-!-margin-top-5">
                                 <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -32,7 +32,6 @@ Case details
                                         </h3>
                                     </legend>
                                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-
 
 
                                         <div class="govuk-radios__item">
@@ -60,6 +59,7 @@ Case details
 
                                 </fieldset>
                             </div>
+                            -->
 
 
                             <div class="govuk-form-group govuk-!-margin-top-5">
@@ -142,10 +142,57 @@ Case details
 
 
                                             <div class="govuk-form-group" style="width: 600px;">
-                                                <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail">
-                                                    Give a reason why a different length of hearing is required
-                                                </label>
-                                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="2" aria-describedby="more-detail-hint"></textarea>
+
+                                                <div class="govuk-form-group govuk-!-margin-top-5">
+                                                    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                                            <h3 class="govuk-fieldset__heading">
+                                                                Give a reason why a different length of hearing is required
+                                                            </h3>
+                                                        </legend>
+                                                        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="durationreason1" name="durationreason" type="radio" value="Reason 1" onclick="hidereason();">
+                                                                <label class="govuk-label govuk-radios__label" for="durationreason1"  onclick="hidereason();">
+                                                                    Reason 1
+                                                                </label>
+                                                            </div>
+
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="durationreason2" name="durationreason" type="radio" value="Reason 2"  onclick="hidereason();"  >
+                                                                <label class="govuk-label govuk-radios__label" for="durationreason2" onclick="hidereason();">
+                                                                    Reason 2
+                                                                </label>
+                                                            </div>
+
+
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="durationreason3" name="durationreason" type="radio" value="Another reason"  onclick="showreason();"  >
+                                                                <label class="govuk-label govuk-radios__label" for="durationreason3" onclick="showreason();"  >
+                                                                    Another reason
+                                                                </label>
+                                                            </div>
+
+
+                                                            <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="reasonsection">
+
+
+                                                                <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail">
+                                                                    Enter a reason
+                                                                </label>
+                                                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="2" aria-describedby="more-detail-hint"></textarea>
+
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </fieldset>
+                                                </div>
+
+
+
                                             </div>
 
 
@@ -177,14 +224,14 @@ Case details
                                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="dates1" name="durationradios" type="radio" value="15 minutes" onclick="hiderangedate(); hidefixeddate();">
+                                            <input class="govuk-radios__input" id="dates1" name="dateradios" type="radio" value="15 minutes" onclick="hiderangedate(); hidefixeddate();">
                                             <label class="govuk-label govuk-radios__label" for="dates1"  onclick="hiderangedate(); hidefixeddate();">
                                                 No
                                             </label>
                                         </div>
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="dates2" name="durationradios" type="radio" value="30 minutes"  onclick="hiderangedate(); showfixeddate();"  >
+                                            <input class="govuk-radios__input" id="dates2" name="dateradios" type="radio" value="30 minutes"  onclick="hiderangedate(); showfixeddate();"  >
                                             <label class="govuk-label govuk-radios__label" for="dates2" onclick="hiderangedate(); showfixeddate();">
                                                 Yes
                                             </label>
@@ -228,7 +275,7 @@ Case details
 
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="dates3" name="durationradios" type="radio" value="Other"  onclick="showrangedate(); hidefixeddate();"  >
+                                            <input class="govuk-radios__input" id="dates3" name="dateradios" type="radio" value="Other"  onclick="showrangedate(); hidefixeddate();"  >
                                             <label class="govuk-label govuk-radios__label" for="dates3" onclick="showrangedate();  hidefixeddate();"  >
                                                 Choose a date range
                                             </label>
@@ -402,7 +449,25 @@ Case details
 
 
 
+    function showreason()
+    {
+        document.getElementById("reasonsection").style.display = "block";
+    }
+
+    function hidereason()
+    {
+        document.getElementById("reasonsection").style.display = "none";
+    }
+
+
+
+
+    function goBack() {
+        window.history.back();
+    }
 </script>
+
+
 
 
 {% endblock %}

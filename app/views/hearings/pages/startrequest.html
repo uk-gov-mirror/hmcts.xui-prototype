@@ -8,11 +8,16 @@ Case details
 {% block content %}
 
 
+
     <main class="" id="main-content" role="main">
         <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
+
+            <a href="#" class="govuk-back-link govuk-!-margin-bottom-6" onclick="goBack();">Back</a>
+
             <div class="govuk-tabs__panel" id="event" style="padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
 
-                        <h2 class="govuk-heading-l">Request a hearing</h2>
+
+                        <h2 class="govuk-heading-m">Request a hearing</h2>
 
                         <form
                             name="aspnetForm"
@@ -25,14 +30,16 @@ Case details
 
                             <p>Jane Smith v DWP </p>
 
-                            <p>03 - Judge, Doctor and disability member</p>
+                            <p>03 PIP</p>
 
+                            <!--
                             <div class="govuk-inset-text">
                                 Restricted case
                             </div>
+                            -->
 
                             <div class="govuk-inset-text">
-                                Case flags: Vunerable party
+                                Case flags: Vulnerable party
                             </div>
 
 
@@ -50,6 +57,20 @@ Case details
             </div>
         </div>
     </main>
+
+
+
+
+
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+
+
 
 {% endblock %}
 
