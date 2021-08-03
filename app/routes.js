@@ -54,7 +54,7 @@ router.get('/hearings/firstalt', function (req, res)
 
     req.session.data['channelradios'] = 'In person';
     req.session.data['otherfailities'] = '';
-    req.session.data['panelsame'] = '	No - select a new panel';
+    req.session.data['panelsame'] = 'No - select a new panel';
     req.session.data['specificjudge'] = 'No';
     req.session.data['judgename'] = '';
     req.session.data['judgecontract'] = 'All';
