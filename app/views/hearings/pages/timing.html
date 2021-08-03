@@ -81,7 +81,7 @@ Case details
                                         -->
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="duration2" name="durationradios" type="radio" value="30 minutes"  onclick="hideothertime()" checked >
+                                            <input class="govuk-radios__input" id="duration2" name="durationradios" type="radio" value="30 minutes"  onclick="hideothertime()"  {% if data.durationradios == '30 minutes' %}  Checked {% endif %} >
                                             <label class="govuk-label govuk-radios__label" for="duration2" onclick="hideothertime()">
                                                 30 minutes
                                             </label>
@@ -104,14 +104,14 @@ Case details
                                         -->
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="duration5" name="durationradios" type="radio" value="Other"  onclick="showothertime()"  >
+                                            <input class="govuk-radios__input" id="duration5" name="durationradios" type="radio" value="other"  onclick="showothertime()"  {% if data.durationradios == 'other' %}  Checked {% endif %}  >
                                             <label class="govuk-label govuk-radios__label" for="duration5" onclick="showothertime()"  >
                                                 Another length
                                             </label>
                                         </div>
 
 
-                                        <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="othertime">
+                                        <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" id="othertime" style="display:none;  {% if data.durationradios == 'other' %}  display:block;  {% endif %}"  >
                                             <div class="govuk-form-group">
                                                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                                                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -224,20 +224,20 @@ Case details
                                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="dates1" name="dateradios" type="radio" value="No" onclick="hiderangedate(); hidefixeddate();">
+                                            <input class="govuk-radios__input" id="dates1" name="dateradios" type="radio" value="No" onclick="hiderangedate(); hidefixeddate();"  {% if data.dateradios == 'No' %}  Checked {% endif %}>
                                             <label class="govuk-label govuk-radios__label" for="dates1"  onclick="hiderangedate(); hidefixeddate();">
                                                 No
                                             </label>
                                         </div>
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="dates2" name="dateradios" type="radio" value="Yes"  onclick="hiderangedate(); showfixeddate();"  >
+                                            <input class="govuk-radios__input" id="dates2" name="dateradios" type="radio" value="Yes"  onclick="hiderangedate(); showfixeddate();"   {% if data.dateradios == 'Yes' %}  Checked {% endif %}>
                                             <label class="govuk-label govuk-radios__label" for="dates2" onclick="hiderangedate(); showfixeddate();">
                                                 Yes
                                             </label>
                                         </div>
 
-                                        <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="fixeddatesection">
+                                        <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3"  id="fixeddatesection"    style="display:none;  {% if data.dateradios == 'Yes' %}  display:block;   {% endif %}">
                                             <div class="govuk-form-group">
                                                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                                                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -275,14 +275,14 @@ Case details
 
 
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="dates3" name="dateradios" type="radio" value="Choose a date range"  onclick="showrangedate(); hidefixeddate();"  >
+                                            <input class="govuk-radios__input" id="dates3" name="dateradios" type="radio" value="Choose a date range"  onclick="showrangedate(); hidefixeddate();"   {% if data.dateradios == 'Choose a date range' %}  Checked {% endif %}>
                                             <label class="govuk-label govuk-radios__label" for="dates3" onclick="showrangedate();  hidefixeddate();"  >
                                                 Choose a date range
                                             </label>
                                         </div>
 
 
-                                        <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="rangedatesection">
+                                        <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" id="rangedatesection"  style="display:none;  {% if data.dateradios == 'Choose a date range' %}  display:block;   {% endif %}">
 
 
 

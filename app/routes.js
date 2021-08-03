@@ -32,7 +32,7 @@ router.get('/hearings/first', function (req, res)
         req.session.data['addpersonsname'] = '';
         req.session.data['excludepersonsname'] = '';
         req.session.data['theduration'] = '';
-        req.session.data['durationradios'] = '';
+        req.session.data['durationradios'] = '30 minutes';
         req.session.data['durationreason'] = '';
         req.session.data['dateradios'] = '';
 
@@ -93,7 +93,7 @@ router.get('/hearings/third', function (req, res)
     req.session.data['addpersonsname'] = '';
     req.session.data['excludepersonsname'] = '';
     req.session.data['theduration'] = '';
-    req.session.data['durationradios'] = '';
+    req.session.data['durationradios'] = '30 minutes';
     req.session.data['durationreason'] = '';
     req.session.data['dateradios'] = '';
 
@@ -273,6 +273,7 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
         req.session.data['drafthearing'] = 'true';
         req.session.data['submissioncomplete'] = 'false';
         req.session.data['changesallowed'] = 'true';
+        req.session.data['durationradios'] = '30 minutes';
 
 
         if(req.session.data['alternativeentry'] == 'true')
