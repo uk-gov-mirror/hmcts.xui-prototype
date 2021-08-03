@@ -18,6 +18,8 @@ router.get('/hearings/first', function (req, res)
 {
         req.session.data['submissioncomplete'] = 'false';
 
+        req.session.data['firsthearingscenario'] = 'true';
+
         req.session.data['hidecurrent'] = 'true';
         req.session.data['hidepast'] = 'true';
         req.session.data['hidecancelled'] = 'true';
@@ -46,6 +48,8 @@ router.get('/hearings/first', function (req, res)
 router.get('/hearings/firstalt', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'false';
+
+    req.session.data['firsthearingscenario'] = 'true';
 
 
     req.session.data['hidecurrent'] = 'true';
@@ -78,6 +82,8 @@ router.get('/hearings/firstalt', function (req, res)
 router.get('/hearings/third', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'false';
+
+    req.session.data['firsthearingscenario'] = 'false';
 
     req.session.data['hidecurrent'] = 'true';
     req.session.data['hidepast'] = 'false';
@@ -322,7 +328,14 @@ router.post('/hearings/pages/channel', function (req, res)
     }
     else
     {
-        res.redirect('/hearings/pages/panel');
+        if( req.session.data['firsthearingscenario'] == 'true' )
+        {
+            res.redirect('/hearings/pages/paneldifferent');
+        }
+        else
+        {
+            res.redirect('/hearings/pages/panel');
+        }
     }
 })
 
@@ -332,7 +345,15 @@ router.post('/hearings/pages/venuedefault', function (req, res)
 {
     if(true)
     {
-        res.redirect('/hearings/pages/panel');
+        if( req.session.data['firsthearingscenario'] == 'true' )
+        {
+            res.redirect('/hearings/pages/paneldifferent');
+        }
+        else
+        {
+            res.redirect('/hearings/pages/panel');
+        }
+
     }
     else
     {

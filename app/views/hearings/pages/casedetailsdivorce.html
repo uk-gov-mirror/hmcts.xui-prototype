@@ -106,10 +106,12 @@ Case details
                                 <tr class="govuk-table__row">
                                     {% if data.aftertenbmins == 'true' %}
                                         <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but not yet scheduled</td>
+                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">View and change</a></td>
                                     {%  else  %}
                                         <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but not yet processed</td>
+                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=false&">View details</a></td>
                                     {%  endif  %}
-                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=false&">View details</a></td>
+
                                     <td class="govuk-table__cell" style="text-align: right;"><a href="#">Cancel</a></td>
                                 </tr>
                                 </tbody>

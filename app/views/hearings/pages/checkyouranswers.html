@@ -146,24 +146,30 @@ Case details
 
 
 
+
+
                                         <h2 class="govuk-heading-m">Panel</h2>
 
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                                            <div class="govuk-summary-list__row">
-                                                <dt class="govuk-summary-list__key">
-                                                    Use the most recent panel again?
-                                                </dt>
-                                                <dd class="govuk-summary-list__value">
-                                                    {{  data.panelsame }}
-                                                </dd>
-                                                <dd class="govuk-summary-list__actions">
-                                                    {% if data.changesallowed != 'false' %}
-                                                        <a class="govuk-link" href="/hearings/pages/panel">
-                                                            Change
-                                                        </a>
-                                                    {% endif %}
-                                                </dd>
-                                            </div>
+
+                                            {% if data.firsthearingscenario != 'true' %}
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Use the most recent panel again?
+                                                    </dt>
+                                                    <dd class="govuk-summary-list__value">
+                                                        {{  data.panelsame }}
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                        {% if data.changesallowed != 'false' %}
+                                                            <a class="govuk-link" href="/hearings/pages/panel">
+                                                                Change
+                                                            </a>
+                                                        {% endif %}
+                                                    </dd>
+                                                </div>
+                                            {% endif %}
+
 
 
                                             {% if data.panelsame == 'No - select a new panel' %}
@@ -489,7 +495,7 @@ Case details
 
                                 <div class="govuk-form-group  govuk-!-margin-top-5" >
                                     <button class="govuk-button" data-module="govuk-button">
-                                        Submit reuqest
+                                        Submit request
                                     </button>
                                 </div>
 
