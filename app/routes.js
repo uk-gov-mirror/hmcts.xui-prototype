@@ -308,14 +308,11 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
 // Page 1 to page 2
 router.post('/hearings/pages/startrequest', function (req, res)
 {
-    if (true)
-    {
-        res.redirect('/hearings/pages/channel')
-    }
-    else
-    {
-        res.redirect('#')
-    }
+    req.session.data['thenevue'] = 'ROMFORD COUNTY COURT AND FAMILY COURT';
+    req.session.data['regionselection'] = 'London';
+
+    res.redirect('/hearings/pages/channel')
+
 })
 
 
@@ -366,13 +363,18 @@ router.post('/hearings/pages/region', function (req, res)
 // Page 2 to page 3
 router.post('/hearings/pages/venue', function (req, res)
 {
+    console.log(req.session.data['placeholder']);
+
+    req.session.data['thenevue'] = req.session.data['placeholder'];
+
+
     if( req.session.data['firsthearingscenario'] == 'true' )
     {
-        res.redirect('/hearings/pages/paneldifferent');
+        res.redirect('/hearings/pages/venuedefault');
     }
     else
     {
-        res.redirect('/hearings/pages/panel');
+        res.redirect('/hearings/pages/venuedefault');
     }
 })
 

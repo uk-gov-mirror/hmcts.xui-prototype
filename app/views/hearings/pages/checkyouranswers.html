@@ -96,7 +96,7 @@ Case details
                                                             Where will the hearing take place?
                                                         </dt>
                                                         <dd class="govuk-summary-list__value">
-                                                            London
+                                                            {{  data['regionselection']  }}
                                                         </dd>
                                                         <dd class="govuk-summary-list__actions">
                                                             {% if data.changesallowed != 'false' %}
@@ -110,9 +110,7 @@ Case details
                                                         <dt class="govuk-summary-list__key">
                                                             Select all possible venues
                                                         </dt>
-                                                        <dd class="govuk-summary-list__value">
-                                                            ROMFORD COUNTY COURT AND FAMILY COURT
-                                                        </dd>
+                                                        <dd class="govuk-summary-list__value"  style="white-space: pre-wrap;">{{  data['thenevue']  }}</dd>
                                                         <dd class="govuk-summary-list__actions">
                                                             {% if data.changesallowed != 'false' %}
                                                             <a class="govuk-link" href="/hearings/pages/region">
