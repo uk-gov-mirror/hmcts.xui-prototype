@@ -343,17 +343,9 @@ router.post('/hearings/pages/channel', function (req, res)
 // Page 2 to page 3
 router.post('/hearings/pages/venuedefault', function (req, res)
 {
-    if(true)
+    if( req.session.data['firsthearingscenario'] == 'true' )
     {
-        if( req.session.data['firsthearingscenario'] == 'true' )
-        {
-            res.redirect('/hearings/pages/paneldifferent');
-        }
-        else
-        {
-            res.redirect('/hearings/pages/panel');
-        }
-
+        res.redirect('/hearings/pages/paneldifferent');
     }
     else
     {
@@ -374,13 +366,13 @@ router.post('/hearings/pages/region', function (req, res)
 // Page 2 to page 3
 router.post('/hearings/pages/venue', function (req, res)
 {
-    if(true)
+    if( req.session.data['firsthearingscenario'] == 'true' )
     {
-        res.redirect('/hearings/pages/panel')
+        res.redirect('/hearings/pages/paneldifferent');
     }
     else
     {
-        res.redirect('#')
+        res.redirect('/hearings/pages/panel');
     }
 })
 
