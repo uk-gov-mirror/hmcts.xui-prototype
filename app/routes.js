@@ -279,7 +279,7 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
         req.session.data['drafthearing'] = 'true';
         req.session.data['submissioncomplete'] = 'false';
         req.session.data['changesallowed'] = 'true';
-        req.session.data['durationradios'] = '30 minutes';
+        req.session.data['durationradios'] = '45 minutes';
 
 
         if(req.session.data['alternativeentry'] == 'true')
