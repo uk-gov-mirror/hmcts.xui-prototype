@@ -34,7 +34,7 @@ router.get('/hearings/first', function (req, res)
         req.session.data['addpersonsname'] = '';
         req.session.data['excludepersonsname'] = '';
         req.session.data['theduration'] = '';
-        req.session.data['durationradios'] = '30 minutes';
+        req.session.data['durationradios'] = '45 minutes';
         req.session.data['durationreason'] = '';
         req.session.data['dateradios'] = '';
 
@@ -66,8 +66,8 @@ router.get('/hearings/firstalt', function (req, res)
     req.session.data['addpersonsname'] = '';
     req.session.data['excludepersonsname'] = '';
     req.session.data['panelmemeberlist'] = 'Regional Medical Member\nDisability Qualified Member';
-    req.session.data['theduration'] = '30 minutes';
-    req.session.data['durationradios'] = '30 minutes';
+    req.session.data['theduration'] = '45 minutes';
+    req.session.data['durationradios'] = '45 minutes';
     req.session.data['dateradios'] = 'No';
 
 
@@ -99,7 +99,7 @@ router.get('/hearings/third', function (req, res)
     req.session.data['addpersonsname'] = '';
     req.session.data['excludepersonsname'] = '';
     req.session.data['theduration'] = '';
-    req.session.data['durationradios'] = '30 minutes';
+    req.session.data['durationradios'] = '45 minutes';
     req.session.data['durationreason'] = '';
     req.session.data['dateradios'] = '';
 
@@ -432,9 +432,9 @@ router.post('/hearings/pages/timing', function (req, res)
     if (true)
     {
         req.session.data['theduration'] = '';
-        if(req.session.data['durationradios'] == '30 minutes')
+        if(req.session.data['durationradios'] == '45 minutes')
         {
-            req.session.data['theduration'] = '30 minutes';
+            req.session.data['theduration'] = '45 minutes';
         }
         else
         {
