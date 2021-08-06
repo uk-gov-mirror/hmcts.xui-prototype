@@ -82,7 +82,7 @@ Case details
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                     {% if data.changesallowed != 'false' %}
-                                                        <a class="govuk-link" href="/hearings/pages/channel">
+                                                        <a class="govuk-link" href="/hearings/pages/channel?backtocheckanswers=true&">
                                                             Change
                                                         </a>
                                                     {% endif %}
@@ -100,7 +100,7 @@ Case details
                                                         </dd>
                                                         <dd class="govuk-summary-list__actions">
                                                             {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/region">
+                                                            <a class="govuk-link" href="/hearings/pages/region?backtocheckanswers=true&">
                                                                 Change
                                                             </a>
                                                             {% endif %}
@@ -113,7 +113,7 @@ Case details
                                                         <dd class="govuk-summary-list__value"  style="white-space: pre-wrap;">{{  data['thenevue']  }}</dd>
                                                         <dd class="govuk-summary-list__actions">
                                                             {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/region">
+                                                            <a class="govuk-link" href="/hearings/pages/region?backtocheckanswers=true&">
                                                                 Change
                                                             </a>
                                                             {% endif %}
@@ -134,7 +134,7 @@ Case details
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                     {% if data.changesallowed != 'false' %}
-                                                    <a class="govuk-link" href="/hearings/pages/venuedefault">
+                                                    <a class="govuk-link" href="/hearings/pages/venuedefault?backtocheckanswers=true&">
                                                         Change
                                                     </a>
                                                     {% endif %}
@@ -160,7 +160,7 @@ Case details
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/panel">
+                                                            <a class="govuk-link" href="/hearings/pages/panel?backtocheckanswers=true&">
                                                                 Change
                                                             </a>
                                                         {% endif %}
@@ -181,7 +181,7 @@ Case details
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/paneldifferent">
+                                                            <a class="govuk-link" href="/hearings/pages/paneldifferent?backtocheckanswers=true&">
                                                                 Change
                                                             </a>
                                                         {% endif %}
@@ -198,7 +198,7 @@ Case details
                                                             </dd>
                                                             <dd class="govuk-summary-list__actions">
                                                                 {% if data.changesallowed != 'false' %}
-                                                                <a class="govuk-link" href="/hearings/pages/paneldifferent">
+                                                                <a class="govuk-link" href="/hearings/pages/paneldifferent?backtocheckanswers=true&">
                                                                     Change
                                                                 </a>
                                                                 {% endif %}
@@ -216,7 +216,7 @@ Case details
                                                             </dd>
                                                             <dd class="govuk-summary-list__actions">
                                                                 {% if data.changesallowed != 'false' %}
-                                                                <a class="govuk-link" href="/hearings/pages/paneldifferent">
+                                                                <a class="govuk-link" href="/hearings/pages/paneldifferent?backtocheckanswers=true&">
                                                                     Change
                                                                 </a>
                                                                 {% endif %}
@@ -231,7 +231,7 @@ Case details
                                                             </dd>
                                                             <dd class="govuk-summary-list__actions">
                                                                 {% if data.changesallowed != 'false' %}
-                                                                <a class="govuk-link" href="/hearings/pages/paneldifferent">
+                                                                <a class="govuk-link" href="/hearings/pages/paneldifferent?backtocheckanswers=true&">
                                                                     Change
                                                                 </a>
                                                                 {% endif %}
@@ -251,7 +251,7 @@ Case details
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/paneldifferent">
+                                                            <a class="govuk-link" href="/hearings/pages/paneldifferent?backtocheckanswers=true&">
                                                                 Change
                                                             </a>
                                                         {% endif %}
@@ -266,7 +266,7 @@ Case details
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/paneldifferent">
+                                                            <a class="govuk-link" href="/hearings/pages/paneldifferent?backtocheckanswers=true&">
                                                                 Change
                                                             </a>
                                                         {% endif %}
@@ -279,7 +279,7 @@ Case details
                                                     <dd class="govuk-summary-list__value" style="white-space: pre-wrap;">{{  data.panelmemeberlist }}</dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/paneldifferent">
+                                                            <a class="govuk-link" href="/hearings/pages/paneldifferent?backtocheckanswers=true&">
                                                                 Change
                                                             </a>
                                                         {% endif %}
@@ -324,14 +324,14 @@ Case details
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/timing">
+                                                            <a class="govuk-link" href="/hearings/pages/timing?backtocheckanswers=true&">
                                                                 Change
                                                             </a>
                                                         {% endif %}
                                                     </dd>
                                                 </div>
 
-                                                {% if data['durationradios'] != '30 minutes' %}
+                                                {% if data['durationradios'] != '45 minutes' %}
                                                     <div class="govuk-summary-list__row">
                                                         <dt class="govuk-summary-list__key">
                                                             Give a reason why a different length of hearing is required
@@ -340,7 +340,7 @@ Case details
                                                         </dd>
                                                         <dd class="govuk-summary-list__actions">
                                                             {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/timing">
+                                                            <a class="govuk-link" href="/hearings/pages/timing?backtocheckanswers=true&">
                                                                 Change
                                                             </a>
                                                             {% endif %}
@@ -369,7 +369,7 @@ Case details
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/timing">
+                                                            <a class="govuk-link" href="/hearings/pages/timing?backtocheckanswers=true&">
                                                                 Change
                                                             </a>
                                                         {% endif %}
@@ -386,7 +386,7 @@ Case details
                                                         </dd>
                                                         <dd class="govuk-summary-list__actions">
                                                             {% if data.changesallowed != 'false' %}
-                                                                <a class="govuk-link" href="/hearings/pages/timing">
+                                                                <a class="govuk-link" href="/hearings/pages/timing?backtocheckanswers=true&">
                                                                     Change
                                                                 </a>
                                                             {% endif %}
@@ -404,7 +404,7 @@ Case details
                                                         </dd>
                                                         <dd class="govuk-summary-list__actions">
                                                             {% if data.changesallowed != 'false' %}
-                                                                <a class="govuk-link" href="/hearings/pages/timing">
+                                                                <a class="govuk-link" href="/hearings/pages/timing?backtocheckanswers=true&">
                                                                     Change
                                                                 </a>
                                                             {% endif %}
@@ -418,7 +418,7 @@ Case details
                                                         </dd>
                                                         <dd class="govuk-summary-list__actions">
                                                             {% if data.changesallowed != 'false' %}
-                                                                <a class="govuk-link" href="/hearings/pages/timing">
+                                                                <a class="govuk-link" href="/hearings/pages/timing?backtocheckanswers=true&">
                                                                     Change
                                                                 </a>
                                                             {% endif %}
@@ -434,7 +434,7 @@ Case details
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/timing">
+                                                            <a class="govuk-link" href="/hearings/pages/timing?backtocheckanswers=true&">
                                                                 Change
                                                             </a>
                                                         {% endif %}
@@ -452,7 +452,7 @@ Case details
                                                         Select if the hearing needs to be in Welsh
                                                     </dt>
                                                     <dd class="govuk-summary-list__value">
-
+                                                        {{  data.priorityoutput  }}
                                                     </dd>
                                                     <dd class="govuk-summary-list__actions">
                                                         {% if data.changesallowed != 'false' %}

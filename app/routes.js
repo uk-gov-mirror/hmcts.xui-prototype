@@ -24,31 +24,7 @@ router.get('/hearings/first', function (req, res)
         req.session.data['hidepast'] = 'true';
         req.session.data['hidecancelled'] = 'true';
 
-        req.session.data['channelradios'] = '';
-        req.session.data['otherfailities'] = '';
-        req.session.data['panelsame'] = '';
-        req.session.data['specificjudge'] = '';
-        req.session.data['judgename'] = '';
-        req.session.data['judgecontract'] = '';
-        req.session.data['exludejudgefield'] = '';
-        req.session.data['addpersonsname'] = '';
-        req.session.data['excludepersonsname'] = '';
-        req.session.data['theduration'] = '';
-        req.session.data['durationradios'] = '45 minutes';
-        req.session.data['durationreason'] = '';
 
-        req.session.data['dateradios'] = 'No';
-        req.session.data['firstdateday'] = '';
-        req.session.data['firstdatemonth'] = '';
-        req.session.data['firstdateyear'] = '';
-
-        // Clear other options data
-        req.session.data['earliestdateday'] = '';
-        req.session.data['earliestdatemonth'] = '';
-        req.session.data['earliestdateyear'] = '';
-        req.session.data['latestdateday'] = '';
-        req.session.data['latestdatemonth'] = '';
-        req.session.data['latestdateyear'] = '';
 
         req.session.data['alternativeentry'] = 'false';
 
@@ -68,31 +44,8 @@ router.get('/hearings/firstalt', function (req, res)
     req.session.data['hidepast'] = 'true';
     req.session.data['hidecancelled'] = 'true';
 
-    req.session.data['channelradios'] = 'In person';
-    req.session.data['otherfailities'] = '';
-    req.session.data['panelsame'] = 'No - select a new panel';
-    req.session.data['specificjudge'] = 'No';
-    req.session.data['judgename'] = '';
-    req.session.data['judgecontract'] = 'All';
-    req.session.data['exludejudgefield'] = '';
-    req.session.data['addpersonsname'] = '';
-    req.session.data['excludepersonsname'] = '';
-    req.session.data['panelmemeberlist'] = 'Regional Medical Member\nDisability Qualified Member';
-    req.session.data['theduration'] = '45 minutes';
-    req.session.data['durationradios'] = '45 minutes';
 
-    req.session.data['dateradios'] = 'No';
-    req.session.data['firstdateday'] = '';
-    req.session.data['firstdatemonth'] = '';
-    req.session.data['firstdateyear'] = '';
 
-    // Clear other options data
-    req.session.data['earliestdateday'] = '';
-    req.session.data['earliestdatemonth'] = '';
-    req.session.data['earliestdateyear'] = '';
-    req.session.data['latestdateday'] = '';
-    req.session.data['latestdatemonth'] = '';
-    req.session.data['latestdateyear'] = '';
 
     req.session.data['alternativeentry'] = 'true';
 
@@ -112,31 +65,7 @@ router.get('/hearings/third', function (req, res)
     req.session.data['hidepast'] = 'false';
     req.session.data['hidecancelled'] = 'false';
 
-    req.session.data['channelradios'] = '';
-    req.session.data['otherfailities'] = '';
-    req.session.data['panelsame'] = '';
-    req.session.data['specificjudge'] = '';
-    req.session.data['judgename'] = '';
-    req.session.data['judgecontract'] = '';
-    req.session.data['exludejudgefield'] = '';
-    req.session.data['addpersonsname'] = '';
-    req.session.data['excludepersonsname'] = '';
-    req.session.data['theduration'] = '';
-    req.session.data['durationradios'] = '45 minutes';
-    req.session.data['durationreason'] = '';
 
-    req.session.data['dateradios'] = 'No';
-    req.session.data['firstdateday'] = '';
-    req.session.data['firstdatemonth'] = '';
-    req.session.data['firstdateyear'] = '';
-
-    // Clear other options data
-    req.session.data['earliestdateday'] = '';
-    req.session.data['earliestdatemonth'] = '';
-    req.session.data['earliestdateyear'] = '';
-    req.session.data['latestdateday'] = '';
-    req.session.data['latestdatemonth'] = '';
-    req.session.data['latestdateyear'] = '';
 
     req.session.data['alternativeentry'] = 'false';
 
@@ -285,7 +214,41 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
         req.session.data['drafthearing'] = 'true';
         req.session.data['submissioncomplete'] = 'false';
         req.session.data['changesallowed'] = 'true';
+
+        req.session.data['channelradios'] = 'In person';
+
+        req.session.data['thenevue'] = 'ROMFORD COUNTY COURT AND FAMILY COURT';
+        req.session.data['regionselection'] = 'London';
+        req.session.data['otherfailities'] = '';
+
+        req.session.data['panelsame'] = 'No - select a new panel';
+
+        req.session.data['specificjudge'] = 'No';
+        req.session.data['judgename'] = '';
+        req.session.data['judgecontract'] = 'All';
+        req.session.data['exludejudgefield'] = '';
+        req.session.data['addpersonsname'] = '';
+        req.session.data['excludepersonsname'] = '';
+        req.session.data['panelmemeberlist'] = 'Regional Medical Member\nDisability Qualified Member';
+
+        req.session.data['theduration'] = '45 minutes';
         req.session.data['durationradios'] = '45 minutes';
+
+        req.session.data['dateradios'] = 'No';
+        req.session.data['firstdateday'] = '';
+        req.session.data['firstdatemonth'] = '';
+        req.session.data['firstdateyear'] = '';
+
+        // Clear other options data
+        req.session.data['earliestdateday'] = '';
+        req.session.data['earliestdatemonth'] = '';
+        req.session.data['earliestdateyear'] = '';
+        req.session.data['latestdateday'] = '';
+        req.session.data['latestdatemonth'] = '';
+        req.session.data['latestdateyear'] = '';
+
+
+
 
 
         if(req.session.data['alternativeentry'] == 'true')
@@ -308,8 +271,7 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
 // Page 1 to page 2
 router.post('/hearings/pages/startrequest', function (req, res)
 {
-    req.session.data['thenevue'] = 'ROMFORD COUNTY COURT AND FAMILY COURT';
-    req.session.data['regionselection'] = 'London';
+
 
     res.redirect('/hearings/pages/channel')
 
@@ -319,21 +281,33 @@ router.post('/hearings/pages/startrequest', function (req, res)
 // Page 2 to page 3
 router.post('/hearings/pages/channel', function (req, res)
 {
-    if(req.session.data['channelradios'] == 'In person')
+    if(req.session.data['backtocheckanswers'] == 'true' )
     {
-        res.redirect('/hearings/pages/venuedefault');
+        req.session.data['backtocheckanswers'] = 'false'
+        res.redirect('/hearings/pages/checkyouranswers');
     }
     else
     {
-        if( req.session.data['firsthearingscenario'] == 'true' )
+        if(req.session.data['channelradios'] == 'In person')
         {
-            res.redirect('/hearings/pages/paneldifferent');
+            res.redirect('/hearings/pages/venuedefault');
         }
         else
         {
-            res.redirect('/hearings/pages/panel');
+            if( req.session.data['firsthearingscenario'] == 'true' )
+            {
+                res.redirect('/hearings/pages/paneldifferent');
+            }
+            else
+            {
+                res.redirect('/hearings/pages/panel');
+            }
         }
     }
+
+
+
+
 })
 
 
@@ -363,31 +337,41 @@ router.post('/hearings/pages/region', function (req, res)
 // Page 2 to page 3
 router.post('/hearings/pages/venue', function (req, res)
 {
-    console.log(req.session.data['placeholder']);
+    //console.log(req.session.data['placeholder']);
 
     req.session.data['thenevue'] = req.session.data['placeholder'];
 
 
-    if( req.session.data['firsthearingscenario'] == 'true' )
+    if(req.session.data['backtocheckanswers'] == 'true' )
     {
-        res.redirect('/hearings/pages/venuedefault');
+        req.session.data['backtocheckanswers'] = 'false'
+        res.redirect('/hearings/pages/checkyouranswers');
     }
-    else
-    {
-        res.redirect('/hearings/pages/venuedefault');
+    else {
+        if (req.session.data['firsthearingscenario'] == 'true') {
+            res.redirect('/hearings/pages/venuedefault');
+        }
+        else {
+            res.redirect('/hearings/pages/venuedefault');
+        }
     }
 })
 
 // Page 3 to page 4
 router.post('/hearings/pages/panel', function (req, res)
 {
-    if(req.session.data['panelsame'] != 'Yes - use the same panel as most recent hearing')
+    if(req.session.data['backtocheckanswers'] == 'true' )
     {
-        res.redirect('/hearings/pages/paneldifferent')
+        req.session.data['backtocheckanswers'] = 'false'
+        res.redirect('/hearings/pages/checkyouranswers');
     }
-    else
-    {
-        res.redirect('/hearings/pages/timing')
+    else {
+        if (req.session.data['panelsame'] != 'Yes - use the same panel as most recent hearing') {
+            res.redirect('/hearings/pages/paneldifferent')
+        }
+        else {
+            res.redirect('/hearings/pages/timing')
+        }
     }
 })
 
@@ -395,32 +379,34 @@ router.post('/hearings/pages/panel', function (req, res)
 // Page 3 to page 4
 router.post('/hearings/pages/paneldifferent', function (req, res)
 {
-    if (true)
+    req.session.data['panelmemeberlist'] = '';
+
+    if(req.session.data['panelmember1'] == 'on')
     {
-        req.session.data['panelmemeberlist'] = '';
+        req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] +  "Regional Medical Member";
+    }
+    if(req.session.data['panelmember2'] == 'on')
+    {
+        req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] + "\nTribunal Medical Member";
+    }
+    if(req.session.data['panelmember3'] == 'on')
+    {
+        req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] + "\nTribunal Specialist Medical Member";
+    }
+    if(req.session.data['panelmember4'] == 'on')
+    {
+        req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] + "\nDisability Qualified Member";
+    }
 
-        if(req.session.data['panelmember1'] == 'on')
-        {
-           req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] +  "Regional Medical Member";
-        }
-        if(req.session.data['panelmember2'] == 'on')
-        {
-            req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] + "\nTribunal Medical Member";
-        }
-        if(req.session.data['panelmember3'] == 'on')
-        {
-            req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] + "\nTribunal Specialist Medical Member";
-        }
-        if(req.session.data['panelmember4'] == 'on')
-        {
-            req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] + "\nDisability Qualified Member";
-        }
 
-        res.redirect('/hearings/pages/timing')
+    if(req.session.data['backtocheckanswers'] == 'true' )
+    {
+        req.session.data['backtocheckanswers'] = 'false'
+        res.redirect('/hearings/pages/checkyouranswers');
     }
     else
     {
-        res.redirect('#')
+        res.redirect('/hearings/pages/timing')
     }
 })
 
@@ -500,7 +486,27 @@ router.post('/hearings/pages/timing', function (req, res)
         req.session.data['firstdateyear'] = '';
     }
 
-    res.redirect('/hearings/pages/language')
+
+    // PRIORITY
+    req.session.data['priorityoutput'] = 'sad';
+
+    if(req.session.data['priority'] == 'on')
+    {
+        req.session.data['priorityoutput'] = "Priority";
+    }
+
+
+
+    // ROUTING
+    if(req.session.data['backtocheckanswers'] == 'true' )
+    {
+        req.session.data['backtocheckanswers'] = 'false'
+        res.redirect('/hearings/pages/checkyouranswers');
+    }
+    else
+    {
+        res.redirect('/hearings/pages/language')
+    }
 
 })
 
@@ -509,14 +515,10 @@ router.post('/hearings/pages/timing', function (req, res)
 // Page 5 to page 6
 router.post('/hearings/pages/language', function (req, res)
 {
-    if (true)
-    {
+
+
         res.redirect('/hearings/pages/checkyouranswers')
-    }
-    else
-    {
-        res.redirect('#')
-    }
+
 })
 
 
@@ -535,6 +537,18 @@ router.post('/hearings/pages/checkyouranswers', function (req, res)
         res.redirect('#')
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -574,7 +588,27 @@ router.post('/v3/cases/method', function (req, res) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  CASE SEARCH
+
+
 // Start new search
 router.get( '/searchcases/pages/startsearch', function (req, res)
 {
@@ -912,6 +946,18 @@ router.get( '/opencase', function (req, res)
     }
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
