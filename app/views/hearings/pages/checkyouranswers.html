@@ -382,7 +382,7 @@ Case details
                                                             The first date of the hearing must be
 
                                                         <dd class="govuk-summary-list__value">
-                                                            14 August 2021
+                                                            {{   data.firstdateoutputtext    }}
                                                         </dd>
                                                         <dd class="govuk-summary-list__actions">
                                                             {% if data.changesallowed != 'false' %}
@@ -400,7 +400,7 @@ Case details
                                                         <dt class="govuk-summary-list__key">
                                                             Earliest hearing date
                                                         <dd class="govuk-summary-list__value">
-                                                            14 August 2021
+                                                            {{   data.earliestdateoutputtext    }}
                                                         </dd>
                                                         <dd class="govuk-summary-list__actions">
                                                             {% if data.changesallowed != 'false' %}
@@ -414,7 +414,7 @@ Case details
                                                         <dt class="govuk-summary-list__key">
                                                             Latest hearing date
                                                         <dd class="govuk-summary-list__value">
-                                                            15 October 2021
+                                                            {{   data.latestdateoutputtext    }}
                                                         </dd>
                                                         <dd class="govuk-summary-list__actions">
                                                             {% if data.changesallowed != 'false' %}

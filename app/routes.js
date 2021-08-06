@@ -36,7 +36,19 @@ router.get('/hearings/first', function (req, res)
         req.session.data['theduration'] = '';
         req.session.data['durationradios'] = '45 minutes';
         req.session.data['durationreason'] = '';
-        req.session.data['dateradios'] = '';
+
+        req.session.data['dateradios'] = 'No';
+        req.session.data['firstdateday'] = '';
+        req.session.data['firstdatemonth'] = '';
+        req.session.data['firstdateyear'] = '';
+
+        // Clear other options data
+        req.session.data['earliestdateday'] = '';
+        req.session.data['earliestdatemonth'] = '';
+        req.session.data['earliestdateyear'] = '';
+        req.session.data['latestdateday'] = '';
+        req.session.data['latestdatemonth'] = '';
+        req.session.data['latestdateyear'] = '';
 
         req.session.data['alternativeentry'] = 'false';
 
@@ -68,8 +80,19 @@ router.get('/hearings/firstalt', function (req, res)
     req.session.data['panelmemeberlist'] = 'Regional Medical Member\nDisability Qualified Member';
     req.session.data['theduration'] = '45 minutes';
     req.session.data['durationradios'] = '45 minutes';
-    req.session.data['dateradios'] = 'No';
 
+    req.session.data['dateradios'] = 'No';
+    req.session.data['firstdateday'] = '';
+    req.session.data['firstdatemonth'] = '';
+    req.session.data['firstdateyear'] = '';
+
+    // Clear other options data
+    req.session.data['earliestdateday'] = '';
+    req.session.data['earliestdatemonth'] = '';
+    req.session.data['earliestdateyear'] = '';
+    req.session.data['latestdateday'] = '';
+    req.session.data['latestdatemonth'] = '';
+    req.session.data['latestdateyear'] = '';
 
     req.session.data['alternativeentry'] = 'true';
 
@@ -101,7 +124,19 @@ router.get('/hearings/third', function (req, res)
     req.session.data['theduration'] = '';
     req.session.data['durationradios'] = '45 minutes';
     req.session.data['durationreason'] = '';
-    req.session.data['dateradios'] = '';
+
+    req.session.data['dateradios'] = 'No';
+    req.session.data['firstdateday'] = '';
+    req.session.data['firstdatemonth'] = '';
+    req.session.data['firstdateyear'] = '';
+
+    // Clear other options data
+    req.session.data['earliestdateday'] = '';
+    req.session.data['earliestdatemonth'] = '';
+    req.session.data['earliestdateyear'] = '';
+    req.session.data['latestdateday'] = '';
+    req.session.data['latestdatemonth'] = '';
+    req.session.data['latestdateyear'] = '';
 
     req.session.data['alternativeentry'] = 'false';
 
@@ -203,34 +238,6 @@ router.get('/hearings/aftermonth', function (req, res)
 
 
 
-router.get('/hearings/aftermonth', function (req, res)
-{
-    req.session.data['submissioncomplete'] = 'false';
-
-    req.session.data['hidecurrent'] = 'false';
-    req.session.data['hidepast'] = 'true';
-    req.session.data['hidecancelled'] = 'true';
-
-    /*
-     req.session.data['channelradios'] = '';
-     req.session.data['otherfailities'] = '';
-     req.session.data['panelsame'] = '';
-     req.session.data['specificjudge'] = '';
-     req.session.data['judgename'] = '';
-     req.session.data['judgecontract'] = '';
-     req.session.data['exludejudgefield'] = '';
-     req.session.data['addpersonsname'] = '';
-     req.session.data['excludepersonsname'] = '';
-     req.session.data['theduration'] = '';
-     req.session.data['durationreason'] = '';
-     req.session.data['dateradios'] = '';
-     */
-
-    req.session.data['alternativeentry'] = 'false';
-
-    res.redirect('/hearings/pages/casedetailsdivorce')
-})
-
 
 
 router.get('/hearings/all', function (req, res)
@@ -274,8 +281,7 @@ router.get('/hearings/all', function (req, res)
 //Page 0 to page 1
 router.post('/hearings/pages/casedetailsdivorce', function (req, res)
 {
-    if (true)
-    {
+
         req.session.data['drafthearing'] = 'true';
         req.session.data['submissioncomplete'] = 'false';
         req.session.data['changesallowed'] = 'true';
@@ -295,12 +301,6 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
         }
 
 
-
-    }
-    else
-    {
-        res.redirect('#')
-    }
 })
 
 
@@ -416,7 +416,6 @@ router.post('/hearings/pages/paneldifferent', function (req, res)
             req.session.data['panelmemeberlist'] = req.session.data['panelmemeberlist'] + "\nDisability Qualified Member";
         }
 
-
         res.redirect('/hearings/pages/timing')
     }
     else
@@ -429,26 +428,80 @@ router.post('/hearings/pages/paneldifferent', function (req, res)
 // Page 4 to page 5
 router.post('/hearings/pages/timing', function (req, res)
 {
-    if (true)
+
+    // TIME DURATION
+    req.session.data['theduration'] = '';
+    if(req.session.data['durationradios'] == '45 minutes')
     {
-        req.session.data['theduration'] = '';
-        if(req.session.data['durationradios'] == '45 minutes')
-        {
-            req.session.data['theduration'] = '45 minutes';
-        }
-        else
-        {
-            req.session.data['theduration'] = req.session.data['durationhours'] + " hour " +  req.session.data['durationmins']  + " minutes"
-        }
-
-
-
-        res.redirect('/hearings/pages/language')
+        req.session.data['theduration'] = '45 minutes';
     }
     else
     {
-        res.redirect('#')
+        req.session.data['theduration'] = req.session.data['durationhours'] + " hour " +  req.session.data['durationmins']  + " minutes"
     }
+
+
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+
+    // DATES
+
+    if(req.session.data['dateradios'] == 'No' )
+    {
+        req.session.data['firstdateday'] = '';
+        req.session.data['firstdatemonth'] = '';
+        req.session.data['firstdateyear'] = '';
+
+        // Clear other options data
+        req.session.data['earliestdateday'] = '';
+        req.session.data['earliestdatemonth'] = '';
+        req.session.data['earliestdateyear'] = '';
+        req.session.data['latestdateday'] = '';
+        req.session.data['latestdatemonth'] = '';
+        req.session.data['latestdateyear'] = '';
+    }
+    else if(req.session.data['dateradios'] == 'Yes' )
+    {
+        req.session.data['firstdateoutputtext'] = '';
+        var firstmonth = parseInt(req.session.data['firstdatemonth']);
+
+        req.session.data['firstdateoutputtext'] = req.session.data['firstdateday'] + " " + months[firstmonth-1] + " " + req.session.data['firstdateyear'];
+
+        // Clear other options data
+        req.session.data['earliestdateday'] = '';
+        req.session.data['earliestdatemonth'] = '';
+        req.session.data['earliestdateyear'] = '';
+        req.session.data['latestdateday'] = '';
+        req.session.data['latestdatemonth'] = '';
+        req.session.data['latestdateyear'] = '';
+    }
+    else if(req.session.data['dateradios'] == 'Choose a date range' )
+    {
+
+        // Earliest date
+        req.session.data['earliestdateoutputtext'] = '';
+        if(req.session.data['earliestdatemonth'] != '')
+        {
+            var earliestmonth = parseInt(req.session.data['earliestdatemonth']);
+            req.session.data['earliestdateoutputtext'] = req.session.data['earliestdateday'] + " " + months[earliestmonth-1] + " " + req.session.data['earliestdateyear'];
+        }
+
+        // Last date
+        req.session.data['latestdateoutputtext'] = '';
+        if(req.session.data['latestdatemonth'] != '')
+        {
+            var latestmonth = parseInt(req.session.data['latestdatemonth']);
+            req.session.data['latestdateoutputtext'] = req.session.data['latestdateday'] + " " + months[latestmonth-1] + " " + req.session.data['latestdateyear'];
+        }
+
+        // Clear other options data
+        req.session.data['firstdateday'] = '';
+        req.session.data['firstdatemonth'] = '';
+        req.session.data['firstdateyear'] = '';
+    }
+
+    res.redirect('/hearings/pages/language')
+
 })
 
 
