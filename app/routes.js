@@ -488,7 +488,7 @@ router.post('/hearings/pages/timing', function (req, res)
 
 
     // PRIORITY
-    req.session.data['priorityoutput'] = 'sad';
+    req.session.data['priorityoutput'] = '';
 
     if(req.session.data['priority'] == 'on')
     {
