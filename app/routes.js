@@ -11,9 +11,15 @@ module.exports = router
 
 
 
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//    HEARINGS
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
 
-//  HEARINGS
 
+//  Scenario for testing - Creating the first SSCS hearting on a case
+//  This is the most common in real life as most cases have just onme hearing
 router.get('/hearings/first', function (req, res)
 {
         req.session.data['submissioncomplete'] = 'false';
@@ -24,28 +30,22 @@ router.get('/hearings/first', function (req, res)
         req.session.data['hidepast'] = 'true';
         req.session.data['hidecancelled'] = 'true';
 
-
-
         req.session.data['alternativeentry'] = 'false';
 
         res.redirect('/hearings/pages/casedetailsdivorce')
 })
 
 
-
+//  Scenario for testing - First hearing but it starts on the check your answers page.
+// This feels odd but might be an acceptable design pattern if the SSCS users stick to most of the defaults.
 router.get('/hearings/firstalt', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'false';
-
     req.session.data['firsthearingscenario'] = 'true';
-
 
     req.session.data['hidecurrent'] = 'true';
     req.session.data['hidepast'] = 'true';
     req.session.data['hidecancelled'] = 'true';
-
-
-
 
     req.session.data['alternativeentry'] = 'true';
 
@@ -54,18 +54,17 @@ router.get('/hearings/firstalt', function (req, res)
 
 
 
-
+//  Scenario for testing -  A third hearing
+// This is unlikely for SSCS.  But on a 2nd hearings onward there is a chance a judge would want to keep the same panel
+// So this jounrey includes a page about keeping the most recent panel
 router.get('/hearings/third', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'false';
-
     req.session.data['firsthearingscenario'] = 'false';
 
     req.session.data['hidecurrent'] = 'true';
     req.session.data['hidepast'] = 'false';
     req.session.data['hidecancelled'] = 'false';
-
-
 
     req.session.data['alternativeentry'] = 'false';
 
@@ -73,7 +72,7 @@ router.get('/hearings/third', function (req, res)
 })
 
 
-
+// Scenario for testing - Showing the hearings tab - after submission
 router.get('/hearings/aftersubmission', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'true';
@@ -105,6 +104,7 @@ router.get('/hearings/aftersubmission', function (req, res)
 })
 
 
+// Scenario for testing - Showing the hearings tab - after submission
 router.get('/hearings/after10mins', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'true';
@@ -135,6 +135,8 @@ router.get('/hearings/after10mins', function (req, res)
 })
 
 
+// Scenario for testing - Showing the hearings tab - after one month
+// The assumption is that after 1 month the request would have been listed to a slot
 router.get('/hearings/aftermonth', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'false';
@@ -167,8 +169,8 @@ router.get('/hearings/aftermonth', function (req, res)
 
 
 
-
-
+// Scenario for testing - Showing the hearings tab - All states
+// Note this doesn't include the state of submitted but not allocated to a slot yet
 router.get('/hearings/all', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'true';
@@ -207,7 +209,8 @@ router.get('/hearings/all', function (req, res)
 
 
 
-//Page 0 to page 1
+// Starting the journey from the hearings tab
+// After clicking 'request a hearing' all the defaults are set for the following data entry pages
 router.post('/hearings/pages/casedetailsdivorce', function (req, res)
 {
 
@@ -250,7 +253,7 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
 
 
 
-
+        // If we are going with starting from the 'check answers' page then head straight there
         if(req.session.data['alternativeentry'] == 'true')
         {
             req.session.data['drafthearing'] = "falce";
@@ -260,6 +263,7 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
         }
         else
         {
+            // Otherwise go through the journey
             res.redirect('/hearings/pages/startrequest')
         }
 
@@ -268,19 +272,19 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
 
 
 
-// Page 1 to page 2
+// Displaying the basic info about a case on the first page
+// The go to channel section page
 router.post('/hearings/pages/startrequest', function (req, res)
 {
-
-
     res.redirect('/hearings/pages/channel')
-
 })
 
 
-// Page 2 to page 3
+// Select what channel the eharing will be held
+// If it's an in person channel then the next page must be to select the hearing location
 router.post('/hearings/pages/channel', function (req, res)
 {
+    // If coming from check answers page then return there after clicking continue
     if(req.session.data['backtocheckanswers'] == 'true' )
     {
         req.session.data['backtocheckanswers'] = 'false'
@@ -304,16 +308,14 @@ router.post('/hearings/pages/channel', function (req, res)
             }
         }
     }
-
-
-
-
 })
 
 
-// Page 2 to page 3
+// If it is a first hearing then don't redirect to a page suggesting the same hearing panel
+// First hearing will logically always be a new panel
 router.post('/hearings/pages/venuedefault', function (req, res)
 {
+    // If coming from check answers page then return there after clicking continue
     if( req.session.data['firsthearingscenario'] == 'true' )
     {
         res.redirect('/hearings/pages/paneldifferent');
@@ -342,6 +344,7 @@ router.post('/hearings/pages/venue', function (req, res)
     req.session.data['thenevue'] = req.session.data['placeholder'];
 
 
+    // If coming from check answers page then return there after clicking continue
     if(req.session.data['backtocheckanswers'] == 'true' )
     {
         req.session.data['backtocheckanswers'] = 'false'
@@ -360,6 +363,7 @@ router.post('/hearings/pages/venue', function (req, res)
 // Page 3 to page 4
 router.post('/hearings/pages/panel', function (req, res)
 {
+    // If coming from check answers page then return there after clicking continue
     if(req.session.data['backtocheckanswers'] == 'true' )
     {
         req.session.data['backtocheckanswers'] = 'false'
@@ -379,6 +383,7 @@ router.post('/hearings/pages/panel', function (req, res)
 // Page 3 to page 4
 router.post('/hearings/pages/paneldifferent', function (req, res)
 {
+    // This is tedious and lazy logic of inplenting the checkboxes
     req.session.data['panelmemeberlist'] = '';
 
     if(req.session.data['panelmember1'] == 'on')
@@ -399,6 +404,7 @@ router.post('/hearings/pages/paneldifferent', function (req, res)
     }
 
 
+    // If coming from check answers page then return there after clicking continue
     if(req.session.data['backtocheckanswers'] == 'true' )
     {
         req.session.data['backtocheckanswers'] = 'false'
@@ -431,7 +437,7 @@ router.post('/hearings/pages/timing', function (req, res)
 
 
     // DATES
-
+    // Convert number dates into the GDS normal format
     if(req.session.data['dateradios'] == 'No' )
     {
         req.session.data['firstdateday'] = '';
@@ -512,13 +518,11 @@ router.post('/hearings/pages/timing', function (req, res)
 
 
 
-// Page 5 to page 6
+//  Language always is the last page
 router.post('/hearings/pages/language', function (req, res)
 {
 
-
         res.redirect('/hearings/pages/checkyouranswers')
-
 })
 
 
