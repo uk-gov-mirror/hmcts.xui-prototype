@@ -8,12 +8,22 @@ Case details
 {% block content %}
 
 
+<!--
+    The URL for this page may say divorce but this example is actually Social Security and Child Support Tribunal (SSCS)
+    The main difference is that different services have different tabs.
+    Some techical person should be able to tell you the main tabs to simulate in the prototype.
+-->
+
+
+
+
     <main class="" id="main-content" role="main">
 
             <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto; margin-top: 30px;">
 
             <div class=""  style="display: flex; justify-content: space-between; ">
 
+                <!-- This horrible print buttons and design is not good and just inherited from previous work -->
                 <div style="display: flex; ">
                     <p class="">9468-3316-6763-1127: Jane Smith v DWP &nbsp; </p>
 
@@ -22,7 +32,7 @@ Case details
                     </button>
                 </div>
 
-
+                <!-- TABS -->
                 <div style="display: flex; align-items:right" >
                     <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
 
@@ -80,7 +90,7 @@ Case details
                         </a>
                     </li>
                 </ul>
-
+                <!-- END OF TABS -->
 
 
 
@@ -95,6 +105,7 @@ Case details
                 <div class="govuk-tabs__panel" id="event" style="display: flex; padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
 
                     <div style="margin-top: 40px;">
+
 
 
                         {% if data.submissioncomplete == 'true' %}
@@ -171,6 +182,8 @@ Case details
                                 </tbody>
                             </table>
                         {% endif %}
+
+
 
                         {% if data.hidecancelled != 'true' %}
                             <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Cancelled hearings</h2>

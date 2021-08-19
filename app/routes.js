@@ -521,7 +521,6 @@ router.post('/hearings/pages/timing', function (req, res)
 //  Language always is the last page
 router.post('/hearings/pages/language', function (req, res)
 {
-
         res.redirect('/hearings/pages/checkyouranswers')
 })
 
@@ -529,7 +528,8 @@ router.post('/hearings/pages/language', function (req, res)
 
 
 
-// Page 6 to page 7
+// Check annswers page which always goes to coonfirmation
+// this page should ideally never haver any validation on it.  Valdation should be done on each page.
 router.post('/hearings/pages/checkyouranswers', function (req, res)
 {
     if (true)
@@ -541,6 +541,10 @@ router.post('/hearings/pages/checkyouranswers', function (req, res)
         res.redirect('#')
     }
 })
+
+
+
+
 
 
 
@@ -608,9 +612,11 @@ router.post('/v3/cases/method', function (req, res) {
 
 
 
-
-
+///////////////////////////////////////
+////////////////////////////////////////////////////
 //  CASE SEARCH
+/////////////////////////////////////
+///////////////////////////////////////////////
 
 
 // Start new search
