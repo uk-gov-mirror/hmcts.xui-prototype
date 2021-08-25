@@ -107,32 +107,40 @@ Case details
                     <div style="margin-top: 40px;">
 
 
-
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-1">Pending hearing requests</h2>
                         {% if data.submissioncomplete == 'true' %}
-                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-1">Pending hearing requests</h2>
-
                             <table class="govuk-table govuk-!-margin-bottom-9">
                                 <thead class="govuk-table__head">
                                 <tbody class="govuk-table__body">
-                                <tr class="govuk-table__row">
+
                                     {% if data.aftertenbmins == 'true' %}
-                                        <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but not yet scheduled</td>
-                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">View and change</a></td>
-                                    {%  else  %}
-                                        <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but not yet processed</td>
-                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=false&">View details</a></td>
+                                        <tr class="govuk-table__row">
+                                                <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but not yet scheduled</td>
+                                                <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=true&">View and change</a></td>
+                                                <td class="govuk-table__cell" style="text-align: right;"><a href="confirmcancel">Cancel</a></td>
+                                        </tr>
                                     {%  endif  %}
 
-                                    <td class="govuk-table__cell" style="text-align: right;"><a href="#">Cancel</a></td>
-                                </tr>
+                                    {% if data.justsubmitted == 'true' %}
+                                        <tr class="govuk-table__row">
+                                                <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but not yet processed</td>
+                                                <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=false&">View details</a></td>
+                                                <td class="govuk-table__cell" style="text-align: right;"><a href="confirmcancel">Cancel</a></td>
+                                        </tr>
+                                    {%  endif  %}
+
+
+
                                 </tbody>
                             </table>
+                        {%  else  %}
+                            <p>Empty section placeholder text</p>
                         {% endif %}
 
 
 
 
-                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-1">Upcoming hearings</h2>
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Upcoming hearings</h2>
 
                         {% if data.hidecurrent != 'true' %}
                             <table class="govuk-table govuk-!-margin-bottom-4">
@@ -140,11 +148,13 @@ Case details
                                 <tbody class="govuk-table__body">
                                     <tr class="govuk-table__row">
                                         <td scope="row" class="govuk-table__cell" style="width:200px;">5 October 2021</td>
-                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">View and change</a></td>
-                                        <td class="govuk-table__cell"><a href="#">Cancel</a></td>
+                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=true&">View and change</a></td>
+                                        <td class="govuk-table__cell"><a href="confirmcancel">Cancel</a></td>
                                     </tr>
                                 </tbody>
                             </table>
+                        {%  else  %}
+                            <p>Empty section placeholder text</p>
                         {% endif %}
 
 
@@ -165,38 +175,44 @@ Case details
                         </form>
 
 
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Past hearings</h2>
                         {% if data.hidepast != 'true' %}
-                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Past hearings</h2>
+
 
                             <table class="govuk-table" id="pastshearings" style="width: 325px;">
                                 <thead class="govuk-table__head">
                                 <tbody class="govuk-table__body">
                                     <tr class="govuk-table__row">
                                         <td scope="row" class="govuk-table__cell" style="width:200px;">5 May 2021</td>
-                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=false&">View details</a></td>
+                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=false&">View details</a></td>
                                     </tr>
                                     <tr class="govuk-table__row">
                                         <td scope="row" class="govuk-table__cell">13 December 2020</td>
-                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=false&">View details</a></td>
+                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=false&">View details</a></td>
                                     </tr>
                                 </tbody>
                             </table>
+                        {%  else  %}
+                            <p>Empty section placeholder text</p>
                         {% endif %}
 
 
 
-                        {% if data.hidecancelled != 'true' %}
-                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Cancelled hearings</h2>
 
+
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Postponed and cancelled hearings</h2>
+                        {% if data.hidecancelled != 'true' %}
                             <table class="govuk-table govuk-!-margin-bottom-4" style="width: 325px;">
                                 <thead class="govuk-table__head">
                                 <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row">
                                     <td scope="row" class="govuk-table__cell" style="width:200px;">11 May 2021</td>
-                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=falce&changesallowed=true&">View details</a></td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=true&">View details</a></td>
                                 </tr>
                                 </tbody>
                             </table>
+                        {%  else  %}
+                            <p>Empty section placeholder text</p>
                         {% endif %}
 
 
@@ -209,6 +225,100 @@ Case details
 
 
         </div>
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
     </main>
+
+
+
+
+<div style="width:400px;">
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 140px;">
+        <p style="margin-bottom:0px;">Pending: Submitted but not yet scheduled</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="submissioncomplete=true&aftertenbmins=true&"
+                    {% if data.aftertenbmins == 'true' and data.submissioncomplete == 'true' %}selected{% endif %}
+            >ON</option>
+
+            <option value="submissioncomplete=false&aftertenbmins=false&"
+                    {% if data.aftertenbmins != 'true'  or  data.submissioncomplete != 'true'  %}selected{% endif %}
+            >OFF</option>
+
+        </select>
+    </form>
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px;">
+        <p style="margin-bottom:0px;">Pending: Submitted but not yet processed</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="submissioncomplete=true&justsubmitted=true&"
+                    {% if data.justsubmitted == 'true' and  data.submissioncomplete == 'true' %}selected{% endif %}
+            >ON</option>
+
+            <option value="submissioncomplete=false&justsubmitted=false&"
+                    {% if data.justsubmitted != 'true'  or  data.submissioncomplete != 'true' %}selected{% endif %}
+            >OFF</option>
+
+        </select>
+    </form>
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px;">
+        <p style="margin-bottom:0px;">Upcoming hearings</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="hidecurrent=true&"
+                    {% if data.hidecurrent == 'true' %}selected{% endif %}
+            >0 hearings</option>
+
+            <option value="hidecurrent=false&"
+                    {% if data.hidecurrent != 'true' %}selected{% endif %}
+            >1 or more hearings</option>
+
+        </select>
+    </form>
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px; width: 400px;" >
+        <p style="margin-bottom:0px;">Past hearings</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="hidepast=false&"
+                    {% if data.hidepast != 'true' %}selected{% endif %}
+            >ON</option>
+
+            <option value="hidepast=true&"
+                    {% if data.hidepast == 'true' %}selected{% endif %}
+            >OFF</option>
+
+        </select>
+    </form>
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px;">
+        <p style="margin-bottom:0px;">Cancelled and postponed</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="hidecancelled=false&"
+                    {% if data.hidecancelled != 'true' %}selected{% endif %}
+            >ON</option>
+
+            <option value="hidecancelled=true&"
+                    {% if data.hidecancelled == 'true' %}selected{% endif %}
+            >OFF</option>
+
+
+        </select>
+    </form>
+</div>
 
 {% endblock %}

@@ -37,11 +37,11 @@ Case details
                                 Restricted case
                             </div>
                             -->
-
-                            <div class="govuk-inset-text">
-                                Case flags: Vulnerable party
-                            </div>
-
+                            {% if data.caseflagshidden != 'true' %}
+                                <div class="govuk-inset-text">
+                                    Case flags: Potentially Violent
+                                </div>
+                            {% endif %}
 
 
                             <div class="govuk-form-group  govuk-!-margin-top-5" >
@@ -70,7 +70,22 @@ Case details
 </script>
 
 
+<div style="width:400px;">
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 140px;">
+        <p style="margin-bottom:0px;">Case flags</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
+            <option value="caseflagshidden=false&"
+                    {% if data.caseflagshidden != 'true'  %}selected{% endif %}
+            >ON</option>
+
+            <option value="caseflagshidden=true&"
+                    {% if data.caseflagshidden == 'true'  %}selected{% endif %}
+            >OFF</option>
+
+        </select>
+    </form>
+</div>
 
 {% endblock %}
 

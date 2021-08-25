@@ -1,0 +1,57 @@
+{% extends "../layoutstaff.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<main class="" id="main-content" role="main">
+    <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
+
+        <a href="#" class="govuk-back-link govuk-!-margin-bottom-6" onclick="goBack();">Back</a>
+
+        <div class="govuk-tabs__panel" id="event" style="padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
+
+
+            <h2 class="govuk-heading-m">Are you sure you want to request a change to this hearing?</h2>
+
+            <form
+                name="aspnetForm"
+                method="post"
+                id="aspnetForm"
+                autocomplete="off"
+            >
+
+
+
+
+                <div class="govuk-form-group  govuk-!-margin-top-7 govuk-!-margin-bottom-0" >
+                    <button class="govuk-button" data-module="govuk-button">
+                        Yes - Submit
+                    </button>
+                </div>
+
+
+            </form>
+
+
+            <p><a href="checkyouranswers">Back</a></p>
+
+
+        </div>
+    </div>
+</main>
+
+
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+
+{% endblock %}

@@ -49,6 +49,7 @@ router.get('/hearings/firstalt', function (req, res)
 
     req.session.data['alternativeentry'] = 'true';
 
+
     res.redirect('/hearings/pages/casedetailsdivorce')
 })
 
@@ -76,27 +77,12 @@ router.get('/hearings/third', function (req, res)
 router.get('/hearings/aftersubmission', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'true';
+    req.session.data['justsubmitted'] = 'true';
     req.session.data['aftertenbmins'] = 'false';
 
     req.session.data['hidecurrent'] = 'true';
     req.session.data['hidepast'] = 'true';
     req.session.data['hidecancelled'] = 'true';
-
-
-    /*
-    req.session.data['channelradios'] = '';
-    req.session.data['otherfailities'] = '';
-    req.session.data['panelsame'] = '';
-    req.session.data['specificjudge'] = '';
-    req.session.data['judgename'] = '';
-    req.session.data['judgecontract'] = '';
-    req.session.data['exludejudgefield'] = '';
-    req.session.data['addpersonsname'] = '';
-    req.session.data['excludepersonsname'] = '';
-    req.session.data['theduration'] = '';
-    req.session.data['durationreason'] = '';
-    req.session.data['dateradios'] = '';
-    */
 
     req.session.data['alternativeentry'] = 'false';
 
@@ -108,28 +94,15 @@ router.get('/hearings/aftersubmission', function (req, res)
 router.get('/hearings/after10mins', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'true';
+    req.session.data['justsubmitted'] = 'false';
     req.session.data['aftertenbmins'] = 'true';
 
     req.session.data['hidecurrent'] = 'true';
     req.session.data['hidepast'] = 'true';
     req.session.data['hidecancelled'] = 'true';
 
-    /*
-     req.session.data['channelradios'] = '';
-     req.session.data['otherfailities'] = '';
-     req.session.data['panelsame'] = '';
-     req.session.data['specificjudge'] = '';
-     req.session.data['judgename'] = '';
-     req.session.data['judgecontract'] = '';
-     req.session.data['exludejudgefield'] = '';
-     req.session.data['addpersonsname'] = '';
-     req.session.data['excludepersonsname'] = '';
-     req.session.data['theduration'] = '';
-     req.session.data['durationreason'] = '';
-     req.session.data['dateradios'] = '';
-     */
-
     req.session.data['alternativeentry'] = 'false';
+
 
     res.redirect('/hearings/pages/casedetailsdivorce')
 })
@@ -140,6 +113,7 @@ router.get('/hearings/after10mins', function (req, res)
 router.get('/hearings/aftermonth', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'false';
+    req.session.data['justsubmitted'] = 'false';
     req.session.data['aftertenbmins'] = 'false';
 
 
@@ -147,20 +121,7 @@ router.get('/hearings/aftermonth', function (req, res)
     req.session.data['hidepast'] = 'true';
     req.session.data['hidecancelled'] = 'true';
 
-    /*
-     req.session.data['channelradios'] = '';
-     req.session.data['otherfailities'] = '';
-     req.session.data['panelsame'] = '';
-     req.session.data['specificjudge'] = '';
-     req.session.data['judgename'] = '';
-     req.session.data['judgecontract'] = '';
-     req.session.data['exludejudgefield'] = '';
-     req.session.data['addpersonsname'] = '';
-     req.session.data['excludepersonsname'] = '';
-     req.session.data['theduration'] = '';
-     req.session.data['durationreason'] = '';
-     req.session.data['dateradios'] = '';
-     */
+
 
     req.session.data['alternativeentry'] = 'false';
 
@@ -174,27 +135,15 @@ router.get('/hearings/aftermonth', function (req, res)
 router.get('/hearings/all', function (req, res)
 {
     req.session.data['submissioncomplete'] = 'true';
+    req.session.data['justsubmitted'] = 'true';
+    req.session.data['aftertenbmins'] = 'true';
 
     req.session.data['hidecurrent'] = 'false';
     req.session.data['hidepast'] = 'false';
     req.session.data['hidecancelled'] = 'false';
 
-    /*
-     req.session.data['channelradios'] = '';
-     req.session.data['otherfailities'] = '';
-     req.session.data['panelsame'] = '';
-     req.session.data['specificjudge'] = '';
-     req.session.data['judgename'] = '';
-     req.session.data['judgecontract'] = '';
-     req.session.data['exludejudgefield'] = '';
-     req.session.data['addpersonsname'] = '';
-     req.session.data['excludepersonsname'] = '';
-     req.session.data['theduration'] = '';
-     req.session.data['durationreason'] = '';
-     req.session.data['dateradios'] = '';
-     */
-
     req.session.data['alternativeentry'] = 'false';
+
 
     res.redirect('/hearings/pages/casedetailsdivorce')
 })
@@ -250,10 +199,18 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
         req.session.data['latestdatemonth'] = '';
         req.session.data['latestdateyear'] = '';
 
+        //Make sure this niche error case is off by default
+        req.session.data['confimationerror'] = 'false';
+
+
+        req.session.data['caseflagshidden'] = 'false';
+        req.session.data['calendarclash'] = 'false';
 
 
 
-        // If we are going with starting from the 'check answers' page then head straight there
+
+
+    // If we are going with starting from the 'check answers' page then head straight there
         if(req.session.data['alternativeentry'] == 'true')
         {
             req.session.data['drafthearing'] = "falce";
@@ -272,12 +229,46 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
 
 
 
+
+
+
+// Cancel a hearing
+// Direct back to the hearing tab
+// Don't show upcoming hearing, Show the cancel section
+router.post('/hearings/pages/confirmcancel', function (req, res)
+{
+
+    req.session.data['hidecurrent'] = 'true';
+    req.session.data['hidepast'] = 'true';
+    req.session.data['hidecancelled'] = 'false';
+
+    req.session.data['alternativeentry'] = 'false';
+
+    res.redirect('/hearings/pages/casedetailsdivorce')
+})
+
+
+
+
+
 // Displaying the basic info about a case on the first page
 // The go to channel section page
 router.post('/hearings/pages/startrequest', function (req, res)
 {
+    res.redirect('/hearings/pages/partiyrequirements')
+})
+
+
+
+
+router.post('/hearings/pages/partiyrequirements', function (req, res)
+{
     res.redirect('/hearings/pages/channel')
 })
+
+
+
+
 
 
 // Select what channel the eharing will be held
@@ -417,6 +408,7 @@ router.post('/hearings/pages/paneldifferent', function (req, res)
 })
 
 
+
 // Page 4 to page 5
 router.post('/hearings/pages/timing', function (req, res)
 {
@@ -532,17 +524,26 @@ router.post('/hearings/pages/language', function (req, res)
 // this page should ideally never haver any validation on it.  Valdation should be done on each page.
 router.post('/hearings/pages/checkyouranswers', function (req, res)
 {
-    if (true)
+    req.session.data['submissioncomplete'] = 'true';
+    req.session.data['justsubmitted'] = 'true';
+
+
+    if(req.session.data['drafthearing'] != 'false' )
     {
-        res.redirect('/hearings/pages/confirmation')
+        res.redirect('/hearings/pages/confirmation');
     }
     else
     {
-        res.redirect('#')
+        res.redirect('/hearings/pages/confirmchangesubmission');
     }
 })
 
 
+
+router.post('/hearings/pages/confirmchangesubmission', function (req, res)
+{
+    res.redirect('/hearings/pages/confirmation');
+})
 
 
 

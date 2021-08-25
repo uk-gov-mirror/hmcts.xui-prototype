@@ -97,6 +97,62 @@ Case details
                                                     </fieldset>
                                                 </div>
 
+
+
+                                                <div class="govuk-form-group">
+                                                    <br>
+                                                    <fieldset class="govuk-fieldset">
+                                                        <legend class="govuk-fieldset__legend  govuk-fieldset__legend--s ">
+                                                            Ticketed (optional)
+                                                        </legend>
+                                                        <div class="govuk-radios">
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="judgeticketed1" name="judgeticketedlevel" type="radio" value="All" checked  >
+                                                                <label class="govuk-label govuk-radios__label" for="judgeticketed1">
+                                                                    01
+                                                                </label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="judgeticketed2" name="judgeticketedlevel" type="radio" value="Tribunal Judge - salaried"   >
+                                                                <label class="govuk-label govuk-radios__label" for="judgeticketed2">
+                                                                    02
+                                                                </label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="judgeticketed3" name="judgeticketedlevel" type="radio" value="Tribunal Judge - fee-paid"  >
+                                                                <label class="govuk-label govuk-radios__label" for="judgeticketed3">
+                                                                    03
+                                                                </label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="judgeticketed4" name="judgeticketedlevel" type="radio" value="Regional Tribunal Judge"  >
+                                                                <label class="govuk-label govuk-radios__label" for="judgeticketed4">
+                                                                    04
+                                                                </label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="judgeticketed5" name="judgeticketedlevel" type="radio" value="Tribunal Judge - salaried"   >
+                                                                <label class="govuk-label govuk-radios__label" for="judgeticketed5">
+                                                                    05
+                                                                </label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="judgeticketed6" name="judgeticketedlevel" type="radio" value="Tribunal Judge - fee-paid"  >
+                                                                <label class="govuk-label govuk-radios__label" for="judgeticketed3">
+                                                                    06
+                                                                </label>
+                                                            </div>
+                                                            <div class="govuk-radios__item">
+                                                                <input class="govuk-radios__input" id="judgeticketed7" name="judgeticketedlevel" type="radio" value="Regional Tribunal Judge"  >
+                                                                <label class="govuk-label govuk-radios__label" for="judgeticketed7">
+                                                                    ???
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                    </fieldset>
+                                                </div>
+
                                                 <!--
                                                 <div class="govuk-form-group" id="roles">
                                                     <fieldset class="govuk-fieldset">
@@ -164,12 +220,15 @@ Case details
                                                         <label class="govuk-label govuk-!-font-weight-bold" for="contact-by-email">
                                                             Exclude a judge who wasn't on a previous panel (optional)
                                                         </label>
-                                                        <input class="govuk-input govuk-!-width-one-third" name="exludejudgefield" type="text" id="exludejudgefield"  style="display:none;">
+                                                        <div id="exludejudgefield"  style="display:none; ">
+                                                            <input class="govuk-input govuk-!-width-one-third" name="exludejudgefield" type="text" >
+                                                            <p class="govuk-!-padding-2 govuk-!-margin-bottom-0;"><a href="#">Clear</a></p>
+                                                        </div>
                                                     </div>
                                                     <p class="govuk-button govuk-button--secondary govuk-!-margin-top-0 " data-module="govuk-button" id="exludenewjudge" onclick="excludejudge();">
                                                         Exclude a judge
                                                     </p>
-                                                    <p class="govuk-button govuk-button--secondary govuk-!-margin-top-2 " data-module="govuk-button" id="exludeanotherjudge"  style="display: none;">
+                                                    <p class="govuk-button govuk-button--secondary govuk-!-margin-top-0 " data-module="govuk-button" id="exludeanotherjudge"  style="display: none;">
                                                         Exclude another judge
                                                     </p>
                                                 </div>
@@ -191,12 +250,15 @@ Case details
                                     <label class="govuk-label govuk-!-font-weight-bold" for="addpersonsname">
                                         Include specific panel members (optional)
                                     </label>
-                                    <input class="govuk-input govuk-!-width-one-third" name="addpersonsname" type="text" spellcheck="false" id="addpersonsname" style="display:none;">
+                                    <div  style="display:none; "  id="addpersonsname" >
+                                        <input class="govuk-input govuk-!-width-one-third" name="addpersonsname" type="text" spellcheck="false">
+                                        <p class="govuk-!-padding-2 govuk-!-margin-bottom-0;"><a href="#">Clear</a></p>
+                                    </div>
                                 </div>
                                 <p class="govuk-button govuk-button--secondary govuk-!-margin-top-0 " data-module="govuk-button" id="addperson" onclick="addperson();">
                                     Add person
                                 </p>
-                                <p class="govuk-button govuk-button--secondary govuk-!-margin-top-3 " data-module="govuk-button" id="addanotherperson" style="display:none;">
+                                <p class="govuk-button govuk-button--secondary govuk-!-margin-top-0 " data-module="govuk-button" id="addanotherperson" style="display:none;">
                                     Add another person
                                 </p>
                             </div>
@@ -208,12 +270,15 @@ Case details
                                     <label class="govuk-label govuk-!-font-weight-bold" for="excludepersonsname">
                                         Exclude specific panel members (optional)
                                     </label>
-                                    <input class="govuk-input govuk-!-width-one-third" name="excludepersonsname" type="text" spellcheck="false" id="excludepersonsname" style="display:none;">
+                                    <div  style="display:none; "  id="excludepersonsname" >
+                                        <input class="govuk-input govuk-!-width-one-third" name="excludepersonsname" type="text" spellcheck="false" >
+                                        <p class="govuk-!-padding-2 govuk-!-margin-bottom-0;"><a href="#">Clear</a></p>
+                                    </div>
                                 </div>
                                 <p class="govuk-button govuk-button--secondary govuk-!-margin-top-0 " data-module="govuk-button" id="excludeperson" onclick="excludeperson();">
                                     Exclude person
                                 </p>
-                                <p class="govuk-button govuk-button--secondary govuk-!-margin-top-3 " data-module="govuk-button" id="excludeanotherperson" style="display:none;">
+                                <p class="govuk-button govuk-button--secondary govuk-!-margin-top-0 " data-module="govuk-button" id="excludeanotherperson" style="display:none;">
                                     Exclude another person
                                 </p>
                             </div>
@@ -322,21 +387,21 @@ Case details
 
     function addperson()
     {
-        document.getElementById("addpersonsname").style.display = "block";
+        document.getElementById("addpersonsname").style.display = "flex";
         document.getElementById("addanotherperson").style.display = "inline-block";
         document.getElementById("addperson").style.display = "none";
     }
 
     function excludeperson()
     {
-        document.getElementById("excludepersonsname").style.display = "block";
+        document.getElementById("excludepersonsname").style.display = "flex";
         document.getElementById("excludeanotherperson").style.display = "inline-block";
         document.getElementById("excludeperson").style.display = "none";
     }
 
     function excludejudge()
     {
-        document.getElementById("exludejudgefield").style.display = "block";
+        document.getElementById("exludejudgefield").style.display = "flex";
         document.getElementById("exludeanotherjudge").style.display = "inline-block";
         document.getElementById("exludenewjudge").style.display = "none";
     }

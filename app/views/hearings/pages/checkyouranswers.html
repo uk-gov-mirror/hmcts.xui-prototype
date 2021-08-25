@@ -14,7 +14,7 @@ Case details
 
                 <a href="#" class="govuk-back-link govuk-!-margin-bottom-6" onclick="goBack();">Back</a>
 
-                {% if  data.drafthearing == 'falce'   %}
+                {% if  data.drafthearing == 'false'   %}
                     <h2 class="govuk-heading-l">Hearing details</h2>
                 {% else %}
                     <h2 class="govuk-heading-l">Check your answers before sending your request</h2>
@@ -75,7 +75,7 @@ Case details
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    What type of hearing is required?
+                                                    How will the hearing be carried out?
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
                                                     {{  data.channelradios  }}
@@ -222,6 +222,23 @@ Case details
                                                                 {% endif %}
                                                             </dd>
                                                         </div>
+
+                                                        <div class="govuk-summary-list__row">
+                                                            <dt class="govuk-summary-list__key">
+                                                                Ticketed
+                                                            </dt>
+                                                            <dd class="govuk-summary-list__value">
+                                                                 03    <!-- {{  data.judgeticketedlevel  }}   -->
+                                                            </dd>
+                                                            <dd class="govuk-summary-list__actions">
+                                                                {% if data.changesallowed != 'false' %}
+                                                                    <a class="govuk-link" href="/hearings/pages/paneldifferent?backtocheckanswers=true&">
+                                                                        Change
+                                                                    </a>
+                                                                {% endif %}
+                                                            </dd>
+                                                        </div>
+
                                                         <div class="govuk-summary-list__row">
                                                             <dt class="govuk-summary-list__key">
                                                                 Exclude a judge who wasn't on a previous panel
@@ -293,6 +310,9 @@ Case details
 
 
 
+
+
+
                                             <h2 class="govuk-heading-m">When will the hearing take place?</h2>
 
                                             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -349,6 +369,8 @@ Case details
                                                 {% endif %}
 
 
+                                                <!-- NOT NEEDED FOPR SSCS  -->
+                                                <!--
                                                 <div class="govuk-summary-list__row">
                                                     <dt class="govuk-summary-list__key">
                                                         Days since SLA
@@ -359,6 +381,7 @@ Case details
 
                                                     </dd>
                                                 </div>
+                                                -->
 
 
                                                 <div class="govuk-summary-list__row">
@@ -491,11 +514,22 @@ Case details
                                 autocomplete="off"
                                 >
 
-                                <div class="govuk-form-group  govuk-!-margin-top-5" >
-                                    <button class="govuk-button" data-module="govuk-button">
-                                        Submit request
-                                    </button>
-                                </div>
+                                {% if  data.drafthearing == 'false'   %}
+                                    <div class="govuk-form-group  govuk-!-margin-top-5" >
+                                        <button class="govuk-button" data-module="govuk-button">
+                                            Submit updated request
+                                        </button>
+                                    </div>
+
+                                {% else %}
+                                    <div class="govuk-form-group  govuk-!-margin-top-5" >
+                                        <button class="govuk-button" data-module="govuk-button">
+                                            Submit request
+                                        </button>
+                                    </div>
+                                {% endif %}
+
+
 
                             </form>
                         {% endif %}
@@ -517,6 +551,155 @@ Case details
         window.history.back();
     }
 </script>
+
+
+
+
+
+<div style="width:300px;">
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 140px; width:300px;">
+        <p style="margin-bottom:0px;">Draft heading</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="drafthearing=true&"
+                    {% if  data.drafthearing == 'true'   %}selected{% endif %}
+            >View during draft</option>
+
+            <option value="drafthearing=false&"
+                    {% if  data.drafthearing != 'true'   %}selected{% endif %}
+            >View after creation</option>
+        </select>
+    </form>
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px; width:300px;">
+        <p style="margin-bottom:0px;">View only</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="changesallowed=false&"
+                    {% if  data.changesallowed != 'true'   %}selected{% endif %}
+            >ON</option>
+
+            <option value="changesallowed=true&"
+                    {% if  data.changesallowed == 'true'   %}selected{% endif %}
+            >OFF - editable</option>
+
+        </select>
+    </form>
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px; width:300px;">
+        <p style="margin-bottom:0px;">Channel</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="channelradios=In person"
+                    {% if data.channelradios == 'In person' %} selected {% endif %}
+            >In person</option>
+
+            <option value="channelradios=By phone&"
+                    {% if data.channelradios != 'In person' %} selected {% endif %}
+            >Not in person</option>
+
+        </select>
+    </form>
+
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px;">
+        <p style="margin-bottom:0px;">Same panel question (SSCS only)</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="firsthearingscenario=true&"
+                    {% if data.firsthearingscenario == 'true' %}selected{% endif %}
+            >First hearing (question doesn't show)</option>
+
+            <option value="firsthearingscenario=false&"
+                    {% if data.firsthearingscenario != 'true' %}selected{% endif %}
+            >2nd or later hearing</option>
+
+        </select>
+    </form>
+
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px; margin-bottom:0px;">
+        <p style="margin-bottom:0px;">Same or different panel</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="panelsame=Yes - use the same panel as most recent hearing&firsthearingscenario=false&"
+                    {% if data.panelsame != 'No - select a new panel' %}  selected  {% endif %}
+            >Same panel</option>
+
+            <option value="panelsame=No - select a new panel&"
+                    {% if data.panelsame == 'No - select a new panel' and data.firsthearingscenario != 'true' %}  selected  {% endif %}
+            >Different panel</option>
+
+        </select>
+    </form>
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px; margin-bottom:0px;">
+        <p style="margin-bottom:0px;">Specific judge</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="specificjudge=Yes&"
+                    {% if data.specificjudge == 'Yes' %}  selected  {% endif %}
+            >A specific judge</option>
+
+            <option value="specificjudge=No&"
+                    {% if data.specificjudge != 'Yes' %}  selected  {% endif %}
+            >Not specific judge</option>
+
+        </select>
+    </form>
+
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px; margin-bottom:0px;">
+        <p style="margin-bottom:0px;">Default hearing length</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="durationradios=45 minutes&theduration=45 minutes&"
+                    {% if data['durationradios'] == '45 minutes' %} selected  {% endif %}
+            >Default length</option>
+
+            <option value="durationradios=other&theduration=1 hour 45 minutes"
+                    {% if data['durationradios'] != '45 minutes' %}  selected  {% endif %}
+            >Different length</option>
+
+        </select>
+    </form>
+
+
+
+
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px; margin-bottom:100px;">
+        <p style="margin-bottom:0px;">Specific date for hearing</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="dateradios=No&"
+                    {% if data['dateradios'] == 'No' %} selected  {% endif %}
+            >No</option>
+
+            <option value="dateradios=Yes&"
+                    {% if data['dateradios'] == 'Yes' %} selected  {% endif %}
+            >Yes</option>
+
+            <option value="dateradios=Choose a date range&"
+                    {% if data['dateradios'] == 'Choose a date range' %} selected  {% endif %}
+            >Date Range</option>
+
+        </select>
+    </form>
+
+
+
+
+
+
+</div>
+
 
 
 
