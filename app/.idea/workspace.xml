@@ -23,7 +23,7 @@
             <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/routes.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="1.2461538">
+                  <state vertical-scroll-proportion="0.0">
                     <caret line="597" column="0" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
                     <folding />
                   </state>
@@ -41,19 +41,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="paneldifferent.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/hearings/pages/paneldifferent.html">
+      <file leaf-file-name="checkyouranswers.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/hearings/pages/checkyouranswers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.012244898">
-              <caret line="109" column="143" selection-start-line="109" selection-start-column="125" selection-end-line="109" selection-end-column="143" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#5;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#main#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.71020406">
+              <caret line="151" column="86" selection-start-line="151" selection-start-column="86" selection-end-line="151" selection-end-column="86" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,7 +84,6 @@
         <option value="$PROJECT_DIR$/views/hearings/pages/region.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/venuedefault.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/venue.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/channel.html" />
         <option value="$PROJECT_DIR$/views/searchcases/transition/findcase.html" />
         <option value="$PROJECT_DIR$/views/hearings/testing.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/confirmcancel.html" />
@@ -100,12 +92,13 @@
         <option value="$PROJECT_DIR$/views/hearings/pages/confirmation.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/timing.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/language.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/startrequest.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/partiyrequirements.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/paneldifferent.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/casedetailsdivorce.html" />
         <option value="$PROJECT_DIR$/routes.js" />
         <option value="$PROJECT_DIR$/views/hearings/pages/confirmchangesubmission.html" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/startrequest.html" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/channel.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/checkyouranswers.html" />
       </list>
     </option>
@@ -562,13 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/channel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.012178619">
-          <caret line="18" column="70" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/searchcases/transition/caselist.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -639,31 +625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/language.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52244896">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/hearings/pages/timing.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.1836734">
           <caret line="456" column="0" selection-start-line="456" selection-start-column="0" selection-end-line="456" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/startrequest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.0">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/partiyrequirements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71020406">
-          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -685,15 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.5">
           <caret line="18" column="79" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2461538">
-          <caret line="597" column="0" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -701,32 +657,59 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.012244898">
           <caret line="209" column="109" selection-start-line="209" selection-start-column="109" selection-end-line="209" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/language.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.75">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="42" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/paneldifferent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31836733">
+          <caret line="44" column="81" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/startrequest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.877551">
+          <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/partiyrequirements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="309" column="0" selection-start-line="309" selection-start-column="0" selection-end-line="321" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="597" column="0" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/channel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2897959">
+          <caret line="39" column="126" selection-start-line="39" selection-start-column="126" selection-end-line="39" selection-end-column="126" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/hearings/pages/checkyouranswers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33061224">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#dd#0;n#div#8;n#dl#2;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/paneldifferent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.012244898">
-          <caret line="109" column="143" selection-start-line="109" selection-start-column="125" selection-end-line="109" selection-end-column="143" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#5;n#fieldset#0;n#div#0;n#form#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#main#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.71020406">
+          <caret line="151" column="86" selection-start-line="151" selection-start-column="86" selection-end-line="151" selection-end-column="86" />
+          <folding />
         </state>
       </provider>
     </entry>

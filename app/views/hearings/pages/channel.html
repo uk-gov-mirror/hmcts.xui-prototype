@@ -37,29 +37,59 @@ Case details
                                     </legend>
                                     <div class="govuk-radios">
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="chanel1" name="channelradios" type="radio" value="In person" {% if data.channelradios == 'In person' %} checked {% endif %}>
-                                            <label class="govuk-label govuk-radios__label" for="chanel1">
+                                            <input class="govuk-radios__input" id="chanel1"  onclick="showinpersonsection();" name="channelradios" type="radio" value="In person" {% if data.channelradios == 'In person' %} checked {% endif %}>
+                                            <label class="govuk-label govuk-radios__label" for="chanel1" onclick="showinpersonsection();">
                                                 In person
                                             </label>
                                         </div>
+                                                <div class="govuk-form-group govuk-radios__conditional govuk-!-padding-top-4 govuk-!-padding-bottom-4" id="inpersonsection" >
+                                                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                                            <h3 class="govuk-fieldset__heading">
+                                                                Select any parties who want to call/video into the hearing
+                                                            </h3>
+                                                        </legend>
+                                                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="partyattendancetype1" name="partyattendancetype1" type="checkbox" value="Welsh">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="partyattendancetype1">
+                                                                    Jane Smith
+                                                                </label>
+                                                            </div>
+                                                            <div class="govuk-checkboxes__item">
+                                                                <input class="govuk-checkboxes__input" id="partyattendancetype2" name="partyattendancetype2" type="checkbox" value="Welsh">
+                                                                <label class="govuk-label govuk-checkboxes__label" for="partyattendancetype2">
+                                                                    DWP
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                    </fieldset>
+                                                </div>
+
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="chanel2" name="channelradios" type="radio" value="By phone" {% if data.channelradios == 'By phone' %} checked {% endif %}>
-                                            <label class="govuk-label govuk-radios__label" for="chanel2">
+                                            <input class="govuk-radios__input" id="chanel2"  onclick="hideinpersonsection();" name="channelradios" type="radio" value="By phone" {% if data.channelradios == 'By phone' %} checked {% endif %}>
+                                            <label class="govuk-label govuk-radios__label" for="chanel2" onclick="hideinpersonsection();">
                                                 By phone
                                             </label>
                                         </div>
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="chanel3" name="channelradios" type="radio" value="By video" {% if data.channelradios == 'By video' %} checked {% endif %}>
-                                            <label class="govuk-label govuk-radios__label" for="chanel3">
+                                            <input class="govuk-radios__input" id="chanel3"  onclick="hideinpersonsection();" name="channelradios" type="radio" value="By video" {% if data.channelradios == 'By video' %} checked {% endif %}>
+                                            <label class="govuk-label govuk-radios__label" for="chanel3" onclick="hideinpersonsection();">
                                                 By video
                                             </label>
                                         </div>
+
+                                        <!-- this proces sis done offline  -->
+                                        <!--
                                         <div class="govuk-radios__item">
                                             <input class="govuk-radios__input" id="chanel4" name="channelradios" type="radio" value="On paper" {% if data.channelradios == 'On paper' %} checked {% endif %}>
                                             <label class="govuk-label govuk-radios__label" for="chanel4">
                                                 On paper
                                             </label>
                                         </div>
+                                        -->
+
                                     </div>
 
                                 </fieldset>
@@ -67,6 +97,31 @@ Case details
 
 
 
+
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        <h3 class="govuk-fieldset__heading">
+                                            Select parties who want to be absent for the hearing
+                                        </h3>
+                                    </legend>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="partyabsent1" name="partyabsent1" type="checkbox" value="Welsh">
+                                            <label class="govuk-label govuk-checkboxes__label" for="partyabsent1">
+                                                Jane Smith
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="partyabsent1" name="partyabsent1" type="checkbox" value="Welsh">
+                                            <label class="govuk-label govuk-checkboxes__label" for="partyabsent1">
+                                                DWP
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div>
 
 
 
@@ -93,6 +148,19 @@ Case details
     function goBack() {
         window.history.back();
     }
+
+
+    function hideinpersonsection()
+    {
+            document.getElementById("inpersonsection").style.display = "none";
+    }
+
+    function showinpersonsection()
+    {
+            document.getElementById("inpersonsection").style.display = "block";
+    }
+
+
 </script>
 
 

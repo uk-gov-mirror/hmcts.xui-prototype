@@ -70,6 +70,29 @@ Case details
 
 
 
+                                        <h2 class="govuk-heading-m">Needs for each party</h2>
+
+
+                                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                            <div class="govuk-summary-list__row">
+                                                <dt class="govuk-summary-list__key">
+                                                    Select any parties who need reasonable adjustments
+                                                </dt>
+                                                <dd class="govuk-summary-list__value">
+                                                    Jane Smith<br>
+                                                    Accessible hearing rooms
+                                                </dd>
+                                                <dd class="govuk-summary-list__actions">
+                                                    {% if data.changesallowed != 'false' %}
+                                                    <a class="govuk-link" href="/hearings/pages/language">
+                                                        Change
+                                                    </a>
+                                                    {% endif %}
+                                                </dd>
+                                            </div>
+                                        </dl>
+
+
                                         <h2 class="govuk-heading-m">Type of hearing</h2>
 
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -92,6 +115,42 @@ Case details
                                             <!-- IN PERSON ONLY -->
                                             {% if data.channelradios == 'In person' %}
                                                     <div class="govuk-summary-list__row">
+                                                        <dt class="govuk-summary-list__key">
+                                                            Select any parties who want to call/video into the hearing
+                                                        </dt>
+                                                        <dd class="govuk-summary-list__value">
+
+                                                        </dd>
+                                                        <dd class="govuk-summary-list__actions">
+                                                            {% if data.changesallowed != 'false' %}
+                                                                <a class="govuk-link" href="/hearings/pages/region?backtocheckanswers=true&">
+                                                                    Change
+                                                                </a>
+                                                            {% endif %}
+                                                        </dd>
+                                                    </div>
+                                            {% endif %}
+
+
+                                                <div class="govuk-summary-list__row">
+                                                    <dt class="govuk-summary-list__key">
+                                                        Select parties who want to be absent for the hearing
+                                                    </dt>
+                                                    <dd class="govuk-summary-list__value">
+
+                                                    </dd>
+                                                    <dd class="govuk-summary-list__actions">
+                                                        {% if data.changesallowed != 'false' %}
+                                                        <a class="govuk-link" href="/hearings/pages/region?backtocheckanswers=true&">
+                                                            Change
+                                                        </a>
+                                                        {% endif %}
+                                                    </dd>
+                                                </div>
+
+
+                                            {% if data.channelradios == 'In person' %}
+                                                <div class="govuk-summary-list__row">
                                                         <dt class="govuk-summary-list__key">
                                                             Where will the hearing take place?
                                                         </dt>
@@ -485,22 +544,7 @@ Case details
                                                         {% endif %}
                                                     </dd>
                                                 </div>
-                                                <div class="govuk-summary-list__row">
-                                                    <dt class="govuk-summary-list__key">
-                                                        Select any parties who need reasonable adjustments
-                                                    </dt>
-                                                    <dd class="govuk-summary-list__value">
-                                                        Jane Smith<br>
-                                                        Accessible hearing rooms
-                                                    </dd>
-                                                    <dd class="govuk-summary-list__actions">
-                                                        {% if data.changesallowed != 'false' %}
-                                                            <a class="govuk-link" href="/hearings/pages/language">
-                                                                Change
-                                                            </a>
-                                                        {% endif %}
-                                                    </dd>
-                                                </div>
+
                                             </dl>
 
 
