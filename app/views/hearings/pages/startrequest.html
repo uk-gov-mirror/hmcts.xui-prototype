@@ -17,7 +17,7 @@ Case details
             <div class="govuk-tabs__panel" id="event" style="padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
 
 
-                        <h2 class="govuk-heading-m">Request a hearing</h2>
+                        <h2 class="govuk-heading-l">Request a hearing</h2>
 
                         <form
                             name="aspnetForm"
@@ -44,11 +44,63 @@ Case details
                             {% endif %}
 
 
-                            <div class="govuk-form-group  govuk-!-margin-top-5" >
-                                <button class="govuk-button" data-module="govuk-button">
-                                    Continue
-                                </button>
-                            </div>
+                            <form
+                                name="aspnetForm"
+                                method="post"
+                                id="aspnetForm"
+                                autocomplete="off"
+                            >
+
+
+                                <!-- GUY: I have no idea on how to order these,  not sure of most common or chronology  -->
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                            <h1 class="govuk-fieldset__heading">
+                                                What is the stage of this hearing?
+                                            </h1>
+                                        </legend>
+                                        <div class="govuk-radios">
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="stage1" name="hearingstage" type="radio" value="London">
+                                                <label class="govuk-label govuk-radios__label" for="stage1">
+                                                    Initial
+                                                </label>
+                                            </div>
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="stage2" name="hearingstage" type="radio" value="Midlands" checked>
+                                                <label class="govuk-label govuk-radios__label" for="stage2">
+                                                    Final
+                                                </label>
+                                            </div>
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="stage3" name="hearingstage" type="radio" value="North East">
+                                                <label class="govuk-label govuk-radios__label" for="stage3">
+                                                    Substantial
+                                                </label>
+                                            </div>
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="stage4" name="hearingstage" type="radio" value="North West">
+                                                <label class="govuk-label govuk-radios__label" for="stage4">
+                                                    Case management
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+
+
+
+
+                                <div class="govuk-form-group  govuk-!-margin-top-8" >
+                                    <button class="govuk-button" data-module="govuk-button">
+                                        Continue
+                                    </button>
+                                </div>
+
+                            </form>
+
 
 
                         </form>

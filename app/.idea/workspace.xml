@@ -15,26 +15,6 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-            <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/routes.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="597" column="0" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="app" />
@@ -44,8 +24,34 @@
       <file leaf-file-name="checkyouranswers.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/hearings/pages/checkyouranswers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71020406">
-              <caret line="151" column="86" selection-start-line="151" selection-start-column="86" selection-end-line="151" selection-end-column="86" />
+            <state vertical-scroll-proportion="0.60816324">
+              <caret line="822" column="55" selection-start-line="822" selection-start-column="55" selection-end-line="822" selection-end-column="55" />
+              <folding>
+                <element signature="n#style#0;n#form#7;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#form#7;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#form#7;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#8;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#form#8;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paneldifferent.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/hearings/pages/paneldifferent.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.75">
+              <caret line="320" column="48" selection-start-line="320" selection-start-column="48" selection-end-line="320" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="casedetailsdivorce.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/hearings/pages/casedetailsdivorce.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="28.75">
+              <caret line="209" column="154" selection-start-line="209" selection-start-column="131" selection-end-line="209" selection-end-column="154" />
               <folding />
             </state>
           </provider>
@@ -81,24 +87,24 @@
         <option value="$PROJECT_DIR$/views/searchcases/layoutstaffcaslistonly.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/location.html" />
         <option value="$PROJECT_DIR$/views/hearings/layoutstaff.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/region.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/venuedefault.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/venue.html" />
         <option value="$PROJECT_DIR$/views/searchcases/transition/findcase.html" />
         <option value="$PROJECT_DIR$/views/hearings/testing.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/confirmcancel.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/panel.html" />
-        <option value="$PROJECT_DIR$/views/hearings/index.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/confirmation.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/timing.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/language.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/partiyrequirements.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/paneldifferent.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/casedetailsdivorce.html" />
-        <option value="$PROJECT_DIR$/routes.js" />
         <option value="$PROJECT_DIR$/views/hearings/pages/confirmchangesubmission.html" />
-        <option value="$PROJECT_DIR$/views/hearings/pages/startrequest.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/channel.html" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/region.html" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/startrequest.html" />
+        <option value="$PROJECT_DIR$/views/hearings/index.html" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/paneldifferent.html" />
+        <option value="$PROJECT_DIR$/routes.js" />
+        <option value="$PROJECT_DIR$/views/hearings/pages/casedetailsdivorce.html" />
         <option value="$PROJECT_DIR$/views/hearings/pages/checkyouranswers.html" />
       </list>
     </option>
@@ -111,7 +117,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-4492" />
     <option name="y" value="-568" />
-    <option name="width" value="3178" />
+    <option name="width" value="3141" />
     <option name="height" value="2462" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -139,7 +145,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -228,6 +233,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -313,10 +319,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4492" y="-568" width="3178" height="2462" extended-state="0" />
-    <editor active="true" />
+    <frame x="-4492" y="-568" width="3141" height="2462" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19879518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20115496" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -534,24 +540,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/region.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="113" selection-start-line="78" selection-start-column="113" selection-end-line="78" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/hearings/pages/venuedefault.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.012178619">
           <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/venue.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="678" column="87" selection-start-line="678" selection-start-column="87" selection-end-line="678" selection-end-column="87" />
         </state>
       </provider>
     </entry>
@@ -597,13 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/panel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.118367344">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/noticeofchange/solicitor/casedetailsprobate.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18367347">
@@ -639,24 +624,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39183673">
-          <caret line="32" column="81" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/hearings/pages/confirmchangesubmission.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.5">
           <caret line="18" column="79" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/casedetailsdivorce.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.012244898">
-          <caret line="209" column="109" selection-start-line="209" selection-start-column="109" selection-end-line="209" selection-end-column="109" />
         </state>
       </provider>
     </entry>
@@ -667,33 +638,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/paneldifferent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31836733">
-          <caret line="44" column="81" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/hearings/pages/startrequest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.877551">
-          <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/hearings/pages/partiyrequirements.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="309" column="0" selection-start-line="309" selection-start-column="0" selection-end-line="321" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="597" column="0" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -701,15 +649,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2897959">
           <caret line="39" column="126" selection-start-line="39" selection-start-column="126" selection-end-line="39" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/venue.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.75">
+          <caret line="598" column="68" selection-start-line="598" selection-start-column="53" selection-end-line="598" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/region.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.75">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="99" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/startrequest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45306122">
+          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-30.0">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/panel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.90612245">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/paneldifferent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.75">
+          <caret line="320" column="48" selection-start-line="320" selection-start-column="48" selection-end-line="320" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hearings/pages/casedetailsdivorce.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="28.75">
+          <caret line="209" column="154" selection-start-line="209" selection-start-column="131" selection-end-line="209" selection-end-column="154" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8791011">
+          <caret line="243" column="29" selection-start-line="243" selection-start-column="26" selection-end-line="243" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/hearings/pages/checkyouranswers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71020406">
-          <caret line="151" column="86" selection-start-line="151" selection-start-column="86" selection-end-line="151" selection-end-column="86" />
-          <folding />
+        <state vertical-scroll-proportion="0.60816324">
+          <caret line="822" column="55" selection-start-line="822" selection-start-column="55" selection-end-line="822" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#form#7;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#form#7;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#form#7;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#8;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#form#8;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

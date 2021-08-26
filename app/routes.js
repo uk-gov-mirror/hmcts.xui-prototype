@@ -205,6 +205,8 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
 
         req.session.data['caseflagshidden'] = 'false';
         req.session.data['calendarclash'] = 'false';
+        req.session.data['viewingconfirmedhearing'] = 'false';
+
 
 
 
