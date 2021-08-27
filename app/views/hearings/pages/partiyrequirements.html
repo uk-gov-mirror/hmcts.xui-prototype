@@ -14,7 +14,7 @@ Case details
 
             <a href="#" class="govuk-back-link govuk-!-margin-bottom-6" onclick="goBack();">Back</a>
 
-            <h2 class="govuk-heading-m">Needs for each party</h2>
+            <h2 class="govuk-heading-m">Hearing requirements for each party</h2>
 
             <form
                 name="aspnetForm"
@@ -28,9 +28,9 @@ Case details
                 <div class="govuk-form-group  govuk-!-padding-top-4">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                         <h3 class="govuk-fieldset__heading">
-                            What the parties asked for
+                            What the parties have asked for
                             <br>
-                            Parties requested reasonable adjustments
+                            <span  class="govuk-body"> The parties have requested the following reasonable adjustments:</span>
                         </h3>
                     </legend>
 
@@ -64,12 +64,14 @@ Case details
                     <div class="govuk-fieldset" aria-describedby="waste-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                             <h3 class="govuk-fieldset__heading">
-                                Anything else they might need?
-                                <br>Select any parties who need reasonable adjustments
-
+                                Any other requirements for the hearing?
+                                <br>
+                                <span  class="govuk-body">Select any parties who need further reasonable adjustments</span>
                             </h3>
                         </legend>
-                        <div class="govuk-checkboxes" data-module="govuk-checkboxes" >
+
+                        <div class="govuk-checkboxes govuk-!-margin-top-4" data-module="govuk-checkboxes" >
+
                             <div class="govuk-checkboxes__item" onclick="toggleresonableadjustments1();">
                                 <input class="govuk-checkboxes__input" id="resonableadjustments1" name="resonableadjustments" type="checkbox" value="resonableadjustments1" >
                                 <label class="govuk-label govuk-checkboxes__label" for="resonableadjustments1" >

@@ -22,7 +22,7 @@ Case details
                         <div class="govuk-error-summary__body">
                             <ul class="govuk-list govuk-error-summary__list">
                                 <li>
-                                    <a href="#datesnotavailable">The date or date range you've entered is during a time where at least one party is unavailable. </a>
+                                    <a href="#datesnotavailable">One or more parties are unavailable on the date selected. </a>
                                 </li>
                             </ul>
                         </div>
@@ -231,13 +231,10 @@ Case details
                                 </div>
                             -->
 
-                            <p class="govuk-!-margin-top-8">
-                                Availability of the parties is automatically included in this request.
-                            </p>
 
                             {% if data.calendarclash == 'true' %}
                                 <div class="govuk-form-group govuk-form-group--error govuk-!-padding-top-3 govuk-!-padding-bottom-1" id="datesnotavailable">
-                                    <p>When the parties are unavilable.</p>
+                                    <p>Dates when one or more parties are unavailable:</p>
 
                                     <p>
                                         2 November 2021<br>
@@ -264,9 +261,11 @@ Case details
                                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                         <h3 class="govuk-fieldset__heading">
                                             Does the hearing need to take place on a specific date?
+                                            <br>
+                                            <span class="govuk-hint"> Availability of the parties will be reviewed as part of this request. </span>
                                         </h3>
-
                                     </legend>
+
                                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
                                         <div class="govuk-radios__item">

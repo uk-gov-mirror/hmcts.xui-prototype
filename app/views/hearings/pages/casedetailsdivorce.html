@@ -115,9 +115,9 @@ Case details
 
                                     {% if data.aftertenbmins == 'true' %}
                                         <tr class="govuk-table__row">
-                                                <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but not yet scheduled</td>
+                                                <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but waiting to be scheduled</td>
                                                 <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=true&viewingconfirmedhearing=false&">View and change</a></td>
-                                                <td class="govuk-table__cell" style="text-align: right;"><a href="confirmcancel">Cancel</a></td>
+                                                <td class="govuk-table__cell" style="text-align: right;"><a href="confirmcancel">Cancel hearing</a></td>
                                         </tr>
                                     {%  endif  %}
 
@@ -125,7 +125,7 @@ Case details
                                         <tr class="govuk-table__row">
                                                 <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but not yet processed</td>
                                                 <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=false&viewingconfirmedhearing=false&">View details</a></td>
-                                                <td class="govuk-table__cell" style="text-align: right;"><a href="confirmcancel">Cancel</a></td>
+                                                <td class="govuk-table__cell" style="text-align: right;"><a href="confirmcancel">Cancel hearing</a></td>
                                         </tr>
                                     {%  endif  %}
 
@@ -134,7 +134,7 @@ Case details
                                 </tbody>
                             </table>
                         {%  else  %}
-                            <p>Empty section placeholder text</p>
+                            <p>No pending hearing requests found.</p>
                         {% endif %}
 
 
@@ -149,30 +149,48 @@ Case details
                                     <tr class="govuk-table__row">
                                         <td scope="row" class="govuk-table__cell" style="width:200px;">5 October 2021</td>
                                         <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=true&viewingconfirmedhearing=false&">View and change</a></td>
-                                        <td class="govuk-table__cell"><a href="confirmcancel">Cancel</a></td>
+                                        <td class="govuk-table__cell"><a href="confirmcancel">Cancel hearing</a></td>
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <form
+                                    name="aspnetForm"
+                                    method="post"
+                                    id="aspnetForm"
+                                    autocomplete="off"
+                            >
+
+                                <div class="govuk-form-group  govuk-!-margin-top-0" >
+                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                        Request another hearing
+                                    </button>
+                                </div>
+
+                            </form>
+
                         {%  else  %}
-                            <p>Empty section placeholder text</p>
+                            <p>No upcoming hearings found.</p>
+
+                            <form
+                                    name="aspnetForm"
+                                    method="post"
+                                    id="aspnetForm"
+                                    autocomplete="off"
+                            >
+
+                                <div class="govuk-form-group  govuk-!-margin-top-0" >
+                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                        Request a hearing
+                                    </button>
+                                </div>
+
+                            </form>
                         {% endif %}
 
 
 
-                        <form
-                            name="aspnetForm"
-                            method="post"
-                            id="aspnetForm"
-                            autocomplete="off"
-                            >
 
-                            <div class="govuk-form-group  govuk-!-margin-top-0" >
-                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                                    Request a hearing
-                                </button>
-                            </div>
-
-                        </form>
 
 
                         <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Past hearings</h2>
@@ -184,35 +202,35 @@ Case details
                                 <tbody class="govuk-table__body">
                                     <tr class="govuk-table__row">
                                         <td scope="row" class="govuk-table__cell" style="width:200px;">5 May 2021</td>
-                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=false&viewingconfirmedhearing=true&">View details</a></td>
+                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=false&viewingconfirmedhearing=true&&firstdateoutputtext=1 December 2021&">View details</a></td>
                                     </tr>
                                     <tr class="govuk-table__row">
                                         <td scope="row" class="govuk-table__cell">13 December 2020</td>
-                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=false&viewingconfirmedhearing=true&">View details</a></td>
+                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=false&viewingconfirmedhearing=true&&firstdateoutputtext=22 December 2021&">View details</a></td>
                                     </tr>
                                 </tbody>
                             </table>
                         {%  else  %}
-                            <p>Empty section placeholder text</p>
+                            <p>No past hearings found</p>
                         {% endif %}
 
 
 
 
 
-                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Postponed and cancelled hearings</h2>
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-8">Cancelled or postponed hearings</h2>
                         {% if data.hidecancelled != 'true' %}
                             <table class="govuk-table govuk-!-margin-bottom-4" style="width: 325px;">
                                 <thead class="govuk-table__head">
                                 <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row">
                                     <td scope="row" class="govuk-table__cell" style="width:200px;">11 May 2021</td>
-                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=true&viewingconfirmedhearing=false&">View details</a></td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&&viewingconfirmedhearing=false&changesallowed=false&">View details</a></td>
                                 </tr>
                                 </tbody>
                             </table>
                         {%  else  %}
-                            <p>Empty section placeholder text</p>
+                            <p>No cancelled or postponed hearings found.</p>
                         {% endif %}
 
 
@@ -304,7 +322,7 @@ Case details
     </form>
 
 
-    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px;">
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px; margin-bottom: 120px;">
         <p style="margin-bottom:0px;">Cancelled and postponed</p>
         <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
