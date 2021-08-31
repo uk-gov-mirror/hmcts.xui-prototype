@@ -1,4 +1,4 @@
-{% extends "../layoutstaff.html" %}
+{% extends "../layoutjudicial.html" %}
 
 {% block pageTitle %}
 Case details
@@ -109,23 +109,21 @@ Case details
 
                         <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-1">Pending hearing requests</h2>
                         {% if data.submissioncomplete == 'true' %}
-                            <table class="govuk-table govuk-!-margin-bottom-9">
+                            <table class="govuk-table govuk-!-margin-bottom-9"  style="width: 325px;">
                                 <thead class="govuk-table__head">
                                 <tbody class="govuk-table__body">
 
                                     {% if data.aftertenbmins == 'true' %}
                                         <tr class="govuk-table__row">
                                                 <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but waiting to be scheduled</td>
-                                                <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=true&viewingconfirmedhearing=false&afterhearinghappend=false&">View and change</a></td>
-                                                <td class="govuk-table__cell" style="text-align: right;"><a href="confirmcancel">Cancel hearing</a></td>
+                                                <td class="govuk-table__cell"><a href="checkyouranswersjudgesonly?drafthearing=false&changesallowed=false&viewingconfirmedhearing=false&afterhearinghappend=false&">View details</a></td>
                                         </tr>
                                     {%  endif  %}
 
                                     {% if data.justsubmitted == 'true' %}
                                         <tr class="govuk-table__row">
                                                 <td scope="row" class="govuk-table__cell" style="width:200px;">Submitted but not yet processed</td>
-                                                <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=false&viewingconfirmedhearing=false&afterhearinghappend=false&">View details</a></td>
-                                                <td class="govuk-table__cell" style="text-align: right;"><a href="confirmcancel">Cancel hearing</a></td>
+                                                <td class="govuk-table__cell"><a href="checkyouranswersjudgesonly?drafthearing=false&changesallowed=false&viewingconfirmedhearing=false&afterhearinghappend=false&">View details</a></td>
                                         </tr>
                                     {%  endif  %}
 
@@ -143,49 +141,21 @@ Case details
                         <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Upcoming hearings</h2>
 
                         {% if data.hidecurrent != 'true' %}
-                            <table class="govuk-table govuk-!-margin-bottom-4">
+                            <table class="govuk-table govuk-!-margin-bottom-4"  style="width: 325px;">
                                 <thead class="govuk-table__head">
                                 <tbody class="govuk-table__body">
                                     <tr class="govuk-table__row">
                                         <td scope="row" class="govuk-table__cell" style="width:200px;">5 October 2021</td>
-                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=true&viewingconfirmedhearing=false&afterhearinghappend=false&">View and change</a></td>
-                                        <td class="govuk-table__cell"><a href="confirmcancel">Cancel hearing</a></td>
+                                        <td class="govuk-table__cell"><a href="checkyouranswersjudgesonly?drafthearing=false&changesallowed=false&viewingconfirmedhearing=true&&firstdateoutputtext=1 December 2021&afterhearinghappend=false&">View details</a></td>
+
                                     </tr>
                                 </tbody>
                             </table>
 
-                            <form
-                                    name="aspnetForm"
-                                    method="post"
-                                    id="aspnetForm"
-                                    autocomplete="off"
-                            >
-
-                                <div class="govuk-form-group  govuk-!-margin-top-0" >
-                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                                        Request another hearing
-                                    </button>
-                                </div>
-
-                            </form>
 
                         {%  else  %}
                             <p>No upcoming hearings found.</p>
 
-                            <form
-                                    name="aspnetForm"
-                                    method="post"
-                                    id="aspnetForm"
-                                    autocomplete="off"
-                            >
-
-                                <div class="govuk-form-group  govuk-!-margin-top-0" >
-                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                                        Request a hearing
-                                    </button>
-                                </div>
-
-                            </form>
                         {% endif %}
 
 
@@ -202,11 +172,11 @@ Case details
                                 <tbody class="govuk-table__body">
                                     <tr class="govuk-table__row">
                                         <td scope="row" class="govuk-table__cell" style="width:200px;">5 May 2021</td>
-                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=false&viewingconfirmedhearing=true&&firstdateoutputtext=1 December 2021&afterhearinghappend=true&">View details</a></td>
+                                        <td class="govuk-table__cell"><a href="checkyouranswersjudgesonly?drafthearing=false&changesallowed=false&viewingconfirmedhearing=true&&firstdateoutputtext=1 December 2021&afterhearinghappend=true&">View details</a></td>
                                     </tr>
                                     <tr class="govuk-table__row">
                                         <td scope="row" class="govuk-table__cell">13 December 2020</td>
-                                        <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&changesallowed=false&viewingconfirmedhearing=true&&firstdateoutputtext=22 December 2021&afterhearinghappend=true&">View details</a></td>
+                                        <td class="govuk-table__cell"><a href="checkyouranswersjudgesonly?drafthearing=false&changesallowed=false&viewingconfirmedhearing=true&&firstdateoutputtext=22 December 2021&afterhearinghappend=true&">View details</a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -225,7 +195,7 @@ Case details
                                 <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row">
                                     <td scope="row" class="govuk-table__cell" style="width:200px;">11 May 2021</td>
-                                    <td class="govuk-table__cell"><a href="checkyouranswers?drafthearing=false&&viewingconfirmedhearing=false&changesallowed=false&afterhearinghappend=false&">View details</a></td>
+                                    <td class="govuk-table__cell"><a href="checkyouranswersjudgesonly?drafthearing=false&&viewingconfirmedhearing=false&changesallowed=false&afterhearinghappend=false&">View details</a></td>
                                 </tr>
                                 </tbody>
                             </table>

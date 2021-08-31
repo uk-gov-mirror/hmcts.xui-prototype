@@ -18,6 +18,85 @@ module.exports = router
 //////////////////////////////////////////////////////
 
 
+
+//  Judges View only
+//  Not sure how cmmon this is as a use case.
+// Prototype made at the end of august just for jusgesa to veiw in mid september 2021
+router.get('/hearings/judgesview', function (req, res)
+{
+    req.session.data['drafthearing'] = 'true';
+    req.session.data['submissioncomplete'] = 'false';
+    req.session.data['changesallowed'] = 'true';
+
+    req.session.data['channelradios'] = 'In person';
+
+    req.session.data['thenevue'] = 'ROMFORD COUNTY COURT AND FAMILY COURT';
+    req.session.data['regionselection'] = 'London';
+    req.session.data['otherfailities'] = '';
+
+    req.session.data['panelsame'] = 'No - select a new panel';
+
+    req.session.data['specificjudge'] = 'No';
+    req.session.data['judgename'] = '';
+    req.session.data['judgecontract'] = 'All';
+    req.session.data['exludejudgefield'] = '';
+    req.session.data['addpersonsname'] = '';
+    req.session.data['excludepersonsname'] = '';
+    req.session.data['panelmemeberlist'] = 'Regional Medical Member\nDisability Qualified Member';
+
+    req.session.data['theduration'] = '45 minutes';
+    req.session.data['durationradios'] = '45 minutes';
+
+    req.session.data['dateradios'] = 'No';
+    req.session.data['firstdateday'] = '';
+    req.session.data['firstdatemonth'] = '';
+    req.session.data['firstdateyear'] = '';
+
+    // Clear other options data
+    req.session.data['earliestdateday'] = '';
+    req.session.data['earliestdatemonth'] = '';
+    req.session.data['earliestdateyear'] = '';
+    req.session.data['latestdateday'] = '';
+    req.session.data['latestdatemonth'] = '';
+    req.session.data['latestdateyear'] = '';
+
+    //Make sure this niche error case is off by default
+    req.session.data['confimationerror'] = 'false';
+
+
+    req.session.data['caseflagshidden'] = 'false';
+    req.session.data['calendarclash'] = 'false';
+    req.session.data['viewingconfirmedhearing'] = 'false';
+
+    req.session.data['afterhearinghappend'] = 'false';
+
+
+
+    req.session.data['submissioncomplete'] = 'false';
+
+    req.session.data['firsthearingscenario'] = 'true';
+
+    req.session.data['hidecurrent'] = 'false';
+    req.session.data['hidepast'] = 'false';
+    req.session.data['hidecancelled'] = 'false';
+
+    req.session.data['alternativeentry'] = 'false';
+
+
+
+
+    res.redirect('/hearings/pages/casedetailsjudge')
+})
+
+
+
+
+
+
+
+
+
+
 //  Scenario for testing - Creating the first SSCS hearting on a case
 //  This is the most common in real life as most cases have just onme hearing
 router.get('/hearings/first', function (req, res)
@@ -207,7 +286,7 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
         req.session.data['calendarclash'] = 'false';
         req.session.data['viewingconfirmedhearing'] = 'false';
 
-
+        req.session.data['afterhearinghappend'] = 'false';
 
 
 
