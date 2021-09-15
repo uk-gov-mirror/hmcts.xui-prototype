@@ -14,7 +14,14 @@ Case details
 
             <a href="#" class="govuk-back-link govuk-!-margin-bottom-6" onclick="goBack();">Back</a>
 
-            <h2 class="govuk-heading-m">Hearing requirements for each party</h2>
+            <h1 class="govuk-heading-l">Request a hearing</h1>
+
+            <div class="govuk-inset-text">
+                Jane Smith v DWP<br />
+                03 PIP
+            </div>
+
+<!--            <h2 class="govuk-heading-m">Hearing requirements for each party</h2>-->
 
             <form
                 name="aspnetForm"
@@ -26,13 +33,13 @@ Case details
 
 
                 <div class="govuk-form-group  govuk-!-padding-top-4">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        <h3 class="govuk-fieldset__heading">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">
                             What are the hearing requirements for each party?
-                            <br>
-                            <span  class="govuk-body"> These requirements have already been selected:</span>
-                        </h3>
+                        </h2>
                     </legend>
+
+                    <p  class="govuk-body"> These requirements have already been selected:</p>
 
                     <table class="govuk-table">
                         <thead class="govuk-table__head">
@@ -294,22 +301,22 @@ Case details
 </main>
 
 
-<div style="width:400px;">
-    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 140px;">
-        <p style="margin-bottom:0px;">Case flags</p>
-        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+<!--<div style="width:400px;">-->
+<!--    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 140px;">-->
+<!--        <p style="margin-bottom:0px;">Case flags</p>-->
+<!--        <select style="height:25px;" onchange="window.location.href='?'+this.value">-->
 
-            <option value="caseflagshidden=false&"
-                    {% if data.caseflagshidden != 'true'  %}selected{% endif %}
-            >ON</option>
+<!--            <option value="caseflagshidden=false&"-->
+<!--                    {% if data.caseflagshidden != 'true'  %}selected{% endif %}-->
+<!--            >ON</option>-->
 
-            <option value="caseflagshidden=true&"
-                    {% if data.caseflagshidden == 'true'  %}selected{% endif %}
-            >OFF</option>
+<!--            <option value="caseflagshidden=true&"-->
+<!--                    {% if data.caseflagshidden == 'true'  %}selected{% endif %}-->
+<!--            >OFF</option>-->
 
-        </select>
-    </form>
-</div>
+<!--        </select>-->
+<!--    </form>-->
+<!--</div>-->
 
 
 

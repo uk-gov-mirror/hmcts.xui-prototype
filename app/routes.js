@@ -246,6 +246,9 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
         req.session.data['submissioncomplete'] = 'false';
         req.session.data['changesallowed'] = 'true';
 
+        req.session.data['hearingstage'] = 'Final';
+
+
         req.session.data['channelradios'] = 'In person';
 
         req.session.data['thenevue'] = 'ROMFORD COUNTY COURT AND FAMILY COURT';
@@ -302,7 +305,7 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
         else
         {
             // Otherwise go through the journey
-            res.redirect('/hearings/pages/startrequest')
+            res.redirect('/hearings/pages/partiyrequirements')
         }
 
 
@@ -334,7 +337,7 @@ router.post('/hearings/pages/confirmcancel', function (req, res)
 
 // Displaying the basic info about a case on the first page
 // The go to channel section page
-router.post('/hearings/pages/startrequest', function (req, res)
+router.post('/hearings/pages/partiyrequirements', function (req, res)
 {
     // If coming from check answers page then return there after clicking continue
     if(req.session.data['backtocheckanswers'] == 'true' )
@@ -344,17 +347,43 @@ router.post('/hearings/pages/startrequest', function (req, res)
     }
     else
     {
-        res.redirect('/hearings/pages/partiyrequirements')
+        res.redirect('/hearings/pages/startrequest')
     }
 })
 
 
 
 
-router.post('/hearings/pages/partiyrequirements', function (req, res)
+router.post('/hearings/pages/startrequest', function (req, res)
 {
     res.redirect('/hearings/pages/channel')
 })
+
+
+
+
+
+// router.post('/hearings/pages/startrequest', function (req, res)
+// {
+//     // If coming from check answers page then return there after clicking continue
+//     if(req.session.data['backtocheckanswers'] == 'true' )
+//     {
+//         req.session.data['backtocheckanswers'] = 'false'
+//         res.redirect('/hearings/pages/checkyouranswers');
+//     }
+//     else
+//     {
+//         res.redirect('/hearings/pages/partiyrequirements')
+//     }
+// })
+//
+//
+//
+//
+// router.post('/hearings/pages/partiyrequirements', function (req, res)
+// {
+//     res.redirect('/hearings/pages/channel')
+// })
 
 
 

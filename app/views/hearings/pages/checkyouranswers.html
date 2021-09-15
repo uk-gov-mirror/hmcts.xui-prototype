@@ -52,22 +52,6 @@ Case details
 <!--                                                </dd>-->
 <!--                                            </div>-->
 
-                                            <div class="govuk-summary-list__row">
-                                                <dt class="govuk-summary-list__key">
-                                                    What stage is this hearing at?
-                                                </dt>
-                                                <dd class="govuk-summary-list__value">
-                                                    {{ data.hearingstage }}
-                                                </dd>
-                                                <dd class="govuk-summary-list__actions">
-                                                    {% if data.changesallowed != 'false' %}
-                                                        <a class="govuk-link" href="/hearings/pages/startrequest?backtocheckanswers=true&">
-                                                            Change
-                                                        </a>
-                                                    {% endif %}
-                                                </dd>
-                                            </div>
-
                                         </dl>
 
                                         <h2 class="govuk-heading-m">Hearing requirements for each party</h2>
@@ -101,9 +85,25 @@ Case details
                                         </dl>
 
 
-                                        <h2 class="govuk-heading-m">Type of hearing</h2>
+                                        <h2 class="govuk-heading-m">Hearing details</h2>
 
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                            <div class="govuk-summary-list__row">
+                                                <dt class="govuk-summary-list__key">
+                                                    What stage is this hearing at?
+                                                </dt>
+                                                <dd class="govuk-summary-list__value">
+                                                    {{ data.hearingstage }}
+                                                </dd>
+                                                <dd class="govuk-summary-list__actions">
+                                                    {% if data.changesallowed != 'false' %}
+                                                    <a class="govuk-link" href="/hearings/pages/startrequest?backtocheckanswers=true&">
+                                                        Change
+                                                    </a>
+                                                    {% endif %}
+                                                </dd>
+                                            </div>
+
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
                                                     How will the parties attend the hearing?

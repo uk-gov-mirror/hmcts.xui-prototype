@@ -16,8 +16,7 @@ Case details
 
             <div class="govuk-tabs__panel" id="event" style="padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
 
-
-                        <h2 class="govuk-heading-l">Request a hearing</h2>
+<!--                        <h2 class="govuk-heading-l">Request a hearing</h2>-->
 
                         <form
                             name="aspnetForm"
@@ -26,22 +25,20 @@ Case details
                             autocomplete="off"
                             >
 
+<!--                            <p>Jane Smith v DWP </p>-->
 
-
-                            <p>Jane Smith v DWP </p>
-
-                            <p>03 PIP</p>
+<!--                            <p>03 PIP</p>-->
 
                             <!--
                             <div class="govuk-inset-text">
                                 Restricted case
                             </div>
                             -->
-                            {% if data.caseflagshidden != 'true' %}
-                                <div class="govuk-inset-text">
-                                    Case flags: Potentially violent
-                                </div>
-                            {% endif %}
+<!--                            {% if data.caseflagshidden != 'true' %}-->
+<!--                                <div class="govuk-inset-text">-->
+<!--                                    Case flags: Potentially violent-->
+<!--                                </div>-->
+<!--                            {% endif %}-->
 
 
                             <form
@@ -68,7 +65,7 @@ Case details
                                                 </label>
                                             </div>
                                             <div class="govuk-radios__item">
-                                                <input class="govuk-radios__input" id="stage2" name="hearingstage" type="radio" value="Final" {% if (data.hearingstage == 'Final') or (data.hearingstage == '') %} checked {% endif %}>
+                                                <input class="govuk-radios__input" id="stage2" name="hearingstage" type="radio" value="Final" {% if data.hearingstage == 'Final' %} checked {% endif %}>
                                                 <label class="govuk-label govuk-radios__label" for="stage2">
                                                     Final
                                                 </label>
@@ -119,25 +116,28 @@ Case details
     function goBack() {
         window.history.back();
     }
+    document.addEventListener('DOMContentLoaded', function(event) {
+
+    })
 </script>
 
 
-<div style="width:400px;">
-    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 140px;">
-        <p style="margin-bottom:0px;">Case flags</p>
-        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+<!--<div style="width:400px;">-->
+<!--    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 140px;">-->
+<!--        <p style="margin-bottom:0px;">Case flags</p>-->
+<!--        <select style="height:25px;" onchange="window.location.href='?'+this.value">-->
 
-            <option value="caseflagshidden=false&"
-                    {% if data.caseflagshidden != 'true'  %}selected{% endif %}
-            >ON</option>
+<!--            <option value="caseflagshidden=false&"-->
+<!--                    {% if data.caseflagshidden != 'true'  %}selected{% endif %}-->
+<!--            >ON</option>-->
 
-            <option value="caseflagshidden=true&"
-                    {% if data.caseflagshidden == 'true'  %}selected{% endif %}
-            >OFF</option>
+<!--            <option value="caseflagshidden=true&"-->
+<!--                    {% if data.caseflagshidden == 'true'  %}selected{% endif %}-->
+<!--            >OFF</option>-->
 
-        </select>
-    </form>
-</div>
+<!--        </select>-->
+<!--    </form>-->
+<!--</div>-->
 
 {% endblock %}
 
