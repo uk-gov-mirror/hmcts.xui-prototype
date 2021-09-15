@@ -34,11 +34,34 @@ Case details
                                 <p style="white-space: pre-wrap;">{{ data['thenevue'] }}<br><a href="/hearings/pages/region">Change venue</a></p>
                             </div>
 
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        <h1 class="govuk-fieldset__heading">
+                                            Will any additional facilities be required? (placeholder)
+                                        </h1>
+                                    </legend>
+                                    <div class="govuk-radios govuk-radios--inline">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="additionalFacilitiesYes" name="additionalFacilities" type="radio" value="yes" {{ checked("additionalFacilities", "yes") }}>
+                                            <label class="govuk-label govuk-radios__label" for="additionalFacilitiesYes">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="additionalFacilitiesNo" name="additionalFacilities" type="radio" value="no" {{ checked("additionalFacilities", "no") }}>
+                                            <label class="govuk-label govuk-radios__label" for="additionalFacilitiesNo">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
 
+                                </fieldset>
+                            </div>
 
-                            <div class="govuk-form-group"style="width: 600px;">
+                            <div class="govuk-form-group"style="display:none;width: 600px;" id="facilitiesList">
                                 <label class="govuk-label govuk-label-m govuk-!-font-weight-bold govuk-!-margin-bottom-3">
-                                    What facilities are required? (optional)
+                                    What facilities are required?
                                 </label>
                                 <fieldset class="govuk-fieldset">
 
@@ -49,44 +72,180 @@ Case details
                                             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
                                                 <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="facilities1" name="facilities" type="checkbox" value="Language interpreter"  >
+                                                    <input class="govuk-checkboxes__input" id="facilities1" name="facilities" type="checkbox" value="Assistance Dog">
                                                     <label class="govuk-label govuk-checkboxes__label" for="facilities1" >
-                                                        item 1
+                                                        Assistance Dog
                                                     </label>
                                                 </div>
                                                 <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="facilities2" name="facilities" type="checkbox" value="Sign language interpreter"  >
+                                                    <input class="govuk-checkboxes__input" id="facilities2" name="facilities" type="checkbox" value="Available Cell">
                                                     <label class="govuk-label govuk-checkboxes__label" for="facilities2"  >
-                                                        item 2
+                                                        Available Cell
                                                     </label>
                                                 </div>
                                                 <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="facilities3" name="facilities" type="checkbox" value="Hearing loop">
+                                                    <input class="govuk-checkboxes__input" id="facilities3" name="facilities" type="checkbox" value="Baby Changing Rooms">
                                                     <label class="govuk-label govuk-checkboxes__label" for="facilities3"  >
-                                                        item 3
+                                                        Baby Changing Rooms
                                                     </label>
                                                 </div>
                                                 <div class="govuk-checkboxes__item">
-                                                    <input class="govuk-checkboxes__input" id="facilities4" name="facilities" type="checkbox" value="Accessible hearing rooms"  >
+                                                    <input class="govuk-checkboxes__input" id="facilities4" name="facilities" type="checkbox" value="Children’s Room">
                                                     <label class="govuk-label govuk-checkboxes__label" for="facilities4" >
-                                                        item 4
+                                                        Children’s Room
                                                     </label>
                                                 </div>
-                                                <div class="govuk-checkboxes__item"  onclick="togglefacilities();">
-                                                    <input class="govuk-checkboxes__input" id="facilities5" name="facilities" type="checkbox" value="Anything else"  onclick="togglefacilities(); togglefacilities();" >
-                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities5" onclick="togglefacilities();"  >
-                                                        anything else
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities5" name="facilities" type="checkbox" value="Custody Cell">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities5" >
+                                                        Custody Cell
                                                     </label>
                                                 </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities6" name="facilities" type="checkbox" value="Disability Access">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities6" >
+                                                        Disability Access
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities7" name="facilities" type="checkbox" value="Disabled Toilets">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities7" >
+                                                        Disabled Toilets
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities8" name="facilities" type="checkbox" value="DOM1 Connection">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities8" >
+                                                        DOM1 Connection
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities9" name="facilities" type="checkbox" value="First Aid Available">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities9" >
+                                                        First Aid Available
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities10" name="facilities" type="checkbox" value="Fixed Hearing Loop">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities10" >
+                                                        Fixed Hearing Loop
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities11" name="facilities" type="checkbox" value="Interview Rooms4">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities11" >
+                                                        Interview Rooms
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities12" name="facilities" type="checkbox" value="Linked Rooms">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities12" >
+                                                        Linked Rooms
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities13" name="facilities" type="checkbox" value="Personal Support Unit">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities13" >
+                                                        Personal Support Unit
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities14" name="facilities" type="checkbox" value="Portable Induction Loop">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities14" >
+                                                        Portable Induction Loop
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities15" name="facilities" type="checkbox" value="Prison Video Link">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities15" >
+                                                        Prison Video Link
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities16" name="facilities" type="checkbox" value="Portable Induction Loop">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities16" >
+                                                        Portable Induction Loop
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities17" name="facilities" type="checkbox" value="Private Discussion Room">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities17" >
+                                                        Private Discussion Room
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities18" name="facilities" type="checkbox" value="Private Interior Room">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities18" >
+                                                        Private Interior Room
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities19" name="facilities" type="checkbox" value="Secure Dock">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities19" >
+                                                        Secure Dock
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities20" name="facilities" type="checkbox" value="Security Search">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities20" >
+                                                        Security Search
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities21" name="facilities" type="checkbox" value="Separate DJ Chambers">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities21" >
+                                                        Separate DJ Chambers
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities22" name="facilities" type="checkbox" value="Upper Gallery">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities22" >
+                                                        Upper Gallery
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities23" name="facilities" type="checkbox" value="Video Conferencing">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities23" >
+                                                        Video Conferencing
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities24" name="facilities" type="checkbox" value="Video Facility">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities24" >
+                                                        Video Facility
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities25" name="facilities" type="checkbox" value="Wireless Internet Access">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities25" >
+                                                        Wireless Internet Access
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities26" name="facilities" type="checkbox" value="Witness Room">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities26" >
+                                                        Witness Room
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="facilities27" name="facilities" type="checkbox" value="Witness Screen">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities27" >
+                                                        Witness Screen
+                                                    </label>
+                                                </div>
+<!--                                                <div class="govuk-checkboxes__item"  onclick="togglefacilities();">-->
+<!--                                                    <input class="govuk-checkboxes__input" id="facilities28" name="anythingElse" type="checkbox" value="Anything else"  onclick="togglefacilities(); togglefacilities();">-->
+<!--                                                    <label class="govuk-label govuk-checkboxes__label" for="facilities28" onclick="togglefacilities();"  >-->
+<!--                                                        Anything else-->
+<!--                                                    </label>-->
+<!--                                                </div>-->
 
-                                                    <div class="govuk-radios__conditional govuk-!-padding-top-5 govuk-!-padding-bottom-5" id="conditionalra2box"  style="display:none;">
-                                                        <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="otherfailities">
-                                                            Tell us what facilities are required
-                                                        </label>
-                                                        <textarea class="govuk-textarea" id="otherfailities" name="otherfailities" rows="3" ></textarea>
-                                                    </div>
-
-
+<!--                                                    <div class="govuk-radios__conditional govuk-!-padding-top-5 govuk-!-padding-bottom-5" id="conditionalra2box"  style="display:block;">-->
+<!--                                                        <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="otherFacilities">-->
+<!--                                                            Tell us what facilities are required-->
+<!--                                                        </label>-->
+<!--                                                        <textarea class="govuk-textarea" id="otherFacilities" name="otherFacilities" rows="3" >{{ data.otherFacilities }}</textarea>-->
+<!--                                                    </div>-->
                                             </div>
                                         </div>
 
@@ -95,7 +254,18 @@ Case details
                                 </fieldset>
                             </div>
 
+                            <div class="govuk-form-group" id="extraFacilities" style="display: none;">
+                                <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="otherFacilities">
+                                    Provide details of any other facilities required (placeholder)
+                                </label>
+                                </h3>
+<!--                                <div id="more-detail-hint" class="govuk-hint">-->
+<!--                                    Do not include personal or financial information, like your National Insurance number or credit card details.-->
+<!--                                </div>-->
+                                <textarea class="govuk-textarea" id="otherFacilities" name="otherFacilities" rows="5"></textarea>
+                            </div>
 
+                            <textarea id="facilitiesSessionArray" name="facilitiesSessionArray" value="" style="display: none;"></textarea>
 
                             <div class="govuk-form-group  govuk-!-margin-top-7" >
                                 <button class="govuk-button" data-module="govuk-button">
@@ -115,16 +285,96 @@ Case details
 
 <script>
 
-    function openfacilities()
-    {
-        document.getElementById("conditionalfacilities").style.display = "block";
+    // function openfacilities()
+    // {
+    //     document.getElementById("conditionalfacilities").style.display = "block";
+    // }
+    //
+    // function closefacilities()
+    // {
+    //     document.getElementById("conditionalfacilities").style.display = "none";
+    // }
+
+    //toggle facilities list
+    document.getElementById('additionalFacilitiesYes').addEventListener('click', function (event) {
+        console.log('show hide')
+        var facilList = document.getElementById('facilitiesList')
+        if (facilList.style.display == "none"){
+            facilList.style.display = "block"
+            document.getElementById('extraFacilities').style.display = "block"
+        }
+    })
+    document.getElementById('additionalFacilitiesNo').addEventListener('click', function (event) {
+        console.log('show hide')
+        var facilList = document.getElementById('facilitiesList')
+        if (facilList.style.display == "block"){
+            facilList.style.display = "none"
+            document.getElementById('extraFacilities').style.display = "none"
+        }
+    })
+
+
+    // onload check to see if the 'anything else' is checked to show text input
+    document.addEventListener('DOMContentLoaded', function(event) {
+
+        // If 'yes' is selected for additional facilities show the list of checkboxes
+        if(document.getElementById("additionalFacilitiesYes").checked) {
+            document.getElementById("additionalFacilitiesYes").checked = true;
+            document.getElementById("facilitiesList").style.display = "block";
+            document.getElementById("extraFacilities").style.display = "block";
+        }
+
+        // If 'anything else' is checked, show textarea
+        // if(document.getElementById("facilities28").checked) {
+        //     document.getElementById("facilities28").checked = true;
+        //     document.getElementById("conditionalra2box").style.display = "block";
+        // }
+
+        // If any additional facilities are checked, then check them
+        // bbbarray = '{{data.thenevuefacilities}}'.split(',')
+        // console.log(bbbarray)
+    })
+
+    // get list of facilities that have been checked whenever a checkbox is changed
+    var listDiv = document.getElementById('facilitiesList')
+    var facilityCheckboxesAll = listDiv.querySelectorAll('input[type=checkbox]')
+    var globalFacilities
+
+    for (var i = 0; i < facilityCheckboxesAll.length; i++) {
+        facilityCheckboxesAll[i].addEventListener('change', function (event) {
+            var x = getCheckedFacilities()
+            globalFacilities = x
+            // for (var i = 0; i < globalFacilities.length; i++){
+            //     document.getElementById('facilitiesSessionArray').innerHTML += globalFacilities[i] + '<br />'
+            // }
+            document.getElementById('facilitiesSessionArray').value = globalFacilities
+
+            //console.log(globalFacilities)
+        })
     }
 
-    function closefacilities()
-    {
-        document.getElementById("conditionalfacilities").style.display = "none";
+
+
+    function getCheckedFacilities() {
+        var checkedFacilitiesArray = []
+
+        var facilityCheckboxesSelected = listDiv.querySelectorAll('input[type=checkbox]:checked')
+        for (var i = 0; i <= facilityCheckboxesSelected.length-1; i++) {
+             checkedFacilitiesArray.push(facilityCheckboxesSelected[i].value)
+         }
+        return(checkedFacilitiesArray)
     }
 
+
+    // console.log(facilityCheckboxesAll)
+
+    // facilityCheckboxesAll.addEventListener('change', function (event) {
+    //     facilityCheckboxesSelected = listDiv.querySelectorAll('input[type=checkbox]:checked')
+    //     for (var i = 0; i < facilityCheckboxesSelected.length; i++) {
+    //         checkedFacilitiesArray.push(facilityCheckboxesSelected[i].value)
+    //     }
+    //     console.log(checkedFacilitiesArray)
+    // })
 
     function togglefacilities()
     {

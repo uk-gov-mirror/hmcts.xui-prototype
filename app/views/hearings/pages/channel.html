@@ -19,124 +19,102 @@ Case details
                             The default will be a hearing in an actual court.  this is in person.
                         -->
 
-                        <form
-                            name="aspnetForm"
-                            method="post"
-                            id="aspnetForm"
-                            autocomplete="off"
-                            >
+                <form
+                    name="aspnetForm"
+                    method="post"
+                    id="aspnetForm"
+                    autocomplete="off"
+                    >
 
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
 
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <h2 class="govuk-fieldset__heading">
+                                    How will each party attend the hearing? (placeholder)
+                                </h2>
+                            </legend>
+                            <div class="govuk-hint">
+                                Select how each party will attend the hearing or if they are not attending (placeholder).
+                            </div>
 
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                        <h1 class="govuk-fieldset__heading">
-                                            How will the hearing be carried out?
-                                        </h1>
-                                    </legend>
-                                    <div class="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="chanel1"  onclick="showinpersonsection();" name="channelradios" type="radio" value="In person" {% if data.channelradios == 'In person' %} checked {% endif %}>
-                                            <label class="govuk-label govuk-radios__label" for="chanel1" onclick="showinpersonsection();">
-                                                In person
-                                            </label>
-                                        </div>
-                                                <div class="govuk-form-group govuk-radios__conditional govuk-!-padding-top-4 govuk-!-padding-bottom-4" id="inpersonsection" >
-                                                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                                            <h3 class="govuk-fieldset__heading">
-                                                                Select any parties who want to attend the hearing remotely, for example by phone
-                                                            </h3>
-                                                        </legend>
-                                                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                                            <div class="govuk-checkboxes__item">
-                                                                <input class="govuk-checkboxes__input" id="partyattendancetype1" name="partyattendancetype1" type="checkbox" value="Welsh">
-                                                                <label class="govuk-label govuk-checkboxes__label" for="partyattendancetype1">
-                                                                    Jane Smith
-                                                                </label>
-                                                            </div>
-                                                            <div class="govuk-checkboxes__item">
-                                                                <input class="govuk-checkboxes__input" id="partyattendancetype2" name="partyattendancetype2" type="checkbox" value="Welsh">
-                                                                <label class="govuk-label govuk-checkboxes__label" for="partyattendancetype2">
-                                                                    DWP
-                                                                </label>
-                                                            </div>
-                                                        </div>
+                            <br />
 
-                                                    </fieldset>
-                                                </div>
-
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="chanel2"  onclick="hideinpersonsection();" name="channelradios" type="radio" value="By phone" {% if data.channelradios == 'By phone' %} checked {% endif %}>
-                                            <label class="govuk-label govuk-radios__label" for="chanel2" onclick="hideinpersonsection();">
-                                                By phone
-                                            </label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="chanel3"  onclick="hideinpersonsection();" name="channelradios" type="radio" value="By video" {% if data.channelradios == 'By video' %} checked {% endif %}>
-                                            <label class="govuk-label govuk-radios__label" for="chanel3" onclick="hideinpersonsection();">
-                                                By video
-                                            </label>
-                                        </div>
-
-                                        <!-- this proces sis done offline  -->
-                                        <!--
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="chanel4" name="channelradios" type="radio" value="On paper" {% if data.channelradios == 'On paper' %} checked {% endif %}>
-                                            <label class="govuk-label govuk-radios__label" for="chanel4">
-                                                On paper
-                                            </label>
-                                        </div>
-                                        -->
-
+                            <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend">
+                                    <strong>Jane Smith</strong>
+                                </legend>
+                                <div class="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="channel1_1"  name="channel1radios" type="radio" value="In person" {% if data.channel1radios == 'In person' %} checked {% endif %}>
+                                        <label class="govuk-label govuk-radios__label" for="channel1_1">
+                                            In person
+                                        </label>
                                     </div>
-
-                                </fieldset>
-                            </div>
-
-
-
-
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                        <h3 class="govuk-fieldset__heading">
-                                            Select any parties who do not want to attend the hearing
-                                        </h3>
-                                    </legend>
-                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="partyabsent1" name="partyabsent1" type="checkbox" value="Welsh">
-                                            <label class="govuk-label govuk-checkboxes__label" for="partyabsent1">
-                                                Jane Smith
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="partyabsent1" name="partyabsent1" type="checkbox" value="Welsh">
-                                            <label class="govuk-label govuk-checkboxes__label" for="partyabsent1">
-                                                DWP
-                                            </label>
-                                        </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="channel2_1" name="channel1radios" type="radio" value="By phone" {% if data.channel1radios == 'By phone' %} checked {% endif %}>
+                                        <label class="govuk-label govuk-radios__label" for="channel2_1">
+                                            By phone
+                                        </label>
                                     </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="channel3_1" name="channel1radios" type="radio" value="By video" {% if data.channel1radios == 'By video' %} checked {% endif %}>
+                                        <label class="govuk-label govuk-radios__label" for="channel3_1">
+                                            By video
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="channel4_1" name="channel1radios" type="radio" value="Not attending" {% if data.channel1radios == 'Not attending' %} checked {% endif %}>
+                                        <label class="govuk-label govuk-radios__label" for="channel4_1">
+                                            Not attending
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
 
-                                </fieldset>
-                            </div>
+                            <br /><br />
 
+                            <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                    <strong>DWP</strong>
+                                </legend>
+                                <div class="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="channel1_2" name="channel2radios" type="radio" value="In person" {% if data.channel2radios == 'In person' %} checked {% endif %}>
+                                        <label class="govuk-label govuk-radios__label" for="channel1_2">
+                                            In person
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="channel2_2" name="channel2radios" type="radio" value="By phone" {% if data.channel2radios == 'By phone' %} checked {% endif %}>
+                                        <label class="govuk-label govuk-radios__label" for="channel2_2">
+                                            By phone
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="channel3_2" name="channel2radios" type="radio" value="By video" {% if data.channel2radios == 'By video' %} checked {% endif %}>
+                                        <label class="govuk-label govuk-radios__label" for="channel3_2">
+                                            By video
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="channel4_2" name="channel2radios" type="radio" value="Not attending" {% if data.channel2radios == 'Not attending' %} checked {% endif %}>
+                                        <label class="govuk-label govuk-radios__label" for="channel4_2">
+                                            Not attending
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </fieldset>
+                    </div>
 
+                    <div class="govuk-form-group  govuk-!-margin-top-5" >
+                        <button class="govuk-button" data-module="govuk-button">
+                            Continue
+                        </button>
+                    </div>
 
-
-
-
-                            <div class="govuk-form-group  govuk-!-margin-top-5" >
-                                <button class="govuk-button" data-module="govuk-button">
-                                    Continue
-                                </button>
-                            </div>
-
-                        </form>
-
-
+                </form>
 
             </div>
         </div>
@@ -148,19 +126,6 @@ Case details
     function goBack() {
         window.history.back();
     }
-
-
-    function hideinpersonsection()
-    {
-            document.getElementById("inpersonsection").style.display = "none";
-    }
-
-    function showinpersonsection()
-    {
-            document.getElementById("inpersonsection").style.display = "block";
-    }
-
-
 </script>
 
 

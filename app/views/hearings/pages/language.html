@@ -14,7 +14,7 @@ Case details
 
                 <a href="#" class="govuk-back-link govuk-!-margin-bottom-6" onclick="goBack();">Back</a>
 
-                        <h2 class="govuk-heading-m">Are there any other requirements for the hearing?</h2>
+<!--                        <h2 class="govuk-heading-m"></h2>-->
 
                         <form
                             name="aspnetForm"
@@ -24,20 +24,39 @@ Case details
                             >
 
                                 <div class="govuk-form-group">
-                                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                            <h3 class="govuk-fieldset__heading">
-                                                Select if the hearing needs to be in Welsh
-                                            </h3>
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                            <h2 class="govuk-fieldset__heading">
+                                                Does this hearing need to be in Welsh?
+                                            </h2>
                                         </legend>
-                                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="welsh1" name="welsh" type="checkbox" value="Welsh">
-                                                <label class="govuk-label govuk-checkboxes__label" for="welsh1">
-                                                    This hearing will be in Welsh
+                                        <div class="govuk-hint">
+                                            This means the entire hearing will be carried out in Welsh, including all the hearing documents and paperwork.
+                                        </div>
+
+                                        <div class="govuk-radios govuk-radios--inline">
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="welshHearing" name="welshHearing" type="radio" value="Yes" {{ checked("welshHearing", "Yes") }}>
+                                                <label class="govuk-label govuk-radios__label" for="welshHearing">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input" id="welshHearing2" name="welshHearing" type="radio" value="No" {{ checked("welshHearing", "No") }}>
+                                                <label class="govuk-label govuk-radios__label" for="welshHearing2">
+                                                    No
                                                 </label>
                                             </div>
                                         </div>
+
+<!--                                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">-->
+<!--                                            <div class="govuk-checkboxes__item">-->
+<!--                                                <input class="govuk-checkboxes__input" id="welsh1" name="welshHearing" type="checkbox" value="Welsh">-->
+<!--                                                <label class="govuk-label govuk-checkboxes__label" for="welsh1">-->
+<!--                                                    This hearing will be in Welsh-->
+<!--                                                </label>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
 
                                     </fieldset>
                                 </div>

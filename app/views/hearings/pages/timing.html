@@ -221,8 +221,33 @@ Case details
                                 </fieldset>
                             </div>
 
+                            <!-- AM or PM -->
+<!--                            <div class="govuk-form-group govuk-!-margin-top-5">-->
+<!--                                <fieldset class="govuk-fieldset">-->
+<!--                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend&#45;&#45;s">-->
+<!--                                        <h3 class="govuk-fieldset__heading">-->
+<!--                                            Does the hearing need to take place at a specific time? (placeholder)      &nbsp;  &nbsp; &nbsp; &nbsp;-->
+<!--                                        </h3>-->
+<!--                                    </legend>-->
+<!--                                    <div class="govuk-hint">Choose a time of day (placeholder). </div>-->
 
+<!--                                    <div class="govuk-radios govuk-radios&#45;&#45;inline">-->
+<!--                                        <div class="govuk-radios__item">-->
+<!--                                            <input class="govuk-radios__input" id="hearingTimeAM" name="hearingTime" type="radio" value="AM" {{ checked("hearingTime", "AM") }}>-->
+<!--                                            <label class="govuk-label govuk-radios__label" for="hearingTimeAM">-->
+<!--                                                AM-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                        <div class="govuk-radios__item">-->
+<!--                                            <input class="govuk-radios__input" id="hearingTimePM" name="hearingTime" type="radio" value="PM" {{ checked("hearingTime", "PM") }}>-->
+<!--                                            <label class="govuk-label govuk-radios__label" for="hearingTimePM">-->
+<!--                                                PM-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
+<!--                                </fieldset>-->
+<!--                            </div>-->
 
                             <!--  SLA  NOT NEEDED FOR SSCS-->
                             <!--
@@ -230,7 +255,6 @@ Case details
                                     5 days since SLA start date
                                 </div>
                             -->
-
 
                             {% if data.calendarclash == 'true' %}
                                 <div class="govuk-form-group govuk-form-group--error govuk-!-padding-top-3 govuk-!-padding-bottom-1" id="datesnotavailable">
@@ -261,10 +285,10 @@ Case details
                                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                         <h3 class="govuk-fieldset__heading">
                                             Does the hearing need to take place on a specific date?
-                                            <br>
-                                            <span class="govuk-hint"> Availability of the parties will be reviewed as part of this request. </span>
                                         </h3>
                                     </legend>
+
+                                    <div class="govuk-hint"> Availability of the parties will be reviewed as part of this request. </div>
 
                                     <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
@@ -416,21 +440,36 @@ Case details
 
 
                             <div class="govuk-form-group govuk-!-margin-top-5">
-                                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                                <fieldset class="govuk-fieldset">
                                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                         <h3 class="govuk-fieldset__heading">
-                                            Is this a priority hearing?  (optional)       &nbsp;  &nbsp; &nbsp; &nbsp;
+                                            Is this a priority hearing?       &nbsp;  &nbsp; &nbsp; &nbsp;
                                         </h3>
                                     </legend>
 
-                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="priority" name="priority" type="checkbox" >
-                                            <label class="govuk-label govuk-checkboxes__label" for="priority">
-                                                Priority
+                                    <div class="govuk-radios govuk-radios--inline">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="priorityHearing" name="priorityHearing" type="radio" value="Yes" {{ checked("priorityHearing", "Yes") }}>
+                                            <label class="govuk-label govuk-radios__label" for="priorityHearing">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="priorityHearing2" name="priorityHearing" type="radio" value="No" {{ checked("priorityHearing", "No") }}>
+                                            <label class="govuk-label govuk-radios__label" for="priorityHearing2">
+                                                No
                                             </label>
                                         </div>
                                     </div>
+
+<!--                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">-->
+<!--                                        <div class="govuk-checkboxes__item">-->
+<!--                                            <input class="govuk-checkboxes__input" id="priority" name="priorityHearing" type="checkbox" {{ checked("priorityHearing", true) }}>-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="priority">-->
+<!--                                                Priority-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
                                 </fieldset>
                             </div>

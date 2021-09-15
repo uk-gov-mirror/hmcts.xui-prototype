@@ -336,7 +336,16 @@ router.post('/hearings/pages/confirmcancel', function (req, res)
 // The go to channel section page
 router.post('/hearings/pages/startrequest', function (req, res)
 {
-    res.redirect('/hearings/pages/partiyrequirements')
+    // If coming from check answers page then return there after clicking continue
+    if(req.session.data['backtocheckanswers'] == 'true' )
+    {
+        req.session.data['backtocheckanswers'] = 'false'
+        res.redirect('/hearings/pages/checkyouranswers');
+    }
+    else
+    {
+        res.redirect('/hearings/pages/partiyrequirements')
+    }
 })
 
 
@@ -387,14 +396,20 @@ router.post('/hearings/pages/channel', function (req, res)
 // First hearing will logically always be a new panel
 router.post('/hearings/pages/venuedefault', function (req, res)
 {
-    // If coming from check answers page then return there after clicking continue
-    if( req.session.data['firsthearingscenario'] == 'true' )
+    //If coming from check answers page then return there after clicking continue
+    if(req.session.data['backtocheckanswers'] == 'true' )
     {
-        res.redirect('/hearings/pages/paneldifferent');
+        req.session.data['backtocheckanswers'] = 'false'
+        res.redirect('/hearings/pages/checkyouranswers');
     }
     else
     {
-        res.redirect('/hearings/pages/panel');
+        if( req.session.data['firsthearingscenario'] == 'true' )
+        {
+            res.redirect('/hearings/pages/paneldifferent');
+        } else {
+            res.redirect('/hearings/pages/panel');
+        }
     }
 })
 
@@ -415,12 +430,15 @@ router.post('/hearings/pages/venue', function (req, res)
 
     req.session.data['thenevue'] = req.session.data['placeholder'];
 
-
     // If coming from check answers page then return there after clicking continue
-    if(req.session.data['backtocheckanswers'] == 'true' )
+    if(req.session.data['backtocheckanswers'] == 'true' && req.session.data['regionselection'] == 'Wales')
     {
         req.session.data['backtocheckanswers'] = 'false'
-        res.redirect('/hearings/pages/checkyouranswers');
+        res.redirect('/hearings/pages/language')
+    }
+    else if(req.session.data['backtocheckanswers'] == 'true' && req.session.data['regionselection'] != 'Wales') {
+        req.session.data['backtocheckanswers'] = 'false'
+        res.redirect('/hearings/pages/checkyouranswers')
     }
     else {
         if (req.session.data['firsthearingscenario'] == 'true') {
@@ -430,6 +448,27 @@ router.post('/hearings/pages/venue', function (req, res)
             res.redirect('/hearings/pages/venuedefault');
         }
     }
+
+
+
+
+
+
+
+    // If coming from check answers page then return there after clicking continue
+    // if(req.session.data['backtocheckanswers'] == 'true' )
+    // {
+    //     req.session.data['backtocheckanswers'] = 'false'
+    //     res.redirect('/hearings/pages/checkyouranswers');
+    // }
+    // else {
+    //     if (req.session.data['firsthearingscenario'] == 'true') {
+    //         res.redirect('/hearings/pages/venuedefault');
+    //     }
+    //     else {
+    //         res.redirect('/hearings/pages/venuedefault');
+    //     }
+    // }
 })
 
 // Page 3 to page 4
@@ -574,18 +613,32 @@ router.post('/hearings/pages/timing', function (req, res)
         req.session.data['priorityoutput'] = "Priority";
     }
 
-
-
     // ROUTING
-    if(req.session.data['backtocheckanswers'] == 'true' )
+
+    if(req.session.data['regionselection'] == 'Wales')
+    {
+        res.redirect('/hearings/pages/language')
+    }
+    else if(req.session.data['backtocheckanswers'] == 'true')
     {
         req.session.data['backtocheckanswers'] = 'false'
         res.redirect('/hearings/pages/checkyouranswers');
     }
     else
     {
-        res.redirect('/hearings/pages/language')
+        res.redirect('/hearings/pages/checkyouranswers');
     }
+
+
+    // if(req.session.data['backtocheckanswers'] == 'true' )
+    // {
+    //     req.session.data['backtocheckanswers'] = 'false'
+    //     res.redirect('/hearings/pages/checkyouranswers');
+    // }
+    // else
+    // {
+    //     res.redirect('/hearings/pages/checkyouranswers');
+    // }
 
 })
 
@@ -594,7 +647,7 @@ router.post('/hearings/pages/timing', function (req, res)
 //  Language always is the last page
 router.post('/hearings/pages/language', function (req, res)
 {
-        res.redirect('/hearings/pages/checkyouranswers')
+    res.redirect('/hearings/pages/checkyouranswers')
 })
 
 

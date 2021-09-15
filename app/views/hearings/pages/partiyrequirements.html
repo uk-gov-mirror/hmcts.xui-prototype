@@ -28,35 +28,49 @@ Case details
                 <div class="govuk-form-group  govuk-!-padding-top-4">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                         <h3 class="govuk-fieldset__heading">
-                            What the parties have asked for
+                            Heading (placeholder)
                             <br>
-                            <span  class="govuk-body"> The parties have requested the following reasonable adjustments:</span>
+                            <span  class="govuk-body"> Subheading (placeholder)</span>
                         </h3>
                     </legend>
 
-                    <table class="govuk-table" style="width:500px;">
+                    <table class="govuk-table">
                         <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Party</th>
+                            {% if data.caseflagshidden != 'true' %}<th scope="col" class="govuk-table__header">Case flags</th>{% endif %}
+                            <th scope="col" class="govuk-table__header">Reasonable adjustments</th>
+                        </tr>
                         </thead>
                         <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header" style="font-weight: 400;">Jane Smith</th>
-                            <td class="govuk-table__cell">Hearing loop</td>
+                            {% if data.caseflagshidden != 'true' %}<td class="govuk-table__cell">Potentially Violent</td>{% endif %}
+                            <td class="govuk-table__cell">
+                                Hearing loop<br />
+                                Digital assistance
+                            </td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header" style="font-weight: 400;">DWP</th>
+                            {% if data.caseflagshidden != 'true' %}<td class="govuk-table__cell"></td>{% endif %}
                             <td class="govuk-table__cell"></td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
 
+                <p class="govuk-body">
+                    To review and make any changes to case flags or reasonable adjustments, please visit <a href="#" class="govuk-link">case flags and reasonable adjustments</a>. (placeholder)
+                </p>
 
-                {% if data.caseflagshidden != 'true' %}
-                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1 govuk-!-margin-top-8">
-                        Case flags:
-                    </h3>
-                    <p>Jane Smith: Potentially Violent</p>
-                {% endif %}
+
+<!--                {% if data.caseflagshidden != 'true' %}-->
+<!--                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1 govuk-!-margin-top-8">-->
+<!--                        Case flags:-->
+<!--                    </h3>-->
+<!--                    <p>Jane Smith: Potentially Violent</p>-->
+<!--                {% endif %}-->
 
 
 
@@ -64,9 +78,9 @@ Case details
                     <div class="govuk-fieldset" aria-describedby="waste-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                             <h3 class="govuk-fieldset__heading">
-                                Any other requirements for the hearing?
+                                Language requirements (placeholder)
                                 <br>
-                                <span  class="govuk-body">Select any parties who need further reasonable adjustments</span>
+                                <span  class="govuk-body">Select any parties who have language requirements (placeholder)</span>
                             </h3>
                         </legend>
 
@@ -81,55 +95,79 @@ Case details
 
                             <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra1">
                                 <div class="govuk-form-group"style="width: 600px;">
-                                    <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" >
-                                        Select the reasonable adjustments required
+                                    <label class="govuk-label govuk-label-m">
+                                        Select interpreter language (placeholder)
                                     </label>
 
-                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                    <input class="govuk-input govuk-!-width-one-third" id="language-selection-1" name="language-selection-1">
 
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="ra1radio" name="raradio1" type="checkbox" value="Language interpreter"  >
-                                            <label class="govuk-label govuk-checkboxes__label" for="ra1radio" >
-                                                Language interpreter
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="ra2radio" name="raradio1" type="checkbox" value="Sign language interpreter"  >
-                                            <label class="govuk-label govuk-checkboxes__label" for="ra2radio"  >
-                                                Sign language interpreter
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="ra3radio" name="raradio1" type="checkbox" value="Hearing loop">
-                                            <label class="govuk-label govuk-checkboxes__label" for="ra3radio"  >
-                                                Hearing loop
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="ra4radio" name="raradio1" type="checkbox" value="Accessible hearing rooms"  >
-                                            <label class="govuk-label govuk-checkboxes__label" for="ra4radio" >
-                                                Accessible hearing rooms
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item"  onclick="toggleraother1();">
-                                            <input class="govuk-checkboxes__input" id="ra5radio" name="raradio1" type="checkbox" value="Anything else"  onclick="toggleraother1(); toggleraother1();" >
-                                            <label class="govuk-label govuk-checkboxes__label" for="ra5radio" onclick="toggleraother1();"  >
-                                                Anything else
-                                            </label>
-                                        </div>
-
-                                        <div class="govuk-radios__conditional govuk-!-padding-top-5 govuk-!-padding-bottom-5" id="conditionalra1box"  style="display:none;">
-                                            <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail-adjustments-other-1">
-                                                Enter the reasonable adjustments
-                                            </label>
-                                            <textarea class="govuk-textarea" id="more-detail-adjustments-other-1" name="more-detail-adjustments-other-1" rows="3" aria-describedby="more-detail-hint"></textarea>
-                                        </div>
-
-
-                                    </div>
                                 </div>
-
                             </div>
+
+
+
+
+<!--                            <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra1">-->
+<!--                                <div class="govuk-form-group"style="width: 600px;">-->
+<!--                                    <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" >-->
+<!--                                        Select language (placeholder)-->
+<!--                                    </label>-->
+
+<!--                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">-->
+
+<!--                                        <div class="govuk-checkboxes__item">-->
+<!--                                            <input class="govuk-checkboxes__input" id="ra1radio" name="raradio1" type="checkbox" value="Language interpreter">-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="ra1radio" >-->
+<!--                                                Language interpreter-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="govuk-checkboxes__item" id="conditional-language-1" style="display:none;">-->
+<!--                                            <div class="govuk-form-group">-->
+<!--                                                <label class="govuk-label" for="language-selection-1">-->
+<!--                                                    Select interpreter language-->
+<!--                                                </label>-->
+<!--                                                <input class="govuk-input govuk-!-width-one-third" id="language-selection-1" name="language-selection-1">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="govuk-checkboxes__item">-->
+<!--                                            <input class="govuk-checkboxes__input" id="ra2radio" name="raradio1" type="checkbox" value="Sign language interpreter"  >-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="ra2radio"  >-->
+<!--                                                Sign language interpreter-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                        <div class="govuk-checkboxes__item">-->
+<!--                                            <input class="govuk-checkboxes__input" id="ra3radio" name="raradio1" type="checkbox" value="Hearing loop">-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="ra3radio"  >-->
+<!--                                                Hearing loop-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                        <div class="govuk-checkboxes__item">-->
+<!--                                            <input class="govuk-checkboxes__input" id="ra4radio" name="raradio1" type="checkbox" value="Accessible hearing rooms"  >-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="ra4radio" >-->
+<!--                                                Accessible hearing rooms-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                        <div class="govuk-checkboxes__item">-->
+<!--                                            <input class="govuk-checkboxes__input" id="ra5radio" name="raradio1" type="checkbox" value="Anything else"  onclick="toggleraother1();" >-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="ra5radio" onclick="toggleraother1();"  >-->
+<!--                                                Anything else-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="govuk-radios__conditional govuk-!-padding-top-5 govuk-!-padding-bottom-5" id="conditionalra1box"  style="display:none;">-->
+<!--                                            <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail-adjustments-other-1">-->
+<!--                                                Enter the reasonable adjustments-->
+<!--                                            </label>-->
+<!--                                            <textarea class="govuk-textarea" id="more-detail-adjustments-other-1" name="more-detail-adjustments-other-1" rows="3" aria-describedby="more-detail-hint"></textarea>-->
+<!--                                        </div>-->
+
+
+<!--                                    </div>-->
+<!--                                </div>-->
+
+<!--                            </div>-->
 
 
 
@@ -142,53 +180,72 @@ Case details
 
                             <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra2">
                                 <div class="govuk-form-group"style="width: 600px;">
-                                    <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" >
-                                        Select the reasonable adjustments required
+                                    <label class="govuk-label govuk-label-m">
+                                        Select interpreter language (placeholder)
                                     </label>
 
-                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                    <input class="govuk-input govuk-!-width-one-third" placeholder="" id="language-selection-2" name="language-selection-2">
 
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="ra21radio" name="raradio2" type="checkbox" value="Language interpreter"  >
-                                            <label class="govuk-label govuk-checkboxes__label" for="ra21radio" >
-                                                Language interpreter
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="ra22radio" name="raradio2" type="checkbox" value="Sign language interpreter"  >
-                                            <label class="govuk-label govuk-checkboxes__label" for="ra22radio"  >
-                                                Sign language interpreter
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="ra23radio" name="raradio2" type="checkbox" value="Hearing loop">
-                                            <label class="govuk-label govuk-checkboxes__label" for="ra23radio"  >
-                                                Hearing loop
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="ra24radio" name="raradio2" type="checkbox" value="Accessible hearing rooms"  >
-                                            <label class="govuk-label govuk-checkboxes__label" for="ra24radio" >
-                                                Accessible hearing rooms
-                                            </label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item"  onclick="toggleraother2();">
-                                            <input class="govuk-checkboxes__input" id="ra25radio" name="raradio2" type="checkbox" value="Anything else"  onclick="toggleraother2(); toggleraother2();" >
-                                            <label class="govuk-label govuk-checkboxes__label" for="ra25radio" onclick="toggleraother1();"  >
-                                                Anything else
-                                            </label>
-                                        </div>
-
-                                        <div class="govuk-radios__conditional govuk-!-padding-top-5 govuk-!-padding-bottom-5" id="conditionalra2box"  style="display:none;">
-                                            <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail-adjustments-other-2">
-                                                Enter the reasonable adjustments
-                                            </label>
-                                            <textarea class="govuk-textarea" id="more-detail-adjustments-other-2" name="more-detail-adjustments-other-2" rows="3" aria-describedby="more-detail-hint"></textarea>
-                                        </div>
-
-
-                                    </div>
                                 </div>
+                            </div>
+
+<!--                            <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra2">-->
+<!--                                <div class="govuk-form-group"style="width: 600px;">-->
+<!--                                    <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" >-->
+<!--                                        Select the reasonable adjustments required-->
+<!--                                    </label>-->
+
+<!--                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">-->
+
+<!--                                        <div class="govuk-checkboxes__item">-->
+<!--                                            <input class="govuk-checkboxes__input" id="ra21radio" name="raradio2" type="checkbox" value="Language interpreter"  >-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="ra21radio" >-->
+<!--                                                Language interpreter-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                        <div class="govuk-checkboxes__item" id="conditional-language-2" style="display:none;">-->
+<!--                                            <div class="govuk-form-group">-->
+<!--                                                <label class="govuk-label" for="language-selection-2">-->
+<!--                                                    Select interpreter language-->
+<!--                                                </label>-->
+<!--                                                <input class="govuk-input govuk-!-width-one-third" id="language-selection-2" name="language-selection-2">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="govuk-checkboxes__item">-->
+<!--                                            <input class="govuk-checkboxes__input" id="ra22radio" name="raradio2" type="checkbox" value="Sign language interpreter"  >-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="ra22radio"  >-->
+<!--                                                Sign language interpreter-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                        <div class="govuk-checkboxes__item">-->
+<!--                                            <input class="govuk-checkboxes__input" id="ra23radio" name="raradio2" type="checkbox" value="Hearing loop">-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="ra23radio"  >-->
+<!--                                                Hearing loop-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                        <div class="govuk-checkboxes__item">-->
+<!--                                            <input class="govuk-checkboxes__input" id="ra24radio" name="raradio2" type="checkbox" value="Accessible hearing rooms"  >-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="ra24radio" >-->
+<!--                                                Accessible hearing rooms-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                        <div class="govuk-checkboxes__item">-->
+<!--                                            <input class="govuk-checkboxes__input" id="ra25radio" name="raradio2" type="checkbox" value="Anything else"  onclick="toggleraother2();" >-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="ra25radio" onclick="toggleraother2();"  >-->
+<!--                                                Anything else-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="govuk-radios__conditional govuk-!-padding-top-5 govuk-!-padding-bottom-5" id="conditionalra2box"  style="display:none;">-->
+<!--                                            <label class="govuk-label govuk-label-m govuk-!-font-weight-bold" for="more-detail-adjustments-other-2">-->
+<!--                                                Enter the reasonable adjustments-->
+<!--                                            </label>-->
+<!--                                            <textarea class="govuk-textarea" id="more-detail-adjustments-other-2" name="more-detail-adjustments-other-2" rows="3" aria-describedby="more-detail-hint"></textarea>-->
+<!--                                        </div>-->
+
+
+<!--                                    </div>-->
+<!--                                </div>-->
 
                             </div>
 
@@ -257,6 +314,31 @@ Case details
 
 <script>
 
+    // Checkbox event listeners
+    var language1 = document.getElementById("ra1radio");
+    language1.addEventListener('change', function() {
+        toggleElement("conditional-language-1", this.checked)
+    })
+    var language2 = document.getElementById("ra21radio");
+    language2.addEventListener('change', function() {
+        toggleElement("conditional-language-2", this.checked)
+    })
+
+    // For showing/hiding elements using checkboxes
+    function toggleElement(elem,state)
+    {
+        var e = document.getElementById(elem)
+
+        if(state)
+        {
+            e.style.display = "block"
+        }
+        else
+        {
+            e.style.display = "none"
+        }
+    }
+
 
     function toggleresonableadjustments1()
     {
@@ -311,6 +393,7 @@ Case details
 
     function toggleraother1()
     {
+        console.log('here')
         if(document.getElementById("conditionalra1box").style.display == "none")
         {
             document.getElementById("ra5radio").checked = true;

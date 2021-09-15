@@ -62,25 +62,25 @@ Case details
                                         </legend>
                                         <div class="govuk-radios">
                                             <div class="govuk-radios__item">
-                                                <input class="govuk-radios__input" id="stage1" name="hearingstage" type="radio" value="London">
+                                                <input class="govuk-radios__input" id="stage1" name="hearingstage" type="radio" value="Initial" {% if data.hearingstage == 'Initial' %} checked {% endif %}>
                                                 <label class="govuk-label govuk-radios__label" for="stage1">
                                                     Initial
                                                 </label>
                                             </div>
                                             <div class="govuk-radios__item">
-                                                <input class="govuk-radios__input" id="stage2" name="hearingstage" type="radio" value="Midlands" checked>
+                                                <input class="govuk-radios__input" id="stage2" name="hearingstage" type="radio" value="Final" {% if (data.hearingstage == 'Final') or (data.hearingstage == '') %} checked {% endif %}>
                                                 <label class="govuk-label govuk-radios__label" for="stage2">
                                                     Final
                                                 </label>
                                             </div>
                                             <div class="govuk-radios__item">
-                                                <input class="govuk-radios__input" id="stage3" name="hearingstage" type="radio" value="North East">
+                                                <input class="govuk-radios__input" id="stage3" name="hearingstage" type="radio" value="Substantial" {% if data.hearingstage == 'Substantial' %} checked {% endif %}>
                                                 <label class="govuk-label govuk-radios__label" for="stage3">
                                                     Substantial
                                                 </label>
                                             </div>
                                             <div class="govuk-radios__item">
-                                                <input class="govuk-radios__input" id="stage4" name="hearingstage" type="radio" value="North West">
+                                                <input class="govuk-radios__input" id="stage4" name="hearingstage" type="radio" value="Case management" {% if data.hearingstage == 'Case management' %} checked {% endif %}>
                                                 <label class="govuk-label govuk-radios__label" for="stage4">
                                                     Case management
                                                 </label>
