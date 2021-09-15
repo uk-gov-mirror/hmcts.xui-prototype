@@ -28,9 +28,9 @@ Case details
                 <div class="govuk-form-group  govuk-!-padding-top-4">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                         <h3 class="govuk-fieldset__heading">
-                            Heading (placeholder)
+                            What are the hearing requirements for each party?
                             <br>
-                            <span  class="govuk-body"> Subheading (placeholder)</span>
+                            <span  class="govuk-body"> These requirements have already been selected:</span>
                         </h3>
                     </legend>
 
@@ -48,7 +48,8 @@ Case details
                             {% if data.caseflagshidden != 'true' %}<td class="govuk-table__cell">Potentially Violent</td>{% endif %}
                             <td class="govuk-table__cell">
                                 Hearing loop<br />
-                                Digital assistance
+                                Digital assistance<br />
+                                Language interpreter
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -61,7 +62,7 @@ Case details
                 </div>
 
                 <p class="govuk-body">
-                    To review and make any changes to case flags or reasonable adjustments, please visit <a href="#" class="govuk-link">case flags and reasonable adjustments</a>. (placeholder)
+                    Review <a href="#" class="govuk-link">case flags and reasonable adjustments</a> if you need to make any changes.
                 </p>
 
 
@@ -74,35 +75,35 @@ Case details
 
 
 
-                <div class="govuk-form-group govuk-!-padding-top-4">
-                    <div class="govuk-fieldset" aria-describedby="waste-hint">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                            <h3 class="govuk-fieldset__heading">
-                                Language requirements (placeholder)
-                                <br>
-                                <span  class="govuk-body">Select any parties who have language requirements (placeholder)</span>
-                            </h3>
-                        </legend>
+<!--                <div class="govuk-form-group govuk-!-padding-top-4">-->
+<!--                    <div class="govuk-fieldset" aria-describedby="waste-hint">-->
+<!--                        <legend class="govuk-fieldset__legend govuk-fieldset__legend&#45;&#45;s">-->
+<!--                            <h3 class="govuk-fieldset__heading">-->
+<!--                                Language requirements (placeholder)-->
+<!--                                <br>-->
+<!--                                <span  class="govuk-body">Select any parties who have language requirements (placeholder)</span>-->
+<!--                            </h3>-->
+<!--                        </legend>-->
 
-                        <div class="govuk-checkboxes govuk-!-margin-top-4" data-module="govuk-checkboxes" >
+<!--                        <div class="govuk-checkboxes govuk-!-margin-top-4" data-module="govuk-checkboxes" >-->
 
-                            <div class="govuk-checkboxes__item" onclick="toggleresonableadjustments1();">
-                                <input class="govuk-checkboxes__input" id="resonableadjustments1" name="resonableadjustments" type="checkbox" value="resonableadjustments1" >
-                                <label class="govuk-label govuk-checkboxes__label" for="resonableadjustments1" >
-                                    <span onclick="toggleresonableadjustments1();">Jane Smith  </span>
-                                </label>
-                            </div>
+<!--                            <div class="govuk-checkboxes__item" onclick="toggleresonableadjustments1();">-->
+<!--                                <input class="govuk-checkboxes__input" id="resonableadjustments1" name="resonableadjustments" type="checkbox" value="resonableadjustments1" >-->
+<!--                                <label class="govuk-label govuk-checkboxes__label" for="resonableadjustments1" >-->
+<!--                                    <span onclick="toggleresonableadjustments1();">Jane Smith  </span>-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra1">
-                                <div class="govuk-form-group"style="width: 600px;">
-                                    <label class="govuk-label govuk-label-m">
-                                        Select interpreter language (placeholder)
-                                    </label>
+<!--                            <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra1">-->
+<!--                                <div class="govuk-form-group"style="width: 600px;">-->
+<!--                                    <label class="govuk-label govuk-label-m">-->
+<!--                                        Select interpreter language (placeholder)-->
+<!--                                    </label>-->
 
-                                    <input class="govuk-input govuk-!-width-one-third" id="language-selection-1" name="language-selection-1">
+<!--                                    <input class="govuk-input govuk-!-width-one-third" id="language-selection-1" name="language-selection-1">-->
 
-                                </div>
-                            </div>
+<!--                                </div>-->
+<!--                            </div>-->
 
 
 
@@ -171,23 +172,23 @@ Case details
 
 
 
-                            <div class="govuk-checkboxes__item"  onclick="toggleresonableadjustments2();">
-                                <input class="govuk-checkboxes__input" id="resonableadjustments2" name="resonableadjustments" type="checkbox" value="resonableadjustments1">
-                                <label class="govuk-label govuk-checkboxes__label" for="resonableadjustments2">
-                                    <span onclick="toggleresonableadjustments2();">DWP</span>
-                                </label>
-                            </div>
+<!--                            <div class="govuk-checkboxes__item"  onclick="toggleresonableadjustments2();">-->
+<!--                                <input class="govuk-checkboxes__input" id="resonableadjustments2" name="resonableadjustments" type="checkbox" value="resonableadjustments1">-->
+<!--                                <label class="govuk-label govuk-checkboxes__label" for="resonableadjustments2">-->
+<!--                                    <span onclick="toggleresonableadjustments2();">DWP</span>-->
+<!--                                </label>-->
+<!--                            </div>-->
 
-                            <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra2">
-                                <div class="govuk-form-group"style="width: 600px;">
-                                    <label class="govuk-label govuk-label-m">
-                                        Select interpreter language (placeholder)
-                                    </label>
+<!--                            <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra2">-->
+<!--                                <div class="govuk-form-group"style="width: 600px;">-->
+<!--                                    <label class="govuk-label govuk-label-m">-->
+<!--                                        Select interpreter language (placeholder)-->
+<!--                                    </label>-->
 
-                                    <input class="govuk-input govuk-!-width-one-third" placeholder="" id="language-selection-2" name="language-selection-2">
+<!--                                    <input class="govuk-input govuk-!-width-one-third" placeholder="" id="language-selection-2" name="language-selection-2">-->
 
-                                </div>
-                            </div>
+<!--                                </div>-->
+<!--                            </div>-->
 
 <!--                            <div class="govuk-radios__conditional govuk-!-padding-bottom-1 govuk-!-padding-top-3" style="display:none;" id="ra2">-->
 <!--                                <div class="govuk-form-group"style="width: 600px;">-->
@@ -247,7 +248,7 @@ Case details
 <!--                                    </div>-->
 <!--                                </div>-->
 
-                            </div>
+<!--                            </div>-->
 
                             <!--
 
@@ -269,10 +270,10 @@ Case details
 
                            -->
 
-                        </div>
+<!--                        </div>-->
 
-                        </fieldset>
-                    </div>
+<!--                        </fieldset>-->
+<!--                    </div>-->
 
 
 

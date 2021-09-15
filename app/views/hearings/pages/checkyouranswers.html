@@ -54,7 +54,7 @@ Case details
 
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Hearing stage
+                                                    What stage is this hearing at?
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
                                                     {{ data.hearingstage }}
@@ -70,23 +70,25 @@ Case details
 
                                         </dl>
 
-
-
-
-
-
-
-                                        <h2 class="govuk-heading-m">Hearing requirements</h2>
+                                        <h2 class="govuk-heading-m">Hearing requirements for each party</h2>
 
 
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Select any parties who need reasonable adjustments
+                                                    What are the hearing requirements for each party?
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
-                                                    Jane Smith - {{  data.channel1radios  }} <br /><br />
-                                                    DWP - {{  data.channel2radios  }}
+                                                    Jane Smith
+                                                    <ul>
+                                                        <li>Hearing loop</li>
+                                                        <li>Digital assistance</li>
+                                                        <li>Language interpreter</li>
+                                                    </ul>
+                                                    DWP
+                                                    <ul>
+                                                        <li>No hearing requirements</li>
+                                                    </ul>
                                                 </dd>
                                                 <dd class="govuk-summary-list__actions">
                                                     {% if data.changesallowed != 'false' %}
@@ -104,7 +106,7 @@ Case details
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    How will each party attend the hearing? (placeholder)
+                                                    How will the parties attend the hearing?
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
                                                     Jane Smith - {{  data.channel1radios  }} <br /><br />
@@ -174,7 +176,7 @@ Case details
                                                     </div>
                                                     <div class="govuk-summary-list__row">
                                                         <dt class="govuk-summary-list__key">
-                                                            Select all possible venues
+                                                            Selected venues within region
                                                         </dt>
                                                         <dd class="govuk-summary-list__value" style="white-space: pre-wrap;">{{  data['thenevue']  }}</dd>
                                                         <dd class="govuk-summary-list__actions">
@@ -193,7 +195,7 @@ Case details
 
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
-                                                    Will any additional facilities be required? (placeholder)
+                                                    Will any additional facilities be required?
                                                 </dt>
                                                 <dd class="govuk-summary-list__value">
                                                     {% if data.additionalFacilities == "yes" %}
@@ -221,7 +223,7 @@ Case details
                                         </dl>
 
 
-                                        <h2 class="govuk-heading-m">Panel</h2>
+                                        <h2 class="govuk-heading-m">Who will be on the hearing panel?</h2>
 
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -338,7 +340,7 @@ Case details
 
                                                             <div class="govuk-summary-list__row">
                                                                 <dt class="govuk-summary-list__key">
-                                                                    Ticketed
+                                                                    Select a ticketed panel
                                                                 </dt>
                                                                 <dd class="govuk-summary-list__value">
                                                                      {{  data.judgeticketedlevel  }}
@@ -595,7 +597,7 @@ Case details
                                             </dl>
 
                                             {% if data.regionselection == "Wales" %}
-                                            <h2 class="govuk-heading-m">Any other requirements</h2>
+                                            <h2 class="govuk-heading-m">Other requirements</h2>
 
                                             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                                                 <div class="govuk-summary-list__row">
