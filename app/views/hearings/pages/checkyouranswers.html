@@ -10,15 +10,20 @@ Case details
 
     <main class="" id="main-content" role="main">
         <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
-            <div class="govuk-tabs__panel" id="event" style=" padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
+            <h2 class="govuk-tabs__panel" id="event" style=" padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
 
                 <a href="#" class="govuk-back-link govuk-!-margin-bottom-6" onclick="goBack();">Back</a>
 
                 {% if  data.drafthearing == 'false'   %}
-                    <h2 class="govuk-heading-l">Hearing details</h2>
+<!--                    <h2 class="govuk-heading-l">Hearing details</h2>-->
+                    <h2 class="govuk-heading-l">Request a hearing</h2>
+                    <p class="govuk-body">You can review and change the hearing details before submitting your request</p>
                 {% else %}
                     <h2 class="govuk-heading-l">Check your answers before sending your request</h2>
                 {% endif %}
+
+
+
                                         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                                             <div class="govuk-summary-list__row">
                                                 <dt class="govuk-summary-list__key">
@@ -685,10 +690,6 @@ Case details
             </div>
         </div>
     </main>
-
-
-
-
 
 <script>
     function goBack() {

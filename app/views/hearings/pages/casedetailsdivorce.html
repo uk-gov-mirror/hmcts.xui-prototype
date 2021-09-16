@@ -24,13 +24,17 @@ Case details
             <div class=""  style="display: flex; justify-content: space-between; ">
 
                 <!-- This horrible print buttons and design is not good and just inherited from previous work -->
-                <div style="display: flex; ">
-                    <p class="">9468-3316-6763-1127: Jane Smith v DWP &nbsp; </p>
+<!--                <div style="display: flex; ">-->
+<!--                    <p class="">9468-3316-6763-1127: Jane Smith v DWP &nbsp; </p>-->
 
-                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                        Print
-                    </button>
-                </div>
+<!--                    <button class="govuk-button govuk-button&#45;&#45;secondary" data-module="govuk-button">-->
+<!--                        Print-->
+<!--                    </button>-->
+<!--                </div>-->
+                <h1 class="govuk-heading-l">
+                    <span class="govuk-caption-l">9468-3316-6763-1127</span>
+                    Jane Smith v DWP
+                </h1>
 
                 <!-- TABS -->
                 <div style="display: flex; align-items:right" >
@@ -65,27 +69,32 @@ Case details
                 </h2>
                 <ul class="govuk-tabs__list">
                     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-                        <a class="govuk-tabs__tab" href="#event">
+                        <a class="govuk-tabs__tab" href="#">
                             History
                         </a>
                     </li>
                     <li class="govuk-tabs__list-item">
-                        <a class="govuk-tabs__tab" href="#past-week">
+                        <a class="govuk-tabs__tab" href="#">
                             Petition
                         </a>
                     </li>
                     <li class="govuk-tabs__list-item">
-                        <a class="govuk-tabs__tab" href="#past-week">
+                        <a class="govuk-tabs__tab" href="#">
                             AOS
                         </a>
                     </li>
                     <li class="govuk-tabs__list-item">
-                        <a class="govuk-tabs__tab" href="#past-week">
+                        <a class="govuk-tabs__tab" href="#">
                             Documents
                         </a>
                     </li>
                     <li class="govuk-tabs__list-item" style="margin-bottom: -1px;">
-                        <a class="govuk-tabs__tab" href="#past-week" style="background-color: white; border: 1px solid black; border-bottom: 1px solid white;">
+                        <a class="govuk-tabs__tab" href="#">
+                            Case flags
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item" style="margin-bottom: -1px;">
+                        <a class="govuk-tabs__tab" href="#" style="background-color: white; border: 1px solid black; border-bottom: 1px solid white;">
                             Hearings
                         </a>
                     </li>
@@ -322,7 +331,7 @@ Case details
     </form>
 
 
-    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px; margin-bottom: 120px;">
+    <form method="post"  action="#" class="for4" style=" float: left; margin-top: 20px">
         <p style="margin-bottom:0px;">Cancelled and postponed</p>
         <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
@@ -334,6 +343,27 @@ Case details
                     {% if data.hidecancelled == 'true' %}selected{% endif %}
             >OFF</option>
 
+
+        </select>
+    </form>
+
+    <form method="post"  action="#" class="for4" style="width: 400px; float: left; margin-top: 20px; margin-bottom: 120px;">
+        <p style="margin-bottom:0px;">Service type</p>
+        <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+            <option value="servicetype=sscs&"
+                    {% if data.servicetype == 'sscs' %}selected{% endif %}
+            >SSCS</option>
+
+            <option value="servicetype=family&"
+                    {% if data.servicetype == 'family' %}selected{% endif %}
+            >Family</option>
+            <option value="servicetype=tribunals&"
+                    {% if data.servicetype == 'tribunals' %}selected{% endif %}
+            >Tribunals</option>
+            <option value="servicetype=civil&"
+                    {% if data.servicetype == 'civil' %}selected{% endif %}
+            >Civil</option>
 
         </select>
     </form>

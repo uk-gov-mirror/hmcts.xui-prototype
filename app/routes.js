@@ -291,16 +291,18 @@ router.post('/hearings/pages/casedetailsdivorce', function (req, res)
 
         req.session.data['afterhearinghappend'] = 'false';
 
+        // Set servicetype to SSCS
+        //req.session.data['servicetype'] = 'sscs';
 
 
 
     // If we are going with starting from the 'check answers' page then head straight there
         if(req.session.data['alternativeentry'] == 'true')
         {
-            req.session.data['drafthearing'] = "falce";
+            req.session.data['drafthearing'] = "false";
             req.session.data['changesallowed'] = "true";
 
-            res.redirect('/hearings/pages/checkyouranswers')
+            res.redirect('/hearings/pages/checkyouranswers?alternativeheading=true&')
         }
         else
         {
