@@ -7,24 +7,19 @@
 My work
 {% endblock %}
 {% block content %}
-<style>
-  .govuk-width-container {
-    max-width: 1820px;
-  }
-</style>
+
 <div class="hmcts-page-heading">
   <div class="hmcts-page-heading__title">
     <h1 class="govuk-heading-xl">My work</h1>
   </div>
 </div>
 <p>Access tasks and cases.</p>
+
 {{ govukButton({
   text: "Show work filter",
   classes: "govuk-button--secondary",
-  href: "#"
+  href: "wa-show-work-filter"
 }) }}
-
-
 
 <div class="hmcts-scrollable-pane">
   <div class="hmcts-scrollable-pane__wrapper">
