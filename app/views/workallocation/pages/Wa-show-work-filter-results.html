@@ -16,7 +16,7 @@ My work
     </svg>
     <div class="hmcts-banner__message">
       <span class="hmcts-banner__assistive">Success</span>
-      You've have added a new location.
+      You have added a new location
     </div>
   </div>
 
@@ -36,7 +36,7 @@ My work
       <div class="govuk-grid-column-one-half"
         style="background-color: #f3f2f1; padding:20px; margin-left: 15px;">
         <h2 class="govuk-heading-m">Immigration and Asylum</h2>
-        <h3 class="govuk-heading-s">Your selected location(s): 2</h3>
+        <!-- <h3 class="govuk-heading-s">Your selected locations</h3>
         <table class="govuk-table">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row" style="vertical-align:top; background-color:#f3f2f1;">
@@ -44,8 +44,8 @@ My work
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width:50%;">Glasgow Tribunals Centre <br><a href="wa-show-work-filter-delete" class="right_m">Remove</a></span></td>
             </tr>
           </tbody>
-        </table>
-        <h3 class="govuk-heading-s">Your selected type(s) of work: 2</h3>
+        </table> -->
+        <!-- <h3 class="govuk-heading-s">Your selected types of work</h3>
         <table class="govuk-table">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row" style="vertical-align:top; background-color:#f3f2f1;">
@@ -53,9 +53,9 @@ My work
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width:50%;">Access request <br><a href="wa-show-work-filter-delete" class="right_m">Remove</a></span></td>
             </tr>
           </tbody>
-        </table>
-        <h3 class="govuk-heading-s">Location:</h3>
-        <p style="margin: 0">Show tasks and cases for the selected location:</p>
+        </table> -->
+        <h3 class="govuk-heading-s">Filter by location</h3>
+        <p style="margin: 0">Search for a hearing venue by name</p>
         <div style="width:90%; padding:0 0 20px 0;">
           <select id="location-picker" name="locationPicker">
             <option value=" " {% if data.locationPicker == ' ' %} selected {% endif %}> </option>
@@ -69,8 +69,15 @@ My work
             <option value="Taylor House Tribunal Hearing Centre" {% if data.locationPicker == 'Taylor House Tribunal Hearing Centre' %} selected {% endif %}>Taylor House Tribunal Hearing Centre</option>
           </select>
         </div>
-        <hr>
-        <h3 class="govuk-heading-s">Types of works</h3>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row" style="vertical-align:top; background-color:#f3f2f1;">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width:50%;">Taylor House Tribunal Hearing Centre <br><a href="#" class="right_m">Remove</a></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width:50%;">Glasgow Tribunals Centre <br><a href="wa-show-work-filter-delete" class="right_m">Remove</a></span></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3 class="govuk-heading-s">Types of work</h3>
         <p class="govuk-body">Show tasks for the selected type of works:</p>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
@@ -84,7 +91,7 @@ My work
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
                 <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                  Applictions
+                  Applications
                 </label>
               </div>
               <div class="govuk-checkboxes__item">

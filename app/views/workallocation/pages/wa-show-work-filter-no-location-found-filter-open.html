@@ -16,7 +16,7 @@ My work
     </svg>
     <div class="hmcts-banner__message">
       <span class="hmcts-banner__assistive">Error</span>
-      Location not found. Please select a location.
+      Select a location
     </div>
   </div>
 
@@ -37,12 +37,9 @@ My work
         style="background-color: #f3f2f1; padding:20px; margin-left: 15px;">
         <h2 class="govuk-heading-m">Immigration and Asylum</h2>
         <hr>
-        <h3 class="govuk-heading-s">Your selected location(s): 0</h3>
-        <h3 class="govuk-heading-s">Your selected type(s) of work: 0</h3>
-        <hr>
-        <h3 class="govuk-heading-s">Location:</h3>
+        <h3 class="govuk-heading-s">Filter by location</h3>
         <div style="width:90%; padding:0 0 20px 0;">
-          <label class="govuk-body" for="location-picker">Show tasks and cases for the selected location(s):</label>
+          <label class="govuk-body" for="location-picker">Search for a hearing venue by name</label>
           <select id="location-picker" name="locationPicker">
             <option value=" " {% if data.locationPicker == ' ' %} selected {% endif %}> </option>
             <option value="Birmingham Civil and Family Justice Centre" {% if data.locationPicker == 'Birmingham Civil and Family Justice Centre' %} selected {% endif %}>Birmingham Civil and Family Justice Centre</option>
@@ -56,7 +53,7 @@ My work
           </select>
         </div>
         <hr>
-        <h3 class="govuk-heading-s">Types of works:</h3>
+        <h3 class="govuk-heading-s">Types of work:</h3>
         <p class="govuk-body">Show tasks for the selected type of works:</p>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
@@ -70,7 +67,7 @@ My work
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
                 <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                  Applictions
+                  Applications
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
