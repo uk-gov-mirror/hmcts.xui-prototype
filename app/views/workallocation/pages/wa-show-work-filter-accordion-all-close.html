@@ -9,17 +9,6 @@ My work
 {% block content %}
 
 <div class="govuk-width-container">
-
-  <div class="hmcts-banner hmcts-banner--success">
-    <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-      <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
-    </svg>
-    <div class="hmcts-banner__message">
-      <span class="hmcts-banner__assistive">Success</span>
-      You have added a new location
-    </div>
-  </div>
-
   <div class="hmcts-page-heading">
     <div class="hmcts-page-heading__title">
       <h1 class="govuk-heading-xl">My work</h1>
@@ -33,150 +22,63 @@ My work
     href: "/workallocation/pages/wa-mytasks.html"}) }}
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half"
-        style="background-color: #f3f2f1; padding:20px 20px 0px 20px; margin-left: 15px;">
+      <div class="govuk-grid-column-one-half" style="background-color: #f3f2f1; padding:20px 20px 0px 20px; margin-left: 15px;">
         <h2 class="govuk-heading-m">Services</h2>
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
-            <div class="govuk-checkboxes govuk-checkboxes--large">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked >
-                <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                  Immigration and Asylum
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
-                <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                  Damages
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
-                <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                  Social security and child support
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="govuk-grid-column-one-quarter">
-            <p></p>
-          </div>
-          <div class="govuk-grid-column-one-quarter">
-            <p></p>
-          </div>
-        </div>
-        <hr>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         <div>
-          <div class="hmcts-filter__selected-heading">
-            <div class="hmcts-filter__heading-title">
-              <h2 class="govuk-heading-s">Selected filters</h2>
-            </div>
-            <div class="hmcts-filter__heading-action">
-              <p>
-                <a class="govuk-link govuk-link--no-visited-state" href="wa-show-work-filter-options-zero">Clear filters</a>
-              </p>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
+              <div class="govuk-checkboxes govuk-checkboxes--large" style="display:block;">
+                <div class="govuk-checkboxes__item" style="display:inline-block;">
+                  <input class="govuk-checkboxes__input" id="immigration-and-asylum" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="immigration-and-asylum">
+                    Immigration and Asylum
+                  </label>
+                </div>
+                <div style="display:inline-block; float:right; margin-right:40px;">
+                  <span class="govuk-accordion-wa__icon"></span>
+                </div>
+              </div>
+
             </div>
           </div>
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Location</h3>
-          <ul class="hmcts-filter-tags">
-            <li>
-              <a class="hmcts-filter__tag" href="wa-show-work-filter-delete">
-                <span class="govuk-visually-hidden">
-                  Remove this filter
-                </span>
-                Taylor House Tribunal Hearing Centre
-              </a>
-            </li>
-            <li>
-              <a class="hmcts-filter__tag" href="wa-show-work-filter-delete">
-                <span class="govuk-visually-hidden">
-                  Remove this filter
-                </span>
-                Birmingham Civil and Family Justice Centre
-              </a>
-            </li>
-          </ul>
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Types of work</h3>
-          <ul class="hmcts-filter-tags">
-            <li>
-              <a class="hmcts-filter__tag" href="/path/to/remove/this">
-                <span class="govuk-visually-hidden">
-                  Remove this filter
-                </span>
-                Box work
-              </a>
-            </li>
-            <li>
-              <a class="hmcts-filter__tag" href="/path/to/remove/this">
-                <span class="govuk-visually-hidden">
-                  Remove this filter
-                </span>
-                Application
-              </a>
-            </li>
-          </ul>
         </div>
-        <hr>
-        <h2 class="govuk-heading-s">Filter by location</h2>
-        <div style="width:70%; padding:0 0 20px 0;display:inline-block;">
-          <label class="govuk-body" for="location-picker">Search for a hearing venue by name</label>
-          <select id="location-picker" name="locationPicker">
-            <option value=" " {% if data.locationPicker == ' ' %} selected {% endif %}> </option>
-            <option value="Birmingham Civil and Family Justice Centre" {% if data.locationPicker == 'Birmingham Civil and Family Justice Centre' %} selected {% endif %}>Birmingham Civil and Family Justice Centre</option>
-            <option value="Bradford Tribunal Hearing Centre" {% if data.locationPicker == 'Bradford Tribunal Hearing Centre' %} selected {% endif %}>Bradford Tribunal Hearing Centre</option>
-            <option value="Glasgow Tribunals Centre" {% if data.locationPicker == 'Glasgow Tribunals Centre' %} selected {% endif %}>Glasgow Tribunals Centre</option>
-            <option value="Hatton Cross Tribunal Hearing Centre" {% if data.locationPicker == 'Hatton Cross Tribunal Hearing Centre' %} selected {% endif %}>Hatton Cross Tribunal Hearing Centre</option>
-            <option value="Manchester Tribunal Hearing Centre" {% if data.locationPicker == 'Manchester Tribunal Hearing Centre' %} selected {% endif %}>Manchester Tribunal Hearing Centre</option>
-            <option value="Newcastle Civil & Family Courts and Tribunals Centre" {% if data.locationPicker == 'Newcastle Civil & Family Courts and Tribunals Centre' %} selected {% endif %}>Newcastle Civil & Family Courts and Tribunals Centre</option>
-            <option value="Newport (South Wales) Immigration and Asylum Tribunal" {% if data.locationPicker == 'Newport (South Wales) Immigration and Asylum Tribunal' %} selected {% endif %}>Newport (South Wales) Immigration and Asylum Tribunal</option>
-            <option value="Taylor House Tribunal Hearing Centre" {% if data.locationPicker == 'Taylor House Tribunal Hearing Centre' %} selected {% endif %}>Taylor House Tribunal Hearing Centre</option>
-          </select>
-          </div>
-          <div style="width:25%; display:inline-block; vertical-align:top; margin-top:25px; margin-left:10px;">
-            {{ govukButton({
-              text: "Add location",
-              href: "wa-show-work-filter-results",
-              classes: "govuk-!-margin-right-3"
-            }) }}
-          </div>
-        <hr>
-        <h2 class="govuk-heading-s">Types of work</h2>
-        <p class="govuk-body">Show tasks for the selected type of works:</p>
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
-            <div class="govuk-checkboxes govuk-checkboxes--small">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
-                <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                  Box work
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal" checked>
-                <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                  Applications
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
-                <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
-                  Access request
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
-                <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
-                  Upper Tribunal
-                </label>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
+              <div class="govuk-checkboxes govuk-checkboxes--large" style="display:block;">
+                <div class="govuk-checkboxes__item" style="display:inline-block;">
+                  <input class="govuk-checkboxes__input" id="damages" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="damages">
+                    Damages
+                  </label>
+                </div>
+                <div style="display:inline-block; float:right; margin-right:40px;">
+                  <span class="govuk-accordion-wa__icon"></span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="govuk-grid-column-one-quarter">
-            <p></p>
-          </div>
-          <div class="govuk-grid-column-one-quarter">
-            <p></p>
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
+              <div class="govuk-checkboxes govuk-checkboxes--large" style="display:block;">
+                <div class="govuk-checkboxes__item" style="display:inline-block;">
+                  <input class="govuk-checkboxes__input" id="sscs" name="organisation" type="checkbox" value="hmrc" >
+                  <label class="govuk-label govuk-checkboxes__label" for="sscs">
+                    Social security and child support
+                  </label>
+                </div>
+                <div style="display:inline-block; float:right; margin-right:40px;">
+                  <span class="govuk-accordion-wa__icon"></span>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">

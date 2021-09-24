@@ -16,7 +16,7 @@ My work
     </svg>
     <div class="hmcts-banner__message">
       <span class="hmcts-banner__assistive">Success</span>
-      You have added a new location
+      You have cleared all the filters.
     </div>
   </div>
 
@@ -70,52 +70,14 @@ My work
         <div>
           <div class="hmcts-filter__selected-heading">
             <div class="hmcts-filter__heading-title">
-              <h2 class="govuk-heading-s">Selected filters</h2>
+              <h2 class="govuk-heading-s">Selected filters: 0</h2>
             </div>
             <div class="hmcts-filter__heading-action">
               <p>
-                <a class="govuk-link govuk-link--no-visited-state" href="wa-show-work-filter-options-zero">Clear filters</a>
+                <!-- <a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a> -->
               </p>
             </div>
           </div>
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Location</h3>
-          <ul class="hmcts-filter-tags">
-            <li>
-              <a class="hmcts-filter__tag" href="wa-show-work-filter-delete">
-                <span class="govuk-visually-hidden">
-                  Remove this filter
-                </span>
-                Taylor House Tribunal Hearing Centre
-              </a>
-            </li>
-            <li>
-              <a class="hmcts-filter__tag" href="wa-show-work-filter-delete">
-                <span class="govuk-visually-hidden">
-                  Remove this filter
-                </span>
-                Birmingham Civil and Family Justice Centre
-              </a>
-            </li>
-          </ul>
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Types of work</h3>
-          <ul class="hmcts-filter-tags">
-            <li>
-              <a class="hmcts-filter__tag" href="/path/to/remove/this">
-                <span class="govuk-visually-hidden">
-                  Remove this filter
-                </span>
-                Box work
-              </a>
-            </li>
-            <li>
-              <a class="hmcts-filter__tag" href="/path/to/remove/this">
-                <span class="govuk-visually-hidden">
-                  Remove this filter
-                </span>
-                Application
-              </a>
-            </li>
-          </ul>
         </div>
         <hr>
         <h2 class="govuk-heading-s">Filter by location</h2>
@@ -147,13 +109,13 @@ My work
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
             <div class="govuk-checkboxes govuk-checkboxes--small">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                 <label class="govuk-label govuk-checkboxes__label" for="organisation">
                   Box work
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal" checked>
+                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
                 <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
                   Applications
                 </label>
@@ -308,19 +270,6 @@ My work
             })}} -->{{ now |  date("subtract", 8, "day") | date( "D MMMM YYYY" ) }} </td>
               <!--  <td class="govuk-table__cell">N/A</td> -->
               <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lacey-May Sanders</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Allocate a hearing judge</td>
-              <td class="govuk-table__cell"> <!--{{govukTag({
-              text: now | date( 'subtract', 2, 'days' ) | date,
-              classes: "govuk-tag--red"
-            })}} --> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</td>
-              <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
-              <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="/workallocation/pages/wa-available-tasks-o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
             </tr>
           </tbody>
         </table>

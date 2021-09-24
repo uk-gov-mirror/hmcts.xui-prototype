@@ -24,20 +24,91 @@ My work
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half"
         style="background-color: #f3f2f1; padding:20px 20px 0px 20px; margin-left: 15px;">
-        <h2 class="govuk-heading-m">Immigration and Asylum</h2>
+        <h2 class="govuk-heading-m">Services</h2>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
+            <div class="govuk-checkboxes govuk-checkboxes--large">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked >
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  Immigration and Asylum
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                  Damages
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                  Social security and child support
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <p></p>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <p></p>
+          </div>
+        </div>
         <hr>
-        <h3 class="govuk-heading-s">Selected filter</h3>
-        <table class="govuk-table">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row" style="vertical-align:top; background-color:#f3f2f1;">
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width:50%;">Taylor House <br><a href="#" class="right_m">Remove</a></td>
-            </tr>
-          </tbody>
-        </table>
-        <h3 class="govuk-heading-s">Your selected types of work</h3>
+        <div>
+          <div class="hmcts-filter__selected-heading">
+            <div class="hmcts-filter__heading-title">
+              <h2 class="govuk-heading-s">Selected filters</h2>
+            </div>
+            <div class="hmcts-filter__heading-action">
+              <p>
+                <a class="govuk-link govuk-link--no-visited-state" href="wa-show-work-filter-options-zero">Clear filters</a>
+              </p>
+            </div>
+          </div>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Location</h3>
+          <ul class="hmcts-filter-tags">
+            <li>
+              <a class="hmcts-filter__tag" href="/path/to/remove/this">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Taylor House Tribunal Hearing Centre
+              </a>
+            </li>
+            <li>
+              <a class="hmcts-filter__tag" href="/path/to/remove/this">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Birmingham Civil and Family Justice Centre
+              </a>
+            </li>
+          </ul>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Types of work</h3>
+          <ul class="hmcts-filter-tags">
+            <li>
+              <a class="hmcts-filter__tag" href="/path/to/remove/this">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Box work
+              </a>
+            </li>
+            <li>
+              <a class="hmcts-filter__tag" href="/path/to/remove/this">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Application
+              </a>
+            </li>
+          </ul>
+        </div>
         <hr>
-        <h3 class="govuk-heading-s">Filter by location</h3>
-        <div style="width:90%; padding:0 0 20px 0;">
+        <h2 class="govuk-heading-s">Filter by location</h2>
+        <div style="width:70%; padding:0 0 20px 0;display:inline-block;">
           <label class="govuk-body" for="location-picker">Search for a hearing venue by name</label>
           <select id="location-picker" name="locationPicker">
             <option value=" " {% if data.locationPicker == ' ' %} selected {% endif %}> </option>
@@ -50,30 +121,30 @@ My work
             <option value="Newport (South Wales) Immigration and Asylum Tribunal" {% if data.locationPicker == 'Newport (South Wales) Immigration and Asylum Tribunal' %} selected {% endif %}>Newport (South Wales) Immigration and Asylum Tribunal</option>
             <option value="Taylor House Tribunal Hearing Centre" {% if data.locationPicker == 'Taylor House Tribunal Hearing Centre' %} selected {% endif %}>Taylor House Tribunal Hearing Centre</option>
           </select>
-        </div>
-        <!-- <table class="govuk-table">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row" style="vertical-align:top; background-color:#f3f2f1;">
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width:50%;">Taylor House <br><a href="#" class="right_m">Remove</a></td>
-            </tr>
-          </tbody>
-        </table> -->
+          </div>
+          <div style="width:25%; display:inline-block; vertical-align:top; margin-top:25px; margin-left:10px;">
+            {{ govukButton({
+              text: "Add location",
+              href: "wa-show-work-filter-results",
+              classes: "govuk-!-margin-right-3"
+            }) }}
+          </div>
         <hr>
-        <h3 class="govuk-heading-s">Types of works</h3>
+        <h2 class="govuk-heading-s">Types of work</h2>
         <p class="govuk-body">Show tasks for the selected type of works:</p>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
             <div class="govuk-checkboxes govuk-checkboxes--small">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" >
+                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="organisation">
                   Box work
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                  Applictions
+                  Applications
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
@@ -154,7 +225,7 @@ My work
             <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lacey-May Sanders</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Allocate a hearing judge</td>
               <td class="govuk-table__cell"> <!--{{govukTag({
@@ -167,7 +238,7 @@ My work
             <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Olivia-Rose Olsen</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review respondent evidence</td>
               <td class="govuk-table__cell"><!--{{govukTag({
@@ -180,7 +251,7 @@ My work
             <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">John Pickering</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">EEA</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" path
                   style="fill: black">
                   <title>This case has more than one task. Review needed.</title>
@@ -198,7 +269,7 @@ My work
             <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Neha Venkatanarasimharaj</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">HR</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review appellant case</td>
               <td class="govuk-table__cell"><!--{{govukTag({
@@ -212,7 +283,7 @@ My work
 
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hudson Remi</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">HR</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" path
                   style="fill: black">
                   <title>This case has more than one task. Review needed.</title>
@@ -226,6 +297,19 @@ My work
             })}} -->{{ now |  date("subtract", 8, "day") | date( "D MMMM YYYY" ) }} </td>
               <!--  <td class="govuk-table__cell">N/A</td> -->
               <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lacey-May Sanders</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Allocate a hearing judge</td>
+              <td class="govuk-table__cell"> <!--{{govukTag({
+              text: now | date( 'subtract', 2, 'days' ) | date,
+              classes: "govuk-tag--red"
+            })}} --> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</td>
+              <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
+              <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="/workallocation/pages/wa-available-tasks-o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
             </tr>
           </tbody>
         </table>
