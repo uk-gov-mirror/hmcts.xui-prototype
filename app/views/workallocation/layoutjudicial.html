@@ -30,17 +30,10 @@
 {% from "hmcts-footer/macro.njk" import hmctsFooter %}
 {% from "hmcts-primary-navigation/macro.njk" import hmctsPrimaryNavigation %}
 {% block head %}
-  {% include "includes/head.html" %}
+{% include "includes/head.html" %}
 {% endblock %}
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-  <style>
-    .govuk-width-container {
-      max-width: 1820px;
-    }
-  </style>
-
-
     <header class="hmcts-header" role="banner" style="background-color: #8d100e">
         <div style="width:1820px; display: flex; margin: 0 auto;">
             <div style="width: 100px; ">
