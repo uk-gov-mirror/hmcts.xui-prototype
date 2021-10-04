@@ -84,7 +84,7 @@ My work
                 <span class="govuk-visually-hidden">
                   Remove this filter
                 </span>
-                Box work
+                Hearing work
               </a>
             </li>
             <li>
@@ -92,7 +92,47 @@ My work
                 <span class="govuk-visually-hidden">
                   Remove this filter
                 </span>
-                Application
+                Upper Tribunal
+              </a>
+            </li>
+            <li>
+              <a class="hmcts-filter__tag" href="/path/to/remove/this">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Routine work
+              </a>
+            </li>
+            <li>
+              <a class="hmcts-filter__tag" href="/path/to/remove/this">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Decision-making work
+              </a>
+            </li>
+            <li>
+              <a class="hmcts-filter__tag" href="/path/to/remove/this">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Applications
+              </a>
+            </li>
+            <li>
+              <a class="hmcts-filter__tag" href="/path/to/remove/this">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Access requests
+              </a>
+            </li>
+            <li>
+              <a class="hmcts-filter__tag" href="/path/to/remove/this">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Box work
               </a>
             </li>
           </ul>
@@ -124,27 +164,45 @@ My work
               <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
                 <div class="govuk-checkboxes govuk-checkboxes--small">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
-                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                      Box work
+                    <input class="govuk-checkboxes__input" id="hearing-work" name="hearing-work" type="checkbox" value="hmrc" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="hearing-work">
+                      Hearing work
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal" checked>
-                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                    <input class="govuk-checkboxes__input" id="upper-tribunal" name="upper-tribunal" type="checkbox" value="" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="upper-tribunal">
+                      Upper Tribunal
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="routine-work" name="routine-work" type="checkbox" value="" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="routine-work">
+                      Routine work
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="decision-making-work" name="decision-making-work" type="checkbox" value="" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="decision-making-work">
+                      Decision-making work
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="applications" name="applications" type="checkbox" value="" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="applications">
                       Applications
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
-                    <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
-                      Access request
+                    <input class="govuk-checkboxes__input" id="access-requests" name="access-requests" type="checkbox" value="" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="access-requests">
+                      Access requests
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
-                    <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
-                      Upper Tribunal
+                    <input class="govuk-checkboxes__input" id="select-all" name="select-all" type="checkbox" value="" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="select-all">
+                      Select all
                     </label>
                   </div>
                 </div>
@@ -195,12 +253,6 @@ My work
             </div>
           </div>
         </div>
-
-
-
-
-
-
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         {{ govukButton({
           text: "Apply",
@@ -214,7 +266,6 @@ My work
         }) }}
       </div>
     </div>
-
     <div class="hmcts-scrollable-pane">
       <div class="hmcts-scrollable-pane__wrapper">
         <nav class="hmcts-sub-navigation">
