@@ -19,8 +19,21 @@ Case details
 <p class="govuk-body govuk-!-font-weight-regular govuk-!-font-size-19">{{ now |  date("add", 0, "day") | date( "D MMMM YYYY" ) }}</p>
 -->
 {{ govukDateInput({
-id: "passport-issued",
-namePrefix: "passport-issued",
+id: "access-start-date",
+namePrefix: "access-start-date",
+fieldset: {
+legend: {
+text: "Access starts",
+classes: "govuk-fieldset__legend--m"
+}
+},
+hint: {
+text: "For example, 19 11 2021"
+}
+}) }}
+{{ govukDateInput({
+id: "access-end-date",
+namePrefix: "access-end-date",
 fieldset: {
 legend: {
 text: "Access ends",
@@ -28,7 +41,7 @@ classes: "govuk-fieldset__legend--m"
 }
 },
 hint: {
-text: "For example, 19 11 2007"
+text: "For example, 19 12 2021"
 }
 }) }}
 
@@ -51,30 +64,30 @@ text: "For example, 19 11 2007"
   name: "contact",
   fieldset: {
     legend: {
-      text: "How long will you be working here?",
+      text: "Book your time at the location",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
   hint: {
-    text: "You should provide a date which reflects your actual working time at this location"
+    text: ""
   },
   items: [
 
     {
       value: "phone",
-      text: "Today only ",
+      text: "Today only (ends at midnight)",
       hint: {
-    text: "Starts from today and access ends at midnight."
+    text: ""
   }
   },
 
 
     {
       value: "phone",
-      text: "Another period",
+      text: "Select a date range",
       hint: {
-    text: "Starts from today and you’ll need to provide an end date."
+    text: ""
   },
       conditional: {
         html: setDuration

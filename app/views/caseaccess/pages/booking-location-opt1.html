@@ -13,93 +13,49 @@ Case details
 
 <div class="govuk-form-group">
     <span class="govuk-caption-l">Work access</span>
-  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
-      What is the name of the location?
+  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="location-picker">
+      Select a location
     </label>
   </h1>
   <div id="event-name-hint" class="govuk-hint">
-    For example, Exeter
+    Enter the location name, for example, Taylor House Tribunal Centre.
   </div>
-  <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+  <div style="width:40%; padding:0 0 20px 0;display:inline-block;">
+    <select id="location-picker" name="locationPicker">
+      <option value=" " {% if data.locationPicker == ' ' %} selected {% endif %}> </option>
+      <option value="Birmingham Civil and Family Justice Centre" {% if data.locationPicker == 'Birmingham Civil and Family Justice Centre' %} selected {% endif %}>Birmingham Civil and Family Justice Centre</option>
+      <option value="Bradford Tribunal Hearing Centre" {% if data.locationPicker == 'Bradford Tribunal Hearing Centre' %} selected {% endif %}>Bradford Tribunal Hearing Centre</option>
+      <option value="Glasgow Tribunals Centre" {% if data.locationPicker == 'Glasgow Tribunals Centre' %} selected {% endif %}>Glasgow Tribunals Centre</option>
+      <option value="Hatton Cross Tribunal Hearing Centre" {% if data.locationPicker == 'Hatton Cross Tribunal Hearing Centre' %} selected {% endif %}>Hatton Cross Tribunal Hearing Centre</option>
+      <option value="Manchester Tribunal Hearing Centre" {% if data.locationPicker == 'Manchester Tribunal Hearing Centre' %} selected {% endif %}>Manchester Tribunal Hearing Centre</option>
+      <option value="Newcastle Civil & Family Courts and Tribunals Centre" {% if data.locationPicker == 'Newcastle Civil & Family Courts and Tribunals Centre' %} selected {% endif %}>Newcastle Civil & Family Courts and Tribunals Centre</option>
+      <option value="Newport (South Wales) Immigration and Asylum Tribunal" {% if data.locationPicker == 'Newport (South Wales) Immigration and Asylum Tribunal' %} selected {% endif %}>Newport (South Wales) Immigration and Asylum Tribunal</option>
+      <option value="Taylor House Tribunal Hearing Centre" {% if data.locationPicker == 'Taylor House Tribunal Hearing Centre' %} selected {% endif %}>Taylor House Tribunal Hearing Centre</option>
+    </select>
+
+    </div>
 </div>
 
-<!--
-    <div class="govuk-form-group">
-    <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
-    Jurisdiction</strong>
-  </label>
-  <select class="govuk-select" id="sort" name="sort">
+{{ govukButton({
+  text: "Continue",
 
-    <option value="updated" selected>Please select</option>
-    <option value="views">Immigration and Asylum</option>
-    <option value="comments">Probate</option>
-  </select>
-</div>
-    <div class="govuk-form-group">
-    <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
-    Appointment</strong>
-  </label>
-  <select class="govuk-select" id="sort" name="sort">
+  href: "/caseaccess/pages/booking-location-opt1b"
+}) }}
 
-    <option value="updated" selected>Select if applicable</option>
-    <option value="views">Something</option>
-    <option value="comments">Something else</option>
-  </select>
-</div>
--->
-<!--
-    <div class="govuk-form-group">
-      <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
-      Region</strong>
-      </label>
-      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO">
+<script type="text/javascript">
+  window.onload = (event) => {
+    accessibleAutocomplete.enhanceSelectElement({
+      selectElement: document.querySelector('#location-picker')
+    })
+  }
+</script>
 
-          <option value="/caseaccess/pages/booking-location-opt1" selected>Please select</option>
-
-
-        <option value="#">North Eastern Circuit</option>
-        <option value="#">Northen Circuit</option>
-        <option value="#">Midland Circuit</option>
-        <option value="#">Wales and Chester Circuit</option>
-          <option value="#">South Eastern Circuit</option>
-            <option value="/caseaccess/pages/booking-location-opt1-2">Western Circuit</option>
-      </select>
-    </div>
-    <div class="govuk-form-group">
-      <label class="govuk-label govuk-!-font-size-19" for="sort"><strong>
-      Cluster</strong>
-      </label>
-      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO" disabled >
-  <option value="/caseaccess/pages/booking-location-opt1-2" selected>-</option>
-        <option value="#">Wiltshire, Hampshire and IOW</option>
-
-        <option value="/caseaccess/pages/booking-location-opt1-3">Devon, Cornwall and Dorset</option>
-        <option value="#">Avon, Somerset and Gloucestershire</option>
-
-      </select>
-    </div>
-
-    <div class="govuk-form-group">
-      <label class="govuk-label govuk-!-font-size-19" for="sort" ><strong>
-      Location</strong>
-      </label>
-
-      <select class="govuk-select" id="sort" name="sort" onChange="document.location = this.value" value="GO" disabled>
-          <option value="updated" selected>-</option>
-        <option value="#">Dorset</option>
-                <option value="/caseaccess/pages/booking-location-opt1-3">Exeter</option>
-                        <option value="#">Plymouth</option>
-                                <option value="#">Taunton</option>
-                                <option value="#">Truro</option>
-
-      </select>
-    </div>
--->
-    {{ govukButton({
-      text: "Continue",
-
-      href: "/caseaccess/pages/booking-location-opt1b"
-    }) }}
-
+<script type="text/javascript">
+  function usePage(frm,nm) {
+    for (var i_tem = 0, bobs=frm.elements; i_tem < bobs.length; i_tem++)
+    if(bobs[i_tem].name==nm&&bobs[i_tem].checked)
+    frm.action=bobs[i_tem].value;
+  }
+</script>
 
 {% endblock %}
