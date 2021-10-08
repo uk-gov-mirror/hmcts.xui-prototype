@@ -64,7 +64,7 @@ My work
         <hr>
         <div style="width:70%; padding:0 0 20px 0;display:inline-block;">
           <label class="govuk-body" for="location-picker">
-            Search for a locaton by name
+            Search for a location by name
           </label>
           <select id="location-picker" name="locationPicker">
             <option value=" " {% if data.locationPicker == ' ' %} selected {% endif %}> </option>
@@ -169,11 +169,6 @@ My work
           text: "Apply",
           href: "wa-show-work-filter-results",
           classes: "govuk-!-margin-right-3"
-        }) }}
-        {{ govukButton({
-          text: "Reset to default",
-          classes: "govuk-button--secondary",
-          href: "wa-available-tasks-wf"
         }) }}
       </div>
     </div>
