@@ -7,7 +7,6 @@
 My work
 {% endblock %}
 {% block content %}
-
 <div class="govuk-width-container">
   <div class="hmcts-page-heading">
     <div class="hmcts-page-heading__title">
@@ -81,17 +80,33 @@ My work
           <div style="width:25%; display:inline-block; vertical-align:top; margin-top:25px; margin-left:10px;">
             {{ govukButton({
               text: "Add location",
-              href: "wa-show-work-filter-add-1",
+              href: "wa-show-work-filter-add-2",
               classes: "govuk-!-margin-right-3"
             }) }}
           </div>
           <ul class="hmcts-filter-tags">
             <li>
-              <a class="hmcts-filter__tag" href="">
+              <a class="hmcts-filter__tag" href="/path/to/remove/this">
                 <span class="govuk-visually-hidden">
                   Remove this filter
                 </span>
                 Taylor House Tribunal Hearing Centre
+              </a>
+            </li>
+            <li>
+              <a class="hmcts-filter__tag" href="wa-show-work-filter-delete">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Birmingham Civil and Family Justice Centre
+              </a>
+            </li>
+            <li>
+              <a class="hmcts-filter__tag" href="wa-show-work-filter-add-1">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Hatton Cross Tribunal Hearing Centre
               </a>
             </li>
           </ul>
@@ -167,7 +182,7 @@ My work
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         {{ govukButton({
           text: "Apply",
-          href: "wa-show-work-filter-results",
+          href: "wa-show-work-filter-add-2-apply",
           classes: "govuk-!-margin-right-3"
         }) }}
       </div>
@@ -288,6 +303,19 @@ My work
             })}} -->{{ now |  date("subtract", 8, "day") | date( "D MMMM YYYY" ) }} </td>
               <!--  <td class="govuk-table__cell">N/A</td> -->
               <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lacey-May Sanders</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Allocate a hearing judge</td>
+              <td class="govuk-table__cell"> <!--{{govukTag({
+              text: now | date( 'subtract', 2, 'days' ) | date,
+              classes: "govuk-tag--red"
+            })}} --> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</td>
+              <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
+              <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="/workallocation/pages/wa-available-tasks-o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
             </tr>
           </tbody>
         </table>
