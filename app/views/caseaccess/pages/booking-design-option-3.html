@@ -1,0 +1,90 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicialplain.html" %}
+{% else %}
+    {% extends "../layoutstaffplain.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="hmcts-page-heading">
+        <div class="hmcts-page-heading__title">
+          <h1 class="govuk-heading-l">Work access</h1>
+        </div>
+      </div>
+      <h2 class="govuk-heading-m">View your existing bookings</h2>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p>
+            Newcastle Civil & Family Courts and Tribunals Centre
+            <span class="govuk-hint">
+              Booking start {{ now |  date("add", 5, "day") | date( "D MMMM YYYY" ) }} - ends {{ now |  date("add", 10, "day") | date( "D MMMM YYYY" ) }}
+            </span>
+            </p>
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                classes: "govuk-!-margin-right-3",
+                href: "/caseaccess/pages/mywork-plymouth"
+              }) }}
+            </div>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p>
+            Newport (South Wales) Immigration and Asylum Tribunal
+            <span class="govuk-hint">
+              Booking start {{ now |  date("add", 8, "day") | date( "D MMMM YYYY" ) }} - ends {{ now |  date("add", 13, "day") | date( "D MMMM YYYY" ) }}<br>
+            </span>
+          </p>
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                classes: "govuk-!-margin-right-3",
+                href: "/caseaccess/pages/mywork-salisbury"
+              }) }}
+            </div>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+            <p>
+              Birmingham Civil and Family Justice Centre
+              <span class="govuk-hint">
+                Booking start {{ now |  date("add", 1, "day") | date( "D MMMM YYYY" ) }} - ends {{ now |  date("add", 3, "day") | date( "D MMMM YYYY" ) }}<br>
+              </span>
+            </p>
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue",
+                classes: "govuk-!-margin-right-3",
+                href: "/caseaccess/pages/mywork-salisbury"
+              }) }}
+            </div>
+        </div>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <h2 class="govuk-heading-m">New booking</h2>
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Start a new booking",
+              classes: "govuk-!-margin-right-3",
+              href: "/caseaccess/pages/mywork-salisbury"
+            }) }}
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <h2 class="govuk-heading-m">View tasks and cases</h2>
+              <div class="govuk-button-group">
+                {{ govukButton({
+                  text: "Continue",
+                  classes: "govuk-!-margin-right-3",
+                  href: "/caseaccess/pages/mywork-salisbury"
+                }) }}
+              </div>
+    </div>
+  </div>
+</div>
+{% block scripts %}
+{% endblock %}
+{% endblock %}
