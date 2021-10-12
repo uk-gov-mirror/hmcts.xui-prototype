@@ -1,0 +1,65 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicialplain.html" %}
+{% else %}
+    {% extends "../layoutstaffplain.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="/caseaccess/pages/booking-location-opt1" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">
+    Work access
+  </span>
+  Check your new booking
+</h1>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-!-width-three-quarters">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Location
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">Exeter County Court</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="/caseaccess/pages/booking-new-booking">
+        Change<span class="govuk-visually-hidden"> contact details</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Your time at the location
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">
+        {{ now |  date("add", 5, "day") | date( "D MMMM YYYY" ) }} to {{ now |  date("add", 10, "day") | date( "D MMMM YYYY" ) }}
+      </p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="/caseaccess/pages/booking-new-booking">
+        Change<span class="govuk-visually-hidden"> contact details</span>
+      </a>
+    </dd>
+  </div>
+</dl>
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Confirm booking",
+    href: "/caseaccess/pages/mywork-exeter",
+    classes: "govuk-!-margin-right-3"
+  }) }}
+  <p>
+    <a class="govuk-body" href="/caseaccess/pages/booking-new-booking">
+      Cancel
+    </a>
+  </p>
+</div>
+{% endblock %}
