@@ -1,0 +1,148 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicialplain.html" %}
+{% else %}
+    {% extends "../layoutstaffplain.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="hmcts-page-heading">
+        <div class="hmcts-page-heading__title">
+          <h1 class="govuk-heading-l">Work access</h1>
+        </div>
+      </div>
+      <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" onclick="hideshow(1)">
+                <label class="govuk-label govuk-radios__label" for="contact">
+                    Choose an existing booking
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-1">
+                <div class="govuk-grid-column-one-half">
+                  <div class="govuk-form-group">
+                    <p>
+                      <strong>Plymouth Crown Court</strong>
+                      <span class="govuk-hint">
+                        {{ now |  date("add", 5, "day") | date( "D MMMM YYYY" ) }} to {{ now |  date("add", 10, "day") | date( "D MMMM YYYY" ) }}
+                      </span>
+                    </p>
+                    <div class="govuk-button-group">
+                      {{ govukButton({
+                        text: "Continue",
+                        classes: "govuk-button--secondary",
+                        href: "/caseaccess/pages/mywork-plymouth"
+                      }) }}
+                    </div>
+                  </div>
+                </div>
+                <div class="govuk-form-group">
+                  <p>
+                    <strong>Salisbury County Court</strong>
+                    <span class="govuk-hint">
+                      {{ now |  date("add", 8, "day") | date( "D MMMM YYYY" ) }} to {{ now |  date("add", 13, "day") | date( "D MMMM YYYY" ) }}<br>
+                    </span>
+                  </p>
+                  <div class="govuk-button-group">
+                    {{ govukButton({
+                      text: "Continue",
+                      classes: "govuk-button--secondary",
+                      href: "/caseaccess/pages/mywork-salisbury"
+                    }) }}
+                  </div>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" onclick="hideshow(2)" checked>
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  Create a new booking
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-2">
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" onclick="hideshow(3)">
+                <label class="govuk-label govuk-radios__label" for="contact-3">
+                    View tasks and cases
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </form>
+    <div class="govuk-grid-column-two-thirds">
+      <!--  NEXT PAGE  CHNAGING BASED ON SELECTION  -->
+      <!--  NO SELECTION -->
+      <a href="#" style="display: block" id="link0">
+        <!-- <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button> -->
+      </a>
+      <!--  Selected entered address -->
+      <a href="#" style="display: none" id="link1">
+        <!-- <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button> -->
+      </a>
+      <!--  Selected solicitor -->
+      <a href="/caseaccess/pages/booking-location-opt1" style="display: block" id="link2">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </a>
+      <!--  Selected solicitor -->
+      <a href="/caseaccess/pages/mywork-opt2" style="display: none" id="link3">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </a>
+    </div>
+    </div>
+  </div>
+{% block scripts %}
+
+<script>
+  function hideshow(x)
+  {
+    document.getElementById("link0").style.display = "none";
+    if ( x == 1 )
+      {
+        document.getElementById("conditional-1").style.display = "block";
+        document.getElementById("conditional-2").style.display = "none";
+        document.getElementById("link1").style.display = "block";
+        document.getElementById("link2").style.display = "none";
+        document.getElementById("link3").style.display = "none";
+      }
+    else if ( x == 2 )
+      {
+          document.getElementById("conditional-2").style.display = "block";
+          document.getElementById("conditional-1").style.display = "none";
+          document.getElementById("link1").style.display = "none";
+          document.getElementById("link2").style.display = "block";
+          document.getElementById("link3").style.display = "none";
+      }
+    else if ( x == 3 )
+      {
+          document.getElementById("conditional-1").style.display = "none";
+          document.getElementById("conditional-2").style.display = "none";
+          document.getElementById("link1").style.display = "none";
+          document.getElementById("link2").style.display = "none";
+          document.getElementById("link3").style.display = "block";
+      }
+    }
+</script>
+{% endblock %}
+{% endblock %}
