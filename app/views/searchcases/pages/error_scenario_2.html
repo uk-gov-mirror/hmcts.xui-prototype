@@ -1,0 +1,940 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicialtransition.html" %}
+{% else %}
+    {% extends "../layoutstafftransition_error_scenario_2.html" %}
+{% endif %}
+
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            The entered 16-digit case reference do not match with our records. Enter a valid 16-digit case reference
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="hmcts-page-heading govuk-!-margin-bottom-5">
+          <div class="hmcts-page-heading__title">
+               <h1 class="govuk-heading-xl">Search cases</h1>
+          </div>
+    </div>
+
+
+    <p style="margin-bottom: 20px;">You can search: Contested Financial Remedy, Financial Remedy Consented.</p>
+
+
+
+    <details class="govuk-details govuk-!-margin-bottom-3" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                Using partial information to search for a case
+            </span>
+        </summary>
+        <div class="govuk-details__text" style="width: 780px;">
+            <p>You can use an asterisk (*) to search for:</p>
+            <ul>
+                <li>one or more unknown characters in any part of a word, for example ‘J* Smith'</li>
+                <li>a missing word, for example ‘John *’</li>
+            </ul>
+
+
+            <p class="govuk-!-margin-top-7">You can only do this if you’re searching for any of the following:</p>
+            <ul>
+                <li>16-digit case reference</li>
+                <li>other reference</li>
+                <li>full name</li>
+                <li>first line of address</li>
+            </ul>
+
+        </div>
+    </details>
+
+    <p class=" govuk-!-margin-bottom-5">Search for at least one of the following to find a case:</p>
+
+
+
+
+    <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off"
+        >
+
+        <!-- <h2 class="govuk-heading-m">Case information</h2>  -->
+
+        <div >
+
+            <div style="width: 680px;">
+
+                <div class="govuk-form-group govuk-form-group--error">
+
+                    <label class="govuk-label govuk-!-font-weight-bold" for="hmctsref">
+                        16-digit case reference
+                    </label>
+
+                    <span id="passport-issued-error" class="govuk-error-message">
+                      <span class="govuk-visually-hidden">Error:</span> 
+                      The entered 16-digit case reference do not match with our records. 
+                    </span>
+                   
+                    <input class="govuk-input govuk-input--width-10 govuk-input--error" id="hmctsref" name="hmctsref" type="text" spellcheck="false"  value="111222233334444">
+
+                </div>
+            </div>
+
+            <div style="width: 750px;">
+
+
+                <!--  OTHER REFERENCE   -->
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="otherref">
+                        Other reference
+                    </label>
+                    <div id="otherref-hint" class="govuk-hint" style="width: 900px;">
+                        Any other reference to identify a case, for example National Insurance number or system reference.
+                    </div>
+                    <input class="govuk-input govuk-input--width-10" id="otherref" name="otherref" type="text" spellcheck="false"  value="AB123456C">
+                </div>
+
+
+
+                <!--  NAME   -->
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="names">
+                        Full name
+                    </label>
+                    <div id="names-hint" class="govuk-hint">
+                        For example, name of a party or solicitor.
+                    </div>
+                    <input class="govuk-input govuk-input--width-20" id="names" name="names" type="text" spellcheck="false"  value="John Smith">
+                </div>
+
+
+
+                <!--  FIRST LINE OFF ADDRESS   -->
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" >
+                        First line of address
+                    </label>
+                    <input class="govuk-input govuk-input govuk-input--width-20" id="addressline" name="addressline" type="text" spellcheck="false" style=""  value="27 High Street">
+                </div>
+
+
+
+                <!--  POSTCODE   -->
+
+                    <div class="govuk-form-group">
+  
+                    <label class="govuk-label   govuk-!-font-weight-bold" for="postcode">
+                        Postcode
+                    </label>
+
+                        <input class="govuk-input" id="postcode" name="postcode" type="text" spellcheck="false" style="width: 120px;"  value="AB12CD">
+  
+                </div>
+
+
+
+                <!--  EMAIL ADDRESS   -->
+
+                    <div class="govuk-form-group">
+       
+                    <label class="govuk-label govuk-!-font-weight-bold" for="email">
+                        Email address
+                    </label>
+                        <input class="govuk-input govuk-input--width-20" id="email" name="email" type="text" spellcheck="false" style=""  value="john.smith@email.com">
+                </div>
+
+
+
+
+                <!--  DATE FIELDS   -->
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h3 class="govuk-fieldset__heading">
+                                Date of birth
+                            </h3>
+                        </legend>
+                        <!-- <div id="passport-issued-hint" class="govuk-hint">
+                            This must relate to the party only, for example date of birth, death or marriage.
+                        </div> -->
+                        <div class="govuk-date-input" id="passport-issued">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                        Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="searchday" name="searchday" type="text" pattern="[0-9]*" inputmode="numeric"   value="01"></div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                        Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="searchmonth" name="searchmonth" type="text" pattern="[0-9]*" inputmode="numeric" value="01"></div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                        Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="searchyear" name="searchyear" type="text" pattern="[0-9]*" inputmode="numeric" value="1970"></div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+
+                        <!--  DATE FIELDS   -->
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                    <h3 class="govuk-fieldset__heading">
+                                        Date of death
+                                    </h3>
+                                </legend>
+                                <!-- <div id="passport-issued-hint" class="govuk-hint">
+                                    This must relate to the party only, for example date of birth, death or marriage.
+                                </div>  -->
+                                <div class="govuk-date-input" id="passport-issued">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="searchday" name="searchday" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="searchmonth" name="searchmonth" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                    </div>
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="searchyear" name="searchyear" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </div>
+
+
+
+                <!--  SERVICES DROPDOWN  -->
+                <div class="govuk-form-group" style="margin-bottom: 10px">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="service">
+                        Services
+                    </label>
+                    <select class="govuk-select govuk-input--width-10" id="service" name="service" onchange="">
+                        <option value="all">All</option>
+                        <option value="dddivorcet">Divorce</option>  <!-- DONE -->
+                        <option value="ddemployment">Employment</option> <!-- DONE - EMPTY - UNKNOWN -->
+                        <option value="ddfinancialremedy">Financial Remedy</option>  <!-- DONE - EMPTY -->
+                        <option value="ddiac">Immigration and Asylum</option>   <!-- DONE -->
+                        <option value="ddmoneyclaims">Money claims</option>   <!-- DONE -->
+                        <option value="ddprobate">Probate</option>
+                        <option value="ddprivatelaw">Private law</option> <!-- DONE - EMPTY - UNKNOWN -->
+                        <option value="ddpubliclaw">Public law</option>
+                        <<option value="ddscss">Social Security and Child Support</option>   <!-- DONE -->
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!-- NO LONGER USED -->
+
+        <!--  DIVORCE  -->
+        <div class="govuk-details__text" id='divorce' style="display: none;">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <label class="govuk-label govuk-!-font-weight-bold" >
+                            Regional Divorce Centre
+                        </label>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="divorcecentre0" name="divorcecentre" type="radio" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="divorcecentre0">
+                                All
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="divorcecentre1" name="divorcecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="divorcecentre1">
+                                Bury St Edmunds
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="divorcecentre2" name="divorcecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="divorcecentre2">
+                                North West Regional Divorce Unit (Liverpool)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="divorcecentre3" name="divorcecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="divorcecentre3">
+                                South West Regional Divorce Unit (Southampton)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="divorcecentre4" name="divorcecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="divorcecentre4">
+                                West Midlands Divorce Unit (Stoke)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="divorcecentre5" name="divorcecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="divorcecentre5">
+                                East Midlands Divorce Unit (Nottingham)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="divorcecentre6" name="divorcecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="divorcecentre6">
+                                Courts and Tribunals Service Centre
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+        </div>
+
+        <!--  Money claims - Marc says this isn't needed -->
+        <div class="govuk-details__text  govuk-!-padding-bottom-0" id="moneyclaims" style="display: none;">
+            <fieldset class="govuk-fieldset" role="group" >
+                <label class="govuk-label  govuk-!-font-weight-bold" >
+                    Date the claim was issued
+                </label>
+                <div class="govuk-date-input" id="cmc-issued" >
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cmc-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="cmc-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="cmc-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <!--  EMPLOYMENT -->
+        <div class="govuk-details__text" id="employment" style="display: none;">
+
+        </div>
+
+        <!--  FINANCIAL REMEDY  -->
+        <div class="govuk-details__text" id="financialremedy" style="display: none;">
+
+        </div>
+
+        <!--  Immigration and Asylum -->
+        <div class="govuk-details__text" id="iac" style="display: none;">
+
+            <!--   DOB    -->
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <label class="govuk-label govuk-!-font-weight-bold" >
+                    Date of birth
+                </label>
+                <div class="govuk-date-input" >
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="iacdob-day" name="scssdob" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="iacdob-month" name="scssdob" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="iacdob-year" name="scssdob" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <label class="govuk-label govuk-!-font-weight-bold" >
+                            Hearing centre
+                        </label>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre0" name="iaccentre" type="radio" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre0">
+                                All
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre1" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre1">
+                                Birmingham
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre2" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre2">
+                                Bradford
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre3" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre3">
+                                Coventry Magistrates Court
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre4" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre4">
+                                Glasgow Tribunals Centre
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre5" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre5">
+                                Glasgow (eagle Building)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre6" name="iaccentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="iaccentre6">
+                                Hatton Cross
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre7" name="iaccentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre7">
+                                Manchester
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre8" name="iaccentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre8">
+                                Newcastle Civil & family Couts and Tribunals Centre
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre9" name="iaccentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre9">
+                                Newport
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre10" name="iaccentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre10">
+                                North Shields
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre11" name="iaccentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre11">
+                                Nottingham Justic Centre
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="iaccentre12" name="iaccentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="iaccentre12">
+                                Taylor House
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+        </div>
+
+
+
+        <!-- PROBATE  -->
+        <div class="govuk-details__text" id="probate" style="display: none;">
+            <!--   DECISION DATE   -->
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <label class="govuk-label govuk-!-font-weight-bold">
+                    Date of death
+                </label>
+                <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <label class="govuk-label govuk-!-font-weight-bold" >
+                            Registry location
+                        </label>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre0" name="probatecentre" type="radio" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre0">
+                                All
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre1" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre1">
+                                Birmingham
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre2" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre2">
+                                Brighton
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre3" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre3">
+                                Bristol
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre4" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre4">
+                                Cardiff
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre5" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre5">
+                                CTSC
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre6" name="probatecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="probatecentre6">
+                                Leeds
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre7" name="probatecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre7">
+                                Liverpool
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre8" name="probatecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre8">
+                                London
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre9" name="probatecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre9">
+                                Manchester
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre10" name="probatecentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre10">
+                                Newcastle
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre11" name="probatecentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre11">
+                                Oxford
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="probatecentre12" name="probatecentre" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="probatecentre12">
+                                Winchester
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+        </div>
+
+        <!--  PRIVATE LAW  -->
+        <div id="privatelaw" style="display: none;">
+
+        </div>
+
+        <!--  POUBLIC LAW  -->
+        <div  class="govuk-details__text" id="publiclaw" style="display: none;">
+            <div class="govuk-form-group" style="margin-bottom: 10px">
+                <label class="govuk-label govuk-!-font-weight-bold" for="service">
+                    Local authority
+                </label>
+                <select class="govuk-select govuk-input--width-10" id="localauth" name="localauth" >
+                    <option value="all">All</option>
+                    <option value="1">Cardiff Council</option>
+                    <option value="2">East Riding of Yorkshire Council</option>
+                    <option value="3">Knowsley Borough Council</option>
+                    <option value="4">Liverpool County Council</option>
+                    <option value="5">London Borough Hillingdon</option>
+                    <option value="6">North East Lincolnshire Council</option>
+                    <option value="7">North Lincolnshire Council</option>
+                    <option value="8">Portsmouth City Council</option>
+                    <option value="9">Reading Borough Council</option>
+                    <option value="10">Southampton City Council</option>
+                    <option value="11">Staffordshire County Council</option>
+                    <option value="12">Swansea City Council</option>
+                    <option value="13">Swindon Borough Council</option>
+                    <option value="14">Wiltshire Council</option>
+                </select>
+            </div>
+        </div>
+
+        <!--  SCSS -->
+        <div class="govuk-details__text" id="sscs" style="display: none; padding-top:20px; ">
+
+            <!--
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" >
+                    National Insurance number
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="ni-number" name="ni-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+            </div>
+            -->
+
+            <!--   DOB    -->
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <label class="govuk-label govuk-!-font-weight-bold" >
+                    Date of birth
+                </label>
+                <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="scssdob-day" name="scssdob" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="scssdob-month" name="scssdob" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="scssdob-year" name="scssdob" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <label class="govuk-label govuk-!-font-weight-bold" >
+                            Regional centre
+                        </label>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre0" name="sscsecentre" type="radio" checked="checked">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre0">
+                                All
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre1" name="sscsecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre1">
+                                Birmingham (Midlands and South East)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre2" name="sscsecentre" type="radio" >
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre2">
+                                Cardiff (South West and Wales)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre3" name="sscsecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre3">
+                                Glasgow (Scotland)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre4" name="sscsecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre4">
+                                Leeds (North East)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre5" name="sscsecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre5">
+                                Liverpool (North West)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre6" name="sscsecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre6">
+                                Newcastle (North East)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sscsecentre7" name="sscsecentre" type="radio">
+                            <label class="govuk-label govuk-radios__label" for="sscsecentre7">
+                                Sutton (London)
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+        </div>
+
+
+                <div class="govuk-form-group  govuk-!-margin-top-7" >
+                    <button class="govuk-button" data-module="govuk-button">
+                        Search
+                    </button>
+                </div>
+
+
+
+
+    </form>
+
+<!--
+<div class="govuk-form-group">
+    <label class="govuk-label" for="email">
+        Case state
+    </label>
+    <select _ngcontent-rpu-c8="" aria-controls="search-result" class="form-control form-control-3-4 ccd-dropdown ng-pristine ng-valid ng-touched" id="wb-case-state" name="state">
+        <option>Any</option>
+        <option>Application Drafted</option>
+        <option>Awaiting HWF Decision</option>
+        <option>Awaiting Payment Response</option>
+        <option>Application Submitted</option>
+        <option>Application Issued</option>
+        <option>Gate Keeping And Allocation</option>
+        <option>Scheduling And Hearing</option>
+        <option>Prepare For Hearing</option>
+        <option>Ready for Hearing</option>
+        <option>Close</option>
+        <option>Consent Process</option>
+        <option>Awaiting Judiciary Response</option>
+        <option>Consent Order Approved</option>
+        <option>Consent Order Not Approved</option>
+        <option>Consent Order Made</option>
+        <option>Case Worker Review</option>
+        <option>Judge Draft Order</option>
+        <option>Solicitor Draft Order</option>
+        <option>Review Order</option>
+        <option>Draft Order Not Approved</option>
+        <option>Schedule &amp; Raise Directions Order</option>
+        <option>Order Drawn</option>
+        <option>Order Sent</option>
+        <option>Consented Order Submitted</option>
+        <option>Awaiting Judiciary Response (Consent)</option>
+        <option>Consent Assigned to Judge</option>
+        <option>Consented Order Approved</option>
+        <option>Response Received</option>
+        <option>Consented Order Not Approved</option>
+        <option>General Application</option>
+        <option>Awaiting Judiciary Response (Application)</option>
+        <option>General Application Outcome</option>
+    </select>
+</div>
+-->
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+    <p style="margin-bottom: 0px;">Select to show validation errors</p>
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+        <option value=""
+        >Select error states</option>
+
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&"
+        >No errors</option>
+
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=true&"
+        >Nothing entered error</option>
+
+        <!--
+        <option value="errorcasenumber=true&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&"
+        >Reference error</option>
+        -->
+
+        <!--
+        <option value="errorcasenumber=false&errorpostcodeinvalid=true&erroremail=false&errorallfieldsempty=false&"
+        >Postcode error</option>
+        -->
+
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=true&errorallfieldsempty=false&"
+        >Email error</option>
+
+    </select>
+</form>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+
+        function myfunction()
+        {
+            document.getElementById("divorce").style.display = "none";
+            document.getElementById("employment").style.display = "none";
+            document.getElementById("financialremedy").style.display = "none";
+            document.getElementById("iac").style.display = "none";
+            document.getElementById("moneyclaims").style.display = "none";
+            document.getElementById("probate").style.display = "none";
+            document.getElementById("privatelaw").style.display = "none";
+            document.getElementById("publiclaw").style.display = "none";
+            document.getElementById("sscs").style.display = "none";
+
+            //alert( " dasdf    "  +  document.getElementById("service").value  );
+
+            if ( document.getElementById("service").value == 'dddivorcet')
+            {
+                document.getElementById("divorce").style.display = "block";
+            }
+
+            if ( document.getElementById("service").value == 'ddemployment')
+            {
+                //document.getElementById("employment").style.display = "block";
+            }
+
+            if ( document.getElementById("service").value == 'ddfinancialremedy')
+            {
+                //document.getElementById("financialremedy").style.display = "block";
+            }
+
+            if ( document.getElementById("service").value == 'ddiac')
+            {
+                document.getElementById("iac").style.display = "block";
+            }
+
+            if ( document.getElementById("service").value == 'ddmoneyclaims')
+            {
+                // Marc says this isn't needed
+                //document.getElementById("moneyclaims").style.display = "block";
+            }
+
+            if ( document.getElementById("service").value == 'ddprobate')
+            {
+               document.getElementById("probate").style.display = "block";
+            }
+
+            if ( document.getElementById("service").value == 'ddprivatelaw')
+            {
+                document.getElementById("privatelaw").style.display = "block";
+            }
+
+            if ( document.getElementById("service").value == 'ddpubliclaw')
+            {
+                document.getElementById("publiclaw").style.display = "block";
+            }
+
+            if ( document.getElementById("service").value == 'ddscss')
+            {
+                document.getElementById("sscs").style.display = "block";
+            }
+
+            else
+            { }
+        }
+
+    </script>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

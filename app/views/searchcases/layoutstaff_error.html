@@ -53,7 +53,7 @@
                 <div style="max-width:1860px;  min-width:960px;   margin: 0px 30px 0px 30px; display: flex; justify-content: center;">
 
                     <div style="width: 406px; ">
-                        <a style="color: white; font-size: 24px; font-weight: bold; text-decoration: none;" href="#">Manage Cases</a>
+                        <a style="color: white; font-size: 24px; font-weight: bold; text-decoration: none;" href="../../searchcases">Manage Cases</a>
                     </div>
 
 
@@ -92,123 +92,57 @@
                         </div>
 
                         <div>
-                            <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style=" width: 650px;">
+                            <nav class="hmcts-primary-navigation" aria-label="Primary navigation" style=" width: 400px;">
                                 <ul class="hmcts-primary-navigation__list">
-
-                                    {% if data.selectedtab == "mywork"  %}
-                                    <li class="hmcts-primary-navigation__item" style="border-bottom: 5px solid white;">
-                                        <a class="hmcts-primary-navigation__link" style="text-decoration: none; padding-bottom: 8px;" href="/searchcases/transition/available-tasks-sscs-testing?selectedtab=mywork&">
-                                            My work
-                                        </a>
-                                    </li>
-                                    {% else %}
                                     <li class="hmcts-primary-navigation__item">
-                                        <a class="hmcts-primary-navigation__link" href="/searchcases/transition/available-tasks-sscs-testing?selectedtab=mywork&">
+                                        <a class="hmcts-primary-navigation__link" href="/searchcases/pages/available-tasks-sscs-testing">
                                             My work
                                         </a>
                                     </li>
-                                    {% endif %}
-
-
                                     <li class="hmcts-primary-navigation__item">
                                         <a class="hmcts-primary-navigation__link" href="#">
                                             All work
                                         </a>
                                     </li>
+                                    <li class="hmcts-primary-navigation__item">
+                                        <a class="hmcts-primary-navigation__link" href="/searchcases/pages/startsearch">
+                                            Search cases
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
 
 
-                                    {% if data.selectedtab == "caselist"  %}
-                                        <li class="hmcts-primary-navigation__item" style="border-bottom: 5px solid white;">
-                                            <a class="hmcts-primary-navigation__link" style="text-decoration: none; padding-bottom: 8px;" href="/searchcases/transition/caselist?selectedtab=caselist&">
-                                                Case list
-                                            </a>
-                                        </li>
-                                    {% else %}
-                                        <li class="hmcts-primary-navigation__item">
-                                            <a class="hmcts-primary-navigation__link" href="/searchcases/transition/caselist?selectedtab=caselist&">
-                                                Case list
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    {% if data.selectedtab == "search"  %}
-                                        <li class="hmcts-primary-navigation__item" style="border-bottom: 5px solid white;">
-                                            <a class="hmcts-primary-navigation__link" style="text-decoration: none; padding-bottom: 8px;" href="/searchcases/transition/search?selectedtab=search&">
-                                                Search cases
-                                            </a>
-                                        </li>
-                                    {% else %}
-                                        <li class="hmcts-primary-navigation__item">
-                                            <a class="hmcts-primary-navigation__link" href="/searchcases/transition/search?selectedtab=search&">
-                                                Search cases
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    {% if data.selectedtab == "search"  %}
-                                        <li class="hmcts-primary-navigation__item" style="border-bottom: 5px solid white;">
-                                            <a class="hmcts-primary-navigation__link" style="text-decoration: none; padding-bottom: 8px;" href="findcase">
-                                                Find case
-                                            </a>
-                                        </li>
-                                    {% else %}
-                                        <li class="hmcts-primary-navigation__item">
-                                            <a class="hmcts-primary-navigation__link" href="findcase">
-                                                Find case
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    <!--
-                                        <li class="hmcts-primary-navigation__item">
-                                            <a class="hmcts-primary-navigation__link" href="#">
-                                                Create case
-                                            </a>
-                                        </li>
-                                     -->
+                        <div style="display: flex; flex-grow: 1;">
+                        </div>
 
 
-                                    <!--
-                                       <li class="hmcts-primary-navigation__item">
-                                           <a class="hmcts-primary-navigation__link" href="#">
-                                               Find case
-                                           </a>
-                                       </li>
-                                    -->
-                               </ul>
-                           </nav>
-                       </div>
+                        <form
+                                name="aspnetForm"
+                                method="post"
+                                id="aspnetForm"
+                                autocomplete="off"
+                                action="/opencase"
+                        >
+
+                            <div style="display: flex;flex-direction: row; ">
+                                <p style="color: white; margin-top:8px; margin-bottom: 0px; ">16-digit case reference:  &nbsp;</p>
+                                <input class="govuk-input" id="hmctsrefheader" name="hmctsrefheader" type="text" spellcheck="false" style="width:219px;">
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="height:36px; margin-left: 4px; margin-top: 2px;  margin-bottom: 0px;">
+                                    Find
+                                </button>
+
+                            </div>
+                        </form>
 
 
-                       <div style="display: flex; flex-grow: 1;">
-                       </div>
+                    </div>
 
+                </div>
+            </div>
 
-                       <form
-                               name="aspnetForm"
-                               method="post"
-                               id="aspnetForm"
-                               autocomplete="off"
-                               action="/opencase"
-                       >
-
-                           <div style="display: flex;flex-direction: row; ">
-                               <p style="color: white; margin-top:8px; margin-bottom: 0px; ">16-digit case referencesss:  &nbsp;</p>
-                               <input class="govuk-input" id="hmctsrefheader" name="hmctsrefheader" type="text" spellcheck="false" style="width:219px;">
-                               <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="height:36px; margin-left: 4px; margin-top: 2px;  margin-bottom: 0px;">
-                                   Find
-                               </button>
-
-                           </div>
-                       </form>
-
-
-                   </div>
-
-               </div>
-           </div>
-
-       </header>
+        </header>
 
 
 
