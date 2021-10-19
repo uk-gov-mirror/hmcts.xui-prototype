@@ -55,34 +55,18 @@ My work
     <option value="views">Value</option>
     <option value="comments">Value</option>
   </select>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<p class="govuk-heading-m">
-  Location
-</p>
-<div style="width:100%; padding:0 0 20px 0;display:inline-block;">
-  <label class="govuk-body" for="location-picker">
-    Search for a location by name
+<div class="govuk-!-padding-bottom-4"></div>
+
+
+  <label class="govuk-heading-m" for="sort">
+    Case location
   </label>
-  <select id="location-picker" name="locationPicker" autofocus>
-    <option value=" " {% if data.locationPicker == ' ' %} selected {% endif %}> </option>
-    <option value="Birmingham Civil and Family Justice Centre" {% if data.locationPicker == 'Birmingham Civil and Family Justice Centre' %} selected {% endif %}>Birmingham Civil and Family Justice Centre</option>
-    <option value="Bradford Tribunal Hearing Centre" {% if data.locationPicker == 'Bradford Tribunal Hearing Centre' %} selected {% endif %}>Bradford Tribunal Hearing Centre</option>
-    <option value="Glasgow Tribunals Centre" {% if data.locationPicker == 'Glasgow Tribunals Centre' %} selected {% endif %}>Glasgow Tribunals Centre</option>
-    <option value="Hatton Cross Tribunal Hearing Centre" {% if data.locationPicker == 'Hatton Cross Tribunal Hearing Centre' %} selected {% endif %}>Hatton Cross Tribunal Hearing Centre</option>
-    <option value="Manchester Tribunal Hearing Centre" {% if data.locationPicker == 'Manchester Tribunal Hearing Centre' %} selected {% endif %}>Manchester Tribunal Hearing Centre</option>
-    <option value="Newcastle Civil & Family Courts and Tribunals Centre" {% if data.locationPicker == 'Newcastle Civil & Family Courts and Tribunals Centre' %} selected {% endif %}>Newcastle Civil & Family Courts and Tribunals Centre</option>
-    <option value="Newport (South Wales) Immigration and Asylum Tribunal" {% if data.locationPicker == 'Newport (South Wales) Immigration and Asylum Tribunal' %} selected {% endif %}>Newport (South Wales) Immigration and Asylum Tribunal</option>
-    <option value="Taylor House Tribunal Hearing Centre" {% if data.locationPicker == 'Taylor House Tribunal Hearing Centre' %} selected {% endif %}>Taylor House Tribunal Hearing Centre</option>
+  <select class="govuk-select" id="sort" name="sort" style="width:100%">
+    <option value="published">All locations</option>
+    <option value="updated" selected>Taylor House</option>
+    <option value="views">Value</option>
+    <option value="comments">Value</option>
   </select>
-  </div>
-  <div class="govuk-checkboxes govuk-checkboxes--large">
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="selectall" name="organisation" type="checkbox" value="hmrc">
-      <label class="govuk-label govuk-checkboxes__label" for="selectall">
-        Select all location
-      </label>
-    </div>
-    </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
   <label class="govuk-heading-m" for="sort">
     Task type
@@ -268,11 +252,4 @@ My work
     }
     </script>
 
-    <script type="text/javascript">
-      window.onload = (event) => {
-        accessibleAutocomplete.enhanceSelectElement({
-          selectElement: document.querySelector('#location-picker')
-        })
-      }
-    </script>
     {% endblock %}

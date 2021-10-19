@@ -7,16 +7,16 @@
 My work
 {% endblock %}
 {% block content %}
-<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" autofocus>
   <h2 class="govuk-error-summary__title" id="error-summary-title">
     There is a problem
   </h2>
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#passport-issued-error">
-          <a href="#passport-issued-error">
-            Select a service, type of work and enter a location
+        <a href="#types-of-work">
+          <a href="#types-of-work">
+            Select a type of work
           </a>
       </li>
     </ul>
@@ -36,14 +36,10 @@ My work
     href: "/workallocation/pages/wa-mytasks.html"}) }}
 
     <div class="govuk-grid-row">
-      <div class="govuk-form-group govuk-form-group--error">
+
       <div class="govuk-grid-column-one-half"
         style="background-color: #f3f2f1; padding:20px 20px 0px 20px; margin-left: 15px;">
-
         <h2 class="govuk-heading-m">Services</h2>
-        <span id="contact-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Select a service
-        </span>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
             <div class="govuk-checkboxes govuk-checkboxes--large">
@@ -54,7 +50,7 @@ My work
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="organisation">
                   Immigration and Asylum
                 </label>
@@ -81,14 +77,11 @@ My work
           </div>
         </div>
         <hr>
-        <span id="contact-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Search for a location by name
-        </span>
         <div style="width:70%; padding:0 0 20px 0;display:inline-block;">
           <label class="govuk-body" for="location-picker">
             Search for a location by name
           </label>
-          <select id="location-picker" name="locationPicker" autofocus>
+          <select id="location-picker" name="locationPicker">
             <option value=" " {% if data.locationPicker == ' ' %} selected {% endif %}> </option>
             <option value="Birmingham Civil and Family Justice Centre" {% if data.locationPicker == 'Birmingham Civil and Family Justice Centre' %} selected {% endif %}>Birmingham Civil and Family Justice Centre</option>
             <option value="Bradford Tribunal Hearing Centre" {% if data.locationPicker == 'Bradford Tribunal Hearing Centre' %} selected {% endif %}>Bradford Tribunal Hearing Centre</option>
@@ -107,11 +100,22 @@ My work
               classes: "govuk-!-margin-right-3"
             }) }}
           </div>
+          <ul class="hmcts-filter-tags">
+            <li>
+              <a class="hmcts-filter__tag" href="">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Taylor House Tribunal Hearing Centre
+              </a>
+            </li>
+          </ul>
           <hr>
-          <h2 class="govuk-heading-s">Types of work</h2>
+          <h2 class="govuk-heading-s" id="types-of-work">Types of work</h2>
           <span id="contact-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> Select a type of work
           </span>
+          <div class="govuk-form-group govuk-form-group--error">
         {% if  data.usertype == 'judiciary'   %}
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
@@ -161,7 +165,9 @@ My work
             <p></p>
           </div>
         </div>
+        </div>
         {% else %}
+        <div class="govuk-form-group govuk-form-group--error">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
             <div class="govuk-checkboxes govuk-checkboxes--small">
@@ -228,6 +234,7 @@ My work
             <p></p>
           </div>
         </div>
+        </div>
         {% endif %}
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         {{ govukButton({
@@ -235,7 +242,6 @@ My work
           href: "",
           classes: "govuk-!-margin-right-3"
         }) }}
-      </div>
       </div>
     </div>
 
