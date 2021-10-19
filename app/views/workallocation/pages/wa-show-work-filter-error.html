@@ -7,21 +7,6 @@
 My work
 {% endblock %}
 {% block content %}
-<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-  <h2 class="govuk-error-summary__title" id="error-summary-title">
-    There is a problem
-  </h2>
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-
-      <li>
-        <a href="#passport-issued-error"><a href="#passport-issued-error">Please talk to the content designer for the correct text</a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-
 <div class="govuk-width-container">
   <div class="hmcts-page-heading">
     <div class="hmcts-page-heading__title">
@@ -36,7 +21,6 @@ My work
     href: "/workallocation/pages/wa-mytasks.html"}) }}
 
     <div class="govuk-grid-row">
-      <div class="govuk-form-group govuk-form-group--error">
       <div class="govuk-grid-column-one-half"
         style="background-color: #f3f2f1; padding:20px 20px 0px 20px; margin-left: 15px;">
         <h2 class="govuk-heading-m">Services</h2>
@@ -102,7 +86,56 @@ My work
           </div>
           <hr>
           <h2 class="govuk-heading-s">Types of work</h2>
-        <p class="govuk-body">Show tasks for the selected type of works:</p>
+        {% if  data.usertype == 'judiciary'   %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
+            <div class="govuk-checkboxes govuk-checkboxes--small">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="select-all" name="typeofwork" type="checkbox" value="select-all">
+                <label class="govuk-label govuk-checkboxes__label" for="select-all">
+                  <strong>Select all</strong>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="access-request" name="typeofwork" type="checkbox" value="access-request">
+                <label class="govuk-label govuk-checkboxes__label" for="access-request">
+                  Access request
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="application" name="typeofwork" type="checkbox" value="application">
+                <label class="govuk-label govuk-checkboxes__label" for="application">
+                  Applications
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="decision-making-work" name="typeofwork" type="checkbox" value="decision-making-work">
+                <label class="govuk-label govuk-checkboxes__label" for="decision-making-work">
+                  Decision-making work
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="hearing-work" name="typeofwork" type="checkbox" value="hearing-work">
+                <label class="govuk-label govuk-checkboxes__label" for="hearing-work">
+                  Hearing work
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="manage-errors" name="typeofwork" type="checkbox" value="manage-errors">
+                <label class="govuk-label govuk-checkboxes__label" for="manage-errors">
+                  Manage errors
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <p></p>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <p></p>
+          </div>
+        </div>
+        {% else %}
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
             <div class="govuk-checkboxes govuk-checkboxes--small">
@@ -169,13 +202,13 @@ My work
             <p></p>
           </div>
         </div>
+        {% endif %}
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         {{ govukButton({
           text: "Apply",
-          href: "",
+          href: "/workallocation/pages/wa-show-work-filter-error-trigger.html",
           classes: "govuk-!-margin-right-3"
         }) }}
-      </div>
       </div>
     </div>
 

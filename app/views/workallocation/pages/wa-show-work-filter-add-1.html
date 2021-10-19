@@ -80,7 +80,7 @@ My work
           <div style="width:25%; display:inline-block; vertical-align:top; margin-top:25px; margin-left:10px;">
             {{ govukButton({
               text: "Add location",
-              href: "/workallocation/pages/wa-show-work-filter-add-2.html",
+              href: "",
               classes: "govuk-!-margin-right-3"
             }) }}
           </div>
@@ -94,7 +94,7 @@ My work
               </a>
             </li>
             <li>
-              <a class="hmcts-filter__tag" href="/workallocation/pages/wa-show-work-filter.html">
+              <a class="hmcts-filter__tag" href="/workallocation/pages/wa-show-work-filter-remove-1.html">
                 <span class="govuk-visually-hidden">
                   Remove this filter
                 </span>
@@ -104,7 +104,56 @@ My work
           </ul>
           <hr>
           <h2 class="govuk-heading-s">Types of work</h2>
-        <p class="govuk-body">Show tasks for the selected type of works:</p>
+        {% if  data.usertype == 'judiciary'   %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
+            <div class="govuk-checkboxes govuk-checkboxes--small">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="select-all" name="typeofwork" type="checkbox" value="select-all" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="select-all">
+                  <strong>Select all</strong>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="access-request" name="typeofwork" type="checkbox" value="access-request" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="access-request">
+                  Access request
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="application" name="typeofwork" type="checkbox" value="application" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="application">
+                  Applications
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="decision-making-work" name="typeofwork" type="checkbox" value="decision-making-work" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="decision-making-work">
+                  Decision-making work
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="hearing-work" name="typeofwork" type="checkbox" value="hearing-work" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="hearing-work">
+                  Hearing work
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="manage-errors" name="typeofwork" type="checkbox" value="manage-errors" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="manage-errors">
+                  Manage errors
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <p></p>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <p></p>
+          </div>
+        </div>
+        {% else %}
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
             <div class="govuk-checkboxes govuk-checkboxes--small">
@@ -171,6 +220,7 @@ My work
             <p></p>
           </div>
         </div>
+        {% endif %}
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         {{ govukButton({
           text: "Apply",

@@ -8,28 +8,17 @@ My work
 {% endblock %}
 {% block content %}
 
-<div class="hmcts-banner">
-  <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
-  C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
-  </svg>
-  <div class="hmcts-banner__message">
-    <span class="hmcts-banner__assistive">information</span>
-    You have no assigned tasks. Use the location filter to view available tasks another locations.
-  </div>
-</div>
-
 <div class="hmcts-page-heading">
   <div class="hmcts-page-heading__title">
     <h1 class="govuk-heading-xl">My work</h1>
   </div>
 </div>
-<p>Access tasks and cases.</p>
+<p>Use the work filter to show tasks and cases based on service, work type and location.</p>
 
 {{ govukButton({
   text: "Show work filter",
   classes: "govuk-button--secondary",
-  href: "wa-show-work-filter"
+  href: "wa-show-work-filter-zero"
 }) }}
 
 <div class="hmcts-scrollable-pane">
@@ -59,7 +48,6 @@ My work
       </ul>
     </nav>
     <p class="govuk-body">Displaying <strong>0</strong> of <strong>0</strong> tasks</p>
-    <p class="govuk-body">You have no assigned tasks. Use the location filter to view available tasks another locations.</p>
     {% endblock %}
     {% block scripts %}
     {% endblock %}
