@@ -14,8 +14,7 @@ My work
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#types-of-work">
-          <a href="#types-of-work">
+          <a href="#location">
             Select a type of work
           </a>
       </li>
@@ -39,6 +38,7 @@ My work
 
       <div class="govuk-grid-column-one-half"
         style="background-color: #f3f2f1; padding:20px 20px 0px 20px; margin-left: 15px;">
+
         <h2 class="govuk-heading-m">Services</h2>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
@@ -77,7 +77,7 @@ My work
           </div>
         </div>
         <hr>
-        <div style="width:70%; padding:0 0 20px 0;display:inline-block;">
+        <div style="width:70%; padding:0 0 20px 0;display:inline-block;" id="location">
           <label class="govuk-body" for="location-picker">
             Search for a location by name
           </label>
@@ -100,23 +100,13 @@ My work
               classes: "govuk-!-margin-right-3"
             }) }}
           </div>
-          <ul class="hmcts-filter-tags">
-            <li>
-              <a class="hmcts-filter__tag" href="">
-                <span class="govuk-visually-hidden">
-                  Remove this filter
-                </span>
-                Taylor House Tribunal Hearing Centre
-              </a>
-            </li>
-          </ul>
           <hr>
-          <h2 class="govuk-heading-s" id="types-of-work">Types of work</h2>
+          <h2 class="govuk-heading-s">Types of work</h2>
+        {% if  data.usertype == 'judiciary'   %}
+        <div class="govuk-form-group govuk-form-group--error">
           <span id="contact-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> Select a type of work
           </span>
-          <div class="govuk-form-group govuk-form-group--error">
-        {% if  data.usertype == 'judiciary'   %}
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
             <div class="govuk-checkboxes govuk-checkboxes--small">
@@ -127,7 +117,7 @@ My work
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="access-request" name="typeofwork" type="checkbox" value="access-request">
+                <input class="govuk-checkboxes__input" id="access-request" name="typeofwork" type="checkbox" value="access-request" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="access-request">
                   Access request
                 </label>
@@ -168,6 +158,9 @@ My work
         </div>
         {% else %}
         <div class="govuk-form-group govuk-form-group--error">
+          <span id="contact-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select a type of work
+          </span>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
             <div class="govuk-checkboxes govuk-checkboxes--small">
