@@ -26,12 +26,12 @@ My work
       <nav class="hmcts-sub-navigation">
         <ul class="hmcts-sub-navigation__list">
           <li class="hmcts-sub-navigation__item">
-            <a class="hmcts-sub-navigation__link" aria-current="page" href="wa-allwork">
+            <a class="hmcts-sub-navigation__link" href="wa-allwork">
               Tasks
             </a>
           </li>
           <li class="hmcts-sub-navigation__item">
-            <a class="hmcts-sub-navigation__link" href="wa-allwork-cases">
+            <a class="hmcts-sub-navigation__link" aria-current="page" href="wa-allwork-cases">
               Cases
             </a>
           </li>
@@ -55,55 +55,26 @@ My work
     <option value="views">Value</option>
     <option value="comments">Value</option>
   </select>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<p class="govuk-heading-m">
-  Location
-</p>
+<div class="govuk-!-padding-bottom-4"></div>
 
 
-<div class="govuk-radios" >
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="person" name="bob" type="radio" value="/workallocation/pages/wa-allwork" >
-    <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-      All
-    </label>
-  </div>
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="person-3" name="bob" type="radio" value="/workallocation/pages/wa-allwork-sp">
-    <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-      Search for a location
-    </label>
-  </div>
-<div class="govuk-!-padding-bottom-2"></div>
-<div style="width:100%;display:inline-block;">
-  <label class="govuk-body" for="location-picker" style="display:none;">
-    Search for a location by name
+  <label class="govuk-heading-m" for="sort">
+    Case location
   </label>
-  <select id="location-picker" name="locationPicker" autofocus>
-    <option value=" " {% if data.locationPicker == ' ' %} selected {% endif %}> </option>
-    <option value="Birmingham Civil and Family Justice Centre" {% if data.locationPicker == 'Birmingham Civil and Family Justice Centre' %} selected {% endif %}>Birmingham Civil and Family Justice Centre</option>
-    <option value="Bradford Tribunal Hearing Centre" {% if data.locationPicker == 'Bradford Tribunal Hearing Centre' %} selected {% endif %}>Bradford Tribunal Hearing Centre</option>
-    <option value="Glasgow Tribunals Centre" {% if data.locationPicker == 'Glasgow Tribunals Centre' %} selected {% endif %}>Glasgow Tribunals Centre</option>
-    <option value="Hatton Cross Tribunal Hearing Centre" {% if data.locationPicker == 'Hatton Cross Tribunal Hearing Centre' %} selected {% endif %}>Hatton Cross Tribunal Hearing Centre</option>
-    <option value="Manchester Tribunal Hearing Centre" {% if data.locationPicker == 'Manchester Tribunal Hearing Centre' %} selected {% endif %}>Manchester Tribunal Hearing Centre</option>
-    <option value="Newcastle Civil & Family Courts and Tribunals Centre" {% if data.locationPicker == 'Newcastle Civil & Family Courts and Tribunals Centre' %} selected {% endif %}>Newcastle Civil & Family Courts and Tribunals Centre</option>
-    <option value="Newport (South Wales) Immigration and Asylum Tribunal" {% if data.locationPicker == 'Newport (South Wales) Immigration and Asylum Tribunal' %} selected {% endif %}>Newport (South Wales) Immigration and Asylum Tribunal</option>
-    <option value="Taylor House Tribunal Hearing Centre" {% if data.locationPicker == 'Taylor House Tribunal Hearing Centre' %} selected {% endif %}>Taylor House Tribunal Hearing Centre</option>
+  <select class="govuk-select" id="sort" name="sort" style="width:100%">
+    <option value="published">All locations</option>
+    <option value="updated" selected>Taylor House</option>
+    <option value="views">Value</option>
+    <option value="comments">Value</option>
   </select>
-  </div>
-
-</div>
-
-
-
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
   <label class="govuk-heading-m" for="sort">
-    Task type
+    Role type
   </label>
   <select class="govuk-select" id="sort" name="sort" style="width:100%">
 
-    <option value="updated" selected>Judicial tasks</option>
-    <option value="views">Legal ops tasks</option>
+    <option value="updated" selected>Judicial</option>
+    <option value="views">Legal ops</option>
     <option value="comments">Admin</option>
   </select>
 </div>
@@ -116,19 +87,14 @@ My work
     </label>
     <div class="govuk-radios" >
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="person" name="bob" type="radio" value="/workallocation/pages/wa-allwork" >
+        <input class="govuk-radios__input" id="person" name="bob" type="radio" value="/workallocation/pages/wa-allwork-cases" checked="true" >
         <label class="govuk-label govuk-radios__label" for="where-do-you-live">
           All
         </label>
       </div>
+
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="person-2" name="bob" type="radio" value="/workallocation/pages/wa-allwork-none">
-        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-          None / Available tasks
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="person-3" name="bob" type="radio" value="/workallocation/pages/wa-allwork-sp">
+        <input class="govuk-radios__input" id="person-3" name="bob" type="radio" value="/workallocation/pages/wa-allwork-cases-jb">
         <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
           Specific person
         </label>
@@ -140,23 +106,10 @@ My work
 
     </div>
 
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-    <!--
-        <label class="govuk-heading-m" for="sort">
-          Priority
-        </label>
-        <select class="govuk-select" id="sort" name="sort" style="width:100%">
-          <option value="updated" selected>All</option>
-          <option value="views">Urgent (red)</option>
-          <option value="views">Due (yellow)</option>
-          <option value="comments">New (grey)</option>
-        </select>
-    -->
-      </div>
-      <!--
-      <div class="govuk-!-padding-bottom-1"></div>
-    -->
+
+  </div>
+  <div class="govuk-!-padding-bottom-1"></div>
 
               <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
                 Apply
@@ -168,18 +121,18 @@ My work
           </div>
         </div>
         <div class="hmcts-filter-layout__content">
-          <p class="govuk-body">Displaying <strong>7</strong> of <strong>7</strong> tasks</p>
+          <p class="govuk-body">Displaying <strong>7</strong> case allocations of <strong>7</strong></p>
           <table class="govuk-table ">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case name</button></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Location</button></th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;">Case name</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" >Case category</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" >Location</th>
                 <th scope="col" class="govuk-table__header"></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task created</button></th>
-                  <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto; color: #005ea5;" aria-sort="none">Person</th>
-                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: auto;" aria-sort="none"></th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" >Role</th>
+
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" >Person</th>
+                <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: auto;" ></th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
@@ -190,8 +143,8 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Generate decision and reasons</a></td>
-                <td class="govuk-table__cell">{{ now |  date("subtract", 3, "day") | date( "D MMMM YYYY" ) }}</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lead Judge</td>
+
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
@@ -201,8 +154,8 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">	Review application case</a></td>
-                <td class="govuk-table__cell"> {{ now |  date("subtract", 2, "day") | date( "D MMMM YYYY" ) }}</td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hearing Judge</td>
+
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Winters</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
@@ -212,8 +165,8 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review FTPA application</a></td>
-                <td class="govuk-table__cell"> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }} </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lead Judge</td>
+
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
@@ -223,8 +176,8 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review application decision</a></td>
-                <td class="govuk-table__cell"> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}  </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lead Judge</td>
+
                       <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
@@ -234,9 +187,9 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">HR</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review respondent evidence</a></td>
-                <td class="govuk-table__cell">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }} </td>
-                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hearing Judge</td>
+
+                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Barringthorn-Wardley</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
 
@@ -245,9 +198,9 @@ My work
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">HR</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review application case</a></td>
-                <td class="govuk-table__cell">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }} </td>
-                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hearing Judge</td>
+
+                      <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Birch</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
 
@@ -262,8 +215,8 @@ My work
                     <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
                                               C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
                   </svg></td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Generate decision and reasons</a></td>
-                <td class="govuk-table__cell">{{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}  </td>
+                <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lead Judge</td>
+
                                             <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Judge Beech</td>
                 <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
               </tr>
@@ -281,11 +234,4 @@ My work
     }
     </script>
 
-    <script type="text/javascript">
-      window.onload = (event) => {
-        accessibleAutocomplete.enhanceSelectElement({
-          selectElement: document.querySelector('#location-picker')
-        })
-      }
-    </script>
     {% endblock %}
