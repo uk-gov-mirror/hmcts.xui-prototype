@@ -7,7 +7,6 @@
 My work
 {% endblock %}
 {% block content %}
-
 <div class="govuk-width-container">
   <div class="hmcts-page-heading">
     <div class="hmcts-page-heading__title">
@@ -15,160 +14,6 @@ My work
     </div>
   </div>
   <p>Access tasks and cases.</p>
-
-  <div class="hmcts-filter">
-
-<div class="hmcts-filter__header">
-
-<div class="hmcts-filter__header-title">
-  <h2 class="govuk-heading-m">Filter</h2>
-</div>
-
-<div class="hmcts-filter__header-action">
-
-</div>
-
-</div>
-
-<div class="hmcts-filter__content">
-
-<div class="hmcts-filter__selected">
-
-  <div class="hmcts-filter__selected-heading">
-
-    <div class="hmcts-filter__heading-title">
-      <h2 class="govuk-heading-m">Selected filters</h2>
-    </div>
-
-    <div class="hmcts-filter__heading-action">
-      <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
-    </div>
-
-  </div>
-
-  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type</h3>
-
-  <ul class="hmcts-filter-tags">
-
-    <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Divorce</a></li>
-
-    <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Financial remedy</a></li>
-
-  </ul>
-
-  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Status</h3>
-
-  <ul class="hmcts-filter-tags">
-
-    <li><a class="hmcts-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Application drafted</a></li>
-
-  </ul>
-
-</div>
-
-<div class="hmcts-filter__options">
-
-  <button class="govuk-button" data-module="govuk-button">
-    Apply filters
-  </button>
-
-  <div class="govuk-form-group">
-    <label class="govuk-label govuk-label--m" for="keywords">
-      Keywords
-    </label>
-
-    <input class="govuk-input" id="keywords" name="keywords" type="text">
-  </div>
-
-  <div class="govuk-form-group">
-
-    <fieldset class="govuk-fieldset">
-
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-
-        Type
-
-      </legend>
-
-      <div class="govuk-checkboxes govuk-checkboxes--small">
-
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
-          <label class="govuk-label govuk-checkboxes__label" for="type">
-            Divorce (18)
-          </label>
-
-        </div>
-
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
-          <label class="govuk-label govuk-checkboxes__label" for="type-2">
-            Financial Remedy (5)
-          </label>
-
-        </div>
-
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
-          <label class="govuk-label govuk-checkboxes__label" for="type-3">
-            Probate (2)
-          </label>
-
-        </div>
-
-      </div>
-
-    </fieldset>
-
-  </div>
-
-  <div class="govuk-form-group">
-
-    <fieldset class="govuk-fieldset">
-
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-
-        Status
-
-      </legend>
-
-      <div class="govuk-checkboxes govuk-checkboxes--small">
-
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="1" checked>
-          <label class="govuk-label govuk-checkboxes__label" for="status">
-            Application drafted
-          </label>
-
-        </div>
-
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
-          <label class="govuk-label govuk-checkboxes__label" for="status-2">
-            Awaiting payment
-          </label>
-
-        </div>
-
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="magistrate">
-          <label class="govuk-label govuk-checkboxes__label" for="status-3">
-            Petition paid
-          </label>
-
-        </div>
-
-      </div>
-
-    </fieldset>
-
-  </div>
-
-</div>
-
-</div>
-
-</div> 
 
   {{ govukButton({
     text: "Hide work filter",
@@ -183,19 +28,25 @@ My work
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
             <div class="govuk-checkboxes govuk-checkboxes--large">
               <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="selectall" name="organisation" type="checkbox" value="hmrc" checked >
+                <label class="govuk-label govuk-checkboxes__label" for="selectall">
+                  <strong>Select all</strong>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked >
                 <label class="govuk-label govuk-checkboxes__label" for="organisation">
                   Immigration and Asylum
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
                   Damages
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal" checked>
                 <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
                   Social security and child support
                 </label>
@@ -210,10 +61,11 @@ My work
           </div>
         </div>
         <hr>
-        <h3 class="govuk-heading-s">Filter by location</h3>
-        <div style="width:90%; padding:0 0 20px 0;">
-          <label class="govuk-body" for="location-picker">Search for a hearing venue by name</label>
-          <select id="location-picker" name="locationPicker">
+        <div style="width:70%; padding:0 0 20px 0;display:inline-block;">
+          <label class="govuk-body" for="location-picker">
+            Search for a location by name
+          </label>
+          <select id="location-picker" name="locationPicker" autofocus>
             <option value=" " {% if data.locationPicker == ' ' %} selected {% endif %}> </option>
             <option value="Birmingham Civil and Family Justice Centre" {% if data.locationPicker == 'Birmingham Civil and Family Justice Centre' %} selected {% endif %}>Birmingham Civil and Family Justice Centre</option>
             <option value="Bradford Tribunal Hearing Centre" {% if data.locationPicker == 'Bradford Tribunal Hearing Centre' %} selected {% endif %}>Bradford Tribunal Hearing Centre</option>
@@ -224,40 +76,130 @@ My work
             <option value="Newport (South Wales) Immigration and Asylum Tribunal" {% if data.locationPicker == 'Newport (South Wales) Immigration and Asylum Tribunal' %} selected {% endif %}>Newport (South Wales) Immigration and Asylum Tribunal</option>
             <option value="Taylor House Tribunal Hearing Centre" {% if data.locationPicker == 'Taylor House Tribunal Hearing Centre' %} selected {% endif %}>Taylor House Tribunal Hearing Centre</option>
           </select>
-        </div>
-        <table class="govuk-table">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row" style="vertical-align:top; background-color:#f3f2f1;">
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="width:50%;">Taylor House <br><a href="#" class="right_m">Remove</a></td>
-            </tr>
-          </tbody>
-        </table>
-        <h3 class="govuk-heading-s">Types of work</h3>
-        <p class="govuk-body">Show tasks for the selected type of works:</p>
+          </div>
+          <div style="width:25%; display:inline-block; vertical-align:top; margin-top:25px; margin-left:10px;">
+            {{ govukButton({
+              text: "Add location",
+              href: "/workallocation/pages/wa-show-work-filter-add-1.html",
+              classes: "govuk-!-margin-right-3"
+            }) }}
+          </div>
+          <ul class="hmcts-filter-tags">
+            <li>
+              <a class="hmcts-filter__tag" href="">
+                <span class="govuk-visually-hidden">
+                  Remove this filter
+                </span>
+                Taylor House Tribunal Hearing Centre
+              </a>
+            </li>
+          </ul>
+          <hr>
+          <h2 class="govuk-heading-s">Types of work</h2>
+        {% if  data.usertype == 'judiciary'   %}
         <div class="govuk-grid-row">
           <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
             <div class="govuk-checkboxes govuk-checkboxes--small">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" >
-                <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                  Box work
+                <input class="govuk-checkboxes__input" id="select-all" name="typeofwork" type="checkbox" value="select-all" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="select-all">
+                  <strong>Select all</strong>
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
-                <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                  Applications
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
-                <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                <input class="govuk-checkboxes__input" id="access-request" name="typeofwork" type="checkbox" value="access-request" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="access-request">
                   Access request
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
-                <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                <input class="govuk-checkboxes__input" id="application" name="typeofwork" type="checkbox" value="application" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="application">
+                  Applications
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="decision-making-work" name="typeofwork" type="checkbox" value="decision-making-work" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="decision-making-work">
+                  Decision-making work
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="hearing-work" name="typeofwork" type="checkbox" value="hearing-work" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="hearing-work">
+                  Hearing work
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="manage-errors" name="typeofwork" type="checkbox" value="manage-errors" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="manage-errors">
+                  Manage errors
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <p></p>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+            <p></p>
+          </div>
+        </div>
+        {% else %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column" style="background-color: 	#f3f2f1; margin-left: 15px;">
+            <div class="govuk-checkboxes govuk-checkboxes--small">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="select-all" name="typeofwork" type="checkbox" value="select-all" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="select-all">
+                  <strong>Select all</strong>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="access-request" name="typeofwork" type="checkbox" value="access-request" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="access-request">
+                  Access request
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="application" name="typeofwork" type="checkbox" value="application" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="application">
+                  Applications
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="decision-making-work" name="typeofwork" type="checkbox" value="decision-making-work" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="decision-making-work">
+                  Decision-making work
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="hearing-work" name="typeofwork" type="checkbox" value="hearing-work" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="hearing-work">
+                  Hearing work
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="manage-errors" name="typeofwork" type="checkbox" value="manage-errors" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="manage-errors">
+                  Manage errors
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="priority" name="typeofwork" type="checkbox" value="priority" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="priority">
+                  Priority
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="routine-work" name="typeofwork" type="checkbox" value="routine-work" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="routine-work">
+                  Routine work
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="upper-tribunal" name="typeofwork" type="checkbox" value="upper-tribunal" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="upper-tribunal">
                   Upper Tribunal
                 </label>
               </div>
@@ -270,16 +212,12 @@ My work
             <p></p>
           </div>
         </div>
+        {% endif %}
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         {{ govukButton({
           text: "Apply",
-          href: "wa-show-work-filter-results",
+          href: "/workallocation/pages/wa-show-work-filter-remove-1-apply.html",
           classes: "govuk-!-margin-right-3"
-        }) }}
-        {{ govukButton({
-          text: "Reset to default",
-          classes: "govuk-button--secondary",
-          href: "wa-available-tasks-wf"
         }) }}
       </div>
     </div>
@@ -327,7 +265,7 @@ My work
             <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lacey-May Sanders</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Allocate a hearing judge</td>
               <td class="govuk-table__cell"> <!--{{govukTag({
@@ -340,7 +278,7 @@ My work
             <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Olivia-Rose Olsen</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review respondent evidence</td>
               <td class="govuk-table__cell"><!--{{govukTag({
@@ -353,7 +291,7 @@ My work
             <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">John Pickering</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">EEA</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" path
                   style="fill: black">
                   <title>This case has more than one task. Review needed.</title>
@@ -371,7 +309,7 @@ My work
             <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Neha Venkatanarasimharaj</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">HR</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review appellant case</td>
               <td class="govuk-table__cell"><!--{{govukTag({
@@ -385,7 +323,7 @@ My work
 
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Hudson Remi</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19">HR</td>
-              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House Tribunal Hearing Centre</td>
               <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" path
                   style="fill: black">
                   <title>This case has more than one task. Review needed.</title>
@@ -399,6 +337,19 @@ My work
             })}} -->{{ now |  date("subtract", 8, "day") | date( "D MMMM YYYY" ) }} </td>
               <!--  <td class="govuk-table__cell">N/A</td> -->
               <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lacey-May Sanders</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Birmingham Civil and Family Justice Centre</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Allocate a hearing judge</td>
+              <td class="govuk-table__cell"> <!--{{govukTag({
+              text: now | date( 'subtract', 2, 'days' ) | date,
+              classes: "govuk-tag--red"
+            })}} --> {{ now |  date("subtract", 0, "day") | date( "D MMMM YYYY" ) }}</td>
+              <!--  <td class="govuk-table__cell">14 Mar 2021</td> -->
+              <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="/workallocation/pages/wa-available-tasks-o" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
             </tr>
           </tbody>
         </table>
