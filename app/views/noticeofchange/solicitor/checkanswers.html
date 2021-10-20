@@ -168,12 +168,11 @@ Case details
                                 </h2>
                             </legend>-->
 
-                            <p>You should tick to ‘sign’ when:</p>
-                            <ul  class="govuk-body">
-                                <li>you’re satisfied that all the information is accurate and matches what is written on the case</li>
-                                <li>you have served notice of this change on every party to the claim (including the former legal representative)</li>
-                            </ul>
-
+                            <p>Check the boxes to confirm that:</p>
+<!--                            <ul  class="govuk-body">-->
+<!--                                <li>you’re satisfied that all the information is accurate and matches what is written on the case</li>-->
+<!--                                <li>you have served notice of this change on every party to the claim (including the former legal representative)</li>-->
+<!--                            </ul>-->
 
                             {% if data.errorsot == 'true'%}
                                 <span id="national-insurance-number-error" class="govuk-error-message">
@@ -184,7 +183,7 @@ Case details
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="sot" name="sot" type="checkbox">
                                     <label class="govuk-label govuk-checkboxes__label" for="sot">
-                                        <p>I confirm all these details are accurate and match what is written on the case.</p>
+                                        <p>all these details are accurate and match what is written on the case.</p>
                                     </label>
                                 </div>
                             </div>
@@ -202,7 +201,7 @@ Case details
                                         <div class="govuk-checkboxes__item">
                                             <input class="govuk-checkboxes__input" id="noticecheckbox" name="noticecheckbox" type="checkbox">
                                             <label class="govuk-label govuk-checkboxes__label" for="noticecheckbox">
-                                                <p>I have served notice of this change on every party to the claim and on the former legal representative.</p>
+                                                <p>you have served notice of this change on every party to the case, including the former legal representative (if there was one).</p>
                                             </label>
                                         </div>
                                     </div>
