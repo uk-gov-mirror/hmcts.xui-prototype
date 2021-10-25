@@ -1,0 +1,45 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="wa-PA-00467-2017-coi" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-form-group">
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Add an exclusion</span>
+    Describe the exclusion
+</h1>
+
+
+
+
+  <textarea class="govuk-textarea govuk-!-width-one-half" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+href: "wa-PA-00467-2017-coi-6-b",
+
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-PA-00467-2017-ar">Cancel</a></p>
+</div>
+<form method=""  action="#" class="for4" style=" float: left; margin-top: 60px;">
+    <p style="margin-bottom: 0px;">Select to show validation errors</p>
+    <select size="1" name="hop" style="height:25px;" onchange="document.location.href=this.value">
+    <option selected value=""> Select an option</option>
+    <option value="/workallocation/pages/wa-PA-00467-2017-coi-5">No errors</option>
+    <option value="/workallocation/pages/wa-PA-00467-2017-coi-5-error">Missing text</option>
+    </select>
+</form>
+
+{% endblock %}
