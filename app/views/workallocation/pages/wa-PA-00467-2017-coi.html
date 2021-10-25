@@ -1,4 +1,3 @@
-
 {% if  data.usertype == 'judiciary'   %}
     {% extends "../layoutjudicial.html" %}
 {% else %}
@@ -7,52 +6,104 @@
 {% block pageTitle %}
 Case details
 {% endblock %}
-
+{% block beforeContent %}
+{% endblock %}
 {% block content %}
 
-  <form action="#" method="post" onsubmit="usePage(this, 'bob');">
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading"><span class="govuk-caption-l ">Add an exclusion</span>
-            Choose who the exclusion is for
-          </h1>
-        </legend>
-        <div class="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live" name="bob" type="radio" value="#">
-            <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-              Exclude me
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live-2" name="bob" type="radio" value="wa-PA-00467-2017-coi-2">
-            <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-              Exclude another person
-            </label>
-          </div>
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Add an exclusion</span>
+  Choose who the exclusion is for
+</h1>
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-1" style="display:block">
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" onclick="hideshow(2)">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  Exclude me
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-2">
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" onclick="hideshow(3)">
+                <label class="govuk-label govuk-radios__label" for="contact-3">
+                    Exclude another person
+                </label>
+              </div>
+            </div>
+          </fieldset>
         </div>
-      </fieldset>
+      </div>
+    </form>
+    <div class="govuk-grid-column-two-thirds">
+      <!--  NEXT PAGE  CHNAGING BASED ON SELECTION  -->
+      <!--  NO SELECTION -->
+      <a href="wa-PA-00467-2017-coi-5" style="display: block" id="link0">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </a>
+      <!--  Selected entered address -->
+      <a href="#" style="display: none" id="link1">
+      </a>
+      <!--  Selected solicitor -->
+      <a href="wa-PA-00467-2017-coi-5-b" style="display: none" id="link2">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </a>
+      <!--  Selected solicitor -->
+      <a href="wa-PA-00467-2017-coi-2" style="display: none" id="link3">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </a>
     </div>
-  <div class="govuk-button-group">
-  {{ govukButton({
-    text: "Continue",
-    classes: "govuk-!-margin-right-3"
-  }) }}
-  <!--
-  {{ govukButton({
-    text: "Cancel and unassign task",
-    href: "/caseaccess/pages/PA-00467-2017-t",
-    classes: "govuk-button--secondary"
-  }) }} -->
-  <p><a class="govuk-body" href="wa-PA-00467-2017-ar">Cancel</a></p>
-</div>
-</form>
-<script type="text/javascript">
-function usePage(frm,nm){
-for (var i_tem = 0, bobs=frm.elements; i_tem < bobs.length; i_tem++)
-if(bobs[i_tem].name==nm&&bobs[i_tem].checked)
-frm.action=bobs[i_tem].value;
-}
+    </div>
+    <p><a class="govuk-body" href="wa-PA-00467-2017-noj">Cancel</a></p>
+  </div>
+{% block scripts %}
+
+<script>
+  function hideshow(x)
+  {
+    document.getElementById("link0").style.display = "none";
+    if ( x == 1 )
+      {
+        document.getElementById("conditional-1").style.display = "block";
+        document.getElementById("conditional-2").style.display = "none";
+        document.getElementById("link1").style.display = "block";
+        document.getElementById("link2").style.display = "none";
+        document.getElementById("link3").style.display = "none";
+      }
+    else if ( x == 2 )
+      {
+          document.getElementById("conditional-2").style.display = "block";
+          document.getElementById("conditional-1").style.display = "none";
+          document.getElementById("link1").style.display = "none";
+          document.getElementById("link2").style.display = "block";
+          document.getElementById("link3").style.display = "none";
+      }
+    else if ( x == 3 )
+      {
+          document.getElementById("conditional-1").style.display = "none";
+          document.getElementById("conditional-2").style.display = "none";
+          document.getElementById("link1").style.display = "none";
+          document.getElementById("link2").style.display = "none";
+          document.getElementById("link3").style.display = "block";
+      }
+    }
 </script>
+{% endblock %}
 {% endblock %}

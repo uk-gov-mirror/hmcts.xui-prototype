@@ -1,0 +1,106 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+<a href="wa-PA-00467-2017-coi-5-b" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Add an exclusion</span>
+    Check your answers
+</h1>
+
+<div id="event-name-hint" class="govuk-hint">
+  Check the information below carefully.
+</div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-!-width-three-quarters">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the exclusion for
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Exclude another person
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="wa-PA-00467-2017-coi">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What's the person's role
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Judicial
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="wa-PA-00467-2017-coi-2">
+                Change<span class="govuk-visually-hidden">Selected judge</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Person
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Judge Birch</p>
+              <p class="govuk-body">judge.birch@example.com</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="wa-PA-00467-2017-coi-3">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+  <!--        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Type of exclusion
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Other
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="wa-PA-00467-2017-coi-4">
+                Change<span class="govuk-visually-hidden">Selected judge</span>
+              </a>
+            </dd>
+          </div> -->
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Describe the exclusion
+            </dt>
+            <dd class="govuk-summary-list__value">
+            The case has been remitted from the Upper Tribunal and requires a different judge.
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="wa-PA-00467-2017-coi-5">
+                Change<span class="govuk-visually-hidden">Selected judge</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Confirm exclusion",
+href: "wa-PA-00467-2017-arex",
+
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-PA-00467-2017-ar">Cancel</a></p>
+</div>
+</form>
+
+{% endblock %}
