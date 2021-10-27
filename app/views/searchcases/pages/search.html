@@ -264,6 +264,7 @@ Case details
 
 
                         <!--  DATE FIELDS   -->
+                        <div class="govuk-form-group govuk-form-group--error" id="emailcodeerrorarea">
                         <div class="govuk-form-group">
                             <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -300,7 +301,7 @@ Case details
 
                             </fieldset>
                         </div>
-
+</div>
 
 
                 <!--  SERVICES DROPDOWN  -->
@@ -889,14 +890,11 @@ Case details
     <p style="margin-bottom: 0px;">Select to show validation errors</p>
     <select style="height:25px;" onchange="window.location.href='?'+this.value">
 
-        <option value=""
-        >Select error states</option>
+        <option value="">Select error states</option>
 
-        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&"
-        >No errors</option>
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&">No errors</option>
 
-        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=true&"
-        >Nothing entered error</option>
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=true&">Nothing entered error</option>
 
         <!--
         <option value="errorcasenumber=true&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&"
@@ -908,8 +906,7 @@ Case details
         >Postcode error</option>
         -->
 
-        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=true&errorallfieldsempty=false&"
-        >Email error</option>
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=true&errorallfieldsempty=false&">Email error</option>
 
     </select>
 </form>
@@ -989,12 +986,3 @@ Case details
 
 
 {% endblock %}
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,55 @@
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial.html" %}
+{% else %}
+    {% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Add an exclusion</span>
+  Choose who the exclusion is for
+</h1>
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-1" style="display:block">
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" onclick="hideshow(2)" checked>
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  Exclude me
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </form>
+    <div class="govuk-grid-column-two-thirds">
+      <!--  NEXT PAGE  CHNAGING BASED ON SELECTION  -->
+      <!--  NO SELECTION -->
+      <a href="wa-PA-00467-2017-coi-5-em-only" style="display: block" id="link0">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </a>
+    </div>
+    </div>
+    <p><a class="govuk-body" href="wa-PA-00467-2017-ar-exclude-me-only">Cancel</a></p>
+  </div>
+{% block scripts %}
+{% endblock %}
+{% endblock %}
