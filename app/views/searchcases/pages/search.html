@@ -4,44 +4,41 @@
     {% extends "../layoutstaff.html" %}
 {% endif %}
 
-
-
 {% block pageTitle %}
 Case details
 {% endblock %}
 
-
 {% block content %}
 
-    {% if data.errorcasenumber == 'true' %}
-        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-            <h2 class="govuk-error-summary__title" id="error-summary-title">
-                There is a problem
-            </h2>
-            <div class="govuk-error-summary__body">
-                <ul class="govuk-list govuk-error-summary__list">
-                    <li>
-                        <a href="#referrorarea">Enter a 16-digit HMCTS case reference number</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    {% endif %}
+{% if data.errorcasenumber == 'true' %}
+  <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#referrorarea">Enter a 16-digit HMCTS case reference number</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endif %}
 
-    {% if data.errorpostcodeinvalid == 'true' %}
-        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-            <h2 class="govuk-error-summary__title" id="error-summary-title">
-                There is a problem
-            </h2>
-            <div class="govuk-error-summary__body">
-                <ul class="govuk-list govuk-error-summary__list">
-                    <li>
-                        <a href="#postcodeerrorarea">Enter a postcode, like AA1 1AA</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    {% endif %}
+{% if data.errorpostcodeinvalid == 'true' %}
+  <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#postcodeerrorarea">Enter a postcode, like AA1 1AA</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endif %}
 
     {% if data.erroremail == 'true' %}
         <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
@@ -52,6 +49,21 @@ Case details
                 <ul class="govuk-list govuk-error-summary__list">
                     <li>
                         <a href="#emailcodeerrorarea">Enter an email address in the correct format, like name@example.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if data.errordateofdeath == 'true' %}
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    <li>
+                        <a href="#emailcodeerrorarea">The date of death cannot be earlier than the date of birth</a>
                     </li>
                 </ul>
             </div>
@@ -262,47 +274,64 @@ Case details
                     </fieldset>
                 </div>
 
+                  <!--  DATE FIELDS   -->
 
-                        <!--  DATE FIELDS   -->
-                        <div class="govuk-form-group govuk-form-group--error" id="emailcodeerrorarea">
-                        <div class="govuk-form-group">
+                          {% if data.errordateofdeath == 'true' %}
+                              <div class="govuk-form-group govuk-form-group--error" id="emailcodeerrorarea">
+                          {% else %}
+                              <div class="govuk-form-group">
+                          {% endif %}
                             <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                     <h3 class="govuk-fieldset__heading">
                                         Date of death
                                     </h3>
                                 </legend>
-                                <!-- <div id="passport-issued-hint" class="govuk-hint">
-                                    This must relate to the party only, for example date of birth, death or marriage.
-                                </div>  -->
                                 <div class="govuk-date-input" id="passport-issued">
+                                  {% if data.errordateofdeath == 'true'   %}
+                                  <span id="emailareahint-error" class="govuk-error-message">
+                                      <span class="govuk-visually-hidden">Error:</span> The date of death cannot be earlier than the date of birth
+                                  </span>
+                                  {% else %}
+                                  {% endif %}
                                     <div class="govuk-date-input__item">
                                         <div class="govuk-form-group">
                                             <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                                                 Day
                                             </label>
+                                            {% if data.errordateofdeath == 'true'   %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="searchday" name="searchday" type="text" pattern="[0-9]*" inputmode="numeric"   value="{{ data.email }}"></div>
+                                            {% else %}
                                             <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="searchday" name="searchday" type="text" pattern="[0-9]*" inputmode="numeric"   value="{{ data.email }}"></div>
+
+                                            {% endif %}
                                     </div>
                                     <div class="govuk-date-input__item">
                                         <div class="govuk-form-group">
                                             <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                                                 Month
                                             </label>
+                                            {% if data.errordateofdeath == 'true'   %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="searchmonth" name="searchmonth" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                            {% else %}
                                             <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="searchmonth" name="searchmonth" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                            {% endif %}
                                     </div>
                                     <div class="govuk-date-input__item">
                                         <div class="govuk-form-group">
                                             <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                                                 Year
                                             </label>
-                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="searchyear" name="searchyear" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                                    </div>
-                                </div>
+                                            {% if data.errordateofdeath == 'true'   %}
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="searchyear" name="searchyear" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                                              {% else %}
+                                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="searchyear" name="searchyear" type="text" pattern="[0-9]*" inputmode="numeric"></div>
 
+                                              {% endif %}
+                                          </div>
+                                </div>
                             </fieldset>
                         </div>
-</div>
-
 
                 <!--  SERVICES DROPDOWN  -->
                 <div class="govuk-form-group" style="margin-bottom: 10px">
@@ -892,9 +921,9 @@ Case details
 
         <option value="">Select error states</option>
 
-        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&">No errors</option>
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&errordateofdeath=false&">No errors</option>
 
-        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=true&">Nothing entered error</option>
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=true&errordateofdeath=false&">Nothing entered error</option>
 
         <!--
         <option value="errorcasenumber=true&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&"
@@ -906,7 +935,9 @@ Case details
         >Postcode error</option>
         -->
 
-        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=true&errorallfieldsempty=false&">Email error</option>
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=true&errorallfieldsempty=false&errordateofdeath=false&">Email error</option>
+        <option value="errorcasenumber=false&errorpostcodeinvalid=false&erroremail=false&errorallfieldsempty=false&errordateofdeath=true&">Date of death error</option>
+
 
     </select>
 </form>
