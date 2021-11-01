@@ -7,7 +7,15 @@
 My work
 {% endblock %}
 {% block content %}
-
+<div class="hmcts-banner hmcts-banner--success" autofocus>
+  <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+  </svg>
+  <div class="hmcts-banner__message">
+    <span class="hmcts-banner__assistive">Success</span>
+    You've removed a role allocation. You may need to unassign or reassign associated tasks too.
+  </div>
+</div>
 <div class="govuk-width-container">
   <div class="hmcts-page-heading">
     <div class="hmcts-page-heading__title">
@@ -74,7 +82,7 @@ My work
   <label class="govuk-body" for="location-picker" style="display:none;">
     Search for a location by name
   </label>
-  <select id="location-picker" name="locationPicker" autofocus style="background-color:white;">
+  <select id="location-picker" name="locationPicker" style="background-color:white;">
     <option value="Taylor House Tribunal Hearing Centre" {% if data.locationPicker == 'Taylor House Tribunal Hearing Centre' %} selected {% endif %}>Taylor House Tribunal Hearing Centre</option>
     <option value="Birmingham Civil and Family Justice Centre" {% if data.locationPicker == 'Birmingham Civil and Family Justice Centre' %} selected {% endif %}>Birmingham Civil and Family Justice Centre</option>
     <option value="Bradford Tribunal Hearing Centre" {% if data.locationPicker == 'Bradford Tribunal Hearing Centre' %} selected {% endif %}>Bradford Tribunal Hearing Centre</option>
@@ -142,7 +150,7 @@ My work
           </div>
         </div>
         <div class="hmcts-filter-layout__content">
-          <p class="govuk-body">Displaying <strong>4</strong> case allocations of <strong>4</strong></p>
+          <p class="govuk-body">Displaying <strong>3</strong> case allocations of <strong>3</strong></p>
           <table class="govuk-table ">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
@@ -157,24 +165,6 @@ My work
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff"><a href="#">Libby Mcmahon</a></td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff">Protection</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff">Taylor House</td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff"></td>
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff">Lead Judge</td>
-
-                <td class="govuk-table__cell govuk-body govuk-!-font-size-19" style="border-bottom: 1px solid #fff">Judge Beech</td>
-                <td class="govuk-table__cell" style="border-bottom: 1px solid #fff">&nbsp;&nbsp;&nbsp;<a href="wa-allwork-cases-jb" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
-              </tr
-
-<tr class="govuk-table__row">
-
-  <td colspan="7" class="right"><a href="wa-cases-real" class="right">Reallocate</a> <a href="wa-PA-00467-2017-arjra-2" class="right_tl">Remove allocation</a></td>
-</tr>
-
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Talha Awan</a></td>
                 <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>

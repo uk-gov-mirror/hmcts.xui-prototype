@@ -1,0 +1,67 @@
+
+{% if  data.usertype == 'judiciary'   %}
+    {% extends "../layoutjudicial-aw.html" %}
+{% else %}
+    {% extends "../layoutstaff-aw.html" %}
+{% endif %}
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">
+  <!--<span class="govuk-caption-l">Hearing judge</span> -->
+    Remove allocation
+</h1>
+
+<div id="event-name-hint" class="govuk-hint">This will remove the role allocation. You may need to unassign or reassign associated tasks too.</div>
+
+<div class="govuk-form-group">
+
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-!-width-three-quarters">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Type of role
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">Hearing judge</p>
+
+      </dd>
+      <dd class="govuk-summary-list__actions"><!--
+        <a class="govuk-link" href="wa-PA-00467-2017-ajndur">
+          Change<span class="govuk-visually-hidden"> contact details</span>
+        </a>-->
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Person
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <p class="govuk-body">Judge Goodwin</p>
+        <p class="govuk-body">judge.goodwin@example.com</p>
+      </dd>
+      <dd class="govuk-summary-list__actions"><!--
+        <a class="govuk-link" href="wa-PA-00467-2017-ajhan">
+          Change<span class="govuk-visually-hidden"> contact details</span>
+        </a> -->
+      </dd>
+    </div>
+
+  </dl>
+</div>
+
+  <div class="govuk-button-group">
+  {{ govukButton({
+    text: "Remove allocation",
+    href: "wa-allwork-cases-jb-o-removed",
+    classes: "govuk-!-margin-right-3"
+  }) }}
+
+  <p><a class="govuk-body" href="wa-allwork-cases-jb-o">Cancel</a></p>
+</div>
+</form>
+
+{% endblock %}
