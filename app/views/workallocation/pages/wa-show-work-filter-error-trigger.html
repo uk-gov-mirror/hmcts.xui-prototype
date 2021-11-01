@@ -14,9 +14,18 @@ My work
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li>
-        <a href="#passport-issued-error">
-          <a href="#passport-issued-error">
-            Select a service, a type of work and enter a location
+          <a href="#select-a-service-error">
+            Select a service
+          </a>
+      </li>
+      <li>
+          <a href="#select-a-type-of-work-error">
+            Select a type of work
+          </a>
+      </li>
+      <li>
+          <a href="#select-a-location-error">
+            Enter a location
           </a>
       </li>
     </ul>
@@ -41,7 +50,7 @@ My work
         style="background-color: #f3f2f1; padding:20px 20px 0px 20px; margin-left: 15px;">
 
         <h2 class="govuk-heading-m">Services</h2>
-        <span id="contact-error" class="govuk-error-message">
+        <span id="select-a-service-error" class="govuk-error-message">
           <span class="govuk-visually-hidden">Error:</span> Select a service
         </span>
         <div class="govuk-grid-row">
@@ -81,7 +90,7 @@ My work
           </div>
         </div>
         <hr>
-        <span id="contact-error" class="govuk-error-message">
+        <span id="select-a-location-error" class="govuk-error-message">
           <span class="govuk-visually-hidden">Error:</span> Search for a location by name
         </span>
         <div style="width:70%; padding:0 0 20px 0;display:inline-block;">
@@ -109,7 +118,7 @@ My work
           </div>
           <hr>
           <h2 class="govuk-heading-s">Types of work</h2>
-          <span id="contact-error" class="govuk-error-message">
+          <span id="select-a-type-of-work-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> Select a type of work
           </span>
         {% if  data.usertype == 'judiciary'   %}
