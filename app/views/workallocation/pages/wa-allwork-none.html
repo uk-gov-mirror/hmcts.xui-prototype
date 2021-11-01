@@ -87,13 +87,13 @@ My work
                   </label>
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="person" name="bob" type="radio" value="/workallocation/pages/wa-allwork" checked>
+                      <input class="govuk-radios__input" id="person" name="bob" type="radio" value="/workallocation/pages/wa-allwork">
                       <label class="govuk-label govuk-radios__label" for="where-do-you-live">
                         All
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="person-2" name="bob" type="radio" value="/workallocation/pages/wa-allwork-none">
+                      <input class="govuk-radios__input" id="person-2" name="bob" type="radio" value="/workallocation/pages/wa-allwork-none" checked>
                       <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
                         None / Available tasks
                       </label>
@@ -133,6 +133,7 @@ My work
                 </select>
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                 </div>
+                {% if  data.usertype !== 'judiciary'   %}
                 <div class="govuk-form-group">
                 <label class="govuk-heading-m" for="sort">
                   Priority
@@ -145,6 +146,7 @@ My work
                 </select>
                 </div>
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                {% endif %}
                 <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
                   Apply
                 </button>

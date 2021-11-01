@@ -142,6 +142,7 @@ My work
                 </select>
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                 </div>
+                {% if  data.usertype !== 'judiciary'   %}
                 <div class="govuk-form-group">
                 <label class="govuk-heading-m" for="sort">
                   Priority
@@ -154,6 +155,7 @@ My work
                 </select>
                 </div>
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                {% endif %}
                 <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
                   Apply
                 </button>
@@ -254,5 +256,5 @@ My work
         })
       }
     </script>
-    
+
     {% endblock %}
