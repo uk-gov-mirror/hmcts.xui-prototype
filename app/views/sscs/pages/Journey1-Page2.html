@@ -1,0 +1,63 @@
+{% extends "../layoutstaff.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+{% block content %}
+
+
+<main class="" id="main-content" role="main">
+  <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
+    <div class="govuk-tabs__panel" id="event" style=" padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
+      <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off"
+        >
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">Review PHME request</h1>
+          <h2 class="govuk-heading-m">#1621-8482-8394-3248</h2>
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h1 class="govuk-fieldset__heading">
+                Should the potentially harmful evidence be excluded?
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="additionalFacilitiesYes" name="additionalFacilities" type="radio" value="yes" {{ checked("additionalFacilities", "yes") }}>
+                <label class="govuk-label govuk-radios__label" for="additionalFacilitiesYes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="additionalFacilitiesNo" name="additionalFacilities" type="radio" value="no" {{ checked("additionalFacilities", "no") }}>
+                <label class="govuk-label govuk-radios__label" for="additionalFacilitiesNo">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-form-group  govuk-!-margin-top-7">
+          {{ govukButton({
+            text: "Previous",
+            classes: "govuk-button--secondary",
+            href: ""}) }}
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-button",
+              href: ""}) }}
+            <br>
+            <a href="">Cancle</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}
