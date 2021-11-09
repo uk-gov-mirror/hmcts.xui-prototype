@@ -1,0 +1,196 @@
+{% extends "../layoutstaff.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+{% block content %}
+<div style="width: 98.5%; background-color:#00823b; color:#fff; padding:10px;margin:0px 0 20px 0; font-family:Arial;">
+  Case #1621848283943248 has been updated with event: Review PHME request
+</div>
+<main class="" id="main-content" role="main">
+  <div class=""  style="display: flex; justify-content: space-between;">
+    <div style="display: flex;">
+      <p style="margin-top:10px;">
+        1621848283943248: Mqawtpip&nbsp;&nbsp;
+      </p>
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Print
+      </button>
+    </div>
+    <div style="display: flex; align-items:right">
+      <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published">Select action</option>
+        <option value="published" selected>Review PHME request</option>
+      </select>
+      <div style="margin-left:10px;">
+        {{ govukButton({
+          text: "Go",
+          classes: "govuk-button",
+          href: "Journey1-Page2"}) }}
+      </div>
+
+    </div>
+  </div>
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#event">
+          Summary
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#event">
+          History
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="v1caseinccd.html">
+          Subscriptions
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Appeal Details
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Documents
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          DWP Documents
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Audio/Video evidence
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Notifications Sent
+        </a>
+      </li>
+    </ul>
+  </div>
+  <h2 class="govuk-heading-m">
+    PHME on this case: Under Review
+  </h2>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">
+            Is a new digital case? Yes
+          </th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <strong>Name</strong>
+          <br>
+          Koxtapip Mqawtpip
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <strong>Address</strong>
+          <br>
+          Address Line One, Address Line Two, London, TS1 1ST
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <strong>NINO</strong>
+          <br>
+          BM134359C
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <strong>Date of birth</strong>
+          <br>
+          24 May 1991
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <strong>Benefit type</strong>
+          <br>
+          Personal Independence Payment
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <strong>SC number</strong>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <strong>Appeal status</strong>
+          <br>
+          Response received
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <strong>Hearing type</strong>
+          <br>
+          Paper
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <strong>Appointee</strong>
+          <br>
+          No
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <strong>Representative</strong>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <strong>Manage Your Appeal appellant link</strong>
+          <br>
+          <a href="">https://sscs-cor.demo.platform.hmcts.net/sign-in?tya=bvlvmx87sF</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          Regional Centre
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          Case code
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          Processing venue
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          Date case sent to GAPS
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          Is a Scottish Case?
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+{% endblock %}

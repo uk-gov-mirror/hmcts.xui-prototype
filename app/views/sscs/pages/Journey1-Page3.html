@@ -1,0 +1,55 @@
+{% extends "../layoutstaff.html" %}
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+{% block content %}
+
+
+<main class="" id="main-content" role="main">
+  <div class="govuk-grid-row"  style="max-width:1860px; margin: 0 auto;">
+    <div class="govuk-tabs__panel" id="event" style=" padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; min-height: 300px;">
+      <form
+        name="aspnetForm"
+        method="post"
+        id="aspnetForm"
+        autocomplete="off"
+        >
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">Review PHME request</h1>
+          <h2 class="govuk-heading-m">#1621-8482-8394-3248</h2>
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="names">
+            Event summary (optional)
+          </label>
+          <div id="names-hint" class="govuk-hint">
+            A few words describing the purpose of the event.
+          </div>
+          <input class="govuk-input govuk-input--width-20" id="names" name="names" type="text" spellcheck="false"  value="{{ data.names }}">
+        </div>
+        <div class="govuk-form-group" style=width:27.5%;>
+          <label class="govuk-label govuk-!-font-weight-bold" for="more-detail">
+            Event description (optional)
+          </label>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+        </div>
+        <div class="govuk-form-group  govuk-!-margin-top-7">
+          {{ govukButton({
+            text: "Previous",
+            classes: "govuk-button--secondary",
+            href: ""}) }}
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-button",
+              href: "Journey1-Page0"}) }}
+            <br>
+            <a href="">Cancle</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}
