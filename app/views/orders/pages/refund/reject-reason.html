@@ -1,0 +1,98 @@
+{% extends "../../layoutccd.html" %}
+
+{% block pageTitle %}
+    Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div style="min-width: 960px; max-width: 1860px;  margin: 0 30px;">
+
+    <h1 class="govuk-heading-l">Process refund</h1>
+
+    <h2 class="govuk-heading-m">#4692-3164-5845-4819</h2>
+
+
+    {% set otherReason %}
+    {{ govukInput({
+      id: "other-reason",
+      name: "other-reason",
+      type: "text",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Enter reason"
+      }
+    }) }}
+    {% endset -%}
+
+
+    {{ govukRadios({
+      idPrefix: "refund-reason",
+      name: "refund-reason",
+      fieldset: {
+        legend: {
+          text: "Why are you rejecting this refund?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "remission",
+          text: "No associated payment"
+        },
+        {
+          value: "duplicate",
+          text: "Already refunded"
+        },
+        {
+          value: "details",
+          text: "The case details don’t match the help with fees details"
+        },
+        {
+          value: "evidence",
+          text: "More evidence is required"
+        },
+        {
+          value: "other",
+          text: "Other",
+          conditional: {
+            html: otherReason
+          }
+        }
+      ]
+    }) }}
+
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Previous",
+          href: 'transaction',
+          classes: "govuk-button--secondary"
+        }) }}
+        {{ govukButton({
+          href: 'check-send-reject',
+          text: "Continue"
+        }) }}
+    </div>
+
+    <p>
+       <a href="../v1paymenthistory">Cancel</a>
+    </p>
+
+    <br>
+    <br>
+
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

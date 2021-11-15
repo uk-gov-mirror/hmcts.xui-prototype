@@ -1,0 +1,696 @@
+{% extends "../layoutccd.html" %}
+
+
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class=""  style="display: flex; justify-content: space-between; ">
+
+
+    <div style="display: flex; ">
+        <p class="">4692-3164-5845-4819: Smith v Smith  &nbsp; </p>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Print
+        </button>
+    </div>
+
+
+    <div style="display: flex; align-items:right" >
+        <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+
+        <select class="govuk-select" id="sort" name="sort">
+            <option value="published" selected>Select action</option>
+            <option value="published" >Submit amended application</option>
+            <option value="published" >Link respondent</option>
+            <option value="published" >Add Note</option>
+            <option value="published" >Upload document</option>
+            <option value="updated" >Stop representing a client</option>
+        </select>
+
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+            Go
+        </button>
+    </div>
+
+</div>
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+        Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+
+        {% if data.casetype == "probate" %}
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="v1caseinccd.html">
+                    Event History
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Stop details
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Documents
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Deceased
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Case details
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Applicant details
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Copies
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Notifications
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Case matches
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="v1paymenthistory.html">
+                    Payment History
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    SOT
+                </a>
+            </li>
+
+
+        {% elseif data['casetype'] != 'civil' %}
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="v1caseinccd">
+                    History
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="v1caseinccd.html">
+                    Petition
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    AOS
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Outcome of Decree Nisi
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Documents
+                </a>
+            </li>
+
+        {% else %}
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#">
+                    Summary
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#">
+                    Claim details
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="v1caseinccd">
+                    History
+                </a>
+            </li>
+
+
+        {% endif %}
+
+
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="v1paymenthistory{% if data.state == 'withdrawn' or data.state == 'remission' %}?refunds=true&allocated=true&unallocated=false&scenario=x&remission=full&casetype=civil&pbascenario=false&errorofdata=false&errorofdatapayments=false&nopartyinfooncase=false&billonaccount=true&needspaying=false&{% endif %}">
+                Payment History
+            </a>
+        </li>
+        {% if data.state == 'withdrawn' or data.state == 'remission' or data.result == 'submitted' or data.result == 'approved'  or data.state == 'duplicate' %}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="service-requests">
+                Service Requests
+            </a>
+        </li>
+        {% endif %}
+
+        {% if data['casetype'] != 'civil' %}
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+                Marriage Certificate
+            </a>
+        </li>
+        {% endif %}
+
+
+    </ul>
+
+</div>
+
+
+
+<div style="width: 960px;  margin: auto;">
+
+
+    <a href="service-requests" class="govuk-back-link">Back</a>
+    <br>
+    <br>
+
+    <h2 class="govuk-heading-l">Service request</h2>
+
+    <dl class="govuk-summary-list" style="width: 50%;">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 100%;">
+                Status
+            </dt>
+            <dd class="govuk-summary-list__value" >
+                {% if data.needspaying == "true" %}
+                    Not paid
+                {% elif data.needspaying == "part" %}
+                    Partially paid
+                {% else %}
+                    Paid
+                {% endif %}
+            </dd>
+        </div>
+
+        {% if data.errorofdata != "true" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key" style="width: 100%;">
+                    Party
+                </dt>
+                <dd class="govuk-summary-list__value" >
+                    {% if data.tim == "true" %}
+                        Tim Smith
+                    {% else %}
+                        Laura Narran
+                    {% endif %}
+                </dd>
+            </div>
+        {% endif %}
+
+
+        <!--
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 100%;">
+                Payment request status
+            </dt>
+            <dd class="govuk-summary-list__value" >
+                {% if data.needspaying == "true" %}
+                    Open
+                {% elif data.needspaying == "part" %}
+                    Open
+                {% else %}
+                    Settled
+                {% endif %}
+            </dd>
+        </div>
+        -->
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Service request reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {% if data.refermultiple == "1" %}
+                    2021-018421214
+                {% elif data.refermultiple == "2" %}
+                    2021-032461340
+                {% elif data.refermultiple == "3" %}
+                    2021-018576266
+                {% elif data.refermultiple == "4" %}
+                    2021-016325881
+                {% else %}
+                    2021-918425346
+                {% endif %}
+
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Date created
+            </dt>
+            <dd class="govuk-summary-list__value">
+                27 February 2021
+            </dd>
+        </div>
+
+        {% if data.errorofdata != "true" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    CCD event
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Placeholder text
+                </dd>
+            </div>
+        {% endif %}
+
+    </dl>
+
+    <br>
+    <br>
+
+    <table class="govuk-table"  style="width:960px; margin-bottom: 20px;">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col" style="width:400px;">Fee</th>
+                <th class="govuk-table__header" scope="col" style="width:100px; text-align: center;">Quantity</th>
+                <th class="govuk-table__header" scope="col" style="width:150px; text-align: right;"></th>
+                <th class="govuk-table__header" scope="col" style="width:100px; text-align: right;">Total</th>
+                <th class="govuk-table__header" scope="col" style="width:150px; text-align: right;"></th>
+                <!-- <th class="govuk-table__header" scope="col">Payment asset number (DCN)</th>-->
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+
+        {% if data.casetype == "divorce" %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Filing an application for a divorce, nullity or civil partnership dissolution</td>
+                <td class="govuk-table__cell" style="text-align: center">1</td>
+                <td class="govuk-table__cell" style="text-align: right"></td>
+                <td class="govuk-table__cell" style="text-align: right">£550.00</td>
+                <td class="govuk-table__cell" style="text-align: right;">
+                    <a href="refund/hwf?refund=remission" class="govuk-button govuk-button--secondary" style="float: right; margin-bottom: 0">Add remission</a>
+                </td>
+            </tr>
+        {% elseif data.casetype == "civil" %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Claim fee</td>
+                <td class="govuk-table__cell" style="text-align: center">1</td>
+                <td class="govuk-table__cell" style="text-align: right"></td>
+                <td class="govuk-table__cell" style="text-align: right">£550.00</td>
+                <td class="govuk-table__cell" style="text-align: right;">
+                    <a href="refund/hwf?refund=remission" class="govuk-button govuk-button--secondary" style="float: right; margin-bottom: 0">Add remission</a>
+                </td>
+            </tr>
+
+        {% elif data.casetype == "probate" %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Personal Application for grant of Probate</td>
+                <td class="govuk-table__cell" style="text-align: center">1</td>
+                <td class="govuk-table__cell" style="text-align: right;"></td>
+                <td class="govuk-table__cell" style="text-align: right">£215.00</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Copy of a document (for each copy)</td>
+                <td class="govuk-table__cell"style="text-align: center">4 x £1.50</td>
+                <td class="govuk-table__cell"style="text-align: right"></td>
+                <td class="govuk-table__cell" style="text-align: right">£6.00</td>
+            </tr>
+        {% endif %}
+
+        </tbody>
+    </table>
+
+    {% if data.casetype == "probate" %}
+        <div style="width: 100%;">
+            <p style="float: right;">Total fees: £221.00</p>
+        </div>
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    {% if ( data.remission != 'true' and data.remission != 'full' ) or data['state'] == 'remission' %}
+        <p>No help with fees or remissions.</p>
+    {% else %}
+
+        {% if data.casetype != "probate" and  data.scenario != "12" %}
+            <table class="govuk-table"  style="width:960px; margin-bottom: 20px;">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col" style="width:20%;">Help with fees or remission code</th>
+                    <th class="govuk-table__header" scope="col" style="width:30%; text-align: left;">Reference</th>
+                    <th class="govuk-table__header" scope="col" style="width:40%; text-align: left;">Fee</th>
+                    <th class="govuk-table__header" scope="col" style="width:10%; text-align: right;">Amount</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+
+                {% if data.casetype == "divorce" %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">HWF-123-BDW</td>
+                    <td class="govuk-table__cell" style="text-align: left">RM-1234-2345-3456-4567</td>
+                    <td class="govuk-table__cell">Filing an application for a divorce, nullity or civil partnership dissolution</td>
+                    <td class="govuk-table__cell" style="text-align: right;">£{% if data.remission == 'true' %}300{% else %}550{% endif %}.00</td>
+                </tr>
+
+                {% elif data.casetype == "probate" %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">HWF-123-BDW</td>
+                    <td class="govuk-table__cell" style="text-align: left;">RM-1234-2345-3456-4567</td>
+                    <td class="govuk-table__cell">Personal Application for grant of Probate</td>
+                    <td class="govuk-table__cell" style="text-align: right;">£215.00</td>
+                </tr>
+                {% endif %}
+
+                </tbody>
+            </table>
+
+            <!-- not needed as there is one remissions max
+            <div style="width:960px;">
+                {% if data.casetype == "divorce" %}
+                <p style="float: right;">Total remissions: £300.00</p>
+                {% elif data.casetype == "probate" %}
+                <p style="float: right;">Total remissions: £215.00</p>
+                {% endif %}
+            </div>  -->
+
+            <br>
+
+        {% else %}
+            <table class="govuk-table"  style="width:960px; margin-bottom: 20px;">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header" scope="col" style="width:20%;">Help with fees or remission code</th>
+                        <th class="govuk-table__header" scope="col" style="width:30%; text-align: left;">Reference</th>
+                        <th class="govuk-table__header" scope="col" style="width:40%; text-align: left;">Fee</th>
+                        <th class="govuk-table__header" scope="col" style="width:10%; text-align: right;">Amount</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">HWF-123-BDW</td>
+                        <td class="govuk-table__cell" style="text-align: left;">RM-1234-2345-3456-4567</td>
+                        <td class="govuk-table__cell">Personal Application for grant of Probate</td>
+                        <td class="govuk-table__cell" style="text-align: right;">£215.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+                <!-- Not needed as there is 1 remission max
+                <div style="width:960px;">
+                        <p style="float: right;">Total remission: £215.00</p>
+                </div>-->
+
+                <br>
+
+                <div style="width:960px;">
+                    <br>
+                    <br>
+                    <br>
+                    <p style="float: right;">Total fees to pay: £6.00</p>
+                </div>
+
+                <br>
+                <br>
+
+        {% endif %}
+
+    {% endif %}
+
+
+
+    <div style="width:960px;">
+        <br>
+        <br>
+        <br>
+
+        {% if data.casetype == "divorce" %}
+            <p style="float: right;">Total fees to pay: £{% if data.remission == 'true' %}250.00{% else %}0{% endif %}</p>
+
+        {% elif data.casetype == "probate" %}
+            <p style="float: right;">Total fees to pay: £6.00</p>
+        {% endif %}
+    </div>
+
+    <br>
+    <br>
+
+
+    <br>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-2">Payments</h2>
+
+    {% if  data.needspaying == "true" %}
+        <p>No payments.</p>
+
+    {% else %}
+        <table class="govuk-table" style="width:960px;">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col" style="width:150px;"></th>
+                <th class="govuk-table__header" scope="col" style="width:250px;">Payment reference</th>
+                <th class="govuk-table__header" scope="col" style="width:150px;">Date created</th>
+                <th class="govuk-table__header" scope="col" style="text-align: right;">Amount</th>
+                <th class="govuk-table__header" scope="col" style="width:150px;"></th>
+            </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+                {% if data.casetype == "divorce" or data.casetype == "civil" %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell "><a href="v1paymenthistorydetails?paymentdetailsamount=£550.00&paymentdetailsstatus=Success&">View details</a></td>
+                        <td class="govuk-table__cell ">RC-1858-2367-8368-1978</td>
+                        <td class="govuk-table__cell">4 March 2021</td>
+                        {% if data.needspaying == "part" %}
+                            {% if data.remission == 'true' %}
+                                <td class="govuk-table__cell" style="text-align: right;">£200.00</td>
+                            {% else %}
+                                <td class="govuk-table__cell" style="text-align: right;">£500.00</td>
+                            {% endif %}
+                        {% else %}
+                            {% if data.remission == 'true' %}
+                                <td class="govuk-table__cell" style="text-align: right;">£250.00</td>
+                            {% else %}
+                                <td class="govuk-table__cell" style="text-align: right;">£550.00</td>
+                            {% endif %}
+                        {% endif %}
+
+                        <td class="govuk-table__cell" style="text-align: right;">
+                            <a href="refund/reason?refund=adHoc" class="govuk-button govuk-button--secondary" style="float: right; margin-bottom: 0">Issue refund</a>
+                        </td>
+                        <!--  <td colspan="7" class="govuk-table__cell govuk-!-width-one-third">No payment recorded</td>  -->
+                    </tr>
+
+                    {% if data['state'] == 'duplicate' %}
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="v1paymenthistorydetails?paymentdetailsamount=£550.00&paymentdetailsstatus=Success&">View details</a></td>
+                        <td class="govuk-table__cell">RC-1858-2367-8368-1978</td>
+                        <td class="govuk-table__cell">4 March 2021</td>
+                        <td class="govuk-table__cell" style="text-align: right;">£500.00</td>
+                        <td class="govuk-table__cell" style="text-align: right;">
+                            <a href="refund/reason?refund=adHoc" class="govuk-button govuk-button--secondary" style="float: right; margin-bottom: 0">Issue refund</a>
+                        </td>
+                        <!--  <td colspan="7" class="govuk-table__cell govuk-!-width-one-third">No payment recorded</td>  -->
+                    </tr>
+
+                    {% endif %}
+
+                {% elif data.casetype == "probate" %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell "><a href="v1paybubblepaymenthistorydetails.html">View details</a></td>
+                        <td class="govuk-table__cell ">RC-1858-2367-8368-1978</td>
+                        <td class="govuk-table__cell">4 March 2021</td>
+                        {% if data.needspaying == "part" %}
+                            {% if data.remission == 'true' %}
+                                <td class="govuk-table__cell" style="text-align: right;">£2.50</td>
+                            {% else %}
+                                <td class="govuk-table__cell" style="text-align: right;">£217.50</td>
+                            {% endif %}
+                        {% else %}
+                            {% if data.remission == 'true' %}
+                                <td class="govuk-table__cell" style="text-align: right;">£6.00</td>
+                            {% else %}
+                                <td class="govuk-table__cell" style="text-align: right;">£221.00</td>
+                            {% endif %}
+                        {% endif %}
+
+
+                        <!--  <td colspan="7" class="govuk-table__cell govuk-!-width-one-third">No payment recorded</td>  -->
+                    </tr>
+                {% else %}
+                {% endif %}
+            </tbody>
+        </table>
+    {% endif %}
+
+
+
+    {% if data.state == "approved" or data.state == 'submitted' %}
+        <br />
+        <br />
+
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-2">Refunds</h2>
+        <table class="govuk-table"  style="width:100%; margin-bottom: 20px;">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col" style="width:16%">Status</th>
+                <th class="govuk-table__header" scope="col" style="width:19%;  padding-left:0px;">Date</th>
+                <th class="govuk-table__header" scope="col" style="width:18%;  padding-left:0px;  padding-right:0px;">Reason</th>
+                <th class="govuk-table__header" scope="col" style="width:40%;">Refund reference</th>
+                <th class="govuk-table__header" scope="col" style="width:10%;text-align: right">Amount</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell" style="vertical-align:middle">{% if data.state == 'submitted' %}Sent for approval{% else %}Approved{% endif %}</td>
+                <td class="govuk-table__cell" style="vertical-align:middle">4 March 2021</td>
+                <td class="govuk-table__cell" style="vertical-align:middle;  padding-left:0px;">Case withdrawn</td>
+                <td class="govuk-table__cell">RF-3456-2345-3456-4567</td>
+                <td class="govuk-table__cell" style="vertical-align:middle; text-align: right">£550.00</td>
+            </tr>
+        </table>
+    {% endif %}
+
+
+
+    <div style="width:960px;">
+        <br>
+        <br>
+        {% if data.needspaying == "true" %}
+            {% if data.casetype == "divorce" %}
+                {% if data.remission == 'true' %}
+                    <p style="float: right;">Total left to pay: <span class="govuk-!-font-weight-bold">£250.00</span></p>
+                {% else %}
+                    <p style="float: right;">Total left to pay: <span class="govuk-!-font-weight-bold">£550.00</span></p>
+                {% endif %}
+
+            {% elif data.casetype == "probate" %}
+                {% if data.remission == 'true' %}
+                    <p style="float: right;">Total left to pay: <span class="govuk-!-font-weight-bold">£6.00</span></p>
+                {% else %}
+                    <p style="float: right;">Total left to pay: <span class="govuk-!-font-weight-bold">£221.00</span></p>
+                {% endif %}
+            {% endif %}
+
+        {% elif data.needspaying == "false" and data.state != "approved" and data.state != 'submitted' %}
+
+            {% if data.remission == 'full' and data.refund != 'remission' %}
+            <p style="float: right;">Amount to refund: <span class="govuk-!-font-weight-bold">£550.00</span></p>
+            {% else %}
+            <p style="float: right;">Total left to pay: <span class="govuk-!-font-weight-bold">£0.00</span></p>
+            {% endif %}
+
+        {% elif data.needspaying == "part" %}
+            {% if data.casetype == "divorce" %}
+                <p style="float: right;">Total left to pay: <span class="govuk-!-font-weight-bold">£50.00</span></p>
+            {% else %}
+                <p style="float: right;">Total left to pay: <span class="govuk-!-font-weight-bold">£3.50</span></p>
+            {% endif %}
+
+        {% else %}
+            <p style="float: right;">Total left to pay: <span class="govuk-!-font-weight-bold">£0.00</span></p>
+
+        {% endif %}
+
+    </div>
+
+    <br>
+    <br><br><br>
+
+
+
+</div>
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+
+    <p style="margin-top: 10px; margin-bottom: 5px;">Service / 1 or more fees</p>
+
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select a service</option>
+
+        <option value="casetype=divorce&errorofdata=false&"
+                {% if data.casetype == 'divorce' %}selected{% endif %}
+        >Divorce (1 fee)</option>
+
+        <option value="casetype=probate&errorofdata=false&"
+                {% if data.casetype == 'probate' %}selected{% endif %}
+        >Probate (2 or more fees)</option>
+
+        <option value="errorofdata=true&"
+                {% if data.errorofdata == "true" %}selected{% endif %}
+        >Error: Only CPO details is down</option>
+
+    </select>
+
+
+
+
+    <p style="margin-top: 10px; margin-bottom: 5px;">Service request toggle</p>
+
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+        <option value="">Select orders state</option>
+
+        <option value="billonaccount=true&needspaying=true&"
+                {% if data.billonaccount == 'true' and  data.needspaying == 'true' %}selected{% endif %}
+        >Orders ON - Needs paying</option>
+
+        <option value="billonaccount=true&needspaying=part&"
+                {% if data.billonaccount == 'true'  and  data.needspaying == 'part' %}selected{% endif %}
+        >Orders ON - Part paid</option>
+
+        <option value="billonaccount=true&needspaying=false&"
+                {% if data.billonaccount == 'true'  and  data.needspaying == 'false' %}selected{% endif %}
+        >Orders ON - Paid</option>
+
+
+
+    </select>
+
+
+    <p style="margin-top: 10px; margin-bottom: 5px;">Remission</p>
+
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select OFF or ON</option>
+
+        <option value="remission=false&"
+                {% if data.remission != 'true'  %}selected{% endif %}
+        >OFF</option>
+
+        <option value="remission=true&"
+                {% if data.remission == 'true'  %}selected{% endif %}
+        >PART</option>
+
+        <option value="remission=full&"
+                {% if data.remission == 'full'  %}selected{% endif %}
+        >FULL</option>
+    </select>
+
+
+
+
+</form>
+
+{% endblock %}

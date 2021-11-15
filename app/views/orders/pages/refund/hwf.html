@@ -1,0 +1,63 @@
+{% extends "../../layoutccd.html" %}
+
+{% block pageTitle %}
+    Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div style="min-width: 960px; max-width: 1860px;  margin: 0 30px;">
+
+    <h1 class="govuk-heading-l">Process remission</h1>
+
+    <h2 class="govuk-heading-m">#4692-3164-5845-4819</h2>
+
+    <br />
+
+    {{ govukInput({
+      label: {
+        text: "Enter help with fees or remission reference",
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+      hint: {
+        text: 'For example: HWF-A1B-23C'
+      },
+      id: "event-name",
+      classes: "govuk-input--width-10",
+      name: "event-name"
+    }) }}
+
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Previous",
+          href: 'reason',
+          classes: "govuk-button--secondary"
+        }) }}
+        {{ govukButton({
+          href: 'transaction',
+          text: "Continue"
+        }) }}
+    </div>
+
+    <p>
+       <a href="../v1paymenthistory">Cancel</a>
+    </p>
+
+    <br>
+    <br>
+
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

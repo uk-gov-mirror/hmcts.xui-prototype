@@ -1,0 +1,269 @@
+
+{% extends "../layoutpaybubble2021.html" %}
+
+{% block pageTitle %}
+PayBubble
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row" style="padding-left: 15px; padding-right: 15px;">
+
+    {% if data.casetype == "divorce" %}
+        <a href="v1feebasket.html" class="govuk-back-link">Back</a>
+    {% else %}
+        <a href="v1quanityofcopies.html" class="govuk-back-link">Back</a>
+    {% endif %}
+
+    <div style="display:flex; flex-direction:row; justify-content: space-between; width:960px;">
+        <h1 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-4">Summary</h1>
+        <p class="govuk-!-margin-top-5" style="align-self: flex-end;">Case reference: 4692-3164-5845-4819</p>
+    </div>
+
+
+    <!---TABLE--->
+    <div class="govuk-!-margin-top-3">
+        <table class="govuk-table  govuk-!-margin-bottom-2" >
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+
+                    <th class="govuk-table__header" scope="col" style="width: 600px;">Description</th>
+                    <th class="govuk-table__header" scope="col" style="width: 60px;">Quantity</th>
+                    <th class="govuk-table__header" scope="col" style="width: 80px; text-align: right;"></th>
+                    <th class="govuk-table__header" scope="col" style="width: 100px; text-align: right;">Amount</th>
+                </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+                {% if data.casetype == "divorce" %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Filing an application for a divorce, nullity or civil partnership dissolution
+                            <br>
+                            {% if data.newrequest == 'true' %}
+                                <a href>Remove</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            {% endif %}
+                            {% if data.remission != 'true' %}
+                                <a href="v1addhelpwithfees.html">Add help with fees or remission</a>
+                            {% endif %}</td>
+                        <td class="govuk-table__cell" scope="row" style="text-align: center">1</td>
+                        <td class="govuk-table__cell" style="text-align: right;"></td>
+                        <td class="govuk-table__cell"  style="text-align: right;">£550.00</td>
+                    </tr>
+                    {% if data.remission == 'true'  %}
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Remission, HWF-1A2-B3C</td>
+                            <td class="govuk-table__cell" scope="row" style="text-align: center"> </td>
+                            <td class="govuk-table__cell" style="text-align: right;"> </td>
+                            <td class="govuk-table__cell"  style="text-align: right;">-£300.00</td>
+                        </tr>
+                    {% endif %}
+                {% else %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Personal Application for grant of Probate
+                            <br>
+                            {% if data.newrequest == 'true' %}
+                                <a href="#">Remove</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            {% endif %}
+                            {% if data.remission != 'true' %}
+                                <a href="v1addhelpwithfees.html">Add help with fees or remission</a>
+                            {% endif %}</td>
+                        <td class="govuk-table__cell" scope="row" style="text-align: center">1</td>
+                        <td class="govuk-table__cell" style="text-align: right;"></td>
+                        <td class="govuk-table__cell"  style="text-align: right;">£215.00</td>
+                    </tr>
+                    {% if data.remission == 'true'  %}
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Remission, HWF-782-232-190
+                                <br><!-- <a href="v1feebasket?remission=false&">Remove</a>  -->
+                            <td class="govuk-table__cell" scope="row" style="text-align: center">1</td>
+                            <td class="govuk-table__cell" style="text-align: right;"> </td>
+                            <td class="govuk-table__cell"  style="text-align: right;">-£100.00</td>
+                        </tr>
+                    {% endif %}
+                    {% if data.copiesshowing == 'true'  %}
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Copy of a document (for each copy)
+                                {% if data.newrequest == 'true' %}
+                                    <br><a href="v1feebasket?remission=false&">Remove</a>
+                                {% endif %}</td>
+                            <td class="govuk-table__cell" scope="row" style="text-align: center">4 x £1.50</td>
+                            <td class="govuk-table__cell" style="text-align: right;"></td>
+                            <td class="govuk-table__cell"  style="text-align: right;">£6.00</td>
+                        </tr>
+                    {% endif %}
+                {% endif %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    {% if data.newrequest != 'true' %}
+        <div style="display: flex; flex-direction: column; width:960px;">
+
+            {% if data.casetype == "divorce" %}
+                {% if data.remission != 'true'  %}
+                    <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £550.00</p>
+                {% else %}
+                    <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £250.00</p>
+                {% endif %}
+            {% else %}
+                {% if data.copiesshowing == 'true'  %}
+                    {% if data.remission == 'true'  %}
+                        <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £121.00</p>
+                    {% else %}
+                        <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £221.00</p>
+                    {% endif %}
+                {% else %}
+                    {% if data.remission == 'true'  %}
+                        <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £115.00</p>
+                    {% else %}
+                        <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £215.00</p>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        </div>
+    {% else %}
+        <div style="display:flex; flex-direction:row; justify-content: space-between; width:960px;">
+            <a href="v1feesearch?search=false&.html" class="govuk-button govuk-button--secondary">Add fee</a>
+
+            <div >
+                {% if data.casetype == "divorce" %}
+                {% if data.remission != 'true'  %}
+                <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £550.00</p>
+                {% else %}
+                <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £250.00</p>
+                {% endif %}
+                {% else %}
+                {% if data.copiesshowing == 'true'  %}
+                {% if data.remission == 'true'  %}
+                <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £121.00</p>
+                {% else %}
+                <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £221.00</p>
+                {% endif %}
+                {% else %}
+                {% if data.remission == 'true'  %}
+                <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £115.00</p>
+                {% else %}
+                <p class=" govuk-!-margin-top-2"  style="align-self: flex-end;">Total to pay: £215.00</p>
+                {% endif %}
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+
+    {% if data.unallocated == "true" and data.telephonepayment != 'true' %}
+        <div>
+            <a href="v1paybubbleconfirmallocation.html" class="govuk-button">Continue</a>
+        </div>
+    {% else %}
+
+        <div class="govuk-form-group govuk-!-margin-top-0">
+            <label class="govuk-heading-s govuk-!-margin-bottom-1" >
+                Select payment service
+            </label>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                            <label class="govuk-label govuk-radios__label" for="contact">
+                                Antenna
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact-222" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                            <label class="govuk-label govuk-radios__label" for="contact-222">
+                                8x8
+                            </label>
+                        </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div>
+            <a href="v1telephonepaymentplaceholder?unallocated=false&allocated=true&billonaccount=true&needspaying=false&paymentmade=true&.html"
+               class="govuk-button govuk-!-margin-top-4">Take telephone payment</a>
+        </div>
+    {% endif %}
+
+
+</div>
+
+
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+
+    <p style="margin-top: 10px; margin-bottom: 5px;">Service</p>
+
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select a service</option>
+
+        <option value="casetype=divorce&remission=false&"
+                {% if data.casetype == 'divorce' and  data.remission != 'true'  %}selected{% endif %}
+        >Divorce</option>
+
+        <option value="casetype=divorce&remission=true&"
+                {% if data.casetype == 'divorce' and  data.remission == 'true'  %}selected{% endif %}
+        >Divorce - with remission</option>
+
+        <option value="casetype=probate&search=notcopy&remission=false&copiesshowing=false&"
+                {% if data.casetype == 'probate' and  data.copiesshowing != 'copy' %}selected{% endif %}
+        >Probate</option>
+
+        <option value="casetype=probate&remission=true&"
+                {% if data.casetype == 'probate' and  data.remission == 'true'  %}selected{% endif %}
+        >Probate - with remission</option>
+
+        <option value="casetype=probate&remission=true&copiesshowing=true&"
+                {% if data.casetype == 'probate' and  data.copiesshowing == 'true'  %}selected{% endif %}
+        >Probate - with copies</option>
+
+    </select>
+
+    <p style="margin-top: 25px; margin-bottom: 5px;">Payment type</p>
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select </option>
+
+        <option value="telephonepayment=false&"
+                {% if data.telephonepayment != 'true' %}selected{% endif %}
+        >From unallocated payment</option>
+
+        <option value="telephonepayment=true&"
+                {% if data.telephonepayment == 'true'  %}selected{% endif %}
+        >Telephone payment</option>
+    </select>
+
+    <p style="margin-top: 25px; margin-bottom: 5px;">Payment request type</p>
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select </option>
+
+        <option value="newrequest=true&"
+                {% if data.newrequest == 'true' %}selected{% endif %}
+        >New payment request</option>
+
+        <option value="newrequest=false&"
+                {% if data.newrequest != 'true'  %}selected{% endif %}
+        >Exisiting payment request</option>
+    </select>
+</form>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

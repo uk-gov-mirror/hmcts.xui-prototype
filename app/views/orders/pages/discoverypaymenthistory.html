@@ -1,0 +1,162 @@
+{% extends "../layoutccd.html" %}
+
+
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class=""  style="display: flex; justify-content: space-between; ">
+
+    <div style="display: flex; ">
+        <p class="">4692-3164-5845-4819: Smith v Smith  &nbsp; </p>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Print
+        </button>
+    </div>
+
+
+    <div style="display: flex; align-items:right" >
+        <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+
+        <select class="govuk-select" id="sort" name="sort">
+            <option value="published" selected>Select action</option>
+            <option value="published" >Submit amended application</option>
+            <option value="published" >Link respondent</option>
+            <option value="published" >Add Note</option>
+            <option value="published" >Upload document</option>
+            <option value="updated" >Stop representing a client</option>
+        </select>
+
+
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+            Go
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+        Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="discoverycaseinccd">
+                History
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+                Petition
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+                AOS
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+                Outcome of Decree Nisi
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+                Documents
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item  govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="discoverypaymenthistory">
+                Payment History
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+                Marriage Certificate
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+
+
+
+<div style="width: 1200px;  margin: auto;">
+    <br>
+    <br>
+    <br>
+
+    <h2 class="govuk-heading-m">Unprocessed payments</h2>
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Payment asset number (DCN)</th>
+            <th class="govuk-table__header" scope="col">Banked Date</th>
+            <th class="govuk-table__header" scope="col">Amount</th>
+            <th class="govuk-table__header" scope="col">Method</th>
+        </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell  govuk-!-width-one-third"><a href="discoverypaymenthistorydetails.html">RC-1858-2367-8368-1978</a></td>
+            <td class="govuk-table__cell">13 August 2019</td>
+            <td class="govuk-table__cell">£100.00</td>
+            <td class="govuk-table__cell">Cheque</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+    <br>
+    <h2 class="govuk-heading-m">Processed payments</h2>
+
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col" style="width: 25%;">Payment reference</th>
+            <th class="govuk-table__header" scope="col">Date created</th>
+            <th class="govuk-table__header" scope="col">Date updated</th>
+            <th class="govuk-table__header" scope="col">Channel</th>
+            <th class="govuk-table__header" scope="col">Method</th>
+            <th class="govuk-table__header" scope="col">Amount</th>
+            <th class="govuk-table__header" scope="col">Allocation status</th>
+            <th class="govuk-table__header" scope="col">Payments status</th>
+        </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td colspan="7" class="govuk-table__cell govuk-!-width-one-third">No payment recorded</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+    <br>
+    <br>
+    <hr>
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

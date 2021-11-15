@@ -1,0 +1,164 @@
+{% extends "../../layoutccd.html" %}
+{% block pageTitle %}
+  Case details
+{% endblock %}
+{% block content %}
+
+<div style="min-width: 960px; max-width: 1860px;  margin: 0 30px;">
+  <h1 class="govuk-heading-l">Issue refund</h1>
+  <h2 class="govuk-heading-m">Case reference: 4692-3164-5845-4819</h2>
+  <span id="how-contacted-conditional-hint" class="govuk-hint">
+    Payment reference: xxx-xxx-xxx-xxx
+  </span>
+  <!---FORM--->
+  <fieldset class="govuk-fieldset" style="width:40%;">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Capture address?
+      </h1>
+    </legend>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="telephone-number">
+        Telephone number
+      </label>
+      <div id="telephone-number-hint" class="govuk-hint">
+        For international numbers include the country code
+      </div>
+      <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" aria-describedby="telephone-number-hint" autocomplete="tel">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="email">
+        Email address
+      </label>
+      <div id="email-hint" class="govuk-hint">
+        We’ll only use this to send you a receipt
+      </div>
+      <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-1">
+        Building and street
+        <span class="govuk-visually-hidden">
+          line 1 of 2
+        </span>
+      </label>
+      <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-2">
+        <span class="govuk-visually-hidden">
+          Building and street line 2 of 2
+        </span>
+      </label>
+      <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-town">
+        Town or city
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-county">
+        County
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-postcode">
+        Postcode
+      </label>
+      <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="country">
+        Country
+      </label>
+      <select class="govuk-select" id="sort" name="country">
+        <option value="published" selected>United Kingdom</option>
+        <option value="updated">France</option>
+        <option value="views">India</option>
+        <option value="comments">Spain</option>
+      </select>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        Preference of method of contact?
+      </legend>
+      <div id="contact-hint" class="govuk-hint">
+        Select all options that are relevant.
+      </div>
+      <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+          <label class="govuk-label govuk-checkboxes__label" for="contact">
+            Email
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+          <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+            Phone
+          </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+          Text message
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="contact-4" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-4">
+        <label class="govuk-label govuk-checkboxes__label" for="contact-4">
+          Post
+        </label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Mobile phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel" autocomplete="tel">
+        </div>
+
+      </div>
+    </div>
+</div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-form-group">
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+          <label class="govuk-label govuk-checkboxes__label" for="nationality">
+            Send notification
+          </label>
+          <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+            Supporting text from the content designer comes here
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </fieldset>
+</div>
+  </fieldset>
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Previous",
+      href: 'transaction',
+      classes: "govuk-button--secondary"
+    }) }}
+    {{ govukButton({
+      href: 'check-and-send',
+      text: "Continue"
+    }) }}
+  </div>
+  <p>
+    <a href="../v1paymenthistory">Cancel</a>
+  </p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,219 @@
+{% extends "../../layoutccd.html" %}
+{% block pageTitle %}
+  Case details
+{% endblock %}
+{% block content %}
+
+<div style="min-width: 960px; max-width: 1860px;  margin: 0 30px;">
+  <h1 class="govuk-heading-l">Issue refund</h1>
+  <h2 class="govuk-heading-m">Case reference: 4692-3164-5845-4819</h2>
+  <h3 class="govuk-heading-s">Select fees to be refunded</h3>
+  <!---TABLE--->
+  <div class="govuk-!-margin-top-3">
+    <table class="govuk-table  govuk-!-margin-bottom-2">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col" style="width: 40px;">Select</th>
+          <th class="govuk-table__header" scope="col" style="width: 250px;">Fee description</th>
+          <th class="govuk-table__header" scope="col" style="width: 60px;">Quantity</th>
+          <th class="govuk-table__header" scope="col" style="width: 200px;">Reason</th>
+          <th class="govuk-table__header" scope="col" style="width: 200px; text-align: left;">Amount</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes govuk-checkboxes--large" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="item-1" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="item-1">
+                  <span style=display:none>Select</span>
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="govuk-table__cell">Personal Application for grant of Probate</td>
+          <td class="govuk-table__cell" scope="row" style="text-align: center, margin-left:0px;">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="qty-0">
+                <span style=display:none>Qty</span>
+              </label>
+              <select class="govuk-select" id="qty-0" name="sort" style="width:80px;">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+              </select>
+            </div>
+          </td>
+          <td class="govuk-table__cell" style="text-align: left;">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sort">
+                <span style="display:none">Select a reason</span>
+              </label>
+              <select class="govuk-select" id="reson" name="reson" style="width:300px;">
+                <option value="default" selected>Select a reason for refund</option>
+                <option value="Duplicate">Duplicate payment</option>
+                <option value="Human">Human error</option>
+                <option value="Case">Case withdrawn</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </td>
+          <td class="govuk-table__cell"  style="text-align: left;">£215.00</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes govuk-checkboxes--large" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="item-2" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="item-2">
+                  <span style=display:none>Select</span>
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="govuk-table__cell">Remission, HWF-782-232-190</td>
+          <td class="govuk-table__cell" scope="row" style="text-align: center, margin-left:0px;">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="qty-1">
+                <span style=display:none>Qty</span>
+              </label>
+              <select class="govuk-select" id="qty-1" name="sort" style="width:80px;">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+              </select>
+            </div>
+          </td>
+          <td class="govuk-table__cell" style="text-align: left;">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sort">
+                <span style="display:none">Select a reason</span>
+              </label>
+              <select class="govuk-select" id="reson" name="reson" style="width:300px;">
+                <option value="default" selected>Select a reason for refund</option>
+                <option value="Duplicate">Duplicate payment</option>
+                <option value="Human">Human error</option>
+                <option value="Case">Case withdrawn</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </td>
+          <td class="govuk-table__cell"  style="text-align: left;">£100.00</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes govuk-checkboxes--large" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="item-3" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="item-3">
+                  <span style=display:none>Select</span>
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="govuk-table__cell">Copy of a document (for each copy) x 4</td>
+          <td class="govuk-table__cell" scope="row" style="text-align: left, margin-left:0px;">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="qty-1">
+                <span style=display:none>Qty</span>
+              </label>
+              <select class="govuk-select" id="qty-1" name="sort" style="width:80px;">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </td>
+          <td class="govuk-table__cell" style="text-align: left;">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sort">
+                <span style="display:none">Select a reason</span>
+              </label>
+              <select class="govuk-select" id="reson" name="reson" style="width:300px;">
+                <option value="default" selected>Select a reason for refund</option>
+                <option value="Duplicate">Duplicate payment</option>
+                <option value="Human">Human error</option>
+                <option value="Case">Case withdrawn</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </td>
+          <td class="govuk-table__cell"  style="text-align: left;">£6.00</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes govuk-checkboxes--large" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="item-3" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="item-3">
+                  <span style=display:none>Select</span>
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            Copy of a document (for each copy) x 4<br>
+            <span id="event-name-hint" class="govuk-hint">
+              Refunds already issued (2)
+              <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" path style="fill: black">
+                <title>Refunds have already been issued for this fee.</title>
+                <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8 C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+              </svg>
+            </span>
+          </td>
+          <td class="govuk-table__cell" scope="row" style="text-align: center, margin-left:0px;">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="qty-1">
+                <span style=display:none>Qty</span>
+              </label>
+              <select class="govuk-select" id="qty-2" name="sort" style="width:80px;">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+          </td>
+          <td class="govuk-table__cell" style="text-align: left;">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sort">
+                <span style="display:none">Select a reason</span>
+              </label>
+              <select class="govuk-select" id="reson" name="reson" style="width:300px;">
+                <option value="default" selected>Select a reason for refund</option>
+                <option value="Duplicate">Duplicate payment</option>
+                <option value="Human">Human error</option>
+                <option value="Case">Case withdrawn</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </td>
+          <td class="govuk-table__cell"  style="text-align: left;">£6.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Previous",
+      href: 'transaction',
+      classes: "govuk-button--secondary"
+    }) }}
+    {{ govukButton({
+      href: 'check-and-send',
+      text: "Continue"
+    }) }}
+  </div>
+  <p>
+    <a href="../v1paymenthistory">Cancel</a>
+  </p>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

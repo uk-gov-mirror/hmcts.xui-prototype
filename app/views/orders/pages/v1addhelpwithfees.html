@@ -1,0 +1,57 @@
+
+{% extends "../layoutpaybubble2021.html" %}
+
+{% block pageTitle %}
+PayBubble
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row" style="padding-left: 15px; padding-right: 15px;">
+
+    <a href="v1feebasket.html" class="govuk-back-link">Back</a>
+
+    <h1 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-4">Add remission</h1>
+
+    {% if data.casetype == "divorce" %}
+        <p>Fee: Filing an application for a divorce, nullity or civil partnership dissolution</p>
+    {% else %}
+        <p>Fee: Personal Application for grant of Probate</p>
+    {% endif %}
+
+
+    <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="">
+            Reference for help with fees or remission
+        </label>
+        <div id="email-hint" class="govuk-hint">
+            For example, HWF-1A2-B3C
+        </div>
+        <input class="govuk-input  govuk-input--width-10" id="hwfreference" name="hwfreference" type="text" spellcheck="false" >
+    </div>
+
+    <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="address-postcode">
+            Remaining amount to pay after all remissions
+        </label>
+        <span style="font-size: 24px;">£</span> <input class="govuk-input govuk-input--width-5" id="address-postcode" name="address-postcode" type="text">
+    </div>
+
+    <div>
+        <a href="v1feebasket?remission=true&.html"
+           class="govuk-button govuk-!-margin-top-4">Add</a>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

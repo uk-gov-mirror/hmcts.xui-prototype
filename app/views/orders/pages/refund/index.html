@@ -1,0 +1,72 @@
+{% extends "../../layoutccd.html" %}
+
+{% block pageTitle %}
+    Case details
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Test</h1>
+<div style="min-width: 960px; max-width: 1860px;  margin: 0 30px;">
+
+    <h1 class="govuk-heading-l">Process refund</h1>
+
+    <h2 class="govuk-heading-m">#4692-3164-5845-4819</h2>
+
+    <br />
+
+    <form method="post" action="refund/check" >
+
+      {{ govukRadios({
+        idPrefix: "allow-refund",
+        name: "allow-refund",
+        fieldset: {
+          legend: {
+            text: "What do you want to do with this refund?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "approve",
+            text: "Approve refund"
+          },
+          {
+            value: "reject",
+            text: "Reject refund"
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Previous",
+        disabled: "disabled",
+        classes: "govuk-button--secondary"
+      }) }}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      <p>
+         <a href="v1paymenthistory">Cancel</a>
+      </p>
+
+    </form>
+
+    <br>
+    <br>
+
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

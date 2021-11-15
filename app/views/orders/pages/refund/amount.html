@@ -1,0 +1,61 @@
+{% extends "../../layoutccd.html" %}
+
+{% block pageTitle %}
+    Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div style="min-width: 960px; max-width: 1860px;  margin: 0 30px;">
+
+    <h1 class="govuk-heading-l">Process refund</h1>
+
+    <h2 class="govuk-heading-m">#4692-3164-5845-4819</h2>
+
+    <br />
+
+    <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m" for="amount">
+        How much do you need to refund?
+        </label>
+
+        <div id="amount-currency" class="govuk-visually-hidden">in pounds</div>
+            <div class="hmcts-currency-input">
+            <div class="hmcts-currency-input__symbol" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-10" id="amount" name="amount" type="text" aria-describedby="amount-currency " pattern="[0-9]*">
+        </div>
+
+    </div> 
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Previous",
+          href: 'reason',
+          classes: "govuk-button--secondary"
+        }) }}
+        {{ govukButton({
+          href: 'check-and-send',
+          text: "Continue"
+        }) }}
+    </div>
+
+    <p>
+       <a href="../v1paymenthistory">Cancel</a>
+    </p>
+
+    <br>
+    <br>
+
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

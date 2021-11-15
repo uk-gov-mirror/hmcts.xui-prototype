@@ -1,0 +1,196 @@
+
+{% extends "../layoutpaybubble2021.html" %}
+
+{% block pageTitle %}
+PayBubble
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row" style="padding-left: 15px; padding-right: 15px;">
+
+
+
+    <div style="width: 960px;  margin: auto;">
+
+
+        <a href="v1paymenthistory.html" class="govuk-back-link">Back</a>
+        <br>
+        <br>
+
+        <h2 class="govuk-heading-l">Payment details</h2>
+
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Payment reference
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    RC-1858-2367-8368-1978
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Payment amount
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data.paymentdetailsamount }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Payment method
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Cash
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Credit
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Channel
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Online
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Method
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Card
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Status
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Success
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Allocaton Status
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Allocated
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+        </dl>
+
+
+        <br>
+
+        <h3 class="govuk-heading-m">Payment status history</h3>
+
+        <table class="govuk-table" style="width:400px;">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header ">Status</th>
+                <th scope="col" class="govuk-table__header ">Date and time </th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Initiated</td>
+                <td class="govuk-table__cell ">4 March 2021 09:54:09</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Success</td>
+                <td class="govuk-table__cell">4 March 2021 09:51:48</td>
+            </tr>
+            </tbody>
+        </table>
+
+
+
+
+        <br>
+
+        {% if data.scenario != '12' and  data.scenario != '21'  and  data.scenario != '22'%}
+
+        <h2 class="govuk-heading-l">Fee and remission details</h2>
+
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Description
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Application for personal application for grant of Probate
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Fee code
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    FEE0540
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Fee amount
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    £5050.00
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Allocated amount
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    £3000.00
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+        </dl>
+
+        {% endif %}
+
+        <br>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}
