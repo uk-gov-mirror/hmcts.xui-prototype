@@ -1,0 +1,224 @@
+{% extends "../../layoutccd.html" %}
+
+
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class=""  style="display: flex; justify-content: space-between; ">
+
+
+    <div style="display: flex; ">
+        <p class="">4692-3164-5845-4819: Smith v Smith  &nbsp; </p>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Print
+        </button>
+    </div>
+
+
+    <div style="display: flex; align-items:right" >
+        <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+
+        <select class="govuk-select" id="sort" name="sort">
+            <option value="published" selected>Select action</option>
+            <option value="published" >Submit amended application</option>
+            <option value="published" >Link respondent</option>
+            <option value="published" >Add Note</option>
+            <option value="published" >Upload document</option>
+            <option value="updated" >Stop representing a client</option>
+        </select>
+
+
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+            Go
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+        Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#">
+                Summary
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#">
+                Claim details
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="../v1caseinccd">
+                History
+            </a>
+        </li>
+
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="../v1paymenthistory{% if data.state == 'withdrawn' or data.state == 'remission' %}?refunds=true&allocated=true&unallocated=false&scenario=x&remission=full&casetype=civil&pbascenario=false&errorofdata=false&errorofdatapayments=false&nopartyinfooncase=false&billonaccount=true&needspaying=false&{% endif %}">
+                Payment History
+            </a>
+        </li>
+
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="../service-requests">
+                Service Requests
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+
+
+
+<div style="width: 960px;  margin: auto;">
+
+
+    <a href="../v1paymenthistory" class="govuk-back-link">Back</a>
+    <br>
+    <br>
+
+    <h2 class="govuk-heading-l">Refund details</h2>
+
+    <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Refund reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+                RF-1324-6846-2454-5445
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Payment to be refunded
+            </dt>
+            <dd class="govuk-summary-list__value">
+                2021-918425346
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Reason for refund
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Case withdrawn
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Amount refunded
+            </dt>
+            <dd class="govuk-summary-list__value">
+                £450.00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+
+    </dl>
+
+
+    <br>
+
+    <h3 class="govuk-heading-m">Refund status history</h3>
+
+    <table class="govuk-table" style="width:100%;">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header " style="width: 20%">Status</th>
+                <th scope="col" class="govuk-table__header " style="width: 23%">Date and time </th>
+                <th scope="col" class="govuk-table__header " style="width: 15%">User </th>
+                <th scope="col" class="govuk-table__header ">Notes </th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Initiated</td>
+                <td class="govuk-table__cell ">4 March 2021 09:51:09</td>
+                <td class="govuk-table__cell ">Loren Barrow</td>
+                <td class="govuk-table__cell "></td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Sent for approval</td>
+                <td class="govuk-table__cell ">4 March 2021 09:54:09</td>
+                <td class="govuk-table__cell ">Loren Barrow</td>
+                <td class="govuk-table__cell "></td>
+            </tr>
+            {% if data.result == 'returned' %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Returned</td>
+                <td class="govuk-table__cell">4 March 2021 09:59:48</td>
+                <td class="govuk-table__cell ">Steve Jones</td>
+                <td class="govuk-table__cell ">'Case hasn't been withdrawn - looks like a duplicate payment'</td>
+            </tr>
+
+            {% elseif data.user != 'teamleader' %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Approved</td>
+                <td class="govuk-table__cell">4 March 2021 09:59:48</td>
+                <td class="govuk-table__cell ">Steve Jones</td>
+                <td class="govuk-table__cell "></td>
+            </tr>
+
+            {% endif %}
+        </tbody>
+    </table>
+
+
+    {% if data.user == 'teamleader' %}
+        <a href="/orders/pages/refund/review-approve?casetype=civil&state=withdrawn&user=teamleader" class="govuk-button govuk-button--secondary">
+            Process refund
+        </a>
+
+    {% elseif data.result == 'returned' %}
+        <a href="/orders/pages/refund/check-and-send?result=returned&refund=adHoc" class="govuk-button govuk-button--secondary">
+            Resubmit refund
+        </a>
+    {% endif %}
+
+
+</div>
+
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+
+    <p style="margin-top: 20px; margin-bottom: 5px;">PBA toggle</p>
+
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select OFF or ON</option>
+
+        <option value="pbascenario=false&"
+                {% if data.pbascenario == "false" %}selected{% endif %}
+        >PBA OFF</option>
+
+        <option value="pbascenario=true&"
+                {% if data.pbascenario == "true" %}selected{% endif %}
+        >PBA ON</option>
+    </select>
+
+</form>
+
+{% endblock %}

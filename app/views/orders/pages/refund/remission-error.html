@@ -1,0 +1,93 @@
+{% extends "../../layoutccd.html" %}
+
+{% block pageTitle %}
+    Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div style="min-width: 960px; max-width: 1860px;  margin: 0 30px;">
+
+    <h1 class="govuk-heading-l">Process remission</h1>
+
+    <h2 class="govuk-heading-m">#4692-3164-5845-4819</h2>
+
+
+        {% set setAmount %}
+        <div class="govuk-form-group govuk-form-group--error">
+            <label class="govuk-label govuk-label--m" for="amount">
+            Enter the remission amount
+            </label>
+            <span id="cost-per-item-error-error" class="govuk-error-message">
+               <span class="govuk-visually-hidden">Error:</span> You cannot add a remission that's more than the payment amount.
+            </span>
+
+            <div id="amount-currency" class="govuk-visually-hidden">in pounds</div>
+            <div class="hmcts-currency-input">
+                <div class="hmcts-currency-input__symbol govuk-input--error" style="border: 2px solid #d4351c;" aria-hidden="true">£</div>
+                <input class="govuk-input govuk-input--width-10 govuk-input--error" id="amount" name="amount" type="text" aria-describedby="amount-currency " pattern="[0-9]*" value="600" />
+            </div>
+        </div>
+
+        {% endset -%}
+
+        <br />
+
+        {{ govukRadios({
+          idPrefix: "how-much",
+          name: "how-much",
+          fieldset: {
+            attributes: {
+                id: "how-much-container"
+            },
+            legend: {
+              text: "Do you want to give a full remission of £550?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l" if data['refund'] == 'adHoc' else "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              attributes: {
+                checked: "checked"
+              },
+              conditional: {
+                html: setAmount
+              }
+            }
+          ]
+        }) }}
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Previous",
+          href: '../refund',
+          classes: "govuk-button--secondary"
+        }) }}
+        {{ govukButton({
+          href: 'hwf',
+          text: "Continue"
+        }) }}
+    </div>
+
+    <p>
+       <a href="../v1paymenthistory">Cancel</a>
+    </p>
+
+    <br>
+    <br>
+
+</div>
+
+
+
+
+{% endblock %}

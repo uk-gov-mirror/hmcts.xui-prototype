@@ -1,0 +1,169 @@
+{% extends "../../layoutccd.html" %}
+
+{% block pageTitle %}
+    Case details
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">{% if data['result'] == 'returned' %}Review and resubmit refund{% else %}Check your answers{% endif %}</h1>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Decision"
+            },
+            value: {
+              text: "Approve"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          } if false,
+          {
+            key: {
+              text: "Reason for rejection"
+            },
+            value: {
+              text: "'Case hasn't been withdrawn - looks like a duplicate payment?"
+            }
+          } if data['result'] == 'returned',
+          {
+            key: {
+              text: "Refund reference"
+            },
+            value: {
+              text: "RF-1324-6846-2454-5445"
+            }
+          } if data['result'] == 'returned',
+          {
+            key: {
+              text: "Reason for refund"
+            },
+            value: {
+              text: 'Case withdrawn' if data['result'] == 'returned' and data['changed'] != 'true' else 'Duplicate payment'
+            },
+            actions: {
+              items: [
+                {
+                  href: "reason?changed=true",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          } if data['refund'] == 'adHoc',
+          {
+            key: {
+              text: "Payment reference"
+            },
+            value: {
+              text: "RC-8368-2367-1858-4562"
+            }
+          },
+          {
+            key: {
+              text: "Payment amount"
+            },
+            value: {
+              text: "£550.00"
+            }
+          },
+          {
+            key: {
+              text: "Payment status"
+            },
+            value: {
+              text: data['paymentdetailsstatus'] or 'Success'
+            }
+          } if data['state'] == 'remission' or data['refund'] == 'remission',
+          {
+            key: {
+              text: "Fee"
+            },
+            value: {
+              text: "FEE0387 - Application for divorce (£550.00)"
+            }
+          } if data['state'] == 'remission' or data['refund'] == 'remission',
+          {
+            key: {
+              text: "Help with fees or remission reference"
+            },
+            value: {
+              html: 'HWF-A1B-23C'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          } if data['state'] == 'remission' or data['refund'] == 'remission',
+          {
+            key: {
+              text: 'Remission amount'
+            },
+            value: {
+              html: '£' + data['amount'] if data['how-much'] == 'no' and data['amount'] else '£550.00'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          } if data['state'] == 'remission'
+
+        ]
+      }) }}
+
+      <form action="{% if data['result'] == 'returned' and data['changed'] != 'true' %}resubmit{% else %}confirm{% endif %}" method="post">
+
+        <div class="govuk-button-group">
+
+            {% if data['result'] != 'returned' %}
+            {{ govukButton({
+              text: "Previous",
+              href: 'transaction',
+              classes: "govuk-button--secondary"
+            }) }}
+            {% endif %}
+
+            {{ govukButton({
+              text: 'Add remission' if data['refund'] == 'remission' else 'Submit refund'
+            }) }}
+        </div>
+    
+        <p>
+           <a href="../v1paymenthistory">Cancel</a>
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

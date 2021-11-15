@@ -1,0 +1,178 @@
+
+{% extends "../layoutpaybubble2021.html" %}
+
+{% block pageTitle %}
+PayBubble
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row" style="padding-left: 15px; padding-right: 15px;">
+    <a href="v1casetransactions.html" class="govuk-back-link">Back</a>
+
+    <div style="display:flex; flex-direction:row; justify-content: space-between; width:960px;">
+        <h1 class="govuk-heading-l govuk-!-margin-top-3 govuk-!-margin-bottom-4">Add fees</h1>
+        <p class="govuk-!-margin-top-5" style="align-self: flex-end;">Case reference: 4692-3164-5845-4819</p>
+    </div>
+
+    <!--
+    <div class="govuk-form-group govuk-!-margin-bottom-2">
+        <label class="govuk-heading-m govuk-!-margin-bottom-2" >
+            Recently used
+        </label>
+        <div class=" govuk-!-margin-bottom-3">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <div class="govuk-checkboxes">
+                    {% if data.casetype == 'divorce' %}
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="divorce" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" >
+                            £550.00, Filing an application for a divorce, nullity or civil partnership dissolution, FEE0226
+                        </label>
+                    </div>
+                    {% else %}
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste">
+                            £155.00, Application for a grant of probate (Estate over 5000 GBP), FEE0219
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                            £215.00, Personal Application for grant of Probate,	FEE0226
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            £1.50, Copy of a document (for each copy), FEE0546
+                        </label>
+                    </div>
+                    {% endif %}
+                </div>
+            </fieldset>
+        </div>
+        <div>
+            {% if data.casetype == 'divorce' %}
+                <a href="v1feebasket.html" class="govuk-button govuk-button--secondary">Add</a>
+            {% else %}
+                <a href="v1quanityofcopies.html" class="govuk-button govuk-button--secondary">Add</a>
+            {% endif %}
+        </div>
+
+    </div>
+    -->
+
+
+    <div class="govuk-form-group govuk-!-margin-top-0 govuk-!-margin-bottom-2">
+        <label class="govuk-heading-m govuk-!-margin-bottom-1" >
+            Search for a fee
+        </label>
+        <span id="event-name-hint" class="govuk-hint">
+          For example: Divorce, Probate, £155 or FEE0221
+        </span>
+        <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text">
+    </div>
+    <div>
+        <a href="v1feesearchreturn.html" class="govuk-button govuk-button--secondary">Search</a>
+    </div>
+
+
+    <!---TABLE--->
+    <div class="">
+        <table class="govuk-table" >
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col" style="width: 82px; text-align: right;">Amount</th>
+                    <th class="govuk-table__header" scope="col" style="width: 600px;">Description</th>
+                    <th class="govuk-table__header" scope="col" style="width: 100px;">Fee code</th>
+                    <th class="govuk-table__header" scope="col" style="width: 120px;"></th>
+                </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+                {% if data.search == 'copy' %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell" style="text-align: right;">£1.50</td>
+                        <td class="govuk-table__cell">Copy of a document (for each copy)</td>
+                        <td class="govuk-table__cell" scope="row">FEE0546</td>
+                        <td class="govuk-table__cell"  style="text-align: right;"><a href="v1quanityofcopies.html">Add fee</a></td>
+                    </tr>
+                {% elif data.casetype == "divorce" %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell" style="text-align: right;">£550.00</td>
+                        <td class="govuk-table__cell">Filing an application for a divorce, nullity or civil partnership dissolution</td>
+                        <td class="govuk-table__cell" scope="row">FEE0226</td>
+                        <td class="govuk-table__cell"  style="text-align: right;"><a href="v1feebasket.html">Add fee</a></td>
+                    </tr>
+                {% else %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell" style="text-align: right;">-</td>
+                        <td class="govuk-table__cell">Application for a grant of probate (Estate under 5000 GBP)</td>
+                        <td class="govuk-table__cell" scope="row">FEE0220</td>
+                        <td class="govuk-table__cell"  style="text-align: right;"><a  href="v1feebasket.html">Add fee</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell" style="text-align: right;">£155.00</td>
+                        <td class="govuk-table__cell">Application for a grant of probate (Estate over 5000 GBP)</td>
+                        <td class="govuk-table__cell" scope="row">FEE0219</td>
+                        <td class="govuk-table__cell"  style="text-align: right;"><a  href="v1feebasket.html">Add fee</a>
+                        </td>
+                    </tr><tr class="govuk-table__row">
+                        <td class="govuk-table__cell" style="text-align: right;">-</td>
+                        <td class="govuk-table__cell">Personal Application for grant of Probate</td>
+                        <td class="govuk-table__cell" scope="row">FEE0540</td>
+                        <td class="govuk-table__cell"  style="text-align: right;"><a  href="v1feebasket.html">Add fee</a>
+                        </td>
+                    </tr><tr class="govuk-table__row">
+                        <td class="govuk-table__cell" style="text-align: right;">£215.00</td>
+                        <td class="govuk-table__cell">Personal Application for grant of Probate</td>
+                        <td class="govuk-table__cell" scope="row">FEE0226</td>
+                        <td class="govuk-table__cell"  style="text-align: right;"><a  href="v1feebasket.html">Add fee</a>
+                        </td>
+                    </tr>
+                {% endif %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+
+    <p style="margin-top: 10px; margin-bottom: 5px;">Service</p>
+
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select a service</option>
+
+        <option value="casetype=divorce&search=notcopy&"
+                {% if data.casetype == 'divorce' and  data.search != 'copy'  %}selected{% endif %}
+        >Divorce</option>
+
+        <option value="casetype=probate&search=notcopy&"
+                {% if data.casetype == 'probate' and  data.search != 'copy' %}selected{% endif %}
+        >Probate</option>
+
+        <option value="search=copy&"
+                {% if data.search == 'copy' %}selected{% endif %}
+        >Copies</option>
+    </select>
+
+</form>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

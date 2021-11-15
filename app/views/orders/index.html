@@ -1,0 +1,165 @@
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PayBubble
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Payments
+</h1>
+
+
+<h2 class="govuk-heading-m">CCD pages</h2>
+
+<p class="govuk-!-margin-bottom-1"><span class="">Payment history tab</span></p>
+<p><a target="_blank" href="/orders/pages/v1paymenthistory?casetype=divorce&allocated=false&unallocated=false&billonaccount=false&remission=false&twotabs=false&errorofdata=false&pbascenario=false&errorofdatapayments=false&nopartyinfooncase=false&">No orders</a><br>
+    <a target="_blank" href="/orders/pages/v1paymenthistory?casetype=divorce&allocated=false&unallocated=false&billonaccount=true&needspaying=true&remission=false&twotabs=false&"errorofdata=false&pbascenario=false&errorofdatapayments=false&nopartyinfooncase=false&>Not paid</a><br>
+    <a target="_blank" href="/orders/pages/v1paymenthistory?casetype=divorce&allocated=true&unallocated=false&billonaccount=true&needspaying=part&remission=false&twotabs=false&errorofdata=false&pbascenario=false&errorofdatapayments=false&nopartyinfooncase=false&">Partially paid</a><br>
+    <a target="_blank" href="/orders/pages/v1paymenthistory?casetype=divorce&allocated=true&unallocated=false&billonaccount=true&needspaying=false&remission=false&twotabs=false&errorofdata=false&pbascenario=false&errorofdatapayments=false&nopartyinfooncase=false&">Paid</a><br>
+    <a target="_blank" href="/orders/pages/v1paymenthistory?casetype=divorce&allocated=true&unallocated=false&billonaccount=true&needspaying=false&remission=false&twotabs=false&errorofdata=false&pbascenario=false&errorofdatapayments=false&nopartyinfooncase=true&">No party information on case</a>
+    <br><a target="_blank" href="/orders/pages/v1paymenthistory?casetype=probate&pbascenario=true&errorofdata=false&errorofdatapayments=false&allocated=true&unallocated=false&scenario=x&billonaccount=true&needspaying=false&errorofdatapayments=false&errorofdata=false&nopartyinfooncase=false&">PBA Case</a>
+    <br><a target="_blank" href="/orders/pages/v1paymenthistory?casetype=divorce&allocated=true&unallocated=false&billonaccount=true&needspaying=false&remission=false&twotabs=false&pbascenario=false&errorofdata=true&errorofdatapayments=false&nopartyinfooncase=false&">Error: Only CPO details is down</a>
+    <br><a target="_blank" href="/orders/pages/v1paymenthistory?casetype=divorce&allocated=true&unallocated=false&billonaccount=true&needspaying=false&remission=false&twotabs=false&pbascenario=false&errorofdata=false&errorofdatapayments=true&nopartyinfooncase=false&">Error: Only payment api is down</a>
+    <br><a target="_blank" href="/orders/pages/v1paymenthistory?casetype=divorce&allocated=true&unallocated=false&billonaccount=true&needspaying=false&remission=false&twotabs=false&pbascenario=false&errorofdata=false&errorofdatapayments=true&nopartyinfooncase=false&">Error: CPO details and payment api are down</a>
+</p>
+
+
+<p class="govuk-!-margin-bottom-1"><span  class="">Order details - Subpage of tab</span></p>
+<p> <a target="_blank" href="/orders/pages/v1paymenthistoryorderdetails?casetype=divorce&allocated=false&unallocated=false&billonaccount=true&needspaying=true&remission=false&twotabs=false&errorofdata=false&">Not paid</a><br>
+    <a target="_blank" href="/orders/pages/v1paymenthistoryorderdetails?casetype=divorce&allocated=true&unallocated=false&billonaccount=true&needspaying=part&remission=false&twotabs=false&errorofdata=false&">Partially paid</a><br>
+    <a target="_blank" href="/orders/pages/v1paymenthistoryorderdetails?casetype=divorce&allocated=true&unallocated=false&billonaccount=true&needspaying=false&remission=false&twotabs=false&errorofdata=false&">Paid</a><br>
+    <a target="_blank" href="/orders/pages/v1paymenthistoryorderdetails?casetype=divorce&allocated=true&unallocated=false&billonaccount=true&needspaying=false&remission=true&twotabs=false&errorofdata=false&">Remission - Paid</a><br>
+    <a target="_blank" href="/orders/pages/v1paymenthistoryorderdetails?casetype=divorce&allocated=false&unallocated=false&billonaccount=true&needspaying=true&remission=false&twotabs=false&errorofdata=true&">Error: Only CPO details is down</a>
+</p>
+
+<p class="govuk-!-margin-bottom-1"><span  class="">Payment details - Subpage of tab</span></p>
+<p>    <a target="_blank" href="/orders/pages/v1paymenthistorydetails?paymentdetailsamount=£221.00&paymentdetailsstatus=Success&casetype=probate&pbascenario=true&errorofdata=false&errorofdatapayments=false&allocated=true&unallocated=false&scenario=x&billonaccount=true&needspaying=false&">PBA Case</a>
+</p>
+
+<br>
+<br>
+
+<h2 class="govuk-heading-m">User testing - Scenarios</h2>
+
+<p><span class="">Divorce</span></p>
+
+<p><a target="_blank" href="/order11">Create payment request and take telephone payment</a></p>
+<p><a target="_blank" href="/order12">Take telephone payment for existing payment requests</a></p>
+
+<p><br><span class="">Probate</span></p>
+<p><a target="_blank" href="/order21">Create payment request and allocate</a></p>
+<p><a target="_blank" href="/order22">Allocate payment for existing payment requests</a></p>
+
+
+<br>
+<br>
+<br>
+
+<h2 class="govuk-heading-m">Fixed links</h2>
+
+
+        <p><span class="govuk-!-font-weight-bold">Payment history tab</span>
+          <br>Divorce
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1paymenthistory?casetype=divorce&unallocated=false&allocated=false&billonaccount=false&needspaying=false&.html">No payments or invoices</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1paymenthistory?casetype=divorce&unallocated=false&allocated=false&billonaccount=true&needspaying=true&.html">Invoice needs paying</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1paymenthistory?casetype=divorce&unallocated=false&allocated=true&billonaccount=true&needspaying=false&.html">Invoice paid and payment allocated</a>
+          <br>Probate
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1paymenthistory?casetype=probate&unallocated=true&allocated=false&billonaccount=false&needspaying=true&.html">Unallocated payment</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1paymenthistory?casetype=probate&unallocated=false&allocated=true&billonaccount=true&needspaying=false&.html">Invoice paid and payment allocated </a>
+        </p>
+
+        <p><span class="govuk-!-font-weight-bold">Subpage - Payment details</span>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1paymenthistorydetails.html">Payment</a> (minimal changes from live)
+        </p>
+
+        <p><span class="govuk-!-font-weight-bold">Subpage - Order details</span>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1paymenthistoryorderdetails?casetype=divorce&.html">Divorce</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1paymenthistoryorderdetails?casetype=probate&.html">Probate</a>
+        </p>
+
+        <p><span class="govuk-!-font-weight-bold">Search for a fee</span>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1feesearch.html">Default</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1feesearchreturn?casetype=divorce&.html">Divorce results</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1feesearchreturn?casetype=probate&.html">Probate results</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1feesearchreturn?search=copy&.html">Copy results</a>
+        </p>
+
+        <p><span class="govuk-!-font-weight-bold">How many copies?</span>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1quanityofcopies.html">Default</a>
+        </p>
+
+        <p><span class="govuk-!-font-weight-bold">Summary/ basket</span>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1feebasket?casetype=divorce&remission=false&.html">Divorce</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1feebasket?casetype=probate&remission=false&.html">Probate</a>
+        </p>
+
+        <p><span class="govuk-!-font-weight-bold">Case transactions</span>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1casetransactions?casetype=divorce&unallocated=false&.html">Divorce</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1casetransactions?casetype=divorce&unallocated=true&.html">Divorce- Unallocated payment</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1casetransactions?casetype=probate&unallocated=false&.html">Probate</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1casetransactions?casetype=probate&unallocated=true&.html">Probate- Unallocated payment</a>
+        </p>
+
+        <p><span class="govuk-!-font-weight-bold">Allocation confirmation</span>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1paybubbleconfirmallocation?casetype=divorce&shortfall=false&.html">Divorce</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1paybubbleconfirmallocation?casetype=probate&shortfall=false&.html">Probate</a>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/orders/pages/v1paybubbleconfirmallocation?casetype=divorce&shortfall=true&.html">Shortfall</a>
+        </p>
+
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2 class="govuk-heading-m">Discovery</h2>
+        <h3 class="govuk-heading-m">CCD</h3>
+        <p><a href="orders/pages/discoverycaseinccd.html">Case file</a></p>
+        <p><a href="orders/pages/discoverypaymenthistory.html">Payment history tab</a></p>
+        <p><a href="orders/pages/discoverypaymenthistorydetails.html">Payment history tab - payment breakdown</a></p>
+
+
+
+
+
+
+<!--
+<p><a target="_blank" href="/pbaandcardpayment/solicitor/caselist?caselist=divorce&caseadded=false&hideone=false&hidetwo=false&hidethree=false&">Divorce</a></p>
+->>
+
+<!--
+<h2 class="govuk-heading-m">
+  User testing
+</h2>
+
+<p><a target="_blank" href="/pbaandcardpayment/solicitor/caselist?caselist=divorce&caseadded=false&hideone=true&hidetwo=true&hidethree=true&retry=false&pbacount=0&">Scenario 1a</a></p>
+
+<p><a target="_blank" href="/pbaandcardpayment/solicitor/caselist?caselist=divorce&caseadded=false&hideone=true&hidetwo=true&hidethree=true&retry=false&pbacount=1&">Scenario 1b</a></p>
+
+<p><a target="_blank" href="/pbaandcardpayment/solicitor/caselist?caselist=divorce&caseadded=false&hideone=true&hidetwo=true&hidethree=true&retry=false&pbacount=2&">Scenario 1c</a></p>
+
+<p><a target="_blank" href="/pbaandcardpayment/solicitor/emailbalanceerror">Scenario 2 & 3 - Email 1</a></p>
+
+<p><a target="_blank" href="/pbaandcardpayment/solicitor/emailpayserviceerror">Scenario 4 - Email 2</a></p>
+
+
+<p><a target="_blank" href="/pbaandcardpayment/solicitor/caselist?caselist=divorce&caseadded=false&hideone=false&hidetwo=true&hidethree=true&">Pay</a></p>
+
+
+<p><a target="_blank" href="https://idamprototypeusertesting.herokuapp.com/signinstart">Scenario 5</a>
+  <br>Username: &nbsp;&nbsp;hmctsux
+  <br>Password: &nbsp;&nbsp;&nbsp;trees</p>
+
+<p><a target="_blank" href="https://idamprototypeusertesting.herokuapp.com/emailcode">Scenario 5a - email</a></p>
+-->
+{% endblock %}

@@ -1,0 +1,256 @@
+{% extends "../layoutpaybubble2021.html" %}
+{% block pageTitle %}
+PayBubble
+{% endblock %}
+{% block content %}
+
+<div style="width: 1200px;  margin: auto;">
+
+
+    <a href="v1feebasket.html" class="govuk-back-link">Back</a>
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-l">Confirm allocation</h1>
+
+    {% if data.shortfall != 'true'  %}
+        <table class="govuk-table"  style="width:30%; margin-bottom: 20px;">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col" style="width:400px;"></th>
+                <th class="govuk-table__header" scope="col" style="width:150px; text-align: right;"></th>
+                <!-- <th class="govuk-table__header" scope="col">Payment asset number (DCN)</th>-->
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+            {% if data.casetype == "divorce" %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Payment allocated</td>
+                    <td class="govuk-table__cell" style="text-align: right">£550.00</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Total payment request</td>
+                    <td class="govuk-table__cell" style="text-align: right">£550.00</td>
+                </tr>
+
+
+            {% elif data.casetype == "probate" %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Payment allocated</td>
+                    <td class="govuk-table__cell" style="text-align: right">£221.00</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Total payment request</td>
+                    <td class="govuk-table__cell" style="text-align: right">£221.00</td>
+                </tr>
+            {% endif %}
+
+            </tbody>
+        </table>
+
+        <br>
+        <p>Payment amount matches payment request amount.</p>
+        <br>
+
+    <div>
+        <a href="v1casetransactions?unallocated=false&needspaying=false&allocated=true&billonaccount=true&paymentmade=true&" class="govuk-button ">Confirm</a>
+    </div>
+
+    {% else %}
+    <!-- short fall page  -->
+        <table class="govuk-table"  style="width:30%; margin-bottom: 20px;">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col" style="width:400px;"></th>
+                <th class="govuk-table__header" scope="col" style="width:150px; text-align: right;"></th>
+                <!-- <th class="govuk-table__header" scope="col">Payment asset number (DCN)</th>-->
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+            {% if data.casetype == "divorce" %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Payment allocated</td>
+                <td class="govuk-table__cell" style="text-align: right">£550.00</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Total</td>
+                <td class="govuk-table__cell" style="text-align: right">£566.00</td>
+            </tr>
+
+
+            {% elif data.casetype == "probate" %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Payment allocated</td>
+                <td class="govuk-table__cell" style="text-align: right">£205.00</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Total</td>
+                <td class="govuk-table__cell" style="text-align: right">£221.00</td>
+            </tr>
+            {% endif %}
+
+            </tbody>
+        </table>
+
+        <div class="govuk-inset-text">
+            Payment does not match request amount.
+            <br><br>
+            £16.00 left to pay.
+        </div>
+
+
+
+    <div class="govuk-form-group govuk-!-margin-top-0">
+        <label class="govuk-heading-s govuk-!-margin-bottom-1" >
+            Provide a reason
+        </label>
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="contact-222" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                        <label class="govuk-label govuk-radios__label" for="contact-222">
+                            Incorrect payment
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-radios__label" for="contact">
+                            Help with Fees (HWF) application declined
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+                        <label class="govuk-label govuk-radios__label" for="contact-3">
+                            Other
+                        </label>
+                    </div>
+                    <!--
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" >
+                                Enter a number
+                            </label>
+                            <input class="govuk-input" style="width: 40px;" type="text">
+
+                        </div>
+                    </div>
+                    -->
+
+            </fieldset>
+        </div>
+    </div>
+
+
+    <!--
+    <div class="govuk-form-group govuk-!-margin-top-0">
+        <label class="govuk-heading-s govuk-!-margin-bottom-1" >
+            Provide an explanatory note
+        </label>
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="contactzz" name="contactzz" type="radio" value="email" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-radios__label" for="contact">
+                            Help with Fees (HWF) application declined
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="contact-222zz" name="contactzz" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                        <label class="govuk-label govuk-radios__label" for="contact-222zz">
+                            Incorrect payment received
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="contact-3zz" name="contactzz" type="radio" value="text" data-aria-controls="conditional-contact-3zz">
+                        <label class="govuk-label govuk-radios__label" for="contact-3zz">
+                            Other
+                        </label>
+                    </div>
+                    <!--
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3"zz>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" >
+                                Enter a number
+                            </label>
+                            <input class="govuk-input" style="width: 40px;" type="text">
+
+                        </div>
+                    </div>
+
+
+            </fieldset>
+        </div>
+    </div>
+-->
+
+
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="address-county">
+            Your name
+        </label>
+        <input class="govuk-input govuk-!-width-one-third" id="address-county" name="address-county" type="text">
+    </div>
+
+
+
+    <br>
+
+    <div>
+        <a href="v1casetransactions?unallocated=false&needspaying=part&allocated=true&billonaccount=true&paymentmade=true&" class="govuk-button ">Confirm</a>
+    </div>
+
+    {% endif %}
+
+
+
+
+
+
+
+    <br>
+
+</div>
+
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+
+    <p style="margin-top: 10px; margin-bottom: 5px;">Service</p>
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select a service</option>
+
+        <option value="casetype=divorce&"
+                {% if data.casetype == 'divorce'  %}selected{% endif %}
+        >Divorce</option>
+
+        <option value="casetype=probate&"
+                {% if data.casetype == 'probate' %}selected{% endif %}
+        >Probate</option>
+    </select>
+
+
+
+    <p style="margin-top: 10px; margin-bottom: 5px;">Shortfall</p>
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select a state</option>
+
+        <option value="shortfall=false&"
+                {% if data.shortfall != 'true'  %}selected{% endif %}
+        >Payment matches</option>
+
+        <option value="shortfall=true&"
+                {% if data.shortfall == 'true' %}selected{% endif %}
+        >Shortfall</option>
+    </select>
+
+
+</form>
+
+{% endblock %}

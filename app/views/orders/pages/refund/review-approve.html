@@ -1,0 +1,214 @@
+{% extends "../../layoutccd.html" %}
+
+{% block pageTitle %}
+    Case details
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Review refund details</h1>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Payment to be refunded"
+            },
+            value: {
+              text: "RF-6846-1682-8741-3548 (£550.00)"
+            }
+          },
+          {
+            key: {
+              text: "Fee"
+            },
+            value: {
+              text: "FEE0387 - Application for divorce (£500.00)"
+            }
+          } if data['state'] == 'remission',
+          {
+            key: {
+              text: "Reason for refund"
+            },
+            value: {
+              html: "Retrospective remission" if data['state'] == 'remission' else 'Case withdrawn'
+            }
+          },
+          {
+            key: {
+              text: "Amount to be refunded"
+            },
+            value: {
+              html: '£500.00' if data['state'] == 'remission' else '£550.00'
+            }
+          },
+          {
+            key: {
+              text: "Help with fees or remission reference"
+            },
+            value: {
+              html: 'HWF-A1B-23C'
+            }
+          } if data['state'] == 'remission',
+          {
+            key: {
+              text: "Remission reference"
+            },
+            value: {
+              html: 'RM-6841-8461-1654-6812'
+            }
+          } if data['state'] == 'remission',
+          {
+            key: {
+              text: "Submitted by"
+            },
+            value: {
+              html: 'Steve Smith'
+            }
+          },
+            {
+            key: {
+              text: "Date submitted"
+            },
+            value: {
+              html: '10 July 2021'
+            }
+          }
+        ]
+      }) }}
+
+      <form method="post" action="confirm">
+
+      {% set textHtml %}
+      {{ govukTextarea({
+        id: "contact-by-text",
+        name: "contact-by-text",
+        type: "tel",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Add a reason"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "finalDecision",
+        name: "finalDecision",
+        fieldset: {
+          legend: {
+            text: "What do you want to do with this refund?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "approved",
+            text: "Approve refund",
+            attributes: {
+              onclick: "$('#why-reject').hide();" 
+            }
+          },
+          {
+            value: "rejected",
+            text: "Reject refund",
+            hint: {
+              text: "There is no refund due"
+            },
+            attributes: {
+              onclick: "$('#why-reject').show();" 
+            }
+          },
+          {
+            value: "returned to caseworker",
+            text: "Return to caseworker",
+            hint: {
+              text: "Some information needs correcting"
+            },
+            conditional: {
+              html: textHtml
+            },
+            attributes: {
+              onclick: "$('#why-reject').hide();" 
+            }
+          }
+        ]
+      }) }}
+
+
+    {% set otherReason %}
+    {{ govukInput({
+      id: "other-reason",
+      name: "other-reason",
+      type: "text",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Enter reason"
+      }
+    }) }}
+    {% endset -%}
+
+    <div id="why-reject" style="display:none">
+
+      {{ govukRadios({
+        idPrefix: "refund-reason",
+        name: "refund-reason",
+        fieldset: {
+          legend: {
+            text: "Why are you rejecting this refund?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "remission",
+            text: "No associated payment"
+          },
+          {
+            value: "duplicate",
+            text: "Already refunded"
+          },
+          {
+            value: "details",
+            text: "The case details don’t match the help with fees details"
+          },
+          {
+            value: "evidence",
+            text: "More evidence is required"
+          },
+          {
+            value: "other",
+            text: "Other",
+            conditional: {
+              html: otherReason
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+
+      <input type="hidden" name="type" value="supervisor" />
+
+
+      {{ govukButton({
+        text: "Submit"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

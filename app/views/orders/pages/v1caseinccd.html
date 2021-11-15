@@ -1,0 +1,274 @@
+{% extends "../layoutccd.html" %}
+
+
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class=""  style="display: flex; justify-content: space-between; ">
+
+    <div style="display: flex; ">
+        <p class="">4692-3164-5845-4819: Smith v Smith  &nbsp; </p>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Print
+        </button>
+    </div>
+
+
+    <div style="display: flex; align-items:right" >
+        <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+
+        <select class="govuk-select" id="sort" name="sort">
+            <option value="published" selected>Select action</option>
+            <option value="published" >Submit amended application</option>
+            <option value="published" >Link respondent</option>
+            <option value="published" >Add Note</option>
+            <option value="published" >Upload document</option>
+            <option value="updated" >Stop representing a client</option>
+        </select>
+
+
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+            Go
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+        Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+
+        {% if data['casetype'] != 'civil' %}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#event">
+                History
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="v1caseinccd.html">
+                Petition
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+                AOS
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+                Outcome of Decree Nisi
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+                Documents
+            </a>
+        </li>
+
+        {% else %}
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#">
+                Summary
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#">
+                Claim details
+            </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#event">
+                History
+            </a>
+        </li>
+
+
+        {% endif %}
+
+
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="v1paymenthistory{% if data.state == 'withdrawn' or data.state == 'remission' %}?refunds=true&allocated=true&unallocated=false&scenario=x&remission=full&casetype=civil&pbascenario=false&errorofdata=false&errorofdatapayments=false&nopartyinfooncase=false&billonaccount=true&needspaying=false&{% endif %}">
+                Payment History
+            </a>
+        </li>
+        {% if data.state == 'withdrawn' or data.state == 'remission' or data.state == 'submitted' or data.state == 'approved'  or data.state == 'duplicate' %}
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="service-requests">
+                Service Requests
+            </a>
+        </li>
+        {% endif %}
+
+        {% if data['casetype'] != 'civil' %}
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+                Marriage Certificate
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+
+</div>
+
+<div class="govuk-tabs__panel" id="event" style="display: flex; padding: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px;">
+    <div style="margin-top: 0px; width:52%;">
+        <h2 class="govuk-heading-m">History</h2>
+        <table class="govuk-table" style=" margin-right: 20px;">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Event</th>
+                <th scope="col" class="govuk-table__header">Date</th>
+                <th scope="col" class="govuk-table__header">Author</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body" >
+            {% if data.newcaseselected == 'true' %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="#">Case submitted</a></td>
+                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 3:49:22 PM</td>
+                    <td class="govuk-table__cell">Peter Bach</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="#">Notice of change request</a></td>
+                    <td class="govuk-table__cell" style="text-decoration: underline;">{{ data['todaydate'] }}, {{ data.todaydatetime }}</td>
+                    <td class="govuk-table__cell">Alex Smith</td>
+                </tr>
+                <tr class="govuk-table__row" style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
+                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="">Notice of change confirmed</a></td>
+                    <td class="govuk-table__cell" style="text-decoration: underline;">{{ data['todaydate'] }}, {{ data.todaydatetime }}</td>
+                    <td class="govuk-table__cell">Alex Smith</td>
+                </tr>
+                {% else %}
+                <tr class="govuk-table__row" {% if data.state != 'withdrawn' and data.state != 'remission' and data.state != 'duplicate' %}style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); "{% endif %}>
+                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="#">Case submitted</a></td>
+                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 3:49:22 PM</td>
+                    <td class="govuk-table__cell">Alex Smith</td>
+                </tr>
+            {% endif %} 
+            <!--
+            {% if data.state == 'duplicate' %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="#">Payment received</a></td>
+                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 5:24:56 PM</td>
+                    <td class="govuk-table__cell">Alex Smith</td>
+                </tr>
+                <tr class="govuk-table__row" style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
+                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="#">Payment received</a></td>
+                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 5:24:57 PM</td>
+                    <td class="govuk-table__cell">Alex Smith</td>
+                </tr>
+            {% endif %}
+            -->
+            {% if data.state == 'withdrawn' %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="#">Case withdrawn</a></td>
+                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 5:24:56 PM</td>
+                    <td class="govuk-table__cell">Alex Smith</td>
+                </tr>
+            {% endif %}
+            <!--
+            {% if data.state == 'remission' %}
+                <tr class="govuk-table__row" style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
+                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="#">Remission granted</a></td>
+                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 5:24:56 PM</td>
+                    <td class="govuk-table__cell">Alex Smith</td>
+                </tr>
+            {% endif %}
+            {% if data.result == 'returned' %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="#">Refund submitted</a></td>
+                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 6:28:24PM</td>
+                    <td class="govuk-table__cell">Tim Jones</td>
+                </tr>
+                <tr class="govuk-table__row" style="border-left: 4px solid #005ea5; background-color: rgba(0,94,165,0.2); ">
+                    <td class="govuk-table__cell">&nbsp;&nbsp;<a href="#">Refund returned to caseworker</a></td>
+                    <td class="govuk-table__cell" style="text-decoration: underline;">17 May 2020, 7:35:55 PM</td>
+                    <td class="govuk-table__cell">{% if data.result == 'returned' %}Steve Jones{% else %}Alex Smith{% endif %}</td>
+                </tr>
+
+            {% endif %}
+        -->
+            </tbody>
+        </table>
+    </div>
+    <div style="width:48%; border: 1px solid #bfc1c3; padding:10px; margin-top: 0px; margin-left:20px;" >
+        <h2 class="govuk-heading-m  govuk-!-margin-top-3 govuk-!-margin-bottom-4">Details</h2>
+        <div style="display: flex;">
+            <div style="width: 210px;">
+                <p>Date</p>
+                <p>Author</p>
+                <p>End state</p>
+                <p>Event</p>
+                <p>Summary</p>
+                <p>Comment</p>
+            </div>
+            {% if data.newcaseselected == 'true' %}
+            <div>
+                <p style="text-decoration: underline;">{{ data['todaydate'] }}, {{ data.todaydatetime }}</p>
+                <p>Alex Smith</p>
+                <p>Case transferred to new solicitor</p>
+                <p>Notice of change confirmed</p>
+                <p>-</p>
+                <p>-</p>
+            </div>
+            {% else %}
+            <div>
+                <p style="text-decoration: underline;">17 May 2020, 5:24:57 PM</p>
+                <p>{% if data.result == 'returned' %}Steve Jones{% else %}Alex Smith{% endif %}</p>
+                <p>Solicitor - Awaiting Payment Confirmation</p>
+                <p>{% if data.result == 'returned' %}Refund returned to caseworker{% elseif data.state == 'withdrawn' %}Case withdrawn{% else %}Case submission{% endif %}</p> 
+                <p>-</p>
+                <p>-</p>
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+
+    <p style="margin-top: 10px; margin-bottom: 5px;">Service</p>
+
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select a service</option>
+        <option value="casetype=probate&"{% if data.casetype == 'probate' %}selected{% endif %}>Probate</option>
+        <option value="casetype=divorce&"{% if data.casetype == 'divorce' %}selected{% endif %}>Divorce</option>
+        <option value="casetype=civil&"{% if data.casetype == 'civil' %}selected{% endif %}>Civil</option>
+    </select>
+
+    <p style="margin-top: 10px; margin-bottom: 5px;">State toggle</p>
+
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select orders state</option>
+        <option value="state=&"{% if data.state != 'withdrawn' %}selected{% endif %}>Submitted</option>
+        <option value="state=withdrawn&"{% if data.state == 'withdrawn' %}selected{% endif %}>Withdrawn</option>
+    </select>
+
+</form>
+
+
+
+
+{% endblock %}

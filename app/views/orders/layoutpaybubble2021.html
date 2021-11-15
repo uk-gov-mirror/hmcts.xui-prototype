@@ -1,0 +1,179 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+
+{% extends "govuk/template.njk" %}
+
+{% from "govuk/components/accordion/macro.njk"        import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk"        import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk"      import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"           import govukButton %}
+{% from "govuk/components/character-count/macro.njk"  import govukCharacterCount %}
+{% from "govuk/components/checkboxes/macro.njk"       import govukCheckboxes %}
+{% from "govuk/components/date-input/macro.njk"       import govukDateInput %}
+{% from "govuk/components/details/macro.njk"          import govukDetails %}
+{% from "govuk/components/error-message/macro.njk"    import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk"    import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk"         import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk"      import govukFileUpload %}
+{% from "govuk/components/input/macro.njk"            import govukInput %}
+{% from "govuk/components/inset-text/macro.njk"       import govukInsetText %}
+{% from "govuk/components/panel/macro.njk"            import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk"     import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk"           import govukRadios %}
+{% from "govuk/components/select/macro.njk"           import govukSelect %}
+{% from "govuk/components/skip-link/macro.njk"        import govukSkipLink %}
+{% from "govuk/components/summary-list/macro.njk"     import govukSummaryList %}
+{% from "govuk/components/table/macro.njk"            import govukTable %}
+{% from "govuk/components/tabs/macro.njk"             import govukTabs %}
+{% from "govuk/components/tag/macro.njk"              import govukTag %}
+{% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+          <span class="govuk-header__link govuk-header__link--service-name   govuk-!-margin-bottom-0" >
+            HMCTS PayBubble
+          </span>
+    </div>
+
+
+    <style>
+      .headerlinks {
+        color: white;
+        line-height: 1.25;
+        font-family: nta,Arial,sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 17px;
+        font-weight: bold;
+        margin-bottom:0px;
+        margin-top:5px;
+        margin-right:5px;
+      }
+      .headerlinksindividual:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+
+    <div class="govuk-header__content" align="right">
+
+        <p class="headerlinks"><a href="/orders/pages/v1casetransactions">
+                                    <span class="headerlinksindividual" style="color: white;">Case Transaction</span>
+                               </a> &nbsp;&nbsp;
+                               <span class="headerlinksindividual">Payment history</span> &nbsp;&nbsp;
+                               <span class="headerlinksindividual">Reports</span> &nbsp;&nbsp;
+                               <span class="headerlinksindividual">Logout</span>
+        </p>
+
+    </div>
+
+  </div>
+
+
+</header>
+
+<style>
+  .banner
+  {
+    width:960px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top:8px;
+
+  }
+  .the-phase-tag
+  {
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #005ea5;
+    padding: 2px 5px 0;
+  }
+</style>
+
+      <div  style="width: 960px; margin: auto;">
+        <div class="govuk-phase-banner">
+          <p class="govuk-phase-banner__content">
+            <strong class="govuk-tag govuk-phase-banner__content__tag">
+              beta
+            </strong>
+            <span class="govuk-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+            </span>
+          </p>
+        </div>
+      </div>
+
+  <!-- black header
+  {{ govukHeader({
+      homepageUrl: "/offline-payments/v0-3/index",
+      serviceName: serviceName,
+      serviceUrl: "/offline-payments/v0-3/index",
+      containerClasses: "govuk-width-container"
+    }) }}-->
+{% endblock %}
+
+
+
+{% block main %}
+    <div style="padding: 0px;">
+        {% block beforeContent %}
+        {% endblock %}
+
+        <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %} style="padding-top: 0px; width:960px; margin: auto;">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+{% endblock %}
+
+
+
+
+{% if useAutoStoreData %}
+  {% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/view-data",
+            text: "View data"
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ]
+      }
+    }) }}
+  {% endblock %}
+{% endif %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% endblock %}

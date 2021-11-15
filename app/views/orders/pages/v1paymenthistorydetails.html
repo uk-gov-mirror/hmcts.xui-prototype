@@ -1,0 +1,413 @@
+{% extends "../layoutccd.html" %}
+
+
+
+
+{% block pageTitle %}
+Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class=""  style="display: flex; justify-content: space-between; ">
+
+
+    <div style="display: flex; ">
+        <p class="">4692-3164-5845-4819: Smith v Smith  &nbsp; </p>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Print
+        </button>
+    </div>
+
+
+    <div style="display: flex; align-items:right" >
+        <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+
+        <select class="govuk-select" id="sort" name="sort">
+            <option value="published" selected>Select action</option>
+            <option value="published" >Submit amended application</option>
+            <option value="published" >Link respondent</option>
+            <option value="published" >Add Note</option>
+            <option value="published" >Upload document</option>
+            <option value="updated" >Stop representing a client</option>
+        </select>
+
+
+        <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+            Go
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+        Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+
+        {% if data.casetype == "probate" %}
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="v1caseinccd.html">
+                    Event History
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Stop details
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Documents
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Deceased
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Case details
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Applicant details
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Copies
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Notifications
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Case matches
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item  govuk-tabs__list-item--selected">
+                <a class="govuk-tabs__tab" href="v1paymenthistory.html">
+                    Payment History
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    SOT
+                </a>
+            </li>
+
+
+        {% elseif data['casetype'] != 'civil' %}
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="v1caseinccd">
+                    History
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="v1caseinccd.html">
+                    Petition
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    AOS
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Outcome of Decree Nisi
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                    Documents
+                </a>
+            </li>
+
+        {% else %}
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#">
+                    Summary
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#">
+                    Claim details
+                </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="v1caseinccd">
+                    History
+                </a>
+            </li>
+
+
+        {% endif %}
+
+
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="v1paymenthistory{% if data.state == 'withdrawn' or data.state == 'remission' %}?refunds=true&allocated=true&unallocated=false&scenario=x&remission=full&casetype=civil&pbascenario=false&errorofdata=false&errorofdatapayments=false&nopartyinfooncase=false&billonaccount=true&needspaying=false&{% endif %}">
+                Payment History
+            </a>
+        </li>
+        {% if data.state == 'withdrawn' or data.state == 'remission' or data.state == 'submitted' or data.state == 'approved'  or data.state == 'duplicate' %}
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="service-requests">
+                Service Requests
+            </a>
+        </li>
+        {% endif %}
+
+        {% if data['casetype'] != 'civil' %}
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+                Marriage Certificate
+            </a>
+        </li>
+        {% endif %}
+
+
+    </ul>
+
+</div>
+
+
+
+
+<div style="width: 960px;  margin: auto;">
+
+
+    <a href="v1paymenthistory.html" class="govuk-back-link">Back</a>
+    <br>
+    <br>
+
+    <h2 class="govuk-heading-l">Payment details</h2>
+
+    <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Payment reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+                RC-1858-2367-8368-1978
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Payment amount
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data.paymentdetailsamount }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Payment method
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {% if data.pbascenario == "true" %}
+                    Payment by Account
+                {% else %}
+                    Cash
+                {% endif %}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+
+        {% if data.pbascenario != "true" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Credit
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+        {% endif %}
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Channel
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Online
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Method
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Card
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data['paymentdetailsstatus'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+        </div>
+
+        {% if data.pbascenario != "true" %}
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Allocaton Status
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Allocated
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+        {% endif %}
+
+    </dl>
+
+
+    <br>
+
+    <h3 class="govuk-heading-m">Payment status history</h3>
+
+    <table class="govuk-table" style="width:400px;">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header ">Status</th>
+                <th scope="col" class="govuk-table__header ">Date and time </th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Initiated</td>
+                <td class="govuk-table__cell ">4 March 2021 09:54:09</td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ data['paymentdetailsstatus'] }}</td>
+                <td class="govuk-table__cell">4 March 2021 09:51:48</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    {% if data['paymentdetailsstatus'] == 'Success' %}
+    <br />
+    <p>
+        <a href="refund/reason?refund=adHoc" class="govuk-button govuk-button--secondary">Issue refund</a>
+    </p>
+
+    <br>
+
+    {% endif %}
+
+    {% if data.scenario != '12' and  data.scenario != '21'  and  data.scenario != '22'%}
+
+        <h2 class="govuk-heading-l">Fee and remission details</h2>
+
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Description
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Claim fee
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Fee code
+                </dt>
+                <dd class="govuk-summary-list__value">
+                     FEE0540
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Fee amount
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    £500.00
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Allocated amount
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    £300.00
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+        </dl>
+
+    {% endif %}
+
+<!--
+    {{ govukButton({
+      text: "Refund this payment",
+      classes: "govuk-button--secondary",
+      href: "/orders/pages/refund/reason?refund=adHoc"
+    }) }}
+-->
+
+    <p>
+        <a href="refund/hwf?refund=remission" class="govuk-button govuk-button--secondary">Add remission</a>
+    </p>
+
+</div>
+
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 50px;">
+
+    <p style="margin-top: 20px; margin-bottom: 5px;">PBA toggle</p>
+
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select OFF or ON</option>
+
+        <option value="pbascenario=false&"
+                {% if data.pbascenario == "false" %}selected{% endif %}
+        >PBA OFF</option>
+
+        <option value="pbascenario=true&"
+                {% if data.pbascenario == "true" %}selected{% endif %}
+        >PBA ON</option>
+    </select>
+
+</form>
+
+{% endblock %}

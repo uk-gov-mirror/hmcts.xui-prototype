@@ -1,0 +1,496 @@
+{% extends "../layoutpaybubble2021.html" %}
+{% block pageTitle %}
+  PayBubble
+{% endblock %}
+{% block content %}
+
+
+<main class="govuk-main-wrapper">
+
+        <div style="display:flex; flex-direction:row; justify-content: space-between; width:960px;">
+            <h1 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-6">Case transactions</h1>
+            <p class=" govuk-!-margin-bottom-6" style="align-self: flex-end;">Case reference: 4692-3164-5845-4819</p>
+        </div>
+
+    <!---Case Totals--->
+    <table class="govuk-table custom-description">
+        <thead class="govuk-table__head" id="thisone">
+        <tr class="govuk-table__row custom-description">
+            <th class="govuk-table__header" style=" width:18%; border-bottom: 1px solid white;" scope="col">Total payments</th>
+            <th class="govuk-table__header" style=" width:37%; border-bottom: 1px solid white;text-align:center" scope="col">Unallocated payments</th>
+            <th class="govuk-table__header" style=" width:25%; border-bottom: 1px solid white;" scope="col">Total remissions</th>
+            <th class="govuk-table__header" style=" width:20%; border-bottom: 1px solid white;" scope="col">Amount due</th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+        <tr >
+            {% if data.paymentmade == 'true' %}
+            {% if data.scenario == '11' %}
+            <td class="govuk-table__cell govuk-!-font-size-36" style="border-bottom: 1px solid black; padding-top: 0px;">£250.00</td>
+            {% elif data.scenario == '21' %}
+            <td class="govuk-table__cell govuk-!-font-size-36" style="border-bottom: 1px solid black; padding-top: 0px;">£221.00</td>
+            {% elif data.scenario == '22' %}
+            <td class="govuk-table__cell govuk-!-font-size-36" style="border-bottom: 1px solid black; padding-top: 0px;">£205.00</td>
+            {% else %}
+            <td class="govuk-table__cell govuk-!-font-size-36" style="border-bottom: 1px solid black; padding-top: 0px;">£550.00</td>
+            {% endif %}
+            {% else %}
+            <td class="govuk-table__cell govuk-!-font-size-36" style="border-bottom: 1px solid black; padding-top: 0px;">£0.00</td>
+            {% endif %}
+
+            <td class="govuk-table__cell govuk-!-font-size-36 govuk-!-font-weight-bold" style="border-bottom: 1px solid black;  padding-top: 0px;text-align:center">
+                {% if data.unallocated == 'true' %}
+                <span class="outstanding-amount">1</span>
+                {% else %}
+                <span class="outstanding-amount">0</span>
+                {% endif %}
+            </td>
+
+            <!--  Remissions headliner -->
+            {% if data.paymentmade == 'true' and  data.remission == 'true'  %}
+            {% if data.scenario == '11' %}
+            <td class="govuk-table__cell govuk-!-font-size-36" style="border-bottom: 1px solid black; padding-top: 0px;">£300.00</td>
+            {% endif %}
+            {% else %}
+            <td class="govuk-table__cell govuk-!-font-size-36" style="border-bottom: 1px solid black; padding-top: 0px;">£0.00</td>
+            {% endif %}
+
+
+            {% if data.scenario == '22' and  data.allocated == 'true' and data.paymentmade == 'true' %}
+            <td class="govuk-table__cell govuk-!-font-size-36" style="border-bottom: 1px solid black; padding-top: 0px;">£16.00</td>
+            {% else %}
+            <td class="govuk-table__cell govuk-!-font-size-36" style="border-bottom: 1px solid black; padding-top: 0px;">£0.00</td>
+            {% endif %}
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% if data.errorofdata == "true" %}
+    <h3 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-1">Sorry, there is a problem with the service</h3>
+
+    <p>Payment requests cannot currently be shown. Try again.</p>
+
+
+
+    {% else %}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-7 govuk-!-margin-bottom-1">Payment requests</h3>
+
+    {% if data.billonaccount == "true" %}
+    <table class="govuk-table"  style="width:960px; margin-bottom: 20px;">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col" style="width:13%;">Status</th>
+            <th class="govuk-table__header" scope="col" style="width:10%;text-align: right; padding-right: 50px;">Amount</th>
+            <th class="govuk-table__header" scope="col" style="width:15%; padding-left: 0px;">Party</th>
+            <th class="govuk-table__header" scope="col" style="width:15%;  padding-left:0px; padding-right:0px; ">Request reference</th>
+            <th class="govuk-table__header" scope="col" style="width:32%; padding-left:0px;"></th>
+            <!-- <th class="govuk-table__header" scope="col">Payment asset number (DCN)</th>-->
+        </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+        {% if data.needspaying == "false" %}
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Paid</td>
+            {% if data.casetype == "divorce" %}
+            <td class="govuk-table__cell" style="vertical-align: middle; text-align: right; padding-right: 50px;">£550.00</td>
+            {% elif data.casetype == "probate" %}
+            <td class="govuk-table__cell" style="vertical-align: middle; text-align: right; padding-right: 50px; ">£221.00</td>
+            {% endif %}
+            <td class="govuk-table__cell "  style="text-align: left; padding-left:0px;">Laura Narran</td>
+            <td class="govuk-table__cell" style="vertical-align:middle;  padding-left:0px;  padding-right:0px;">2021-918425346</td>
+
+            <td class="govuk-table__cell "  style="text-align: right; ">
+                <a href="v1paybubbleorderdetails?orderdetailsstatus=Paid&.html">View details</a>
+            </td>
+        </tr>
+        {% else %}
+
+
+
+        <tr class="govuk-table__row">
+            {% if data.needspaying == "true" %}
+            <td class="govuk-table__cell" style="vertical-align:middle">Not paid</td>
+            {% if data.casetype == "divorce" %}
+            <td class="govuk-table__cell" style="vertical-align: middle; text-align: right; padding-right: 50px;">£550.00</td>
+            {% elif data.casetype == "probate" %}
+            <td class="govuk-table__cell" style="vertical-align: middle; text-align: right; padding-right: 50px;">£221.00</td>
+            {% endif %}
+
+            {% elif data.needspaying == "part" %}
+            <td class="govuk-table__cell" style="vertical-align:middle; ">Partially paid</td>
+            {% if data.casetype == "divorce" %}
+            <td class="govuk-table__cell" style="vertical-align: middle; text-align: right; padding-right: 50px;">£50.00</td>
+            {% elif data.casetype == "probate" %}
+            <td class="govuk-table__cell" style="vertical-align: middle; text-align: right; padding-right: 50px;">£3.50</td>
+            {% endif %}
+
+            {% endif %}
+            <td class="govuk-table__cell" style="vertical-align:middle; text-align: left; padding-left: 0px;">Laura Narran</td>
+            <td class="govuk-table__cell" style="vertical-align:middle;  padding-left:0px;  padding-right:0px;">2021-918425346</td>
+
+
+
+            <td class="govuk-table__cell " style="text-align: right;">
+                <div style="width: 100%;  display: flex; flex-direction: row; align-items: flex-end;">
+                    <div class="govuk-!-margin-bottom-1 govuk-!-margin-right-4 " style="margin-left: auto;">
+                        <span><a class="govuk-\!-margin-top-2" href="v1paybubbleorderdetails.html">View details</a></span>
+                    </div>
+                    <div>
+                        {% if data.casetype == "probate" %}
+                        <a href="#" class="unprocessed-button-group govuk-button govuk-button--secondary govuk-!-margin-0">
+                            Take telephone payment</a>
+                        {% else %}
+                        <a target=”_blank” href="v1feebasket?remission=false&unallocated=false&telephonepayment=true&.html" class="unprocessed-button-group govuk-button govuk-button--secondary govuk-!-margin-0">
+                            Take telephone payment</a>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </td>
+
+        </tr>
+
+        {% endif %}
+        </tbody>
+    </table>
+
+    {% if data.casetype == "probate" %}
+    <p><a href="#" class="">Create payment request and pay</a></p>
+    {% else %}
+    <p><a target=”_blank” href="v1feesearch?remission=false&unallocated=false&telephonepayment=true&.html" class="">Create payment request and pay</a></p>
+
+    {% endif %}
+
+
+
+    {% else %}
+    <p class=" govuk-!-margin-bottom-2">No payment requests on this case.</p>
+    <a target=”_blank” href="v1feesearch?remission=false&unallocated=false&.html"
+       class="unprocessed-button-group govuk-button govuk-button--secondary  govuk-!-margin-bottom-0"
+    >Create payment request and pay</a>
+    {% endif %}
+
+    {% endif %}
+
+
+<!--
+        <h3 class="govuk-heading-m  govuk-!-margin-top-7 govuk-!-margin-bottom-0">Fees</h3>
+        <p>No fees on this case.</p>
+-->
+
+
+
+
+    <h3 class="govuk-heading-m  govuk-!-margin-top-7 govuk-!-margin-bottom-0">Payments</h3>
+    {% if data.unallocated == 'true' or data.allocated == 'true' %}
+    <table class="govuk-table"  style="width:100%; margin-bottom: 20px;">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col" style="width:16%">Status</th>
+            <th class="govuk-table__header" scope="col" style="width:10%;text-align: right; padding-right: 50px;">Amount</th>
+            <th class="govuk-table__header" scope="col" style="width:19%;  padding-left:0px;">Date allocated</th>
+            <th class="govuk-table__header" scope="col" style="width:18%;  padding-left:0px;  padding-right:0px;">Request reference</th>
+            <th class="govuk-table__header" scope="col" style="width:37%"></th>
+        </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+        {% if data.unallocated == "true" %}
+
+            {% if data.casetype == "divorce" %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="vertical-align:middle;  border-bottom: 0px; padding-bottom: 0px; ">Unallocated</td>
+                    <td class="govuk-table__cell" style="vertical-align:middle; text-align: right; padding-right: 50px; border-bottom: 0px; padding-bottom: 0px; ">£550.00</td>
+                    <td class="govuk-table__cell" style="vertical-align:middle; border-bottom: 0px; padding-bottom: 0px; "> </td>
+                    <td class="govuk-table__cell" style="vertical-align:middle;  padding-left:0px; border-bottom: 0px; padding-bottom: 0px; "> </td>
+                    <td class="govuk-table__cell" style="text-align: right; border-bottom: 0px; padding-bottom: 0px; ">
+                        <a target=”_blank” href="v1feesearch?remission=false&telephonepayment=false&.html" class="govuk-!-margin-bottom-2 unprocessed-button-group govuk-button govuk-button--secondary  govuk-!-margin-0">Allocate to new payment request</a>
+                        {% if data.billonaccount == "true"  and  data.needspaying != "false"%}
+                            <a target=”_blank” href="v1selectorder.html" class="unprocessed-button-group govuk-button govuk-button--secondary  govuk-!-margin-0">Allocate to existing payment request</a>
+                        {% endif %}
+                    </td>
+                </tr>
+
+            {% elif data.casetype == "probate" %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="vertical-align:middle; border-bottom: 0px; padding-bottom: 0px;">Unallocated</td>
+                    {% if data.scenario == "22" %}
+                        <td class="govuk-table__cell" style="vertical-align:middle; text-align: right; padding-right: 50px; border-bottom: 0px; padding-bottom: 0px; ">£205.00</td>
+                    {% else %}
+                        <td class="govuk-table__cell" style="vertical-align:middle; text-align: right; padding-right: 50px;  border-bottom: 0px; padding-bottom: 0px;">£221.00</td>
+                    {% endif %}
+                    <td class="govuk-table__cell" style="vertical-align:middle;  padding-left:0px; border-bottom: 0px; padding-bottom: 0px;"> </td>
+                    <td class="govuk-table__cell" style="vertical-align:middle;  padding-left:0px; border-bottom: 0px; padding-bottom: 0px;"> </td>
+                    <td class="govuk-table__cell" style="text-align: right;  border-bottom: 0px; padding-bottom: 0px;">
+                        <a target=”_blank” href="v1feesearch?remission=false&telephonepayment=false&.html" class="govuk-!-margin-bottom-2 unprocessed-button-group govuk-button govuk-button--secondary  govuk-!-margin-0">Allocate to new payment request</a>
+                        {% if data.billonaccount == "true" and  data.needspaying != "false" %}
+                            <a target=”_blank” href="v1selectorder.html" class="unprocessed-button-group govuk-button govuk-button--secondary  govuk-!-margin-0">Allocate to existing payment request</a>
+                        {% endif %}
+                    </td>
+                </tr>
+
+
+            {% endif %}
+
+            <!--  more details row  -->
+            <tr class="govuk-table__row margin">
+                    <td colspan="6" class="govuk-table__cell " style="padding-top: 0px;  padding-bottom: 0px;">
+                        <details class="govuk-details govuk-body govuk-!-margin-bottom-0" data-module="govuk-details" >
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    More details and actions
+                                </span>
+                            </summary>
+
+                            <div class="govuk-details__text  govuk-!-margin-bottom-5 " style=" padding-right:0px;">
+                                <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key" style="width: 50%">
+                                            Method
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Cheque
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Payment assest number (DCN)
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            46736141683307160323673217
+                                        </dd>
+                                    </div>
+                                </dl>
+
+                                <div class=" govuk-!-margin-bottom-5">
+                                    <a href="#" class="unprocessed-button-group govuk-button govuk-button--secondary  govuk-!-margin-0">
+                                        Mark as unidentified</a>
+                                </div>
+                                <div>
+                                    <a href="#" class="unprocessed-button-group govuk-button govuk-button--secondary  govuk-!-margin-0">
+                                        Mark as transferred</a>
+                                </div>
+
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+
+        {% endif %}
+
+
+        {% if data.allocated == 'true' %}
+
+
+        {% if data.casetype == "divorce" %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Success</td>
+                {% if data.paymentmade == 'true' %}
+                    {% if data.scenario == '11' %}
+                    <td class="govuk-table__cell" style="vertical-align:middle; text-align: right; padding-right: 50px;">£250.00</td>
+                    {% else %}
+                    <td class="govuk-table__cell" style="vertical-align:middle; text-align: right; padding-right: 50px;">£550.00</td>
+                    {% endif %}
+                {% else %}
+                    {% if data.needspaying == "part" %}
+                    <td class="govuk-table__cell" style="vertical-align:middle; text-align: right; padding-right: 50px;">£500.00</td>
+                    {% else %}
+                    <td class="govuk-table__cell" style="vertical-align:middle; text-align: right; padding-right: 50px;">£550.00</td>
+                    {% endif %}
+                {% endif %}
+                <td class="govuk-table__cell" style="padding-left:0px;">4 March 2021</td>
+                <td class="govuk-table__cell" style="vertical-align:middle;  padding-left:0px;">2021-918425346</td>
+
+                {% if data.scenario == '11' %}
+                    <td class="govuk-table__cell " style="text-align: right;"><a href="v1paybubblepaymenthistorydetails?paymentdetailsamount=£250.00&paymentdetailsstatus=Success&.html">View details</a></td>
+                {% else %}
+                    <td class="govuk-table__cell " style="text-align: right;"><a href="v1paybubblepaymenthistorydetails?paymentdetailsamount=£550.00&paymentdetailsstatus=Success&.html">View details</a></td>
+                {% endif %}
+            </tr>
+
+            {% if data.allocated == 'true' and  data.scenario == 'failedpayment' %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Failed</td>
+                    <td class="govuk-table__cell" style="vertical-align:middle; text-align: right; padding-right: 50px;">£550.00</td>
+                    <td class="govuk-table__cell" style=" padding-left:00px;">4 March 2021</td><!--  <td colspan="7" class="govuk-table__cell govuk-!-width-one-third">No payment recorded</td>  -->
+                    <td class="govuk-table__cell" style=" padding-left:0px;">2021-918425346</td>
+                    <td class="govuk-table__cell " style="text-align: right;"><a href="v1paybubblepaymenthistorydetails?paymentdetailsamount=£550.00&paymentdetailsstatus=Failed&.html">View details</a></td>
+                </tr>
+
+            {% endif %}
+
+
+            {% elif data.casetype == "probate" %}
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Success</td>
+                {% if data.scenario == '22' %}
+                <td class="govuk-table__cell" style="vertical-align:middle; text-align: right; padding-right: 50px;">£205.00</td>
+                {% else %}
+                <td class="govuk-table__cell" style="vertical-align:middle; text-align: right; padding-right: 50px;">£221.00</td>
+                {% endif %}
+
+                <td class="govuk-table__cell" style=" padding-left:0px;">4 March 2021</td><!--  <td colspan="7" class="govuk-table__cell govuk-!-width-one-third">No payment recorded</td>  -->
+                <td class="govuk-table__cell" style="vertical-align:middle;  padding-left:0px;">2021-918425346</td>
+
+                {% if data.scenario == '22' %}
+                <td class="govuk-table__cell " style="text-align: right;"><a href="v1paybubblepaymenthistorydetails?paymentdetailsamount=£205.00&paymentdetailsstatus=Success&.html">View details</a></td>
+                {% else %}
+                <td class="govuk-table__cell " style="text-align: right;"><a href="v1paybubblepaymenthistorydetails?paymentdetailsamount=£221.00&paymentdetailsstatus=Success&.html">View details</a></td>
+                {% endif %}
+            </tr>
+            {% endif %}
+        {% endif %}
+        </tbody>
+    </table>
+
+    {% else %}
+    <p>No payments.</p>
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--
+        <h3 class="govuk-heading-m  govuk-!-margin-top-7 govuk-!-margin-bottom-0">Remissions</h3>
+        {% if data.remission != 'true'  %}
+            <p>No remissions on this case.</p>
+        {% else %}
+            {% if data.paymentmade == 'true' %}
+                <table class="govuk-table"  style="width:100%; margin-bottom: 20px;">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-table__header" scope="col" style="width:20%">Reference</th>
+                            <th class="govuk-table__header" scope="col" style="width:15%; text-align: right; padding-right: 50px;">Amount</th>
+                            <th class="govuk-table__header" scope="col" style="width:30%; padding-left:50px;">Date added</th>
+                            <th class="govuk-table__header" scope="col" style="width:35%"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                        {% if data.scenario == '11' %}
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">HWF-1A2-B3C</td>
+                                <td class="govuk-table__cell"  style="vertical-align:middle; text-align: right; padding-right: 50px;">£300.00</td>
+                                <td class="govuk-table__cell" style=" padding-left:50px;">4 March 2021</td><!--  <td colspan="7" class="govuk-table__cell govuk-!-width-one-third">No payment recorded</td>
+                                <td class="govuk-table__cell " style="text-align: right;"><a href="#">View details</a></td>
+                            </tr>
+                        {% else %}
+                        {% endif %}
+
+                    </tbody>
+                </table>
+            {% else %}
+            {% endif %}
+        {% endif %}
+        -->
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+</main>
+
+
+<form method="post"  action="#" class="for4" style=" float: left; margin-top: 40px;">
+
+    <p style="margin-top: 0px; margin-bottom: 0px;">Service</p>
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+        <option value="">Select a service</option>
+
+        <option value="casetype=divorce&"
+                {% if data.casetype == 'divorce'  %}selected{% endif %}
+        >Divorce</option>
+
+        <option value="casetype=probate&"
+                {% if data.casetype == 'probate' %}selected{% endif %}
+        >Probate</option>
+    </select>
+
+
+
+    <p style="margin-top: 5px; margin-bottom: 5px;">Orders toggle</p>
+
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+        <option value="">Select orders state</option>
+
+        <option value="billonaccount=true&needspaying=true&"
+                {% if data.billonaccount == 'true' and  data.needspaying == 'true' %}selected{% endif %}
+        >Orders ON - Needs paying</option>
+
+        <option value="billonaccount=true&needspaying=part&"
+                {% if data.billonaccount == 'true'  and  data.needspaying == 'part' %}selected{% endif %}
+        >Orders ON - Part paid</option>
+
+        <option value="billonaccount=true&needspaying=false&"
+                {% if data.billonaccount == 'true'  and  data.needspaying == 'false' %}selected{% endif %}
+        >Orders ON - Paid</option>
+
+        <option value="billonaccount=false&"
+                {% if data.billonaccount == 'false' %}selected{% endif %}
+        >Orders OFF</option>
+
+
+    </select>
+
+
+    <p style="margin-top: 10px; margin-bottom: 5px;">Payment state</p>
+
+    <select style="height:25px;" onchange="window.location.href='?'+this.value">
+
+        <option value="">Select a state</option>
+
+        <option value="allocated=false&unallocated=true&scenario=x&"
+                {% if  data.unallocated == 'true' and  data.allocated == 'false' %}selected{% endif %}
+        >Unallocated payment only</option>
+
+        <option value="allocated=true&unallocated=false&scenario=x&"
+                {% if data.unallocated == 'false' and  data.allocated == 'true' %}selected{% endif %}
+        >Allocated payment only</option>
+
+        <option value="allocated=true&unallocated=true&scenario=failedpayment&"
+                {% if  data.unallocated == 'true' and  data.allocated == 'true' %}selected{% endif %}
+        >Both payments</option>
+
+        <option value="allocated=false&unallocated=false&scenario=x&"
+                {% if  data.unallocated == 'false' and  data.allocated == 'false' %}selected{% endif %}
+        >No payments</option>
+
+    </select>
+
+
+</form>
+
+{% endblock %}

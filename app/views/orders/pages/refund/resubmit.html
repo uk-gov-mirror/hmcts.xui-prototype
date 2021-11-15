@@ -1,0 +1,61 @@
+{% extends "../../layoutccd.html" %}
+
+{% block pageTitle %}
+    Case details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <h1 class="govuk-heading-l">Review and resubmit refund</h1>
+
+    <br />
+
+    {{ govukRadios({
+      idPrefix: "where-do-you-live",
+      name: "where-do-you-live",
+      fieldset: {
+        legend: {
+          text: "Are you sure you want to resubmit the refund without making any changes?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "england",
+          text: "Yes"
+        },
+        {
+          value: "scotland",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Previous",
+          href: '../refund',
+          classes: "govuk-button--secondary"
+        }) }}
+        {{ govukButton({
+          href: 'confirm',
+          text: "Continue"
+        }) }}
+    </div>
+
+    <p>
+       <a href="../v1paymenthistory">Cancel</a>
+    </p>
+
+
+
+{% endblock %}

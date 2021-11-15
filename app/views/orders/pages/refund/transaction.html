@@ -1,0 +1,141 @@
+{% extends "../../layoutccd.html" %}
+
+{% block pageTitle %}
+    Case details
+{% endblock %}
+
+
+{% block content %}
+
+
+<div style="min-width: 960px; max-width: 1860px;  margin: 0 30px;">
+
+  <form action="check-and-send" method="post">
+
+    <h1 class="govuk-heading-l">Process {% if data['refund'] == 'remission' %}remission{% else %}refund{% endif %}</h1>
+
+    <h2 class="govuk-heading-m">#4692-3164-5845-4819</h2>
+
+    <br />
+
+
+    {% if data['refund'] != 'adHoc' and data['refund'] != 'remission' %}
+    
+    <h2 class="govuk-heading-m">Which payment are you refunding?</h2>
+
+        <table class="govuk-table"  style="width:960px; margin-bottom: 20px;">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col" style="width:23%; padding-left: 55px">Reference</th>
+                    <th class="govuk-table__header" scope="col" style="width:5%; padding-right: 50px;">Status</th>
+                    <th class="govuk-table__header" scope="col" style="width:5%; text-align: right; padding-right: 50px;">Amount</th>
+                    <th class="govuk-table__header" scope="col" style="width:15%;  padding-left:0px; padding-right:0px; ">Date</th>
+                    <!-- <th class="govuk-table__header" scope="col">Payment asset number (DCN)</th>-->
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="vertical-align: middle;">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live1" name="where-do-you-live" type="radio" value="550" onclick="$('#how-much-container h1').text('Do you want to refund the full £550?'); $('#how-much-container').show();">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live1">
+                              RC-8368-2367-1858-4562  
+                            </label>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell" style="vertical-align: middle; padding-right: 50px;">Success</td>
+                    <td class="govuk-table__cell" style="vertical-align: middle; text-align: right; padding-right: 50px;">£550.00</td>
+                    <td class="govuk-table__cell" style="vertical-align: middle; text-align: left; padding-left:0px;">4 March 2021</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="vertical-align: middle;">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live2" name="where-do-you-live" type="radio" value="210" onclick="$('#how-much-container h1').text('Do you want to refund the full £210?'); $('#how-much-container').show();">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live2">
+                              RC-1858-2367-8368-1978
+                            </label>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell" style="vertical-align: middle; padding-right: 50px;">Success</td>
+                    <td class="govuk-table__cell" style="vertical-align: middle; text-align: right; padding-right: 50px;">£210.00</td>
+                    <td class="govuk-table__cell" style="vertical-align: middle; text-align: left; padding-left:0px;">6 March 2021</td>
+                </tr>
+            </tbody>
+        </table>
+
+      {% endif %}
+
+        {% set setAmount %}
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="amount">
+            {% if data['refund'] == 'remission' %}Enter the remission amount{% else %}How much do you want to refund?{% endif %}
+            </label>
+
+            <div id="amount-currency" class="govuk-visually-hidden">in pounds</div>
+                <div class="hmcts-currency-input">
+                <div class="hmcts-currency-input__symbol" aria-hidden="true">£</div>
+                <input class="govuk-input govuk-input--width-10" id="amount" name="amount" type="text" aria-describedby="amount-currency " pattern="[0-9]*">
+            </div>
+
+        </div> 
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "how-much",
+          name: "how-much",
+          fieldset: {
+            attributes: {
+                id: "how-much-container",
+                style: 'display: block' if data['refund'] == 'adHoc' or data['refund'] == 'remission' else 'display: none'
+            },
+            legend: {
+              text: "Do you want to give a full remission of £550?" if data['refund'] == 'remission' else 'Do you want to refund the full £550?',
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l" if data['refund'] == 'adHoc' else "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No",
+              conditional: {
+                html: setAmount
+              }
+            }
+          ]
+        }) }}
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Previous",
+          href: '../refund',
+          classes: "govuk-button--secondary"
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+    </div>
+  </form>
+
+    <p>
+       <a href="../v1paymenthistory">Cancel</a>
+    </p>
+
+    <br>
+    <br>
+
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

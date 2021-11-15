@@ -1,0 +1,123 @@
+{% extends "../../layoutccd.html" %}
+{% block pageTitle %}
+  Case details
+{% endblock %}
+{% block content %}
+
+<div style="min-width: 960px; max-width: 1860px;  margin: 0 30px;">
+  <h1 class="govuk-heading-l">Issue refund</h1>
+  <h2 class="govuk-heading-m">Case reference: 4692-3164-5845-4819</h2>
+  <span id="how-contacted-conditional-hint" class="govuk-hint">
+    Payment reference: xxx-xxx-xxx-xxx
+  </span>
+  <h3 class="govuk-heading-s">Select fees to be refunded</h3>
+  <!---TABLE--->
+  <div class="govuk-!-margin-top-3">
+    <table class="govuk-table  govuk-!-margin-bottom-2">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col" style="width: 40px;">Select</th>
+          <th class="govuk-table__header" scope="col" style="width: 250px;">Fee description</th>
+          <th class="govuk-table__header" scope="col" style="width: 60px; text-align: left;">Fee Amount</th>
+          <th class="govuk-table__header" scope="col" style="width: 60px; text-align: left;">Amount paid</th>
+          <th class="govuk-table__header" scope="col" style="width: 200px;">Amount to be refunded</th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes govuk-checkboxes--large" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="item-1" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="item-1">
+                  <span style=display:none>Select</span>
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="govuk-table__cell">Personal Application for grant of Probate</td>
+          <td class="govuk-table__cell"  style="text-align: left;">£215.00</td>
+          <td class="govuk-table__cell"  style="text-align: left;">£225.00</td>
+          <td class="govuk-table__cell" scope="row" style="text-align: center, margin-left:0px;">
+            <div class="govuk-form-group">
+              <label for="event-name">
+                <span style="display:none">
+                  What is the name of the event?
+                </span>
+              </label>
+              <input class="govuk-input" id="event-name" name="event-name" type="text" style="width: 90px; text-align:center" value="0">
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes govuk-checkboxes--large" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="item-3" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="item-3">
+                  <span style=display:none>Select</span>
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="govuk-table__cell">Copy of a document (for each copy) x 4</td>
+          <td class="govuk-table__cell"  style="text-align: left;">£6.00</td>
+          <td class="govuk-table__cell"  style="text-align: left;">£6.00</td>
+          <td class="govuk-table__cell" scope="row" style="text-align: center, margin-left:0px;">
+            <div class="govuk-form-group">
+              <label for="event-name">
+                <span style="display:none">
+                  What is the name of the event?
+                </span>
+              </label>
+              <input class="govuk-input" id="event-name" name="event-name" type="text" style="width: 90px; text-align:center" value="0">
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes govuk-checkboxes--large" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="item-3" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="item-3">
+                  <span style=display:none>Select</span>
+                </label>
+              </div>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            Copy of a document (for each copy) x 4<br>
+          </td>
+          <td class="govuk-table__cell"  style="text-align: left;">£6.00</td>
+          <td class="govuk-table__cell"  style="text-align: left;">£6.00</td>
+          <td class="govuk-table__cell" scope="row" style="text-align: center, margin-left:0px;">
+            <div class="govuk-form-group">
+              <label for="event-name">
+                <span style="display:none">
+                  What is the name of the event?
+                </span>
+              </label>
+              <input class="govuk-input" id="event-name" name="event-name" type="text" style="width: 90px; text-align:center" value="0">
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Previous",
+      href: 'transaction',
+      classes: "govuk-button--secondary"
+    }) }}
+    {{ govukButton({
+      href: 'check-and-send',
+      text: "Continue"
+    }) }}
+  </div>
+  <p>
+    <a href="../v1paymenthistory">Cancel</a>
+  </p>
+</div>
+{% endblock %}

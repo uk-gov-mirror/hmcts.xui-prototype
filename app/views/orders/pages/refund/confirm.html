@@ -1,0 +1,62 @@
+{% extends "../../layoutccd.html" %}
+
+{% block pageTitle %}
+    Case details
+{% endblock %}
+
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['type'] == 'supervisor' %}
+
+      {{ govukPanel({
+        titleText: "Refund " + data['finalDecision']
+      }) }}
+
+      {% elseif data['refund'] == 'remission' %}
+
+      {{ govukPanel({
+        titleText: "Remission added",
+        html: "<p class=\"govuk-body\" style=\"color: white\"><strong>Refund reference: RF-8368-2367-1858-4562</strong></p>" if data['paymentdetailsstatus'] != 'Failed'
+      }) }}
+
+      {% if data['paymentdetailsstatus'] != 'Failed' %}
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        A refund request for £250 has been created and will be passed to a team leader to approve.
+      </p>
+      {% endif %}
+
+      {% else %}
+
+      {{ govukPanel({
+        titleText: "Refund submitted",
+        html: "<p class=\"govuk-body\" style=\"color: white\"><strong>Refund reference: RF-8368-2367-1858-4562</strong></p>"
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        A refund request for £550 has been passed to a team leader to approve.
+      </p>
+
+      {% endif %}
+
+
+
+      <p class="govuk-body">
+
+      {% if data['type'] == 'supervisor' %}
+        <a href="/orders/pages/v1caseinccd?result=approved" class="govuk-link">Return to case</a>
+
+      {% else %}
+        <a href="/orders/pages/v1caseinccd?result=submitted" class="govuk-link">Return to case</a>
+
+      {% endif %}
+      </p>
+    </div>
+  </div>
+{% endblock %}
