@@ -46,7 +46,7 @@
                   What is the name of the event?
                 </span>
               </label>
-              <input class="govuk-input" id="event-name" name="event-name" type="number" style="width: 90px; text-align:center" value="hhhh">
+              <input class="govuk-input" id="event-name" name="event-name" type="text" style="width: 90px; text-align:center" value="£0">
             </div>
           </td>
         </tr>
@@ -108,16 +108,16 @@
   <div class="govuk-button-group">
     {{ govukButton({
       text: "Previous",
-      href: 'transaction',
+      href: '',
       classes: "govuk-button--secondary"
     }) }}
     {{ govukButton({
-      href: 'check-and-send',
+      href: '',
       text: "Continue"
     }) }}
   </div>
   <p>
-    <a href="../v1paymenthistory">Cancel</a>
+    <a href="">Cancel</a>
   </p>
 </div>
 {% endblock %}
