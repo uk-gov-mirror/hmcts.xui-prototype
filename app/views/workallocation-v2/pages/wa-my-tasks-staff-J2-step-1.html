@@ -1,0 +1,79 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+My work
+{% endblock %}
+{% block content %}
+<style media="screen">
+  .govuk-width-container {
+    max-width: 95%;
+  }
+</style>
+<div class="hmcts-page-heading">
+  <div class="hmcts-page-heading__title">
+    <h1 class="govuk-heading-xl">My work</h1>
+  </div>
+</div>
+<p>Access tasks and cases.</p>
+{{ govukButton({
+  text: "Show work filter",
+  classes: "govuk-button--secondary",
+  href: ""
+}) }}
+<div class="hmcts-scrollable-pane">
+  <div class="hmcts-scrollable-pane__wrapper">
+    <nav class="hmcts-sub-navigation">
+      <ul class="hmcts-sub-navigation__list">
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" aria-current="page" href="">
+            My tasks
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="wa-available-tasks-staff-J2-step-2c-T1">
+            Available tasks
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="">
+            My cases
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="">
+            My access
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <p class="govuk-body">Displaying <strong>1</strong> of <strong>1</strong> tasks</p>
+    <table class="govuk-table ">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case name</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Location</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 25px;" aria-sort="none"></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task created</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: 100px;" aria-sort="none"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="/workallocation/pages/wa-pj">Lacey-May Sanders	</a></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Manage administration requests</a></td>
+          <td class="govuk-table__cell">21 March 2022</td>
+          <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}

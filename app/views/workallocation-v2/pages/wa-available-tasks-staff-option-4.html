@@ -1,0 +1,180 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+My work
+{% endblock %}
+{% block content %}
+<div class="hmcts-page-heading">
+  <div class="hmcts-page-heading__title">
+    <h1 class="govuk-heading-xl">My work</h1>
+  </div>
+</div>
+<p>Access tasks and cases.</p>
+{{ govukButton({
+  text: "Show work filter",
+  classes: "govuk-button--secondary",
+  href: ""
+}) }}
+<div class="hmcts-scrollable-pane">
+  <div class="hmcts-scrollable-pane__wrapper">
+    <nav class="hmcts-sub-navigation">
+      <ul class="hmcts-sub-navigation__list">
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="wa-mytasks-staff">
+            My tasks
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" aria-current="page" href="wa-available-tasks-staff">
+            Available tasks
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="wa-mycases-staff">
+            My cases
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="wa-myaccess-staff">
+            My access
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <p class="govuk-body">Displaying <strong>5</strong> of <strong>5</strong> tasks</p>
+    <table class="govuk-table ">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case name</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 110px;" aria-sort="none"><button type="button" data-index="1">Task warnings</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 130px;" aria-sort="none"><button type="button" data-index="1">Due date</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: 130px;" aria-sort="none"><button type="button" data-index="1">Hearing date</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Priority</button></th>
+          <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: 100px;" aria-sort="none"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Lacey-May Sanders</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Allocate a hearing judge</td>
+          <td class="govuk-table__cell">
+            22 July 2022
+          </td>
+          <td class="govuk-table__cell">
+            29 Aug 2022
+          </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">    {{govukTag({
+            text: "high",
+            classes: "govuk-tag--red"
+          })}}</td>
+          <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+            Olivia-Rose Olsen
+            <br>
+            <span class="hmcts-badge hmcts-badge--red">Urgent</span>
+          </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review respondent evidence</td>
+          <td class="govuk-table__cell">
+            23 July 2022
+          </td>
+          <td class="govuk-table__cell">
+            29 July 2022
+          </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+            {{govukTag({
+            text: "high",
+            classes: "govuk-tag--red"
+          })}}
+          </td>
+          <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">John Pickering</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">EEA</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+            <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" path
+              style="fill: black">
+              <title>This case has more than one task. Review needed.</title>
+              <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+            </svg>
+          </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Create case summary</td>
+          <td class="govuk-table__cell">
+            24 July 2022
+          </td>
+          <td class="govuk-table__cell">
+            25 Aug 2022
+          </td>
+          <td class="govuk-table__cell">
+            {{govukTag({
+            text: "medium",
+            classes: "govuk-tag--yellow"
+            })}}
+          </td>
+          <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Neha Venkatanarasimharaj</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">HR</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review appellant case</td>
+          <td class="govuk-table__cell">24 July 2022</td>
+          <td class="govuk-table__cell">
+            29 Aug 2022
+          </td>
+          <td class="govuk-table__cell">
+            {{govukTag({
+            text: "medium",
+            classes: "govuk-tag--yellow"
+            })}}
+          </td>
+          <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+            Hudson Remi
+            <br>
+            <span class="hmcts-badge hmcts-badge--red">Urgent</span>
+          </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">HR</td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" path
+              style="fill: black">
+              <title>This case has more than one task. Review needed.</title>
+              <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+            </svg>
+          </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Review application decision</td>
+          <td class="govuk-table__cell">25 July 2022</td>
+          <td class="govuk-table__cell">
+            29 Aug 2022
+          </td>
+          <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+            {{govukTag({
+            text: "low",
+            classes: "govuk-tag--grey"
+            })}}
+          </td>
+          <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}

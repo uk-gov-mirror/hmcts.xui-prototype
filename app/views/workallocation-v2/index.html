@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">
+      Work allocation prototype
+    </h1>
+    <h2 class="govuk-heading-l">
+      Last updated (25/04/22)
+    </h2>
+
+    <!-- My work -->
+    <!-- <p>
+      <a target="_blank" href="/workallocation/pages/wa-available-tasks-staff-J1-step-1">
+        Journey 1
+      </a>
+    </p>
+    <p>
+      <a target="_blank" href="/workallocation/pages/wa-available-tasks-staff-J2-step-1">
+        Journey 2
+      </a>
+    </p> -->
+
+    <!-- All work -->
+    <p>
+      <a target="_blank" href="/workallocation/pages/wa-all-work">
+        Journey 1
+      </a>
+    </p>
+    <p>
+      <a target="_blank" href="/workallocation/pages/wa-all-work-J2">
+        Journey 2
+      </a>
+    </p>
+
+  </div>
+
+</div>
+{% endblock %}

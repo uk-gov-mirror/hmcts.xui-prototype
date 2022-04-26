@@ -1,0 +1,343 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff-all-work.html" %}
+{% endif %}
+{% block pageTitle %}
+My work
+{% endblock %}
+{% block content %}
+<style media="screen">
+  .govuk-width-container {
+    max-width: 95%;
+  }
+</style>
+<div class="hmcts-page-heading">
+  <div class="hmcts-page-heading__title">
+    <h1 class="govuk-heading-xl">All work</h1>
+  </div>
+</div>
+<p>View and manage all tasks and cases.</p>
+<div class="hmcts-scrollable-pane">
+  <div class="hmcts-scrollable-pane__wrapper">
+    <nav class="hmcts-sub-navigation">
+      <ul class="hmcts-sub-navigation__list">
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" aria-current="page" href="wa-available-tasks-staff">
+            Tasks
+          </a>
+        </li>
+        <li class="hmcts-sub-navigation__item">
+          <a class="hmcts-sub-navigation__link" href="">
+            Cases
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="hmcts-filter-layout">
+      <div class="hmcts-filter-layout__filter" style="background-color: #f3f2f1;">
+        <div class="hmcts-filter__content">
+          <div class="hmcts-filter__options">
+            <div>
+              <label class="govuk-heading-m" for="sort">
+                Service
+              </label>
+              <select class="govuk-select" id="sort" name="sort" style="width:100%">
+                <option value="published" selected>Select a service</option>
+                <option value="updated">Immigration and Asylum</option>
+                <option value="views">Social security and child support</option>
+                <option value="comments">Online Money Claims Services</option>
+              </select>
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+              <p class="govuk-heading-m">Select a location</p>
+              <div class="govuk-radios" >
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="all-location" name="bob" type="radio" value="/workallocation/pages/wa-allwork" checked>
+                  <label class="govuk-label govuk-radios__label" for="all-location">
+                    All
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="person-3" name="bob" type="radio" value="/workallocation/pages/wa-allwork-sp">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                    Search for a location
+                  </label>
+                </div>
+              <div class="govuk-!-padding-bottom-2"></div>
+              <div class="govuk-form-group">
+                <input class="govuk-input" id="address-town" name="address-town" type="text">
+              </div>
+              </div>
+
+            </div>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <form action="#" method="post" onsubmit="usePage(this, 'bob');">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                <label class="govuk-heading-m" for="person">
+                  Person
+                </label>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="person" name="bob" type="radio" value="/workallocation/pages/wa-allwork" checked>
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                      All
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="person-2" name="bob" type="radio" value="/workallocation/pages/wa-allwork-none">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                      None / Available tasks
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="person-3" name="bob" type="radio" value="/workallocation/pages/wa-allwork-sp">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                      Specific person
+                    </label>
+                  </div>
+                  <label class="govuk-heading-m" for="sort" style="display:none">
+                    Label for Specific person
+                  </label>
+                  <div class="govuk-!-padding-bottom-2"></div>
+                  <select class="govuk-select" id="sort" name="sort" style="width:100%">
+                    <option value="updated" selected>Select role type</option>
+                    <option value="updated">CTSC</option>
+                    <option value="updated">Judiciary</option>
+                    <option value="views">Legal ops tasks</option>
+                    <option value="comments">Admin</option>
+                  </select>
+                  <div class="govuk-!-padding-bottom-2"></div>
+                  <div class="govuk-form-group">
+                    <input class="govuk-input" id="address-town" name="address-town" type="text">
+                  </div>
+                </div>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+              <label class="govuk-heading-m" for="type-of-work">
+                Types of work
+              </label>
+              <select class="govuk-select" id="type-of-work" name="type-of-work" style="width:100%">
+                <option value="published">Select types of work</option>
+                <option value="updated">Application</option>
+                <option value="views">Error Management</option>
+                <option value="comments">Routine work</option>
+              </select>
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+              <div class="govuk-form-group">
+              <label class="govuk-heading-m" for="role-type">
+                Role type
+              </label>
+              <select class="govuk-select" id="role-type" name="role-type" style="width:100%">
+                <option value="updated" selected>All</option>
+                <option value="updated">CTSC</option>
+                <option value="updated">Judicial tasks</option>
+                <option value="views">Legal ops tasks</option>
+                <option value="comments">Admin</option>
+              </select>
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+              </div>
+              {% if  data.usertype !== 'judiciary'   %}
+              <div class="govuk-form-group">
+              <label class="govuk-heading-m" for="priority">
+                priority
+              </label>
+              <select class="govuk-select" id="priority" name="priority" style="width:100%">
+                <option value="updated" selected>All</option>
+                <option value="views">Urgent (red)</option>
+                <option value="views">High (red)</option>
+                <option value="comments">Medium (yellow)</option>
+                <option value="comments">Low (green)</option>
+              </select>
+              </div>
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+              {% endif %}
+              <div class="govuk-button-group">
+                {{ govukButton({
+                  href: 'wa-all-work-filter-person',
+                  text: "Apply"
+                }) }}
+                {{ govukButton({
+                  text: "Reset to default",
+                  href: 'wa-all-work',
+                  classes: "govuk-button--secondary"
+                }) }}
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="hmcts-filter-layout__content">
+        <p class="govuk-body">Displaying <strong>7</strong> of <strong>7</strong> tasks</p>
+        <table class="govuk-table ">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="ascending"><button type="button" data-index="0">Case name</button></th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Case category</button></th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Location</button></th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Types of work</button></th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"></th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Task</button></th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Due date</button></th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Hearing date</button></th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto;" aria-sort="none"><button type="button" data-index="1">Priority</button></th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-19" style="width: auto; color: #005ea5;" aria-sort="none">Person</th>
+              <th scope="col" class="govuk-table__header govuk-body govuk-!-font-size-14" style="width: auto;" aria-sort="none"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Libby Mcmahon</a></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Retirement Pension</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Application</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+              </td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Manage unprocessed correspondence</a></td>
+              <td class="govuk-table__cell">17 April 2022</td>
+              <td class="govuk-table__cell">23 April 2022</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+                <span class="hmcts-badge hmcts-badge--red">Urgent</span>
+              </td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Ella Dench</td>
+              <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="wa-all-work-manage-01" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Matias Dominguez</a></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Child Support</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Application</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Manage administration requests</a></td>
+              <td class="govuk-table__cell">17 April 2022</td>
+              <td class="govuk-table__cell">24 April 2022</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+                <span class="hmcts-badge hmcts-badge--red">Urgent</span>
+              </td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+              <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="wa-all-work-manage-02" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Talha Awan</a></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Carer's Allowance</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Error Management</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Process first tier authority responses</a></td>
+              <td class="govuk-table__cell">18 April 2022</td>
+              <td class="govuk-table__cell">21 April 2022</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+                {{govukTag({
+                text: "high",
+                classes: "govuk-tag--red"
+              })}}
+              </td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Ella Dench</td>
+              <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Patti Jo</a></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Disability Living Allowance</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Routine work</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Review application decision</a></td>
+              <td class="govuk-table__cell">18 April 2022</td>
+              <td class="govuk-table__cell">21 April 2022</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+                {{govukTag({
+                text: "medium",
+                classes: "govuk-tag--yellow"
+              })}}
+              </td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Ella Dench</td>
+              <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Alessandra  Mccormack</a></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Universal Credit</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Routine work</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Process bulk scans</a></td>
+              <td class="govuk-table__cell">19 April 2022</td>
+              <td class="govuk-table__cell">28 April 2022</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+                {{govukTag({
+                text: "medium",
+                classes: "govuk-tag--yellow"
+              })}}
+              </td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+              <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Rayhan  Turner</a></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Job Seekers Allowance</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Routine work</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Create a new application</a></td>
+              <td class="govuk-table__cell">19 April 2022</td>
+              <td class="govuk-table__cell">28 April 2022</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+                {{govukTag({
+                text: "medium",
+                classes: "govuk-tag--yellow"
+              })}}
+              </td>
+                    <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Daniel Bird</td>
+              <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a v href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Hudson Remi</a></td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Protection</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Taylor House</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Routine work</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+                <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" path
+                  style="fill: black">
+                  <title>This case has more than one task. Review needed.</title>
+                  <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                                            C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+              </td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19"><a href="#">Check automation errors</a></td>
+              <td class="govuk-table__cell">20 April 2022</td>
+              <td class="govuk-table__cell">30 April 2022</td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">
+                {{govukTag({
+                text: "low",
+                classes: "govuk-tag--grey"
+              })}}
+              </td>
+              <td class="govuk-table__cell govuk-body govuk-!-font-size-19">Ella Dench</td>
+              <td class="govuk-table__cell">&nbsp;&nbsp;&nbsp;<a href="#" class="right_m">Manage</a><span class="govuk-accordion-wa__icon"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script type="text/javascript">
+          function usePage(frm,nm) {
+            for (var i_tem = 0, bobs=frm.elements; i_tem < bobs.length; i_tem++)
+            if(bobs[i_tem].name==nm&&bobs[i_tem].checked)
+            frm.action=bobs[i_tem].value;
+          }
+        </script>
+
+        <script type="text/javascript">
+          window.onload = (event) => {
+            accessibleAutocomplete.enhanceSelectElement({
+              selectElement: document.querySelector('#location-picker')
+            })
+          }
+        </script>
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}

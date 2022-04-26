@@ -1,0 +1,165 @@
+{% if  data.usertype == 'judiciary'   %}
+{% extends "../layoutjudicial.html" %}
+{% else %}
+{% extends "../layoutstaff.html" %}
+{% endif %}
+{% block pageTitle %}
+My work
+{% endblock %}
+{% block content %}
+<style media="screen">
+  .govuk-width-container {
+    max-width: 95%;
+  }
+  .js-enabled .govuk-tabs__list-item {
+    position: relative;
+    margin-right: 5px;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 10px 20px;
+    float: left;
+    background-color: #f3f2f1;
+    text-align: center;
+  }
+  .js-enabled .govuk-tabs__tab {
+    margin-right: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    float: left;
+    color: #0b0c0c;
+    text-align: center;
+    text-decoration: none;
+  }
+</style>
+<div class="" style="display: flex; justify-content: space-between; ">
+  <div>
+    <h1 class="govuk-heading-xl">PA/00467/2017</h1>
+  </div>
+  <div style="display: flex; align-items:right">
+    <p class="govuk-!-margin-top-2">Next step &nbsp;</p>
+    <select class="govuk-select" id="sort" name="sort">
+      <option value="published" selected="">Select action</option>
+      <option value="published">Submit amended application</option>
+      <option value="published">Link respondent</option>
+      <option value="published">Add Note</option>
+      <option value="published">Upload document</option>
+      <option value="updated">Stop representing a client</option>
+    </select>
+    <form name="aspnetForm" method="post" id="aspnetForm" autocomplete="off">
+      <button class="govuk-button govuk-!-margin-left-1" data-module="govuk-button">
+        Go
+      </button>
+    </form>
+  </div>
+</div>
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#">
+        Tasks
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#">
+        Roles and access
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#">
+        Overview
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Appeal
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Appellant
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Documents
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Directions
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Applications
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Case notes
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="event">
+  <div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Active tasks</h2>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <p class="govuk-body"><strong>Process bulk scan</strong></p>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              <span style="padding-left:25px">Priority</span>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <span class="hmcts-badge hmcts-badge--red">Urgent</span>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              <span style="padding-left:25px">Task created</span>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              21 March 2022
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              <span style="padding-left:25px">Assigned to</span>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Judge Beech
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              <span style="padding-left:25px">Manage</span>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="" class="right" style="text-align: right; margin-right:40px;">Reassign task</a>
+              <a href="" class="right">Unassign task</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              <span style="padding-left:25px">Next steps</span>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="wa-PA-00467-2017-hj-staff">Process bulk scan</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+{% endblock %}
